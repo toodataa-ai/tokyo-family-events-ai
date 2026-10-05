@@ -1,0 +1,282 @@
+東京23区 子連れイベント AI探索・完全版プロンプト v1.3
+
+【この文書の位置づけ】
+このファイルは、東京23区の子連れイベント探索・選定・公式再監査・補正・公開前検証までを一貫して実行するための正本プロンプトである。
+
+競馬予想と同じく、作業開始時にファイル名の並びから最新版を推測してはならない。必ず `site/data/latest_prompt.json` を最初に読み、その `version` と `path` を解決し、そこが指すプロンプトだけを正本として使うこと。
+
+最新版ポインタが読めない、履歴と不整合、指示先ファイルが存在しない場合は作業を続行せず、その時点で失敗扱いとする。
+
+────────────────────
+0. 実行開始時の必須処理
+────────────────────
+1. GitHub `toodataa-ai/tokyo-family-events-ai` の `site/data/latest_prompt.json` を取得する。
+2. `version` と `path` を確認する。
+3. `path` の完全版プロンプトを取得して以後の全工程に適用する。
+4. `site/data/prompt_history.json` に同じversion/pathの履歴が存在することを確認する。
+5. 対象週の run manifest に以下を記録する。
+   - prompt.version
+   - prompt.path
+   - prompt.pointer = site/data/latest_prompt.json
+   - resolved = true
+6. 最新版ポインタを解決する前に探索を始めてはならない。
+
+────────────────────
+1. 対象期間を固定
+────────────────────
+- 対象は原則、指定された土曜・日曜の週末。
+- `sat` / `sun` をISO日付で固定する。
+- 開催期間型イベントは、対象週末と1日でも重なる場合のみ候補にできる。
+- 祝日を別途含める場合は、その週データ側で明示する。推測で期間を広げない。
+
+────────────────────
+2. PHASE A: 23区探索
+────────────────────
+東京23区を必ず1区ずつ独立して処理する。
+
+対象区:
+千代田区、中央区、港区、新宿区、文京区、台東区、墨田区、江東区、品川区、目黒区、大田区、世田谷区、渋谷区、中野区、杉並区、豊島区、北区、荒川区、板橋区、練馬区、足立区、葛飾区、江戸川区。
+
+各区で以下を順に確認する。
+A. 区公式イベント、観光、子育て、文化、公園、図書館、児童館
+B. 東京都、都立施設、公園、博物館、美術館、科学館、動物園等
+C. 子育て・イベント媒体
+D. 商業施設、鉄道、交通、スポーツ、劇場、大学等の公式
+E. Web横断検索
+
+最低検索語:
+- 子ども / 子供 / 親子
+- イベント
+- 祭り / お祭り / フェス
+- ワークショップ / 体験
+- 無料
+- スタンプラリー
+- 鉄道 / 電車
+- 動物
+- 科学
+- 防災 / 消防
+
+各区の探索が終わるまで `coverage.wards[].status=checked` にしない。
+`queries`, `sources_checked`, `candidate_count`, `published_count`, `note` を必ず残す。
+
+「子ども向け」と明記されたものだけに限定しない。祭り、鉄道、動物、科学、防災、スポーツ、食、商店街、展示等も、子連れ参加の現実性を評価する。
+
+除外:
+- 成人限定
+- 深夜主体
+- 子ども不可
+- 対象週末と重ならない
+- 東京23区外
+- 開催根拠を確認できない
+
+────────────────────
+3. PHASE B: 候補整形・重複排除・掲載候補固定
+────────────────────
+各候補に最低限以下を持たせる。
+- id
+- ward
+- name
+- url
+- official_url
+- source
+- image
+- period
+- date_start / date_end
+- time
+- venue
+- price
+- description
+- categories[]
+- family_fit
+- reservation
+- indoor_outdoor
+- ai.checked_at / confidence / discovery_query
+
+不明項目は推測で埋めず null / 空欄にする。
+
+重複判定は以下を併用する。
+- canonicalized official_url
+- 正規化イベント名
+- 開催日
+- 会場
+
+媒体違いの同一イベントは1件に統合し、公式情報を優先する。
+
+子連れ適性:
+- A: 幼児・小学生向け要素が明確
+- B: 子連れ参加しやすいが主目的は家族向けとは限らない
+- C: 年齢・混雑・時間帯等に注意が必要
+
+必ず `family_fit.reason` を付ける。
+
+このPHASE終了時点で掲載候補集合を一度固定する。以降、公式再監査で誤りが判明した場合は補正または除外理由を残す。
+
+────────────────────
+4. PHASE C: サムネイル取得
+────────────────────
+採用候補ごとに画像を探索する。
+
+優先順位:
+1. 公式ページ og:image
+2. 公式ページ twitter:image
+3. itemprop=image / image_src
+4. JSON-LD等のイベント画像
+5. 公式・情報元ページ本文のイベント固有画像
+6. 情報元ページのOG画像
+
+ルール:
+- イベント固有画像をロゴより優先。
+- 推測URL禁止。
+- data: URL禁止。
+- http(s)実URLのみ。
+- 見つからない場合だけ null。
+- `tools/enrich_images.py` で追加補完する。
+- 公開時画像取得率70%未満はFAIL。
+
+────────────────────
+5. PHASE D: 公式情報の全件再監査
+────────────────────
+掲載候補を1件ずつ再確認する。探索時媒体だけで監査完了にしてはならない。
+
+優先ソース:
+1. 自治体・東京都・公的施設公式
+2. 主催者・会場・施設公式
+3. 公式観光協会
+4. 主催者提供情報を明記する提携媒体
+
+最低照合項目:
+- イベント名
+- 開催日・期間
+- 開催時間
+- 会場
+- 料金
+- 予約要否・締切
+- 対象年齢・参加条件
+- 中止・延期・雨天条件
+- 公式URL
+
+判定値:
+- pass
+- corrected
+- unknown
+- not_applicable
+
+`name`, `date`, `venue` は必ず pass または corrected。
+料金・時間等が公式にない場合は unknown のままにし、推測しない。
+
+週ごとに `verification_file` を作成する。
+各イベントは以下を持つ。
+- id
+- status = verified
+- source
+- source_kind
+- fields
+- corrections
+- note
+
+補正は探索時データを破壊的に上書きせず `corrections` に残す。サイト読込とValidatorの両方で同じ補正を適用する。
+全掲載イベントが verified でなければ公開禁止。
+
+────────────────────
+6. PHASE E: run manifest作成
+────────────────────
+週データごとに `run_file` を作成する。
+
+run manifest必須項目:
+- schema_version
+- target.sat / target.sun
+- mode
+- prompt.version
+- prompt.path
+- prompt.pointer
+- prompt.resolved
+- source_data.week_file
+- source_data.verification_file
+- stages[]
+- summary
+
+標準stages:
+1. resolve_prompt
+2. discover_23_wards
+3. normalize_and_dedupe
+4. freeze_candidates
+5. enrich_images
+6. official_verification
+7. apply_corrections
+8. strict_validation
+9. copy_contract_test
+10. shared_filter_test
+11. deploy
+
+公開前段階では1〜10が `passed` であること。deployはCI完了後に成功する。
+移行データは `mode=migration-revalidation` を許可するが、その場合も最新版プロンプト解決・公式監査・Validator・テストを再実行すること。
+
+────────────────────
+7. コピペ契約 v1
+────────────────────
+以下の順番を絶対に変更しない。
+1. タイトル
+2. 場所
+3. 日時
+4. 料金
+5. 説明
+6. 公式サイト
+7. 情報元サイト
+8. サムネイル画像URL（存在時のみ）
+
+フォールバック:
+- title = name || url
+- venue = venue || ward
+- datetime = period + 時刻があれば全角スペース + time
+- price = price || （料金情報は公式サイトでご確認ください）
+- official = official_url || url
+- source = source || ''
+- imageは存在時のみ
+
+AI判定・verification・run manifest情報をコピー本文へ混ぜない。
+
+────────────────────
+8. 最終監査
+────────────────────
+以下を全て確認する。
+- 23/23区 checked
+- 対象週末外なし
+- 23区外なし
+- 重複なし
+- published_count一致
+- 必須URL確認済み
+- サムネイル探索済み
+- verification全件存在
+- verification全件verified
+- name/date/venue全件passまたはcorrected
+- correctedには補正値と検証ソースあり
+- 不明値を推測していない
+- run_fileあり
+- run manifestのprompt.version/pathがlatest_prompt.jsonと一致
+- run manifestの公開前stageが全てpassed
+- コピペ契約を変更していない
+
+────────────────────
+9. 機械検証・公開
+────────────────────
+必ず以下を実行する。
+
+node .github/scripts/validate-prompt-history.mjs
+python tools/enrich_images.py site/data
+python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+npm test
+
+1つでも失敗したらGitHub Pagesへ公開しない。
+
+────────────────────
+10. プロンプト改訂ルール
+────────────────────
+最新版を改訂するときは必ず同一変更で以下を行う。
+1. 新しい完全版プロンプトファイルを追加する。旧版は残す。
+2. `site/data/latest_prompt.json` のversion/pathを更新する。
+3. `site/data/prompt_history.json` に新versionを追記する。
+4. historyには summary / changes / reason を残す。
+5. 過去履歴を上書き・削除しない。
+6. `validate-prompt-history.mjs` をPASSさせる。
+
+この運用により、ChatGPTへの依頼が短くても「GitHubの最新版プロンプトに従って今週末を更新して」で同一手順を再現できる状態を維持する。

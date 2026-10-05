@@ -71,7 +71,7 @@ def load_week(path):
     return data, events, errors
 
 
-def validate_week(path, strict=False):
+def validate_week(path, strict=False, min_image_coverage=0.0):
     errors, warnings = [], []
     data, events, load_errors = load_week(path)
     errors.extend(load_errors)
@@ -121,6 +121,7 @@ def validate_week(path, strict=False):
 
     actual_by_ward = Counter()
     seen_ids, seen_urls, seen_signature = set(), {}, {}
+    image_count = 0
     for i, ev in enumerate(events, 1):
         prefix = f'{path}: event #{i}'
         if not isinstance(ev, dict):
@@ -140,6 +141,8 @@ def validate_week(path, strict=False):
             value = ev.get(key)
             if value and not HTTP_RE.match(value):
                 errors.append(f'{prefix}: {key} must be http(s): {value}')
+        if ev.get('image') and HTTP_RE.match(str(ev.get('image'))):
+            image_count += 1
 
         eid = ev.get('id')
         if eid:
@@ -180,12 +183,22 @@ def validate_week(path, strict=False):
             warnings.append(f'{prefix}: venue is empty; copy output falls back to ward')
         if not ev.get('price'):
             warnings.append(f'{prefix}: price is empty; copy output uses the fixed fallback text')
+        if not ev.get('image'):
+            warnings.append(f'{prefix}: thumbnail image is missing')
 
     for ward in WARDS:
         expected = ward_rows.get(ward, {}).get('published_count') or 0
         actual = actual_by_ward[ward]
         if expected != actual:
             errors.append(f'{path}: {ward} published_count={expected} != actual events={actual}')
+
+    image_coverage = (image_count / len(events)) if events else 1.0
+    if min_image_coverage and image_coverage < min_image_coverage:
+        errors.append(
+            f'{path}: thumbnail coverage {image_count}/{len(events)}={image_coverage:.1%} '
+            f'is below required {min_image_coverage:.0%}'
+        )
+    print(f'IMAGE COVERAGE {path.name}: {image_count}/{len(events)} ({image_coverage:.1%})')
 
     return errors, warnings, len(events)
 
@@ -194,7 +207,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('data_dir', type=pathlib.Path)
     ap.add_argument('--strict', action='store_true')
+    ap.add_argument('--min-image-coverage', type=float, default=0.0)
     args = ap.parse_args()
+
+    if not 0.0 <= args.min_image_coverage <= 1.0:
+        print('ERROR: --min-image-coverage must be between 0 and 1')
+        return 2
 
     manifest_path = args.data_dir / 'manifest.json'
     if not manifest_path.exists():
@@ -218,7 +236,7 @@ def main():
         if not p.exists():
             errors.append(f'manifest: missing data file {p}')
             continue
-        e, w, event_count = validate_week(p, args.strict)
+        e, w, event_count = validate_week(p, args.strict, args.min_image_coverage)
         errors.extend(e)
         warnings.extend(w)
         if entry.get('count') != event_count:

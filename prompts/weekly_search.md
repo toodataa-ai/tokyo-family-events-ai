@@ -1,4 +1,4 @@
-# 東京23区 子連れイベント AI探索・週次更新プロンプト v1.0
+# 東京23区 子連れイベント AI探索・週次更新プロンプト v1.1
 
 対象週末の東京23区について、子連れで参加できそうなイベントを網羅的に探索し、新サイト用JSONを作成する。
 
@@ -14,6 +14,7 @@
 8. コピペ互換フィールド `name, ward, period, time, venue, price, description, official_url, url, source, image` を壊さない。
 9. 掲載判断に迷うイベントは落とすのではなく、子連れ適性Cとして注意点を `family_fit.reason` に書けるか検討する。
 10. 全23区の探索が完了していなければ本番データとして提出しない。
+11. サムネイル画像を必ず探索する。`image` を安易に `null` にしない。
 
 ## 区ごとの探索手順
 
@@ -54,6 +55,26 @@
 - 動物
 - 科学
 - 防災 / 消防
+
+## サムネイル画像取得
+
+イベント採用後、各イベントについてサムネイル画像を探索する。
+
+優先順位:
+1. 公式ページの `og:image`
+2. 公式ページの `twitter:image`
+3. 公式ページの `itemprop=image` / `image_src`
+4. 情報元ページの `og:image` / `twitter:image`
+5. JSON-LD等に明示されたイベント画像
+
+ルール:
+- ロゴや汎用サイト画像しか取れない場合でも、イベント画像が見つからないときの最終候補として利用可。
+- 推測した画像URLは作らない。
+- `data:` URLは使わない。
+- `image` は `http://` または `https://` の実URLのみ。
+- 画像が本当に見つからない場合のみ `null` とする。
+- 公開処理でも `tools/enrich_images.py` を実行し、AI探索で取り切れなかった `og:image` 等を補完する。
+- 公開時のサムネイル取得率が70%未満ならデプロイしない。
 
 ## 子連れ適性
 
@@ -114,7 +135,7 @@
   "url": "https://...",
   "official_url": "https://...",
   "source": "https://...",
-  "image": null,
+  "image": "https://.../event-image.jpg",
   "period": "10/10〜10/11",
   "date_start": "2026-10-10",
   "date_end": "2026-10-11",
@@ -141,6 +162,15 @@
 - [ ] 必須URL確認済み
 - [ ] published_count = events.length
 - [ ] コピペ互換フィールドが存在
+- [ ] サムネイル画像を各イベントで探索済み
 - [ ] 不明情報を推測で補完していない
 
-その後 `python tools/validate_data.py --strict site/data` と `npm test` を通してから公開する。
+その後、
+
+```bash
+python tools/enrich_images.py site/data
+python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+npm test
+```
+
+を通してから公開する。

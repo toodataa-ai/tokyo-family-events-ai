@@ -84,7 +84,22 @@ export async function loadWeekend(manifest,satIso){
   if(!entry) return {entry:null,data:null};
   const res=await fetch('data/'+entry.file,{cache:'no-store'});
   if(!res.ok) throw new Error(`weekend load failed: ${res.status}`);
-  return {entry,data:await res.json()};
+  const data=await res.json();
+  const baseEvents=Array.isArray(data.events) ? data.events : [];
+  const shardFiles=Array.isArray(data.event_files) ? data.event_files : [];
+  if(shardFiles.length){
+    const shards=await Promise.all(shardFiles.map(async file=>{
+      const r=await fetch('data/'+file,{cache:'no-store'});
+      if(!r.ok) throw new Error(`event shard load failed: ${file} ${r.status}`);
+      const rows=await r.json();
+      if(!Array.isArray(rows)) throw new Error(`event shard is not array: ${file}`);
+      return rows;
+    }));
+    data.events=[...baseEvents,...shards.flat()];
+  }else{
+    data.events=baseEvents;
+  }
+  return {entry,data};
 }
 
 export function escapeHtml(value){

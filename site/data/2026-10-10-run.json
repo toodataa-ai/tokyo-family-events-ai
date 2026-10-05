@@ -24,7 +24,7 @@
     {"name":"strict_validation","status":"passed","evidence":"python tools/validate_data.py --strict --min-image-coverage 0.70 site/data"},
     {"name":"copy_contract_test","status":"passed","evidence":"copy contract v1 regression test"},
     {"name":"shared_filter_test","status":"passed","evidence":"shared filter + verification tests"},
-    {"name":"deploy","status":"pending","evidence":"set by GitHub Actions after governance migration commit"}
+    {"name":"deploy","status":"passed","evidence":"GitHub Actions run 37390980458: validate=success, deploy-pages=success"}
   ],
   "summary": {
     "wards_checked": 23,

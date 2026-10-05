@@ -17,7 +17,7 @@
 </header>
 <nav class="chips" id="chips"></nav>
 <main>
-  <p class="tip">各項目の「コピー」で1項目だけ、カード下の「まとめてコピー」で既存サイトと同じ順序の全項目を改行区切りでコピーします。公式確認情報は画面表示のみで、コピー本文には混ぜません。</p>
+  <p class="tip">各項目の「コピー」で1項目だけ、カード下の「まとめてコピー」で既存サイトと同じ順序の全項目を改行区切りでコピーします。公式確認・プロンプト情報は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
@@ -46,7 +46,8 @@ function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';
 function render(){
   if(!currentData)return;renderChips(currentData);const visible=filterEvents(currentData.events,filters());window.__visibleEvents=visible;
   const verified=currentData.verification?.summary?.verified ?? currentData.events.filter(x=>x.verification?.status==='verified').length;
-  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}/${currentData.events.length}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
+  const prompt=currentData.run?.prompt?.version||'-';
+  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}/${currentData.events.length}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
     const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const ok=ev.verification?.status==='verified';const verifyUrl=safeHttpUrl(ev.verification?.source);

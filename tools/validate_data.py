@@ -8,6 +8,8 @@ WARDS = [
     '世田谷区','渋谷区','中野区','杉並区','豊島区','北区','荒川区','板橋区','練馬区','足立区','葛飾区','江戸川区'
 ]
 HTTP_RE = re.compile(r'^https?://', re.I)
+FIELD_STATES = {'pass','corrected','unknown','not_applicable'}
+CORE_VERIFIED_FIELDS = ('name','date','venue')
 
 
 def canonical_url(value):
@@ -31,6 +33,19 @@ def iso_date(value):
         return datetime.date.fromisoformat(str(value))
     except Exception:
         return None
+
+
+def merge_corrections(ev, corrections):
+    out = dict(ev)
+    if not isinstance(corrections, dict):
+        return out
+    for key, value in corrections.items():
+        if key in ('family_fit','reservation','ai') and isinstance(value, dict):
+            base = out.get(key) if isinstance(out.get(key), dict) else {}
+            out[key] = {**base, **value}
+        else:
+            out[key] = value
+    return out
 
 
 def load_week(path):
@@ -71,10 +86,118 @@ def load_week(path):
     return data, events, errors
 
 
+def load_and_apply_verification(path, data, events, strict=False):
+    errors, warnings = [], []
+    filename = data.get('verification_file')
+    if not filename:
+        if strict:
+            errors.append(f'{path}: strict mode requires verification_file')
+        return events, None, errors, warnings
+    if not isinstance(filename, str) or not filename.endswith('.json') or '/' in filename or '\\' in filename:
+        errors.append(f'{path}: invalid verification_file {filename!r}')
+        return events, None, errors, warnings
+
+    audit_path = path.parent / filename
+    if not audit_path.exists():
+        errors.append(f'{path}: missing verification file {audit_path}')
+        return events, None, errors, warnings
+    try:
+        audit = json.loads(audit_path.read_text(encoding='utf-8'))
+    except Exception as exc:
+        errors.append(f'{path}: invalid verification JSON {audit_path}: {exc}')
+        return events, None, errors, warnings
+
+    verified_on = iso_date(audit.get('verified_on'))
+    if not verified_on:
+        errors.append(f'{audit_path}: verified_on must be YYYY-MM-DD')
+
+    rows = audit.get('events') or []
+    if not isinstance(rows, list):
+        errors.append(f'{audit_path}: events must be an array')
+        rows = []
+
+    by_id = {}
+    for i, row in enumerate(rows, 1):
+        if not isinstance(row, dict):
+            errors.append(f'{audit_path}: verification #{i} must be object')
+            continue
+        eid = row.get('id')
+        if not eid:
+            errors.append(f'{audit_path}: verification #{i} missing id')
+            continue
+        if eid in by_id:
+            errors.append(f'{audit_path}: duplicate verification id {eid}')
+            continue
+        by_id[eid] = row
+        if strict and row.get('status') != 'verified':
+            errors.append(f'{audit_path}: {eid} is not verified')
+        source = row.get('source')
+        if not source or not HTTP_RE.match(str(source)):
+            errors.append(f'{audit_path}: {eid} requires http(s) verification source')
+        fields = row.get('fields')
+        if not isinstance(fields, dict):
+            errors.append(f'{audit_path}: {eid} fields must be object')
+            fields = {}
+        for key, state in fields.items():
+            if state not in FIELD_STATES:
+                errors.append(f'{audit_path}: {eid} invalid field state {key}={state}')
+        if strict:
+            for key in CORE_VERIFIED_FIELDS:
+                if fields.get(key) not in ('pass','corrected'):
+                    errors.append(f'{audit_path}: {eid} core field {key} must be pass/corrected')
+        corrections = row.get('corrections') or {}
+        if not isinstance(corrections, dict):
+            errors.append(f'{audit_path}: {eid} corrections must be object')
+
+    event_ids = [ev.get('id') for ev in events if isinstance(ev, dict) and ev.get('id')]
+    event_id_set = set(event_ids)
+    missing = [eid for eid in event_ids if eid not in by_id]
+    extra = [eid for eid in by_id if eid not in event_id_set]
+    if missing:
+        errors.append(f'{audit_path}: verification missing event ids: {missing}')
+    if extra:
+        errors.append(f'{audit_path}: verification contains unknown event ids: {extra}')
+
+    corrected = []
+    for ev in events:
+        if not isinstance(ev, dict):
+            corrected.append(ev)
+            continue
+        row = by_id.get(ev.get('id'))
+        if not row:
+            corrected.append(ev)
+            continue
+        merged = merge_corrections(ev, row.get('corrections') or {})
+        merged['verification'] = {
+            'status': row.get('status'),
+            'source': row.get('source'),
+            'source_kind': row.get('source_kind'),
+            'fields': row.get('fields') or {},
+            'note': row.get('note') or '',
+            'verified_on': audit.get('verified_on')
+        }
+        corrected.append(merged)
+
+    summary = audit.get('summary') or {}
+    verified_count = sum(1 for r in rows if isinstance(r, dict) and r.get('status') == 'verified')
+    if summary.get('total') != len(events):
+        errors.append(f'{audit_path}: summary.total={summary.get("total")} != events={len(events)}')
+    if summary.get('verified') != verified_count:
+        errors.append(f'{audit_path}: summary.verified={summary.get("verified")} != verified rows={verified_count}')
+    if strict and verified_count != len(events):
+        errors.append(f'{audit_path}: strict mode requires all {len(events)} events verified, got {verified_count}')
+
+    print(f'VERIFICATION {path.name}: {verified_count}/{len(events)} verified ({audit.get("verified_on")})')
+    return corrected, audit, errors, warnings
+
+
 def validate_week(path, strict=False, min_image_coverage=0.0):
     errors, warnings = [], []
     data, events, load_errors = load_week(path)
     errors.extend(load_errors)
+    events, audit, verify_errors, verify_warnings = load_and_apply_verification(path, data, events, strict)
+    errors.extend(verify_errors)
+    warnings.extend(verify_warnings)
     coverage = data.get('coverage') or {}
 
     if strict and data.get('sample'):

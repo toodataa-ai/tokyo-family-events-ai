@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "version": "v1.2",
+      "date": "2026-10-06",
+      "path": "prompts/weekly_search.md",
+      "source": "baseline",
+      "summary": "23区探索、サムネイル取得、全件公式再監査、verification補正までを定義した既存プロンプト。",
+      "changes": [],
+      "reason": "v1.3導入前の既存運用を履歴上の基準点として固定するため。"
+    },
+    {
+      "version": "v1.3",
+      "date": "2026-10-06",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.3.txt",
+      "summary": "競馬予想と同じ最新版ポインタ方式を採用し、探索から検証・公開までを単一の完全版手順として固定。",
+      "changes": [
+        "site/data/latest_prompt.json を唯一の最新版ポインタとして追加",
+        "ファイル名順から最新版を推測する運用を禁止",
+        "PHASE A〜Eで探索・候補固定・画像取得・公式再監査・run manifest作成を明文化",
+        "週ごとのrun manifestに使用プロンプト版と工程PASS証跡を保存",
+        "prompt_historyを追記型履歴として導入",
+        "CIでprompt pointer/history/run manifest整合性を検証する方針を追加"
+      ],
+      "reason": "毎週ChatGPTが同じGitHub正本を参照し、競馬予想と同じ再現可能な手順で公式検証まで実行できるようにするため。"
+    }
+  ]
+}

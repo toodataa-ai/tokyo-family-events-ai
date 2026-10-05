@@ -8,7 +8,9 @@ on:
       - 'site/**'
       - 'tools/**'
       - 'tests/**'
+      - 'prompts/**'
       - 'package.json'
+      - '.github/scripts/**'
       - '.github/workflows/deploy.yml'
 
 permissions:
@@ -31,6 +33,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Resolve and validate canonical prompt governance
+        run: node .github/scripts/validate-prompt-history.mjs
       - name: Enrich thumbnail URLs from official/source page metadata
         run: python tools/enrich_images.py site/data
       - name: Validate event data strictly

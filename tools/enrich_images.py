@@ -11,11 +11,19 @@ from urllib.request import Request, urlopen
 
 META_TAG_RE = re.compile(r'<meta\b[^>]*>', re.I)
 LINK_TAG_RE = re.compile(r'<link\b[^>]*>', re.I)
+IMG_TAG_RE = re.compile(r'<img\b[^>]*>', re.I)
 ATTR_RE = re.compile(r'([:\w-]+)\s*=\s*(["\'])(.*?)\2', re.I | re.S)
 JSON_IMAGE_RE = re.compile(r'["\']image["\']\s*:\s*["\']([^"\']+)["\']', re.I)
 MAX_BYTES = 2_000_000
 TIMEOUT = 12
-USER_AGENT = 'Mozilla/5.0 (compatible; TokyoFamilyEventsAI/1.0; +https://toodataa-ai.github.io/tokyo-family-events-ai/)'
+USER_AGENT = 'Mozilla/5.0 (compatible; TokyoFamilyEventsAI/1.1; +https://toodataa-ai.github.io/tokyo-family-events-ai/)'
+
+BAD_IMAGE_HINTS = (
+    'logo', 'icon', 'favicon', 'header', 'footer', 'sprite', 'loading', 'blank',
+    'common/', '/common', 'btn_', 'button', 'arrow', 'search', 'pixel', 'tracking',
+    'analytics', 'spacer', 'noimage', 'no-image', 'dummy', 'qr', 'sns', 'share'
+)
+GOOD_IMAGE_HINTS = ('event', 'upload', 'uploads', 'image', 'images', 'photo', 'news', 'topics', 'img_')
 
 
 def is_http(value):
@@ -37,9 +45,49 @@ def normalize_image_url(base_url, value):
         p = urlsplit(resolved)
         if p.scheme not in ('http', 'https') or not p.netloc:
             return None
+        lower_path = p.path.lower()
+        if lower_path.endswith('.svg'):
+            return None
     except Exception:
         return None
     return resolved
+
+
+def num_attr(value):
+    if not value:
+        return None
+    m = re.search(r'\d+', str(value))
+    return int(m.group(0)) if m else None
+
+
+def score_img_tag(base_url, tag):
+    a = attrs(tag)
+    raw = a.get('data-src') or a.get('data-original') or a.get('data-lazy-src') or a.get('src')
+    u = normalize_image_url(base_url, raw)
+    if not u:
+        return None
+    text = ' '.join([u, a.get('alt', ''), a.get('class', ''), a.get('id', '')]).lower()
+    if any(h in text for h in BAD_IMAGE_HINTS):
+        return None
+
+    w = num_attr(a.get('width'))
+    h = num_attr(a.get('height'))
+    if w and h and (w < 180 or h < 100):
+        return None
+
+    score = 0
+    if a.get('alt'):
+        score += 2
+    if any(hint in text for hint in GOOD_IMAGE_HINTS):
+        score += 2
+    if w and w >= 300:
+        score += 2
+    if h and h >= 160:
+        score += 1
+    path = urlsplit(u).path.lower()
+    if path.endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
+        score += 1
+    return score, u
 
 
 def extract_image(base_url, text):
@@ -75,6 +123,18 @@ def extract_image(base_url, text):
         u = normalize_image_url(base_url, m.group(1).replace('\\/', '/'))
         if u:
             return u
+
+    # Fallback: pick the most likely content/event image from the page body.
+    # Avoid obvious site chrome (logos/icons/buttons) and tiny images.
+    body_candidates = []
+    for tag in IMG_TAG_RE.findall(text):
+        scored = score_img_tag(base_url, tag)
+        if scored:
+            body_candidates.append(scored)
+    if body_candidates:
+        body_candidates.sort(key=lambda x: x[0], reverse=True)
+        if body_candidates[0][0] >= 1:
+            return body_candidates[0][1]
     return None
 
 
@@ -116,15 +176,14 @@ def candidate_pages(ev):
     return out
 
 
-def enrich_event(ev, cache):
+def enrich_event(ev):
     if is_http(ev.get('image')):
         return False, ev.get('image')
     for page in candidate_pages(ev):
-        if page not in cache:
-            cache[page] = fetch_image_from_page(page)
-        if cache[page]:
-            ev['image'] = cache[page]
-            return True, cache[page]
+        image = fetch_image_from_page(page)
+        if image:
+            ev['image'] = image
+            return True, image
     return False, None
 
 
@@ -154,12 +213,10 @@ def main():
         all_events.extend(data)
 
     unresolved = [ev for ev in all_events if not is_http(ev.get('image'))]
-    cache = {}
 
     def worker(ev):
-        local_cache = {}
-        changed, image = enrich_event(ev, local_cache)
-        return ev.get('id'), changed, image, local_cache
+        changed, image = enrich_event(ev)
+        return ev.get('id'), changed, image
 
     enriched = 0
     if unresolved:
@@ -167,8 +224,7 @@ def main():
             futures = [ex.submit(worker, ev) for ev in unresolved]
             result_by_id = {}
             for fut in concurrent.futures.as_completed(futures):
-                eid, changed, image, local_cache = fut.result()
-                cache.update(local_cache)
+                eid, changed, image = fut.result()
                 result_by_id[eid] = (changed, image)
         for ev in unresolved:
             changed, image = result_by_id.get(ev.get('id'), (False, None))

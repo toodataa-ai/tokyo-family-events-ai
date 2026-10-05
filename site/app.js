@@ -132,6 +132,13 @@ export async function loadWeekend(manifest,satIso){
     data.verification=null;
     data.events=applyVerification(data.events,null);
   }
+  if(data.run_file){
+    const rr=await fetch('data/'+data.run_file,{cache:'no-store'});
+    if(!rr.ok) throw new Error(`run manifest load failed: ${rr.status}`);
+    data.run=await rr.json();
+  }else{
+    data.run=null;
+  }
   return {entry,data};
 }
 

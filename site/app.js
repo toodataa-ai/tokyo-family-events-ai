@@ -38,7 +38,8 @@ export function eventSearchText(ev){
     ev.name, ev.ward, ev.venue, ev.description, ev.price, ev.period, ev.time,
     ...(Array.isArray(ev.categories) ? ev.categories : []),
     ev.family_fit?.reason, ev.family_fit?.age,
-    ev.reservation?.note
+    ev.reservation?.note,
+    ev.verification?.note
   ].filter(Boolean).join(' '));
 }
 
@@ -73,6 +74,28 @@ export function buildCopyUrl(filters){
   return 'copy.html' + (qs ? '?' + qs : '');
 }
 
+export function applyVerification(events, audit){
+  const rows = Array.isArray(audit?.events) ? audit.events : [];
+  const byId = new Map(rows.map(row => [row.id,row]));
+  return (events || []).map(ev => {
+    const row = byId.get(ev.id);
+    if(!row) return {...ev,verification:{status:'unverified'}};
+    const c = row.corrections && typeof row.corrections === 'object' ? row.corrections : {};
+    const merged = {...ev,...c};
+    if(c.family_fit) merged.family_fit={...(ev.family_fit||{}),...c.family_fit};
+    if(c.reservation) merged.reservation={...(ev.reservation||{}),...c.reservation};
+    merged.verification={
+      status:row.status || 'unverified',
+      source:row.source || '',
+      source_kind:row.source_kind || '',
+      fields:row.fields || {},
+      note:row.note || '',
+      verified_on:audit?.verified_on || ''
+    };
+    return merged;
+  });
+}
+
 export async function loadManifest(){
   const res = await fetch('data/manifest.json',{cache:'no-store'});
   if(!res.ok) throw new Error(`manifest load failed: ${res.status}`);
@@ -98,6 +121,16 @@ export async function loadWeekend(manifest,satIso){
     data.events=[...baseEvents,...shards.flat()];
   }else{
     data.events=baseEvents;
+  }
+  if(data.verification_file){
+    const vr=await fetch('data/'+data.verification_file,{cache:'no-store'});
+    if(!vr.ok) throw new Error(`verification load failed: ${vr.status}`);
+    const audit=await vr.json();
+    data.verification=audit;
+    data.events=applyVerification(data.events,audit);
+  }else{
+    data.verification=null;
+    data.events=applyVerification(data.events,null);
   }
   return {entry,data};
 }

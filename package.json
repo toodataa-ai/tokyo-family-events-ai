@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/copy_contract.test.mjs"
+    "test": "node tests/copy_contract.test.mjs && node tests/app_filter.test.mjs"
   }
 }

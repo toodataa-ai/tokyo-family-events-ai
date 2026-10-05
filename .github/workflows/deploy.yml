@@ -31,8 +31,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Enrich thumbnail URLs from official/source page metadata
+        run: python tools/enrich_images.py site/data
       - name: Validate event data strictly
-        run: python tools/validate_data.py --strict site/data
+        run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
       - name: Test copy contract and shared filters
         run: npm test
 
@@ -44,6 +46,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Enrich thumbnail URLs for published artifact
+        run: python tools/enrich_images.py site/data
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

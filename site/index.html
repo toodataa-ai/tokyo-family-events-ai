@@ -30,6 +30,7 @@
       <div class="metric"><b id="covCandidates">-</b><span>候補イベント</span></div>
       <div class="metric"><b id="covPublished">-</b><span>掲載イベント</span></div>
       <div class="metric"><b id="covVerified">-</b><span>公式確認済み</span></div>
+      <div class="metric"><b id="covPrompt">-</b><span>実行プロンプト</span></div>
     </div>
   </div>
 </section>
@@ -37,7 +38,7 @@
   <div class="result-head"><span id="resultLabel">読み込み中...</span><span id="generatedText"></span></div>
   <div class="grid" id="grid"></div>
 </main>
-<footer>AI探索後、掲載イベントを公式・主催者情報と再照合しています。開催直前の変更・中止はリンク先の公式情報もご確認ください。</footer>
+<footer>GitHubの最新版完全版プロンプトを解決してからAI探索し、掲載イベントを公式・主催者情報と再照合しています。開催直前の変更・中止はリンク先の公式情報もご確認ください。</footer>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,buildCopyUrl} from './app.js';
 
@@ -55,7 +56,11 @@ function renderCoverage(data){
   $('covCandidates').textContent=c.candidate_count ?? '-';
   $('covPublished').textContent=c.published_count ?? data.events.length;
   $('covVerified').textContent=`${v.verified ?? data.events.filter(x=>x.verification?.status==='verified').length}/${data.events.length}`;
-  const bits=[]; if(data.generated)bits.push(`探索生成 ${data.generated}`); if(data.verification?.verified_on)bits.push(`公式再確認 ${data.verification.verified_on}`);
+  $('covPrompt').textContent=data.run?.prompt?.version ?? '-';
+  const bits=[];
+  if(data.run?.prompt?.version)bits.push(`GitHub手順 ${data.run.prompt.version}`);
+  if(data.generated)bits.push(`探索生成 ${data.generated}`);
+  if(data.verification?.verified_on)bits.push(`公式再確認 ${data.verification.verified_on}`);
   $('generatedText').textContent=bits.join(' ／ ');
 }
 

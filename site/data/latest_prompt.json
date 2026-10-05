@@ -1,0 +1,6 @@
+{
+  "version": "v1.3",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.3.txt",
+  "updated_at": "2026-10-06",
+  "rule": "Every weekly event task must resolve this pointer first. Never infer the latest version from filename order. Whenever version or path changes, append a matching entry to site/data/prompt_history.json in the same update; old history entries must not be overwritten."
+}

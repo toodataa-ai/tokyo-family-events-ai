@@ -24,6 +24,22 @@
         "CIでprompt pointer/history/run manifest整合性を検証する方針を追加"
       ],
       "reason": "毎週ChatGPTが同じGitHub正本を参照し、競馬予想と同じ再現可能な手順で公式検証まで実行できるようにするため。"
+    },
+    {
+      "version": "v1.4",
+      "date": "2026-10-06",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.4.txt",
+      "summary": "6週間先までをローリング探索し、距離に応じて本番・先取り・予告の確度を分けて公開する方式へ拡張。",
+      "changes": [
+        "対象期間を単一週末から6週間ローリングへ拡張",
+        "horizon_index 1〜6 と publication_tier full/preview/announcement を導入",
+        "preview/announcementでは公式開催発表済みの announced ステータスを許容",
+        "announcedでもイベント名・開催日・会場は公式根拠必須と定義",
+        "近づくたびに再探索・再監査し announced から verified へ昇格する運用を追加",
+        "fullのみサムネイル70%ゲートを必須化し、遠い週は画像不足だけでは公開停止しない",
+        "manifestを使った複数週切替と6週間ナビゲーションを定義"
+      ],
+      "reason": "直前の週末だけでなく数週間先の家族予定を早めに把握できるようにしつつ、未確定情報を確定情報と混同しないため。"
     }
   ]
 }

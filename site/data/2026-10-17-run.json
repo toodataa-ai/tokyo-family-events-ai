@@ -16,7 +16,8 @@
   "source_data": {
     "week_file": "2026-10-17.json",
     "verification_file": "2026-10-17-verification.json",
-    "decision_file": "2026-10-17-decisions.json"
+    "decision_file": "2026-10-17-decisions.json",
+    "rereview_file": "2026-10-17-v16-rereview.json"
   },
   "stages": [
     {
@@ -80,6 +81,11 @@
       "evidence": "v1.5 native full re-search; CI is final gate"
     },
     {
+      "name": "v16_exclusion_rereview",
+      "status": "passed",
+      "evidence": "18 legacy-origin excluded candidates re-reviewed under v1.6; 13 promoted"
+    },
+    {
       "name": "deploy",
       "status": "pending",
       "evidence": "awaiting GitHub Actions"
@@ -88,16 +94,31 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 74,
-    "published": 53,
-    "excluded": 18,
+    "published": 66,
+    "excluded": 5,
     "duplicate_removed": 3,
-    "verified": 53,
+    "verified": 66,
     "announced": 0,
     "corrected": 0,
-    "thumbnail_count": 37,
-    "thumbnail_coverage": 0.698,
+    "thumbnail_count": 64,
+    "thumbnail_coverage": 0.97,
     "decision_audit_complete": true,
     "hard_excluded": 2,
-    "soft_excluded": 16
-  }
+    "soft_excluded": 16,
+    "v16_rereviewed": 18,
+    "v16_promoted": 13,
+    "v16_kept_excluded": 5
+  },
+  "postprocess_reviews": [
+    {
+      "version": "v1.6",
+      "prompt": {
+        "version": "v1.6",
+        "path": "prompts/tokyo_family_events_complete_prompt_v1.6.txt"
+      },
+      "mode": "targeted-exclusion-rereview",
+      "applied_at": "2026-10-07T08:37:32+09:00",
+      "review_file": "2026-10-17-v16-rereview.json"
+    }
+  ]
 }

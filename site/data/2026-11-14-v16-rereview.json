@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "review_version": "v1.6",
+  "rubric_version": "family-fit-v2",
+  "status": "applied",
+  "reviewed_at": "2026-10-07T08:37:32+09:00",
+  "base_prompt_version": "v1.5",
+  "prompt": {
+    "version": "v1.6",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.6.txt"
+  },
+  "scope": "legacy-origin candidates excluded by v1.5 only; no full rediscovery",
+  "summary": {
+    "reviewed": 6,
+    "promoted": 3,
+    "kept_soft_excluded": 3,
+    "kept_hard_excluded": 0
+  },
+  "reviews": [
+    {
+      "candidate_id": "lg-b7a5652ab1",
+      "name": "『鬼灯の冷徹』連載開始15周年記念 アニメイト特別展示",
+      "ward": "豊島区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "kept_excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "C",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "visual_appeal"
+      ],
+      "negative_signals": [
+        "narrow_fandom",
+        "passive_only"
+      ],
+      "primary_reason_code": "narrow_fandom",
+      "exclusion_type": "soft",
+      "hard_exclusion": null,
+      "reason": "特定作品ファン向けの展示・物販中心で、家族一般向け価値は限定的。",
+      "tradeoff_reason": "視覚展示として楽しめる余地はあるが、ファン特化と鑑賞・物販中心の複合要因で優先掲載しない。",
+      "evidence": [
+        {
+          "url": "https://event.amnibus.com/hozuki-animate/",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-eb2d16eb5a",
+      "name": "THE WORLD OF BIOHAZARD 30周年展",
+      "ward": "渋谷区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "kept_excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "C",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込等が必要。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "visual_appeal",
+        "iconic_or_rare"
+      ],
+      "negative_signals": [
+        "content_intensity",
+        "narrow_fandom"
+      ],
+      "primary_reason_code": "content_intensity",
+      "exclusion_type": "soft",
+      "hard_exclusion": null,
+      "reason": "子ども料金はあるが、ホラー・刺激の強い内容を含み、子連れ一般候補として注意が大きい。",
+      "tradeoff_reason": "展示の話題性は高いが、内容の刺激性を単独のsevere factorとして優先する。",
+      "evidence": [
+        {
+          "url": "https://bhre30th-exhibition.jp/",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-f627b341f3",
+      "name": "森万里子：燦燦",
+      "ward": "港区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "B",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "all_ages",
+        "free_or_low_cost",
+        "visual_appeal",
+        "learning_value",
+        "family_venue",
+        "iconic_or_rare"
+      ],
+      "negative_signals": [
+        "passive_only"
+      ],
+      "primary_reason_code": "family_value_high",
+      "exclusion_type": null,
+      "hard_exclusion": null,
+      "reason": "中学生以下無料で、視覚的展示や参加要素もある美術館体験として家族利用価値を認める。",
+      "tradeoff_reason": "",
+      "evidence": [
+        {
+          "url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-f2790eeed6",
+      "name": "国際美術展 TOKYO ATLAS",
+      "ward": "江東区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "B",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "all_ages",
+        "free_or_low_cost",
+        "daytime",
+        "visual_appeal",
+        "learning_value",
+        "flexible_visit"
+      ],
+      "negative_signals": [
+        "passive_only"
+      ],
+      "primary_reason_code": "family_value_high",
+      "exclusion_type": null,
+      "hard_exclusion": null,
+      "reason": "無料中心の国際美術展で、湾岸の複数会場を昼間に回遊できる文化・学習体験。",
+      "tradeoff_reason": "",
+      "evidence": [
+        {
+          "url": "https://tokyoatlas.jp/",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-2767294542",
+      "name": "【企画展】「海を渡ってきた植物の物語」",
+      "ward": "練馬区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "all_ages",
+        "daytime",
+        "learning_value",
+        "visual_appeal",
+        "family_venue",
+        "flexible_visit"
+      ],
+      "negative_signals": [
+        "passive_only"
+      ],
+      "primary_reason_code": "family_value_high",
+      "exclusion_type": null,
+      "hard_exclusion": null,
+      "reason": "植物・自然をテーマにした学習価値の高い展示で、子ども専用企画がなくても家族のおでかけ先として成立する。",
+      "tradeoff_reason": "",
+      "evidence": [
+        {
+          "url": "https://www.makinoteien.jp/",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-7301a33e4e",
+      "name": "練馬区演奏家協会20周年記念レクチャーコンサート 祝祭の響き―リコーダーとトリオ・ダンシュの華麗な音色―",
+      "ward": "練馬区",
+      "review_version": "v1.6",
+      "rubric_version": "family-fit-v2",
+      "reviewed_at": "2026-10-07T08:37:32+09:00",
+      "original_decision": "excluded",
+      "result": "kept_excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "C",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "年齢条件または内容上、幼児・小学生の一部に明確な不適合がある。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+          }
+        }
+      },
+      "positive_signals": [
+        "learning_value"
+      ],
+      "negative_signals": [
+        "age_mismatch",
+        "passive_only"
+      ],
+      "primary_reason_code": "age_mismatch",
+      "exclusion_type": "soft",
+      "hard_exclusion": null,
+      "reason": "未就学児入場不可で鑑賞中心のため、幼児を含む家族候補として適合範囲が狭い。",
+      "tradeoff_reason": "音楽学習価値はあるが、未就学児不可と鑑賞中心の複合条件から優先掲載しない。",
+      "evidence": [
+        {
+          "url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202607011782885407",
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+        }
+      ]
+    }
+  ]
+}

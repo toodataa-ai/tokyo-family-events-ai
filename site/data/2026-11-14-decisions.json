@@ -5,14 +5,17 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 38,
-    "published": 32,
-    "excluded": 6,
+    "published": 35,
+    "excluded": 3,
     "duplicate": 0,
     "hard_excluded": 0,
     "soft_excluded": 6,
     "reason_counts": {
       "family_value_low": 6
-    }
+    },
+    "v16_rereviewed": 6,
+    "v16_promoted": 3,
+    "v16_kept_excluded": 3
   },
   "decisions": [
     {
@@ -1140,18 +1143,18 @@
       },
       "hard_exclusion": null,
       "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "primary_reason_code": "narrow_fandom",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "narrow_fandom",
+        "passive_only"
       ],
       "reasons": [
-        "子ども向け要素や家族で参加する明確な価値を確認できない。"
+        "特定作品ファン向けの展示・物販中心で、家族一般向け価値は限定的。"
       ],
       "evidence": [
         {
           "url": "https://event.amnibus.com/hozuki-animate/",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
       "override_reason": "",
@@ -1164,7 +1167,70 @@
           "kind": "legacy_detail",
           "url": "https://www.ikebukuropark.info/hozuki-animate-ikebukuro-15th-exhibition-2026/"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "kept_excluded",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "C",
+          "axes": {
+            "child_target": {
+              "grade": "C",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "C",
+              "reason": "鑑賞・展示中心。"
+            },
+            "age_fit": {
+              "grade": "B",
+              "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+            },
+            "stay_flexibility": {
+              "grade": "B",
+              "reason": "一定の時間条件はあるが大きな制約はない。"
+            },
+            "burden": {
+              "grade": "A",
+              "reason": "大きな身体・時間負担は確認できない。"
+            },
+            "cost": {
+              "grade": "unknown",
+              "reason": "料金情報が十分でなく推測しない。"
+            },
+            "reservation": {
+              "grade": "B",
+              "reason": "大きな予約障壁は未確認。"
+            },
+            "family_value": {
+              "grade": "C",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "visual_appeal"
+        ],
+        "negative_signals": [
+          "narrow_fandom",
+          "passive_only"
+        ],
+        "primary_reason_code": "narrow_fandom",
+        "exclusion_type": "soft",
+        "hard_exclusion": null,
+        "reason": "特定作品ファン向けの展示・物販中心で、家族一般向け価値は限定的。",
+        "tradeoff_reason": "視覚展示として楽しめる余地はあるが、ファン特化と鑑賞・物販中心の複合要因で優先掲載しない。",
+        "evidence": [
+          {
+            "url": "https://event.amnibus.com/hozuki-animate/",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-667db596ec",
@@ -1421,18 +1487,18 @@
       },
       "hard_exclusion": null,
       "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "primary_reason_code": "content_intensity",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "content_intensity",
+        "narrow_fandom"
       ],
       "reasons": [
-        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+        "子ども料金はあるが、ホラー・刺激の強い内容を含み、子連れ一般候補として注意が大きい。"
       ],
       "evidence": [
         {
           "url": "https://bhre30th-exhibition.jp/",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
       "override_reason": "",
@@ -1445,13 +1511,77 @@
           "kind": "legacy_detail",
           "url": "https://www.miyashitapark.info/the-world-of-biohazard-30th-exhibition-2026/"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "kept_excluded",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "C",
+          "axes": {
+            "child_target": {
+              "grade": "C",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "B",
+              "reason": "会場回遊等の参加余地がある。"
+            },
+            "age_fit": {
+              "grade": "B",
+              "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+            },
+            "stay_flexibility": {
+              "grade": "A",
+              "reason": "回遊・自由観覧型で滞在調整しやすい。"
+            },
+            "burden": {
+              "grade": "A",
+              "reason": "大きな身体・時間負担は確認できない。"
+            },
+            "cost": {
+              "grade": "A",
+              "reason": "無料または無料要素があり負担が小さい。"
+            },
+            "reservation": {
+              "grade": "C",
+              "reason": "事前申込等が必要。"
+            },
+            "family_value": {
+              "grade": "C",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "visual_appeal",
+          "iconic_or_rare"
+        ],
+        "negative_signals": [
+          "content_intensity",
+          "narrow_fandom"
+        ],
+        "primary_reason_code": "content_intensity",
+        "exclusion_type": "soft",
+        "hard_exclusion": null,
+        "reason": "子ども料金はあるが、ホラー・刺激の強い内容を含み、子連れ一般候補として注意が大きい。",
+        "tradeoff_reason": "展示の話題性は高いが、内容の刺激性を単独のsevere factorとして優先する。",
+        "evidence": [
+          {
+            "url": "https://bhre30th-exhibition.jp/",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-f627b341f3",
       "name": "森万里子：燦燦",
       "ward": "港区",
-      "decision": "excluded",
+      "decision": "published",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -1491,22 +1621,21 @@
         "overall": "C"
       },
       "hard_exclusion": null,
-      "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "family_value_high"
       ],
       "reasons": [
-        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+        "中学生以下無料で、視覚的展示や参加要素もある美術館体験として家族利用価値を認める。"
       ],
       "evidence": [
         {
           "url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
-      "override_reason": "",
+      "override_reason": "中学生以下無料で、視覚的展示や参加要素もある美術館体験として家族利用価値を認める。",
       "discovery_sources": [
         {
           "kind": "legacy_media",
@@ -1516,7 +1645,74 @@
           "kind": "legacy_detail",
           "url": "https://www.roppongievents.com/mariko-mori-sansan-roppongi-2026/"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "published",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "B",
+          "axes": {
+            "child_target": {
+              "grade": "B",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "C",
+              "reason": "鑑賞・展示中心。"
+            },
+            "age_fit": {
+              "grade": "B",
+              "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+            },
+            "stay_flexibility": {
+              "grade": "A",
+              "reason": "回遊・自由観覧型で滞在調整しやすい。"
+            },
+            "burden": {
+              "grade": "C",
+              "reason": "夜間・混雑等の子連れ負担に注意。"
+            },
+            "cost": {
+              "grade": "A",
+              "reason": "無料または無料要素があり負担が小さい。"
+            },
+            "reservation": {
+              "grade": "B",
+              "reason": "大きな予約障壁は未確認。"
+            },
+            "family_value": {
+              "grade": "B",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "all_ages",
+          "free_or_low_cost",
+          "visual_appeal",
+          "learning_value",
+          "family_venue",
+          "iconic_or_rare"
+        ],
+        "negative_signals": [
+          "passive_only"
+        ],
+        "primary_reason_code": "family_value_high",
+        "exclusion_type": null,
+        "hard_exclusion": null,
+        "reason": "中学生以下無料で、視覚的展示や参加要素もある美術館体験として家族利用価値を認める。",
+        "tradeoff_reason": "",
+        "evidence": [
+          {
+            "url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-01c2d8de0f",
@@ -1592,7 +1788,7 @@
       "candidate_id": "lg-f2790eeed6",
       "name": "国際美術展 TOKYO ATLAS",
       "ward": "江東区",
-      "decision": "excluded",
+      "decision": "published",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -1632,19 +1828,18 @@
         "overall": "B"
       },
       "hard_exclusion": null,
-      "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "family_value_high"
       ],
       "reasons": [
-        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+        "無料中心の国際美術展で、湾岸の複数会場を昼間に回遊できる文化・学習体験。"
       ],
       "evidence": [
         {
           "url": "https://tokyoatlas.jp/",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
       "override_reason": "",
@@ -1657,7 +1852,74 @@
           "kind": "legacy_detail",
           "url": "https://www.odaibapark.com/tokyo-atlas-2026/"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "published",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "B",
+          "axes": {
+            "child_target": {
+              "grade": "B",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "B",
+              "reason": "会場回遊等の参加余地がある。"
+            },
+            "age_fit": {
+              "grade": "B",
+              "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+            },
+            "stay_flexibility": {
+              "grade": "A",
+              "reason": "回遊・自由観覧型で滞在調整しやすい。"
+            },
+            "burden": {
+              "grade": "A",
+              "reason": "大きな身体・時間負担は確認できない。"
+            },
+            "cost": {
+              "grade": "A",
+              "reason": "無料または無料要素があり負担が小さい。"
+            },
+            "reservation": {
+              "grade": "B",
+              "reason": "大きな予約障壁は未確認。"
+            },
+            "family_value": {
+              "grade": "B",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "all_ages",
+          "free_or_low_cost",
+          "daytime",
+          "visual_appeal",
+          "learning_value",
+          "flexible_visit"
+        ],
+        "negative_signals": [
+          "passive_only"
+        ],
+        "primary_reason_code": "family_value_high",
+        "exclusion_type": null,
+        "hard_exclusion": null,
+        "reason": "無料中心の国際美術展で、湾岸の複数会場を昼間に回遊できる文化・学習体験。",
+        "tradeoff_reason": "",
+        "evidence": [
+          {
+            "url": "https://tokyoatlas.jp/",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-6650016bca",
@@ -1733,7 +1995,7 @@
       "candidate_id": "lg-2767294542",
       "name": "【企画展】「海を渡ってきた植物の物語」",
       "ward": "練馬区",
-      "decision": "excluded",
+      "decision": "published",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -1773,19 +2035,18 @@
         "overall": "B"
       },
       "hard_exclusion": null,
-      "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "family_value_high"
       ],
       "reasons": [
-        "子ども向け要素や家族で参加する明確な価値を確認できない。"
+        "植物・自然をテーマにした学習価値の高い展示で、子ども専用企画がなくても家族のおでかけ先として成立する。"
       ],
       "evidence": [
         {
           "url": "https://www.makinoteien.jp/",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
       "override_reason": "",
@@ -1798,7 +2059,74 @@
           "kind": "legacy_detail",
           "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002885"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "published",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "A",
+          "axes": {
+            "child_target": {
+              "grade": "B",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "C",
+              "reason": "鑑賞・展示中心。"
+            },
+            "age_fit": {
+              "grade": "B",
+              "reason": "子ども専用ではないが、家族同伴で現実に楽しめる内容と判断。"
+            },
+            "stay_flexibility": {
+              "grade": "A",
+              "reason": "回遊・自由観覧型で滞在調整しやすい。"
+            },
+            "burden": {
+              "grade": "A",
+              "reason": "大きな身体・時間負担は確認できない。"
+            },
+            "cost": {
+              "grade": "A",
+              "reason": "無料または無料要素があり負担が小さい。"
+            },
+            "reservation": {
+              "grade": "B",
+              "reason": "大きな予約障壁は未確認。"
+            },
+            "family_value": {
+              "grade": "A",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "all_ages",
+          "daytime",
+          "learning_value",
+          "visual_appeal",
+          "family_venue",
+          "flexible_visit"
+        ],
+        "negative_signals": [
+          "passive_only"
+        ],
+        "primary_reason_code": "family_value_high",
+        "exclusion_type": null,
+        "hard_exclusion": null,
+        "reason": "植物・自然をテーマにした学習価値の高い展示で、子ども専用企画がなくても家族のおでかけ先として成立する。",
+        "tradeoff_reason": "",
+        "evidence": [
+          {
+            "url": "https://www.makinoteien.jp/",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-7301a33e4e",
@@ -1845,18 +2173,18 @@
       },
       "hard_exclusion": null,
       "exclusion_type": "soft",
-      "primary_reason_code": "family_value_low",
+      "primary_reason_code": "age_mismatch",
       "reason_codes": [
-        "family_value_low",
-        "child_program_absent"
+        "age_mismatch",
+        "passive_only"
       ],
       "reasons": [
-        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+        "未就学児入場不可で鑑賞中心のため、幼児を含む家族候補として適合範囲が狭い。"
       ],
       "evidence": [
         {
           "url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202607011782885407",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
         }
       ],
       "override_reason": "",
@@ -1869,7 +2197,70 @@
           "kind": "legacy_detail",
           "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002905"
         }
-      ]
+      ],
+      "v16_review": {
+        "review_version": "v1.6",
+        "rubric_version": "family-fit-v2",
+        "reviewed_at": "2026-10-07T08:37:32+09:00",
+        "original_decision": "excluded",
+        "result": "kept_excluded",
+        "family_fit": {
+          "rubric_version": "family-fit-v2",
+          "overall": "C",
+          "axes": {
+            "child_target": {
+              "grade": "C",
+              "reason": "子ども専用かではなく、公式の対象・全年齢性と実際の参加可能性で再評価。"
+            },
+            "interactivity": {
+              "grade": "B",
+              "reason": "会場回遊等の参加余地がある。"
+            },
+            "age_fit": {
+              "grade": "C",
+              "reason": "年齢条件または内容上、幼児・小学生の一部に明確な不適合がある。"
+            },
+            "stay_flexibility": {
+              "grade": "B",
+              "reason": "一定の時間条件はあるが大きな制約はない。"
+            },
+            "burden": {
+              "grade": "C",
+              "reason": "夜間・混雑等の子連れ負担に注意。"
+            },
+            "cost": {
+              "grade": "unknown",
+              "reason": "料金情報が十分でなく推測しない。"
+            },
+            "reservation": {
+              "grade": "B",
+              "reason": "大きな予約障壁は未確認。"
+            },
+            "family_value": {
+              "grade": "C",
+              "reason": "家族で一緒に行く理由・休日のおでかけ価値をpositive/negative signalsの双方から再評価。"
+            }
+          }
+        },
+        "positive_signals": [
+          "learning_value"
+        ],
+        "negative_signals": [
+          "age_mismatch",
+          "passive_only"
+        ],
+        "primary_reason_code": "age_mismatch",
+        "exclusion_type": "soft",
+        "hard_exclusion": null,
+        "reason": "未就学児入場不可で鑑賞中心のため、幼児を含む家族候補として適合範囲が狭い。",
+        "tradeoff_reason": "音楽学習価値はあるが、未就学児不可と鑑賞中心の複合条件から優先掲載しない。",
+        "evidence": [
+          {
+            "url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202607011782885407",
+            "basis": "v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"
+          }
+        ]
+      }
     },
     {
       "candidate_id": "lg-31b373f109",

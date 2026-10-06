@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-10-07T07:53:00+09:00",
+  "mode": "v1.5-native-full-research",
+  "source_commit": "da2c57d2f3a87984fd1bbe9f466bac1a504aa5c4",
+  "weeks": [
+    {
+      "sat": "2026-10-10",
+      "candidates": 95,
+      "published": 71,
+      "excluded": 19,
+      "duplicate": 5,
+      "hard_excluded": 2,
+      "soft_excluded": 17
+    },
+    {
+      "sat": "2026-10-17",
+      "candidates": 74,
+      "published": 53,
+      "excluded": 18,
+      "duplicate": 3,
+      "hard_excluded": 2,
+      "soft_excluded": 16
+    },
+    {
+      "sat": "2026-10-24",
+      "candidates": 65,
+      "published": 51,
+      "excluded": 12,
+      "duplicate": 2,
+      "hard_excluded": 2,
+      "soft_excluded": 10
+    },
+    {
+      "sat": "2026-10-31",
+      "candidates": 51,
+      "published": 40,
+      "excluded": 9,
+      "duplicate": 2,
+      "hard_excluded": 1,
+      "soft_excluded": 8
+    },
+    {
+      "sat": "2026-11-07",
+      "candidates": 42,
+      "published": 34,
+      "excluded": 6,
+      "duplicate": 2,
+      "hard_excluded": 0,
+      "soft_excluded": 6
+    },
+    {
+      "sat": "2026-11-14",
+      "candidates": 38,
+      "published": 32,
+      "excluded": 6,
+      "duplicate": 0,
+      "hard_excluded": 0,
+      "soft_excluded": 6
+    }
+  ],
+  "note": "All six weekends were regenerated under v1.5 with migration_incomplete=false and passed prompt governance, strict event validation, strict decision validation, and npm tests before publication trigger."
+}

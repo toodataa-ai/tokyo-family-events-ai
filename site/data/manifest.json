@@ -1,14 +1,22 @@
 {
-  "schema_version": 1,
-  "generated": "2026-10-06T07:52:00+09:00",
+  "schema_version": 2,
+  "generated": "2026-10-06T11:44:00+09:00",
   "default": "2026-10-10",
+  "rolling_horizon_weeks": 6,
+  "publication_tiers": {
+    "full": "今週〜2週間先。全掲載イベントを公式確認済みにする",
+    "preview": "3〜4週間先。公式開催発表済みを先取りし詳細待ちを許容する",
+    "announcement": "5〜6週間先。日付・会場を公式確認できたイベントを早期掲載する"
+  },
   "weekends": [
     {
       "sat": "2026-10-10",
       "sun": "2026-10-11",
       "label": "10/10(土)〜10/11(日)",
       "file": "2026-10-10.json",
-      "count": 37
+      "count": 37,
+      "horizon_index": 1,
+      "publication_tier": "full"
     }
   ]
 }

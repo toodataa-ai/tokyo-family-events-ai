@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "rubric_version": "family-fit-v2",
+  "updated_at": "2026-10-07",
+  "purpose": "v1.5のレガシー差分35件から抽出した、子連れ適性の過剰除外を防ぐ回帰ケース。次回探索時に同型判断を監査する。",
+  "cases": [
+    {
+      "name": "POP UP BOX「まんが日本昔ばなし展」",
+      "pattern": "文化・物語・視覚展示",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only",
+        "family_value_low_only"
+      ],
+      "reason": "子ども専用企画の明示が弱くても、物語・視覚展示として家族共有価値を評価する。"
+    },
+    {
+      "name": "北海道まるごとフェアinサンシャインシティ",
+      "pattern": "食・物産・商業施設・昼間",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only"
+      ],
+      "reason": "一般向け物産展でも、昼間・家族会場・食の共有価値を評価する。"
+    },
+    {
+      "name": "龍の舞",
+      "pattern": "伝統芸能・見世物・昼間",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only",
+        "passive_only_only"
+      ],
+      "reason": "子ども専用企画がなくても、伝統芸能の視覚的・文化的価値を評価する。"
+    },
+    {
+      "name": "Gelato Collection",
+      "pattern": "食・スイーツ",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only"
+      ],
+      "reason": "食イベントを子ども向け明示の有無だけで落とさない。"
+    },
+    {
+      "name": "第2回日本食文化伝承会「いも煮会」",
+      "pattern": "食文化・季節行事",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only"
+      ],
+      "reason": "食文化・季節性は家族のおでかけ価値として扱う。"
+    },
+    {
+      "name": "企画展「海を渡ってきた植物の物語」",
+      "pattern": "自然・植物・学習展示",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "passive_only_only",
+        "child_program_absent_only"
+      ],
+      "reason": "受動展示でも自然・学習価値があれば家族候補となる。"
+    },
+    {
+      "name": "アーツ中村橋 2026",
+      "pattern": "地域文化・回遊",
+      "expected": "publish_or_manual_review",
+      "forbid": [
+        "child_program_absent_only"
+      ],
+      "reason": "地域文化・街歩き・回遊性を家族価値として評価する。"
+    },
+    {
+      "name": "てんぼうパーク×ときめきメモリアル Girl's Side",
+      "pattern": "IP・特定ファン",
+      "expected": "manual_review",
+      "forbid": [
+        "narrow_fandom_only",
+        "overall_a_soft_exclusion"
+      ],
+      "reason": "ファン向けであることだけを成人向け・低価値と扱わない。overall=Aとの除外矛盾を禁止する。"
+    },
+    {
+      "name": "お祭りBBQビアガーデン",
+      "pattern": "酒類あり",
+      "expected": "context_dependent",
+      "forbid": [
+        "alcohol_available_only"
+      ],
+      "reason": "酒類販売の存在と、酒類消費がイベントの主目的かを分ける。"
+    },
+    {
+      "name": "新宿歌舞伎町春画展WA",
+      "pattern": "子連れ不適切内容",
+      "expected": "hard_exclude",
+      "required_hard_code": "safety_unsuitable",
+      "reason": "Hard exclusionの正例。"
+    },
+    {
+      "name": "妖怪盆踊り2026",
+      "pattern": "23区外",
+      "expected": "hard_exclude",
+      "required_hard_code": "outside_23wards",
+      "reason": "地理Hard exclusionの正例。"
+    }
+  ]
+}

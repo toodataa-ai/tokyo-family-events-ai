@@ -1,48 +1,128 @@
 {
-  "schema_version": 1,
-  "rubric_version": "family-fit-v1",
-  "updated_at": "2026-10-06",
+  "schema_version": 2,
+  "rubric_version": "family-fit-v2",
+  "updated_at": "2026-10-07",
   "scale": {
-    "A": "家族利用に明確な強みがある",
-    "B": "家族利用に適するが条件・弱点もある",
-    "C": "注意点が大きいが家族価値次第で候補になりうる",
-    "D": "家族利用の適性が低い。ただしHard exclusionではない限り自動除外しない",
+    "A": "家族利用に明確な強みがあり、積極的に候補に残す",
+    "B": "家族利用に十分適する。弱点があっても原則掲載寄り",
+    "C": "家族価値または適合性に不確実・弱い点があり比較検討が必要",
+    "D": "家族利用の適性が低い。ただしHard exclusionでない限り根拠比較を行う",
     "unknown": "公式情報等から判断できない"
   },
   "axes": {
-    "child_target": {"label":"子ども対象度","question":"子ども・親子が明示対象か、子どもが自然に参加できる設計か"},
-    "interactivity": {"label":"体験性","question":"工作・遊び・参加・観察など能動的な体験があるか"},
-    "age_fit": {"label":"年齢適合","question":"幼児・小学生が実際に楽しめる内容・時間・難易度か"},
-    "stay_flexibility": {"label":"滞在自由度","question":"途中入退場や短時間参加など家族都合に合わせやすいか"},
-    "burden": {"label":"安全・負担","question":"夜間、混雑、騒音、長時間、移動、安全面の負担が小さいか。Aほど負担が小さい"},
-    "cost": {"label":"費用負担","question":"家族単位で見た料金が現実的か。Aほど負担が小さい"},
-    "reservation": {"label":"予約難易度","question":"当日参加・空き状況・締切を含め実際に参加しやすいか。Aほど参加しやすい"},
-    "family_value": {"label":"家族価値","question":"子ども専用か否かにかかわらず、家族でわざわざ行く価値・特別感があるか"}
+    "child_target": {
+      "label": "子ども対象度",
+      "question": "子ども・親子が明示対象か。明示がなくても他軸を下げる根拠にはしない"
+    },
+    "interactivity": {
+      "label": "体験性",
+      "question": "工作・遊び・参加・観察・回遊など能動的要素があるか。鑑賞中心でも自動減点しすぎない"
+    },
+    "age_fit": {
+      "label": "年齢適合",
+      "question": "主対象ではなくても幼児・小学生が現実に理解・鑑賞・参加して楽しめるか"
+    },
+    "stay_flexibility": {
+      "label": "滞在自由度",
+      "question": "途中入退場、短時間参加、回遊など家族都合に合わせやすいか"
+    },
+    "burden": {
+      "label": "安全・負担",
+      "question": "夜間、混雑、騒音、長時間、移動、安全面の負担が小さいか。Aほど負担が小さい"
+    },
+    "cost": {
+      "label": "費用負担",
+      "question": "家族単位の料金が体験価値に対して現実的か。Aほど負担が小さい"
+    },
+    "reservation": {
+      "label": "予約難易度",
+      "question": "当日参加、空き、締切を含め実際に参加しやすいか。Aほど参加しやすい"
+    },
+    "family_value": {
+      "label": "家族実質価値",
+      "question": "子ども専用かに関係なく、家族で一緒に行く理由・休日のおでかけ価値・特別感があるか"
+    }
+  },
+  "positive_signals": {
+    "child_explicit": "子ども・親子向け明示",
+    "all_ages": "全年齢で参加可能",
+    "daytime": "主時間帯が昼間",
+    "free_or_low_cost": "無料または低負担",
+    "flexible_visit": "回遊・短時間参加・途中入退場しやすい",
+    "hands_on": "体験・参加要素",
+    "visual_appeal": "視覚的に子どもも楽しみやすい",
+    "learning_value": "自然・科学・歴史・文化等の学び",
+    "seasonal_or_festival": "季節・祭り・特別感",
+    "food_or_market": "食・物産・市場として共有しやすい",
+    "transport_or_animal": "乗り物・動物等の強い家族訴求",
+    "family_venue": "家族利用しやすい会場",
+    "iconic_or_rare": "希少性・話題性・特別な体験"
   },
   "hard_exclusions": {
-    "adult_only":"成人限定・成人向け限定",
-    "minors_prohibited":"未成年・子ども入場不可",
-    "safety_unsuitable":"子ども同伴に明確に不適切な危険条件",
-    "outside_23wards":"東京23区外",
-    "date_mismatch":"対象週末と不一致",
-    "no_official_basis":"本番段階で開催根拠を確認できない",
-    "cancelled_or_postponed":"中止または対象週外へ延期"
+    "adult_only": "成人限定・成人向け限定",
+    "minors_prohibited": "未成年・子ども入場不可",
+    "safety_unsuitable": "子ども同伴に明確に不適切",
+    "outside_23wards": "東京23区外",
+    "date_mismatch": "対象週末と不一致",
+    "no_official_basis": "本番段階で開催根拠を確認できない",
+    "cancelled_or_postponed": "中止または対象週外へ延期"
   },
   "soft_reason_codes": {
-    "adult_oriented":"成人向け要素が強い",
-    "child_program_absent":"子ども専用企画が確認できない",
-    "passive_only":"観覧中心",
-    "night_burden":"夜間負担",
-    "crowd_burden":"混雑負担",
-    "high_cost":"家族利用時に高額",
-    "reservation_difficult":"予約・締切上の参加難易度が高い",
-    "age_mismatch":"主対象年齢とのズレ",
-    "family_value_low":"家族のおでかけとして相対価値が低い",
-    "family_value_high":"注意点を上回る家族価値がある"
+    "alcohol_primary": "酒類消費がイベントの主目的",
+    "adult_oriented": "内容自体が成人向けに強く寄る",
+    "narrow_fandom": "特定ファン層中心",
+    "specialist_content": "専門性が高く子どもが楽しみにくい",
+    "passive_only": "鑑賞中心",
+    "night_burden": "夜間負担",
+    "crowd_burden": "強い混雑負担",
+    "high_cost": "家族利用時に高額",
+    "reservation_difficult": "予約・締切上の参加難易度が高い",
+    "reservation_unavailable": "受付終了等で実質参加不能",
+    "age_mismatch": "年齢との明確なズレ",
+    "child_program_absent": "子ども専用企画が確認できない",
+    "family_value_low": "家族のおでかけとして相対価値が低いという総括",
+    "late_night_primary": "主時間帯が子連れには遅すぎる",
+    "extreme_cost": "家族利用時の費用が極端に高い",
+    "content_intensity": "怖さ・刺激等が強い"
   },
+  "material_negative_codes": [
+    "adult_oriented",
+    "narrow_fandom",
+    "specialist_content",
+    "passive_only",
+    "night_burden",
+    "crowd_burden",
+    "high_cost",
+    "reservation_difficult",
+    "age_mismatch"
+  ],
+  "severe_single_factor_codes": [
+    "alcohol_primary",
+    "reservation_unavailable",
+    "late_night_primary",
+    "extreme_cost",
+    "content_intensity"
+  ],
+  "weak_non_decisive_codes": [
+    "child_program_absent",
+    "family_value_low"
+  ],
   "policy": {
     "hard_exclusion_is_automatic": true,
     "overall_grade_is_automatic_exclusion": false,
+    "presumptive_publish_when_family_value_and_age_fit_ab": true,
+    "soft_exclusion_min_material_negatives": 2,
+    "severe_single_factor_can_soft_exclude": true,
+    "overall_a_soft_exclusion_forbidden": true,
+    "overall_b_soft_exclusion_requires_tradeoff_reason": true,
+    "family_value_low_cannot_be_primary_reason": true,
+    "child_program_absent_cannot_be_primary_reason": true,
+    "child_program_absent_does_not_count_as_material_negative": true,
+    "family_value_low_does_not_count_as_material_negative": true,
+    "narrow_fandom_alone_cannot_exclude": true,
+    "passive_only_alone_cannot_exclude": true,
+    "alcohol_available_is_not_alcohol_primary": true,
+    "fandom_is_not_adult_oriented_by_default": true,
     "published_c_or_d_requires_override_reason": true,
     "unknown_must_not_be_guessed": true,
     "diagnostic_score_is_not_a_publication_threshold": true

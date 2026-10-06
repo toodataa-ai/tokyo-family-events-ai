@@ -1,6 +1,6 @@
 {
-  "version": "v1.5",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.5.txt",
-  "updated_at": "2026-10-06",
-  "rule": "Every event discovery task must resolve this pointer first. v1.5 requires legacy-source discovery integration, family-fit-v1 eight-axis candidate evaluation, hard/soft exclusion separation, candidate-level decision audit, and reason visibility. Never infer the latest version from filename order."
+  "version": "v1.6",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.6.txt",
+  "updated_at": "2026-10-07",
+  "rule": "Every new discovery run must resolve this pointer first. v1.6 uses family-fit-v2: child-target absence is not a rejection reason, soft exclusion needs multiple material negatives or a severe single factor, vague family_value_low/child_program_absent cannot be primary reasons, and regression cases must be checked. Historical published runs remain valid when their prompt version/path matches prompt_history."
 }

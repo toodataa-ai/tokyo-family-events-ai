@@ -15,7 +15,11 @@
       "date": "2026-10-06",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.3.txt",
       "summary": "競馬予想と同じ最新版ポインタ方式を採用し、探索から検証・公開までを単一の完全版手順として固定。",
-      "changes": ["latest_promptポインタ導入","探索・候補固定・画像・公式再監査・run manifestを正本化","CIでprompt governanceを検証"],
+      "changes": [
+        "latest_promptポインタ導入",
+        "探索・候補固定・画像・公式再監査・run manifestを正本化",
+        "CIでprompt governanceを検証"
+      ],
       "reason": "毎週同じGitHub正本を参照し再現可能にするため。"
     },
     {
@@ -23,7 +27,13 @@
       "date": "2026-10-06",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.4.txt",
       "summary": "6週間先までをローリング探索し、本番・先取り・予告の確度を分けて公開する方式へ拡張。",
-      "changes": ["6週間ローリング化","full/preview/announcement導入","announced導入","近づくたび再監査","6週間ナビゲーション追加"],
+      "changes": [
+        "6週間ローリング化",
+        "full/preview/announcement導入",
+        "announced導入",
+        "近づくたび再監査",
+        "6週間ナビゲーション追加"
+      ],
       "reason": "数週間先の家族予定を早めに把握しつつ未確定情報を区別するため。"
     },
     {
@@ -41,6 +51,24 @@
         "専用decision Validatorとサイト上の判断理由可視化を追加"
       ],
       "reason": "イベントを見つけるRecallを上げつつ、特に子連れ適性で何を理由に落としたのかを後から検証し、評価ロジックを継続的にブラッシュアップできるようにするため。"
+    },
+    {
+      "version": "v1.6",
+      "date": "2026-10-07",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.6.txt",
+      "summary": "子ども向け明記の有無ではなく家族の実質価値を優先し、Soft除外に具体的な複数根拠を要求するfamily-fit-v2へ更新。",
+      "changes": [
+        "child_targetとfamily_valueを明確に分離し、子ども専用企画なしを単独除外理由にすることを禁止",
+        "positive_signals/negative_signalsを導入し良い点と悪い点を両方監査",
+        "Soft除外はmaterial negative 2個以上またはsevere signal 1個以上を必須化",
+        "overall=AのSoft除外を禁止、overall=BのSoft除外はtradeoff_reason必須",
+        "family_value_lowとchild_program_absentをprimary_reason_codeとして禁止",
+        "narrow_fandom・passive_only単独での除外を禁止",
+        "酒類販売とalcohol_primary、IPファン向けとadult_orientedを区別",
+        "v1.5差分35件から回帰ケースを作成",
+        "historical runは履歴上のprompt/versionと一致すれば最新ポインタ更新後も有効とするgovernanceへ改善"
+      ],
+      "reason": "レガシーには載るがv1.5で除外された35件を監査した結果、一般向け・文化・食・展示・ファンイベントを子ども明記不足や曖昧なfamily_value_lowで過剰除外する傾向が見つかったため。"
     }
   ]
 }

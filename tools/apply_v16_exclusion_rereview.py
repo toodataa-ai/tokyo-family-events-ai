@@ -131,6 +131,8 @@ def review_obj(row, result, overall, positives, negatives, primary, ex_type, rea
         "positive_signals":positives,
         "negative_signals":negatives,
         "primary_reason_code":primary,
+        "exclusion_type":ex_type,
+        "hard_exclusion":primary if ex_type=="hard" else None,
         "reason":reason,
         "tradeoff_reason":tradeoff,
         "evidence":[{"url":evidence_url(row),"basis":"v1.6除外再審査。公式・主催者情報と旧decision evidenceを再確認。"}],

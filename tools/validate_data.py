@@ -10,6 +10,9 @@ WARDS = [
 HTTP_RE = re.compile(r'^https?://', re.I)
 FIELD_STATES = {'pass','corrected','unknown','not_applicable'}
 CORE_VERIFIED_FIELDS = ('name','date','venue')
+PUBLICATION_TIERS = {'full','preview','announcement'}
+VERIFICATION_STATUSES = {'verified','announced'}
+ANNOUNCEMENT_SOURCE_KINDS = {'official','organizer_official','official_tourism','public_official','venue_official'}
 
 
 def canonical_url(value):
@@ -33,6 +36,16 @@ def iso_date(value):
         return datetime.date.fromisoformat(str(value))
     except Exception:
         return None
+
+
+def expected_tier(horizon_index):
+    if horizon_index in (1, 2):
+        return 'full'
+    if horizon_index in (3, 4):
+        return 'preview'
+    if horizon_index in (5, 6):
+        return 'announcement'
+    return None
 
 
 def merge_corrections(ev, corrections):
@@ -86,7 +99,39 @@ def load_week(path):
     return data, events, errors
 
 
-def load_and_apply_verification(path, data, events, strict=False):
+def validate_run_manifest(path, data, tier, horizon_index, strict=False):
+    errors, warnings = [], []
+    filename = data.get('run_file')
+    if not filename:
+        if strict:
+            errors.append(f'{path}: strict mode requires run_file')
+        return None, errors, warnings
+    if not isinstance(filename, str) or not filename.endswith('.json') or '/' in filename or '\\' in filename:
+        errors.append(f'{path}: invalid run_file {filename!r}')
+        return None, errors, warnings
+    run_path = path.parent / filename
+    if not run_path.exists():
+        errors.append(f'{path}: missing run manifest {run_path}')
+        return None, errors, warnings
+    try:
+        run = json.loads(run_path.read_text(encoding='utf-8'))
+    except Exception as exc:
+        errors.append(f'{path}: invalid run manifest JSON {run_path}: {exc}')
+        return None, errors, warnings
+
+    rt = run.get('publication_tier')
+    rh = run.get('horizon_index')
+    if rt is not None and rt != tier:
+        errors.append(f'{run_path}: publication_tier={rt} != week tier={tier}')
+    if rh is not None and horizon_index is not None and rh != horizon_index:
+        errors.append(f'{run_path}: horizon_index={rh} != week horizon_index={horizon_index}')
+    summary = run.get('summary') or {}
+    if 'announced' not in summary:
+        warnings.append(f'{run_path}: summary.announced is missing; v1.4 runs should record it')
+    return run, errors, warnings
+
+
+def load_and_apply_verification(path, data, events, tier='full', strict=False):
     errors, warnings = [], []
     filename = data.get('verification_file')
     if not filename:
@@ -129,11 +174,24 @@ def load_and_apply_verification(path, data, events, strict=False):
             errors.append(f'{audit_path}: duplicate verification id {eid}')
             continue
         by_id[eid] = row
-        if strict and row.get('status') != 'verified':
-            errors.append(f'{audit_path}: {eid} is not verified')
+
+        status = row.get('status')
+        if status not in VERIFICATION_STATUSES:
+            errors.append(f'{audit_path}: {eid} invalid verification status {status!r}')
+        elif strict and tier == 'full' and status != 'verified':
+            errors.append(f'{audit_path}: {eid} full tier requires status=verified')
+        elif strict and tier in ('preview','announcement') and status not in ('verified','announced'):
+            errors.append(f'{audit_path}: {eid} {tier} tier requires verified/announced')
+
         source = row.get('source')
         if not source or not HTTP_RE.match(str(source)):
             errors.append(f'{audit_path}: {eid} requires http(s) verification source')
+        source_kind = row.get('source_kind')
+        if status == 'announced' and source_kind not in ANNOUNCEMENT_SOURCE_KINDS:
+            errors.append(f'{audit_path}: {eid} announced requires official source_kind, got {source_kind!r}')
+        if status == 'announced' and not str(row.get('note') or '').strip():
+            errors.append(f'{audit_path}: {eid} announced requires note describing pending details')
+
         fields = row.get('fields')
         if not isinstance(fields, dict):
             errors.append(f'{audit_path}: {eid} fields must be object')
@@ -180,22 +238,48 @@ def load_and_apply_verification(path, data, events, strict=False):
 
     summary = audit.get('summary') or {}
     verified_count = sum(1 for r in rows if isinstance(r, dict) and r.get('status') == 'verified')
+    announced_count = sum(1 for r in rows if isinstance(r, dict) and r.get('status') == 'announced')
     if summary.get('total') != len(events):
         errors.append(f'{audit_path}: summary.total={summary.get("total")} != events={len(events)}')
     if summary.get('verified') != verified_count:
         errors.append(f'{audit_path}: summary.verified={summary.get("verified")} != verified rows={verified_count}')
-    if strict and verified_count != len(events):
-        errors.append(f'{audit_path}: strict mode requires all {len(events)} events verified, got {verified_count}')
+    if announced_count and summary.get('announced') != announced_count:
+        errors.append(f'{audit_path}: summary.announced={summary.get("announced")} != announced rows={announced_count}')
+    if summary.get('announced') not in (None, announced_count):
+        errors.append(f'{audit_path}: summary.announced={summary.get("announced")} != announced rows={announced_count}')
 
-    print(f'VERIFICATION {path.name}: {verified_count}/{len(events)} verified ({audit.get("verified_on")})')
+    if strict and tier == 'full' and verified_count != len(events):
+        errors.append(f'{audit_path}: full tier requires all {len(events)} events verified, got {verified_count}')
+    if strict and tier in ('preview','announcement') and verified_count + announced_count != len(events):
+        errors.append(f'{audit_path}: {tier} tier requires all events verified/announced')
+
+    print(f'VERIFICATION {path.name}: verified={verified_count}, announced={announced_count}, total={len(events)} ({audit.get("verified_on")})')
     return corrected, audit, errors, warnings
 
 
-def validate_week(path, strict=False, min_image_coverage=0.0):
+def validate_week(path, entry=None, strict=False, min_image_coverage=0.0):
     errors, warnings = [], []
     data, events, load_errors = load_week(path)
     errors.extend(load_errors)
-    events, audit, verify_errors, verify_warnings = load_and_apply_verification(path, data, events, strict)
+
+    tier = data.get('publication_tier') or (entry or {}).get('publication_tier') or 'full'
+    horizon_index = data.get('horizon_index') or (entry or {}).get('horizon_index')
+    if tier not in PUBLICATION_TIERS:
+        errors.append(f'{path}: invalid publication_tier {tier!r}')
+        tier = 'full'
+    if horizon_index is not None:
+        if not isinstance(horizon_index, int) or not 1 <= horizon_index <= 6:
+            errors.append(f'{path}: horizon_index must be 1..6')
+        else:
+            exp = expected_tier(horizon_index)
+            if exp and tier != exp:
+                errors.append(f'{path}: horizon_index {horizon_index} expects tier {exp}, got {tier}')
+
+    _, run_errors, run_warnings = validate_run_manifest(path, data, tier, horizon_index, strict)
+    errors.extend(run_errors)
+    warnings.extend(run_warnings)
+
+    events, audit, verify_errors, verify_warnings = load_and_apply_verification(path, data, events, tier, strict)
     errors.extend(verify_errors)
     warnings.extend(verify_warnings)
     coverage = data.get('coverage') or {}
@@ -209,6 +293,12 @@ def validate_week(path, strict=False, min_image_coverage=0.0):
         errors.append(f'{path}: invalid sat/sun')
     elif (sun - sat).days != 1:
         warnings.append(f'{path}: weekend span is not exactly 2 days')
+
+    if entry:
+        if entry.get('sat') and entry.get('sat') != data.get('sat'):
+            errors.append(f'{path}: manifest sat {entry.get("sat")} != data sat {data.get("sat")}')
+        if entry.get('sun') and entry.get('sun') != data.get('sun'):
+            errors.append(f'{path}: manifest sun {entry.get("sun")} != data sun {data.get("sun")}')
 
     wards = coverage.get('wards') or []
     ward_rows = {row.get('ward'): row for row in wards if isinstance(row, dict)}
@@ -262,7 +352,7 @@ def validate_week(path, strict=False, min_image_coverage=0.0):
 
         for key in ('url','official_url','source','image'):
             value = ev.get(key)
-            if value and not HTTP_RE.match(value):
+            if value and not HTTP_RE.match(str(value)):
                 errors.append(f'{prefix}: {key} must be http(s): {value}')
         if ev.get('image') and HTTP_RE.match(str(ev.get('image'))):
             image_count += 1
@@ -317,10 +407,17 @@ def validate_week(path, strict=False, min_image_coverage=0.0):
 
     image_coverage = (image_count / len(events)) if events else 1.0
     if min_image_coverage and image_coverage < min_image_coverage:
-        errors.append(
-            f'{path}: thumbnail coverage {image_count}/{len(events)}={image_coverage:.1%} '
-            f'is below required {min_image_coverage:.0%}'
-        )
+        if tier == 'full':
+            errors.append(
+                f'{path}: full-tier thumbnail coverage {image_count}/{len(events)}={image_coverage:.1%} '
+                f'is below required {min_image_coverage:.0%}'
+            )
+        else:
+            warnings.append(
+                f'{path}: {tier} thumbnail coverage {image_count}/{len(events)}={image_coverage:.1%}; '
+                'image gate is deferred until full tier'
+            )
+    print(f'WEEK {path.name}: tier={tier}, horizon={horizon_index}, events={len(events)}')
     print(f'IMAGE COVERAGE {path.name}: {image_count}/{len(events)} ({image_coverage:.1%})')
 
     return errors, warnings, len(events)
@@ -349,17 +446,43 @@ def main():
     if manifest.get('default') and manifest.get('default') not in {w.get('sat') for w in weekends}:
         errors.append('manifest: default does not point to a listed weekend')
 
-    listed_files = set()
+    rolling = manifest.get('rolling_horizon_weeks')
+    if rolling is not None and rolling != 6:
+        errors.append(f'manifest: rolling_horizon_weeks must be 6, got {rolling}')
+    if rolling == 6 and len(weekends) < 6:
+        warnings.append(f'manifest: rolling horizon configured for 6 weeks but only {len(weekends)} week(s) currently published')
+
+    listed_files, listed_sats, listed_horizons = set(), set(), set()
     for entry in weekends:
         filename = str(entry.get('file',''))
+        sat = entry.get('sat')
         if filename in listed_files:
             errors.append(f'manifest: duplicate weekend file {filename}')
         listed_files.add(filename)
+        if sat in listed_sats:
+            errors.append(f'manifest: duplicate weekend sat {sat}')
+        listed_sats.add(sat)
+
+        horizon_index = entry.get('horizon_index')
+        tier = entry.get('publication_tier') or 'full'
+        if horizon_index is not None:
+            if not isinstance(horizon_index, int) or not 1 <= horizon_index <= 6:
+                errors.append(f'manifest: {filename} horizon_index must be 1..6')
+            else:
+                if horizon_index in listed_horizons:
+                    errors.append(f'manifest: duplicate horizon_index {horizon_index}')
+                listed_horizons.add(horizon_index)
+                exp = expected_tier(horizon_index)
+                if exp != tier:
+                    errors.append(f'manifest: horizon_index {horizon_index} expects {exp}, got {tier}')
+        if tier not in PUBLICATION_TIERS:
+            errors.append(f'manifest: invalid publication_tier {tier!r} for {filename}')
+
         p = args.data_dir / filename
         if not p.exists():
             errors.append(f'manifest: missing data file {p}')
             continue
-        e, w, event_count = validate_week(p, args.strict, args.min_image_coverage)
+        e, w, event_count = validate_week(p, entry, args.strict, args.min_image_coverage)
         errors.extend(e)
         warnings.extend(w)
         if entry.get('count') != event_count:
@@ -372,7 +495,7 @@ def main():
     if errors:
         print(f'FAILED: {len(errors)} error(s), {len(warnings)} warning(s)')
         return 1
-    print(f'OK: {len(weekends)} weekend file(s), {len(warnings)} warning(s)')
+    print(f'OK: {len(weekends)} weekend file(s), rolling_horizon={rolling or "legacy"}, {len(warnings)} warning(s)')
     return 0
 
 if __name__ == '__main__':

@@ -3,9 +3,27 @@ export const WARDS = [
   '世田谷区','渋谷区','中野区','杉並区','豊島区','北区','荒川区','板橋区','練馬区','足立区','葛飾区','江戸川区'
 ];
 
+export const PUBLICATION_TIERS = {
+  full:{label:'本番',description:'今週〜2週間先。全掲載イベントを公式確認済み'},
+  preview:{label:'先取り',description:'3〜4週間先。公式発表済み、詳細待ちを含む'},
+  announcement:{label:'予告',description:'5〜6週間先。日付・会場を公式確認済み'},
+  planned:{label:'取得前',description:'ローリング探索の対象。次回更新で取得'}
+};
+
+export const VERIFICATION_STATES = {
+  verified:{label:'✓ 公式確認済み',className:'verify-ok'},
+  announced:{label:'○ 開催発表済み・詳細待ち',className:'verify-announced'},
+  unverified:{label:'要確認',className:'verify-pending'}
+};
+
 export function isoLocal(d){
   const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
   return `${y}-${m}-${day}`;
+}
+
+export function addDays(dateStr,days){
+  const [y,m,d]=dateStr.split('-').map(Number);
+  return isoLocal(new Date(y,m-1,d+days));
 }
 
 export function defaultDate(){
@@ -29,6 +47,41 @@ export function fmtRange(sat,sun){
   return `${s.getFullYear()}/${s.getMonth()+1}/${s.getDate()}(${w[s.getDay()]}) 〜 ${e.getMonth()+1}/${e.getDate()}(${w[e.getDay()]})`;
 }
 
+export function shortWeekendLabel(sat){
+  const d=new Date(sat+'T00:00:00');
+  return `${d.getMonth()+1}/${d.getDate()}`;
+}
+
+export function publicationTierMeta(tier){
+  return PUBLICATION_TIERS[tier] || PUBLICATION_TIERS.planned;
+}
+
+export function verificationStateMeta(status){
+  return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified;
+}
+
+export function rollingWeekSlots(manifest,anchorSat=''){
+  const weeks=Array.isArray(manifest?.weekends)?manifest.weekends:[];
+  const bySat=new Map(weeks.map(w=>[w.sat,w]));
+  const horizon=Math.max(1,Number(manifest?.rolling_horizon_weeks)||6);
+  const anchor=anchorSat || manifest?.default || weeks[0]?.sat || saturdayOf(defaultDate());
+  const slots=[];
+  for(let i=0;i<horizon;i++){
+    const sat=addDays(anchor,i*7);
+    const entry=bySat.get(sat)||null;
+    const inferredTier=i<2?'full':i<4?'preview':'announcement';
+    slots.push({
+      sat,
+      sun:addDays(sat,1),
+      horizon_index:i+1,
+      publication_tier:entry?.publication_tier || inferredTier,
+      entry,
+      available:!!entry
+    });
+  }
+  return slots;
+}
+
 export function normalizeText(value){
   return String(value ?? '').normalize('NFKC').toLocaleLowerCase('ja-JP').replace(/\s+/g,' ').trim();
 }
@@ -39,7 +92,8 @@ export function eventSearchText(ev){
     ...(Array.isArray(ev.categories) ? ev.categories : []),
     ev.family_fit?.reason, ev.family_fit?.age,
     ev.reservation?.note,
-    ev.verification?.note
+    ev.verification?.note,
+    verificationStateMeta(ev.verification?.status).label
   ].filter(Boolean).join(' '));
 }
 
@@ -108,6 +162,8 @@ export async function loadWeekend(manifest,satIso){
   const res=await fetch('data/'+entry.file,{cache:'no-store'});
   if(!res.ok) throw new Error(`weekend load failed: ${res.status}`);
   const data=await res.json();
+  data.horizon_index=data.horizon_index || entry.horizon_index || null;
+  data.publication_tier=data.publication_tier || entry.publication_tier || 'full';
   const baseEvents=Array.isArray(data.events) ? data.events : [];
   const shardFiles=Array.isArray(data.event_files) ? data.event_files : [];
   if(shardFiles.length){

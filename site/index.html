@@ -20,6 +20,7 @@
   <div class="meta" id="countText"></div>
   <div class="msg" id="msgBox"></div>
 </header>
+<nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
 <nav class="chips" id="chips"></nav>
 <section class="coverage">
   <div class="coverage-card">
@@ -30,7 +31,9 @@
       <div class="metric"><b id="covCandidates">-</b><span>候補イベント</span></div>
       <div class="metric"><b id="covPublished">-</b><span>掲載イベント</span></div>
       <div class="metric"><b id="covVerified">-</b><span>公式確認済み</span></div>
+      <div class="metric"><b id="covAnnounced">-</b><span>詳細待ち</span></div>
       <div class="metric"><b id="covPrompt">-</b><span>実行プロンプト</span></div>
+      <div class="metric"><b id="covTier">-</b><span>掲載段階</span></div>
     </div>
   </div>
 </section>
@@ -38,9 +41,9 @@
   <div class="result-head"><span id="resultLabel">読み込み中...</span><span id="generatedText"></span></div>
   <div class="grid" id="grid"></div>
 </main>
-<footer>GitHubの最新版完全版プロンプトを解決してからAI探索し、掲載イベントを公式・主催者情報と再照合しています。開催直前の変更・中止はリンク先の公式情報もご確認ください。</footer>
+<footer>GitHubの最新版完全版プロンプトを解決してから6週間先までAI探索します。近い週は全件公式確認、先の週は公式開催発表を先取りし、詳細公開後に再監査して昇格します。</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,buildCopyUrl} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta} from './app.js';
 
 let manifest=null,currentData=null,currentWard='__all__';
 const $=id=>document.getElementById(id);
@@ -49,16 +52,34 @@ function showMsg(text){ $('msgBox').textContent=text||''; $('msgBox').style.disp
 function currentFilters(){ return {date:$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim()}; }
 function syncUrl(){ const f=currentFilters(),p=new URLSearchParams(); if(f.date)p.set('date',f.date); if(f.ward!=='__all__')p.set('ward',f.ward); if(f.q)p.set('q',f.q); history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname); }
 
+function renderWeekTabs(){
+  if(!manifest)return;
+  const currentSat=saturdayOf($('dateInput').value||defaultDate());
+  const slots=rollingWeekSlots(manifest,manifest.default||currentSat);
+  $('weekTabs').innerHTML=slots.map(slot=>{
+    const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');
+    const active=currentSat===slot.sat?'active':'';
+    const pending=slot.available?'':'pending';
+    return `<button class="week-tab ${active} ${pending}" data-date="${slot.sat}" title="${escapeHtml(tier.description)}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;
+  }).join('');
+}
+
 function renderCoverage(data){
-  const c=data.coverage||{}; const rows=Array.isArray(c.wards)?c.wards:[]; const v=data.verification?.summary||{};
+  const c=data.coverage||{}; const rows=Array.isArray(c.wards)?c.wards:[];
+  const verified=data.events.filter(x=>x.verification?.status==='verified').length;
+  const announced=data.events.filter(x=>x.verification?.status==='announced').length;
+  const tier=publicationTierMeta(data.publication_tier);
   $('covWards').textContent=`${rows.filter(x=>x.status==='checked').length}/23`;
   $('covSources').textContent=c.sources_checked ?? '-';
   $('covCandidates').textContent=c.candidate_count ?? '-';
   $('covPublished').textContent=c.published_count ?? data.events.length;
-  $('covVerified').textContent=`${v.verified ?? data.events.filter(x=>x.verification?.status==='verified').length}/${data.events.length}`;
+  $('covVerified').textContent=`${verified}/${data.events.length}`;
+  $('covAnnounced').textContent=announced;
   $('covPrompt').textContent=data.run?.prompt?.version ?? '-';
+  $('covTier').textContent=tier.label;
   const bits=[];
   if(data.run?.prompt?.version)bits.push(`GitHub手順 ${data.run.prompt.version}`);
+  bits.push(`${tier.label}: ${tier.description}`);
   if(data.generated)bits.push(`探索生成 ${data.generated}`);
   if(data.verification?.verified_on)bits.push(`公式再確認 ${data.verification.verified_on}`);
   $('generatedText').textContent=bits.join(' ／ ');
@@ -74,18 +95,19 @@ function renderChips(data){
 function fitClass(grade){ return grade==='A'?'fit-a':grade==='B'?'fit-b':'fit-c'; }
 function render(){
   if(!currentData)return;
-  renderChips(currentData); renderCoverage(currentData);
+  renderWeekTabs(); renderChips(currentData); renderCoverage(currentData);
   const filtered=filterEvents(currentData.events,currentFilters());
-  $('rangeText').textContent=fmtRange(currentData.sat,currentData.sun)+' 開催中・開催';
+  const tier=publicationTierMeta(currentData.publication_tier);
+  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label}`;
   $('countText').textContent=`全 ${currentData.events.length} 件 ／ 表示 ${filtered.length} 件`;
   $('resultLabel').textContent=currentWard==='__all__'?'23区すべて':currentWard;
   const grid=$('grid');
   if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>'; syncUrl(); return;}
   grid.innerHTML=filtered.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url); const img=safeHttpUrl(ev.image); const grade=ev.family_fit?.grade||'C';
-    const verified=ev.verification?.status==='verified'; const verifyUrl=safeHttpUrl(ev.verification?.source);
-    const verifyBadge=verified?'<span class="badge fit-a">✓ 公式確認済み</span>':'<span class="badge fit-c">要確認</span>';
-    const verifyText=verified?`<div class="source"><b>公式確認:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース記録済み'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`:'';
+    const state=verificationStateMeta(ev.verification?.status); const verifyUrl=safeHttpUrl(ev.verification?.source);
+    const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
+    const verifyText=`<div class="source"><b>${ev.verification?.status==='announced'?'開催発表':'公式確認'}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;
     const thumb=img?`<img class="thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     return `<article class="card">${thumb}<div class="body">
       <div class="badges"><span class="badge">${escapeHtml(ev.ward)}</span><span class="badge ${fitClass(grade)}">子連れ ${escapeHtml(grade)}</span>${verifyBadge}${ev.indoor_outdoor?`<span class="badge">${escapeHtml(ev.indoor_outdoor)}</span>`:''}</div>
@@ -103,11 +125,18 @@ function render(){
 async function loadSelected(){
   try{
     showMsg(''); const sat=saturdayOf($('dateInput').value); const {entry,data}=await loadWeekend(manifest,sat);
-    if(!entry){showMsg('この週のデータはまだありません。');currentData=null;$('grid').innerHTML='';return;}
+    renderWeekTabs();
+    if(!entry){
+      const slot=rollingWeekSlots(manifest,manifest.default||sat).find(x=>x.sat===sat);
+      const tier=slot?publicationTierMeta(slot.publication_tier):publicationTierMeta('planned');
+      showMsg(`この週は6週間ローリング探索の対象です。現在は${tier.label}データの取得前です。`);
+      currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('countText').textContent='';$('rangeText').textContent=fmtRange(sat,slot?.sun||sat);return;
+    }
     currentData=data;render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
 $('searchInput').addEventListener('input',render);
 $('updateBtn').addEventListener('click',loadSelected);
@@ -115,9 +144,9 @@ $('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilter
 
 (async()=>{
   try{
-    manifest=await loadManifest(); const p=new URLSearchParams(location.search); const d=p.get('date')||defaultDate();
+    manifest=await loadManifest(); const p=new URLSearchParams(location.search); const d=p.get('date')||manifest.default||defaultDate();
     $('dateInput').value=d; const w=p.get('ward'); if(WARDS.includes(w))currentWard=w; $('searchInput').value=p.get('q')||'';
-    await loadSelected();
+    renderWeekTabs(); await loadSelected();
   }catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}
 })();
 </script>

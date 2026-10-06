@@ -15,14 +15,15 @@
   </div>
   <div class="meta" id="rangeText"></div><div class="meta" id="countText"></div><div class="msg" id="msgBox"></div>
 </header>
+<nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
 <nav class="chips" id="chips"></nav>
 <main>
-  <p class="tip">各項目の「コピー」で1項目だけ、カード下の「まとめてコピー」で既存サイトと同じ順序の全項目を改行区切りでコピーします。公式確認・プロンプト情報は画面表示のみで、コピー本文には混ぜません。</p>
+  <p class="tip">各項目の「コピー」で1項目だけ、カード下の「まとめてコピー」で既存サイトと同じ順序の全項目を改行区切りでコピーします。公式確認・確定度・プロンプト情報は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta} from './app.js';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,currentData=null,currentWard='__all__';
@@ -40,26 +41,36 @@ function flash(btn,label){const old=btn.textContent;btn.textContent=label;btn.cl
 window.copyOne=async(id,btn)=>{try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 window.copyAllCard=async(index,btn)=>{try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
+function renderWeekTabs(){
+  if(!manifest)return;
+  const currentSat=saturdayOf($('dateInput').value||defaultDate());
+  $('weekTabs').innerHTML=rollingWeekSlots(manifest,manifest.default||currentSat).map(slot=>{
+    const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');
+    return `<button class="week-tab ${currentSat===slot.sat?'active':''} ${slot.available?'':'pending'}" data-date="${slot.sat}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;
+  }).join('');
+}
 function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
 function render(){
-  if(!currentData)return;renderChips(currentData);const visible=filterEvents(currentData.events,filters());window.__visibleEvents=visible;
-  const verified=currentData.verification?.summary?.verified ?? currentData.events.filter(x=>x.verification?.status==='verified').length;
-  const prompt=currentData.run?.prompt?.version||'-';
-  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}/${currentData.events.length}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,filters());window.__visibleEvents=visible;
+  const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
+  const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
+  const prompt=currentData.run?.prompt?.version||'-';const tier=publicationTierMeta(currentData.publication_tier);
+  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
-    const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const ok=ev.verification?.status==='verified';const verifyUrl=safeHttpUrl(ev.verification?.source);
-    const verify=`${ok?'✓公式確認済み':'要確認'}${ev.verification?.verified_on?' '+escapeHtml(ev.verification.verified_on):''}${verifyUrl?` ／ <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:''}`;
+    const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const state=verificationStateMeta(ev.verification?.status);const verifyUrl=safeHttpUrl(ev.verification?.source);
+    const verify=`<span class="status-inline ${state.className}">${escapeHtml(state.label)}</span>${ev.verification?.verified_on?' '+escapeHtml(ev.verification.verified_on):''}${verifyUrl?` ／ <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:''}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}`;
     return `<article class="copy-card"><div class="fit-note">${escapeHtml(ev.ward)} ／ 子連れ適性 ${escapeHtml(grade)}${ev.family_fit?.reason?' ／ '+escapeHtml(ev.family_fit.reason):''}<br>${verify}</div>`+
       fields.map((f,i)=>fieldHtml(f,`f-${index}-${i}`)).join('')+
       `<button class="copy-all" onclick="copyAllCard(${index},this)">この項目をまとめてコピー</button></article>`;
   }).join('');syncUrl();
 }
-async function loadSelected(){try{showMsg('');const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);if(!entry){showMsg('この週のデータはまだありません。');currentData=null;$('grid').innerHTML='';return;}currentData=data;render();}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
+async function loadSelected(){try{showMsg('');const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);renderWeekTabs();if(!entry){showMsg('この週は6週間ローリング探索の対象ですが、現在は取得前です。');currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('chips').innerHTML='';$('countText').textContent='';syncUrl();return;}currentData=data;render();}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
 $('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',loadSelected);
-(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search);$('dateInput').value=p.get('date')||defaultDate();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search);$('dateInput').value=p.get('date')||manifest.default||defaultDate();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

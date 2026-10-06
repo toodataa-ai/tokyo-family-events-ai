@@ -1,0 +1,55 @@
+name: Apply v1.6 Exclusion Rereview
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply_v16_exclusion_rereview.py'
+      - 'tools/validate_rereview.py'
+      - '.github/workflows/apply-v16-rereview.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: v16-exclusion-rereview
+  cancel-in-progress: false
+
+jobs:
+  rereview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply targeted v1.6 rereview
+        run: python tools/apply_v16_exclusion_rereview.py
+      - name: Enrich thumbnails
+        run: python tools/enrich_images.py site/data
+      - name: Validate prompt governance
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Validate event data strictly
+        run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate base decision audit strictly
+        run: python tools/validate_decisions.py --strict site/data
+      - name: Validate v1.6 rereview strictly
+        run: python tools/validate_rereview.py --strict site/data
+      - name: Run regression and copy tests
+        run: npm test
+      - name: Commit validated rereview patch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data
+          if git diff --cached --quiet; then
+            echo "No rereview changes to commit"
+          else
+            git commit -m "Apply v1.6 targeted exclusion rereview"
+            git push
+          fi

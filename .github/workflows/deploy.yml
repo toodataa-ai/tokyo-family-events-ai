@@ -41,6 +41,8 @@ jobs:
         run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
       - name: Validate family-fit decision audit strictly
         run: python tools/validate_decisions.py --strict site/data
+      - name: Validate v1.6 exclusion rereview
+        run: python tools/validate_rereview.py --strict site/data
       - name: Test copy contract and shared filters
         run: npm test
 

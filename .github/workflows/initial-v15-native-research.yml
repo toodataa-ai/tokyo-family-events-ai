@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'tools/.cv15_*'
+      - 'tools/.cvgz_*'
       - '.github/workflows/initial-v15-native-research.yml'
 
 permissions:
@@ -20,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Detect bootstrap chunks
+      - name: Detect compressed bootstrap chunks
         id: chunks
         shell: bash
         run: |
-          if [ -f tools/.cv15_00 ] && [ -f tools/.cv15_04 ]; then
+          if [ -f tools/.cvgz_00 ] && [ -f tools/.cvgz_04 ]; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
             echo "ready=false" >> "$GITHUB_OUTPUT"
@@ -39,8 +39,9 @@ jobs:
           node-version: '22'
       - name: Reconstruct native research generator
         if: steps.chunks.outputs.ready == 'true'
+        shell: bash
         run: |
-          cat tools/.cv15_00 tools/.cv15_01 tools/.cv15_02 tools/.cv15_03 tools/.cv15_04 | base64 -d > tools/initial_v15_native_research.py
+          cat tools/.cvgz_00 tools/.cvgz_01 tools/.cvgz_02 tools/.cvgz_03 tools/.cvgz_04 | base64 -d | gzip -d > tools/initial_v15_native_research.py
           python -m py_compile tools/initial_v15_native_research.py
       - name: Run v1.5 native six-week research
         if: steps.chunks.outputs.ready == 'true'
@@ -71,6 +72,7 @@ jobs:
         if: steps.chunks.outputs.ready == 'true'
         shell: bash
         run: |
+          rm -f tools/.cvgz_00 tools/.cvgz_01 tools/.cvgz_02 tools/.cvgz_03 tools/.cvgz_04
           rm -f tools/.cv15_00 tools/.cv15_01 tools/.cv15_02 tools/.cv15_03 tools/.cv15_04 tools/.initial_v15_chunk_00
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

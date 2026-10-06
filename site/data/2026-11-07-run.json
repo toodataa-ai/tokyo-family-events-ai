@@ -1,1 +1,103 @@
-{"schema_version":1,"target":{"sat":"2026-11-07","sun":"2026-11-08"},"horizon_index":5,"publication_tier":"announcement","mode":"initial-six-week-rollout-v1.5-migration","prompt":{"version":"v1.5","path":"prompts/tokyo_family_events_complete_prompt_v1.5.txt","pointer":"site/data/latest_prompt.json","resolved":true},"source_data":{"week_file":"2026-11-07.json","verification_file":"2026-11-07-verification.json","decision_file":"2026-11-07-decisions.json"},"stages":[{"name":"resolve_prompt","status":"passed","evidence":"v1.5 governance migration"},{"name":"discover_23_wards","status":"passed","evidence":"23/23 historical initial rollout"},{"name":"normalize_and_dedupe","status":"passed","evidence":"historical initial rollout"},{"name":"family_fit_decision_audit","status":"passed","evidence":"migration audit marks old 8-axis individual records unavailable"},{"name":"freeze_candidates","status":"passed","evidence":"8 published"},{"name":"enrich_images","status":"passed","evidence":"7/8 images"},{"name":"official_verification","status":"passed","evidence":"5 verified, 3 announced"},{"name":"apply_corrections","status":"passed","evidence":"shared correction layer"},{"name":"strict_validation","status":"passed","evidence":"strict validation"},{"name":"decision_validation","status":"passed","evidence":"migration count reconciliation"},{"name":"copy_contract_test","status":"passed","evidence":"copy contract v1"},{"name":"shared_filter_test","status":"passed","evidence":"shared tests"},{"name":"deploy","status":"passed","evidence":"revalidated by CI"}],"summary":{"wards_checked":23,"candidates":8,"published":8,"excluded":0,"duplicate_removed":0,"verified":5,"announced":3,"corrected":0,"thumbnail_count":7,"thumbnail_coverage":0.875,"decision_audit_complete":false}}
+{
+  "schema_version": 1,
+  "target": {
+    "sat": "2026-11-07",
+    "sun": "2026-11-08"
+  },
+  "horizon_index": 5,
+  "publication_tier": "announcement",
+  "mode": "v1.5-native-full-research",
+  "prompt": {
+    "version": "v1.5",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.5.txt",
+    "pointer": "site/data/latest_prompt.json",
+    "resolved": true
+  },
+  "source_data": {
+    "week_file": "2026-11-07.json",
+    "verification_file": "2026-11-07-verification.json",
+    "decision_file": "2026-11-07-decisions.json"
+  },
+  "stages": [
+    {
+      "name": "resolve_prompt",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "discover_23_wards",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "normalize_and_dedupe",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "family_fit_decision_audit",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "freeze_candidates",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "enrich_images",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "official_verification",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "apply_corrections",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "strict_validation",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "decision_validation",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "copy_contract_test",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "shared_filter_test",
+      "status": "passed",
+      "evidence": "v1.5 native full re-search; CI is final gate"
+    },
+    {
+      "name": "deploy",
+      "status": "pending",
+      "evidence": "awaiting GitHub Actions"
+    }
+  ],
+  "summary": {
+    "wards_checked": 23,
+    "candidates": 42,
+    "published": 34,
+    "excluded": 6,
+    "duplicate_removed": 2,
+    "verified": 28,
+    "announced": 6,
+    "corrected": 0,
+    "thumbnail_count": 21,
+    "thumbnail_coverage": 0.618,
+    "decision_audit_complete": true,
+    "hard_excluded": 0,
+    "soft_excluded": 6
+  }
+}

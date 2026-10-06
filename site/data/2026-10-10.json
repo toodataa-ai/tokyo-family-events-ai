@@ -3,47 +3,229 @@
   "sat": "2026-10-10",
   "sun": "2026-10-11",
   "label": "10/10(土)〜10/11(日)",
-  "generated": "2026-10-06T07:37:00+09:00",
+  "generated": "2026-10-07T06:00:00+09:00",
+  "horizon_index": 1,
+  "publication_tier": "full",
   "verification_file": "2026-10-10-verification.json",
   "run_file": "2026-10-10-run.json",
   "coverage": {
-    "sources_checked": 80,
-    "candidate_count": 82,
-    "duplicate_removed": 6,
-    "excluded_count": 39,
-    "published_count": 37,
+    "sources_checked": 69,
+    "candidate_count": 95,
+    "duplicate_removed": 5,
+    "excluded_count": 19,
+    "published_count": 71,
     "wards": [
-      {"ward":"千代田区","status":"checked","queries":3,"sources_checked":3,"candidate_count":2,"published_count":1,"note":"区・図書文化館・横断検索を確認。今週末に重なる特別展を掲載。"},
-      {"ward":"中央区","status":"checked","queries":3,"sources_checked":4,"candidate_count":3,"published_count":1,"note":"観光・親子媒体・日本橋LOOPを確認。締切済み企画は除外し、当日参加企画を含む本祭りを掲載。"},
-      {"ward":"港区","status":"checked","queries":3,"sources_checked":3,"candidate_count":2,"published_count":1,"note":"区公式・祭り情報・横断検索を確認。芝公園の区民まつりを掲載。"},
-      {"ward":"新宿区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"区の子ども向けイベント情報と横断検索を確認。中央図書館の親子向け企画を掲載。"},
-      {"ward":"文京区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"区公式・横断検索を確認。子どもひろばのある根津・千駄木下町まつりを掲載。"},
-      {"ward":"台東区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"区観光公式・横断検索を確認。こども広場等のある谷中まつりを掲載。"},
-      {"ward":"墨田区","status":"checked","queries":3,"sources_checked":4,"candidate_count":4,"published_count":2,"note":"観光公式・イベント媒体・東京都系を確認。家族向けマルシェと公園シネマを掲載。"},
-      {"ward":"江東区","status":"checked","queries":3,"sources_checked":6,"candidate_count":6,"published_count":4,"note":"公園公式・施設公式・イベント媒体・横断検索を確認。スポーツ、外遊び、自然学習、自転車イベントを掲載。"},
-      {"ward":"品川区","status":"checked","queries":3,"sources_checked":3,"candidate_count":4,"published_count":3,"note":"区公式・東京都系・イベント媒体を確認。10/10-11実開催が確認できた区民まつり3件を掲載。"},
-      {"ward":"目黒区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"文化施設公式・横断検索を確認。目黒区民まつり子ども広場を掲載。"},
-      {"ward":"大田区","status":"checked","queries":3,"sources_checked":5,"candidate_count":5,"published_count":3,"note":"東京都・施設公式・文化施設・横断検索を確認。けん玉、自然観察、ロボット体験を掲載。"},
-      {"ward":"世田谷区","status":"checked","queries":3,"sources_checked":2,"candidate_count":4,"published_count":1,"note":"地域イベント情報・図書館等を確認。今週末実開催が確認できる例大祭を掲載。"},
-      {"ward":"渋谷区","status":"checked","queries":3,"sources_checked":4,"candidate_count":4,"published_count":2,"note":"都立文化施設・こどもスマイル・横断検索を確認。Kids meet関連2件を掲載。"},
-      {"ward":"中野区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"フェスタ公式・東京都系・横断検索を確認。中野チャンプルーフェスタを掲載。"},
-      {"ward":"杉並区","status":"checked","queries":3,"sources_checked":7,"candidate_count":8,"published_count":3,"note":"区公式、図書館、体育施設、IMAGINUS、親子媒体を確認。おはなし会・親子運動・鉄道玩具体験を掲載。"},
-      {"ward":"豊島区","status":"checked","queries":3,"sources_checked":3,"candidate_count":3,"published_count":1,"note":"区公式・イベント媒体・横断検索を確認。ふくろ祭り・東京よさこいを掲載。"},
-      {"ward":"北区","status":"checked","queries":3,"sources_checked":4,"candidate_count":3,"published_count":2,"note":"区公式スポーツ・児童施設・横断検索を確認。飛鳥山スポーツと乳幼児親子企画を掲載。"},
-      {"ward":"荒川区","status":"checked","queries":3,"sources_checked":3,"candidate_count":3,"published_count":2,"note":"区公式・スポーツ・遊園情報を確認。スポーツイベントと遊園パレードを掲載。"},
-      {"ward":"板橋区","status":"checked","queries":3,"sources_checked":5,"candidate_count":5,"published_count":2,"note":"区公式・文化会館・横断検索を確認。地域イベントとバリアフリー演劇を掲載。"},
-      {"ward":"練馬区","status":"checked","queries":3,"sources_checked":5,"candidate_count":6,"published_count":1,"note":"文化施設、区系カレンダー、イベント媒体、横断検索を確認。期間表示だけで実開催日不明の候補は除外。"},
-      {"ward":"足立区","status":"checked","queries":3,"sources_checked":3,"candidate_count":4,"published_count":1,"note":"観光公式・生物園・東京都系を確認。生物園バックヤードツアーを掲載。"},
-      {"ward":"葛飾区","status":"checked","queries":3,"sources_checked":2,"candidate_count":2,"published_count":1,"note":"区公式・横断検索を確認。保育園の親子ファミリーデーを掲載。"},
-      {"ward":"江戸川区","status":"checked","queries":3,"sources_checked":4,"candidate_count":4,"published_count":1,"note":"区公式・区民まつり詳細・子ども向け検索を確認。大型区民まつりを掲載。"}
+      {
+        "ward": "千代田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 6,
+        "published_count": 5,
+        "note": "v1.5完全再探索。候補6件、掲載5件。"
+      },
+      {
+        "ward": "中央区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "港区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 5,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補5件、掲載2件。"
+      },
+      {
+        "ward": "新宿区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 3,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補3件、掲載2件。"
+      },
+      {
+        "ward": "文京区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "台東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 10,
+        "published_count": 8,
+        "note": "v1.5完全再探索。候補10件、掲載8件。"
+      },
+      {
+        "ward": "墨田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 6,
+        "published_count": 4,
+        "note": "v1.5完全再探索。候補6件、掲載4件。"
+      },
+      {
+        "ward": "江東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 11,
+        "published_count": 8,
+        "note": "v1.5完全再探索。候補11件、掲載8件。"
+      },
+      {
+        "ward": "品川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 6,
+        "published_count": 4,
+        "note": "v1.5完全再探索。候補6件、掲載4件。"
+      },
+      {
+        "ward": "目黒区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "大田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "v1.5完全再探索。候補3件、掲載3件。"
+      },
+      {
+        "ward": "世田谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "渋谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 7,
+        "published_count": 6,
+        "note": "v1.5完全再探索。候補7件、掲載6件。"
+      },
+      {
+        "ward": "中野区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "杉並区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "v1.5完全再探索。候補4件、掲載4件。"
+      },
+      {
+        "ward": "豊島区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 9,
+        "published_count": 5,
+        "note": "v1.5完全再探索。候補9件、掲載5件。"
+      },
+      {
+        "ward": "北区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "荒川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "板橋区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "練馬区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 9,
+        "published_count": 5,
+        "note": "v1.5完全再探索。候補9件、掲載5件。"
+      },
+      {
+        "ward": "足立区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "葛飾区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "江戸川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      }
     ]
   },
   "event_files": [
-    "2026-10-10-events-01.json",
-    "2026-10-10-events-02.json",
-    "2026-10-10-events-03.json",
-    "2026-10-10-events-04.json",
-    "2026-10-10-events-05.json"
+    "2026-10-10-events-01.json"
   ],
   "events": []
 }

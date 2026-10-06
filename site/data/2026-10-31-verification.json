@@ -1,1 +1,752 @@
-{"schema_version":1,"verified_on":"2026-10-06","events":[{"id":"2026-10-31-chuo-tea","status":"verified","source":"https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082022","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-bunkyo-asobono-halloween","status":"verified","source":"https://www.tokyo-dome.co.jp/en/asobono/event/post_55.html","source_kind":"organizer_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-sumida-familyfes","status":"verified","source":"https://www.sumida-familyfestival.com/","source_kind":"organizer_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"unknown","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-shibuya-beyond","status":"verified","source":"https://www.metro.tokyo.lg.jp/information/press/2026/09/2026091725","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-shibuya-ctis-halloween","status":"verified","source":"https://kinder.capitaltokyo.com/lp/halloween2026/","source_kind":"organizer_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-11-01-nakano-rights-forum","status":"announced","source":"https://www.city.tokyo-nakano.lg.jp/kusei/kousou/seido/kodomokyoiku/kodomonokenri/kodomonokenrinohiforamu2025.html","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"開催日・会場・主要企画は区公式で確認済み。個別ワークショップの最新受付条件は公式更新を確認。"},{"id":"2026-10-31-katsushika-shiratori","status":"verified","source":"https://www.city.katsushika.lg.jp/event/1000114/1000795/1043340.html","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-toshima-kamishibai","status":"verified","source":"https://www.city.toshima.lg.jp/129/2609101123.html","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"pass","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"},{"id":"2026-10-31-nerima-yuasa","status":"announced","source":"https://www.neribun.or.jp/event/museum.cgi?genre=2026","source_kind":"organizer_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"unknown","price":"unknown","reservation":"pass","official_url":"pass"},"corrections":{},"note":"開催期間・会場は公式年間案内で確認済み。観覧料・詳細プログラムは公式更新を確認。"},{"id":"2026-10-31-minato-digital-nature","status":"verified","source":"https://sp.minato-kagaku.tokyo/event-2026autumnexhibition/","source_kind":"public_official","fields":{"name":"pass","date":"pass","venue":"pass","time":"unknown","price":"pass","reservation":"pass","official_url":"pass"},"corrections":{},"note":"公式情報で主要項目を確認済み。"}],"summary":{"total":10,"verified":8,"announced":2,"corrected":0}}
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-07",
+  "events": [
+    {
+      "id": "v15-6d359a847bb0",
+      "status": "verified",
+      "source": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082022",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-be8544871ee0",
+      "status": "verified",
+      "source": "https://www.tokyo-dome.co.jp/en/asobono/event/post_55.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-a964d6a92081",
+      "status": "verified",
+      "source": "https://www.sumida-familyfestival.com/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0cadc23adcf8",
+      "status": "verified",
+      "source": "https://www.metro.tokyo.lg.jp/information/press/2026/09/2026091725",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-5bdb56774ce2",
+      "status": "verified",
+      "source": "https://kinder.capitaltokyo.com/lp/halloween2026/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-a6567efc0616",
+      "status": "announced",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kusei/kousou/seido/kodomokyoiku/kodomonokenri/kodomonokenrinohiforamu2025.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-68bfbc6edd16",
+      "status": "verified",
+      "source": "https://www.city.katsushika.lg.jp/event/1000114/1000795/1043340.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-b4ff1e8a1986",
+      "status": "verified",
+      "source": "https://www.city.toshima.lg.jp/129/2609101123.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-97ee0aaed408",
+      "status": "announced",
+      "source": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-2d8fbd914017",
+      "status": "verified",
+      "source": "https://sp.minato-kagaku.tokyo/event-2026autumnexhibition/",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-5327a5521c5f",
+      "status": "verified",
+      "source": "https://www.tokyo-skytree.jp/event/special/chiikawa/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-f97b5fe1f77b",
+      "status": "announced",
+      "source": "https://sumida-artfest.jp",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-c6a02dd601b1",
+      "status": "verified",
+      "source": "https://www.akaripark.com",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-5adfaff596e8",
+      "status": "verified",
+      "source": "https://www.ticketpay.jp/booking/?event_id=64049",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-6dbf9d1d9522",
+      "status": "verified",
+      "source": "https://sunshinecity.jp/file/official/halloween/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-640923f2c816",
+      "status": "verified",
+      "source": "https://ikebukurocosplay.jp/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-7c54df41687c",
+      "status": "verified",
+      "source": "https://ts-fes.com",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-910565516f75",
+      "status": "verified",
+      "source": "https://www.kanko-shinjuku.jp/festival2026/-/index.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-76eb6eba601d",
+      "status": "verified",
+      "source": "https://yakiimofes.jp/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-9163045e73a7",
+      "status": "verified",
+      "source": "https://sbpif.net/tokyosnowfes/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-f164c9b63e06",
+      "status": "verified",
+      "source": "https://www.instagram.com/bmi_jp/p/DdSnnIqyJKi",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-52fd793ab1a6",
+      "status": "verified",
+      "source": "https://www.instagram.com/bmi_jp/p/Ddqv-TiS_NR",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-6215fd395a68",
+      "status": "verified",
+      "source": "https://www.tokyo-midtown.com/jp/event/8117/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-c11e097fc451",
+      "status": "verified",
+      "source": "https://www.roppongihills.com/events/2026/10/0625.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0e7113e24145",
+      "status": "announced",
+      "source": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=31&event_category=1%2C2%2C4&event_target=0&month=10&type=3&year=2026",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-f4cd156831b4",
+      "status": "verified",
+      "source": "https://mundopixar.com/ja/cities/tokyo",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-feec77524f30",
+      "status": "verified",
+      "source": "https://www.aquarium.gr.jp/news/events/31639",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-b89ce9a6930b",
+      "status": "verified",
+      "source": "https://www.neribun.or.jp/event/detail_f.cgi?id=202602131770944638",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-8b5070ce5626",
+      "status": "verified",
+      "source": "https://www.lohasfesta.jp/tokyo",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0a4b3977eb8c",
+      "status": "verified",
+      "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002933",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0940209a4557",
+      "status": "verified",
+      "source": "https://nakazato.ces-net.jp/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-fbcf61dbdc3e",
+      "status": "verified",
+      "source": "https://nakazato.ces-net.jp/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0df44aebd430",
+      "status": "verified",
+      "source": "https://www.shikinokaori-rose-garden.com/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-2f7ba498fc6b",
+      "status": "verified",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-1eef056a0c36",
+      "status": "verified",
+      "source": "https://ekogei.org/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-7711bd973fb4",
+      "status": "verified",
+      "source": "https://chihiro.jp/tokyo/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-3a20f99785fc",
+      "status": "announced",
+      "source": "https://meguromarche.com/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-ef9e7736b9ab",
+      "status": "verified",
+      "source": "https://plaban.net/events/202610-11plabancarnival?nskip=4015",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-daa813b5a665",
+      "status": "verified",
+      "source": "https://www.imaginus-suginami.jp/events/2026/10/01/11852/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-7901688887b1",
+      "status": "verified",
+      "source": "https://tokyo.ymca.or.jp/jidoukan/news/2026/09/20260925-2.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    }
+  ],
+  "summary": {
+    "total": 40,
+    "verified": 35,
+    "announced": 5,
+    "corrected": 0
+  }
+}

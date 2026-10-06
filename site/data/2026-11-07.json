@@ -1,1 +1,231 @@
-{"sample":false,"sat":"2026-11-07","sun":"2026-11-08","label":"11/7(土)〜11/8(日)","generated":"2026-10-06T12:47:00+09:00","horizon_index":5,"publication_tier":"announcement","verification_file":"2026-11-07-verification.json","run_file":"2026-11-07-run.json","coverage":{"sources_checked":23,"candidate_count":8,"duplicate_removed":0,"excluded_count":0,"published_count":8,"wards":[{"ward":"千代田区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"中央区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"港区","status":"checked","queries":1,"sources_checked":1,"candidate_count":2,"published_count":2,"note":"公式確認2件。"},{"ward":"新宿区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"文京区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"台東区","status":"checked","queries":1,"sources_checked":1,"candidate_count":1,"published_count":1,"note":"公式確認1件。"},{"ward":"墨田区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"江東区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"品川区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"目黒区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"大田区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"世田谷区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"渋谷区","status":"checked","queries":1,"sources_checked":1,"candidate_count":1,"published_count":1,"note":"公式確認1件。"},{"ward":"中野区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"杉並区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"豊島区","status":"checked","queries":1,"sources_checked":1,"candidate_count":3,"published_count":3,"note":"公式確認3件。"},{"ward":"北区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"荒川区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"板橋区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"練馬区","status":"checked","queries":1,"sources_checked":1,"candidate_count":1,"published_count":1,"note":"公式確認1件。"},{"ward":"足立区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"葛飾区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"},{"ward":"江戸川区","status":"checked","queries":1,"sources_checked":1,"candidate_count":0,"published_count":0,"note":"探索済み。先行掲載条件該当なし。"}]},"event_files":["2026-11-07-events-01.json"],"events":[]}
+{
+  "sample": false,
+  "sat": "2026-11-07",
+  "sun": "2026-11-08",
+  "label": "11/7(土)〜11/8(日)",
+  "generated": "2026-10-07T06:00:00+09:00",
+  "horizon_index": 5,
+  "publication_tier": "announcement",
+  "verification_file": "2026-11-07-verification.json",
+  "run_file": "2026-11-07-run.json",
+  "coverage": {
+    "sources_checked": 69,
+    "candidate_count": 42,
+    "duplicate_removed": 2,
+    "excluded_count": 6,
+    "published_count": 34,
+    "wards": [
+      {
+        "ward": "千代田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "中央区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "港区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 3,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補3件、掲載2件。"
+      },
+      {
+        "ward": "新宿区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "文京区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "台東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "墨田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "江東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 3,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補3件、掲載2件。"
+      },
+      {
+        "ward": "品川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "目黒区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補1件、掲載1件。"
+      },
+      {
+        "ward": "大田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "世田谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "渋谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 5,
+        "published_count": 3,
+        "note": "v1.5完全再探索。候補5件、掲載3件。"
+      },
+      {
+        "ward": "中野区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "v1.5完全再探索。候補3件、掲載3件。"
+      },
+      {
+        "ward": "杉並区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補2件、掲載2件。"
+      },
+      {
+        "ward": "豊島区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 6,
+        "published_count": 4,
+        "note": "v1.5完全再探索。候補6件、掲載4件。"
+      },
+      {
+        "ward": "北区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "荒川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "板橋区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "練馬区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 11,
+        "published_count": 9,
+        "note": "v1.5完全再探索。候補11件、掲載9件。"
+      },
+      {
+        "ward": "足立区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "葛飾区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      },
+      {
+        "ward": "江戸川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 3,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "v1.5完全再探索。候補0件、掲載0件。"
+      }
+    ]
+  },
+  "event_files": [
+    "2026-11-07-events-01.json"
+  ],
+  "events": []
+}

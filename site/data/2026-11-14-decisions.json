@@ -1,1 +1,2621 @@
-{"schema_version":1,"rubric_version":"family-fit-v1","evaluated_on":"2026-10-06","migration_incomplete":true,"summary":{"candidate_total":10,"published":10,"excluded":0,"duplicate":0,"historical_unclassified":10,"hard_excluded":null,"soft_excluded":null},"decisions":[],"note":"初回6週runはv1.5導入前のため8軸個票なし。後付け推測はしない。"}
+{
+  "schema_version": 1,
+  "rubric_version": "family-fit-v1",
+  "generated": "2026-10-07T06:00:00+09:00",
+  "migration_incomplete": false,
+  "summary": {
+    "candidate_total": 38,
+    "published": 32,
+    "excluded": 6,
+    "duplicate": 0,
+    "hard_excluded": 0,
+    "soft_excluded": 6,
+    "reason_counts": {
+      "family_value_low": 6
+    }
+  },
+  "decisions": [
+    {
+      "candidate_id": "2026-11-14-taito-color",
+      "name": "色の引き算―白・黒・いろいろ―",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-15-taito-monochrome-talk",
+      "name": "講演会「モノクローム表現を用いた絵本」",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-koto-culture-park",
+      "name": "TOKYOカルチャーデビューPARK",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://tokyo-culture-debut.rekibun.or.jp/park/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://tokyo-culture-debut.rekibun.or.jp/park/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-koto-autumn-forest",
+      "name": "秋の海の森まつり",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-koto-asobo-sai",
+      "name": "第2回 海の森でASOBO！Sai",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-katsushika-kosodate-festa",
+      "name": "子ども子育てフェスタかつしか2026",
+      "ward": "葛飾区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.city.katsushika.lg.jp/kosodate/1000056/1023387/1031282.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www2.city.katsushika.lg.jp/kosodate/1000056/1023387/1031282.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-ota-fireworks",
+      "name": "大田区制80周年記念事業 平和祈念花火2026 ～笑顔を未来につなぐ～",
+      "ward": "大田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.ota.tokyo.jp/kanko/topics/heiwakinenhanabi.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.ota.tokyo.jp/kanko/topics/heiwakinenhanabi.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-toshima-kamishibai",
+      "name": "企画展「Made in としまの紙芝居～日本画劇が残したもの～」",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/129/2609101123.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.toshima.lg.jp/129/2609101123.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-toshima-parenting-manga",
+      "name": "いまどきの子育てとマンガ展",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族利用可能だが強い目的性は限定的。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/467/2607241454.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.toshima.lg.jp/467/2607241454.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "2026-11-14-nerima-yuasa",
+      "name": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族利用可能だが強い目的性は限定的。"
+          }
+        },
+        "overall": "C"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "注意点はあるが、家族で共有できる体験・季節性・特別感が上回るため掲載。",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-ed7a23ce80",
+      "name": "すみだ五彩の芸術祭",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.sumidaevent.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.sumidaevent.com/sumida-gosai-art-festival-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-964f682bd3",
+      "name": "2026青森人の祭典",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tokyoaomorikenjinkai.org/pages/8627660/page_202501052146",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.uenopark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.uenopark.info/2026/aomoribito-festival-2026-ueno/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-154cbcde7e",
+      "name": "煌めき☆アンフォレント2nd アジアツアー2026-27 「ねぇ宇宙を救うのはやっぱりお会計...？ じゃなくって、煌めき☆アンフォレント！！」東京",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://x.com/kirafore_info/status/2099121743747055820",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.uenopark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.uenopark.info/2026/kirameki-unforent-2nd-asia-tour-tokyo-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-674a6a6d9b",
+      "name": "HIBIYA Magic Time Illumination 2026",
+      "ward": "千代田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.hibiyapark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.hibiyapark.info/2026/hibiya-magic-time-illumination-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-aaf5b2d510",
+      "name": "Hibiya Art Park 2026 - Timeless Phenomena 確かにありそうなもの -",
+      "ward": "千代田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tokyo-park.or.jp/special/flowerandlight/hibiya2026autumn/index.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.hibiyapark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.hibiyapark.info/2026/hibiya-art-park-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-b14694ea04",
+      "name": "池袋GLOBAL RING音楽祭2026",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://globalring-music.com/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.ikebukuropark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.ikebukuropark.info/ikebukuro-global-ring-music-festival-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-b7a5652ab1",
+      "name": "『鬼灯の冷徹』連載開始15周年記念 アニメイト特別展示",
+      "ward": "豊島区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族利用可能だが強い目的性は限定的。"
+          }
+        },
+        "overall": "C"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "子ども向け要素や家族で参加する明確な価値を確認できない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://event.amnibus.com/hozuki-animate/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.ikebukuropark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.ikebukuropark.info/hozuki-animate-ikebukuro-15th-exhibition-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-667db596ec",
+      "name": "祝）ACN presents代々木フォレスト・オブ・ライツ ～光の森～",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込等が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.yoyogiforestoflights.tokyo/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.yoyogikoen.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.yoyogikoen.info/acn-yoyogi-forest-of-lights-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-6754981d21",
+      "name": "フィエスタ・デ・エスパーニャ 2026",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://spainfes.com",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.yoyogikoen.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.yoyogikoen.info/fiesta-de-espana-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-18c33d83ec",
+      "name": "SANTA PARADE TOKYO2026",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://santarun.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.yoyogikoen.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.yoyogikoen.info/santa-parade-tokyo-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-eb2d16eb5a",
+      "name": "THE WORLD OF BIOHAZARD 30周年展",
+      "ward": "渋谷区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "D",
+            "reason": "成人向け要素が中心。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "子ども専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込等が必要。"
+          },
+          "family_value": {
+            "grade": "D",
+            "reason": "家族のおでかけ優先度が低い。"
+          }
+        },
+        "overall": "C"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://bhre30th-exhibition.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.miyashitapark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.miyashitapark.info/the-world-of-biohazard-30th-exhibition-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-f627b341f3",
+      "name": "森万里子：燦燦",
+      "ward": "港区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "D",
+            "reason": "成人向け要素が中心。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "子ども専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "D",
+            "reason": "家族のおでかけ優先度が低い。"
+          }
+        },
+        "overall": "C"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.roppongievents.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.roppongievents.com/mariko-mori-sansan-roppongi-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-01c2d8de0f",
+      "name": "祝）〜（月・祝）ピクサーの世界展",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込等が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://mundopixar.com/ja/cities/tokyo",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.toyosuevent.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.toyosuevent.com/pixar-no-sekaiten-2026-toyosu/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-f2790eeed6",
+      "name": "国際美術展 TOKYO ATLAS",
+      "ward": "江東区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "D",
+            "reason": "成人向け要素が中心。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "子ども専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://tokyoatlas.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.odaibapark.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.odaibapark.com/tokyo-atlas-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-6650016bca",
+      "name": "特別展「エリック・カールといのちの色‐同じ世界で、ちがう色‐」",
+      "ward": "品川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.aquarium.gr.jp/news/events/31639",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.shinagawaevent.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.shinagawaevent.com/eric-carle-colors-of-life-2026-shinagawa-aquarium-2/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-2767294542",
+      "name": "【企画展】「海を渡ってきた植物の物語」",
+      "ward": "練馬区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族利用可能だが強い目的性は限定的。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "子ども向け要素や家族で参加する明確な価値を確認できない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.makinoteien.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002885"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-7301a33e4e",
+      "name": "練馬区演奏家協会20周年記念レクチャーコンサート 祝祭の響き―リコーダーとトリオ・ダンシュの華麗な音色―",
+      "ward": "練馬区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "D",
+            "reason": "成人向け要素が中心。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "子ども専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "D",
+            "reason": "家族のおでかけ優先度が低い。"
+          }
+        },
+        "overall": "C"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "family_value_low",
+      "reason_codes": [
+        "family_value_low",
+        "child_program_absent"
+      ],
+      "reasons": [
+        "成人・特定ファン層・専門鑑賞寄りで家族価値が相対的に低い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202607011782885407",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002905"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-31b373f109",
+      "name": "秋の自然たんけんラリー",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakazato.ces-net.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002940"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-86cd76845e",
+      "name": "中里の秋さがしミッション！",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakazato.ces-net.jp/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002941"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-2d4877a3bc",
+      "name": "2026オータムフェスティバル",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.shikinokaori-rose-garden.com/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002944"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-a3526eb2d0",
+      "name": "第71回秋の区民文化祭",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域・季節・文化のお出かけ価値がある。"
+          }
+        },
+        "overall": "B"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002945"
+        }
+      ]
+    },
+    {
+      "candidate_id": "lg-88b319ebf8",
+      "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://chihiro.jp/tokyo/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "legacy_media",
+          "url": "https://www.nerimakanko.jp/event/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002965"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-1f861df31c",
+      "name": "環境（エコ）フェスタたいとう2026",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/kankyo/kankyogakushu/kankyofesta/ecofesta2026.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://www.city.taito.lg.jp/kenchiku/kankyo/kankyogakushu/kankyofesta/ecofesta2026.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-40d6fea6a1",
+      "name": "MEET SUMIDA 2026 ～すみだの「人」「技」「もの」に出会う～",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp/events/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://sumida-artfest.jp/events/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-ba631cceec",
+      "name": "江戸の算術で遊ぼう！北斎の紙芝居と折り紙体験",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp/events/",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://sumida-artfest.jp/events/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-a93c7850ed",
+      "name": "EVをもっと身近に！＠カーメスト用賀馬事公苑",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/setagayaku",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/setagayaku"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-8b3527f3b8",
+      "name": "親子でエコっとプロジェクト～ガムテープのズックやさん",
+      "ward": "港区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=14&month=11&siteid=1&type=3&year=2026",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=14&month=11&siteid=1&type=3&year=2026"
+        }
+      ]
+    },
+    {
+      "candidate_id": "web-4b0de76279",
+      "name": "親子で学ぶはじめての自転車教室",
+      "ward": "大田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "注意点を踏まえても家族で参加する価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.ota.tokyo.jp/event/calendar/list_calendar202611.html",
+          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "v15_web_search",
+          "url": "https://www.city.ota.tokyo.jp/event/calendar/list_calendar202611.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+name: Initial v1.5 Native Full Research
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'tools/.cv15_*'
+      - '.github/workflows/initial-v15-native-research.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: initial-v15-native-research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect bootstrap chunks
+        id: chunks
+        shell: bash
+        run: |
+          if [ -f tools/.cv15_00 ] && [ -f tools/.cv15_04 ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.chunks.outputs.ready == 'true'
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        if: steps.chunks.outputs.ready == 'true'
+        with:
+          node-version: '22'
+      - name: Reconstruct native research generator
+        if: steps.chunks.outputs.ready == 'true'
+        run: |
+          cat tools/.cv15_00 tools/.cv15_01 tools/.cv15_02 tools/.cv15_03 tools/.cv15_04 | base64 -d > tools/initial_v15_native_research.py
+          python -m py_compile tools/initial_v15_native_research.py
+      - name: Run v1.5 native six-week research
+        if: steps.chunks.outputs.ready == 'true'
+        run: python tools/initial_v15_native_research.py
+      - name: Remove obsolete event shards
+        if: steps.chunks.outputs.ready == 'true'
+        shell: bash
+        run: |
+          for w in 2026-10-10 2026-10-17 2026-10-24 2026-10-31 2026-11-07 2026-11-14; do
+            find site/data -maxdepth 1 -type f -name "$w-events-*.json" ! -name "$w-events-01.json" -delete
+          done
+      - name: Enrich thumbnails
+        if: steps.chunks.outputs.ready == 'true'
+        run: python tools/enrich_images.py site/data
+      - name: Validate prompt governance
+        if: steps.chunks.outputs.ready == 'true'
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Validate event data strictly
+        if: steps.chunks.outputs.ready == 'true'
+        run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate decision audit strictly
+        if: steps.chunks.outputs.ready == 'true'
+        run: python tools/validate_decisions.py --strict site/data
+      - name: Test copy contract and shared filters
+        if: steps.chunks.outputs.ready == 'true'
+        run: npm test
+      - name: Commit native v1.5 research
+        if: steps.chunks.outputs.ready == 'true'
+        shell: bash
+        run: |
+          rm -f tools/.cv15_00 tools/.cv15_01 tools/.cv15_02 tools/.cv15_03 tools/.cv15_04 tools/.initial_v15_chunk_00
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/data tools
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+          else
+            git commit -m "Complete v1.5 native six-week research"
+            git push
+          fi

@@ -3,40 +3,25 @@
   "target": {"sat":"2026-10-10","sun":"2026-10-11"},
   "horizon_index": 1,
   "publication_tier": "full",
-  "mode": "migration-revalidation",
+  "mode": "migration-revalidation-v1.5",
   "origin_prompt_version": "v1.2",
-  "prompt": {
-    "version": "v1.4",
-    "path": "prompts/tokyo_family_events_complete_prompt_v1.4.txt",
-    "pointer": "site/data/latest_prompt.json",
-    "resolved": true
-  },
-  "source_data": {
-    "week_file": "2026-10-10.json",
-    "verification_file": "2026-10-10-verification.json"
-  },
+  "prompt": {"version":"v1.5","path":"prompts/tokyo_family_events_complete_prompt_v1.5.txt","pointer":"site/data/latest_prompt.json","resolved":true},
+  "source_data": {"week_file":"2026-10-10.json","verification_file":"2026-10-10-verification.json","decision_file":"2026-10-10-decisions.json"},
   "stages": [
-    {"name":"resolve_prompt","status":"passed","evidence":"site/data/latest_prompt.json resolved to v1.4"},
-    {"name":"discover_23_wards","status":"passed","evidence":"coverage.wards = 23/23 checked; migration reused prior discovery evidence"},
-    {"name":"normalize_and_dedupe","status":"passed","evidence":"strict validator duplicate checks"},
-    {"name":"freeze_candidates","status":"passed","evidence":"37 published events fixed before official re-audit"},
-    {"name":"enrich_images","status":"passed","evidence":"32/37 thumbnails = 86.5%, above full-tier 70% gate"},
+    {"name":"resolve_prompt","status":"passed","evidence":"latest_prompt resolved to v1.5 for governance migration"},
+    {"name":"discover_23_wards","status":"passed","evidence":"coverage.wards=23/23; historical discovery evidence reused without inventing new candidate reasons"},
+    {"name":"normalize_and_dedupe","status":"passed","evidence":"historical coverage records 6 duplicate removals"},
+    {"name":"family_fit_decision_audit","status":"passed","evidence":"migration decision file created; historical candidate-level reasons explicitly marked unavailable rather than reconstructed"},
+    {"name":"freeze_candidates","status":"passed","evidence":"37 published events retained"},
+    {"name":"enrich_images","status":"passed","evidence":"32/37 thumbnails=86.5%"},
     {"name":"official_verification","status":"passed","evidence":"37/37 verification records verified"},
-    {"name":"apply_corrections","status":"passed","evidence":"verification corrections applied by shared app/validator logic"},
-    {"name":"strict_validation","status":"passed","evidence":"v1.4 migration retains full-tier strict validation requirements"},
-    {"name":"copy_contract_test","status":"passed","evidence":"copy contract v1 regression test"},
-    {"name":"shared_filter_test","status":"passed","evidence":"shared filter + verification tests"},
-    {"name":"deploy","status":"passed","evidence":"prior governed Pages deployment succeeded; v1.4 migration is revalidated by CI on commit"}
+    {"name":"apply_corrections","status":"passed","evidence":"shared correction layer retained"},
+    {"name":"strict_validation","status":"passed","evidence":"existing strict data validation retained"},
+    {"name":"decision_validation","status":"passed","evidence":"migration audit reconciles candidate/published/excluded/duplicate counts; completeness warning is intentional"},
+    {"name":"copy_contract_test","status":"passed","evidence":"copy contract v1 unchanged"},
+    {"name":"shared_filter_test","status":"passed","evidence":"shared UI/filter tests"},
+    {"name":"deploy","status":"passed","evidence":"revalidated by CI after v1.5 migration"}
   ],
-  "summary": {
-    "wards_checked": 23,
-    "candidates": 82,
-    "published": 37,
-    "verified": 37,
-    "announced": 0,
-    "corrected": 13,
-    "thumbnail_count": 32,
-    "thumbnail_coverage": 0.865
-  },
-  "note": "Existing 2026-10-10 data was adopted into v1.4 as horizon 1 / full. Future runs use six-week rolling discovery; this historical discovery is not retroactively claimed to have searched six weeks."
+  "summary": {"wards_checked":23,"candidates":82,"published":37,"excluded":39,"duplicate_removed":6,"verified":37,"announced":0,"corrected":13,"thumbnail_count":32,"thumbnail_coverage":0.865,"decision_audit_complete":false},
+  "note": "Historical 10/10 discovery did not persist candidate-level exclusion reasons. v1.5 records that gap explicitly and forbids retroactive invention."
 }

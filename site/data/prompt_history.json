@@ -15,31 +15,32 @@
       "date": "2026-10-06",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.3.txt",
       "summary": "競馬予想と同じ最新版ポインタ方式を採用し、探索から検証・公開までを単一の完全版手順として固定。",
-      "changes": [
-        "site/data/latest_prompt.json を唯一の最新版ポインタとして追加",
-        "ファイル名順から最新版を推測する運用を禁止",
-        "PHASE A〜Eで探索・候補固定・画像取得・公式再監査・run manifest作成を明文化",
-        "週ごとのrun manifestに使用プロンプト版と工程PASS証跡を保存",
-        "prompt_historyを追記型履歴として導入",
-        "CIでprompt pointer/history/run manifest整合性を検証する方針を追加"
-      ],
-      "reason": "毎週ChatGPTが同じGitHub正本を参照し、競馬予想と同じ再現可能な手順で公式検証まで実行できるようにするため。"
+      "changes": ["latest_promptポインタ導入","探索・候補固定・画像・公式再監査・run manifestを正本化","CIでprompt governanceを検証"],
+      "reason": "毎週同じGitHub正本を参照し再現可能にするため。"
     },
     {
       "version": "v1.4",
       "date": "2026-10-06",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.4.txt",
-      "summary": "6週間先までをローリング探索し、距離に応じて本番・先取り・予告の確度を分けて公開する方式へ拡張。",
+      "summary": "6週間先までをローリング探索し、本番・先取り・予告の確度を分けて公開する方式へ拡張。",
+      "changes": ["6週間ローリング化","full/preview/announcement導入","announced導入","近づくたび再監査","6週間ナビゲーション追加"],
+      "reason": "数週間先の家族予定を早めに把握しつつ未確定情報を区別するため。"
+    },
+    {
+      "version": "v1.5",
+      "date": "2026-10-06",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.5.txt",
+      "summary": "候補発見ソースをレガシー参照元まで統合し、全候補の子連れ適性を8軸で評価して掲載・除外理由を監査可能にする。",
       "changes": [
-        "対象期間を単一週末から6週間ローリングへ拡張",
-        "horizon_index 1〜6 と publication_tier full/preview/announcement を導入",
-        "preview/announcementでは公式開催発表済みの announced ステータスを許容",
-        "announcedでもイベント名・開催日・会場は公式根拠必須と定義",
-        "近づくたびに再探索・再監査し announced から verified へ昇格する運用を追加",
-        "fullのみサムネイル70%ゲートを必須化し、遠い週は画像不足だけでは公開停止しない",
-        "manifestを使った複数週切替と6週間ナビゲーションを定義"
+        "レガシーPythonが参照するイベント媒体をAI探索の発見ソースとして明文化",
+        "family-fit-v1の8軸評価を導入",
+        "Hard exclusionとSoft evaluationを分離",
+        "C/D評価だけで自動除外することを禁止",
+        "候補単位decision auditと除外理由・根拠URL保存を必須化",
+        "C/D掲載時のoverride_reasonを必須化",
+        "専用decision Validatorとサイト上の判断理由可視化を追加"
       ],
-      "reason": "直前の週末だけでなく数週間先の家族予定を早めに把握できるようにしつつ、未確定情報を確定情報と混同しないため。"
+      "reason": "イベントを見つけるRecallを上げつつ、特に子連れ適性で何を理由に落としたのかを後から検証し、評価ロジックを継続的にブラッシュアップできるようにするため。"
     }
   ]
 }

@@ -39,6 +39,8 @@ jobs:
         run: python tools/enrich_images.py site/data
       - name: Validate event data strictly
         run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate family-fit decision audit strictly
+        run: python tools/validate_decisions.py --strict site/data
       - name: Test copy contract and shared filters
         run: npm test
 

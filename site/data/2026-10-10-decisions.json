@@ -1,0 +1,1 @@
+{"schema_version":1,"rubric_version":"family-fit-v1","evaluated_on":"2026-10-06","migration_incomplete":true,"summary":{"candidate_total":82,"published":37,"excluded":39,"duplicate":6,"historical_unclassified":82,"hard_excluded":null,"soft_excluded":null},"decisions":[],"note":"v1.5以前の探索では候補単位の8軸評価・除外理由を保存していなかったため、過去理由を推測で生成しない。次回v1.5で再探索した場合に完全なdecision auditへ置換する。"}

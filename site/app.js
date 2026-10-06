@@ -16,6 +16,17 @@ export const VERIFICATION_STATES = {
   unverified:{label:'要確認',className:'verify-pending'}
 };
 
+export const FAMILY_FIT_AXES = {
+  child_target:'子ども対象度',
+  interactivity:'体験性',
+  age_fit:'年齢適合',
+  stay_flexibility:'滞在自由度',
+  burden:'安全・負担',
+  cost:'費用負担',
+  reservation:'予約難易度',
+  family_value:'家族価値'
+};
+
 export function isoLocal(d){
   const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
   return `${y}-${m}-${day}`;
@@ -52,13 +63,8 @@ export function shortWeekendLabel(sat){
   return `${d.getMonth()+1}/${d.getDate()}`;
 }
 
-export function publicationTierMeta(tier){
-  return PUBLICATION_TIERS[tier] || PUBLICATION_TIERS.planned;
-}
-
-export function verificationStateMeta(status){
-  return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified;
-}
+export function publicationTierMeta(tier){ return PUBLICATION_TIERS[tier] || PUBLICATION_TIERS.planned; }
+export function verificationStateMeta(status){ return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified; }
 
 export function rollingWeekSlots(manifest,anchorSat=''){
   const weeks=Array.isArray(manifest?.weekends)?manifest.weekends:[];
@@ -70,14 +76,7 @@ export function rollingWeekSlots(manifest,anchorSat=''){
     const sat=addDays(anchor,i*7);
     const entry=bySat.get(sat)||null;
     const inferredTier=i<2?'full':i<4?'preview':'announcement';
-    slots.push({
-      sat,
-      sun:addDays(sat,1),
-      horizon_index:i+1,
-      publication_tier:entry?.publication_tier || inferredTier,
-      entry,
-      available:!!entry
-    });
+    slots.push({sat,sun:addDays(sat,1),horizon_index:i+1,publication_tier:entry?.publication_tier||inferredTier,entry,available:!!entry});
   }
   return slots;
 }
@@ -86,13 +85,22 @@ export function normalizeText(value){
   return String(value ?? '').normalize('NFKC').toLocaleLowerCase('ja-JP').replace(/\s+/g,' ').trim();
 }
 
+export function familyFitAxisRows(familyFit){
+  const axes=familyFit?.axes;
+  if(!axes || typeof axes!=='object') return [];
+  return Object.entries(FAMILY_FIT_AXES).map(([key,label])=>{
+    const item=axes[key];
+    return item&&typeof item==='object'?{key,label,grade:item.grade||'unknown',reason:item.reason||''}:null;
+  }).filter(Boolean);
+}
+
 export function eventSearchText(ev){
   return normalizeText([
     ev.name, ev.ward, ev.venue, ev.description, ev.price, ev.period, ev.time,
     ...(Array.isArray(ev.categories) ? ev.categories : []),
-    ev.family_fit?.reason, ev.family_fit?.age,
-    ev.reservation?.note,
-    ev.verification?.note,
+    ev.family_fit?.reason, ev.family_fit?.age, ev.family_fit?.overall,
+    ...familyFitAxisRows(ev.family_fit).flatMap(x=>[x.label,x.grade,x.reason]),
+    ev.reservation?.note, ev.verification?.note,
     verificationStateMeta(ev.verification?.status).label
   ].filter(Boolean).join(' '));
 }
@@ -138,14 +146,7 @@ export function applyVerification(events, audit){
     const merged = {...ev,...c};
     if(c.family_fit) merged.family_fit={...(ev.family_fit||{}),...c.family_fit};
     if(c.reservation) merged.reservation={...(ev.reservation||{}),...c.reservation};
-    merged.verification={
-      status:row.status || 'unverified',
-      source:row.source || '',
-      source_kind:row.source_kind || '',
-      fields:row.fields || {},
-      note:row.note || '',
-      verified_on:audit?.verified_on || ''
-    };
+    merged.verification={status:row.status||'unverified',source:row.source||'',source_kind:row.source_kind||'',fields:row.fields||{},note:row.note||'',verified_on:audit?.verified_on||''};
     return merged;
   });
 }
@@ -175,9 +176,8 @@ export async function loadWeekend(manifest,satIso){
       return rows;
     }));
     data.events=[...baseEvents,...shards.flat()];
-  }else{
-    data.events=baseEvents;
-  }
+  }else data.events=baseEvents;
+
   if(data.verification_file){
     const vr=await fetch('data/'+data.verification_file,{cache:'no-store'});
     if(!vr.ok) throw new Error(`verification load failed: ${vr.status}`);
@@ -188,13 +188,19 @@ export async function loadWeekend(manifest,satIso){
     data.verification=null;
     data.events=applyVerification(data.events,null);
   }
+
   if(data.run_file){
     const rr=await fetch('data/'+data.run_file,{cache:'no-store'});
     if(!rr.ok) throw new Error(`run manifest load failed: ${rr.status}`);
     data.run=await rr.json();
-  }else{
-    data.run=null;
-  }
+  }else data.run=null;
+
+  const decisionFile=data.run?.source_data?.decision_file;
+  if(decisionFile){
+    const dr=await fetch('data/'+decisionFile,{cache:'no-store'});
+    if(!dr.ok) throw new Error(`decision audit load failed: ${dr.status}`);
+    data.decision_audit=await dr.json();
+  }else data.decision_audit=null;
   return {entry,data};
 }
 
@@ -203,8 +209,6 @@ export function escapeHtml(value){
 }
 
 export function safeHttpUrl(value){
-  try {
-    const u = new URL(String(value || ''));
-    return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : '';
-  } catch { return ''; }
+  try { const u = new URL(String(value || '')); return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : ''; }
+  catch { return ''; }
 }

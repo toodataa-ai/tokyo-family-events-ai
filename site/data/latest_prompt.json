@@ -1,6 +1,6 @@
 {
-  "version": "v1.4",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.4.txt",
+  "version": "v1.5",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.5.txt",
   "updated_at": "2026-10-06",
-  "rule": "Every weekly event task must resolve this pointer first. Never infer the latest version from filename order. Whenever version or path changes, append a matching entry to site/data/prompt_history.json in the same update; old history entries must not be overwritten. v1.4 requires six-week rolling discovery with full/preview/announcement publication tiers."
+  "rule": "Every event discovery task must resolve this pointer first. v1.5 requires legacy-source discovery integration, family-fit-v1 eight-axis candidate evaluation, hard/soft exclusion separation, candidate-level decision audit, and reason visibility. Never infer the latest version from filename order."
 }

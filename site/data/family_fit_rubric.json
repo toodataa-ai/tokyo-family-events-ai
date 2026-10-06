@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "rubric_version": "family-fit-v1",
+  "updated_at": "2026-10-06",
+  "scale": {
+    "A": "家族利用に明確な強みがある",
+    "B": "家族利用に適するが条件・弱点もある",
+    "C": "注意点が大きいが家族価値次第で候補になりうる",
+    "D": "家族利用の適性が低い。ただしHard exclusionではない限り自動除外しない",
+    "unknown": "公式情報等から判断できない"
+  },
+  "axes": {
+    "child_target": {"label":"子ども対象度","question":"子ども・親子が明示対象か、子どもが自然に参加できる設計か"},
+    "interactivity": {"label":"体験性","question":"工作・遊び・参加・観察など能動的な体験があるか"},
+    "age_fit": {"label":"年齢適合","question":"幼児・小学生が実際に楽しめる内容・時間・難易度か"},
+    "stay_flexibility": {"label":"滞在自由度","question":"途中入退場や短時間参加など家族都合に合わせやすいか"},
+    "burden": {"label":"安全・負担","question":"夜間、混雑、騒音、長時間、移動、安全面の負担が小さいか。Aほど負担が小さい"},
+    "cost": {"label":"費用負担","question":"家族単位で見た料金が現実的か。Aほど負担が小さい"},
+    "reservation": {"label":"予約難易度","question":"当日参加・空き状況・締切を含め実際に参加しやすいか。Aほど参加しやすい"},
+    "family_value": {"label":"家族価値","question":"子ども専用か否かにかかわらず、家族でわざわざ行く価値・特別感があるか"}
+  },
+  "hard_exclusions": {
+    "adult_only":"成人限定・成人向け限定",
+    "minors_prohibited":"未成年・子ども入場不可",
+    "safety_unsuitable":"子ども同伴に明確に不適切な危険条件",
+    "outside_23wards":"東京23区外",
+    "date_mismatch":"対象週末と不一致",
+    "no_official_basis":"本番段階で開催根拠を確認できない",
+    "cancelled_or_postponed":"中止または対象週外へ延期"
+  },
+  "soft_reason_codes": {
+    "adult_oriented":"成人向け要素が強い",
+    "child_program_absent":"子ども専用企画が確認できない",
+    "passive_only":"観覧中心",
+    "night_burden":"夜間負担",
+    "crowd_burden":"混雑負担",
+    "high_cost":"家族利用時に高額",
+    "reservation_difficult":"予約・締切上の参加難易度が高い",
+    "age_mismatch":"主対象年齢とのズレ",
+    "family_value_low":"家族のおでかけとして相対価値が低い",
+    "family_value_high":"注意点を上回る家族価値がある"
+  },
+  "policy": {
+    "hard_exclusion_is_automatic": true,
+    "overall_grade_is_automatic_exclusion": false,
+    "published_c_or_d_requires_override_reason": true,
+    "unknown_must_not_be_guessed": true,
+    "diagnostic_score_is_not_a_publication_threshold": true
+  }
+}

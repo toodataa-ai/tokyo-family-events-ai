@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-06",
+  "principle": "媒体は候補発見用、公式・主催者情報は確定用。レガシー出力JSONではなく参照元そのものを見る。",
+  "official_layers": [
+    "各区公式イベント・観光・子育て・文化・公園・図書館・児童館",
+    "東京都・都立施設・公的施設",
+    "主催者・会場・施設・商業施設・鉄道・交通・スポーツ・劇場・大学の公式",
+    "公式観光協会"
+  ],
+  "legacy_discovery_sources": [
+    {"label":"墨田","url":"https://www.sumidaevent.com/"},
+    {"label":"浅草","url":"https://www.asakusaevent.com/"},
+    {"label":"上野公園","url":"https://www.uenopark.info/"},
+    {"label":"秋葉原","url":"https://www.akihabaraevent.com/"},
+    {"label":"日比谷公園","url":"https://www.hibiyapark.info/"},
+    {"label":"池袋","url":"https://www.ikebukuropark.info/"},
+    {"label":"新宿","url":"https://www.shinjukuevent.com/"},
+    {"label":"中野","url":"https://www.nakanoevent.com/"},
+    {"label":"代々木公園","url":"https://www.yoyogikoen.info/"},
+    {"label":"渋谷","url":"https://www.miyashitapark.info/"},
+    {"label":"六本木","url":"https://www.roppongievents.com/"},
+    {"label":"豊洲","url":"https://www.toyosuevent.com/"},
+    {"label":"お台場","url":"https://www.odaibapark.com/"},
+    {"label":"品川","url":"https://www.shinagawaevent.com/"},
+    {"label":"立川","url":"https://www.tachikawaevent.com/","note":"候補発見は可。ただし23区外なのでoutside_23wardsで除外対象"},
+    {"label":"アイテラス落合南長崎","url":"https://www.iterrace.jp/"},
+    {"label":"とっておきの練馬","url":"https://www.nerimakanko.jp/"},
+    {"label":"杉並区イベントカレンダー（お祭り）","url":"https://www.city.suginami.tokyo.jp/"}
+  ]
+}

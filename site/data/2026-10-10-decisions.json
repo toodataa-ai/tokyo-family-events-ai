@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 95,
-    "published": 86,
+    "candidate_total": 97,
+    "published": 88,
     "excluded": 4,
     "duplicate": 5,
     "hard_excluded": 2,
@@ -7537,6 +7537,158 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002865"
+        }
+      ]
+    },
+    {
+      "candidate_id": "legacy-gap-2026-10-10-zannen3",
+      "name": "サンシャイン水族館 特別展「ざんねんないきもの展３」",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "reason": "生き物を題材にした親子向け展示で、家族のおでかけ目的として明確。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しみやすい生き物展示。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "生体展示を見ながら発見・学びを楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "館内展示で滞在時間を調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内中心で天候の影響を受けにくい。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "特別展の入場料金が必要。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "入場条件はあるが大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "生き物への興味と学びにつながる家族体験。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "生き物を題材にした親子向け展示で、家族のおでかけ目的として明確。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+          "basis": "レガシー照合で未収載を検知し、公式情報で対象週末の開催を再確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_parity_verification",
+          "url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
+        },
+        {
+          "kind": "legacy_media",
+          "url": "https://www.ikebukuropark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.ikebukuropark.info/sunshine-aquarium-zannen-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "legacy-gap-2026-10-10-mundo-pixar",
+      "name": "ピクサーの世界展（Mundo Pixar Experience）",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "reason": "実物大セットを歩いて楽しむ全年齢向け没入体験で、家族のおでかけ価値が高い。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども専用ではないが、公式に全年齢対象の体験。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "作品世界を歩いて巡る没入型の体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "公式に全年齢対象で家族参加しやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "体験時間の目安があり一定の時間確保が必要。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内型で天候の影響を受けにくい。"
+          },
+          "cost": {
+            "grade": "C",
+            "reason": "有料イベントのため家族人数に応じた費用負担がある。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "入場チケットの購入が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "ピクサー作品の世界に入る特別感が家族のおでかけ目的になる。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "実物大セットを歩いて楽しむ全年齢向け没入体験で、家族のおでかけ価値が高い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://mundopixar.com/ja/cities/tokyo",
+          "basis": "レガシー照合で未収載を検知し、公式情報で対象週末の開催を再確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_parity_verification",
+          "url": "https://mundopixar.com/ja/cities/tokyo"
+        },
+        {
+          "kind": "legacy_media",
+          "url": "https://www.toyosuevent.com/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.toyosuevent.com/pixar-no-sekaiten-2026-toyosu/"
         }
       ]
     }

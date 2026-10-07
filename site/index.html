@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2335">
+<link rel="stylesheet" href="styles.css?v=20261007-2355">
 </head>
 <body class="home-page" data-season="winter">
 <section class="site-hero">
@@ -30,33 +30,19 @@
       <div class="summary-card"><b id="totalExcluded">-</b><span>掲載除外</span><small>6週間合計</small></div>
       <div class="summary-card"><b id="totalDuplicate">-</b><span>重複統合</span><small>6週間合計</small></div>
     </div>
-    <div class="week-snapshot" id="weekSnapshot">今週の件数を読み込み中です。</div>
-    <div class="reason-card">
-      <div class="reason-head"><h3>掲載除外の主な理由</h3><span>監査データの primary reason を集計</span></div>
-      <div class="reason-list" id="reasonList"><span class="audit-note">読み込み中です。</span></div>
-    </div>
   </section>
 
-  <section class="home-section panel" aria-labelledby="auditTitle">
+  <section class="home-section panel home-quality" aria-labelledby="qualityTitle">
     <div class="section-head">
-      <div><div class="eyebrow">AI AUDIT REPORT</div><h2 id="auditTitle">AI探索・公式確認レポート</h2><p>検索画面ではなく、ここに探索量・公式確認状況・除外理由を集約します。</p></div>
+      <div><div class="eyebrow">CURRENT WEEK QUALITY</div><h2 id="qualityTitle">今週の収集品質</h2><p>取得経路・個別イベント・除外理由の詳細は管理ビューに集約しています。</p></div>
     </div>
-    <div class="coverage-grid home-audit-grid">
-      <div class="metric"><b id="homeCovWards">-</b><span>確認済み区</span></div>
-      <div class="metric"><b id="homeCovSources">-</b><span>探索ソース</span></div>
-      <div class="metric"><b id="homeCovCandidates">-</b><span>候補イベント</span></div>
-      <div class="metric"><b id="homeCovPublished">-</b><span>掲載イベント</span></div>
-      <div class="metric"><b id="homeCovExcluded">-</b><span>掲載除外</span></div>
-      <div class="metric"><b id="homeCovVerified">-</b><span>公式確認済み</span></div>
-      <div class="metric"><b id="homeCovAnnounced">-</b><span>詳細待ち</span></div>
-      <div class="metric"><b id="homeCovDecision">-</b><span>判断監査</span></div>
-      <div class="metric"><b id="homeCovPrompt">-</b><span>実行プロンプト</span></div>
-      <div class="metric"><b id="homeCovTier">-</b><span>掲載段階</span></div>
+    <div class="quality-grid">
+      <div class="quality-card"><b id="qualityWards">-</b><span>23区確認</span></div>
+      <div class="quality-card"><b id="qualityExplicit">-</b><span>固定サイト由来</span></div>
+      <div class="quality-card"><b id="qualityAi">-</b><span>AI横断由来</span></div>
+      <div class="quality-card"><b id="qualityVerified">-</b><span>公式確認済み</span></div>
     </div>
-    <details class="decision-report home-audit-details" open>
-      <summary>今週の掲載除外理由・対象イベント</summary>
-      <div id="homeDecisionContent"><p class="audit-note">読み込み中です。</p></div>
-    </details>
+    <div class="quality-footer"><span id="qualityPeriod">今週分を読み込み中です。</span><a href="admin.html">詳細は管理ビュー</a></div>
   </section>
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
@@ -82,60 +68,21 @@
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,fmtRange,escapeHtml,safeHttpUrl,publicationTierMeta,heroSeasonForDate,heroSeasonMeta} from './app.js';
+import {loadManifest,loadWeekend,loadDiscoverySources,fmtRange,classifyDiscoveryProvenance,heroSeasonForDate,heroSeasonMeta} from './app.js';
 const $=id=>document.getElementById(id);
-function applyHeroSeason(dateStr){const season=heroSeasonForDate(dateStr);document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
-const REASON_LABELS={
-  safety_unsuitable:'安全面・子連れ負担',
-  extreme_cost:'費用負担が大きい',
-  outside_23wards:'東京23区外',
-  age_mismatch:'対象年齢が合いにくい',
-  reservation_barrier:'予約難易度が高い',
-  family_value_low:'家族で行く価値が低い',
-  adult_oriented:'成人向け・子連れ不向き',
-  schedule_mismatch:'開催日・時間が対象外',
-  insufficient_evidence:'公式根拠が不足'
-};
-function reasonLabel(code){return REASON_LABELS[code]||String(code||'その他').replaceAll('_',' ');}
-
-function renderHomeAudit(data){
-  const c=data.coverage||{},wards=Array.isArray(c.wards)?c.wards:[],audit=data.decision_audit,s=audit?.summary||{};
-  const verified=data.events.filter(x=>x.verification?.status==='verified').length;
-  const announced=data.events.filter(x=>x.verification?.status==='announced').length;
-  const tier=publicationTierMeta(data.publication_tier);
-  $('homeCovWards').textContent=`${wards.filter(x=>x.status==='checked').length}/23`;
-  $('homeCovSources').textContent=c.sources_checked??'-';
-  $('homeCovCandidates').textContent=s.candidate_total??c.candidate_count??'-';
-  $('homeCovPublished').textContent=s.published??c.published_count??data.events.length;
-  $('homeCovExcluded').textContent=s.excluded??c.excluded_count??'-';
-  $('homeCovVerified').textContent=`${verified}/${data.events.length}`;
-  $('homeCovAnnounced').textContent=announced;
-  $('homeCovDecision').textContent=audit?(audit.migration_incomplete?'移行中':'完備'):'-';
-  $('homeCovPrompt').textContent=data.run?.prompt?.version??'-';
-  $('homeCovTier').textContent=tier.label;
-  const box=$('homeDecisionContent');
-  if(!audit){box.innerHTML='<p class="audit-note">判断監査データはありません。</p>';return;}
-  const excluded=(audit.decisions||[]).filter(x=>x.decision==='excluded');
-  let html=`<div class="audit-summary"><b>${audit.migration_incomplete?'移行中':'完全監査'}</b><span>候補 ${s.candidate_total??'-'} ／ 掲載 ${s.published??'-'} ／ 除外 ${s.excluded??'-'} ／ 重複 ${s.duplicate??'-'}</span></div>`;
-  if(excluded.length){
-    html+='<div class="excluded-list">'+excluded.map(row=>{
-      const evidence=(row.evidence||[]).map(e=>{const u=safeHttpUrl(e.url);return u?`<a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(e.label||'根拠')}</a>`:''}).filter(Boolean).join(' / ');
-      const reasonLabelText=reasonLabel(row.primary_reason_code);
-      return `<div class="excluded-item"><b>${escapeHtml(row.name||row.candidate_id||'候補')}</b><span class="decision-tag ${row.exclusion_type==='hard'?'hard':'soft'}">${row.exclusion_type==='hard'?'Hard除外':'Soft判断'}</span><div><strong>${escapeHtml(reasonLabelText)}</strong>：${escapeHtml((row.reasons||[]).join(' ／ ')||'理由記録あり')}</div>${evidence?`<div class="source">根拠: ${evidence}</div>`:''}</div>`;
-    }).join('')+'</div>';
-  }else{
-    html+='<p class="audit-note">この週は除外候補なし。</p>';
-  }
-  box.innerHTML=html;
+function applyHeroSeason(dateStr){
+  const season=heroSeasonForDate(dateStr);
+  document.body.dataset.season=season;
+  const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');
+  if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}
 }
 
 (async()=>{
   try{
-    const manifest=await loadManifest();
+    const [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
     applyHeroSeason(manifest.default);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     let candidates=0,published=0,excluded=0,duplicate=0;
-    const reasons=new Map();
     for(const {data} of rows){
       if(!data)continue;
       const s=data.decision_audit?.summary||{};
@@ -143,31 +90,34 @@ function renderHomeAudit(data){
       published+=Number(s.published??data.coverage?.published_count??data.events?.length??0);
       excluded+=Number(s.excluded??data.coverage?.excluded_count??0);
       duplicate+=Number(s.duplicate??0);
-      const decisions=Array.isArray(data.decision_audit?.decisions)?data.decision_audit.decisions:[];
-      for(const d of decisions){
-        if(d.decision!=='excluded')continue;
-        const code=d.primary_reason_code||'other';
-        reasons.set(code,(reasons.get(code)||0)+1);
-      }
     }
     $('totalCandidates').textContent=candidates.toLocaleString('ja-JP');
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
     $('totalExcluded').textContent=excluded.toLocaleString('ja-JP');
     $('totalDuplicate').textContent=duplicate.toLocaleString('ja-JP');
     $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${manifest.generated||'-'}`;
+
     const first=rows[0]?.data;
     if(first){
-      renderHomeAudit(first);
-      const s=first.decision_audit?.summary||{};
-      $('weekSnapshot').textContent=`今週 ${fmtRange(first.sat,first.sun)}：候補 ${s.candidate_total??first.coverage?.candidate_count??'-'}件 ／ 掲載 ${s.published??first.events.length}件 ／ 除外 ${s.excluded??'-'}件 ／ 重複 ${s.duplicate??'-'}件`;
+      const wards=Array.isArray(first.coverage?.wards)?first.coverage.wards:[];
+      const decisions=Array.isArray(first.decision_audit?.decisions)?first.decision_audit.decisions:[];
+      let explicit=0,ai=0;
+      for(const decision of decisions){
+        const p=classifyDiscoveryProvenance(null,decision,registry);
+        if(p.channel==='explicit'||p.channel==='both') explicit++;
+        if(p.channel==='ai_cross'||p.channel==='both') ai++;
+      }
+      const verified=first.events.filter(x=>x.verification?.status==='verified').length;
+      $('qualityWards').textContent=`${wards.filter(x=>x.status==='checked').length}/23`;
+      $('qualityExplicit').textContent=`${explicit}件`;
+      $('qualityAi').textContent=`${ai}件`;
+      $('qualityVerified').textContent=`${verified}/${first.events.length}`;
+      $('qualityPeriod').textContent=`${fmtRange(first.sat,first.sun)} ／ 「両方」で発見した候補は固定・AIの双方に含みます。`;
     }
-    const sorted=[...reasons.entries()].sort((a,b)=>b[1]-a[1]);
-    $('reasonList').innerHTML=sorted.length?sorted.map(([code,count])=>`<span class="reason-pill"><span>${escapeHtml(reasonLabel(code))}</span><b>${count}</b></span>`).join(''):'<span class="audit-note">この期間は除外理由の記録がありません。</span>';
   }catch(e){
     console.error(e);
     $('statusScope').textContent='データ状況の読み込みに失敗しました。';
-    $('weekSnapshot').textContent='検索画面からイベント一覧は利用できます。';
-    $('reasonList').innerHTML='<span class="audit-note">除外理由を読み込めませんでした。</span>';
+    $('qualityPeriod').textContent='収集品質を読み込めませんでした。管理ビューで詳細を確認してください。';
   }
 })();
 </script>

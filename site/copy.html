@@ -3,31 +3,49 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261008-v114">
+<link rel="stylesheet" href="styles.css?v=20261008-v115">
 </head>
-<body class="copy-page">
-<header>
-  <div class="header-row"><h1>📋 コピペ用リスト</h1><nav class="site-nav"><a id="backLink" href="search.html">イベント検索へ</a></nav></div>
-  <div class="controls">
-    <input type="date" id="dateInput" aria-label="対象日">
-    <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
-    <button id="updateBtn">この週末を表示</button>
+<body class="copy-page" data-season="autumn">
+<section class="site-hero">
+  <div class="hero-inner">
+    <div class="site-topbar">
+      <a class="site-brand" href="index.html">東京23区子連れイベントAI収集</a>
+      <nav class="site-nav"><a id="backLink" href="search.html">イベント検索へ</a></nav>
+    </div>
+    <div class="hero-eyebrow">COPY LIST</div>
+    <h1>コピペ用リスト</h1>
+    <p class="hero-copy">検索結果と同じ条件でイベントを絞り込み、必要な項目をそのままコピーできます。</p>
   </div>
-  <div class="meta" id="rangeText"></div><div class="meta" id="countText"></div><div class="msg" id="msgBox"></div>
-</header>
-<nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
-<nav class="chips" id="chips"></nav>
+</section>
+<section class="search-quick" aria-label="検索と絞り込み">
+  <div class="search-quick-row copy-search-quick-row">
+    <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
+    <details class="date-refine" id="dateRefine">
+      <summary>日付指定</summary>
+      <div class="date-refine-panel">
+        <input type="date" id="dateInput" aria-label="対象日">
+        <button id="updateBtn">この週末を表示</button>
+        <div class="meta" id="rangeText"></div>
+        <div class="msg" id="msgBox"></div>
+      </div>
+    </details>
+  </div>
+</section>
+<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
+<nav class="chips compact-ward-chips" id="chips"></nav>
 <main>
+  <div class="result-head result-head-simple copy-result-head"><span id="countText">-</span></div>
   <p class="tip">各カード上部に検索結果と同じイベント情報を表示します。下部の「コピー用項目」から1項目ずつ、またはまとめてコピーできます。公式確認・取得経路・AI判定は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js?v=20261008-v114';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261008-v115';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all',currentReservation='all',currentPeriodStart='';
 const $=id=>document.getElementById(id);
+function applyHeroSeason(){document.body.dataset.season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());}
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment,reservation:currentReservation};}
 function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
@@ -112,7 +130,7 @@ function render(){
   }).join('');syncUrl();
 }
 async function loadSelected(){try{
-  showMsg('');
+  showMsg('');applyHeroSeason();
   if(allMode){
     const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const rows=loaded.map(x=>x.data).filter(Boolean);
@@ -126,6 +144,6 @@ async function loadSelected(){try{
 $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;currentPeriodStart='';$('dateInput').value='';}else{allMode=false;currentPeriodStart=b.dataset.date;$('dateInput').value=b.dataset.date;}loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
 $('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});
-(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';currentPeriodStart=allMode?'':dateParam;$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';currentReservation=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);applyHeroSeason();const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';currentPeriodStart=allMode?'':dateParam;$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';currentReservation=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

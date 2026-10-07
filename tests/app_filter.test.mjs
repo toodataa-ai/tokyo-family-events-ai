@@ -258,7 +258,7 @@ const normLegacyName=value=>String(value??'').normalize('NFKC').toLowerCase()
   .replace(/^祝）/,'').replace(/令和8年/g,'').replace(/2026/g,'')
   .replace(/[^\\p{L}\\p{N}]/gu,'');
 const canonLegacyUrl=value=>{
-  try{const u=new URL(String(value||''));return (u.hostname.replace(/^www\\./,'')+u.pathname.replace(/\\/$/,'')).toLowerCase();}
+  try{const u=new URL(String(value||''));const host=u.hostname.startsWith('www.')?u.hostname.slice(4):u.hostname;const pathname=u.pathname.endsWith('/')?u.pathname.slice(0,-1):u.pathname;return (host+pathname).toLowerCase();}
   catch{return '';}
 };
 const legacyNameMatch=(a,b)=>{

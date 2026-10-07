@@ -32,6 +32,7 @@ jobs:
       mode: ${{ steps.gate.outputs.mode }}
       candidate_sha: ${{ steps.gate.outputs.candidate_sha }}
       base_data_production_sha: ${{ steps.gate.outputs.base_data_production_sha }}
+      operation: ${{ steps.gate.outputs.operation }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,6 +43,7 @@ jobs:
           mode="staging"
           candidate=""
           base=""
+          operation=""
 
           if [ "${{ github.event_name }}" = "push" ]; then
             changed="$(git diff --name-only HEAD^ HEAD)"
@@ -50,6 +52,7 @@ jobs:
               mode="data"
               candidate="$(sed -n 's/^candidate_sha=//p' .github/data-deploy-trigger.txt | tail -1)"
               base="$(sed -n 's/^base_data_production_sha=//p' .github/data-deploy-trigger.txt | tail -1)"
+              operation="$(sed -n 's/^operation=//p' .github/data-deploy-trigger.txt | tail -1)"
               if ! printf '%s' "$candidate" | grep -Eq '^[0-9a-f]{40}$'; then
                 echo "Invalid candidate_sha in data deploy trigger" >&2
                 exit 1
@@ -64,6 +67,7 @@ jobs:
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
           echo "candidate_sha=$candidate" >> "$GITHUB_OUTPUT"
           echo "base_data_production_sha=$base" >> "$GITHUB_OUTPUT"
+          echo "operation=$operation" >> "$GITHUB_OUTPUT"
 
   validate_staging:
     needs: gate
@@ -299,7 +303,7 @@ jobs:
 
   snapshot_data:
     needs: [gate, promote_data, preview]
-    if: ${{ needs.gate.outputs.mode == 'data' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
+    if: ${{ needs.gate.outputs.mode == 'data' && needs.gate.outputs.operation != 'bootstrap' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

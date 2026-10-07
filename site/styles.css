@@ -461,3 +461,60 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
     padding:0 9px;
   }
 }
+
+
+/* Compact copy-page header controls */
+.copy-page .controls{
+  grid-template-columns:120px minmax(0,1fr) 130px;
+  gap:6px;
+  margin-top:8px;
+  align-items:center;
+}
+.copy-page .controls input,
+.copy-page .controls button{
+  height:32px;
+  min-height:32px;
+  padding:0 9px;
+  border-radius:8px;
+  font-size:12px;
+  line-height:1.2;
+}
+.copy-page .controls input{
+  border:1px solid #cbd5e1;
+  background:#fff;
+  color:#344054;
+}
+.copy-page .controls button{
+  border:0;
+  white-space:nowrap;
+}
+@media(max-width:680px){
+  .copy-page .controls{
+    grid-template-columns:96px minmax(0,1fr);
+    gap:6px;
+    margin-top:8px;
+  }
+  .copy-page .controls input[type=date]{
+    grid-column:1;
+    width:96px;
+    height:30px;
+    min-height:30px;
+    font-size:11px;
+    padding:0 6px;
+  }
+  .copy-page .controls button{
+    grid-column:2;
+    width:100%;
+    height:30px;
+    min-height:30px;
+    font-size:11px;
+    padding:0 8px;
+  }
+  .copy-page .controls input[type=search]{
+    grid-column:1/-1;
+    height:30px;
+    min-height:30px;
+    font-size:11px;
+    padding:0 8px;
+  }
+}

@@ -58,6 +58,22 @@
       <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップへ反映します。</small></div>
     </div>
     <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。取得経路はイベント詳細で確認できます。</span></div>
+
+    <div class="logic-subhead">
+      <div class="eyebrow">WEEKLY UPDATE</div>
+      <h3>休日明けに、6週間を差分更新します</h3>
+      <p>毎朝8時ごろに実行条件だけ確認し、土日＋祝日の連続休日が終わった最初の平日にだけ本更新します。通常週は月曜、月曜祝日の3連休なら火曜です。</p>
+    </div>
+    <div class="logic-flow logic-update-flow">
+      <div class="logic-step"><span>1</span><b>休日明けを判定</b><small>日本の祝日・休日を確認し、直前の休日ブロック終了後の最初の平日だけ更新。該当しない日は何も変更しません。</small></div>
+      <div class="logic-step"><span>2</span><b>直近1〜2週を再探索</b><small>23区を再探索し、既存掲載も公式再監査。直前追加、中止・延期、時間・料金・申込などの変更を反映します。</small></div>
+      <div class="logic-step"><span>3</span><b>3〜5週先は差分探索</b><small>既存イベントの変更監査をしながら、新着候補を差分で探索。毎回ゼロから全件取り直す負荷を避けます。</small></div>
+      <div class="logic-step"><span>4</span><b>新しい6週目をフル探索</b><small>新たにローリング対象へ入った期間は、東京23区を1区ずつフル探索して新しい母集団を作ります。</small></div>
+      <div class="logic-step"><span>5</span><b>祝日を専用探索</b><small>6週間内の祝日は必ず別途確認。土日と離れた平日祝日も対象にし、期間が重なるだけで開催と断定しません。</small></div>
+      <div class="logic-step"><span>6</span><b>非退行・幻覚ガード</b><small>前回値を取得失敗だけで消さず、値変更は根拠を必須化。前年・別会場・同名別イベントの取り違えや推測補完も防ぎます。</small></div>
+      <div class="logic-step"><span>7</span><b>CI合格時だけ公開</b><small>非退行、データ整合、判断監査、回帰テストを自動検証。1つでも失敗したら既存サイトを維持し、不完全な更新は公開しません。</small></div>
+    </div>
+    <div class="logic-guard logic-guard-blue"><b>正本は最新版だけ</b><span>定期更新は最初に latest_prompt.json を解決し、そこが指す最新版完全版プロンプトだけを正本として実行します。古い固定ルールは持ち込みません。</span></div>
   </section>
 
   <section class="home-section panel home-cta">

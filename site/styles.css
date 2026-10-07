@@ -564,3 +564,43 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .week-tabs .week-tab b{font-size:11px}
 .week-tabs .week-tab span{font-size:9px;margin-top:3px}
 .week-tabs .week-tab em{display:none!important}
+
+
+/* Weekly differential update flow */
+.logic-subhead{
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid #e4e7ec;
+}
+.logic-subhead h3{
+  margin:3px 0 5px;
+  font-size:14px;
+  color:var(--navy);
+}
+.logic-subhead p{
+  margin:0 0 10px;
+  color:var(--sub);
+  font-size:10.5px;
+  line-height:1.6;
+}
+.logic-update-flow{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.logic-update-flow .logic-step{
+  min-height:112px;
+}
+.logic-guard-blue{
+  background:#eef5fb;
+  border-color:#d6e6f2;
+}
+.logic-guard-blue b{color:#24577a}
+@media(max-width:900px){
+  .logic-update-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .logic-update-flow{grid-template-columns:1fr}
+  .logic-update-flow .logic-step{min-height:0}
+  .logic-subhead{margin-top:14px;padding-top:12px}
+  .logic-subhead h3{font-size:12px}
+  .logic-subhead p{font-size:9.5px}
+}

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const latest=JSON.parse(fs.readFileSync('site/data/latest_prompt.json','utf8'));
 const prompt=fs.readFileSync(latest.path,'utf8');
 
-assert.equal(latest.version,'v1.13');
+assert.equal(latest.version,'v1.14');
 assert.match(prompt,/同一URLだけでは重複にしない/);
 assert.match(prompt,/地区・支部・会場・公演識別子/);
 assert.match(prompt,/同時開催/);

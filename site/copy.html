@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261008-0015">
+<link rel="stylesheet" href="styles.css?v=20261007-copyparity1">
 </head>
 <body class="copy-page">
 <header>
@@ -18,15 +18,15 @@
 <nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
 <nav class="chips" id="chips"></nav>
 <main>
-  <p class="tip">各項目の「コピー」で1項目だけ、カード下の「まとめてコピー」で既存サイトと同じ順序の全項目を改行区切りでコピーします。公式確認・確定度・プロンプト情報は画面表示のみで、コピー本文には混ぜません。</p>
+  <p class="tip">各カード上部に検索結果と同じイベント情報を表示します。下部の「コピー用項目」から1項目ずつ、またはまとめてコピーできます。公式確認・取得経路・AI判定は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks,indoorOutdoorLabel,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
-let manifest=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all';
+let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment};}
@@ -49,6 +49,21 @@ function renderWeekTabs(){
     slots.map(slot=>{const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');return `<button class="week-tab ${!allMode&&currentSat===slot.sat?'active':''} ${slot.available?'':'pending'}" data-date="${slot.sat}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;}).join('');
 }
 function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
+function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
+function copyStarSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="width:1em;height:1em;display:block;flex:0 0 1em;fill:#e0a21b;stroke:#b97808;stroke-width:.7"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
+function copyFamilyStars(grade){const n=grade==='A'?3:grade==='B'?2:grade==='C'?1:0;return n?Array.from({length:n},copyStarSvg).join(''):'<span class="no-star">―</span>';}
+function renderCopyAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}
+function copyEventProvenance(ev){
+  const rows=Array.isArray(ev._decision_rows)&&ev._decision_rows.length?ev._decision_rows:[findDecisionForEvent(ev,currentData?.decision_audit)].filter(Boolean);
+  const combined={discovery_sources:rows.flatMap(r=>r?.discovery_sources||[])};
+  return classifyDiscoveryProvenance(ev,combined,registry);
+}
+function copyProvenanceBadge(prov){
+  if(prov.channel==='ai_cross') return '<span class="badge provenance-badge prov-ai">AIのみ</span>';
+  if(prov.channel==='explicit') return '<span class="badge provenance-badge prov-explicit">固定サイト</span>';
+  if(prov.channel==='both') return '<span class="badge provenance-badge prov-both">両方</span>';
+  return '';
+}
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
 function render(){
@@ -60,11 +75,40 @@ function render(){
   $('rangeText').textContent=allMode?`6週間すべて ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION}${filterBits.length?' ／ '+filterBits.join('・'):''}`:`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}${filterBits.length?' ／ '+filterBits.join('・'):''}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
-    const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const state=verificationStateMeta(ev.verification?.status);const verifyUrl=safeHttpUrl(ev.verification?.source);
-    const verify=`<span class="status-inline ${state.className}">${escapeHtml(state.label)}</span>${ev.verification?.verified_on?' '+escapeHtml(ev.verification.verified_on):''}${verifyUrl?` ／ <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:''}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}`;
-    return `<article class="copy-card"><div class="copy-card-header"><span class="copy-card-index">EVENT ${String(index+1).padStart(2,'0')}</span><b>${escapeHtml(ev.name||'イベント')}</b></div><div class="fit-note">${escapeHtml(ev.ward)} ／ 子連れ適性 ${escapeHtml(grade)}${ev.family_fit?.reason?' ／ '+escapeHtml(ev.family_fit.reason):''}<br>${verify}</div>`+
-      fields.map((f,i)=>fieldHtml(f,`f-${index}-${i}`)).join('')+
-      `<button class="copy-all" onclick="copyAllCard(${index},this)">この項目をまとめてコピー</button></article>`;
+    const fields=copyFieldList(ev);
+    const grade=ev.family_fit?.overall||ev.family_fit?.grade||'C';
+    const state=verificationStateMeta(ev.verification?.status),verifyUrl=safeHttpUrl(ev.verification?.source);
+    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
+    const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
+    const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
+    const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
+    const verifyText=`<div class="source"><b>${ev.verification?.status==='announced'?'開催発表':'公式確認'}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;
+    return `<article class="copy-card">
+      <div class="copy-card-header"><span class="copy-card-index">EVENT ${String(index+1).padStart(2,'0')}</span><b>${escapeHtml(ev.name||'イベント')}</b></div>
+      <div class="copy-event-info">
+        <div class="event-list-overview copy-event-overview">
+          ${thumb}
+          <div class="event-list-main">
+            <div class="event-title">${title}</div>
+            <div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${copyFamilyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div>
+          </div>
+        </div>
+        <div class="copy-event-detail">
+          <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}${provBadge}</div>
+          <div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>
+          ${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}
+          ${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}
+          ${renderCopyAxes(ev.family_fit)}
+          ${verifyText}
+          ${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}
+        </div>
+      </div>
+      <div class="copy-fields-section">
+        <div class="copy-fields-title">コピー用項目</div>
+        ${fields.map((f,i)=>fieldHtml(f,`f-${index}-${i}`)).join('')}
+        <button class="copy-all" onclick="copyAllCard(${index},this)">この項目をまとめてコピー</button>
+      </div>
+    </article>`;
   }).join('');syncUrl();
 }
 async function loadSelected(){try{
@@ -82,6 +126,6 @@ async function loadSelected(){try{
 $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
 $('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});
-(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

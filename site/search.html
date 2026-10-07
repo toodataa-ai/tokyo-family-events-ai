@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261007-2228">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -79,7 +79,7 @@ function renderCoverage(data){
 function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
 function familyStarCount(grade){return grade==='A'?3:grade==='B'?2:grade==='C'?1:0;}
-function starSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
+function starSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="width:1em;height:1em;display:block;flex:0 0 1em;fill:#e0a21b;stroke:#b97808;stroke-width:.7"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
 function familyStars(grade){const n=familyStarCount(grade);return n?Array.from({length:n},starSvg).join(''):'<span class="no-star">―</span>';}
 function renderLegendStars(){document.querySelectorAll('.legend-stars').forEach(el=>{const n=Number(el.dataset.stars)||0;el.innerHTML=Array.from({length:n},starSvg).join('');});}
 function renderAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}

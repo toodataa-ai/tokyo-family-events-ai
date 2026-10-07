@@ -4,13 +4,40 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>東京23区 子連れイベント AIガイド</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+.header-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.navbtn{text-decoration:none;display:inline-flex;align-items:center}
+.methodology{max-width:1050px;margin:14px auto 0;padding:0 12px;scroll-margin-top:120px}.methodology-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(16,24,40,.05)}.methodology-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.methodology-head h2{font-size:20px;line-height:1.45;margin:4px 0 6px}.methodology-head p{margin:0;color:var(--sub);font-size:13px;line-height:1.65}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--accent)}.methodology-badge{flex:0 0 auto;background:#edf4fa;color:var(--navy);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.logic-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.logic-step{position:relative;background:#f8fafc;border:1px solid #edf0f3;border-radius:10px;padding:12px 11px 11px 42px;min-height:108px}.logic-step span{position:absolute;left:10px;top:11px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font-size:11px;font-weight:800}.logic-step b{display:block;font-size:13px;margin-bottom:5px}.logic-step small{display:block;color:var(--sub);font-size:11.5px;line-height:1.55}.logic-guard{display:grid;grid-template-columns:auto 1fr;gap:9px;margin-top:12px;padding:11px 12px;border-radius:10px;background:#eef7f1;border:1px solid #d8eadf;font-size:12px;line-height:1.6}.logic-guard b{color:#166534}.logic-guard span{color:#475467}.methodology-foot{margin:10px 2px 0;color:var(--sub);font-size:11.5px;line-height:1.6}
+@media(max-width:680px){.methodology-head{display:block}.methodology-badge{display:inline-block;margin-top:10px}.logic-flow{grid-template-columns:1fr}.logic-step{min-height:0}.logic-guard{grid-template-columns:1fr}.header-actions{width:100%}}
+</style>
 </head>
 <body>
 <header>
-  <div class="header-row"><h1>東京23区 子連れイベント AIガイド</h1><button class="navbtn" id="copyBtn">📋 コピペ用リスト</button></div>
+  <div class="header-row"><h1>東京23区 子連れイベント AIガイド</h1><div class="header-actions"><a class="navbtn" href="#how-it-works">抽出ロジック</a><button class="navbtn" id="copyBtn">📋 コピペ用リスト</button></div></div>
   <div class="controls"><input type="date" id="dateInput" aria-label="対象日"><input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索"><button id="updateBtn">この週末を表示</button></div>
   <div class="meta" id="rangeText"></div><div class="meta" id="countText"></div><div class="msg" id="msgBox"></div>
 </header>
+<section class="methodology" id="how-it-works">
+  <div class="methodology-card">
+    <div class="methodology-head">
+      <div>
+        <div class="eyebrow">このサイトのデータの作り方</div>
+        <h2>「見つける」と「載せる」を分けて、漏れと誤掲載を減らします</h2>
+        <p>AIが東京23区を1区ずつ横断探索し、候補を広く集めたあと、子連れ適性と公式情報を確認して公開します。</p>
+      </div>
+      <div class="methodology-badge">23区 × 6週間</div>
+    </div>
+    <div class="logic-flow">
+      <div class="logic-step"><span>1</span><b>23区を1区ずつ探索</b><small>区公式・東京都・施設公式・イベント媒体・Web横断検索を区ごとに確認。</small></div>
+      <div class="logic-step"><span>2</span><b>候補は広く拾う</b><small>「子ども向け」の表記だけに頼らず、祭り・鉄道・科学・展示・食・スポーツ等も候補化。旧サイトの参照元も確認。</small></div>
+      <div class="logic-step"><span>3</span><b>同じイベントを統合</b><small>公式URL、イベント名、日付、会場を組み合わせて重複を判定。</small></div>
+      <div class="logic-step"><span>4</span><b>子連れ適性を8軸評価</b><small>対象年齢、体験性、滞在しやすさ、負担、費用、予約、家族で行く価値などを評価。</small></div>
+      <div class="logic-step"><span>5</span><b>公式情報で再確認</b><small>名称・開催日・会場を必須確認。近い週は掲載イベントを公式・主催者情報で全件検証。</small></div>
+      <div class="logic-step"><span>6</span><b>公開し、判断理由も残す</b><small>掲載・除外・重複の判断を監査データとして保存。除外した場合も理由と根拠URLを残します。</small></div>
+    </div>
+    <div class="logic-guard"><b>レガシー互換ガード</b><span>旧サイトと期間が重なるデータは自動照合し、23区内の旧イベントが「掲載・除外・重複」のどれにも存在しない状態をテストで禁止します。23区外は対象外として理由を記録します。</span></div>
+    <p class="methodology-foot">下の「AI探索・公式確認レポート」で探索量と公式確認状況、「掲載判断・除外理由を確認」で候補を載せた／載せなかった理由を確認できます。</p>
+  </div>
+</section>
 <nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
 <nav class="chips" id="chips"></nav>
 <section class="coverage">

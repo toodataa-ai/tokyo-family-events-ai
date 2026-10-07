@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261008-reservation1">
+<link rel="stylesheet" href="styles.css?v=20261008-pricebadge1">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -70,7 +70,7 @@
 </main>
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261008-reservation1';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261008-reservation1';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false;
 const $=id=>document.getElementById(id);
@@ -114,8 +114,8 @@ function render(){
     const verifyText=`<div class="source"><b>${ev.verification?.status==='announced'?'開催発表':'公式確認'}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
-    const environmentLabel=indoorOutdoorLabel(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
-    const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
+    const environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
+    const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge price-badge price-${priceClass}">${escapeHtml(priceText)}</span><span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
     return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
   }).join('');
   syncUrl();

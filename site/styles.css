@@ -321,7 +321,7 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 
 /* Stable filter row + user-facing provenance */
 .search-quick-row{grid-template-columns:minmax(180px,1fr) 140px 112px 112px 128px auto}
-.user-meta-badges{display:flex;align-items:center;gap:5px;width:100%}
+.user-meta-badges{display:flex;align-items:center;gap:5px;width:100%;flex-wrap:wrap}
 .user-meta-badges .provenance-badge{margin-left:auto}
 .provenance-badge{font-weight:800}
 .provenance-badge.prov-ai{background:#e8f0ff;color:#1d4ed8;border-color:#bfd1ff}
@@ -527,3 +527,11 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .reservation-required{background:#fff0e6;color:#b45309;border-color:#f5c89f}
 .reservation-partial{background:#fff8db;color:#8a5a00;border-color:#ead58c}
 .reservation-unknown{background:#eef1f4;color:#667085;border-color:#cfd5dc}
+
+
+/* Price category badges: same classification used by the price filter */
+.price-badge{font-weight:800}
+.price-free{background:#e9f7ef;color:#166534;border-color:#b7e1c5}
+.price-mixed{background:#fff8db;color:#8a5a00;border-color:#ead58c}
+.price-paid{background:#fdecec;color:#b42318;border-color:#f2b8b5}
+.price-unknown{background:#eef1f4;color:#667085;border-color:#cfd5dc}

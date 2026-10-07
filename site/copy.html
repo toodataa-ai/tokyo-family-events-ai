@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261008-reservation1">
+<link rel="stylesheet" href="styles.css?v=20261008-pricebadge1">
 </head>
 <body class="copy-page">
 <header>
@@ -23,7 +23,7 @@
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks,indoorOutdoorLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js?v=20261008-reservation1';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js?v=20261008-reservation1';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all',currentReservation='all';
@@ -78,7 +78,7 @@ function render(){
     const fields=copyFieldList(ev);
     const grade=ev.family_fit?.overall||ev.family_fit?.grade||'C';
     const state=verificationStateMeta(ev.verification?.status),verifyUrl=safeHttpUrl(ev.verification?.source);
-    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
+    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -94,7 +94,7 @@ function render(){
           </div>
         </div>
         <div class="copy-event-detail">
-          <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div>
+          <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge price-badge price-${priceClass}">${escapeHtml(priceText)}</span><span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div>
           <div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>
           ${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}
           ${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}

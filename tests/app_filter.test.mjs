@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,mergeEventsAcrossWeeks} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -42,6 +42,12 @@ assert.equal(filterEvents(priceCases,{price:'free'}).length,2);
 assert.equal(filterEvents(priceCases,{price:'mixed'}).length,1);
 assert.equal(filterEvents(priceCases,{price:'paid'}).length,1);
 console.log('price + recommendation filters: OK');
+assert.equal(eventPriceLabel(priceCases[0]),'無料');
+assert.equal(eventPriceLabel(priceCases[1]),'無料');
+assert.equal(eventPriceLabel(priceCases[2]),'無料あり');
+assert.equal(eventPriceLabel(priceCases[3]),'有料');
+assert.equal(eventPriceLabel({price:null}),'料金要確認');
+console.log('price badge labels: OK');
 assert.equal(indoorOutdoorLabel('indoor'),'屋内');
 assert.equal(indoorOutdoorLabel('outdoor'),'屋外');
 assert.equal(indoorOutdoorLabel('mixed'),'屋内・屋外');

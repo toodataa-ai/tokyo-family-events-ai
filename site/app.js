@@ -126,6 +126,11 @@ export function eventPriceCategory(ev){
   return 'paid';
 }
 
+export function eventPriceLabel(ev){
+  const c=eventPriceCategory(ev);
+  return c==='free'?'無料':c==='mixed'?'無料あり':c==='paid'?'有料':'料金要確認';
+}
+
 export function indoorOutdoorCategory(ev){
   const raw=normalizeText(typeof ev==='string'?ev:(ev?.indoor_outdoor||''));
   if(!raw) return 'unknown';

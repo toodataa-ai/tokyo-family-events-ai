@@ -100,3 +100,20 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .event-list-detail .event-meta,.event-list-detail .desc{font-size:11.5px;line-height:1.55}
   .event-list-detail .source{font-size:10.5px}
 }
+
+/* Always-visible family recommendation */
+.event-summary-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.family-reco{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:800;white-space:nowrap}
+.family-reco-label{color:#667085;font-weight:700}
+.family-stars{letter-spacing:.06em;font-size:14px;line-height:1}
+.family-reco.fit-a .family-stars{color:#d97706}
+.family-reco.fit-b .family-stars{color:#d97706}
+.family-reco.fit-c .family-stars{color:#d97706}
+.family-reco.fit-d .family-stars{color:#98a2b3}
+@media(max-width:680px){
+  .event-summary-meta{gap:6px}
+  .family-reco{font-size:10px;gap:4px}
+  .family-stars{font-size:12.5px}
+  .family-reco-label{display:none}
+  .family-reco::before{content:'子連れ';color:#667085;font-weight:700}
+}

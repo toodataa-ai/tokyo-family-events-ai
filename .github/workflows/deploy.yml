@@ -13,6 +13,7 @@ on:
       - '.github/scripts/**'
       - '.github/workflows/**'
       - '.github/release-trigger.txt'
+      - '.github/production-releases.json'
 
 permissions:
   contents: read
@@ -75,6 +76,9 @@ jobs:
           cp -a production-src/site/. pages/
           mkdir -p pages/staging
           cp -a staging-src/site/. pages/staging/
+          mkdir -p pages/data pages/staging/data
+          cp staging-src/.github/production-releases.json pages/data/production-releases.json
+          cp staging-src/.github/production-releases.json pages/staging/data/production-releases.json
           python - <<'PY'
           from pathlib import Path
           import subprocess

@@ -428,3 +428,36 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .field-value{font-size:11px}
   .copy-page .tip{font-size:10px}
 }
+
+
+/* Unified keyword search input across event search and copy list */
+.search-page input.unified-search-input,
+.copy-page input.unified-search-input{
+  width:100%;
+  min-width:0;
+  height:32px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  background:#fff;
+  color:#344054;
+  font-size:12px;
+  padding:0 9px;
+  line-height:32px;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.search-page input.unified-search-input:focus,
+.copy-page input.unified-search-input:focus{
+  outline:none;
+  border-color:#7f9db9;
+  box-shadow:0 0 0 2px rgba(46,134,171,.12);
+}
+@media(max-width:680px){
+  .search-page input.unified-search-input,
+  .copy-page input.unified-search-input{
+    height:31px;
+    line-height:31px;
+    font-size:12px;
+    padding:0 9px;
+  }
+}

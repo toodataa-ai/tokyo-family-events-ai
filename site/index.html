@@ -25,24 +25,8 @@
       <div><div class="eyebrow">DATA STATUS</div><h2 id="statusTitle">いまのデータ状況</h2><p id="statusScope">6週間分の監査データを読み込み中です。</p></div>
     </div>
     <div class="summary-grid">
-      <div class="summary-card"><b id="totalCandidates">-</b><span>候補イベント</span><small>6週間合計</small></div>
-      <div class="summary-card"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間合計</small></div>
-      <div class="summary-card"><b id="totalExcluded">-</b><span>掲載除外</span><small>6週間合計</small></div>
-      <div class="summary-card"><b id="totalDuplicate">-</b><span>重複統合</span><small>6週間合計</small></div>
+      <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間・重複統合後</small></div>
     </div>
-  </section>
-
-  <section class="home-section panel home-quality" aria-labelledby="qualityTitle">
-    <div class="section-head">
-      <div><div class="eyebrow">CURRENT WEEK QUALITY</div><h2 id="qualityTitle">今週の収集品質</h2><p>候補件数・掲載件数・除外理由をここで確認できます。取得経路は各イベントの詳細に表示します。</p></div>
-    </div>
-    <div class="quality-grid">
-      <div class="quality-card"><b id="qualityWards">-</b><span>23区確認</span></div>
-      <div class="quality-card"><b id="qualityExplicit">-</b><span>固定サイト由来</span></div>
-      <div class="quality-card"><b id="qualityAi">-</b><span>AI横断由来</span></div>
-      <div class="quality-card"><b id="qualityVerified">-</b><span>公式確認済み</span></div>
-    </div>
-    <div class="quality-footer"><span id="qualityPeriod">今週分を読み込み中です。</span></div>
   </section>
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
@@ -84,7 +68,7 @@
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,loadDiscoverySources,fmtRange,classifyDiscoveryProvenance,heroSeasonForDate,heroSeasonMeta} from './app.js';
+import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta} from './app.js';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -95,45 +79,16 @@ function applyHeroSeason(dateStr){
 
 (async()=>{
   try{
-    const [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
+    const manifest=await loadManifest();
     applyHeroSeason(manifest.default);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
-    let candidates=0,published=0,excluded=0,duplicate=0;
-    for(const {data} of rows){
-      if(!data)continue;
-      const s=data.decision_audit?.summary||{};
-      candidates+=Number(s.candidate_total??data.coverage?.candidate_count??0);
-      published+=Number(s.published??data.coverage?.published_count??data.events?.length??0);
-      excluded+=Number(s.excluded??data.coverage?.excluded_count??0);
-      duplicate+=Number(s.duplicate??0);
-    }
-    $('totalCandidates').textContent=candidates.toLocaleString('ja-JP');
+    const dataRows=rows.map(x=>x.data).filter(Boolean);
+    const published=mergeEventsAcrossWeeks(dataRows).length;
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
-    $('totalExcluded').textContent=excluded.toLocaleString('ja-JP');
-    $('totalDuplicate').textContent=duplicate.toLocaleString('ja-JP');
     $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${manifest.generated||'-'}`;
-
-    const first=rows[0]?.data;
-    if(first){
-      const wards=Array.isArray(first.coverage?.wards)?first.coverage.wards:[];
-      const decisions=Array.isArray(first.decision_audit?.decisions)?first.decision_audit.decisions:[];
-      let explicit=0,ai=0;
-      for(const decision of decisions){
-        const p=classifyDiscoveryProvenance(null,decision,registry);
-        if(p.channel==='explicit'||p.channel==='both') explicit++;
-        if(p.channel==='ai_cross'||p.channel==='both') ai++;
-      }
-      const verified=first.events.filter(x=>x.verification?.status==='verified').length;
-      $('qualityWards').textContent=`${wards.filter(x=>x.status==='checked').length}/23`;
-      $('qualityExplicit').textContent=`${explicit}件`;
-      $('qualityAi').textContent=`${ai}件`;
-      $('qualityVerified').textContent=`${verified}/${first.events.length}`;
-      $('qualityPeriod').textContent=`${fmtRange(first.sat,first.sun)} ／ 「両方」で発見した候補は固定・AIの双方に含みます。`;
-    }
   }catch(e){
     console.error(e);
     $('statusScope').textContent='データ状況の読み込みに失敗しました。';
-    $('qualityPeriod').textContent='収集品質を読み込めませんでした。時間をおいて再読み込みしてください。';
   }
 })();
 </script>

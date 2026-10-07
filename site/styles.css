@@ -138,3 +138,7 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .event-summary-meta .event-date,.event-summary-meta .family-stars{font-size:inherit}
   .star-icon{width:1em;height:1em}
 }
+
+/* Slightly stronger recommendation emphasis */
+.event-summary-meta .family-stars{font-size:1.15em}
+@media(max-width:680px){.event-summary-meta .family-stars{font-size:1.15em}}

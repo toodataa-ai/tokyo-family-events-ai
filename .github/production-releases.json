@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-08-baseline",
+  "current_public_release": "release/2026-10-08-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -15,7 +15,16 @@
       "workflow_run_id": 37692574056,
       "note": "公開運用開始時点の基準版。ステージング／本番分離前に本番公開成功を確認済み。",
       "public_version": "1.00"
+    },
+    {
+      "release_id": "release/2026-10-08-r1",
+      "branch": "release/2026-10-08-r1",
+      "commit_sha": "40e28a14e576377a34e4bc5ceeb05c23b751df2f",
+      "deployed_at": "2026-10-07T22:27:19Z",
+      "workflow_run_id": 37696228867,
+      "note": "ステージングで承認後、本番公開に成功した正式リリース。",
+      "public_version": "1.01"
     }
   ],
-  "current_public_version": "1.00"
+  "current_public_version": "1.01"
 }

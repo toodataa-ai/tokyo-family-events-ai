@@ -86,6 +86,11 @@
       "evidence": "18 legacy-origin excluded candidates re-reviewed under v1.6; 13 promoted"
     },
     {
+      "name": "legacy_parity_audit",
+      "status": "passed",
+      "evidence": "10/17 legacy overlap reconciled; 1 missing in-scope event restored"
+    },
+    {
       "name": "deploy",
       "status": "pending",
       "evidence": "awaiting GitHub Actions"
@@ -93,14 +98,14 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 74,
-    "published": 66,
+    "candidates": 75,
+    "published": 67,
     "excluded": 5,
     "duplicate_removed": 3,
-    "verified": 66,
+    "verified": 67,
     "announced": 0,
     "corrected": 0,
-    "thumbnail_count": 64,
+    "thumbnail_count": 65,
     "thumbnail_coverage": 0.97,
     "decision_audit_complete": true,
     "hard_excluded": 2,
@@ -119,6 +124,12 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-10-17-v16-rereview.json"
+    },
+    {
+      "version": "legacy-parity-2026-10-07",
+      "mode": "legacy-parity-reconciliation",
+      "applied_at": "2026-10-07T19:14:00+09:00",
+      "note": "Overlapping legacy data reconciled; missing in-scope events restored and explicit exclusions retained."
     }
   ]
 }

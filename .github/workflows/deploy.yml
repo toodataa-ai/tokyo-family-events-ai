@@ -1,4 +1,4 @@
-name: Validate and Deploy Tokyo Family Events AI
+name: Validate Staging and Publish Preview
 
 on:
   workflow_dispatch: {}
@@ -11,7 +11,7 @@ on:
       - 'prompts/**'
       - 'package.json'
       - '.github/scripts/**'
-      - '.github/workflows/deploy.yml'
+      - '.github/workflows/**'
 
 permissions:
   contents: read
@@ -37,9 +37,9 @@ jobs:
           node-version: '22'
       - name: Resolve and validate canonical prompt governance
         run: node .github/scripts/validate-prompt-history.mjs
-      - name: Validate non-regression against previous published data
+      - name: Validate non-regression against previous staging data
         run: python tools/validate_non_regression.py --base-ref HEAD^ site/data
-      - name: Enrich thumbnail URLs from official/source page metadata
+      - name: Enrich thumbnail URLs for validation only
         run: python tools/enrich_images.py site/data
       - name: Validate event data strictly
         run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
@@ -50,23 +50,41 @@ jobs:
       - name: Test copy contract and shared filters
         run: npm test
 
-  deploy:
+  preview:
     needs: validate
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}staging/
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout staging
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-      - uses: actions/setup-python@v5
+          ref: main
+          path: staging-src
+      - name: Checkout production
+        uses: actions/checkout@v4
         with:
-          python-version: '3.11'
-      - name: Enrich thumbnail URLs for published artifact
-        run: python tools/enrich_images.py site/data
+          ref: production
+          path: production-src
+      - name: Compose production root and hidden staging preview
+        shell: bash
+        run: |
+          mkdir -p pages
+          cp -a production-src/site/. pages/
+          mkdir -p pages/staging
+          cp -a staging-src/site/. pages/staging/
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path("pages/staging").glob("*.html"):
+              s=p.read_text(encoding="utf-8")
+              marker='<meta name="robots" content="noindex,nofollow">'
+              if marker not in s:
+                  s=s.replace("<head>", "<head>\n"+marker, 1)
+              p.write_text(s,encoding="utf-8")
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: pages
       - id: deployment
         uses: actions/deploy-pages@v4

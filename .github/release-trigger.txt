@@ -2,7 +2,9 @@
 # Updating this file on main intentionally causes the Pages workflow to redeploy.
 # The public root is always sourced from the production branch.
 # The hidden /staging/ preview is always sourced from main.
-operation=baseline
+operation=release
 production_ref=production
-release_snapshot=release/2026-10-08-baseline
-updated_at=2026-10-08T07:05:00+09:00
+approved_staging_sha=40e28a14e576377a34e4bc5ceeb05c23b751df2f
+target_public_version=1.01
+previous_public_release=release/2026-10-08-baseline
+updated_at=2026-10-08T07:19:00+09:00

@@ -338,3 +338,36 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .user-meta-badges .badge{font-size:8.5px;padding:2px 5px}
   .all-week-tab{min-width:58px}
 }
+
+/* Robust logic-step layout: keep step number in its own column */
+.logic-step{
+  position:relative;
+  display:grid;
+  grid-template-columns:22px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:8px;
+  row-gap:3px;
+  align-items:start;
+  padding:9px;
+}
+.logic-step>span{
+  position:static;
+  grid-column:1;
+  grid-row:1 / span 2;
+  width:21px;
+  height:21px;
+  margin:0;
+  align-self:start;
+}
+.logic-step>b{
+  grid-column:2;
+  grid-row:1;
+  margin:0;
+  min-width:0;
+}
+.logic-step>small{
+  grid-column:2;
+  grid-row:2;
+  margin:0;
+  min-width:0;
+}

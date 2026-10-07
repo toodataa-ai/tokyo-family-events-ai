@@ -3,7 +3,7 @@ name: Validate Staging and Publish Preview
 on:
   workflow_dispatch: {}
   push:
-    branches: [main]
+    branches: [main, data-staging]
     paths:
       - 'site/**'
       - 'tools/**'
@@ -13,10 +13,11 @@ on:
       - '.github/scripts/**'
       - '.github/workflows/**'
       - '.github/release-trigger.txt'
+      - '.github/data-release-trigger.txt'
       - '.github/production-releases.json'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,7 +26,41 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  validate:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.gate.outputs.should_run }}
+      mode: ${{ steps.gate.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: gate
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "mode=staging" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "${GITHUB_REF_NAME}" = "data-staging" ]; then
+            if git diff --name-only HEAD^ HEAD | grep -Fxq '.github/data-release-trigger.txt'; then
+              echo "should_run=true" >> "$GITHUB_OUTPUT"
+              echo "mode=data" >> "$GITHUB_OUTPUT"
+            else
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              echo "mode=data" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+
+          echo "should_run=false" >> "$GITHUB_OUTPUT"
+          echo "mode=none" >> "$GITHUB_OUTPUT"
+
+  validate_staging:
+    needs: gate
+    if: ${{ needs.gate.outputs.should_run == 'true' && needs.gate.outputs.mode == 'staging' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,23 +87,103 @@ jobs:
       - name: Test copy contract and shared filters
         run: npm test
 
+  validate_data:
+    needs: gate
+    if: ${{ needs.gate.outputs.should_run == 'true' && needs.gate.outputs.mode == 'data' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout data candidate
+        uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 2
+      - name: Checkout released application
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: production-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate released prompt governance
+        working-directory: production-src
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Validate data non-regression against previous candidate base
+        run: python production-src/tools/validate_non_regression.py --base-ref HEAD^ site/data
+      - name: Enrich candidate thumbnails for validation only
+        run: python production-src/tools/enrich_images.py site/data
+      - name: Validate candidate event data strictly
+        run: python production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate candidate family-fit decisions strictly
+        run: python production-src/tools/validate_decisions.py --strict site/data
+      - name: Validate candidate rereview strictly
+        run: python production-src/tools/validate_rereview.py --strict site/data
+      - name: Run released application regression tests
+        working-directory: production-src
+        run: npm test
+
+  promote_data:
+    needs: [gate, validate_data]
+    if: ${{ needs.gate.outputs.mode == 'data' && needs.validate_data.result == 'success' }}
+    runs-on: ubuntu-latest
+    outputs:
+      previous_sha: ${{ steps.promote.outputs.previous_sha }}
+      candidate_sha: ${{ steps.promote.outputs.candidate_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 2
+      - id: promote
+        shell: bash
+        run: |
+          expected="$(sed -n 's/^base_data_production_sha=//p' .github/data-release-trigger.txt | tail -1)"
+          candidate="$(git rev-parse HEAD)"
+          current="$(git ls-remote origin refs/heads/data-production | awk '{print $1}')"
+
+          if [ -z "$expected" ]; then
+            echo "Missing base_data_production_sha in data release trigger" >&2
+            exit 1
+          fi
+          if [ "$current" != "$expected" ]; then
+            echo "data-production moved: expected $expected but found $current" >&2
+            exit 1
+          fi
+
+          git push origin "HEAD:refs/heads/data-production" --force-with-lease="refs/heads/data-production:$expected"
+          echo "previous_sha=$expected" >> "$GITHUB_OUTPUT"
+          echo "candidate_sha=$candidate" >> "$GITHUB_OUTPUT"
+
   preview:
-    needs: validate
+    needs: [gate, validate_staging, validate_data, promote_data]
+    if: >-
+      ${{ always() &&
+          needs.gate.outputs.should_run == 'true' &&
+          ((needs.gate.outputs.mode == 'staging' && needs.validate_staging.result == 'success') ||
+           (needs.gate.outputs.mode == 'data' && needs.validate_data.result == 'success' && needs.promote_data.result == 'success')) }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}staging/
     steps:
-      - name: Checkout staging
+      - name: Checkout staging application
         uses: actions/checkout@v4
         with:
           ref: main
           path: staging-src
-      - name: Checkout production
+      - name: Checkout production application
         uses: actions/checkout@v4
         with:
           ref: production
           path: production-src
+      - name: Checkout production data
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-production-src
       - name: Compose production root and hidden staging preview
         shell: bash
         run: |
@@ -76,12 +191,38 @@ jobs:
           cp -a production-src/site/. pages/
           mkdir -p pages/staging
           cp -a staging-src/site/. pages/staging/
-          mkdir -p pages/data pages/staging/data
-          cp staging-src/.github/production-releases.json pages/data/production-releases.json
-          cp staging-src/.github/production-releases.json pages/staging/data/production-releases.json
+
           python - <<'PY'
           from pathlib import Path
+          import shutil
           import subprocess
+
+          data_src = Path("data-production-src/site/data")
+
+          def overlay_runtime_data(dest):
+              dest = Path(dest)
+              dest.mkdir(parents=True, exist_ok=True)
+              for p in dest.glob("20??-??-??*.json"):
+                  p.unlink()
+              for name in ("manifest.json", "update_history.json"):
+                  p = dest / name
+                  if p.exists():
+                      p.unlink()
+              for p in data_src.glob("20??-??-??*.json"):
+                  shutil.copy2(p, dest / p.name)
+              for name in ("manifest.json", "update_history.json"):
+                  src = data_src / name
+                  if not src.exists():
+                      raise SystemExit(f"missing runtime data file: {src}")
+                  shutil.copy2(src, dest / name)
+
+          overlay_runtime_data("pages/data")
+          overlay_runtime_data("pages/staging/data")
+
+          release_registry = Path("staging-src/.github/production-releases.json")
+          if release_registry.exists():
+              shutil.copy2(release_registry, "pages/data/production-releases.json")
+              shutil.copy2(release_registry, "pages/staging/data/production-releases.json")
 
           short_sha = subprocess.check_output(
               ["git","-C","staging-src","rev-parse","--short=7","HEAD"],
@@ -115,3 +256,38 @@ jobs:
           path: pages
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  snapshot_data:
+    needs: [gate, promote_data, preview]
+    if: ${{ needs.gate.outputs.mode == 'data' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+      - name: Preserve immutable production-data snapshot
+        shell: bash
+        run: |
+          stamp="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          branch="data-release/${stamp}-r${GITHUB_RUN_NUMBER}"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Snapshot already exists: $branch"
+          else
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+          echo "Preserved $branch at $(git rev-parse HEAD)"
+
+  rollback_data_on_deploy_failure:
+    needs: [gate, promote_data, preview]
+    if: ${{ always() && needs.gate.outputs.mode == 'data' && needs.promote_data.result == 'success' && needs.preview.result != 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+      - name: Restore prior production-data pointer
+        shell: bash
+        run: |
+          previous="${{ needs.promote_data.outputs.previous_sha }}"
+          candidate="${{ needs.promote_data.outputs.candidate_sha }}"
+          git push origin "$previous:refs/heads/data-production" --force-with-lease="refs/heads/data-production:$candidate"

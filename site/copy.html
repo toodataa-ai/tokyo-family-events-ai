@@ -7,7 +7,7 @@
 </head>
 <body class="copy-page">
 <header>
-  <div class="header-row"><h1>📋 コピペ用リスト</h1><a class="navbtn" id="backLink" href="index.html">イベント一覧へ</a></div>
+  <div class="header-row"><h1>📋 コピペ用リスト</h1><a class="navbtn" id="backLink" href="search.html">イベント検索へ</a></div>
   <div class="controls">
     <input type="date" id="dateInput" aria-label="対象日">
     <input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
@@ -30,7 +30,7 @@ let manifest=null,currentData=null,currentWard='__all__';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function filters(){return {date:$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim()};}
-function syncUrl(){const f=filters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='index.html'+(p.toString()?'?'+p.toString():'');}
+function syncUrl(){const f=filters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
 
 async function writeClipboard(text){
   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return;}

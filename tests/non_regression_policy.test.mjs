@@ -11,7 +11,7 @@ assert.match(prompt,/非退行・証拠拘束ガード/);
 assert.match(prompt,/field_changes/);
 assert.match(prompt,/前年ページ/);
 assert.match(prompt,/長期開催イベント/);
-assert.match(prompt,/画像.*根拠/);
+assert.match(prompt,/(?:image|画像).*根拠/);
 assert.ok(fs.existsSync('tools/validate_non_regression.py'));
 assert.match(workflow,/fetch-depth:\s*2/);
 assert.match(workflow,/Validate non-regression against previous published data/);

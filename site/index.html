@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261008-v114">
+<link rel="stylesheet" href="styles.css?v=20261008-v115">
 </head>
 <body class="home-page" data-season="winter">
 <section class="site-hero">
@@ -68,11 +68,21 @@
     <div><h2>条件を絞ってイベントを探す</h2><p>日付・区・キーワードで検索できます。検索画面でも同じデザインと監査情報を引き継ぎます。</p></div>
     <a href="search.html">検索画面へ</a>
   </section>
+  <section class="home-section panel release-history-panel" aria-labelledby="releaseHistoryTitle">
+    <div class="section-head release-history-head">
+      <div><div class="eyebrow">PUBLIC RELEASES</div><h2 id="releaseHistoryTitle">公開バージョン履歴</h2><p>実際にユーザー向け本番へ公開成功した版だけを記録します。ステージング上の途中コミットは含みません。</p></div>
+      <div class="current-release-badge"><span>現在公開中</span><b id="currentPublicVersion">-</b></div>
+    </div>
+    <details class="release-history-details">
+      <summary>過去の公開履歴を見る <small id="releaseHistoryCount"></small></summary>
+      <div class="release-history-list" id="releaseHistoryList"><p>公開履歴を読み込み中です。</p></div>
+    </details>
+  </section>
 </main>
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,loadUpdateHistory,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml} from './app.js?v=20261008-v114';
+import {loadManifest,loadWeekend,loadUpdateHistory,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml} from './app.js?v=20261008-v115';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -87,6 +97,34 @@ function formatUpdateDate(value){
   if(Number.isNaN(d.getTime())) return value;
   return d.toLocaleString('ja-JP',{year:'numeric',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
 }
+async function loadPublicReleases(){
+  const res=await fetch('data/production-releases.json',{cache:'no-store'});
+  if(!res.ok) throw new Error(`public release history load failed: ${res.status}`);
+  return res.json();
+}
+function formatReleaseDate(value){
+  if(!value) return '-';
+  const d=new Date(value);
+  if(Number.isNaN(d.getTime())) return value;
+  return d.toLocaleDateString('ja-JP',{year:'numeric',month:'numeric',day:'numeric'});
+}
+function renderPublicReleases(data){
+  const rows=Array.isArray(data?.releases)?[...data.releases].reverse():[];
+  const current=String(data?.current_public_version||'');
+  $('currentPublicVersion').textContent=current||'-';
+  $('releaseHistoryCount').textContent=rows.length?`全${rows.length}版`:'';
+  const list=$('releaseHistoryList');
+  if(!rows.length){
+    list.innerHTML='<p>公開履歴はまだありません。</p>';
+    return;
+  }
+  list.innerHTML=rows.map(row=>{
+    const version=escapeHtml(row.public_version||'-');
+    const isCurrent=String(row.public_version||'')===current;
+    return `<div class="release-history-item"><div><b>Version ${version}</b>${isCurrent?'<span class="release-current-tag">現在公開中</span>':''}</div><span>公開日 ${escapeHtml(formatReleaseDate(row.deployed_at))}</span>${row.note?`<small>${escapeHtml(row.note)}</small>`:''}</div>`;
+  }).join('');
+}
+
 function renderUpdateHistory(data){
   const rows=Array.isArray(data?.history)?[...data.history].reverse():[];
   const list=$('updateHistoryList'),summary=$('updateHistorySummary');
@@ -111,9 +149,10 @@ function renderUpdateHistory(data){
 
 (async()=>{
   try{
-    const [manifest,updateHistory]=await Promise.all([loadManifest(),loadUpdateHistory()]);
+    const [manifest,updateHistory,publicReleases]=await Promise.all([loadManifest(),loadUpdateHistory(),loadPublicReleases()]);
     applyHeroSeason(manifest.default);
     renderUpdateHistory(updateHistory);
+    renderPublicReleases(publicReleases);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const dataRows=rows.map(x=>x.data).filter(Boolean);
     const published=mergeEventsAcrossWeeks(dataRows).length;

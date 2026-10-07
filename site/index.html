@@ -2,19 +2,19 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2245">
+<title>東京23区子連れイベントAI収集</title>
+<link rel="stylesheet" href="styles.css?v=20261007-2335">
 </head>
 <body class="home-page" data-season="winter">
 <section class="site-hero">
   <div class="hero-inner">
     <div class="site-topbar">
-      <a class="site-brand" href="index.html">東京23区 子連れイベント AIガイド</a>
-      <nav class="site-nav"><a href="search.html">イベント検索</a><a href="copy.html">コピペ用リスト</a></nav>
+      <a class="site-brand" href="index.html">東京23区子連れイベントAI収集</a>
+      <nav class="site-nav"><a href="search.html">イベント検索</a><a href="copy.html">コピペ用リスト</a><a href="admin.html">管理ビュー</a></nav>
     </div>
     <div class="hero-eyebrow">TOKYO FAMILY EVENTS / AI CURATION</div>
-    <h1>東京23区の子連れイベントを、広く探して、根拠を確認して掲載。</h1>
-    <p class="hero-copy">区公式・東京都・施設公式・イベント媒体・Web検索を横断し、6週間先まで候補を収集。子連れ適性を評価し、掲載・除外・重複の判断も残します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <h1>東京23区子連れイベントAI収集</h1>
+    <p class="hero-copy">AI横断探索と明示参照元探索を併用して、東京23区の子連れ候補を6週間先まで収集。取得経路・子連れ適性・公式確認・掲載判断まで監査できる形で残します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
     <div class="hero-actions"><a class="hero-cta primary" href="search.html">イベントを探す</a><a class="hero-cta secondary" href="#logic">抽出ロジックを見る</a></div>
   </div>
 </section>
@@ -61,17 +61,17 @@
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
     <div class="section-head">
-      <div><div class="eyebrow">HOW IT WORKS</div><h2 id="logicTitle">「見つける」と「載せる」を分けて、漏れと誤掲載を減らします</h2><p>AIが23区を1区ずつ探索し、候補を広く拾ったあと、家族向けとしての適性と公式情報を確認して公開します。</p></div>
+      <div><div class="eyebrow">HOW IT WORKS</div><h2 id="logicTitle">AI横断探索と明示参照元を併用して、漏れを減らしながら根拠を残します</h2><p>登録サイトだけにもAI検索だけにも依存せず、2つの探索経路を統合して候補を作り、公式確認後に公開します。</p></div>
     </div>
     <div class="logic-flow">
-      <div class="logic-step"><span>1</span><b>23区を1区ずつ探索</b><small>区公式・東京都・施設公式・イベント媒体・Web横断検索を区ごとに確認。</small></div>
-      <div class="logic-step"><span>2</span><b>候補は広く拾う</b><small>「子ども向け」の明記だけに頼らず、祭り・鉄道・科学・展示・食・スポーツ等も候補化。旧サイトの参照元も確認。</small></div>
-      <div class="logic-step"><span>3</span><b>同じイベントを統合</b><small>公式URL、イベント名、日付、会場を組み合わせて重複を判定。</small></div>
-      <div class="logic-step"><span>4</span><b>子連れ適性を8軸評価</b><small>対象年齢、体験性、滞在しやすさ、負担、費用、予約、家族で行く価値などを評価。</small></div>
-      <div class="logic-step"><span>5</span><b>公式情報で再確認</b><small>名称・開催日・会場を必須確認。近い週は公式・主催者情報で掲載イベントを全件検証。</small></div>
-      <div class="logic-step"><span>6</span><b>判断理由を残して公開</b><small>掲載・除外・重複の判断を監査データとして保存。除外時も理由と根拠URLを残します。</small></div>
+      <div class="logic-step"><span>1</span><b>AI横断探索</b><small>東京23区を1区ずつ、区公式・東京都・施設公式・観光協会・地域媒体・Webまで横断して未知の候補を探します。</small></div>
+      <div class="logic-step"><span>2</span><b>明示参照元探索</b><small>discovery_sources.json に登録した固定サイトを毎回確認。必須サイトと任意サイトを分け、新しい参照元も追加できます。</small></div>
+      <div class="logic-step"><span>3</span><b>候補統合＋取得経路保持</b><small>公式URL・名称・日付・会場で重複を統合し、固定サイト・AI横断・両方のどこで見つけたかを候補ごとに残します。</small></div>
+      <div class="logic-step"><span>4</span><b>子連れ適性を8軸評価</b><small>対象年齢、体験性、年齢適合、滞在自由度、負担、費用、予約、家族価値を評価します。</small></div>
+      <div class="logic-step"><span>5</span><b>公式情報で再確認</b><small>名称・開催日・会場を中心に、自治体・主催者・会場などの公式情報で確認。近い週ほど厳密に再監査します。</small></div>
+      <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップ・管理ビューへ反映します。</small></div>
     </div>
-    <div class="logic-guard"><b>レガシー互換ガード</b><span>旧サイトと期間が重なるデータを照合し、23区内の旧イベントが「掲載・除外・重複」のどれにも存在しない状態をテストで禁止。23区外は対象外として理由を記録します。</span></div>
+    <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。管理ビューでは取得経路別に確認できます。</span></div>
   </section>
 
   <section class="home-section panel home-cta">

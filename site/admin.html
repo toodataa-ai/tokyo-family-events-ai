@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>管理ビュー｜東京23区 子連れイベント AIガイド</title>
+<link rel="stylesheet" href="styles.css?v=20261007-2335">
+</head>
+<body class="admin-page">
+<header class="admin-header">
+  <div class="admin-header-inner">
+    <div><div class="admin-eyebrow">ADMIN / DISCOVERY PROVENANCE</div><h1>取得経路 管理ビュー</h1><p>明示参照元とAI横断探索を分けて、候補・掲載イベントの発見経路を確認します。</p></div>
+    <nav class="admin-nav"><a href="index.html">トップ</a><a href="search.html">イベント検索</a><a href="copy.html">コピペ用</a></nav>
+  </div>
+</header>
+<main class="admin-main">
+  <section class="admin-panel">
+    <div class="admin-toolbar">
+      <div class="admin-field"><label>対象週</label><select id="weekSelect"></select></div>
+      <div class="admin-field"><label>対象</label><select id="scopeSelect"><option value="published">掲載イベント</option><option value="all">候補すべて</option></select></div>
+      <div class="admin-field admin-grow"><label>イベント検索</label><input id="adminSearch" type="search" placeholder="イベント名・区・参照元"></div>
+    </div>
+    <div class="admin-route-tabs" id="routeTabs">
+      <button data-route="all" class="active">すべて</button>
+      <button data-route="explicit">固定サイトのみ</button>
+      <button data-route="ai_cross">AI横断のみ</button>
+      <button data-route="both">両方</button>
+      <button data-route="unknown">判定不能</button>
+    </div>
+  </section>
+
+  <section class="admin-summary" id="adminSummary"></section>
+
+  <section class="admin-panel">
+    <div class="admin-section-head">
+      <div><h2>取得経路別イベント</h2><p id="resultMeta">読み込み中です。</p></div>
+    </div>
+    <div class="admin-event-list" id="adminList"></div>
+  </section>
+
+  <details class="admin-panel admin-source-registry">
+    <summary>明示参照元レジストリを見る</summary>
+    <div id="sourceRegistry"></div>
+  </details>
+</main>
+<footer>この管理ビューはGitHub Pages上の静的ページで、認証付き管理画面ではありません。</footer>
+<script type="module">
+import {loadManifest,loadWeekend,loadDiscoverySources,findDecisionForEvent,classifyDiscoveryProvenance,escapeHtml,safeHttpUrl,normalizeText} from './app.js';
+const $=id=>document.getElementById(id);
+let manifest,registry,currentData,currentRoute='all';
+
+const routeMeta={
+  explicit:{label:'固定サイトのみ',className:'prov-explicit'},
+  ai_cross:{label:'AI横断のみ',className:'prov-ai'},
+  both:{label:'両方',className:'prov-both'},
+  unknown:{label:'判定不能',className:'prov-unknown'}
+};
+function decisionLabel(v){return v==='published'?'掲載':v==='excluded'?'除外':v==='duplicate'?'重複':v||'不明';}
+function buildRows(){
+  const decisions=currentData?.decision_audit?.decisions||[];
+  if($('scopeSelect').value==='all'){
+    return decisions.map(d=>({
+      name:d.name||d.candidate_id,ward:d.ward||'',decision:d.decision||'unknown',
+      event:null,decisionRow:d,prov:classifyDiscoveryProvenance(null,d,registry)
+    }));
+  }
+  return (currentData?.events||[]).map(ev=>{
+    const d=findDecisionForEvent(ev,currentData?.decision_audit);
+    return {name:ev.name,ward:ev.ward,decision:'published',event:ev,decisionRow:d,prov:classifyDiscoveryProvenance(ev,d,registry)};
+  });
+}
+function renderSummary(rows){
+  const counts={explicit:0,ai_cross:0,both:0,unknown:0};
+  rows.forEach(r=>counts[r.prov.channel]=(counts[r.prov.channel]||0)+1);
+  $('adminSummary').innerHTML=[
+    ['explicit','固定サイトのみ'],['ai_cross','AI横断のみ'],['both','両方'],['unknown','判定不能']
+  ].map(([k,label])=>`<button class="admin-summary-card ${currentRoute===k?'active':''}" data-route-jump="${k}"><b>${counts[k]||0}</b><span>${label}</span></button>`).join('');
+}
+function sourceLabels(prov){
+  if(!prov.explicitSources.length) return '';
+  return '<div class="admin-source-tags">'+prov.explicitSources.map(s=>{
+    const u=safeHttpUrl(s.url);
+    const body=escapeHtml(s.label);
+    return u?`<a href="${escapeHtml(u)}" target="_blank" rel="noopener">${body}</a>`:`<span>${body}</span>`;
+  }).join('')+'</div>';
+}
+function render(){
+  const allRows=buildRows();
+  renderSummary(allRows);
+  const q=normalizeText($('adminSearch').value);
+  const rows=allRows.filter(r=>{
+    if(currentRoute!=='all' && r.prov.channel!==currentRoute) return false;
+    if(!q) return true;
+    const hay=normalizeText([r.name,r.ward,...r.prov.explicitSources.map(x=>x.label),...r.prov.urls].join(' '));
+    return hay.includes(q);
+  });
+  $('resultMeta').textContent=`${$('scopeSelect').value==='published'?'掲載':'候補'} ${allRows.length}件中 ${rows.length}件を表示`;
+  const box=$('adminList');
+  if(!rows.length){box.innerHTML='<div class="empty">該当するイベントはありません。</div>';return;}
+  box.innerHTML=rows.map(r=>{
+    const meta=routeMeta[r.prov.channel]||routeMeta.unknown;
+    const urls=(r.decisionRow?.discovery_sources||[]).filter(x=>x?.url).map(x=>{
+      const u=safeHttpUrl(x.url);if(!u)return '';
+      const kind=x.channel||x.kind||'source';
+      return `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(kind)}</a>`;
+    }).filter(Boolean);
+    const eventUrl=safeHttpUrl(r.event?.official_url||r.event?.url);
+    return `<article class="admin-event-row">
+      <div class="admin-event-top">
+        <div class="admin-event-title"><span class="admin-prov ${meta.className}">${meta.label}</span><span class="admin-decision">${decisionLabel(r.decision)}</span><b>${eventUrl?`<a href="${escapeHtml(eventUrl)}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a>`:escapeHtml(r.name)}</b></div>
+        <span class="admin-ward">${escapeHtml(r.ward)}</span>
+      </div>
+      ${sourceLabels(r.prov)}
+      ${urls.length?`<div class="admin-discovery-urls">発見記録: ${urls.join(' / ')}</div>`:''}
+      ${r.prov.channel==='unknown'?'<div class="admin-legacy-note">過去runに取得経路の明示情報が不足しています。</div>':''}
+    </article>`;
+  }).join('');
+}
+async function loadWeek(){
+  const sat=$('weekSelect').value;
+  const loaded=await loadWeekend(manifest,sat);
+  currentData=loaded.data;
+  render();
+}
+function renderRegistry(){
+  const rows=registry?.explicit_sources||[];
+  $('sourceRegistry').innerHTML=`<div class="admin-registry-note">登録 ${rows.length}件。required は毎run必須、optional はbest effortです。</div><div class="admin-registry-list">${rows.map(s=>`<div class="admin-registry-row"><div><b>${escapeHtml(s.label)}</b><span>${escapeHtml(s.id)} ／ ${escapeHtml(s.origin)} ／ ${s.required?'required':'optional'}</span></div><div>${(s.search_urls||[]).map(u=>`<code>${escapeHtml(u)}</code>`).join('')}</div></div>`).join('')}</div>`;
+}
+$('routeTabs').addEventListener('click',e=>{const b=e.target.closest('button[data-route]');if(!b)return;currentRoute=b.dataset.route;document.querySelectorAll('#routeTabs button').forEach(x=>x.classList.toggle('active',x===b));render();});
+$('adminSummary').addEventListener('click',e=>{const b=e.target.closest('[data-route-jump]');if(!b)return;currentRoute=b.dataset.route;document.querySelectorAll('#routeTabs button').forEach(x=>x.classList.toggle('active',x.dataset.route===currentRoute));render();});
+$('weekSelect').addEventListener('change',loadWeek);
+$('scopeSelect').addEventListener('change',render);
+$('adminSearch').addEventListener('input',render);
+
+(async()=>{
+  try{
+    [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
+    $('weekSelect').innerHTML=(manifest.weekends||[]).map(w=>`<option value="${escapeHtml(w.sat)}">${escapeHtml(w.label||w.sat)}</option>`).join('');
+    $('weekSelect').value=manifest.default||(manifest.weekends?.[0]?.sat||'');
+    renderRegistry();
+    await loadWeek();
+  }catch(err){
+    $('adminList').innerHTML=`<div class="msg" style="display:block">読み込みに失敗しました: ${escapeHtml(err.message)}</div>`;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -56,6 +56,28 @@ const slots=rollingWeekSlots(manifest);assert.equal(slots.length,6);assert.equal
 
 assert.equal(heroSeasonForDate('2027-04-10'),'spring');assert.equal(heroSeasonForDate('2027-07-10'),'summer');assert.equal(heroSeasonForDate('2027-09-10'),'autumn');assert.equal(heroSeasonForDate('2026-10-10'),'autumn');assert.equal(heroSeasonForDate('2026-11-10'),'autumn');assert.equal(heroSeasonForDate('2026-12-10'),'winter');assert.match(heroSeasonMeta('winter').source,/unsplash\.com/);
 console.log('hero seasonal background policy: OK');
+const provenanceRegistry={explicit_sources:[
+  {id:'nakano',label:'中野',enabled:true,base_url:'https://www.nakanoevent.com/',search_urls:['https://www.nakanoevent.com/']},
+  {id:'manual-x',label:'追加媒体',enabled:true,base_url:'https://events.example.jp/',search_urls:['https://events.example.jp/']}
+]};
+const legacyDecision={candidate_id:'legacy-1',name:'旧媒体イベント',ward:'中野区',discovery_sources:[
+  {kind:'legacy_media',url:'https://www.nakanoevent.com/'},
+  {kind:'legacy_detail',url:'https://www.nakanoevent.com/sample/'}
+]};
+const aiDecision={candidate_id:'ai-1',name:'AIイベント',ward:'中野区',discovery_sources:[
+  {channel:'ai_cross',kind:'web_search',url:'https://example.org/event'}
+]};
+const bothDecision={candidate_id:'both-1',name:'両方イベント',ward:'中野区',discovery_sources:[
+  {channel:'explicit',source_id:'manual-x',kind:'explicit_source',url:'https://events.example.jp/'},
+  {channel:'ai_cross',kind:'web_search',url:'https://search.example/event'}
+]};
+assert.equal(classifyDiscoveryProvenance(null,legacyDecision,provenanceRegistry).channel,'explicit');
+assert.equal(classifyDiscoveryProvenance(null,legacyDecision,provenanceRegistry).explicitSources[0].label,'中野');
+assert.equal(classifyDiscoveryProvenance(null,aiDecision,provenanceRegistry).channel,'ai_cross');
+assert.equal(classifyDiscoveryProvenance(null,bothDecision,provenanceRegistry).channel,'both');
+const matchAudit={decisions:[{candidate_id:'other-id',name:'江戸川区民まつり',ward:'江戸川区',discovery_sources:[]}]};
+assert.equal(findDecisionForEvent(events[1],matchAudit)?.name,'江戸川区民まつり');
+console.log('discovery provenance compatibility: OK');
 
 console.log('shared filter + verification + rolling horizon + family-fit tests: OK');
 

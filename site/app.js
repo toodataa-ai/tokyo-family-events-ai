@@ -193,6 +193,78 @@ export async function loadManifest(){
   return res.json();
 }
 
+export async function loadDiscoverySources(){
+  const res=await fetch('data/discovery_sources.json',{cache:'no-store'});
+  if(!res.ok) throw new Error(`discovery source load failed: ${res.status}`);
+  return res.json();
+}
+
+export function findDecisionForEvent(event,audit){
+  const rows=Array.isArray(audit?.decisions)?audit.decisions:[];
+  if(!event) return null;
+  const direct=rows.find(row=>row.candidate_id===event.id);
+  if(direct) return direct;
+  const name=normalizeText(event.name),ward=event.ward||'';
+  const same=rows.filter(row=>normalizeText(row.name)===name && (row.ward||'')===ward);
+  if(same.length===1) return same[0];
+  const urls=[event.url,event.official_url,event.source].filter(Boolean).map(v=>{
+    try{const u=new URL(v);return (u.hostname.replace(/^www\./,'')+u.pathname.replace(/\/$/,'')).toLowerCase();}
+    catch{return '';}
+  }).filter(Boolean);
+  if(urls.length){
+    const byUrl=rows.find(row=>{
+      const candidates=[...(row.discovery_sources||[]).map(x=>x?.url),...(row.evidence||[]).map(x=>x?.url)].filter(Boolean);
+      return candidates.some(v=>{
+        try{const u=new URL(v);const c=(u.hostname.replace(/^www\./,'')+u.pathname.replace(/\/$/,'')).toLowerCase();return urls.includes(c);}
+        catch{return false;}
+      });
+    });
+    if(byUrl) return byUrl;
+  }
+  return same[0]||null;
+}
+
+export function classifyDiscoveryProvenance(event,decision,registry){
+  const entries=Array.isArray(decision?.discovery_sources)?decision.discovery_sources:[];
+  const explicitRegistry=Array.isArray(registry?.explicit_sources)?registry.explicit_sources:[];
+  const byId=new Map(explicitRegistry.map(x=>[x.id,x]));
+  const explicitKinds=new Set(['legacy_media','legacy_detail','explicit_source','manual_source','registered_source']);
+  const aiKinds=new Set(['official_ai_search','v15_web_search','ai_cross_search','web_search','ai_search']);
+  let explicit=false,ai=false;
+  const explicitSources=[],urls=[],signals=[];
+  const addExplicit=(sourceId,url,kind)=>{
+    explicit=true;
+    const meta=sourceId?byId.get(sourceId):explicitRegistry.find(src=>{
+      if(!url) return false;
+      try{
+        const uh=new URL(url).hostname.replace(/^www\./,'');
+        const bh=new URL(src.base_url).hostname.replace(/^www\./,'');
+        return uh===bh;
+      }catch{return false;}
+    });
+    const key=meta?.id||sourceId||url||kind||'explicit';
+    if(!explicitSources.some(x=>x.key===key)) explicitSources.push({key,id:sourceId||'',label:meta?.label||sourceId||'明示参照元',url:url||meta?.base_url||''});
+  };
+  for(const src of entries){
+    if(!src) continue;
+    const channel=src.channel||'',kind=src.kind||'',url=src.url||'',sourceId=src.source_id||'';
+    if(url && !urls.includes(url)) urls.push(url);
+    if(channel==='explicit' || explicitKinds.has(kind) || (sourceId && byId.has(sourceId))) addExplicit(sourceId,url,kind);
+    if(channel==='ai_cross' || aiKinds.has(kind)) ai=true;
+    if(kind) signals.push(kind);
+  }
+  if(!explicit && !ai){
+    const sourceUrl=event?.source||'';
+    const hit=explicitRegistry.find(src=>src.enabled!==false && sourceUrl && (
+      sourceUrl===src.base_url ||
+      (src.search_urls||[]).some(u=>!u.includes('{') && sourceUrl===u)
+    ));
+    if(hit) addExplicit(hit.id,sourceUrl,'source_url_match');
+  }
+  const channel=explicit&&ai?'both':explicit?'explicit':ai?'ai_cross':'unknown';
+  return {channel,explicit,ai,explicitSources,urls,signals};
+}
+
 export async function loadWeekend(manifest,satIso){
   const entry=(manifest.weekends||[]).find(w=>w.sat===satIso);
   if(!entry) return {entry:null,data:null};

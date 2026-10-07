@@ -1,6 +1,6 @@
 {
-  "version": "v1.8",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.8.txt",
+  "version": "v1.9",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.9.txt",
   "updated_at": "2026-10-07",
-  "rule": "Every new discovery run must execute both layers: broad AI cross-search across all 23 wards and the extensible explicit_sources registry. required explicit sources must be checked via search_urls, while protected legacy source IDs may never disappear. New explicit sources can be appended without rewriting the prompt."
+  "rule": "Every new discovery run must preserve candidate-level discovery provenance. discovery_sources entries use channel=ai_cross|explicit; explicit entries include source_id from the extensible registry, and candidates found by both layers retain both channels. Historical runs are rendered through compatibility mapping."
 }

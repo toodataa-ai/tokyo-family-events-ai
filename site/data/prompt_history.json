@@ -98,6 +98,20 @@
         "回帰テストを『18件固定』から『既存18件を包含し追加自由』へ変更"
       ],
       "reason": "AIの横断的な発見力を維持しながら、人が重要と判断した検索先を明示的・継続的に追加できる運用へするため。"
+    },
+    {
+      "version": "v1.9",
+      "date": "2026-10-07",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.9.txt",
+      "summary": "各候補の取得経路をAI横断・明示参照元・両方に分類できるよう、discovery_sourcesへchannel/source_idを標準化し管理ビューで可視化。",
+      "changes": [
+        "候補単位discovery_sourcesにchannel=ai_cross|explicitを必須化",
+        "明示参照元由来はsource_idを必須化",
+        "両経路で発見した候補は重複排除後も両方の発見記録を保持",
+        "admin.htmlで固定サイトのみ・AI横断のみ・両方・判定不能を可視化",
+        "過去runのlegacy_media/official_ai_search等を互換分類"
+      ],
+      "reason": "固定サイトから取得したイベントとAI横断探索で発見したイベントを管理者が区別し、探索漏れや各チャネルの寄与を監査できるようにするため。"
     }
   ]
 }

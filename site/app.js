@@ -27,7 +27,7 @@ export function heroSeasonForDate(dateStr){
   const month=Number(String(dateStr||'').slice(5,7));
   if(month>=3&&month<=5) return 'spring';
   if(month>=6&&month<=8) return 'summer';
-  if(month===9) return 'autumn';
+  if(month>=9&&month<=11) return 'autumn';
   return 'winter';
 }
 export function heroSeasonMeta(season){ return HERO_SEASONS[season] || HERO_SEASONS.winter; }

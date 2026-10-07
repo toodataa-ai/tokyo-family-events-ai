@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261008-compact2">
+<link rel="stylesheet" href="styles.css?v=20261008-reservation1">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・キーワード・オススメ度・料金・屋内外で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
@@ -37,6 +37,13 @@
       <option value="indoor">屋内</option>
       <option value="outdoor">屋外</option>
       <option value="mixed">屋内・屋外</option>
+    </select>
+    <select id="reservationSelect" aria-label="予約・事前申込">
+      <option value="all">申込：すべて</option>
+      <option value="none">申込不要</option>
+      <option value="required">要事前申込</option>
+      <option value="partial">一部要申込</option>
+      <option value="unknown">申込要確認</option>
     </select>
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
@@ -63,14 +70,14 @@
 </main>
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・キーワードで絞り込めます。</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,findDecisionForEvent,classifyDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261008-reservation1';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false;
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function applyHeroSeason(){const season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
-function currentFilters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value,environment:$('environmentSelect').value};}
-function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(allMode)p.set('date','all');history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
+function currentFilters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value,environment:$('environmentSelect').value,reservation:$('reservationSelect').value};}
+function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);if(allMode)p.set('date','all');history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
 
 function renderWeekTabs(){
   if(!manifest)return;
@@ -107,8 +114,8 @@ function render(){
     const verifyText=`<div class="source"><b>${ev.verification?.status==='announced'?'開催発表':'公式確認'}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
-    const environmentLabel=indoorOutdoorLabel(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
-    const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
+    const environmentLabel=indoorOutdoorLabel(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
+    const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
     return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
   }).join('');
   syncUrl();
@@ -135,7 +142,7 @@ async function loadSelected(){
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('reservationSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
 (async()=>{try{
   renderLegendStars();[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
   const p=new URLSearchParams(location.search),dateParam=p.get('date');
@@ -145,6 +152,7 @@ $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab')
   $('recoSelect').value=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';
   $('priceSelect').value=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';
   $('environmentSelect').value=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';
+  $('reservationSelect').value=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';
   renderWeekTabs();await loadSelected();
 }catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>

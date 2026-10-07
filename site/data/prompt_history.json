@@ -83,6 +83,21 @@
         "legacy source coverage回帰テストをCIへ追加"
       ],
       "reason": "レガシーで取得できていたイベントが新AI探索で欠落しないよう、参照元の存在だけでなく実際に巡回する検索エンドポイントまで正本化するため。"
+    },
+    {
+      "version": "v1.8",
+      "date": "2026-10-07",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.8.txt",
+      "summary": "候補発見をAI横断探索と拡張可能な明示参照元探索の二層構造に分離し、新しい参照元をJSON追記だけで追加できる方式へ更新。",
+      "changes": [
+        "discovery_sources.jsonをschema v3へ更新しAI横断探索とexplicit_sourcesを分離",
+        "レガシー18系統をprotected_legacy_source_idsとして保護しつつ追加件数の上限を撤廃",
+        "explicit_sourcesにorigin/enabled/required/purpose/scope/base_url/search_urlsを標準化",
+        "required=falseの任意参照元も追加可能にしbest effort運用を定義",
+        "run manifestをai_discovery_summaryとexplicit_source_checksの二系統監査へ変更",
+        "回帰テストを『18件固定』から『既存18件を包含し追加自由』へ変更"
+      ],
+      "reason": "AIの横断的な発見力を維持しながら、人が重要と判断した検索先を明示的・継続的に追加できる運用へするため。"
     }
   ]
 }

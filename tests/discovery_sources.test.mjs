@@ -5,38 +5,39 @@ const data=JSON.parse(fs.readFileSync('site/data/discovery_sources.json','utf8')
 const latest=JSON.parse(fs.readFileSync('site/data/latest_prompt.json','utf8'));
 const prompt=fs.readFileSync(latest.path,'utf8');
 
-assert.equal(data.schema_version,2);
-assert.equal(data.legacy_source_policy.required_each_run,true);
-assert.equal(data.legacy_source_policy.use_search_urls_if_present,true);
+assert.equal(data.schema_version,3);
+assert.equal(data.discovery_strategy.ai_cross_search.enabled,true);
+assert.equal(data.discovery_strategy.ai_cross_search.per_ward_required,true);
+assert.equal(data.discovery_strategy.explicit_sources.enabled,true);
+assert.equal(data.discovery_strategy.explicit_sources.allow_future_additions,true);
+assert.equal(data.discovery_strategy.explicit_sources.required_each_run,true);
 
-const sources=data.legacy_discovery_sources||[];
-assert.equal(sources.length,18,'legacy discovery source count must stay at 18');
-assert.ok(sources.every(x=>x.required===true),'every legacy source must be required');
-assert.ok(sources.every(x=>Array.isArray(x.search_urls)&&x.search_urls.length>=1),'every legacy source must have search_urls');
+const sources=data.explicit_sources||[];
+const protectedIds=data.protected_legacy_source_ids||[];
+assert.equal(protectedIds.length,18,'protected legacy source ids must stay at 18');
+assert.ok(sources.length>=protectedIds.length,'future explicit sources may be appended');
+const ids=new Set(sources.map(x=>x.id));
+for(const id of protectedIds) assert.ok(ids.has(id),`missing protected legacy source: ${id}`);
+assert.equal(ids.size,sources.length,'explicit source ids must be unique');
 
-const expectedBase=[
-'https://www.sumidaevent.com/','https://www.asakusaevent.com/','https://www.uenopark.info/',
-'https://www.akihabaraevent.com/','https://www.hibiyapark.info/','https://www.ikebukuropark.info/',
-'https://www.shinjukuevent.com/','https://www.nakanoevent.com/','https://www.yoyogikoen.info/',
-'https://www.miyashitapark.info/','https://www.roppongievents.com/','https://www.toyosuevent.com/',
-'https://www.odaibapark.com/','https://www.shinagawaevent.com/','https://www.tachikawaevent.com/',
-'https://www.iterrace.jp/'
-];
-const allUrls=new Set(sources.flatMap(x=>[x.url,...x.search_urls]));
-for(const url of expectedBase) assert.ok(allUrls.has(url),`missing legacy source: ${url}`);
+const requiredFields=data.explicit_source_schema.required_fields||[];
+for(const s of sources){
+  for(const field of requiredFields) assert.ok(field in s,`${s.id}: missing ${field}`);
+  assert.ok(Array.isArray(s.search_urls)&&s.search_urls.length>=1,`${s.id}: search_urls required`);
+}
+const legacy=sources.filter(x=>x.origin==='legacy');
+assert.equal(legacy.length,18,'all protected sources must remain tagged legacy');
+assert.ok(legacy.every(x=>x.enabled===true && x.required===true),'legacy sources stay enabled and required');
 
 const nerima=sources.find(x=>x.id==='nerimakanko');
-assert.ok(nerima);
 assert.ok(nerima.search_urls.includes('https://www.nerimakanko.jp/event/'));
 assert.ok(nerima.search_urls.includes('https://www.nerimakanko.jp/event/search.php?month={YYYY-MM}'));
-
 const suginami=sources.find(x=>x.id==='suginami_festival');
-assert.ok(suginami);
 assert.ok(suginami.search_urls.includes('https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1'));
 
-assert.equal(latest.version,'v1.7');
-assert.match(prompt,/required=true/);
-assert.match(prompt,/legacy_source_checks/);
-assert.match(prompt,/nerimakanko\.jp\/event\/search\.php\?month=\{YYYY-MM\}/);
-assert.match(prompt,/event_category=5/);
-console.log('legacy discovery source coverage: OK');
+assert.equal(latest.version,'v1.8');
+assert.match(prompt,/AI横断探索/);
+assert.match(prompt,/explicit_sources/);
+assert.match(prompt,/explicit_source_checks/);
+assert.match(prompt,/新しい参照元を追加するときは explicit_sources/);
+console.log(`dual discovery source policy: protected=${protectedIds.length}, explicit=${sources.length}: OK`);

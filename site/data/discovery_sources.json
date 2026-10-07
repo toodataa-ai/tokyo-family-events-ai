@@ -1,184 +1,327 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "updated_at": "2026-10-07",
-  "principle": "媒体は候補発見用、公式・主催者情報は確定用。レガシー出力JSONではなく参照元そのものを見る。",
-  "legacy_source_policy": {
-    "required_each_run": true,
-    "use_search_urls_if_present": true,
-    "record_each_check": true,
-    "rule": "required=true の各レガシー参照元を候補発見フェーズで必ず確認し、search_urls がある場合はトップURLだけで代替しない。"
+  "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
+  "discovery_strategy": {
+    "ai_cross_search": {
+      "enabled": true,
+      "per_ward_required": true,
+      "scope": "東京23区を1区ずつ独立探索",
+      "layers": [
+        "各区公式イベント・観光・子育て・文化・公園・図書館・児童館",
+        "東京都・都立施設・公的施設",
+        "主催者・会場・施設・商業施設・鉄道・交通・スポーツ・劇場・大学の公式",
+        "公式観光協会",
+        "子育て・地域イベント媒体",
+        "Web横断検索"
+      ],
+      "query_dimensions": [
+        "子ども/子供/親子",
+        "イベント",
+        "祭り/フェス",
+        "ワークショップ/体験",
+        "無料",
+        "スタンプラリー",
+        "鉄道/電車",
+        "動物",
+        "科学",
+        "防災/消防"
+      ],
+      "record_to": "ai_discovery_summary"
+    },
+    "explicit_sources": {
+      "enabled": true,
+      "required_each_run": true,
+      "use_search_urls_if_present": true,
+      "record_each_check": true,
+      "allow_future_additions": true,
+      "record_to": "explicit_source_checks",
+      "rule": "enabled=true の明示参照元を確認する。required=true は必須、required=false はbest effort。search_urlsがある場合はbase_urlだけの確認で代替しない。"
+    }
   },
-  "official_layers": [
-    "各区公式イベント・観光・子育て・文化・公園・図書館・児童館",
-    "東京都・都立施設・公的施設",
-    "主催者・会場・施設・商業施設・鉄道・交通・スポーツ・劇場・大学の公式",
-    "公式観光協会"
+  "protected_legacy_source_ids": [
+    "sumida",
+    "asakusa",
+    "ueno",
+    "akihabara",
+    "hibiya",
+    "ikebukuro",
+    "shinjuku",
+    "nakano",
+    "yoyogi",
+    "shibuya",
+    "roppongi",
+    "toyosu",
+    "odaiba",
+    "shinagawa",
+    "tachikawa",
+    "iterrace",
+    "nerimakanko",
+    "suginami_festival"
   ],
-  "legacy_discovery_sources": [
+  "explicit_source_schema": {
+    "required_fields": [
+      "id",
+      "label",
+      "origin",
+      "enabled",
+      "required",
+      "purpose",
+      "scope",
+      "base_url",
+      "search_urls"
+    ],
+    "allowed_origins": [
+      "legacy",
+      "manual",
+      "official",
+      "partner",
+      "experimental"
+    ],
+    "allowed_purposes": [
+      "candidate_discovery",
+      "official_verification",
+      "both"
+    ],
+    "note": "新規参照元は explicit_sources に追記する。既存idは変更・削除せず、停止時は enabled=false と理由noteを残す。"
+  },
+  "explicit_sources": [
     {
       "id": "sumida",
       "label": "墨田",
-      "url": "https://www.sumidaevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.sumidaevent.com/",
       "search_urls": [
         "https://www.sumidaevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "asakusa",
       "label": "浅草",
-      "url": "https://www.asakusaevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.asakusaevent.com/",
       "search_urls": [
         "https://www.asakusaevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "ueno",
       "label": "上野公園",
-      "url": "https://www.uenopark.info/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.uenopark.info/",
       "search_urls": [
         "https://www.uenopark.info/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "akihabara",
       "label": "秋葉原",
-      "url": "https://www.akihabaraevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.akihabaraevent.com/",
       "search_urls": [
         "https://www.akihabaraevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "hibiya",
       "label": "日比谷公園",
-      "url": "https://www.hibiyapark.info/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.hibiyapark.info/",
       "search_urls": [
         "https://www.hibiyapark.info/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "ikebukuro",
       "label": "池袋",
-      "url": "https://www.ikebukuropark.info/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.ikebukuropark.info/",
       "search_urls": [
         "https://www.ikebukuropark.info/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "shinjuku",
       "label": "新宿",
-      "url": "https://www.shinjukuevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.shinjukuevent.com/",
       "search_urls": [
         "https://www.shinjukuevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "nakano",
       "label": "中野",
-      "url": "https://www.nakanoevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.nakanoevent.com/",
       "search_urls": [
         "https://www.nakanoevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "yoyogi",
       "label": "代々木公園",
-      "url": "https://www.yoyogikoen.info/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.yoyogikoen.info/",
       "search_urls": [
         "https://www.yoyogikoen.info/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "shibuya",
       "label": "渋谷",
-      "url": "https://www.miyashitapark.info/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.miyashitapark.info/",
       "search_urls": [
         "https://www.miyashitapark.info/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "roppongi",
       "label": "六本木",
-      "url": "https://www.roppongievents.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.roppongievents.com/",
       "search_urls": [
         "https://www.roppongievents.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "toyosu",
       "label": "豊洲",
-      "url": "https://www.toyosuevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.toyosuevent.com/",
       "search_urls": [
         "https://www.toyosuevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "odaiba",
       "label": "お台場",
-      "url": "https://www.odaibapark.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.odaibapark.com/",
       "search_urls": [
         "https://www.odaibapark.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "shinagawa",
       "label": "品川",
-      "url": "https://www.shinagawaevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.shinagawaevent.com/",
       "search_urls": [
         "https://www.shinagawaevent.com/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "tachikawa",
       "label": "立川",
-      "url": "https://www.tachikawaevent.com/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.tachikawaevent.com/",
       "search_urls": [
         "https://www.tachikawaevent.com/"
       ],
-      "required": true,
       "note": "候補発見は可。ただし23区外なのでoutside_23wardsで除外対象"
     },
     {
       "id": "iterrace",
       "label": "アイテラス落合南長崎",
-      "url": "https://www.iterrace.jp/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.iterrace.jp/",
       "search_urls": [
         "https://www.iterrace.jp/"
-      ],
-      "required": true
+      ]
     },
     {
       "id": "nerimakanko",
       "label": "とっておきの練馬",
-      "url": "https://www.nerimakanko.jp/event/",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.nerimakanko.jp/event/",
       "search_urls": [
         "https://www.nerimakanko.jp/event/",
         "https://www.nerimakanko.jp/event/search.php?month={YYYY-MM}"
       ],
-      "required": true,
       "note": "対象6週間に含まれる各月を月別検索。ページネーションも追跡する。"
     },
     {
       "id": "suginami_festival",
       "label": "杉並区イベントカレンダー（お祭り）",
-      "url": "https://www.city.suginami.tokyo.jp/event/index.html",
+      "origin": "legacy",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.city.suginami.tokyo.jp/event/index.html",
       "search_urls": [
         "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1"
       ],
-      "required": true,
       "note": "レガシーsuginami.pyと同じevent_category=5（おまつり）の月別一覧を対象月ごとに確認する。"
     }
   ]

@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">TOKYO FAMILY EVENTS / AI CURATION</div>
     <h1>東京23区の子連れイベントを、広く探して、根拠を確認して掲載。</h1>
-    <p class="hero-copy">区公式・東京都・施設公式・イベント媒体・Web検索を横断し、6週間先まで候補を収集。子連れ適性を評価し、掲載・除外・重複の判断も残します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-lights-Y-scRdeRI_w" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">区公式・東京都・施設公式・イベント媒体・Web検索を横断し、6週間先まで候補を収集。子連れ適性を評価し、掲載・除外・重複の判断も残します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
     <div class="hero-actions"><a class="hero-cta primary" href="search.html">イベントを探す</a><a class="hero-cta secondary" href="#logic">抽出ロジックを見る</a></div>
   </div>
 </section>
@@ -35,6 +35,28 @@
       <div class="reason-head"><h3>掲載除外の主な理由</h3><span>監査データの primary reason を集計</span></div>
       <div class="reason-list" id="reasonList"><span class="audit-note">読み込み中です。</span></div>
     </div>
+  </section>
+
+  <section class="home-section panel" aria-labelledby="auditTitle">
+    <div class="section-head">
+      <div><div class="eyebrow">AI AUDIT REPORT</div><h2 id="auditTitle">AI探索・公式確認レポート</h2><p>検索画面ではなく、ここに探索量・公式確認状況・除外理由を集約します。</p></div>
+    </div>
+    <div class="coverage-grid home-audit-grid">
+      <div class="metric"><b id="homeCovWards">-</b><span>確認済み区</span></div>
+      <div class="metric"><b id="homeCovSources">-</b><span>探索ソース</span></div>
+      <div class="metric"><b id="homeCovCandidates">-</b><span>候補イベント</span></div>
+      <div class="metric"><b id="homeCovPublished">-</b><span>掲載イベント</span></div>
+      <div class="metric"><b id="homeCovExcluded">-</b><span>掲載除外</span></div>
+      <div class="metric"><b id="homeCovVerified">-</b><span>公式確認済み</span></div>
+      <div class="metric"><b id="homeCovAnnounced">-</b><span>詳細待ち</span></div>
+      <div class="metric"><b id="homeCovDecision">-</b><span>判断監査</span></div>
+      <div class="metric"><b id="homeCovPrompt">-</b><span>実行プロンプト</span></div>
+      <div class="metric"><b id="homeCovTier">-</b><span>掲載段階</span></div>
+    </div>
+    <details class="decision-report home-audit-details" open>
+      <summary>今週の掲載除外理由・対象イベント</summary>
+      <div id="homeDecisionContent"><p class="audit-note">読み込み中です。</p></div>
+    </details>
   </section>
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
@@ -60,7 +82,7 @@
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,fmtRange,escapeHtml,heroSeasonForDate,heroSeasonMeta} from './app.js';
+import {loadManifest,loadWeekend,fmtRange,escapeHtml,safeHttpUrl,publicationTierMeta,heroSeasonForDate,heroSeasonMeta} from './app.js';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){const season=heroSeasonForDate(dateStr);document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
 const REASON_LABELS={
@@ -75,6 +97,38 @@ const REASON_LABELS={
   insufficient_evidence:'公式根拠が不足'
 };
 function reasonLabel(code){return REASON_LABELS[code]||String(code||'その他').replaceAll('_',' ');}
+
+function renderHomeAudit(data){
+  const c=data.coverage||{},wards=Array.isArray(c.wards)?c.wards:[],audit=data.decision_audit,s=audit?.summary||{};
+  const verified=data.events.filter(x=>x.verification?.status==='verified').length;
+  const announced=data.events.filter(x=>x.verification?.status==='announced').length;
+  const tier=publicationTierMeta(data.publication_tier);
+  $('homeCovWards').textContent=`${wards.filter(x=>x.status==='checked').length}/23`;
+  $('homeCovSources').textContent=c.sources_checked??'-';
+  $('homeCovCandidates').textContent=s.candidate_total??c.candidate_count??'-';
+  $('homeCovPublished').textContent=s.published??c.published_count??data.events.length;
+  $('homeCovExcluded').textContent=s.excluded??c.excluded_count??'-';
+  $('homeCovVerified').textContent=`${verified}/${data.events.length}`;
+  $('homeCovAnnounced').textContent=announced;
+  $('homeCovDecision').textContent=audit?(audit.migration_incomplete?'移行中':'完備'):'-';
+  $('homeCovPrompt').textContent=data.run?.prompt?.version??'-';
+  $('homeCovTier').textContent=tier.label;
+  const box=$('homeDecisionContent');
+  if(!audit){box.innerHTML='<p class="audit-note">判断監査データはありません。</p>';return;}
+  const excluded=(audit.decisions||[]).filter(x=>x.decision==='excluded');
+  let html=`<div class="audit-summary"><b>${audit.migration_incomplete?'移行中':'完全監査'}</b><span>候補 ${s.candidate_total??'-'} ／ 掲載 ${s.published??'-'} ／ 除外 ${s.excluded??'-'} ／ 重複 ${s.duplicate??'-'}</span></div>`;
+  if(excluded.length){
+    html+='<div class="excluded-list">'+excluded.map(row=>{
+      const evidence=(row.evidence||[]).map(e=>{const u=safeHttpUrl(e.url);return u?`<a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(e.label||'根拠')}</a>`:''}).filter(Boolean).join(' / ');
+      const reasonLabelText=reasonLabel(row.primary_reason_code);
+      return `<div class="excluded-item"><b>${escapeHtml(row.name||row.candidate_id||'候補')}</b><span class="decision-tag ${row.exclusion_type==='hard'?'hard':'soft'}">${row.exclusion_type==='hard'?'Hard除外':'Soft判断'}</span><div><strong>${escapeHtml(reasonLabelText)}</strong>：${escapeHtml((row.reasons||[]).join(' ／ ')||'理由記録あり')}</div>${evidence?`<div class="source">根拠: ${evidence}</div>`:''}</div>`;
+    }).join('')+'</div>';
+  }else{
+    html+='<p class="audit-note">この週は除外候補なし。</p>';
+  }
+  box.innerHTML=html;
+}
+
 (async()=>{
   try{
     const manifest=await loadManifest();
@@ -103,6 +157,7 @@ function reasonLabel(code){return REASON_LABELS[code]||String(code||'その他')
     $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${manifest.generated||'-'}`;
     const first=rows[0]?.data;
     if(first){
+      renderHomeAudit(first);
       const s=first.decision_audit?.summary||{};
       $('weekSnapshot').textContent=`今週 ${fmtRange(first.sat,first.sun)}：候補 ${s.candidate_total??first.coverage?.candidate_count??'-'}件 ／ 掲載 ${s.published??first.events.length}件 ／ 除外 ${s.excluded??'-'}件 ／ 重複 ${s.duplicate??'-'}件`;
     }

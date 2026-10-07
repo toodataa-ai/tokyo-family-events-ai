@@ -20,7 +20,7 @@ export const HERO_SEASONS = {
   spring:{label:'春・桜',source:'https://unsplash.com/photos/cherry-blossoms-in-full-bloom-in-a-park-AaxFt3GY7VQ'},
   summer:{label:'夏・祭り',source:'https://unsplash.com/photos/japanese-festival-with-lanterns-and-signage-mF9gUmfnJYQ'},
   autumn:{label:'秋・紅葉',source:'https://unsplash.com/photos/autumn-trees-with-yellow-and-orange-leaves-in-a-park-aUFgdqvFi2A'},
-  winter:{label:'冬・クリスマス',source:'https://unsplash.com/photos/a-group-of-lights-Y-scRdeRI_w'}
+  winter:{label:'冬・クリスマス',source:'https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso'}
 };
 
 export function heroSeasonForDate(dateStr){

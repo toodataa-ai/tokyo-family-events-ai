@@ -182,6 +182,16 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .compact-week-tabs .week-tab em{font-size:8.5px;margin-top:0}
 .search-page .compact-ward-chips{max-width:1180px;margin:0 auto;padding:2px 10px 4px;gap:3px}
 .compact-ward-chips .chip{padding:3px 7px;font-size:10px}
+.copy-page .site-hero{padding-bottom:20px}
+.copy-page .site-topbar{margin-bottom:18px}
+.copy-page .site-hero h1{font-size:26px}
+.copy-page .hero-copy{font-size:13px}
+.copy-page .copy-search-quick-row{grid-template-columns:minmax(180px,1fr) auto}
+.copy-page .compact-week-tabs{max-width:1180px;margin:2px auto 0;padding:2px 10px 3px;gap:4px;min-height:0;background:transparent;border-bottom:0}
+.copy-page .compact-ward-chips{max-width:1180px;margin:0 auto;padding:2px 10px 4px;gap:3px;background:transparent;border-bottom:0}
+.copy-page main{max-width:1180px;padding-top:8px}
+.copy-page .copy-result-head{margin:0 0 8px;font-size:11px}
+.copy-page .tip{font-size:10.5px;line-height:1.6;margin-bottom:10px}
 
 /* Clear boundaries for copy cards */
 .copy-page .grid{gap:18px}
@@ -207,6 +217,11 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .compact-week-tabs .week-tab span{font-size:8.5px}
   .search-page .compact-ward-chips{padding-left:8px;padding-right:8px}
   .compact-ward-chips .chip{padding:3px 6px;font-size:9.5px}
+  .copy-page .copy-search-quick-row{grid-template-columns:minmax(0,1fr) auto}
+  .copy-page .copy-search-quick-row input{grid-column:1;height:31px}
+  .copy-page .copy-search-quick-row .date-refine{grid-column:2}
+  .copy-page .compact-week-tabs{padding-left:8px;padding-right:8px}
+  .copy-page .compact-ward-chips{padding-left:8px;padding-right:8px}
   .copy-page .grid{gap:16px}
   .copy-card{border-width:2px}
 }

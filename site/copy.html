@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261008-compact2">
+<link rel="stylesheet" href="styles.css?v=20261008-reservation1">
 </head>
 <body class="copy-page">
 <header>
@@ -23,14 +23,14 @@
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks,indoorOutdoorLabel,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks,indoorOutdoorLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows} from './app.js?v=20261008-reservation1';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
-let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all';
+let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all',currentReservation='all';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
-function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment};}
-function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
+function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment,reservation:currentReservation};}
+function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
 
 async function writeClipboard(text){
   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return;}
@@ -71,14 +71,14 @@ function render(){
   const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
   const prompt=currentData.run?.prompt?.version||'-';const tier=allMode?null:publicationTierMeta(currentData.publication_tier);
-  const filterBits=[];if(Number(currentRecMin))filterBits.push(currentRecMin==='3'?'★★★':currentRecMin==='2'?'★★以上':'★以上');if(currentPrice!=='all')filterBits.push(currentPrice==='free'?'無料':currentPrice==='mixed'?'無料あり':'有料');if(currentEnvironment!=='all')filterBits.push(currentEnvironment==='indoor'?'屋内':currentEnvironment==='outdoor'?'屋外':'屋内・屋外');
+  const filterBits=[];if(Number(currentRecMin))filterBits.push(currentRecMin==='3'?'★★★':currentRecMin==='2'?'★★以上':'★以上');if(currentPrice!=='all')filterBits.push(currentPrice==='free'?'無料':currentPrice==='mixed'?'無料あり':'有料');if(currentEnvironment!=='all')filterBits.push(currentEnvironment==='indoor'?'屋内':currentEnvironment==='outdoor'?'屋外':'屋内・屋外');if(currentReservation!=='all')filterBits.push(currentReservation==='none'?'申込不要':currentReservation==='required'?'要事前申込':currentReservation==='partial'?'一部要申込':'申込要確認');
   $('rangeText').textContent=allMode?`6週間すべて ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION}${filterBits.length?' ／ '+filterBits.join('・'):''}`:`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}${filterBits.length?' ／ '+filterBits.join('・'):''}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
     const fields=copyFieldList(ev);
     const grade=ev.family_fit?.overall||ev.family_fit?.grade||'C';
     const state=verificationStateMeta(ev.verification?.status),verifyUrl=safeHttpUrl(ev.verification?.source);
-    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
+    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -94,7 +94,7 @@ function render(){
           </div>
         </div>
         <div class="copy-event-detail">
-          <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}${provBadge}</div>
+          <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div>
           <div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>
           ${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}
           ${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}
@@ -126,6 +126,6 @@ async function loadSelected(){try{
 $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
 $('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});
-(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';currentReservation=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

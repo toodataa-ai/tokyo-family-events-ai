@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2233">
+<link rel="stylesheet" href="styles.css?v=20261007-2235">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -93,7 +93,7 @@ function render(){
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const detailMeta=`<div class="badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${ev.indoor_outdoor?`<span class="badge">${escapeHtml(ev.indoor_outdoor)}</span>`:''}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
-    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
+    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
   }).join('');
   syncUrl();
 }

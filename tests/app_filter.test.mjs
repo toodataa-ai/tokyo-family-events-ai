@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,mergeEventsAcrossWeeks} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -123,6 +123,36 @@ const manifest={default:'2026-10-10',rolling_horizon_weeks:6,weekends:[{sat:'202
 const slots=rollingWeekSlots(manifest);assert.equal(slots.length,6);assert.equal(slots[0].sat,'2026-10-10');assert.equal(slots[1].sat,'2026-10-17');assert.equal(slots[1].available,false);assert.equal(slots[2].publication_tier,'preview');assert.equal(slots[4].publication_tier,'announcement');assert.equal(publicationTierMeta('preview').label,'先取り');assert.equal(verificationStateMeta('verified').label,'✓ 公式確認済み');assert.equal(verificationStateMeta('announced').label,'○ 開催発表済み・詳細待ち');
 
 assert.equal(heroSeasonForDate('2027-04-10'),'spring');assert.equal(heroSeasonForDate('2027-07-10'),'summer');assert.equal(heroSeasonForDate('2027-09-10'),'autumn');assert.equal(heroSeasonForDate('2026-10-10'),'autumn');assert.equal(heroSeasonForDate('2026-11-10'),'autumn');assert.equal(heroSeasonForDate('2026-12-10'),'winter');assert.match(heroSeasonMeta('winter').source,/unsplash\.com/);
+const holidayManifest={
+  default:'2026-10-10',
+  rolling_horizon_weeks:6,
+  holidays:[{date:'2026-10-12',name:'スポーツの日'},{date:'2026-11-03',name:'文化の日'}],
+  weekends:[
+    {sat:'2026-10-10',sun:'2026-10-11',publication_tier:'full',count:10},
+    {sat:'2026-10-17',sun:'2026-10-18',publication_tier:'full',count:10},
+    {sat:'2026-10-24',sun:'2026-10-25',publication_tier:'preview',count:10},
+    {sat:'2026-10-31',sun:'2026-11-01',publication_tier:'preview',count:10},
+    {sat:'2026-11-07',sun:'2026-11-08',publication_tier:'announcement',count:10},
+    {sat:'2026-11-14',sun:'2026-11-15',publication_tier:'announcement',count:10}
+  ]
+};
+const holidayPeriods=holidayPeriodSlots(holidayManifest);
+assert.equal(holidayPeriods[0].start,'2026-10-10');
+assert.equal(holidayPeriods[0].end,'2026-10-12');
+assert.deepEqual(holidayTabMeta(holidayPeriods[0],holidayManifest),{primary:'10/10–12',secondary:'土〜月・祝'});
+const culture=holidayPeriods.find(x=>x.start==='2026-11-03');
+assert.ok(culture);
+assert.equal(culture.kind,'holiday');
+assert.deepEqual(holidayTabMeta(culture,holidayManifest),{primary:'11/3',secondary:'火・祝'});
+assert.equal(holidayRangeLabel('2026-10-10','2026-10-12',holidayManifest),'2026/10/10(土) 〜 10/12(月・祝)');
+const holidayEvents=[
+  {date_start:'2026-11-01',date_end:'2026-11-03'},
+  {date_start:'2026-11-03',date_end:'2026-11-03'},
+  {date_start:'2026-11-04',date_end:'2026-11-05'}
+];
+assert.equal(eventsOverlappingPeriod(holidayEvents,'2026-11-03','2026-11-03').length,2);
+console.log('holiday period tabs: OK');
+
 console.log('hero seasonal background policy: OK');
 const provenanceRegistry={explicit_sources:[
   {id:'nakano',label:'中野',enabled:true,base_url:'https://www.nakanoevent.com/',search_urls:['https://www.nakanoevent.com/']},

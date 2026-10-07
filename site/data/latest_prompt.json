@@ -1,6 +1,6 @@
 {
-  "version": "v1.11",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.11.txt",
-  "updated_at": "2026-10-07",
-  "rule": "Every new discovery run must preserve v1.10 canonical values and apply the dedup guard. Shared URLs, same dates, or same organizers are insufficient for duplicate decisions; district/branch, date/time, venue, detail/ticket URL, performers/program and independent attendance unit must be compared."
+  "version": "v1.12",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.12.txt",
+  "updated_at": "2026-10-08",
+  "rule": "Every new discovery run must preserve v1.11 dedup and canonical-value safeguards, include all national holidays/holidays in the six-week horizon, merge consecutive weekend/holiday days into holiday blocks, and keep full/preview/announcement internal rather than presenting them as user-facing confidence."
 }

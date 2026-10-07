@@ -535,3 +535,32 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .price-mixed{background:#fff8db;color:#8a5a00;border-color:#ead58c}
 .price-paid{background:#fdecec;color:#b42318;border-color:#f2b8b5}
 .price-unknown{background:#eef1f4;color:#667085;border-color:#cfd5dc}
+
+
+/* Uniform compact holiday-period tabs */
+.week-tabs .week-tab,
+.week-tabs .all-week-tab{
+  flex:0 0 82px;
+  width:82px;
+  min-width:82px;
+  max-width:82px;
+  height:46px;
+  min-height:46px;
+  padding:5px 6px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  overflow:hidden;
+}
+.week-tabs .week-tab b,
+.week-tabs .week-tab span{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:clip;
+  line-height:1.15;
+}
+.week-tabs .week-tab b{font-size:11px}
+.week-tabs .week-tab span{font-size:9px;margin-top:3px}
+.week-tabs .week-tab em{display:none!important}

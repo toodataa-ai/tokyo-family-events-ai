@@ -3,6 +3,7 @@ import fs from 'node:fs';
 
 const data=JSON.parse(fs.readFileSync('site/data/discovery_sources.json','utf8'));
 const latest=JSON.parse(fs.readFileSync('site/data/latest_prompt.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync('site/data/manifest.json','utf8'));
 const prompt=fs.readFileSync(latest.path,'utf8');
 
 assert.equal(data.schema_version,3);
@@ -35,7 +36,10 @@ assert.ok(nerima.search_urls.includes('https://www.nerimakanko.jp/event/search.p
 const suginami=sources.find(x=>x.id==='suginami_festival');
 assert.ok(suginami.search_urls.includes('https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1'));
 
-assert.equal(latest.version,'v1.11');
+assert.equal(latest.version,'v1.12');
+assert.ok(manifest.holiday_source?.url?.includes('cao.go.jp'));
+assert.ok(Array.isArray(manifest.holidays));
+for(const h of manifest.holidays){assert.match(h.date,/^\d{4}-\d{2}-\d{2}$/);assert.ok(h.name);}
 assert.match(prompt,/AI横断探索/);
 assert.match(prompt,/explicit_sources/);
 assert.match(prompt,/explicit_source_checks/);

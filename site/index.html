@@ -10,7 +10,7 @@
   <div class="hero-inner">
     <div class="site-topbar">
       <a class="site-brand" href="index.html">東京23区子連れイベントAI収集</a>
-      <nav class="site-nav"><a href="search.html">イベント検索</a><a href="copy.html">コピペ用リスト</a><a href="admin.html">管理ビュー</a></nav>
+      <nav class="site-nav"><a href="search.html">イベント検索</a><a href="copy.html">コピペ用リスト</a></nav>
     </div>
     <div class="hero-eyebrow">TOKYO FAMILY EVENTS / AI CURATION</div>
     <h1>東京23区子連れイベントAI収集</h1>
@@ -34,7 +34,7 @@
 
   <section class="home-section panel home-quality" aria-labelledby="qualityTitle">
     <div class="section-head">
-      <div><div class="eyebrow">CURRENT WEEK QUALITY</div><h2 id="qualityTitle">今週の収集品質</h2><p>取得経路・個別イベント・除外理由の詳細は管理ビューに集約しています。</p></div>
+      <div><div class="eyebrow">CURRENT WEEK QUALITY</div><h2 id="qualityTitle">今週の収集品質</h2><p>候補件数・掲載件数・除外理由をここで確認できます。取得経路は各イベントの詳細に表示します。</p></div>
     </div>
     <div class="quality-grid">
       <div class="quality-card"><b id="qualityWards">-</b><span>23区確認</span></div>
@@ -42,7 +42,7 @@
       <div class="quality-card"><b id="qualityAi">-</b><span>AI横断由来</span></div>
       <div class="quality-card"><b id="qualityVerified">-</b><span>公式確認済み</span></div>
     </div>
-    <div class="quality-footer"><span id="qualityPeriod">今週分を読み込み中です。</span><a href="admin.html">詳細は管理ビュー</a></div>
+    <div class="quality-footer"><span id="qualityPeriod">今週分を読み込み中です。</span></div>
   </section>
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
@@ -55,9 +55,9 @@
       <div class="logic-step"><span>3</span><b>候補統合＋誤重複ガード</b><small>同一URLだけでは重複にしません。名称に加え、地区・支部・開催日・時間・会場・詳細/チケットURLを照合し、別開催単位は別イベントとして保持。併催でも独立名称・内容があれば分けます。取得経路も残します。</small></div>
       <div class="logic-step"><span>4</span><b>子連れ適性を8軸評価</b><small>対象年齢、体験性、年齢適合、滞在自由度、負担、費用、予約、家族価値を評価します。</small></div>
       <div class="logic-step"><span>5</span><b>公式情報で再確認</b><small>名称・開催日・会場を中心に、自治体・主催者・会場などの公式情報で確認。近い週ほど厳密に再監査します。</small></div>
-      <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップ・管理ビューへ反映します。</small></div>
+      <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップへ反映します。</small></div>
     </div>
-    <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。管理ビューでは取得経路別に確認できます。</span></div>
+    <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。取得経路はイベント詳細で確認できます。</span></div>
   </section>
 
   <section class="home-section panel home-cta">
@@ -117,7 +117,7 @@ function applyHeroSeason(dateStr){
   }catch(e){
     console.error(e);
     $('statusScope').textContent='データ状況の読み込みに失敗しました。';
-    $('qualityPeriod').textContent='収集品質を読み込めませんでした。管理ビューで詳細を確認してください。';
+    $('qualityPeriod').textContent='収集品質を読み込めませんでした。時間をおいて再読み込みしてください。';
   }
 })();
 </script>

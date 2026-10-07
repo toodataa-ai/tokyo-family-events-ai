@@ -63,5 +63,20 @@
       "horizon_index": 6,
       "publication_tier": "announcement"
     }
+  ],
+  "holiday_source": {
+    "label": "内閣府「国民の祝日」",
+    "url": "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html",
+    "checked_at": "2026-10-08"
+  },
+  "holidays": [
+    {
+      "date": "2026-10-12",
+      "name": "スポーツの日"
+    },
+    {
+      "date": "2026-11-03",
+      "name": "文化の日"
+    }
   ]
 }

@@ -79,6 +79,79 @@ export function shortWeekendLabel(sat){
   return `${d.getMonth()+1}/${d.getDate()}`;
 }
 
+export function weekdayJa(dateStr){
+  const d=new Date(dateStr+'T00:00:00');
+  return ['日','月','火','水','木','金','土'][d.getDay()];
+}
+
+export function holidayPeriodSlots(manifest,anchorSat=''){
+  const slots=rollingWeekSlots(manifest,anchorSat);
+  const holidayRows=Array.isArray(manifest?.holidays)?manifest.holidays:[];
+  const holidayByDate=new Map(holidayRows.map(x=>[x.date,x]));
+  const used=new Set();
+  const periods=slots.map(slot=>{
+    let start=slot.sat,end=slot.sun;
+    for(;;){
+      const prev=addDays(start,-1);
+      if(!holidayByDate.has(prev)) break;
+      start=prev;used.add(prev);
+    }
+    for(;;){
+      const next=addDays(end,1);
+      if(!holidayByDate.has(next)) break;
+      end=next;used.add(next);
+    }
+    const holidayDates=holidayRows.filter(x=>x.date>=start&&x.date<=end).map(x=>x.date);
+    holidayDates.forEach(x=>used.add(x));
+    return {...slot,start,end,sourceSat:slot.sat,kind:'weekend',holiday_dates:holidayDates};
+  });
+  if(!periods.length) return [];
+  const horizonStart=periods[0].start;
+  const horizonEnd=periods[periods.length-1].end;
+  for(const holiday of holidayRows){
+    if(!holiday?.date || holiday.date<horizonStart || holiday.date>horizonEnd || used.has(holiday.date)) continue;
+    const source=[...slots].reverse().find(s=>s.sun<holiday.date)||slots[0];
+    periods.push({
+      start:holiday.date,end:holiday.date,sourceSat:source.sat,kind:'holiday',
+      holiday_dates:[holiday.date],holiday_name:holiday.name||'祝日',
+      entry:source.entry,available:source.available,publication_tier:source.publication_tier
+    });
+  }
+  return periods.sort((a,b)=>a.start.localeCompare(b.start));
+}
+
+export function holidayTabMeta(period,manifest){
+  const holidays=new Set((manifest?.holidays||[]).map(x=>x.date));
+  const md=dateStr=>{const d=new Date(dateStr+'T00:00:00');return `${d.getMonth()+1}/${d.getDate()}`;};
+  const endDay=dateStr=>String(Number(dateStr.slice(8,10)));
+  const dayLabel=dateStr=>`${weekdayJa(dateStr)}${holidays.has(dateStr)?'・祝':''}`;
+  if(period.start===period.end) return {primary:md(period.start),secondary:dayLabel(period.start)};
+  const sameMonth=period.start.slice(0,7)===period.end.slice(0,7);
+  return {
+    primary:sameMonth?`${md(period.start)}–${endDay(period.end)}`:`${md(period.start)}–${md(period.end)}`,
+    secondary:`${dayLabel(period.start)}〜${dayLabel(period.end)}`
+  };
+}
+
+export function holidayRangeLabel(start,end,manifest){
+  const holidays=new Set((manifest?.holidays||[]).map(x=>x.date));
+  const fmt=(dateStr,withYear)=>{
+    const d=new Date(dateStr+'T00:00:00');
+    const prefix=withYear?`${d.getFullYear()}/`:'';
+    return `${prefix}${d.getMonth()+1}/${d.getDate()}(${weekdayJa(dateStr)}${holidays.has(dateStr)?'・祝':''})`;
+  };
+  return start===end?fmt(start,true):`${fmt(start,true)} 〜 ${fmt(end,false)}`;
+}
+
+export function eventsOverlappingPeriod(events,start,end){
+  return (events||[]).filter(ev=>{
+    const s=ev?.date_start||ev?.date_end||'';
+    const e=ev?.date_end||ev?.date_start||'';
+    if(!s||!e) return false;
+    return s<=end && e>=start;
+  });
+}
+
 export function publicationTierMeta(tier){ return PUBLICATION_TIERS[tier] || PUBLICATION_TIERS.planned; }
 export function verificationStateMeta(status){ return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified; }
 

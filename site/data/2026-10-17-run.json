@@ -99,14 +99,14 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 75,
-    "published": 67,
+    "published": 68,
     "excluded": 5,
-    "duplicate_removed": 3,
-    "verified": 67,
+    "duplicate_removed": 2,
+    "verified": 68,
     "announced": 0,
     "corrected": 0,
     "thumbnail_count": 65,
-    "thumbnail_coverage": 0.97,
+    "thumbnail_coverage": 0.956,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 3,
@@ -130,6 +130,12 @@
       "mode": "legacy-parity-reconciliation",
       "applied_at": "2026-10-07T19:14:00+09:00",
       "note": "Overlapping legacy data reconciled; missing in-scope events restored and explicit exclusions retained."
+    },
+    {
+      "version": "v1.11-dedup-guard",
+      "mode": "targeted-duplicate-reaudit",
+      "applied_at": "2026-10-07T23:40:00+09:00",
+      "note": "14 duplicate decisions were targeted for re-audit; Sumida One-Coin Oktoberfest / Gibier Festival restored as a distinct concurrently held event."
     }
   ]
 }

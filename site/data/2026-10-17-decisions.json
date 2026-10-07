@@ -5,9 +5,9 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 75,
-    "published": 67,
+    "published": 68,
     "excluded": 5,
-    "duplicate": 3,
+    "duplicate": 2,
     "hard_excluded": 2,
     "soft_excluded": 3,
     "reason_counts": {
@@ -6135,11 +6135,63 @@
       "candidate_id": "lg-91824e1566",
       "name": "すみだワンコインオクトーバーフェスト・すみだジビエフェスティバル",
       "ward": "墨田区",
-      "decision": "duplicate",
-      "duplicate_of": "lg-ed3567f255",
-      "reasons": [
-        "同一イベントと判定（名称・公式URL等の一致/近似）。"
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "reason": "ジャズフェスと同時開催だが独立名称・独立内容を持つ飲食イベント。子ども参加企画もあり家族参加余地がある。",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子どもから大人まで参加できるCUPS等の企画が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "飲食・音楽・参加企画を回遊して楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や酒類提供に注意が必要だが昼間から参加可能。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "食・音楽・地域企画を家族で選んで楽しめる。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
       ],
+      "reasons": [
+        "すみだストリートジャズフェスティバルと同時開催だが、独立名称・独立内容・独立ページを持つため別イベント。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.sumidaevent.com/sumida-onecoin-oktoberfest-gibier-festival-2026/",
+          "basis": "別イベントとして独立掲載され、日程・時間・会場・内容を確認。"
+        }
+      ],
+      "override_reason": "",
       "discovery_sources": [
         {
           "kind": "legacy_media",
@@ -6148,6 +6200,10 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.sumidaevent.com/sumida-onecoin-oktoberfest-gibier-festival-2026/"
+        },
+        {
+          "kind": "organizer_official",
+          "url": "https://sumida-jazz.jp/sj/"
         }
       ]
     },

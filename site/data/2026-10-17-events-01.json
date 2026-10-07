@@ -4673,5 +4673,77 @@
       "version": "v1.6",
       "source_candidate_id": "lg-27347b14cd"
     }
+  },
+  {
+    "id": "lg-91824e1566",
+    "ward": "墨田区",
+    "name": "すみだワンコインオクトーバーフェスト・すみだジビエフェスティバル",
+    "url": "https://www.sumidaevent.com/sumida-onecoin-oktoberfest-gibier-festival-2026/",
+    "official_url": "https://sumida-jazz.jp/sj/",
+    "source": "https://www.sumidaevent.com/",
+    "image": null,
+    "period": "10/17〜10/18",
+    "date_start": "2026-10-17",
+    "date_end": "2026-10-18",
+    "time": "10:00〜20:00",
+    "venue": "錦糸公園",
+    "price": "入場無料（飲食は有料）",
+    "description": "全国14ブルワリーのクラフトビール、九州ジビエ、東北の海の幸、肉料理、スイーツなどが集まる飲食イベント。子どもから大人まで参加できるCUPSや地域企画も実施し、すみだストリートジャズフェスティバル2026と同時開催。",
+    "categories": [
+      "グルメ",
+      "地域",
+      "音楽",
+      "フェス"
+    ],
+    "family_fit": {
+      "grade": "B",
+      "reason": "ジャズフェスと同時開催だが独立名称・独立内容を持つ飲食イベント。子ども参加企画もあり家族参加余地がある。",
+      "overall": "B",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "子どもから大人まで参加できるCUPS等の企画が明示される。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "飲食・音楽・参加企画を回遊して楽しめる。"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "全年齢参加可能だが専用設計ではない。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "混雑や酒類提供に注意が必要だが昼間から参加可能。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "無料または無料要素があり負担が小さい。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "食・音楽・地域企画を家族で選んで楽しめる。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "最新の参加方法は公式・主催者情報で確認"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-10-07T23:40:00+09:00",
+      "confidence": "high",
+      "discovery_query": "targeted duplicate re-audit v1.11"
+    }
   }
 ]

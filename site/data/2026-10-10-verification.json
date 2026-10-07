@@ -1559,11 +1559,46 @@
       },
       "corrections": {},
       "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。"
+    },
+    {
+      "id": "2026-10-10-shinagawa-eba2",
+      "status": "verified",
+      "source": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "unknown",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "限定重複再監査。荏原第一地区とは地区・開催日・会場が異なる別イベントとして公式ページで再確認。"
+    },
+    {
+      "id": "lg-d1efd0984b",
+      "status": "verified",
+      "source": "https://livepocket.jp/e/q4jxr",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "限定重複再監査。10/10公演とは日付・出演者・チケットURLが異なる別公演として再確認。"
     }
   ],
   "summary": {
-    "total": 88,
-    "verified": 88,
+    "total": 90,
+    "verified": 90,
     "announced": 0,
     "corrected": 0
   }

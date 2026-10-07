@@ -6153,5 +6153,143 @@
       "version": "v1.6",
       "source_candidate_id": "lg-bbb9848eb7"
     }
+  },
+  {
+    "id": "2026-10-10-shinagawa-eba2",
+    "ward": "品川区",
+    "name": "品川区民まつり 荏原第二地区",
+    "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+    "official_url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+    "source": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+    "image": null,
+    "period": "10/11",
+    "date_start": "2026-10-11",
+    "date_end": "2026-10-11",
+    "time": "12:00〜17:00",
+    "venue": "品川区立清水台小学校",
+    "price": null,
+    "description": "品川区民まつり荏原第二地区会場「ふるさとまつり」。模擬店、ゲームコーナー、吹奏楽、盆踊りなどを実施。",
+    "categories": [
+      "祭り",
+      "地域",
+      "子ども"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "子ども向けゲームや地域まつり要素があり、家族で参加する価値がある。",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子向け要素が明示される。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "参加・体験要素がある。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "C",
+          "reason": "夜間・混雑等の子連れ負担に注意。"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "料金情報が十分でなく推測しない。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で出かける目的になる体験・特別感がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "申込不要。一般来場。"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-10-07T23:40:00+09:00",
+      "confidence": "high",
+      "discovery_query": "targeted duplicate re-audit v1.11"
+    }
+  },
+  {
+    "id": "lg-d1efd0984b",
+    "ward": "台東区",
+    "name": "ギガ盛りMAX LIVE@上野公園水上音楽堂",
+    "url": "https://www.uenopark.info/2026/gigamori-max-live-ueno-2026-10-11/",
+    "official_url": "https://livepocket.jp/e/q4jxr",
+    "source": "https://www.uenopark.info/",
+    "image": null,
+    "period": "10/11",
+    "date_start": "2026-10-11",
+    "date_end": "2026-10-11",
+    "time": "開場9時30分、開演9時50分、終演18時予定",
+    "venue": "上野公園水上音楽堂（上野恩賜公園野外ステージ）",
+    "price": "前方エリア6,000円（撮影可）、一般エリア2,000円、当日券は各＋500円、別途1ドリンク代700円。小学生以下無料（保護者同伴）",
+    "description": "2026年10月11日（日）開催のギガ盛りMAX LIVE。Rain Tree、@onefive、純情のアフィリアなど28組が出演する別日公演。",
+    "categories": [],
+    "family_fit": {
+      "grade": "A",
+      "reason": "10/10公演とは日付・出演者・チケットURLが異なる別公演。小学生以下無料の条件があり、家族参加余地がある。",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子向け要素が明示される。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "会場回遊等の参加余地がある。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "大きな身体・時間負担は確認できない。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "無料または無料要素があり負担が小さい。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で出かける目的になる体験・特別感がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "最新の参加方法・販売状況は公式チケットページで確認"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-10-07T23:40:00+09:00",
+      "confidence": "high",
+      "discovery_query": "targeted duplicate re-audit v1.11"
+    }
   }
 ]

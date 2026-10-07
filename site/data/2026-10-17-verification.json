@@ -1271,11 +1271,30 @@
       },
       "corrections": {},
       "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。"
+    },
+    {
+      "id": "lg-91824e1566",
+      "status": "verified",
+      "source": "https://sumida-jazz.jp/sj/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "限定重複再監査。すみだストリートジャズフェスティバルと同時開催だが、独立名称・独立内容を持つ別イベントとして確認。"
     }
   ],
   "summary": {
-    "total": 67,
-    "verified": 67,
+    "total": 68,
+    "verified": 68,
     "announced": 0,
     "corrected": 0
   }

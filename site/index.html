@@ -52,7 +52,7 @@
     <div class="logic-flow">
       <div class="logic-step"><span>1</span><b>AI横断探索</b><small>東京23区を1区ずつ、区公式・東京都・施設公式・観光協会・地域媒体・Webまで横断して未知の候補を探します。</small></div>
       <div class="logic-step"><span>2</span><b>明示参照元探索</b><small>discovery_sources.json に登録した固定サイトを毎回確認。必須サイトと任意サイトを分け、新しい参照元も追加できます。</small></div>
-      <div class="logic-step"><span>3</span><b>候補統合＋取得経路保持</b><small>公式URL・名称・日付・会場で重複を統合し、固定サイト・AI横断・両方のどこで見つけたかを候補ごとに残します。</small></div>
+      <div class="logic-step"><span>3</span><b>候補統合＋誤重複ガード</b><small>同一URLだけでは重複にしません。名称に加え、地区・支部・開催日・時間・会場・詳細/チケットURLを照合し、別開催単位は別イベントとして保持。併催でも独立名称・内容があれば分けます。取得経路も残します。</small></div>
       <div class="logic-step"><span>4</span><b>子連れ適性を8軸評価</b><small>対象年齢、体験性、年齢適合、滞在自由度、負担、費用、予約、家族価値を評価します。</small></div>
       <div class="logic-step"><span>5</span><b>公式情報で再確認</b><small>名称・開催日・会場を中心に、自治体・主催者・会場などの公式情報で確認。近い週ほど厳密に再監査します。</small></div>
       <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップ・管理ビューへ反映します。</small></div>

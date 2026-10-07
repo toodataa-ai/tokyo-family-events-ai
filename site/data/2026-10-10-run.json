@@ -99,14 +99,14 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 97,
-    "published": 88,
+    "published": 90,
     "excluded": 4,
-    "duplicate_removed": 5,
-    "verified": 88,
+    "duplicate_removed": 3,
+    "verified": 90,
     "announced": 0,
     "corrected": 0,
     "thumbnail_count": 84,
-    "thumbnail_coverage": 0.955,
+    "thumbnail_coverage": 0.933,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 2,
@@ -130,6 +130,12 @@
       "mode": "legacy-parity-reconciliation",
       "applied_at": "2026-10-07T19:14:00+09:00",
       "note": "Overlapping legacy data reconciled; missing in-scope events restored and explicit exclusions retained."
+    },
+    {
+      "version": "v1.11-dedup-guard",
+      "mode": "targeted-duplicate-reaudit",
+      "applied_at": "2026-10-07T23:40:00+09:00",
+      "note": "14 duplicate decisions were targeted for re-audit; Shinagawa Ebara 2 and GIGAMORI MAX LIVE 10/11 restored as distinct attendance units."
     }
   ]
 }

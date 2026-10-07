@@ -5,9 +5,9 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 97,
-    "published": 88,
+    "published": 90,
     "excluded": 4,
-    "duplicate": 5,
+    "duplicate": 3,
     "hard_excluded": 2,
     "soft_excluded": 2,
     "reason_counts": {
@@ -7448,15 +7448,67 @@
       "candidate_id": "2026-10-10-shinagawa-eba2",
       "name": "品川区民まつり 荏原第二地区",
       "ward": "品川区",
-      "decision": "duplicate",
-      "duplicate_of": "2026-10-10-shinagawa-eba1",
-      "reasons": [
-        "同一イベントと判定（名称・公式URL等の一致/近似）。"
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "子ども向けゲームや地域まつり要素があり、家族で参加する価値がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
       ],
+      "reasons": [
+        "荏原第一地区とは地区名・開催日・会場が異なるため別イベント。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+          "basis": "限定重複再監査で、別イベントであることと開催情報を確認。"
+        }
+      ],
+      "override_reason": "",
       "discovery_sources": [
         {
           "kind": "official_ai_search",
-          "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/hpg000017088.html"
+          "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html"
         }
       ]
     },
@@ -7484,11 +7536,63 @@
       "candidate_id": "lg-d1efd0984b",
       "name": "ギガ盛りMAX LIVE@上野公園水上音楽堂",
       "ward": "台東区",
-      "decision": "duplicate",
-      "duplicate_of": "lg-d748925cd7",
-      "reasons": [
-        "同一イベントと判定（名称・公式URL等の一致/近似）。"
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "10/10公演とは日付・出演者・チケットURLが異なる別公演。小学生以下無料の条件があり、家族参加余地がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
       ],
+      "reasons": [
+        "10/10公演とは開催日・出演者・チケットURLが異なるため別公演。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uenopark.info/2026/gigamori-max-live-ueno-2026-10-11/",
+          "basis": "限定重複再監査で、別イベントであることと開催情報を確認。"
+        }
+      ],
+      "override_reason": "",
       "discovery_sources": [
         {
           "kind": "legacy_media",
@@ -7497,6 +7601,10 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.uenopark.info/2026/gigamori-max-live-ueno-2026-10-11/"
+        },
+        {
+          "kind": "official_ticket",
+          "url": "https://livepocket.jp/e/q4jxr"
         }
       ]
     },

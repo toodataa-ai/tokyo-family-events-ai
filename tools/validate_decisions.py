@@ -7,10 +7,11 @@ GRADES={'A','B','C','D','unknown'}
 DECISIONS={'published','excluded','duplicate'}
 HARD_CODES={'adult_only','minors_prohibited','safety_unsuitable','outside_23wards','date_mismatch','no_official_basis','cancelled_or_postponed'}
 HTTP_RE=re.compile(r'^https?://',re.I)
-PROMPT_RUBRIC={'v1.5':'family-fit-v1','v1.6':'family-fit-v2'}
+PROMPT_RUBRIC={'v1.5':'family-fit-v1','v1.6':'family-fit-v2','v1.7':'family-fit-v2','v1.8':'family-fit-v2','v1.9':'family-fit-v2','v1.10':'family-fit-v2','v1.11':'family-fit-v2'}
 V2_MATERIAL={'adult_oriented','narrow_fandom','specialist_content','passive_only','night_burden','crowd_burden','high_cost','reservation_difficult','age_mismatch'}
 V2_SEVERE={'alcohol_primary','reservation_unavailable','late_night_primary','extreme_cost','content_intensity'}
 V2_NONPRIMARY={'family_value_low','child_program_absent'}
+DISTRICT_RE=re.compile(r'第[一二三四五六七八九十]+地区')
 
 def load_json(path): return json.loads(path.read_text(encoding='utf-8'))
 
@@ -34,7 +35,7 @@ def validate_decision_file(path,week,run,expected_rubric,strict=False):
     elif strict:
         if len(decisions)!=candidate_total: errors.append(f'{path}: complete audit requires {candidate_total} decisions, got {len(decisions)}')
         if published+excluded+duplicate_removed!=candidate_total: errors.append(f'{path}: candidate_total must equal published+excluded+duplicate')
-    counts=Counter(); ids=set()
+    counts=Counter(); ids=set(); row_by_id={r.get('candidate_id'):r for r in decisions if isinstance(r,dict) and r.get('candidate_id')}
     for i,row in enumerate(decisions,1):
         prefix=f'{path}: decision #{i}'
         if not isinstance(row,dict): errors.append(f'{prefix} must be object'); continue
@@ -48,6 +49,11 @@ def validate_decision_file(path,week,run,expected_rubric,strict=False):
         if decision=='duplicate':
             if not row.get('duplicate_of'): errors.append(f'{prefix} duplicate requires duplicate_of')
             if not row.get('reasons'): errors.append(f'{prefix} duplicate requires reasons')
+            parent=row_by_id.get(row.get('duplicate_of')) or {}
+            child_d=DISTRICT_RE.search(str(row.get('name') or ''))
+            parent_d=DISTRICT_RE.search(str(parent.get('name') or ''))
+            if child_d and parent_d and child_d.group()!=parent_d.group():
+                errors.append(f'{prefix} duplicate cannot merge distinct district identifiers {child_d.group()} vs {parent_d.group()}')
             continue
         fit=row.get('family_fit') or {}; axes=fit.get('axes') or {}
         if fit.get('rubric_version') != expected_rubric: errors.append(f'{prefix} family_fit.rubric_version must be {expected_rubric}')

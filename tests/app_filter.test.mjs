@@ -254,9 +254,13 @@ const legacyBaseline=[
   }
 ];
 const dataRoot=pathParity.resolve(process.cwd(),'site/data');
-const normLegacyName=value=>String(value??'').normalize('NFKC').toLowerCase()
-  .replace(/^祝）/,'').replace(/令和8年/g,'').replace(/2026/g,'')
-  .replace(/[^\\p{L}\\p{N}]/gu,'');
+const normLegacyName=value=>{
+  let s=String(value??'').normalize('NFKC').toLowerCase()
+    .replaceAll('令和8年','').replaceAll('2026','');
+  if(s.startsWith('祝)'))s=s.slice(2);
+  const drop=new Set([...\` \\t\\n()（）「」『』【】[]:：/／・_-‐‑–—―~〜～'"®︎®™\`]);
+  return [...s].filter(ch=>!drop.has(ch)).join('');
+};
 const canonLegacyUrl=value=>{
   try{const u=new URL(String(value||''));const host=u.hostname.startsWith('www.')?u.hostname.slice(4):u.hostname;const pathname=u.pathname.endsWith('/')?u.pathname.slice(0,-1):u.pathname;return (host+pathname).toLowerCase();}
   catch{return '';}

@@ -37,7 +37,7 @@ jobs:
           node-version: '22'
       - name: Resolve and validate canonical prompt governance
         run: node .github/scripts/validate-prompt-history.mjs
-      - name: Validate non-regression against previous staging data
+      - name: Validate non-regression against previous published data
         run: python tools/validate_non_regression.py --base-ref HEAD^ site/data
       - name: Enrich thumbnail URLs for validation only
         run: python tools/enrich_images.py site/data

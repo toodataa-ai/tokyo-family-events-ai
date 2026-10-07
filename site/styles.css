@@ -117,3 +117,24 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .family-reco-label{display:none}
   .family-reco::before{content:'子連れ';color:#667085;font-weight:700}
 }
+
+/* Refined recommendation stars + legend */
+.recommendation-legend{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:10px;color:#667085;font-size:11px}
+.legend-title{font-weight:800;color:#344054;margin-right:2px}
+.legend-item{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.legend-stars,.family-stars{display:inline-flex;align-items:center;gap:1px;color:#e0a21b;line-height:1}
+.star-icon{width:1em;height:1em;display:block;fill:currentColor;stroke:#b97808;stroke-width:.7;filter:drop-shadow(0 .5px .35px rgba(120,78,0,.22))}
+.family-stars{font-size:12.5px;vertical-align:middle}
+.family-stars.fit-d{color:#98a2b3}
+.family-stars .no-star{font-size:1em;color:#98a2b3}
+.event-summary-meta{font-size:12.5px}
+.event-summary-meta .event-date{font-size:inherit}
+.event-summary-meta .family-stars{font-size:inherit}
+.family-reco,.family-reco-label{display:none!important}
+@media(max-width:680px){
+  .recommendation-legend{gap:7px 9px;margin-bottom:8px;padding:7px 8px;font-size:10px}
+  .legend-title{flex:0 0 100%}
+  .event-summary-meta{font-size:11px}
+  .event-summary-meta .event-date,.event-summary-meta .family-stars{font-size:inherit}
+  .star-icon{width:1em;height:1em}
+}

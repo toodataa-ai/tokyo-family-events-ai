@@ -33,6 +33,12 @@
 </details>
 <main>
   <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
+  <div class="recommendation-legend" aria-label="子連れオススメ度の凡例">
+    <span class="legend-title">子連れオススメ度</span>
+    <span class="legend-item"><span class="legend-stars" data-stars="3"></span><span>とてもおすすめ</span></span>
+    <span class="legend-item"><span class="legend-stars" data-stars="2"></span><span>おすすめ</span></span>
+    <span class="legend-item"><span class="legend-stars" data-stars="1"></span><span>条件によりおすすめ</span></span>
+  </div>
   <div class="grid" id="grid"></div>
 </main>
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・キーワードで絞り込めます。</footer>
@@ -72,7 +78,10 @@ function renderCoverage(data){
 
 function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
-function familyStars(grade){return grade==='A'?'★★★':grade==='B'?'★★':grade==='C'?'★':'―';}
+function familyStarCount(grade){return grade==='A'?3:grade==='B'?2:grade==='C'?1:0;}
+function starSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
+function familyStars(grade){const n=familyStarCount(grade);return n?Array.from({length:n},starSvg).join(''):'<span class="no-star">―</span>';}
+function renderLegendStars(){document.querySelectorAll('.legend-stars').forEach(el=>{const n=Number(el.dataset.stars)||0;el.innerHTML=Array.from({length:n},starSvg).join('');});}
 function renderAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}
 
 function render(){
@@ -84,7 +93,7 @@ function render(){
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const detailMeta=`<div class="badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${ev.indoor_outdoor?`<span class="badge">${escapeHtml(ev.indoor_outdoor)}</span>`:''}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
-    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span><span class="family-reco ${fitClass(grade)}"><span class="family-reco-label">子連れオススメ度</span><span class="family-stars">${familyStars(grade)}</span></span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
+    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
   }).join('');
   syncUrl();
 }
@@ -92,6 +101,6 @@ function render(){
 async function loadSelected(){try{showMsg('');applyHeroSeason();const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);renderWeekTabs();if(!entry){const slot=rollingWeekSlots(manifest,manifest.default||sat).find(x=>x.sat===sat),tier=slot?publicationTierMeta(slot.publication_tier):publicationTierMeta('planned');showMsg(`この週は6週間ローリング探索の対象です。現在は${tier.label}データの取得前です。`);currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('countText').textContent='';$('rangeText').textContent=fmtRange(sat,slot?.sun||sat);return;}currentData=data;render();}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
 $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',loadSelected);$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
-(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search),d=p.get('date')||manifest.default||defaultDate();$('dateInput').value=d;applyHeroSeason();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+(async()=>{try{renderLegendStars();manifest=await loadManifest();const p=new URLSearchParams(location.search),d=p.get('date')||manifest.default||defaultDate();$('dateInput').value=d;applyHeroSeason();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

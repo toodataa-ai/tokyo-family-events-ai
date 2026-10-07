@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -26,6 +26,22 @@ assert.equal(filterEvents(events,{ward:'杉並区',q:'負担小'}).length,1);
 assert.equal(normalizeText('  ＡＢＣ　１２３  '),'abc 123');
 assert.equal(familyFitAxisRows(events[0].family_fit).length,8);
 assert.equal(familyFitAxisRows(events[1].family_fit).length,0);
+assert.equal(recommendationStarCount(events[0]),3);
+assert.equal(filterEvents(events,{ward:'__all__',q:'',recMin:3}).length,1);
+const priceCases=[
+  {price:'無料'},
+  {price:'入場無料（一部ワークショップ有料）'},
+  {price:'小学生以下無料、大人2,000円'},
+  {price:'一般500円'}
+];
+assert.equal(eventPriceCategory(priceCases[0]),'free');
+assert.equal(eventPriceCategory(priceCases[1]),'free');
+assert.equal(eventPriceCategory(priceCases[2]),'mixed');
+assert.equal(eventPriceCategory(priceCases[3]),'paid');
+assert.equal(filterEvents(priceCases,{price:'free'}).length,2);
+assert.equal(filterEvents(priceCases,{price:'mixed'}).length,1);
+assert.equal(filterEvents(priceCases,{price:'paid'}).length,1);
+console.log('price + recommendation filters: OK');
 
 const counts=countsByWard(events);assert.equal(counts['杉並区'],1);assert.equal(counts['江戸川区'],1);assert.equal(counts['中野区'],0);
 

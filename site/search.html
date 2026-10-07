@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2235">
+<link rel="stylesheet" href="styles.css?v=20261007-2245">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -17,20 +17,34 @@
     <p class="hero-copy">6週間分の掲載イベントを、日付・区・キーワードで絞り込み。検索結果を広く、見比べやすく表示します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
-<details class="search-refine" id="searchRefine">
-  <summary>検索条件を変更</summary>
-  <div class="search-refine-body">
-    <section class="search-tools">
-      <div class="search-panel">
-        <div class="controls"><input type="date" id="dateInput" aria-label="対象日"><input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索"><button id="updateBtn">この週末を表示</button></div>
-        <div class="meta" id="rangeText"></div><div class="msg" id="msgBox"></div>
+<section class="search-quick" aria-label="検索と絞り込み">
+  <div class="search-quick-row">
+    <input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
+    <select id="recoSelect" aria-label="子連れオススメ度">
+      <option value="0">オススメ度：すべて</option>
+      <option value="3">★★★ のみ</option>
+      <option value="2">★★ 以上</option>
+      <option value="1">★ 以上</option>
+    </select>
+    <select id="priceSelect" aria-label="料金">
+      <option value="all">料金：すべて</option>
+      <option value="free">無料</option>
+      <option value="mixed">無料あり</option>
+      <option value="paid">有料</option>
+    </select>
+    <details class="date-refine" id="dateRefine">
+      <summary>日付指定</summary>
+      <div class="date-refine-panel">
+        <input type="date" id="dateInput" aria-label="対象日">
+        <button id="updateBtn">この週末を表示</button>
+        <div class="meta" id="rangeText"></div>
+        <div class="msg" id="msgBox"></div>
       </div>
-    </section>
-    <nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
-    <nav class="chips" id="chips"></nav>
-    
+    </details>
   </div>
-</details>
+</section>
+<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
+<nav class="chips compact-ward-chips" id="chips" aria-label="区で絞り込み"></nav>
 <main>
   <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
   <div class="recommendation-legend" aria-label="子連れオススメ度の凡例">
@@ -49,8 +63,8 @@ let manifest=null,currentData=null,currentWard='__all__';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function applyHeroSeason(){const season=heroSeasonForDate($('dateInput').value||defaultDate());document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
-function currentFilters(){return {date:$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim()};}
-function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
+function currentFilters(){return {date:$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value};}
+function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
 
 function renderWeekTabs(){
   if(!manifest)return;const currentSat=saturdayOf($('dateInput').value||defaultDate());const slots=rollingWeekSlots(manifest,manifest.default||currentSat);
@@ -100,7 +114,7 @@ function render(){
 
 async function loadSelected(){try{showMsg('');applyHeroSeason();const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);renderWeekTabs();if(!entry){const slot=rollingWeekSlots(manifest,manifest.default||sat).find(x=>x.sat===sat),tier=slot?publicationTierMeta(slot.publication_tier):publicationTierMeta('planned');showMsg(`この週は6週間ローリング探索の対象です。現在は${tier.label}データの取得前です。`);currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('countText').textContent='';$('rangeText').textContent=fmtRange(sat,slot?.sun||sat);return;}currentData=data;render();}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',loadSelected);$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
-(async()=>{try{renderLegendStars();manifest=await loadManifest();const p=new URLSearchParams(location.search),d=p.get('date')||manifest.default||defaultDate();$('dateInput').value=d;applyHeroSeason();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',loadSelected);$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
+(async()=>{try{renderLegendStars();manifest=await loadManifest();const p=new URLSearchParams(location.search),d=p.get('date')||manifest.default||defaultDate();$('dateInput').value=d;applyHeroSeason();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';$('recoSelect').value=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';$('priceSelect').value=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

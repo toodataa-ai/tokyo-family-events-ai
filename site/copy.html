@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2235">
+<link rel="stylesheet" href="styles.css?v=20261007-2245">
 </head>
 <body class="copy-page">
 <header>
@@ -62,7 +62,7 @@ function render(){
   grid.innerHTML=visible.map((ev,index)=>{
     const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const state=verificationStateMeta(ev.verification?.status);const verifyUrl=safeHttpUrl(ev.verification?.source);
     const verify=`<span class="status-inline ${state.className}">${escapeHtml(state.label)}</span>${ev.verification?.verified_on?' '+escapeHtml(ev.verification.verified_on):''}${verifyUrl?` ／ <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:''}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}`;
-    return `<article class="copy-card"><div class="fit-note">${escapeHtml(ev.ward)} ／ 子連れ適性 ${escapeHtml(grade)}${ev.family_fit?.reason?' ／ '+escapeHtml(ev.family_fit.reason):''}<br>${verify}</div>`+
+    return `<article class="copy-card"><div class="copy-card-header"><span class="copy-card-index">EVENT ${String(index+1).padStart(2,'0')}</span><b>${escapeHtml(ev.name||'イベント')}</b></div><div class="fit-note">${escapeHtml(ev.ward)} ／ 子連れ適性 ${escapeHtml(grade)}${ev.family_fit?.reason?' ／ '+escapeHtml(ev.family_fit.reason):''}<br>${verify}</div>`+
       fields.map((f,i)=>fieldHtml(f,`f-${index}-${i}`)).join('')+
       `<button class="copy-all" onclick="copyAllCard(${index},this)">この項目をまとめてコピー</button></article>`;
   }).join('');syncUrl();

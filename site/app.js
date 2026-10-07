@@ -110,6 +110,22 @@ export function familyFitAxisRows(familyFit){
   }).filter(Boolean);
 }
 
+export function recommendationStarCount(ev){
+  const grade=typeof ev==='string'?ev:(ev?.family_fit?.overall||ev?.family_fit?.grade||'');
+  return grade==='A'?3:grade==='B'?2:grade==='C'?1:0;
+}
+
+export function eventPriceCategory(ev){
+  const raw=normalizeText(ev?.price||'');
+  if(!raw || raw==='-' || raw==='未定' || raw==='不明' || raw.includes('要確認')) return 'unknown';
+  const admissionFree=/入場無料|来場無料|全会場入場無料|入園料無料|観覧無料/.test(raw);
+  const plainFree=raw==='無料' || /^無料(?:[、，。\s（(]|$)/.test(raw);
+  const mixedPhrase=/無料および有料|無料・有料|無料プログラム|無料および有料プログラム/.test(raw);
+  if((admissionFree || plainFree) && !mixedPhrase) return 'free';
+  if(/無料/.test(raw)) return 'mixed';
+  return 'paid';
+}
+
 export function eventSearchText(ev){
   return normalizeText([
     ev.name, ev.ward, ev.venue, ev.description, ev.price, ev.period, ev.time,
@@ -124,9 +140,13 @@ export function eventSearchText(ev){
 export function filterEvents(events, filters={}){
   const ward = filters.ward || '__all__';
   const q = normalizeText(filters.q || '');
+  const recMin = Number(filters.recMin || 0);
+  const price = filters.price || 'all';
   return (events || []).filter(ev => {
     if(ward !== '__all__' && ev.ward !== ward) return false;
     if(q && !eventSearchText(ev).includes(q)) return false;
+    if(recMin && recommendationStarCount(ev) < recMin) return false;
+    if(price !== 'all' && eventPriceCategory(ev) !== price) return false;
     return true;
   });
 }

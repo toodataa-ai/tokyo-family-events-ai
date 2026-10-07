@@ -1,6 +1,6 @@
 {
-  "version": "v1.13",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.13.txt",
+  "version": "v1.14",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.14.txt",
   "updated_at": "2026-10-08",
-  "rule": "Preserve previously published factual values unless an explicit field_changes record contains from/to/reason/source; never remove a published event without an auditable excluded/duplicate decision; reject stale-year, wrong-event and unsupported inferred facts."
+  "rule": "Use the same six-week cross-week deduplication as the search UI for public counts, and append auditable holiday-after update results to site/data/update_history.json without mixing manual reruns into that history."
 }

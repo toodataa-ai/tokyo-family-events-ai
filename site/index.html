@@ -27,6 +27,10 @@
     <div class="summary-grid">
       <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間・重複統合後</small></div>
     </div>
+    <details class="update-history-details" id="updateHistoryDetails">
+      <summary><span>休日明けの更新履歴</span><small id="updateHistorySummary">次回更新後に記録</small></summary>
+      <div class="update-history-list" id="updateHistoryList"><p>次回の休日明け更新後に、実行結果をここへ記録します。</p></div>
+    </details>
   </section>
 
   <section class="home-section panel" id="logic" aria-labelledby="logicTitle">
@@ -68,7 +72,7 @@
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta} from './app.js';
+import {loadManifest,loadWeekend,loadUpdateHistory,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml} from './app.js';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -77,10 +81,39 @@ function applyHeroSeason(dateStr){
   if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}
 }
 
+function formatUpdateDate(value){
+  if(!value) return '-';
+  const d=new Date(value);
+  if(Number.isNaN(d.getTime())) return value;
+  return d.toLocaleString('ja-JP',{year:'numeric',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+function renderUpdateHistory(data){
+  const rows=Array.isArray(data?.history)?[...data.history].reverse():[];
+  const list=$('updateHistoryList'),summary=$('updateHistorySummary');
+  if(!rows.length){
+    summary.textContent='次回更新後に記録';
+    list.innerHTML='<p>次回の休日明け更新後に、実行日・対象期間・更新後の掲載件数・差分をここへ記録します。</p>';
+    return;
+  }
+  const latest=rows[0];
+  summary.textContent=`最新: ${formatUpdateDate(latest.executed_at)}${Number.isFinite(Number(latest.published_unique_after))?`・${Number(latest.published_unique_after).toLocaleString('ja-JP')}件`:''}`;
+  list.innerHTML=rows.map(row=>{
+    const parts=[];
+    if(row.target_start&&row.target_end) parts.push(`対象 ${escapeHtml(row.target_start)}〜${escapeHtml(row.target_end)}`);
+    if(Number.isFinite(Number(row.published_unique_after))) parts.push(`掲載 ${Number(row.published_unique_after).toLocaleString('ja-JP')}件`);
+    if(Number.isFinite(Number(row.added_unique))) parts.push(`追加 ${Number(row.added_unique).toLocaleString('ja-JP')}件`);
+    if(Number.isFinite(Number(row.changed_unique))) parts.push(`変更 ${Number(row.changed_unique).toLocaleString('ja-JP')}件`);
+    if(Number.isFinite(Number(row.removed_unique))) parts.push(`掲載終了 ${Number(row.removed_unique).toLocaleString('ja-JP')}件`);
+    if(Number.isFinite(Number(row.rolled_out_unique))&&Number(row.rolled_out_unique)>0) parts.push(`期間外へ移動 ${Number(row.rolled_out_unique).toLocaleString('ja-JP')}件`);
+    return `<div class="update-history-item"><b>${escapeHtml(formatUpdateDate(row.executed_at))}</b><span>${parts.join(' ／ ')}</span>${row.note?`<small>${escapeHtml(row.note)}</small>`:''}</div>`;
+  }).join('');
+}
+
 (async()=>{
   try{
-    const manifest=await loadManifest();
+    const [manifest,updateHistory]=await Promise.all([loadManifest(),loadUpdateHistory()]);
     applyHeroSeason(manifest.default);
+    renderUpdateHistory(updateHistory);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const dataRows=rows.map(x=>x.data).filter(Boolean);
     const published=mergeEventsAcrossWeeks(dataRows).length;

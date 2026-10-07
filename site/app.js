@@ -375,6 +375,14 @@ export async function loadManifest(){
   return res.json();
 }
 
+export async function loadUpdateHistory(){
+  const res = await fetch('data/update_history.json',{cache:'no-store'});
+  if(!res.ok) throw new Error(`update history load failed: ${res.status}`);
+  const data = await res.json();
+  if(!Array.isArray(data.history)) data.history=[];
+  return data;
+}
+
 export async function loadDiscoverySources(){
   const res=await fetch('data/discovery_sources.json',{cache:'no-store'});
   if(!res.ok) throw new Error(`discovery source load failed: ${res.status}`);

@@ -1,10 +1,11 @@
 # Production release trigger
 # Updating this file on main intentionally causes the Pages workflow to redeploy.
 # The public root is always sourced from the production branch.
-# The hidden /staging/ preview is always sourced from main.
+# Dynamic event data is overlaid from data-production.
+# The hidden /staging/ preview is sourced from main with the same production data.
 operation=release
 production_ref=production
-approved_staging_sha=40e28a14e576377a34e4bc5ceeb05c23b751df2f
-target_public_version=1.01
-previous_public_release=release/2026-10-08-baseline
-updated_at=2026-10-08T07:19:00+09:00
+approved_staging_sha=949a36e713e64d6a166e02be4989a1aa61ec16cc
+target_public_version=1.02
+previous_public_release=release/2026-10-08-r1
+updated_at=2026-10-08T07:55:00+09:00

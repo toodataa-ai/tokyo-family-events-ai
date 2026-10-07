@@ -320,7 +320,7 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 }
 
 /* Stable filter row + user-facing provenance */
-.search-quick-row{grid-template-columns:minmax(180px,1fr) 140px 112px 112px auto}
+.search-quick-row{grid-template-columns:minmax(180px,1fr) 140px 112px 112px 128px auto}
 .user-meta-badges{display:flex;align-items:center;gap:5px;width:100%}
 .user-meta-badges .provenance-badge{margin-left:auto}
 .provenance-badge{font-weight:800}
@@ -332,7 +332,8 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .search-quick-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
   .search-quick input{grid-column:1/-1}
   .search-quick select{min-width:0;width:100%}
-  #environmentSelect{grid-column:1}
+  #environmentSelect{grid-column:auto}
+  #reservationSelect{grid-column:1 / span 2}
   .date-refine{grid-column:3}
   .user-meta-badges{gap:4px}
   .user-meta-badges .badge{font-size:8.5px;padding:2px 5px}
@@ -518,3 +519,11 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
     padding:0 8px;
   }
 }
+
+
+/* Reservation / advance application badges */
+.reservation-badge{font-weight:800}
+.reservation-none{background:#e9f7ef;color:#166534;border-color:#b7e1c5}
+.reservation-required{background:#fff0e6;color:#b45309;border-color:#f5c89f}
+.reservation-partial{background:#fff8db;color:#8a5a00;border-color:#ead58c}
+.reservation-unknown{background:#eef1f4;color:#667085;border-color:#cfd5dc}

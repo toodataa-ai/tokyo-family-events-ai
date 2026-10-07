@@ -1255,11 +1255,27 @@
       },
       "corrections": {},
       "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+    },
+    {
+      "id": "legacy-gap-2026-10-17-zannen3",
+      "status": "verified",
+      "source": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。"
     }
   ],
   "summary": {
-    "total": 66,
-    "verified": 66,
+    "total": 67,
+    "verified": 67,
     "announced": 0,
     "corrected": 0
   }

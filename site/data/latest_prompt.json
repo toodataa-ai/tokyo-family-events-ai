@@ -1,6 +1,6 @@
 {
-  "version": "v1.12",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.12.txt",
+  "version": "v1.13",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.13.txt",
   "updated_at": "2026-10-08",
-  "rule": "Every new discovery run must preserve v1.11 dedup and canonical-value safeguards, include all national holidays/holidays in the six-week horizon, merge consecutive weekend/holiday days into holiday blocks, and keep full/preview/announcement internal rather than presenting them as user-facing confidence."
+  "rule": "Preserve previously published factual values unless an explicit field_changes record contains from/to/reason/source; never remove a published event without an auditable excluded/duplicate decision; reject stale-year, wrong-event and unsupported inferred facts."
 }

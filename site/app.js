@@ -16,6 +16,14 @@ export const VERIFICATION_STATES = {
   unverified:{label:'要確認',className:'verify-pending'}
 };
 
+export const OFFICIAL_VERIFICATION_SOURCE_KINDS = new Set([
+  'official','organizer_official','official_tourism','public_official','venue_official'
+]);
+
+export function isOfficialVerificationSource(sourceKind){
+  return OFFICIAL_VERIFICATION_SOURCE_KINDS.has(String(sourceKind||''));
+}
+
 export const HERO_SEASONS = {
   spring:{label:'春・桜',source:'https://unsplash.com/photos/cherry-blossoms-in-full-bloom-in-a-park-AaxFt3GY7VQ'},
   summer:{label:'夏・祭り',source:'https://unsplash.com/photos/japanese-festival-with-lanterns-and-signage-mF9gUmfnJYQ'},
@@ -153,7 +161,14 @@ export function eventsOverlappingPeriod(events,start,end){
 }
 
 export function publicationTierMeta(tier){ return PUBLICATION_TIERS[tier] || PUBLICATION_TIERS.planned; }
-export function verificationStateMeta(status){ return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified; }
+export function verificationStateMeta(status,sourceKind='official'){
+  if(status==='verified' && !isOfficialVerificationSource(sourceKind)) return {label:'✓ 確認済み',className:'verify-ok'};
+  return VERIFICATION_STATES[status] || VERIFICATION_STATES.unverified;
+}
+export function verificationSourceHeading(verification){
+  if(verification?.status==='announced') return '開催発表';
+  return isOfficialVerificationSource(verification?.source_kind)?'公式確認':'確認';
+}
 
 export function rollingWeekSlots(manifest,anchorSat=''){
   const weeks=Array.isArray(manifest?.weekends)?manifest.weekends:[];
@@ -291,7 +306,7 @@ export function eventSearchText(ev){
     ev.family_fit?.reason, ev.family_fit?.age, ev.family_fit?.overall,
     ...familyFitAxisRows(ev.family_fit).flatMap(x=>[x.label,x.grade,x.reason]),
     ev.reservation?.note, ev.verification?.note,
-    verificationStateMeta(ev.verification?.status).label,
+    verificationStateMeta(ev.verification?.status,ev.verification?.source_kind).label,
     indoorOutdoorLabel(ev), reservationLabel(ev)
   ].filter(Boolean).join(' '));
 }

@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/family_fit_policy.test.mjs && node tests/discovery_sources.test.mjs && node tests/dedup_policy.test.mjs && node tests/copy_contract.test.mjs && node tests/app_filter.test.mjs"
+    "test": "node tests/family_fit_policy.test.mjs && node tests/discovery_sources.test.mjs && node tests/dedup_policy.test.mjs && node tests/copy_contract.test.mjs && node tests/app_filter.test.mjs && node tests/non_regression_policy.test.mjs"
   }
 }

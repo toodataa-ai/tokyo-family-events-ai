@@ -3,17 +3,17 @@
   "sat": "2026-10-10",
   "sun": "2026-10-11",
   "label": "10/10(土)〜10/11(日)",
-  "generated": "2026-10-07T08:37:32+09:00",
+  "generated": "2026-10-07T19:14:00+09:00",
   "horizon_index": 1,
   "publication_tier": "full",
   "verification_file": "2026-10-10-verification.json",
   "run_file": "2026-10-10-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 95,
+    "candidate_count": 97,
     "duplicate_removed": 5,
     "excluded_count": 4,
-    "published_count": 86,
+    "published_count": 88,
     "wards": [
       {
         "ward": "千代田区",
@@ -83,9 +83,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 11,
-        "published_count": 10,
-        "note": "v1.5完全再探索。候補11件、掲載8件。 v1.6除外再審査反映。"
+        "candidate_count": 12,
+        "published_count": 11,
+        "note": "v1.5完全再探索。候補11件、掲載8件。 v1.6除外再審査反映。 レガシー照合で未収載候補を1件追加。"
       },
       {
         "ward": "品川区",
@@ -155,9 +155,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 9,
-        "published_count": 9,
-        "note": "v1.5完全再探索。候補9件、掲載5件。 v1.6除外再審査反映。"
+        "candidate_count": 10,
+        "published_count": 10,
+        "note": "v1.5完全再探索。候補9件、掲載5件。 v1.6除外再審査反映。 レガシー照合で未収載候補を1件追加。"
       },
       {
         "ward": "北区",
@@ -225,7 +225,8 @@
     ]
   },
   "event_files": [
-    "2026-10-10-events-01.json"
+    "2026-10-10-events-01.json",
+    "2026-10-10-events-parity.json"
   ],
   "events": []
 }

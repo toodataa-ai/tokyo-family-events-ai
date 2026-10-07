@@ -1527,11 +1527,43 @@
       },
       "corrections": {},
       "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+    },
+    {
+      "id": "legacy-gap-2026-10-10-zannen3",
+      "status": "verified",
+      "source": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。"
+    },
+    {
+      "id": "legacy-gap-2026-10-10-mundo-pixar",
+      "status": "verified",
+      "source": "https://mundopixar.com/ja/cities/tokyo",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。"
     }
   ],
   "summary": {
-    "total": 86,
-    "verified": 86,
+    "total": 88,
+    "verified": 88,
     "announced": 0,
     "corrected": 0
   }

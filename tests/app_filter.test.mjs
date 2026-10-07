@@ -256,7 +256,7 @@ const legacyBaseline=[
 const dataRoot=pathParity.resolve(process.cwd(),'site/data');
 const normLegacyName=value=>String(value??'').normalize('NFKC').toLowerCase()
   .replace(/^祝）/,'').replace(/令和8年/g,'').replace(/2026/g,'')
-  .replace(/[®︎®™'’‘"“”・\\s_\\-‐‑–—―~〜～()（）「」『』【】\\[\\]：:／/]/g,'');
+  .replace(/[^\\p{L}\\p{N}]/gu,'');
 const canonLegacyUrl=value=>{
   try{const u=new URL(String(value||''));return (u.hostname.replace(/^www\\./,'')+u.pathname.replace(/\\/$/,'')).toLowerCase();}
   catch{return '';}

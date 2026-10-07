@@ -1,6 +1,6 @@
 {
-  "version": "v1.6",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.6.txt",
+  "version": "v1.7",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.7.txt",
   "updated_at": "2026-10-07",
-  "rule": "Every new discovery run must resolve this pointer first. v1.6 uses family-fit-v2: child-target absence is not a rejection reason, soft exclusion needs multiple material negatives or a severe single factor, vague family_value_low/child_program_absent cannot be primary reasons, and regression cases must be checked. Historical published runs remain valid when their prompt version/path matches prompt_history."
+  "rule": "Every new discovery run must resolve this pointer first. v1.7 inherits family-fit-v2 and additionally requires every legacy discovery source marked required=true to be checked via its concrete search_urls; Nerima monthly event search and Suginami festival calendar are explicit mandatory targets. Historical published runs remain valid when their prompt version/path matches prompt_history."
 }

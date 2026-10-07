@@ -69,6 +69,20 @@
         "historical runは履歴上のprompt/versionと一致すれば最新ポインタ更新後も有効とするgovernanceへ改善"
       ],
       "reason": "レガシーには載るがv1.5で除外された35件を監査した結果、一般向け・文化・食・展示・ファンイベントを子ども明記不足や曖昧なfamily_value_lowで過剰除外する傾向が見つかったため。"
+    },
+    {
+      "version": "v1.7",
+      "date": "2026-10-07",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.7.txt",
+      "summary": "レガシーPythonの参照元をトップサイト名ではなく具体的な検索URL単位で必須探索対象として固定し、取りこぼしをCIで防止。",
+      "changes": [
+        "discovery_sources.jsonをschema v2へ更新し18系統すべてにrequired/search_urlsを付与",
+        "とっておきの練馬のイベントトップ・月別検索URL・ページネーション確認を必須化",
+        "杉並区イベントカレンダーのおまつり(event_category=5)月別検索URLを必須化",
+        "run manifestにlegacy_source_checksを要求",
+        "legacy source coverage回帰テストをCIへ追加"
+      ],
+      "reason": "レガシーで取得できていたイベントが新AI探索で欠落しないよう、参照元の存在だけでなく実際に巡回する検索エンドポイントまで正本化するため。"
     }
   ]
 }

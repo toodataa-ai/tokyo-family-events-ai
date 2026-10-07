@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-08-r1",
+  "current_public_release": "release/2026-10-08-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -24,7 +24,16 @@
       "workflow_run_id": 37696228867,
       "note": "ステージングで承認後、本番公開に成功した正式リリース。",
       "public_version": "1.01"
+    },
+    {
+      "release_id": "release/2026-10-08-r2",
+      "branch": "release/2026-10-08-r2",
+      "commit_sha": "949a36e713e64d6a166e02be4989a1aa61ec16cc",
+      "deployed_at": "2026-10-07T22:57:30Z",
+      "workflow_run_id": 37699328080,
+      "note": "アプリ改修と定例データ自動更新の分離基盤を本番反映した正式リリース。",
+      "public_version": "1.02"
     }
   ],
-  "current_public_version": "1.01"
+  "current_public_version": "1.02"
 }

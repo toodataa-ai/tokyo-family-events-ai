@@ -1,0 +1,91 @@
+name: Deploy Production Release
+
+on:
+  push:
+    branches: [production]
+    paths:
+      - 'site/**'
+      - 'tools/**'
+      - 'tests/**'
+      - 'prompts/**'
+      - 'package.json'
+      - '.github/scripts/**'
+      - '.github/workflows/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validate-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Resolve and validate canonical prompt governance
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Validate non-regression against previous production data
+        run: python tools/validate_non_regression.py --base-ref HEAD^ site/data
+      - name: Enrich thumbnail URLs for validation only
+        run: python tools/enrich_images.py site/data
+      - name: Validate event data strictly
+        run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate family-fit decision audit strictly
+        run: python tools/validate_decisions.py --strict site/data
+      - name: Validate v1.6 exclusion rereview
+        run: python tools/validate_rereview.py --strict site/data
+      - name: Test copy contract and shared filters
+        run: npm test
+
+  deploy-production:
+    needs: validate-production
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout production
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: production-src
+      - name: Checkout current staging
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-src
+      - name: Compose production root and hidden staging preview
+        shell: bash
+        run: |
+          mkdir -p pages
+          cp -a production-src/site/. pages/
+          mkdir -p pages/staging
+          cp -a staging-src/site/. pages/staging/
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path("pages/staging").glob("*.html"):
+              s=p.read_text(encoding="utf-8")
+              marker='<meta name="robots" content="noindex,nofollow">'
+              if marker not in s:
+                  s=s.replace("<head>", "<head>\n"+marker, 1)
+              p.write_text(s,encoding="utf-8")
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages
+      - id: deployment
+        uses: actions/deploy-pages@v4

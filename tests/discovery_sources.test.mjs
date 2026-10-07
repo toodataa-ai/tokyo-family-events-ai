@@ -46,7 +46,7 @@ assert.match(prompt,/explicit_source_checks/);
 assert.match(prompt,/新しい参照元を追加するときは explicit_sources/);
 assert.match(prompt,/channel: "ai_cross" または "explicit"/);
 assert.match(prompt,/source_id/);
-assert.match(prompt,/管理ビュー\(admin\.html\)/);
+assert.match(prompt,/取得経路はイベント詳細/);
 assert.match(prompt,/indoor_outdoor/);
 assert.match(prompt,/"屋内・屋外"/);
 assert.match(prompt,/英語値/);

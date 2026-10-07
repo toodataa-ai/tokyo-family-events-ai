@@ -36,7 +36,7 @@ assert.ok(nerima.search_urls.includes('https://www.nerimakanko.jp/event/search.p
 const suginami=sources.find(x=>x.id==='suginami_festival');
 assert.ok(suginami.search_urls.includes('https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1'));
 
-assert.equal(latest.version,'v1.13');
+assert.equal(latest.version,'v1.14');
 assert.ok(manifest.holiday_source?.url?.includes('cao.go.jp'));
 assert.ok(Array.isArray(manifest.holidays));
 for(const h of manifest.holidays){assert.match(h.date,/^\d{4}-\d{2}-\d{2}$/);assert.ok(h.name);}

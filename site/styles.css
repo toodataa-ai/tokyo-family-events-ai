@@ -318,3 +318,23 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .logic-step small{font-size:9px}
   .search-page .event-list-main .event-title{font-size:12.5px}
 }
+
+/* Stable filter row + user-facing provenance */
+.search-quick-row{grid-template-columns:minmax(180px,1fr) 140px 112px 112px auto}
+.user-meta-badges{display:flex;align-items:center;gap:5px;width:100%}
+.user-meta-badges .provenance-badge{margin-left:auto}
+.provenance-badge{font-weight:800}
+.provenance-badge.prov-ai{background:#e8f0ff;color:#1d4ed8;border-color:#bfd1ff}
+.provenance-badge.prov-explicit{background:#e8f5ee;color:#166534;border-color:#bfe2cd}
+.provenance-badge.prov-both{background:#f4e8ff;color:#7e22ce;border-color:#dcc0f3}
+.all-week-tab{min-width:72px}
+@media(max-width:680px){
+  .search-quick-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .search-quick input{grid-column:1/-1}
+  .search-quick select{min-width:0;width:100%}
+  #environmentSelect{grid-column:1}
+  .date-refine{grid-column:3}
+  .user-meta-badges{gap:4px}
+  .user-meta-badges .badge{font-size:8.5px;padding:2px 5px}
+  .all-week-tab{min-width:58px}
+}

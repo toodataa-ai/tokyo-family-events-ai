@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -42,6 +42,34 @@ assert.equal(filterEvents(priceCases,{price:'free'}).length,2);
 assert.equal(filterEvents(priceCases,{price:'mixed'}).length,1);
 assert.equal(filterEvents(priceCases,{price:'paid'}).length,1);
 console.log('price + recommendation filters: OK');
+const environmentCases=[
+  {indoor_outdoor:'indoor'},
+  {indoor_outdoor:'屋内'},
+  {indoor_outdoor:'outdoor'},
+  {indoor_outdoor:'屋外'},
+  {indoor_outdoor:'mixed'},
+  {indoor_outdoor:'屋内外'}
+];
+assert.equal(indoorOutdoorCategory(environmentCases[0]),'indoor');
+assert.equal(indoorOutdoorCategory(environmentCases[1]),'indoor');
+assert.equal(indoorOutdoorCategory(environmentCases[2]),'outdoor');
+assert.equal(indoorOutdoorCategory(environmentCases[3]),'outdoor');
+assert.equal(indoorOutdoorCategory(environmentCases[4]),'mixed');
+assert.equal(indoorOutdoorCategory(environmentCases[5]),'mixed');
+assert.equal(indoorOutdoorLabel(environmentCases[0]),'屋内');
+assert.equal(indoorOutdoorLabel(environmentCases[2]),'屋外');
+assert.equal(indoorOutdoorLabel(environmentCases[4]),'屋内・屋外');
+assert.equal(filterEvents(environmentCases,{environment:'indoor'}).length,2);
+assert.equal(filterEvents(environmentCases,{environment:'outdoor'}).length,2);
+assert.equal(filterEvents(environmentCases,{environment:'mixed'}).length,2);
+const mergedPeriods=mergeEventsAcrossWeeks([
+  {sat:'2026-10-10',events:[{id:'a1',name:'長期イベント',venue:'会場A',official_url:'https://example.jp/e/1',description:'短い'}],decision_audit:{decisions:[{candidate_id:'a1',name:'長期イベント',ward:'',discovery_sources:[{channel:'ai_cross',url:'https://search.example/a'}]}]}},
+  {sat:'2026-10-17',events:[{id:'a2',name:'長期イベント',venue:'会場A',official_url:'https://example.jp/e/1',description:'より詳しい説明'}],decision_audit:{decisions:[{candidate_id:'a2',name:'長期イベント',ward:'',discovery_sources:[{channel:'explicit',source_id:'manual-x',url:'https://events.example.jp/'}]}]}}
+]);
+assert.equal(mergedPeriods.length,1);
+assert.equal(mergedPeriods[0]._decision_rows.length,2);
+assert.equal(mergedPeriods[0].description,'より詳しい説明');
+console.log('indoor/outdoor normalization + all-period merge: OK');
 
 const counts=countsByWard(events);assert.equal(counts['杉並区'],1);assert.equal(counts['江戸川区'],1);assert.equal(counts['中野区'],0);
 

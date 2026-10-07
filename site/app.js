@@ -126,6 +126,65 @@ export function eventPriceCategory(ev){
   return 'paid';
 }
 
+export function indoorOutdoorCategory(ev){
+  const raw=normalizeText(typeof ev==='string'?ev:(ev?.indoor_outdoor||''));
+  if(!raw) return 'unknown';
+  if(['indoor','inside','屋内','室内'].includes(raw)) return 'indoor';
+  if(['outdoor','outside','屋外','野外'].includes(raw)) return 'outdoor';
+  if(['mixed','both','indoor/outdoor','indoor・outdoor','屋内外','屋内・屋外','屋内/屋外','屋内屋外'].includes(raw)) return 'mixed';
+  if(raw.includes('屋内')&&raw.includes('屋外')) return 'mixed';
+  if(raw.includes('indoor')&&raw.includes('outdoor')) return 'mixed';
+  return 'unknown';
+}
+
+export function indoorOutdoorLabel(ev){
+  const c=indoorOutdoorCategory(ev);
+  return c==='indoor'?'屋内':c==='outdoor'?'屋外':c==='mixed'?'屋内・屋外':'';
+}
+
+function canonicalEventUrl(ev){
+  for(const value of [ev?.official_url,ev?.url]){
+    if(!value) continue;
+    try{
+      const u=new URL(value);
+      return (u.hostname.replace(/^www\./,'')+u.pathname.replace(/\/$/,'')).toLowerCase();
+    }catch{}
+  }
+  return '';
+}
+
+export function eventIdentityKey(ev){
+  const name=normalizeText(ev?.name||'');
+  const url=canonicalEventUrl(ev);
+  if(url) return `${name}|u:${url}`;
+  return `${name}|v:${normalizeText(ev?.venue||'')}`;
+}
+
+export function mergeEventsAcrossWeeks(weekData){
+  const map=new Map();
+  for(const data of (weekData||[])){
+    for(const ev of (data?.events||[])){
+      const key=eventIdentityKey(ev);
+      if(!map.has(key)){
+        map.set(key,{...ev,_decision_rows:[],_week_sats:[]});
+      }else{
+        const cur=map.get(key);
+        const prefer=(v,a)=>a||v;
+        cur.image=prefer(cur.image,ev.image);
+        cur.official_url=prefer(cur.official_url,ev.official_url);
+        cur.url=prefer(cur.url,ev.url);
+        cur.description=(ev.description||'').length>(cur.description||'').length?ev.description:cur.description;
+        if(ev.verification?.status==='verified' && cur.verification?.status!=='verified') cur.verification=ev.verification;
+      }
+      const merged=map.get(key);
+      const d=findDecisionForEvent(ev,data?.decision_audit);
+      if(d && !merged._decision_rows.includes(d)) merged._decision_rows.push(d);
+      if(data?.sat && !merged._week_sats.includes(data.sat)) merged._week_sats.push(data.sat);
+    }
+  }
+  return [...map.values()];
+}
+
 export function eventSearchText(ev){
   return normalizeText([
     ev.name, ev.ward, ev.venue, ev.description, ev.price, ev.period, ev.time,
@@ -133,7 +192,8 @@ export function eventSearchText(ev){
     ev.family_fit?.reason, ev.family_fit?.age, ev.family_fit?.overall,
     ...familyFitAxisRows(ev.family_fit).flatMap(x=>[x.label,x.grade,x.reason]),
     ev.reservation?.note, ev.verification?.note,
-    verificationStateMeta(ev.verification?.status).label
+    verificationStateMeta(ev.verification?.status).label,
+    indoorOutdoorLabel(ev)
   ].filter(Boolean).join(' '));
 }
 
@@ -142,11 +202,13 @@ export function filterEvents(events, filters={}){
   const q = normalizeText(filters.q || '');
   const recMin = Number(filters.recMin || 0);
   const price = filters.price || 'all';
+  const environment = filters.environment || 'all';
   return (events || []).filter(ev => {
     if(ward !== '__all__' && ev.ward !== ward) return false;
     if(q && !eventSearchText(ev).includes(q)) return false;
     if(recMin && recommendationStarCount(ev) < recMin) return false;
     if(price !== 'all' && eventPriceCategory(ev) !== price) return false;
+    if(environment !== 'all' && indoorOutdoorCategory(ev) !== environment) return false;
     return true;
   });
 }

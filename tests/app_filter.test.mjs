@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -37,6 +37,9 @@ const corrected=applyVerification(events,audit);assert.equal(corrected[0].period
 
 const manifest={default:'2026-10-10',rolling_horizon_weeks:6,weekends:[{sat:'2026-10-10',sun:'2026-10-11',publication_tier:'full',horizon_index:1,count:37},{sat:'2026-10-24',sun:'2026-10-25',publication_tier:'preview',horizon_index:3,count:12}]};
 const slots=rollingWeekSlots(manifest);assert.equal(slots.length,6);assert.equal(slots[0].sat,'2026-10-10');assert.equal(slots[1].sat,'2026-10-17');assert.equal(slots[1].available,false);assert.equal(slots[2].publication_tier,'preview');assert.equal(slots[4].publication_tier,'announcement');assert.equal(publicationTierMeta('preview').label,'先取り');assert.equal(verificationStateMeta('verified').label,'✓ 公式確認済み');assert.equal(verificationStateMeta('announced').label,'○ 開催発表済み・詳細待ち');
+
+assert.equal(heroSeasonForDate('2027-04-10'),'spring');assert.equal(heroSeasonForDate('2027-07-10'),'summer');assert.equal(heroSeasonForDate('2027-09-10'),'autumn');assert.equal(heroSeasonForDate('2026-10-10'),'winter');assert.match(heroSeasonMeta('winter').source,/unsplash\.com/);
+console.log('hero seasonal background policy: OK');
 
 console.log('shared filter + verification + rolling horizon + family-fit tests: OK');
 

@@ -5,7 +5,7 @@
 <title>東京23区 子連れイベント AIガイド</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home-page">
+<body class="home-page" data-season="winter">
 <section class="site-hero">
   <div class="hero-inner">
     <div class="site-topbar">
@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">TOKYO FAMILY EVENTS / AI CURATION</div>
     <h1>東京23区の子連れイベントを、広く探して、根拠を確認して掲載。</h1>
-    <p class="hero-copy">区公式・東京都・施設公式・イベント媒体・Web検索を横断し、6週間先まで候補を収集。子連れ適性を評価し、掲載・除外・重複の判断も残します。</p>
+    <p class="hero-copy">区公式・東京都・施設公式・イベント媒体・Web検索を横断し、6週間先まで候補を収集。子連れ適性を評価し、掲載・除外・重複の判断も残します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-lights-Y-scRdeRI_w" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
     <div class="hero-actions"><a class="hero-cta primary" href="search.html">イベントを探す</a><a class="hero-cta secondary" href="#logic">抽出ロジックを見る</a></div>
   </div>
 </section>
@@ -60,8 +60,9 @@
 
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script type="module">
-import {loadManifest,loadWeekend,fmtRange,escapeHtml} from './app.js';
+import {loadManifest,loadWeekend,fmtRange,escapeHtml,heroSeasonForDate,heroSeasonMeta} from './app.js';
 const $=id=>document.getElementById(id);
+function applyHeroSeason(dateStr){const season=heroSeasonForDate(dateStr);document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
 const REASON_LABELS={
   safety_unsuitable:'安全面・子連れ負担',
   extreme_cost:'費用負担が大きい',
@@ -77,6 +78,7 @@ function reasonLabel(code){return REASON_LABELS[code]||String(code||'その他')
 (async()=>{
   try{
     const manifest=await loadManifest();
+    applyHeroSeason(manifest.default);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     let candidates=0,published=0,excluded=0,duplicate=0;
     const reasons=new Map();

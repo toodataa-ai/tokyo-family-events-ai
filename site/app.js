@@ -16,6 +16,22 @@ export const VERIFICATION_STATES = {
   unverified:{label:'要確認',className:'verify-pending'}
 };
 
+export const HERO_SEASONS = {
+  spring:{label:'春・桜',source:'https://unsplash.com/photos/cherry-blossoms-in-full-bloom-in-a-park-AaxFt3GY7VQ'},
+  summer:{label:'夏・祭り',source:'https://unsplash.com/photos/japanese-festival-with-lanterns-and-signage-mF9gUmfnJYQ'},
+  autumn:{label:'秋・紅葉',source:'https://unsplash.com/photos/autumn-trees-with-yellow-and-orange-leaves-in-a-park-aUFgdqvFi2A'},
+  winter:{label:'冬・クリスマス',source:'https://unsplash.com/photos/a-group-of-lights-Y-scRdeRI_w'}
+};
+
+export function heroSeasonForDate(dateStr){
+  const month=Number(String(dateStr||'').slice(5,7));
+  if(month>=3&&month<=5) return 'spring';
+  if(month>=6&&month<=8) return 'summer';
+  if(month===9) return 'autumn';
+  return 'winter';
+}
+export function heroSeasonMeta(season){ return HERO_SEASONS[season] || HERO_SEASONS.winter; }
+
 export const FAMILY_FIT_AXES = {
   child_target:'子ども対象度',
   interactivity:'体験性',

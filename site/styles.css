@@ -36,7 +36,37 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .home-audit-grid .coverage-grid{grid-template-columns:repeat(5,1fr)}
 .home-audit-details{margin-top:12px}
 @media(max-width:860px){
-  .search-page .grid{grid-template-columns:1fr}
-  .search-page main{padding-left:12px;padding-right:12px}
+  .search-page main{padding-left:10px;padding-right:10px}
   .home-audit-grid .coverage-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Results-first search controls */
+.search-refine{max-width:1400px;margin:10px auto 0;padding:0 12px;border:0}
+.search-refine>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;max-width:240px;margin:0 0 8px auto;border:1px solid #cbd5e1;background:#fff;color:var(--navy);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+.search-refine>summary::-webkit-details-marker{display:none}
+.search-refine>summary::before{content:'＋';margin-right:6px;font-size:14px}
+.search-refine[open]>summary::before{content:'−'}
+.search-refine-body{padding-top:2px}
+.search-refine .search-tools{margin:0 auto;padding:0}
+.search-refine .week-tabs{margin-top:10px}
+.search-refine .chips{margin-top:0}
+.result-head-simple{justify-content:flex-start;margin-bottom:10px}
+.result-count-label{font-size:15px;font-weight:700;color:#344054}
+.result-count-label b{font-size:18px;color:var(--navy)}
+
+@media(max-width:680px){
+  .search-refine{margin-top:8px;padding:0 8px}
+  .search-refine>summary{margin-left:auto;margin-right:0;max-width:none;width:auto;padding:7px 10px}
+  .search-page main{padding:6px 8px 18px}
+  .search-page .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .search-page .card{border-radius:11px}
+  .search-page .card .body{padding:8px}
+  .search-page .thumb{aspect-ratio:4/3}
+  .search-page .badges{gap:4px;margin-bottom:5px}
+  .search-page .badge{font-size:9px;padding:2px 5px}
+  .search-page .event-title{font-size:12.5px;line-height:1.4;margin-bottom:5px}
+  .search-page .event-meta,.search-page .desc{font-size:10.5px;line-height:1.45}
+  .search-page .source{font-size:9.5px}
+  .search-page .fit-details summary{font-size:10px}
+  .search-page .fit-axis-grid{grid-template-columns:1fr}
 }

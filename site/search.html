@@ -17,16 +17,22 @@
     <p class="hero-copy">6週間分の掲載イベントを、日付・区・キーワードで絞り込み。検索結果を広く、見比べやすく表示します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
-<section class="search-tools">
-  <div class="search-panel">
-    <div class="controls"><input type="date" id="dateInput" aria-label="対象日"><input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索"><button id="updateBtn">この週末を表示</button></div>
-    <div class="meta" id="rangeText"></div><div class="meta" id="countText"></div><div class="msg" id="msgBox"></div>
+<details class="search-refine" id="searchRefine">
+  <summary>検索条件を変更</summary>
+  <div class="search-refine-body">
+    <section class="search-tools">
+      <div class="search-panel">
+        <div class="controls"><input type="date" id="dateInput" aria-label="対象日"><input type="search" id="searchInput" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索"><button id="updateBtn">この週末を表示</button></div>
+        <div class="meta" id="rangeText"></div><div class="msg" id="msgBox"></div>
+      </div>
+    </section>
+    <nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
+    <nav class="chips" id="chips"></nav>
+    
   </div>
-</section>
-<nav class="week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
-<nav class="chips" id="chips"></nav>
+</details>
 <main>
-  <div class="result-head"><span id="resultLabel">読み込み中...</span><span id="generatedText"></span></div>
+  <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
   <div class="grid" id="grid"></div>
 </main>
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・キーワードで絞り込めます。</footer>
@@ -69,7 +75,7 @@ function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade===
 function renderAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}
 
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,currentFilters());const tier=publicationTierMeta(currentData.publication_tier);$('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ 表示 ${filtered.length} 件`;$('resultLabel').textContent=currentWard==='__all__'?'23区すべて':currentWard;const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;$('generatedText').textContent=`${tier.label} ／ 公式確認 ${verified}/${currentData.events.length}`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,currentFilters());const tier=publicationTierMeta(currentData.publication_tier);$('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label}`;$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=filtered.map(ev=>{const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status),verifyUrl=safeHttpUrl(ev.verification?.source);const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;const verifyText=`<div class="source"><b>${ev.verification?.status==='announced'?'開催発表':'公式確認'}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;const thumb=img?`<img class="thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph">${escapeHtml(ev.ward.slice(0,1))}</div>`;return `<article class="card">${thumb}<div class="body"><div class="badges"><span class="badge">${escapeHtml(ev.ward)}</span><span class="badge ${fitClass(grade)}">子連れ ${escapeHtml(grade)}</span>${verifyBadge}${ev.indoor_outdoor?`<span class="badge">${escapeHtml(ev.indoor_outdoor)}</span>`:''}</div><div class="event-title">${href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url)}</div><div class="event-meta">🗓 ${escapeHtml(ev.period||'')}${ev.time?'　'+escapeHtml(ev.time):''}<br>📍 ${escapeHtml(ev.venue||ev.ward)}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}</div></article>`;}).join('');syncUrl();
 }
 

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,mergeEventsAcrossWeeks} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -57,6 +57,25 @@ const mergeSameB={sat:'2026-10-17',events:[{id:'b2',name:'長期イベント',da
 assert.equal(mergeEventsAcrossWeeks([mergeWeekA,mergeWeekB]).length,2);
 assert.equal(mergeEventsAcrossWeeks([mergeSameA,mergeSameB]).length,1);
 console.log('stable indoor/outdoor + date-sensitive all-period merge: OK');
+const reservationCases=[
+  {reservation:{required:false,note:'事前申込不要、直接会場へ'}},
+  {reservation:{required:true,note:'オンライン予約制'}},
+  {reservation:{required:null,note:'企画により事前申込が必要。無料企画は当日参加可。'}},
+  {reservation:{required:null,note:'参加方法・空き状況は公式ページで確認。'}}
+];
+assert.equal(reservationCategory(reservationCases[0]),'none');
+assert.equal(reservationCategory(reservationCases[1]),'required');
+assert.equal(reservationCategory(reservationCases[2]),'partial');
+assert.equal(reservationCategory(reservationCases[3]),'unknown');
+assert.equal(reservationLabel(reservationCases[0]),'申込不要');
+assert.equal(reservationLabel(reservationCases[1]),'要事前申込');
+assert.equal(reservationLabel(reservationCases[2]),'一部要申込');
+assert.equal(reservationLabel(reservationCases[3]),'申込要確認');
+assert.equal(filterEvents(reservationCases,{reservation:'none'}).length,1);
+assert.equal(filterEvents(reservationCases,{reservation:'required'}).length,1);
+assert.equal(filterEvents(reservationCases,{reservation:'partial'}).length,1);
+assert.equal(filterEvents(reservationCases,{reservation:'unknown'}).length,1);
+console.log('reservation filter + labels: OK');
 const environmentCases=[
   {indoor_outdoor:'indoor'},
   {indoor_outdoor:'屋内'},

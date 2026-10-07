@@ -142,6 +142,24 @@ export function indoorOutdoorLabel(ev){
   return c==='indoor'?'屋内':c==='outdoor'?'屋外':c==='mixed'?'屋内・屋外':'';
 }
 
+export function reservationCategory(ev){
+  const r=ev?.reservation;
+  if(!r || typeof r!=='object') return 'unknown';
+  if(r.required===true) return 'required';
+  if(r.required===false) return 'none';
+  const note=normalizeText(r.note||'');
+  if(!note) return 'unknown';
+  if(/企画.*(申込|予約)|プログラム.*(申込|予約)|一部.*(申込|予約)|(申込|予約).*(企画|プログラム|一部)/.test(note)) return 'partial';
+  if(/要申込|要予約|事前申込|事前予約|予約制|申込制|申込必須|予約必須|チケット購入が必要/.test(note)) return 'required';
+  if(/申込不要|予約不要|事前申込不要|事前予約不要|自由参加|当日参加可|一般来場|入場自由|直接会場/.test(note)) return 'none';
+  return 'unknown';
+}
+
+export function reservationLabel(ev){
+  const c=reservationCategory(ev);
+  return c==='required'?'要事前申込':c==='none'?'申込不要':c==='partial'?'一部要申込':'申込要確認';
+}
+
 function canonicalEventUrl(ev){
   for(const value of [ev?.official_url,ev?.url]){
     if(!value) continue;
@@ -196,7 +214,7 @@ export function eventSearchText(ev){
     ...familyFitAxisRows(ev.family_fit).flatMap(x=>[x.label,x.grade,x.reason]),
     ev.reservation?.note, ev.verification?.note,
     verificationStateMeta(ev.verification?.status).label,
-    indoorOutdoorLabel(ev)
+    indoorOutdoorLabel(ev), reservationLabel(ev)
   ].filter(Boolean).join(' '));
 }
 
@@ -206,12 +224,14 @@ export function filterEvents(events, filters={}){
   const recMin = Number(filters.recMin || 0);
   const price = filters.price || 'all';
   const environment = filters.environment || 'all';
+  const reservation = filters.reservation || 'all';
   return (events || []).filter(ev => {
     if(ward !== '__all__' && ev.ward !== ward) return false;
     if(q && !eventSearchText(ev).includes(q)) return false;
     if(recMin && recommendationStarCount(ev) < recMin) return false;
     if(price !== 'all' && eventPriceCategory(ev) !== price) return false;
     if(environment !== 'all' && indoorOutdoorCategory(ev) !== environment) return false;
+    if(reservation !== 'all' && reservationCategory(ev) !== reservation) return false;
     return true;
   });
 }
@@ -225,7 +245,7 @@ export function countsByWard(events){
 export function readFiltersFromUrl(){
   const p = new URLSearchParams(location.search);
   const ward = WARDS.includes(p.get('ward')) ? p.get('ward') : '__all__';
-  return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all'};
+  return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all',reservation:p.get('reserve')||'all'};
 }
 
 export function buildCopyUrl(filters){
@@ -236,6 +256,7 @@ export function buildCopyUrl(filters){
   if(Number(filters.recMin)) p.set('rec', filters.recMin);
   if(filters.price && filters.price !== 'all') p.set('price', filters.price);
   if(filters.environment && filters.environment !== 'all') p.set('env', filters.environment);
+  if(filters.reservation && filters.reservation !== 'all') p.set('reserve', filters.reservation);
   const qs = p.toString();
   return 'copy.html' + (qs ? '?' + qs : '');
 }

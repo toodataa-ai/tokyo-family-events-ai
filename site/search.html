@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261007-2338>
+<link rel="stylesheet" href="styles.css?v=20261008-0015">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">6週間分の掲載イベントを、日付・区・キーワードで絞り込み。検索結果を広く、見比べやすく表示します。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・キーワード・オススメ度・料金・屋内外で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
@@ -76,8 +76,7 @@ function renderWeekTabs(){
   if(!manifest)return;
   const currentSat=!allMode?saturdayOf($('dateInput').value||manifest.default||defaultDate()):'';
   const slots=rollingWeekSlots(manifest,manifest.default||currentSat);
-  const allPeriodCount=allMode&&currentData?.events ? `${currentData.events.length}件` : '横断検索';
-  $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span><em>${allPeriodCount}</em></button>`+
+  $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span><em>横断検索</em></button>`+
     slots.map(slot=>{const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');return `<button class="week-tab ${!allMode&&currentSat===slot.sat?'active':''} ${slot.available?'':'pending'}" data-date="${slot.sat}" title="${escapeHtml(tier.description)}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;}).join('');
 }
 
@@ -136,11 +135,11 @@ async function loadSelected(){
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=false;loadSelected();});$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});$('copyBtn').addEventListener('click',()=>window.open(buildCopyUrl(currentFilters()),'_blank','noopener'));
 (async()=>{try{
   renderLegendStars();[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
   const p=new URLSearchParams(location.search),dateParam=p.get('date');
-  allMode=dateParam==='all';const d=allMode?'':(dateParam||manifest.default||defaultDate());$('dateInput').value=d;applyHeroSeason();
+  allMode=!dateParam||dateParam==='all';const d=allMode?'':dateParam;$('dateInput').value=d;applyHeroSeason();
   const w=p.get('ward');if(WARDS.includes(w))currentWard=w;
   $('searchInput').value=p.get('q')||'';
   $('recoSelect').value=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';

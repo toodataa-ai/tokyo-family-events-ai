@@ -1,0 +1,422 @@
+東京23区 子連れイベント AI探索・完全版プロンプト v1.10
+【表示値安定化＋取得経路トレーサビリティ＋二層探索版】
+
+【この文書の位置づけ】
+このファイルは、東京23区の子連れイベントを6週間ローリングで探索し、候補の発見力と掲載精度を両立するための正本プロンプトである。
+v1.10では、v1.9の二層探索・取得経路トレーサビリティを維持しつつ、画面に出る分類値を安定化する。特に indoor_outdoor は日本語の正規値だけを保存し、英語値や表記揺れを公開データへ持ち込まない。
+
+作業開始時にファイル名順から最新版を推測してはならない。必ず site/data/latest_prompt.json を最初に読み、version/pathを解決し、そのファイルだけを正本として使う。
+site/data/prompt_history.json と不整合なら作業を続行しない。
+
+────────────────────
+0. 実行開始時の必須処理
+────────────────────
+1. site/data/latest_prompt.json を取得し version/path を解決する。
+2. site/data/prompt_history.json に同一version/pathがあることを確認する。
+3. site/data/family_fit_rubric.json を読み、family-fit-v2を正本とする。
+4. site/data/family_fit_regression_cases.json を読み、過去の誤判定パターンを再発防止例として確認する。
+5. site/data/discovery_sources.json を読み、discovery_strategy.ai_cross_search と discovery_strategy.explicit_sources の両方が有効であることを確認する。
+6. explicit_sources の enabled=true を探索対象とする。required=true は必須、required=false はbest effort。search_urls が存在する場合は base_url だけの確認で代替してはならない。protected_legacy_source_ids は削除・欠落を許可しない。
+7. 各run manifestに prompt.version/path/pointer/resolved=true を保存する。
+8. 最新版解決前に探索を始めてはならない。
+
+────────────────────
+1. 6週間ローリング対象
+────────────────────
+horizon_index=1〜6。
+- 1〜2: full。全掲載verified必須。画像70%以上。
+- 3〜4: preview。verified/announcedを許容。
+- 5〜6: announcement。イベント名・日付・会場を公式確認できれば早期掲載可。
+
+週が近づくたびに既存候補も再探索・再監査し、announced→verified、中止・延期・変更を反映する。
+
+────────────────────
+2. PHASE A: 候補発見
+────────────────────
+23区を必ず1区ずつ独立探索する。
+
+探索レイヤー:
+A. 各区公式: イベント、観光、子育て、文化、公園、図書館、児童館等
+B. 東京都・都立施設・公的施設
+C. 主催者・会場・商業施設・鉄道・交通・スポーツ・劇場・大学等の公式
+D. AI横断探索: discovery_strategy.ai_cross_search.layers と query_dimensions に従い、既知URLに限定せず候補を広く探索
+E. 明示参照元探索: explicit_sources の enabled=true を search_urls 単位で確認
+F. その他、AI横断探索で見つかった新規候補ソース
+
+重要:
+- イベント媒体は発見用。掲載確定は公式再監査で行う。
+- レガシー出力は候補ソースとして利用してよいが、最終情報の正本にはしない。
+- 「子ども向け」という語の有無で候補収集を制限しない。
+- 祭り、伝統芸能、花火、食、マルシェ、展示、美術、自然、科学、鉄道、動物、スポーツ、IP/キャラクター、季節イベントも探索する。
+
+
+【二層探索の必須ルール】
+1. AI横断探索
+- 23区を1区ずつ探索し、明示参照元に載っていない候補も探す。
+- ai_discovery_summary に ward, queries, sources_checked, candidate_count, notable_new_sources[] を残す。
+- 明示参照元だけを見てAI横断探索を省略してはならない。
+
+2. 明示参照元探索
+- discovery_sources.json の explicit_sources は将来追加可能な検索先レジストリ。
+- enabled=true を確認する。required=true は未確認が1件でもあれば discover_explicit_sources をpassedにしない。
+- required=false はbest effortだが、未確認・エラーを黙って候補0件扱いしてはならない。
+- search_urls のテンプレートは対象6週間に合わせて展開する。
+- explicit_source_checks[] の最低項目: id, label, origin, search_url, required, status(checked/error/skipped), checked_at, candidate_count, note。
+- protected_legacy_source_ids に含まれる18系統は後方互換保護対象で、削除・id変更を禁止する。
+- 「とっておきの練馬」は https://www.nerimakanko.jp/event/ と https://www.nerimakanko.jp/event/search.php?month={YYYY-MM} を確認し、ページネーションも追跡する。
+- 「杉並区イベントカレンダー（お祭り）」は https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1 を対象月ごとに確認する。
+- 新しい参照元を追加するときは explicit_sources に新規idで追記する。プロンプト本文へのURL直書き追加は原則不要。
+- 取得エラーは候補0件と同義にしない。full runでは required=true のエラーを解消してから公開する。
+
+最低検索語:
+子ども/子供/親子、イベント、祭り/フェス、ワークショップ/体験、無料、スタンプラリー、鉄道/電車、動物、科学、防災/消防。
+
+coverage.wards[]に status, queries, sources_checked, candidate_count, published_count, note を残す。
+
+────────────────────
+3. PHASE B: 候補固定・重複排除
+────────────────────
+掲載判断前に候補プールを固定する。
+最低項目: candidate_id, ward, name, discovery_url, official_url, source, date_start/date_end, venue, discovery_sources[]。
+
+【取得経路トレーサビリティ】
+discovery_sources[] の各要素は最低限次を持つ。
+- channel: "ai_cross" または "explicit"
+- source_id: explicitの場合は discovery_sources.json の explicit_sources[].id。ai_crossの場合は null/空文字可
+- kind: 発見方法の補助コード
+- url: 実際に候補を発見したURL
+
+ルール:
+- AI横断探索で見つけた候補は channel="ai_cross" を必ず1件以上残す。
+- 明示参照元から見つけた候補は channel="explicit" と source_id を必ず残す。
+- 同一候補が両方で見つかった場合、重複排除時に片方を捨てず両channelの discovery_sources を保持する。
+- 公式再監査URLは発見経路と混同しない。verification/evidenceに残し、discovery_sourcesへ追加する場合もchannelを偽装しない。
+- 過去runの legacy_media/legacy_detail/official_ai_search/v15_web_search は互換表示可能だが、新規v1.9 runではchannel/source_idを正本とする。
+
+重複判定は official_url、正規化イベント名、日付、会場を併用する。
+重複候補もdecision auditに decision=duplicate, duplicate_of, reasons を保存する。
+
+────────────────────
+4. PHASE C: family-fit-v2 8軸評価
+────────────────────
+8軸は維持する。
+1 child_target
+2 interactivity
+3 age_fit
+4 stay_flexibility
+5 burden
+6 cost
+7 reservation
+8 family_value
+
+各軸は A/B/C/D/unknown と具体的reasonを必須とする。unknownは推測しない。
+overallもA/B/C/D/unknownを付けるが、overall単独で掲載・除外しない。
+
+【v1.10でも維持する最重要原則】
+「子ども向け明記がない」ことは、家族価値が低いことを意味しない。
+child_targetは8軸の1つにすぎず、family_valueとage_fitを別途実質評価する。
+
+次のような一般向けイベントは、子ども専用企画がなくても家族のおでかけとして成立しうる。
+- 昼間の地域祭り・伝統芸能・季節行事
+- 食フェス・物産展・マルシェ
+- 自然・植物・動物・科学・歴史の展示
+- 美術・デザイン・文化イベント
+- 鉄道・乗り物・スポーツ
+- 視覚的に楽しめる展示・IP/キャラクター企画
+- 家族で共有しやすいライブ・パフォーマンス
+
+family_valueは「子ども専用か」ではなく、
+「家族で一緒に行く理由があるか」「子どもが現実に楽しめるか」「休日のおでかけ先として成立するか」
+で評価する。
+
+────────────────────
+5. Positive family signals
+────────────────────
+各候補について、次のpositive_signalsを可能な限り記録する。
+- child_explicit: 子ども/親子明示
+- all_ages: 全年齢参加可能
+- daytime: 主時間帯が昼間
+- free_or_low_cost: 無料・低負担
+- flexible_visit: 回遊・短時間参加・途中入退場しやすい
+- hands_on: 体験・参加要素
+- visual_appeal: 子どもにも分かりやすい視覚的魅力
+- learning_value: 科学・自然・歴史・文化等の学び
+- seasonal_or_festival: 季節感・祭り・特別感
+- food_or_market: 食・物産・市場として家族共有しやすい
+- transport_or_animal: 乗り物・動物等の強い家族訴求
+- family_venue: 公園、商業施設、博物館等の家族利用しやすい会場
+- iconic_or_rare: 希少性・話題性・特別な体験
+
+positive_signalsは掲載理由の監査材料であり、child_explicitがなくても他のsignalが強ければ掲載候補となる。
+
+────────────────────
+6. Hard exclusion
+────────────────────
+以下は原則即除外。
+- adult_only
+- minors_prohibited
+- safety_unsuitable
+- outside_23wards
+- date_mismatch
+- no_official_basis
+- cancelled_or_postponed
+
+Hard exclusionは必ず公式または十分な根拠URLを持つ。
+
+────────────────────
+7. Soft negative signals
+────────────────────
+Soft要因は単独で安易に除外しない。
+
+具体コード:
+- alcohol_primary: 酒類消費がイベントの主目的
+- adult_oriented: 内容自体が成人向けに強く寄る
+- narrow_fandom: 特定ファン層中心。ただし「ファン向け=成人向け」ではない
+- specialist_content: 専門性が高く子どもが楽しみにくい
+- passive_only: 鑑賞中心
+- night_burden: 夜間中心
+- crowd_burden: 強い混雑負担
+- high_cost: 家族単位で高額
+- reservation_difficult: 予約難・締切間近
+- reservation_unavailable: 受付終了等で実質参加不能
+- age_mismatch: 年齢との明確なズレ
+- child_program_absent: 子ども専用企画なし。弱い情報であり主理由にしない
+- family_value_low: 総括コード。具体原因ではないため主理由にしない
+- late_night_primary: 主時間帯が子連れには遅すぎる
+- extreme_cost: 家族利用時の費用が極端に高い
+- content_intensity: 怖さ・刺激等が強いがHard exclusionまでは至らない
+
+【区別を厳守】
+- 酒が「売られている」だけ ≠ alcohol_primary
+- 特定IP/アニメ/ゲームのイベント ≠ adult_oriented
+- 展示・美術館 ≠ family_value_low
+- 鑑賞中心 ≠ 自動除外
+- 子ども専用企画なし ≠ 自動除外
+
+────────────────────
+8. Soft除外ガードレール
+────────────────────
+Hard exclusionがない候補は、原則「掲載寄り」に評価する。
+
+Presumptive publish:
+family_value=A/B かつ age_fit=A/B でHard exclusionなし
+→ 原則掲載。
+除外するには明確な反証が必要。
+
+Manual review:
+family_value=C/unknown または age_fit=C/unknown または burden=C/D
+→ positive/negative signalsを比較して判断。
+
+Soft exclude:
+原則として、次のどちらかのみ許容する。
+A. material negative signalが2個以上
+B. 単独でも実質参加価値を失わせるsevere signalが1個以上
+   - alcohol_primary
+   - reservation_unavailable
+   - late_night_primary
+   - extreme_cost
+   - content_intensity
+
+material negativeに数える:
+adult_oriented, narrow_fandom, specialist_content, passive_only, night_burden,
+crowd_burden, high_cost, reservation_difficult, age_mismatch
+
+material negativeに数えない:
+child_program_absent, family_value_low
+
+追加ルール:
+- overall=A のSoft除外は禁止。評価が矛盾しているため軸を再評価する。
+- overall=B をSoft除外する場合、tradeoff_reason必須。
+- child_program_absentをprimary_reason_codeにしてはならない。
+- family_value_lowをprimary_reason_codeにしてはならない。
+- narrow_fandom単独で除外してはならない。
+- passive_only単独で除外してはならない。
+- 「一般向け」を理由に除外してはならない。
+- C/D掲載は従来どおりoverride_reason必須。
+
+────────────────────
+9. 過去35件からの回帰ルール
+────────────────────
+site/data/family_fit_regression_cases.json を必ず参照する。
+
+特に以下を再発防止する。
+- 「まんが日本昔ばなし展」: 子ども専用企画なしだけで除外しない
+- 「北海道まるごとフェア」: 食・物産・商業施設・昼間という家族利用価値を評価
+- 「龍の舞」: 伝統芸能・視覚的見世物を家族価値として評価
+- 「Gelato Collection」: 食イベントを子ども明記なしだけで除外しない
+- 「いも煮会」: 食文化・季節行事を家族価値として評価
+- 「海を渡ってきた植物の物語」: 学習・自然展示を受動鑑賞だけで除外しない
+- 「アーツ中村橋」: 地域文化・回遊性を評価
+- 「ときめきメモリアル」: narrow_fandomだけで除外せず、overall=Aとの矛盾を禁止
+- ビアガーデン/オクトーバーフェスト: 酒類販売の存在と酒が主目的かを区別
+- 春画展: safety_unsuitableのHard exclusion正例
+- 23区外イベント: outside_23wardsのHard exclusion正例
+
+────────────────────
+10. Decision audit
+────────────────────
+published/excluded候補は最低限以下を保存する。
+- candidate_id
+- name / ward
+- decision
+- family_fit.rubric_version=family-fit-v2
+- family_fit.axes 8軸
+- family_fit.overall
+- positive_signals[]
+- negative_signals[]
+- hard_exclusion
+- exclusion_type
+- primary_reason_code
+- reason_codes[]
+- reasons[]
+- evidence[]
+- override_reason
+- tradeoff_reason（overall=BをSoft除外時必須）
+
+完全run:
+candidate_total = published + excluded + duplicate
+全候補にdecision個票を持つ。
+
+Soft除外では、
+「何が良かったか」もpositive_signalsに残し、
+「それでもなぜ除外したか」をnegative_signals/reasons/tradeoff_reasonで説明する。
+良い点を無視して結論だけ保存してはならない。
+
+────────────────────
+11. 掲載イベント整形
+────────────────────
+従来項目を維持:
+id, ward, name, url, official_url, source, image, period, date_start/date_end, time, venue, price, description, categories[], family_fit, reservation, indoor_outdoor, ai。
+
+【公開データの正規値契約】
+indoor_outdoor は次の4通りだけを保存する。
+- "屋内"
+- "屋外"
+- "屋内・屋外"
+- ""（公式根拠不足・判定不能）
+
+禁止:
+- "indoor"
+- "outdoor"
+- "mixed"
+- "both"
+- "屋内外"
+- その他の独自表記
+
+公式情報から判断できない場合は推測せず空欄にする。表示側の都合で英語値や別名を生成しない。
+
+コピペ契約v1にはAI評価メタデータを混ぜない。
+
+────────────────────
+12. サムネイル
+────────────────────
+優先:
+公式og:image → twitter:image → itemprop/image_src → JSON-LD → 公式本文画像 → 情報元画像。
+推測URL/data URL禁止。
+fullは画像70%以上。
+
+────────────────────
+13. 公式再監査
+────────────────────
+掲載候補を1件ずつ公式再監査。
+優先:
+自治体/東京都/公的施設 → 主催者/会場公式 → 公式観光協会 → 主催者提供情報を明記する提携媒体。
+
+照合:
+name, date, time, venue, price, reservation/deadline, target, cancellation/weather, official_url。
+name/date/venueはpass/corrected必須。
+fullはverifiedのみ。
+preview/announcementはannounced可。
+unknownは推測しない。
+
+公式監査で家族適性情報が変わったら、同一run内で8軸とdecisionも再評価する。
+
+────────────────────
+14. run manifest
+────────────────────
+標準stages:
+1 resolve_prompt
+2 discover_ai_cross_search
+3 discover_explicit_sources
+4 normalize_and_dedupe
+5 family_fit_decision_audit
+6 freeze_candidates
+7 enrich_images
+8 official_verification
+9 apply_corrections
+10 strict_validation
+11 decision_validation
+12 family_fit_regression_test
+13 explicit_source_coverage_test
+14 discovery_provenance_test
+15 copy_contract_test
+16 shared_filter_test
+17 deploy
+
+summary:
+wards_checked, candidates, published, excluded, duplicate_removed,
+verified, announced, corrected, thumbnail_count, thumbnail_coverage,
+decision_audit_complete, ai_discovery_wards_checked, explicit_sources_required, explicit_sources_checked, explicit_source_errors,
+provenance_explicit_only, provenance_ai_only, provenance_both, provenance_unknown。
+
+────────────────────
+15. 公開前ゲート
+────────────────────
+必須:
+- prompt governance PASS
+- tools/validate_data.py --strict PASS
+- tools/validate_decisions.py --strict PASS
+- npm test PASS
+- explicit source coverage test PASS（protected legacy sourceを保持しつつ、新規explicit_sources追加を許容）
+- discovery provenance test PASS（新規候補はchannel必須、explicitはsource_id必須、両経路発見は両方保持）
+- indoor_outdoor canonical value validation PASS（屋内 / 屋外 / 屋内・屋外 / 空欄のみ）
+
+family-fit-v2 decision Validatorは次をFAILにする。
+- 8軸不足/reason不足
+- evidence URLなし
+- Hardコード不正
+- overall=AなのにSoft除外
+- family_value_lowをSoft除外の主理由に使用
+- child_program_absentをSoft除外の主理由に使用
+- severe signalなし・material negative 2個未満でSoft除外
+- overall=B Soft除外なのにtradeoff_reasonなし
+- C/D掲載なのにoverride_reasonなし
+
+────────────────────
+16. 可視化
+────────────────────
+サイトで候補数、掲載数、除外数、Hard/Soft、除外理由、根拠URLを確認可能にする。
+管理ビュー(admin.html)で取得経路を「固定サイトのみ / AI横断のみ / 両方 / 判定不能」に分け、明示参照元名と発見URLを確認可能にする。
+将来的にはpositive_signals/negative_signals/tradeoff_reasonも表示可能なデータとして保持する。
+
+────────────────────
+17. コピペ契約 v1
+────────────────────
+順番固定:
+1 タイトル
+2 場所
+3 日時
+4 料金
+5 説明
+6 公式サイト
+7 情報元サイト
+8 サムネイル画像URL（存在時のみ）
+
+────────────────────
+18. 禁止事項
+────────────────────
+- 最新プロンプトをファイル名順で推測
+- 候補を理由なしで捨てる
+- child_targetが低いだけで除外
+- child_program_absentだけで除外
+- family_value_lowを具体的理由の代用にする
+- narrow_fandomだけで除外
+- passive_onlyだけで除外
+- 酒類販売があるだけで成人向け扱い
+- IP/アニメ/ゲームというだけで成人向け扱い
+- overall=AをSoft除外
+- unknownを推測
+- indoor_outdoor に英語値・独自表記を保存
+- 媒体情報だけでverified
+- 過去の未保存理由を後付け生成
+- コピペ契約v1変更

@@ -23,14 +23,14 @@
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta} from './app.js';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,publicationTierMeta,verificationStateMeta,mergeEventsAcrossWeeks} from './app.js';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
-let manifest=null,currentData=null,currentWard='__all__';
+let manifest=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
-function filters(){return {date:$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim()};}
-function syncUrl(){const f=filters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
+function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment};}
+function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
 
 async function writeClipboard(text){
   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return;}
@@ -43,11 +43,10 @@ window.copyAllCard=async(index,btn)=>{try{const ev=window.__visibleEvents[index]
 
 function renderWeekTabs(){
   if(!manifest)return;
-  const currentSat=saturdayOf($('dateInput').value||defaultDate());
-  $('weekTabs').innerHTML=rollingWeekSlots(manifest,manifest.default||currentSat).map(slot=>{
-    const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');
-    return `<button class="week-tab ${currentSat===slot.sat?'active':''} ${slot.available?'':'pending'}" data-date="${slot.sat}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;
-  }).join('');
+  const currentSat=!allMode?saturdayOf($('dateInput').value||manifest.default||defaultDate()):'';
+  const slots=rollingWeekSlots(manifest,manifest.default||currentSat);
+  $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span><em>横断検索</em></button>`+
+    slots.map(slot=>{const tier=publicationTierMeta(slot.available?slot.publication_tier:'planned');return `<button class="week-tab ${!allMode&&currentSat===slot.sat?'active':''} ${slot.available?'':'pending'}" data-date="${slot.sat}"><b>${shortWeekendLabel(slot.sat)}</b><span>${escapeHtml(tier.label)}</span>${slot.available&&slot.entry?.count!=null?`<em>${slot.entry.count}件</em>`:'<em>取得前</em>'}</button>`;}).join('');
 }
 function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
@@ -56,8 +55,9 @@ function render(){
   if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,filters());window.__visibleEvents=visible;
   const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
-  const prompt=currentData.run?.prompt?.version||'-';const tier=publicationTierMeta(currentData.publication_tier);
-  $('rangeText').textContent=`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
+  const prompt=currentData.run?.prompt?.version||'-';const tier=allMode?null:publicationTierMeta(currentData.publication_tier);
+  const filterBits=[];if(Number(currentRecMin))filterBits.push(currentRecMin==='3'?'★★★':currentRecMin==='2'?'★★以上':'★以上');if(currentPrice!=='all')filterBits.push(currentPrice==='free'?'無料':currentPrice==='mixed'?'無料あり':'有料');if(currentEnvironment!=='all')filterBits.push(currentEnvironment==='indoor'?'屋内':currentEnvironment==='outdoor'?'屋外':'屋内・屋外');
+  $('rangeText').textContent=allMode?`6週間すべて ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION}${filterBits.length?' ／ '+filterBits.join('・'):''}`:`${fmtRange(currentData.sat,currentData.sun)} ／ ${tier.label} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}${filterBits.length?' ／ '+filterBits.join('・'):''}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
     const fields=copyFieldList(ev);const grade=ev.family_fit?.grade||'C';const state=verificationStateMeta(ev.verification?.status);const verifyUrl=safeHttpUrl(ev.verification?.source);
@@ -67,10 +67,21 @@ function render(){
       `<button class="copy-all" onclick="copyAllCard(${index},this)">この項目をまとめてコピー</button></article>`;
   }).join('');syncUrl();
 }
-async function loadSelected(){try{showMsg('');const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);renderWeekTabs();if(!entry){showMsg('この週は6週間ローリング探索の対象ですが、現在は取得前です。');currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('chips').innerHTML='';$('countText').textContent='';syncUrl();return;}currentData=data;render();}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;$('dateInput').value=b.dataset.date;loadSelected();});
+async function loadSelected(){try{
+  showMsg('');
+  if(allMode){
+    const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
+    const rows=loaded.map(x=>x.data).filter(Boolean);
+    currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
+    render();return;
+  }
+  const sat=saturdayOf($('dateInput').value);const {entry,data}=await loadWeekend(manifest,sat);renderWeekTabs();
+  if(!entry){showMsg('この週は6週間ローリング探索の対象ですが、現在は取得前です。');currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('chips').innerHTML='';$('countText').textContent='';syncUrl();return;}
+  currentData=data;render();
+}catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;$('dateInput').value='';}else{allMode=false;$('dateInput').value=b.dataset.date;}loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
-$('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',loadSelected);
-(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search);$('dateInput').value=p.get('date')||manifest.default||defaultDate();const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+$('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;loadSelected();});
+(async()=>{try{manifest=await loadManifest();const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

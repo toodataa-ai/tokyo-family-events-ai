@@ -35,7 +35,7 @@ assert.ok(nerima.search_urls.includes('https://www.nerimakanko.jp/event/search.p
 const suginami=sources.find(x=>x.id==='suginami_festival');
 assert.ok(suginami.search_urls.includes('https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1'));
 
-assert.equal(latest.version,'v1.9');
+assert.equal(latest.version,'v1.10');
 assert.match(prompt,/AI横断探索/);
 assert.match(prompt,/explicit_sources/);
 assert.match(prompt,/explicit_source_checks/);
@@ -43,4 +43,7 @@ assert.match(prompt,/新しい参照元を追加するときは explicit_sources
 assert.match(prompt,/channel: "ai_cross" または "explicit"/);
 assert.match(prompt,/source_id/);
 assert.match(prompt,/管理ビュー\(admin\.html\)/);
+assert.match(prompt,/indoor_outdoor/);
+assert.match(prompt,/"屋内・屋外"/);
+assert.match(prompt,/英語値/);
 console.log(`dual discovery source policy: protected=${protectedIds.length}, explicit=${sources.length}: OK`);

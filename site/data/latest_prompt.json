@@ -1,6 +1,6 @@
 {
-  "version": "v1.9",
-  "path": "prompts/tokyo_family_events_complete_prompt_v1.9.txt",
+  "version": "v1.10",
+  "path": "prompts/tokyo_family_events_complete_prompt_v1.10.txt",
   "updated_at": "2026-10-07",
-  "rule": "Every new discovery run must preserve candidate-level discovery provenance. discovery_sources entries use channel=ai_cross|explicit; explicit entries include source_id from the extensible registry, and candidates found by both layers retain both channels. Historical runs are rendered through compatibility mapping."
+  "rule": "Every new discovery run must preserve v1.9 provenance and use canonical public values. indoor_outdoor may only be 屋内, 屋外, 屋内・屋外, or empty when unknown; English/internal variants are prohibited."
 }

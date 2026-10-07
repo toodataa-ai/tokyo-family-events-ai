@@ -42,6 +42,21 @@ assert.equal(filterEvents(priceCases,{price:'free'}).length,2);
 assert.equal(filterEvents(priceCases,{price:'mixed'}).length,1);
 assert.equal(filterEvents(priceCases,{price:'paid'}).length,1);
 console.log('price + recommendation filters: OK');
+assert.equal(indoorOutdoorLabel('indoor'),'屋内');
+assert.equal(indoorOutdoorLabel('outdoor'),'屋外');
+assert.equal(indoorOutdoorLabel('mixed'),'屋内・屋外');
+assert.equal(indoorOutdoorCategory('屋内外'),'mixed');
+const envCases=[{indoor_outdoor:'indoor'},{indoor_outdoor:'屋内'},{indoor_outdoor:'outdoor'},{indoor_outdoor:'屋外'},{indoor_outdoor:'mixed'}];
+assert.equal(filterEvents(envCases,{environment:'indoor'}).length,2);
+assert.equal(filterEvents(envCases,{environment:'outdoor'}).length,2);
+assert.equal(filterEvents(envCases,{environment:'mixed'}).length,1);
+const mergeWeekA={sat:'2026-10-10',events:[{id:'a1',name:'同名イベント',date_start:'2026-10-10',date_end:'2026-10-10',venue:'会場A',official_url:'https://example.jp/e',verification:{status:'verified'}}]};
+const mergeWeekB={sat:'2026-10-17',events:[{id:'a2',name:'同名イベント',date_start:'2026-10-17',date_end:'2026-10-17',venue:'会場A',official_url:'https://example.jp/e',verification:{status:'verified'}}]};
+const mergeSameA={sat:'2026-10-10',events:[{id:'b1',name:'長期イベント',date_start:'2026-10-01',date_end:'2026-11-30',venue:'会場B',official_url:'https://example.jp/long',verification:{status:'verified'}}]};
+const mergeSameB={sat:'2026-10-17',events:[{id:'b2',name:'長期イベント',date_start:'2026-10-01',date_end:'2026-11-30',venue:'会場B',official_url:'https://example.jp/long',verification:{status:'announced'}}]};
+assert.equal(mergeEventsAcrossWeeks([mergeWeekA,mergeWeekB]).length,2);
+assert.equal(mergeEventsAcrossWeeks([mergeSameA,mergeSameB]).length,1);
+console.log('stable indoor/outdoor + date-sensitive all-period merge: OK');
 const environmentCases=[
   {indoor_outdoor:'indoor'},
   {indoor_outdoor:'屋内'},

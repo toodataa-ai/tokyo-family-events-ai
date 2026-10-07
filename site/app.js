@@ -155,9 +155,12 @@ function canonicalEventUrl(ev){
 
 export function eventIdentityKey(ev){
   const name=normalizeText(ev?.name||'');
-  const url=canonicalEventUrl(ev);
-  if(url) return `${name}|u:${url}`;
-  return `${name}|v:${normalizeText(ev?.venue||'')}`;
+  const start=ev?.date_start||'';
+  const end=ev?.date_end||'';
+  const dateToken=(start||end)?`${start}|${end}`:normalizeText(ev?.period||'');
+  const venue=normalizeText(ev?.venue||'');
+  const identity=venue?`v:${venue}`:`u:${canonicalEventUrl(ev)}`;
+  return `${name}|${dateToken}|${identity}`;
 }
 
 export function mergeEventsAcrossWeeks(weekData){
@@ -222,7 +225,7 @@ export function countsByWard(events){
 export function readFiltersFromUrl(){
   const p = new URLSearchParams(location.search);
   const ward = WARDS.includes(p.get('ward')) ? p.get('ward') : '__all__';
-  return { date:p.get('date') || '', ward, q:p.get('q') || '' };
+  return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all'};
 }
 
 export function buildCopyUrl(filters){
@@ -230,6 +233,9 @@ export function buildCopyUrl(filters){
   if(filters.date) p.set('date', filters.date);
   if(filters.ward && filters.ward !== '__all__') p.set('ward', filters.ward);
   if(filters.q) p.set('q', filters.q);
+  if(Number(filters.recMin)) p.set('rec', filters.recMin);
+  if(filters.price && filters.price !== 'all') p.set('price', filters.price);
+  if(filters.environment && filters.environment !== 'all') p.set('env', filters.environment);
   const qs = p.toString();
   return 'copy.html' + (qs ? '?' + qs : '');
 }
@@ -353,10 +359,10 @@ export async function loadWeekend(manifest,satIso){
     if(!vr.ok) throw new Error(`verification load failed: ${vr.status}`);
     const audit=await vr.json();
     data.verification=audit;
-    data.events=applyVerification(data.events,audit);
+    data.events=applyVerification(data.events,audit).map(ev=>({...ev,indoor_outdoor:indoorOutdoorLabel(ev)}));
   }else{
     data.verification=null;
-    data.events=applyVerification(data.events,null);
+    data.events=applyVerification(data.events,null).map(ev=>({...ev,indoor_outdoor:indoorOutdoorLabel(ev)}));
   }
 
   if(data.run_file){

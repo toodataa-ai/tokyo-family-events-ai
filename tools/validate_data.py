@@ -396,6 +396,9 @@ def validate_week(path, entry=None, strict=False, min_image_coverage=0.0):
             warnings.append(f'{prefix}: venue is empty; copy output falls back to ward')
         if not ev.get('price'):
             warnings.append(f'{prefix}: price is empty; copy output uses the fixed fallback text')
+        indoor_outdoor = ev.get('indoor_outdoor')
+        if indoor_outdoor not in (None, '', '屋内', '屋外', '屋内・屋外'):
+            errors.append(f'{prefix}: indoor_outdoor must be 屋内/屋外/屋内・屋外/empty, got {indoor_outdoor!r}')
         if not ev.get('image'):
             warnings.append(f'{prefix}: thumbnail image is missing')
 

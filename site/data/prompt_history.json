@@ -112,6 +112,20 @@
         "過去runのlegacy_media/official_ai_search等を互換分類"
       ],
       "reason": "固定サイトから取得したイベントとAI横断探索で発見したイベントを管理者が区別し、探索漏れや各チャネルの寄与を監査できるようにするため。"
+    },
+    {
+      "version": "v1.10",
+      "date": "2026-10-07",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.10.txt",
+      "summary": "検索UIの全期間横断と屋内外絞り込みに合わせ、indoor_outdoorの保存値を日本語正規値へ固定して表記揺れを禁止。",
+      "changes": [
+        "日付未指定で6週間を横断検索し同一イベントを重複統合する共通ロジックを追加",
+        "屋内・屋外・屋内/屋外混在の検索フィルタを追加",
+        "indoor_outdoorの保存値を屋内・屋外・屋内・屋外・空欄に固定",
+        "既存のindoor/outdoor/mixed/屋内外を日本語正規値へ移行",
+        "CIで非正規のindoor_outdoor値を禁止"
+      ],
+      "reason": "検索条件や表示ラベルがrunごとに英語・日本語で揺れる状態をなくし、保存データ・検索・表示を同じ正規値契約に統一するため。"
     }
   ]
 }

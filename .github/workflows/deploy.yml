@@ -77,11 +77,33 @@ jobs:
           cp -a staging-src/site/. pages/staging/
           python - <<'PY'
           from pathlib import Path
+          import subprocess
+
+          short_sha = subprocess.check_output(
+              ["git","-C","staging-src","rev-parse","--short=7","HEAD"],
+              text=True
+          ).strip()
+
+          marker = '<meta name="robots" content="noindex,nofollow">'
+          style = '''<style id="staging-visual-marker">
+          body{padding-top:30px!important}
+          .staging-visual-marker{position:fixed;top:0;left:0;right:0;height:30px;display:flex;align-items:center;justify-content:center;gap:8px;background:#8a4b08;color:#fff7ed;font-family:"Meiryo UI",Meiryo,sans-serif;font-size:12px;font-weight:800;letter-spacing:.02em;z-index:2147483647;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+          .staging-visual-marker small{font-size:10px;font-weight:700;opacity:.9}
+          </style>'''
+          banner = f'<div class="staging-visual-marker" role="status">STAGING・確認用 <small>本番未反映 / {short_sha}</small></div>'
+
           for p in Path("pages/staging").glob("*.html"):
               s=p.read_text(encoding="utf-8")
-              marker='<meta name="robots" content="noindex,nofollow">'
               if marker not in s:
                   s=s.replace("<head>", "<head>\n"+marker, 1)
+              if 'id="staging-visual-marker"' not in s:
+                  s=s.replace("</head>", style+"\n</head>", 1)
+              if 'class="staging-visual-marker"' not in s:
+                  body_pos=s.find("<body")
+                  if body_pos != -1:
+                      body_end=s.find(">", body_pos)
+                      if body_end != -1:
+                          s=s[:body_end+1]+"\n"+banner+s[body_end+1:]
               p.write_text(s,encoding="utf-8")
           PY
       - uses: actions/upload-pages-artifact@v3

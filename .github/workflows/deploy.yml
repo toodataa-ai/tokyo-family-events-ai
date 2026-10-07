@@ -86,11 +86,11 @@ jobs:
 
           marker = '<meta name="robots" content="noindex,nofollow">'
           style = '''<style id="staging-visual-marker">
-          body{padding-top:30px!important}
-          .staging-visual-marker{position:fixed;top:0;left:0;right:0;height:30px;display:flex;align-items:center;justify-content:center;gap:8px;background:#8a4b08;color:#fff7ed;font-family:"Meiryo UI",Meiryo,sans-serif;font-size:12px;font-weight:800;letter-spacing:.02em;z-index:2147483647;box-shadow:0 1px 4px rgba(0,0,0,.25)}
-          .staging-visual-marker small{font-size:10px;font-weight:700;opacity:.9}
+          html::after{content:"";position:fixed;inset:0;border:2px solid rgba(138,75,8,.8);pointer-events:none;z-index:2147483646}
+          .staging-visual-marker{position:fixed;right:6px;bottom:6px;display:flex;align-items:center;gap:5px;background:rgba(138,75,8,.92);color:#fff7ed;border-radius:999px;padding:4px 7px;font-family:"Meiryo UI",Meiryo,sans-serif;font-size:9px;font-weight:800;line-height:1;letter-spacing:.02em;z-index:2147483647;box-shadow:0 1px 3px rgba(0,0,0,.18);pointer-events:none}
+          .staging-visual-marker small{font-size:8px;font-weight:700;opacity:.9}
           </style>'''
-          banner = f'<div class="staging-visual-marker" role="status">STAGING・確認用 <small>本番未反映 / {short_sha}</small></div>'
+          banner = f'<div class="staging-visual-marker" role="status">STAGING <small>{short_sha}</small></div>'
 
           for p in Path("pages/staging").glob("*.html"):
               s=p.read_text(encoding="utf-8")

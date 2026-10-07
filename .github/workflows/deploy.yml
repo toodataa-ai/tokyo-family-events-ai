@@ -12,6 +12,7 @@ on:
       - 'package.json'
       - '.github/scripts/**'
       - '.github/workflows/**'
+      - '.github/release-trigger.txt'
 
 permissions:
   contents: read

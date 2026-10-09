@@ -36,7 +36,7 @@
 
   function track(event) {
     if (!Object.values(PAGES).includes(event) &&
-        !['nav_search','nav_copy','copy_field','copy_all','session_start'].includes(event)) return;
+        !['nav_search','nav_copy','copy_field_click','copy_all_click','copy_field','copy_all','session_start'].includes(event)) return;
     if (!production) return;
     if (!initialized) {
       if (pending.length < 25) pending.push(event);
@@ -65,10 +65,13 @@
       };
       const views = n('page_home') + n('page_search') + n('page_copy');
       const copy = n('copy_field') + n('copy_all');
+      const attempts = n('copy_field_click') + n('copy_all_click');
       summary.textContent = '表示 ' + formatCount(views) +
         ' ／ イベントへ ' + formatCount(n('nav_search')) +
         ' ／ コピペへ ' + formatCount(n('nav_copy')) +
-        ' ／ コピー成功 ' + formatCount(copy) +
+        ' ／ コピー押下 ' + formatCount(attempts) +
+        '（個別 ' + formatCount(n('copy_field_click')) + '・一括 ' + formatCount(n('copy_all_click')) + '）' +
+        ' ／ 成功 ' + formatCount(copy) +
         '（個別 ' + formatCount(n('copy_field')) + '・一括 ' + formatCount(n('copy_all')) + '）' +
         ' ／ セッション目安 ' + formatCount(n('session_start'));
     } catch (_) {

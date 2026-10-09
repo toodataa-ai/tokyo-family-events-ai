@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
+import vm from 'node:vm';
 import worker, {EVENTS} from '../analytics/worker.mjs';
 
 function memoryDb() {
@@ -81,9 +82,9 @@ test('browser instrumentation is attached only to three visible pages and copy s
   const html = ['index','search','copy'].map(name => fs.readFileSync('site/' + name + '.html','utf8'));
   for (const source of html) assert.match(source,/usage-metrics\.js/);
   assert.match(html[0],/id="siteUsageValues"/);
-  assert.match(html[2],/window\.SiteMetrics\?\.track\('copy_field_click'\);try/);
-  assert.match(html[2],/flash\(btn,'✓コピー済'\);window\.SiteMetrics\?\.track\('copy_field'\)/);
-  assert.match(html[2],/flash\(btn,'✓コピーしました'\);window\.SiteMetrics\?\.track\('copy_all'\)/);
+  assert.match(html[2],/recordMetric\('copy_field_click'\);try/);
+  assert.match(html[2],/flash\(btn,'✓コピー済'\);recordMetric\('copy_field'\)/);
+  assert.match(html[2],/flash\(btn,'✓コピーしました'\);recordMetric\('copy_all'\)/);
   const js = fs.readFileSync('site/usage-metrics.js','utf8');
   assert.match(js,/location\.origin === 'https:\/\/toodataa-ai.github\.io'/);
   assert.match(js,/const pageEvent = PAGES\[location\.pathname\]/);
@@ -104,4 +105,34 @@ test('storage is strictly aggregated, with no visitor identifiers',() => {
   const schema=fs.readFileSync('analytics/schema.sql','utf8');
   assert.match(schema,/PRIMARY KEY \(day, event\)/);
   assert.doesNotMatch(schema,/ip_address|user_agent|visitor_id|referer|search_query/);
+});
+
+test('clipboard still works when the telemetry callback throws',async () => {
+  const html=fs.readFileSync('site/copy.html','utf8');
+  const extract=name => html.split('\n').find(line => line.startsWith(name));
+  const calls=[];
+  const errors=[];
+  const window={
+    SiteMetrics:{track(){throw new Error('telemetry service failed');}},
+    __visibleEvents:[{name:'Test'}]
+  };
+  const context={
+    window,
+    $(){return {textContent:'copy me'};},
+    async writeClipboard(text){calls.push(text);},
+    copyAllText(){return 'all fields';},
+    flash(btn,label){calls.push(label);},
+    showMsg(msg){errors.push(msg);}
+  };
+  const js=[
+    extract('function recordMetric(event)'),
+    extract('window.copyOne='),
+    extract('window.copyAllCard=')
+  ];
+  for(const line of js) assert.equal(typeof line,'string');
+  vm.runInNewContext(js.join('\n'),context);
+  await window.copyOne('id',{});
+  await window.copyAllCard(0,{});
+  assert.deepEqual(calls,['copy me','✓コピー済','all fields','✓コピーしました']);
+  assert.deepEqual(errors,[]);
 });

@@ -57,14 +57,19 @@ export default {
         return json({error:'unsupported_media_type'},415,origin);
       }
       if (Number(request.headers.get('Content-Length') || 0) > 256) return json({error:'too_large'},413,origin);
+      let payload;
       try {
         const body = await request.text();
         if (body.length > 256) return json({error:'too_large'},413,origin);
-        const payload = JSON.parse(body);
-        if (!payload || typeof payload !== 'object' || !EVENT_SET.has(payload.event) ||
-            Object.keys(payload).length !== 1) {
-          return json({error:'invalid_event'},400,origin);
-        }
+        payload = JSON.parse(body);
+      } catch (_) {
+        return json({error:'invalid_event'},400,origin);
+      }
+      if (!payload || typeof payload !== 'object' || !EVENT_SET.has(payload.event) ||
+          Object.keys(payload).length !== 1) {
+        return json({error:'invalid_event'},400,origin);
+      }
+      try {
         const date = todayJst(new Date());
         // Single atomic upsert: concurrent requests cannot overwrite each other.
         await env.DB.prepare(

@@ -2,7 +2,7 @@
 // No IP, user agent, referer, query string, clipboard contents, or visitor ID is stored.
 export const EVENTS = Object.freeze([
   'page_home','page_search','page_copy','nav_search','nav_copy',
-  'copy_field','copy_all','session_start'
+  'copy_field_click','copy_all_click','copy_field','copy_all','session_start'
 ]);
 const ORIGIN = 'https://toodataa-ai.github.io';
 const EVENT_SET = new Set(EVENTS);

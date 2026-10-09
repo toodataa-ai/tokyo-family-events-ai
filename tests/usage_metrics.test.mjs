@@ -90,8 +90,14 @@ test('browser instrumentation is attached only to three visible pages and copy s
   assert.match(js,/!production/);
   assert.doesNotMatch(js,/navigator\.clipboard\.read|localStorage/);
   const config=JSON.parse(fs.readFileSync('site/metrics-config.json','utf8'));
-  assert.equal(config.enabled,false);
-  assert.equal(config.endpoint,'');
+  assert.equal(typeof config.enabled,'boolean');
+  if (config.enabled) {
+    assert.match(config.endpoint,/^https:\/\/[a-z0-9.-]+\.workers\.dev$/);
+  } else {
+    assert.equal(config.endpoint,'');
+  }
+  assert.match(js,/const production = location\.origin === 'https:\/\/toodataa-ai\.github\.io' && !!pageEvent;/);
+  assert.doesNotMatch(js,/staging\/index\.html['"]\s*:\s*'page_home'/);
 });
 
 test('storage is strictly aggregated, with no visitor identifiers',() => {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-08-r2",
+  "current_public_release": "release/2026-10-09-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -33,7 +33,16 @@
       "workflow_run_id": 37699328080,
       "note": "アプリ改修と定例データ自動更新の分離基盤を本番反映した正式リリース。",
       "public_version": "1.02"
+    },
+    {
+      "release_id": "release/2026-10-09-r1",
+      "branch": "release/2026-10-09-r1",
+      "commit_sha": "19f7824f84de3753787174dbd75b31dcb29f4798",
+      "deployed_at": "2026-10-09T11:38:29Z",
+      "workflow_run_id": 37924875933,
+      "note": "匿名アクセス解析を導入。ページ表示・イベント/コピペ移動・コピー押下と成功数をCloudflare D1に日次集計。既存検索・コピペ・イベントデータを維持。",
+      "public_version": "1.03"
     }
   ],
-  "current_public_version": "1.02"
+  "current_public_version": "1.03"
 }

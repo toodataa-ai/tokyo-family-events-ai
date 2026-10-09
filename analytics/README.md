@@ -6,6 +6,7 @@
 
 - `page_home` / `page_search` / `page_copy`: 各ページ表示（PV）の合計。
 - `nav_search` / `nav_copy`: イベント検索・コピペ用リストへのリンク／ボタン操作回数。ページ表示とは別集計。
+- `copy_field_click` / `copy_all_click`: 個別・一括のコピーボタンを押した回数（失敗も含む）。
 - `copy_field` / `copy_all`: クリップボード書き込みが成功した個別・一括コピーの回数。失敗は加算しない。
 - `session_start`: タブ単位・日本時間の日付単位のセッション目安。ユーザー人数、UU、純訪問者とは呼ばない。
 

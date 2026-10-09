@@ -661,3 +661,12 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .current-release-badge b{font-size:16px}
   .release-history-head .section-head p{font-size:9.5px}
 }
+
+/* Intentionally understated analytics strip, located under the home content. */
+.site-usage{max-width:1080px;margin:0 auto 6px;padding:6px 17px 10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;font-size:10px;color:#7d8896;line-height:1.5}
+.site-usage-label{font-weight:700;color:#6c7787;white-space:nowrap}
+.site-usage-values{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.site-usage-help{width:100%;font-size:9.5px;color:#8c95a0}
+.site-usage-help summary{cursor:pointer;display:inline-block;text-decoration:underline;text-decoration-color:#c9d0d9;text-underline-offset:2px}
+.site-usage-help p{max-width:840px;margin:3px 0 5px;line-height:1.55}
+@media(max-width:680px){.site-usage{padding:7px 12px 9px;font-size:9.5px;gap:2px 7px}.site-usage-help{font-size:9px}}

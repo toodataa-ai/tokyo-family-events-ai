@@ -57,8 +57,8 @@ async function writeClipboard(text){
   const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('copy failed');
 }
 function flash(btn,label){const old=btn.textContent;btn.textContent=label;btn.classList.add('done');setTimeout(()=>{btn.textContent=old;btn.classList.remove('done');},1500);}
-window.copyOne=async(id,btn)=>{try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');window.SiteMetrics?.track('copy_field');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
-window.copyAllCard=async(index,btn)=>{try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');window.SiteMetrics?.track('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+window.copyOne=async(id,btn)=>{window.SiteMetrics?.track('copy_field_click');try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');window.SiteMetrics?.track('copy_field');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+window.copyAllCard=async(index,btn)=>{window.SiteMetrics?.track('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');window.SiteMetrics?.track('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
 function renderWeekTabs(){
   if(!manifest)return;

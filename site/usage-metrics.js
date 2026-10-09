@@ -85,7 +85,7 @@
       const key = 'family_events_metrics_session_' + date;
       if (sessionStorage.getItem(key) !== '1') {
         sessionStorage.setItem(key, '1');
-        track('session_start');
+        dispatch('session_start');
       }
     } catch (_) { /* blocked storage: skip estimated session count */ }
   }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261008-v115">
+<link rel="stylesheet" href="styles.css?v=20261009-metrics1">
 </head>
 <body class="home-page" data-season="winter">
 <section class="site-hero">
@@ -84,11 +84,11 @@
   <span class="site-usage-label">サイト利用状況（累計）</span>
   <span class="site-usage-values" id="siteUsageValues" aria-live="polite">計測準備中</span>
   <details class="site-usage-help"><summary>集計方法</summary>
-    <p>表示＝トップ・イベント検索・コピペ画面のページ表示数。イベントへ／コピペへ＝該当画面へのリンク操作数。コピー成功＝クリップボードへ正常にコピーできた操作数。セッション目安＝同じタブで同じ日に最初に閲覧した回数であり、人数ではありません。自動アクセス等により概算となります。ステージングは除外し、個人情報・検索内容は記録しません。</p>
+    <p>表示＝トップ・イベント検索・コピペ画面のページ表示数。イベントへ／コピペへ＝該当画面へのリンク操作数。コピー押下＝個別・一括のボタンを押した回数。コピー成功＝クリップボードへ正常にコピーできた操作数。セッション目安＝同じタブで同じ日に最初に閲覧した回数であり、人数ではありません。自動アクセス等により概算となります。ステージングは除外し、個人情報・検索内容は記録しません。</p>
   </details>
 </section>
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
-<script src="usage-metrics.js?v=20261009-1" defer></script>
+<script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {loadManifest,loadWeekend,loadUpdateHistory,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml} from './app.js?v=20261008-v115';
 const $=id=>document.getElementById(id);

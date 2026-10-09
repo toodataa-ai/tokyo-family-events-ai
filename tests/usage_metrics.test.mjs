@@ -52,7 +52,7 @@ test('collector is strictly allowlisted and aggregates only anonymous event name
   assert.equal(bad.status,400);
   const leaked = await worker.fetch(request('/collect','POST',{event:'copy_all',clipboard:'private'}),env);
   assert.equal(leaked.status,400);
-  for(const event of ['page_home','page_search','nav_copy','copy_field','copy_all','session_start']) {
+  for(const event of ['page_home','page_search','nav_copy','copy_field_click','copy_all_click','copy_field','copy_all','session_start']) {
     const result = await worker.fetch(request('/collect','POST',{event}),env);
     assert.equal(result.status,200);
   }
@@ -63,6 +63,8 @@ test('collector is strictly allowlisted and aggregates only anonymous event name
   assert.equal(payload.schema_version,1);
   assert.equal(payload.totals.copy_field,2);
   assert.equal(payload.totals.copy_all,1);
+  assert.equal(payload.totals.copy_field_click,1);
+  assert.equal(payload.totals.copy_all_click,1);
   assert.equal(payload.totals.page_home,1);
   assert.equal(payload.totals.nav_search,0);
   assert.equal(payload.today.copy_field,2);
@@ -75,6 +77,7 @@ test('browser instrumentation is attached only to three visible pages and copy s
   const html = ['index','search','copy'].map(name => fs.readFileSync('site/' + name + '.html','utf8'));
   for (const source of html) assert.match(source,/usage-metrics\.js/);
   assert.match(html[0],/id="siteUsageValues"/);
+  assert.match(html[2],/window\.SiteMetrics\?\.track\('copy_field_click'\);try/);
   assert.match(html[2],/flash\(btn,'✓コピー済'\);window\.SiteMetrics\?\.track\('copy_field'\)/);
   assert.match(html[2],/flash\(btn,'✓コピーしました'\);window\.SiteMetrics\?\.track\('copy_all'\)/);
   const js = fs.readFileSync('site/usage-metrics.js','utf8');

@@ -48,6 +48,10 @@ test('collector is strictly allowlisted and aggregates only anonymous event name
   const blocked = await worker.fetch(request('/collect','POST',{event:'copy_all'},'https://attacker.invalid'),env);
   assert.equal(blocked.status,403);
   assert.equal(blocked.headers.get('Access-Control-Allow-Origin'),null);
+  const malformed = await worker.fetch(new Request(url + '/collect', {
+    method:'POST',headers:{Origin:origin,'Content-Type':'text/plain'},body:'not json'
+  }),env);
+  assert.equal(malformed.status,400);
   const bad = await worker.fetch(request('/collect','POST',{event:'arbitrary_event'}),env);
   assert.equal(bad.status,400);
   const leaked = await worker.fetch(request('/collect','POST',{event:'copy_all',clipboard:'private'}),env);

@@ -39,6 +39,7 @@
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
+<script src="usage-metrics.js?v=20261009-1" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261008-v115';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
@@ -56,8 +57,8 @@ async function writeClipboard(text){
   const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('copy failed');
 }
 function flash(btn,label){const old=btn.textContent;btn.textContent=label;btn.classList.add('done');setTimeout(()=>{btn.textContent=old;btn.classList.remove('done');},1500);}
-window.copyOne=async(id,btn)=>{try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
-window.copyAllCard=async(index,btn)=>{try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+window.copyOne=async(id,btn)=>{try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');window.SiteMetrics?.track('copy_field');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+window.copyAllCard=async(index,btn)=>{try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');window.SiteMetrics?.track('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
 function renderWeekTabs(){
   if(!manifest)return;

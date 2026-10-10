@@ -670,3 +670,15 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .site-usage-help summary{cursor:pointer;display:inline-block;text-decoration:underline;text-decoration-color:#c9d0d9;text-underline-offset:2px}
 .site-usage-help p{max-width:840px;margin:3px 0 5px;line-height:1.55}
 @media(max-width:680px){.site-usage{padding:7px 12px 9px;font-size:9.5px;gap:2px 7px}.site-usage-help{font-size:9px}}
+
+/* Search by AI discovery, registered sources, or the union of both. */
+.search-page .search-quick-row{grid-template-columns:minmax(180px,1fr) 126px 140px 112px 112px 128px auto}
+.copy-page .copy-search-quick-row{grid-template-columns:minmax(180px,1fr) 135px 110px}
+@media(max-width:680px){
+  .search-page .search-quick-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .search-page #reservationSelect,.search-page .date-refine{grid-column:auto}
+  .copy-page .copy-search-quick-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .copy-page .copy-search-quick-row input.unified-search-input{grid-column:1/-1}
+  .copy-page .copy-search-quick-row #sourceSelect{grid-column:1}
+  .copy-page .copy-search-quick-row .date-refine{grid-column:2}
+}

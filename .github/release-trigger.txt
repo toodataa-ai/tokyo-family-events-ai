@@ -1,11 +1,10 @@
 # Production release trigger
 # Updating this file on main intentionally causes the Pages workflow to redeploy.
-# The public root is always sourced from the production branch.
-# Dynamic event data is overlaid from data-production.
-# The hidden /staging/ preview is sourced from main with the same production data.
+# Public root uses the production branch application; data overlays from data-production.
 operation=release
 production_ref=production
-approved_staging_sha=33ce3936e045415a68015638a3f78c275e455571
-target_public_version=1.04
-previous_public_release=release/2026-10-09-r1
-updated_at=2026-10-10T01:18:53.695Z
+approved_staging_sha=cd5e80a428ba6b8a2c22ac6377354898291787e3
+target_public_version=1.05
+previous_public_release=release/2026-10-10-r1
+updated_at=2026-10-10T17:56:00+09:00
+note=Official Nerima district festival table discovery, per-ward evidence audit, v1.15 canonical prompt. Preserve published 17 festival data additions.

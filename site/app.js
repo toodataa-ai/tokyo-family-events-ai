@@ -319,17 +319,23 @@ export function filterEvents(events, filters={}){
   const environment = filters.environment || 'all';
   const reservation = filters.reservation || 'all';
   const sourceMode = ['ai_cross','explicit'].includes(filters.sourceMode) ? filters.sourceMode : 'all';
+  const selected=(field)=>Array.isArray(filters[field])?filters[field]:[];
+  const wards=selected('wards'),ratings=selected('ratings'),prices=selected('prices'),environments=selected('environments'),
+    reservations=selected('reservations'),sourceModes=selected('sourceModes'),periods=selected('periods');
   return (events || []).filter(ev => {
-    if(ward !== '__all__' && ev.ward !== ward) return false;
+    if(wards.length ? !wards.includes(ev.ward) : (ward!=='__all__' && ev.ward!==ward)) return false;
     if(q && !eventSearchText(ev).includes(q)) return false;
-    if(recMin && recommendationStarCount(ev) < recMin) return false;
-    if(price !== 'all' && eventPriceCategory(ev) !== price) return false;
-    if(environment !== 'all' && indoorOutdoorCategory(ev) !== environment) return false;
-    if(reservation !== 'all' && reservationCategory(ev) !== reservation) return false;
-    if(sourceMode !== 'all'){
+    const rating=recommendationStarCount(ev);
+    if(ratings.length ? !ratings.map(Number).includes(rating) : (recMin && rating < recMin)) return false;
+    if(prices.length ? !prices.includes(eventPriceCategory(ev)) : (price!=='all' && eventPriceCategory(ev)!==price)) return false;
+    if(environments.length ? !environments.includes(indoorOutdoorCategory(ev)) : (environment!=='all' && indoorOutdoorCategory(ev)!==environment)) return false;
+    if(reservations.length ? !reservations.includes(reservationCategory(ev)) : (reservation!=='all' && reservationCategory(ev)!==reservation)) return false;
+    if(periods.length && !periods.some(period=>eventsOverlappingPeriod([ev],period.start,period.end).length)) return false;
+    if(sourceModes.length===1 || (!sourceModes.length && sourceMode!=='all')){
+      const mode=sourceModes.length ? sourceModes[0] : sourceMode;
       const provenance=eventDiscoveryProvenance(ev,filters.decisionAudit,filters.registry);
-      if(sourceMode==='ai_cross' && !provenance.ai) return false;
-      if(sourceMode==='explicit' && !provenance.explicit) return false;
+      if(mode==='ai_cross' && !provenance.ai) return false;
+      if(mode==='explicit' && !provenance.explicit) return false;
     }
     return true;
   });
@@ -347,18 +353,27 @@ export function readFiltersFromUrl(){
   return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all',reservation:p.get('reserve')||'all',sourceMode:['ai_cross','explicit'].includes(p.get('src'))?p.get('src'):'all'};
 }
 
+export function serializeEventFilters(filters){
+  const p=new URLSearchParams();
+  if(filters.q) p.set('q',filters.q);
+  const mappings=[['dates','d'],['wards','w'],['ratings','star'],['prices','p'],['environments','e'],['reservations','r'],['sourceModes','s']];
+  for(const [field,key] of mappings){
+    if(Array.isArray(filters[field])) filters[field].forEach(value=>p.append(key,String(value)));
+  }
+  // Continue accepting previous single-choice bookmarks.
+  if(!Array.isArray(filters.dates)&&filters.date) p.set('date',filters.date);
+  if(!Array.isArray(filters.wards)&&filters.ward && filters.ward!=='__all__') p.set('ward',filters.ward);
+  if(!Array.isArray(filters.ratings)&&Number(filters.recMin)) p.set('rec',String(filters.recMin));
+  if(!Array.isArray(filters.prices)&&filters.price && filters.price!=='all') p.set('price',filters.price);
+  if(!Array.isArray(filters.environments)&&filters.environment && filters.environment!=='all') p.set('env',filters.environment);
+  if(!Array.isArray(filters.reservations)&&filters.reservation && filters.reservation!=='all') p.set('reserve',filters.reservation);
+  if(!Array.isArray(filters.sourceModes) && ['ai_cross','explicit'].includes(filters.sourceMode)) p.set('src',filters.sourceMode);
+  return p.toString();
+}
+
 export function buildCopyUrl(filters){
-  const p = new URLSearchParams();
-  if(filters.date) p.set('date', filters.date);
-  if(filters.ward && filters.ward !== '__all__') p.set('ward', filters.ward);
-  if(filters.q) p.set('q', filters.q);
-  if(Number(filters.recMin)) p.set('rec', filters.recMin);
-  if(filters.price && filters.price !== 'all') p.set('price', filters.price);
-  if(filters.environment && filters.environment !== 'all') p.set('env', filters.environment);
-  if(filters.reservation && filters.reservation !== 'all') p.set('reserve', filters.reservation);
-  if(['ai_cross','explicit'].includes(filters.sourceMode)) p.set('src', filters.sourceMode);
-  const qs = p.toString();
-  return 'copy.html' + (qs ? '?' + qs : '');
+  const qs=serializeEventFilters(filters);
+  return 'copy.html'+(qs?'?'+qs:'');
 }
 
 export function applyVerification(events, audit){

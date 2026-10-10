@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 51,
-    "published": 46,
+    "candidates": 53,
+    "published": 48,
     "excluded": 3,
     "duplicate_removed": 2,
-    "verified": 41,
+    "verified": 43,
     "announced": 5,
     "corrected": 0,
     "thumbnail_count": 45,
-    "thumbnail_coverage": 0.978,
+    "thumbnail_coverage": 0.938,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 2,
@@ -119,6 +119,13 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-10-31-v16-rereview.json"
+    },
+    {
+      "version": "nerima-official-district-2026-10-10",
+      "mode": "targeted-official-data-backfill",
+      "applied_at": "2026-10-10",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "count": 2
     }
   ]
 }

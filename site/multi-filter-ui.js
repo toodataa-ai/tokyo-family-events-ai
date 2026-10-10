@@ -54,7 +54,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>6週間</span></button>`+
       periods.map(period=>{
         const meta=holidayTabMeta(period,manifest),checked=state.dates.has(period.start);
-        return `<button type="button" class="week-tab ${checked?'active':''} ${period.available?'':'pending'}" data-date="${period.start}" aria-pressed="${checked}"><b>${checked?'☑':'☐'} ${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;
+        return `<label class="week-tab ${checked?'active':''} ${period.available?'':'pending'}"><input type="checkbox" data-date="${period.start}" ${checked?'checked':''} aria-label="${escapeHtml(meta.primary)} を選択"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></label>`;
       }).join('');
   }
   function renderWardChips(data){
@@ -64,7 +64,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('chips').innerHTML=`<button type="button" class="chip ${all?'active':''}" data-ward="__all__" aria-pressed="${all}">すべて <span>${base.length}</span></button>`+
       WARDS.map(ward=>{
         const checked=state.wards.has(ward);
-        return `<button type="button" class="chip ${checked?'active':''} ${counts[ward]===0?'zero':''}" data-ward="${escapeHtml(ward)}" aria-pressed="${checked}">${checked?'☑':'☐'} ${escapeHtml(ward)} <span>${counts[ward]}</span></button>`;
+        return `<label class="chip ${checked?'active':''} ${counts[ward]===0?'zero':''}"><input type="checkbox" data-ward="${escapeHtml(ward)}" ${checked?'checked':''}><span>${escapeHtml(ward)} ${counts[ward]}</span></label>`;
       }).join('');
   }
   function renderGroups(){
@@ -83,22 +83,17 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     const reset=$('clearFiltersBtn');if(reset)reset.disabled=!parts.length;
     $('selectedHint').textContent=state.dates.size||state.wards.size?'複数選択中。日付・区の「すべて」で個別に解除できます。':'日付と区は複数選択できます。選ばない場合はすべて対象です。';
   }
-  function handleWeek(e){
-    const button=e.target.closest('button[data-date]');if(!button)return;
-    const value=button.dataset.date;
-    if(value==='all')state.dates.clear();
-    else if(state.dates.has(value))state.dates.delete(value);
-    else state.dates.add(value);
-    $('dateInput').value='';
+  function toggleSet(bucket,value,checked){
+    if(checked) bucket.add(value);else bucket.delete(value);
     notify();
   }
+  function handleWeek(e){
+    const input=e.target.closest('input[data-date]');if(!input)return;
+    toggleSet(state.dates,input.dataset.date,input.checked);
+  }
   function handleWard(e){
-    const button=e.target.closest('button[data-ward]');if(!button)return;
-    const value=button.dataset.ward;
-    if(value==='__all__')state.wards.clear();
-    else if(state.wards.has(value))state.wards.delete(value);
-    else state.wards.add(value);
-    notify();
+    const input=e.target.closest('input[data-ward]');if(!input)return;
+    toggleSet(state.wards,input.dataset.ward,input.checked);
   }
   function handleDate(){
     const date=$('dateInput').value;
@@ -117,8 +112,16 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('searchInput').value='';
     renderGroups();notify();
   }
-  $('weekTabs').addEventListener('click',handleWeek);
-  $('chips').addEventListener('click',handleWard);
+  $('weekTabs').addEventListener('change',handleWeek);
+  $('weekTabs').addEventListener('click',e=>{
+    if(!e.target.closest('button[data-date="all"]'))return;
+    state.dates.clear();$('dateInput').value='';notify();
+  });
+  $('chips').addEventListener('change',handleWard);
+  $('chips').addEventListener('click',e=>{
+    if(!e.target.closest('button[data-ward="__all__"]'))return;
+    state.wards.clear();notify();
+  });
   $('filterGroups').addEventListener('change',e=>{
     const input=e.target.closest('input[data-group]');
     if(!input)return;

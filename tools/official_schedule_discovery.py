@@ -127,7 +127,7 @@ def extract_candidates(html, start, end):
         if key in seen:
             raise ValueError("Duplicate official table row: " + name)
         seen.add(key)
-        digest = hashlib.sha256((name + "|" + venue + "|" + ",".join(str(d) for d in dates)).encode()).hexdigest()[:12]
+        digest = hashlib.sha256((normalize(name) + "|" + normalize(venue) + "|" + ",".join(str(d) for d in dates)).encode()).hexdigest()[:12]
         output.append({
             "candidate_id": "nerima-district-" + digest,
             "ward": "練馬区",

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261010-filter-close">
+<link rel="stylesheet" href="styles.css?v=20261010-single-period">
 </head>
 <body class="copy-page" data-season="autumn">
 <section class="site-hero">
@@ -39,7 +39,7 @@
       <summary>日付指定</summary>
       <div class="date-refine-panel">
         <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この日付を追加</button>
+        <button id="updateBtn">この期間を表示</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
@@ -47,7 +47,7 @@
   </div>
 </section>
 <p id="selectedHint" class="multi-selection-hint" aria-live="polite"></p>
-<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末を複数選択"></nav>
+<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="全期間または1つの週末・祝日を選択"></nav>
 <nav class="chips compact-ward-chips" id="chips"></nav>
 <main>
   <div class="result-head result-head-simple copy-result-head"><span id="countText">-</span></div>
@@ -58,7 +58,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-filter-close';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-single-period';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;

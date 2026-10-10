@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 65,
-    "published": 60,
+    "candidate_total": 73,
+    "published": 68,
     "excluded": 3,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -5201,6 +5201,550 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002865"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-c7e7540811d0",
+      "name": "第一地区祭（南町小学校）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-de58a717cf63",
+      "name": "第三地区祭（中村東）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "地域向け催事で子ども限定ではない。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-6d25b9f37fb6",
+      "name": "第四地区祭（春日町）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-ee46ca2e5fae",
+      "name": "第五地区祭",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-a29ea19bb973",
+      "name": "第七地区祭（光が丘）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-5b2fc5243c2a",
+      "name": "第八地区祭",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-ab48363e7398",
+      "name": "大泉東地区祭",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-c12e20fbef68",
+      "name": "大泉西地区祭（南大泉）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもが楽しめる催事が公式に明記される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地区祭の催事・出店等に参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもを含む地域住民向けの催事。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "屋台・催事を回遊しやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑や悪天候による変更に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式日程表に料金の明示なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式日程表に予約要否の明示なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の催事・体験を家族で楽しめる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の地区祭表に記載され、家族で楽しめる祭り。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式日程表の該当行に開催日・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
         }
       ]
     }

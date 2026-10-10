@@ -225,7 +225,7 @@ const sharedUI=fsSourceUI.readFileSync(new URL('../site/multi-filter-ui.js',impo
 assert.match(sharedUI,/type="checkbox"/);
 assert.match(sharedUI,/initialState/);
 assert.match(sharedUI,/state\.dates\.add/);
-assert.match(sharedUI,/state\.wards\.add/);
+assert.match(sharedUI,/toggleSet\(state\.wards/);
 for(const page of ['search.html','copy.html']){
   const markup=fsSourceUI.readFileSync(new URL('../site/'+page,import.meta.url),'utf8');
   assert.match(markup,/id="filterPanel"/);

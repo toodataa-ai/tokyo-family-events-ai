@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,eventDiscoveryProvenance,findDecisionForEvent,buildCopyUrl,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,eventDiscoveryProvenance,findDecisionForEvent,buildCopyUrl,serializeEventFilters,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -195,16 +195,47 @@ assert.equal(filterEvents(mergedPeriods,{sourceMode:'explicit',registry:provenan
 assert.equal(filterEvents([{id:'ai-1',ward:'中野区'}],{sourceMode:'ai_cross',decisionAudit:{decisions:[aiDecision]},registry:provenanceRegistry}).length,1);
 assert.equal(new URL(buildCopyUrl({date:'all',sourceMode:'explicit'}),'https://example.com/').searchParams.get('src'),'explicit');
 assert.equal(new URL(buildCopyUrl({date:'all',sourceMode:'all'}),'https://example.com/').searchParams.has('src'),false);
+// Multi-selection must preserve OR within a group and AND across groups.
+const multiScope=[
+  {id:'a',name:'Free indoor',ward:'中野区',price:'無料',indoor_outdoor:'indoor',date_start:'2026-10-10',date_end:'2026-10-10',family_fit:{overall:'A'},_decision_rows:[aiDecision]},
+  {id:'b',name:'Paid outdoor',ward:'杉並区',price:'有料',indoor_outdoor:'outdoor',date_start:'2026-10-17',date_end:'2026-10-17',family_fit:{overall:'B'},_decision_rows:[legacyDecision]},
+  {id:'c',name:'Mixed indoor',ward:'渋谷区',price:'無料／一部有料',indoor_outdoor:'indoor',date_start:'2026-10-10',date_end:'2026-10-18',family_fit:{overall:'C'},_decision_rows:[bothDecision]}
+];
+assert.deepEqual(filterEvents(multiScope,{wards:['中野区','杉並区']}).map(x=>x.id),['a','b']);
+assert.deepEqual(filterEvents(multiScope,{prices:['free','paid']}).map(x=>x.id),['a','b']);
+assert.deepEqual(filterEvents(multiScope,{wards:['中野区','杉並区'],prices:['free'],environments:['indoor']}).map(x=>x.id),['a']);
+assert.deepEqual(filterEvents(multiScope,{ratings:['2','3']}).map(x=>x.id),['a','b']);
+assert.deepEqual(filterEvents(multiScope,{sourceModes:['ai_cross'],registry:provenanceRegistry}).map(x=>x.id),['a','c']);
+assert.deepEqual(filterEvents(multiScope,{sourceModes:['explicit'],registry:provenanceRegistry}).map(x=>x.id),['b','c']);
+assert.deepEqual(filterEvents(multiScope,{sourceModes:['ai_cross','explicit'],registry:provenanceRegistry}).map(x=>x.id),['a','b','c']);
+assert.deepEqual(filterEvents(multiScope,{periods:[{start:'2026-10-10',end:'2026-10-11'}]}).map(x=>x.id),['a','c']);
+assert.deepEqual(filterEvents(multiScope,{periods:[{start:'2026-10-10',end:'2026-10-11'},{start:'2026-10-17',end:'2026-10-18'}]}).map(x=>x.id),['a','b','c']);
+assert.deepEqual(filterEvents(multiScope,{periods:[{start:'2026-10-17',end:'2026-10-18'}],wards:['杉並区']}).map(x=>x.id),['b']);
+const encoded=serializeEventFilters({q:'祭り',dates:['2026-10-10','2026-10-17'],wards:['中野区','杉並区'],prices:['free','paid'],ratings:['3','2'],sourceModes:['ai_cross']});
+const params=new URLSearchParams(encoded);
+assert.deepEqual(params.getAll('d'),['2026-10-10','2026-10-17']);
+assert.deepEqual(params.getAll('w'),['中野区','杉並区']);
+assert.deepEqual(params.getAll('p'),['free','paid']);
+assert.deepEqual(params.getAll('star'),['3','2']);
+assert.deepEqual(params.getAll('s'),['ai_cross']);
+assert.equal(params.get('q'),'祭り');
+assert.equal(new URL(buildCopyUrl({dates:['2026-10-10','2026-10-17'],wards:['中野区','杉並区']}),'https://example.com/').searchParams.getAll('w').length,2);
 const fsSourceUI=(await import('node:fs')).default;
+const sharedUI=fsSourceUI.readFileSync(new URL('../site/multi-filter-ui.js',import.meta.url),'utf8');
+assert.match(sharedUI,/type="checkbox"/);
+assert.match(sharedUI,/initialState/);
+assert.match(sharedUI,/state\.dates\.add/);
+assert.match(sharedUI,/state\.wards\.add/);
 for(const page of ['search.html','copy.html']){
   const markup=fsSourceUI.readFileSync(new URL('../site/'+page,import.meta.url),'utf8');
-  assert.match(markup,/id="sourceSelect"/);
-  assert.match(markup,/<option value="all">取得元：両方<\/option>/);
-  assert.match(markup,/<option value="ai_cross">AI探索<\/option>/);
-  assert.match(markup,/<option value="explicit">固定サイト<\/option>/);
-  assert.match(markup,/p\.get\('src'\)/);
+  assert.match(markup,/id="filterPanel"/);
+  assert.match(markup,/id="filterGroups"/);
+  assert.match(markup,/id="filterSummary"/);
+  assert.match(markup,/createMultiFilterUI/);
+  assert.match(markup,/filterUI\.serialize/);
+  assert.doesNotMatch(markup,/id="sourceSelect"/);
 }
-console.log('source scope filter + search/copy UI + six-week provenance: OK');
+console.log('multi-selection OR/AND, URL state, cross-week date + search/copy UI: OK');
 const matchAudit={decisions:[{candidate_id:'other-id',name:'江戸川区民まつり',ward:'江戸川区',discovery_sources:[]}]};
 assert.equal(findDecisionForEvent(events[1],matchAudit)?.name,'江戸川区民まつり');
 console.log('discovery provenance compatibility: OK');

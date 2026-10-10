@@ -6,7 +6,7 @@ const prompt=fs.readFileSync(latest.path,'utf8');
 const workflow=fs.readFileSync('.github/workflows/deploy.yml','utf8');
 const app=fs.readFileSync('site/app.js','utf8');
 
-assert.equal(latest.version,'v1.14');
+assert.equal(latest.version,'v1.15');
 assert.match(prompt,/非退行・証拠拘束ガード/);
 assert.match(prompt,/field_changes/);
 assert.match(prompt,/前年ページ/);

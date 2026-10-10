@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-07",
+  "updated_at": "2026-10-10",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -323,6 +323,20 @@
         "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1"
       ],
       "note": "レガシーsuginami.pyと同じevent_category=5（おまつり）の月別一覧を対象月ごとに確認する。"
+    },
+    {
+      "id": "nerima_district_festivals_2026",
+      "label": "練馬区公式 令和8年度地区祭開催日程",
+      "origin": "official_added",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "search_urls": [
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+      ],
+      "note": "年間地区祭一覧を1行1参加単位に分解。ツール tools/official_schedule_discovery.py で取得日時・各行の日時と場所・候補漏れを監査。年度更新は新年度の公式URLを確認して切替。"
     }
   ]
 }

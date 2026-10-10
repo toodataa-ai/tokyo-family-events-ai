@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261010-filter-close">
+<link rel="stylesheet" href="styles.css?v=20261010-single-period">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">6週間のイベントから、日付・区・取得元・オススメ度・料金・屋内外・申込条件を複数選択できます。詳細条件は折りたためます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">6週間の期間は1つずつ選択できます。区・取得元・オススメ度・料金・屋内外・申込条件は複数選択でき、詳細条件は折りたためます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
@@ -39,7 +39,7 @@
       <summary>日付指定</summary>
       <div class="date-refine-panel">
         <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この日付を追加</button>
+        <button id="updateBtn">この期間を表示</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
@@ -47,7 +47,7 @@
   </div>
 </section>
 <p id="selectedHint" class="multi-selection-hint" aria-live="polite"></p>
-<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末を複数選択"></nav>
+<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="全期間または1つの週末・祝日を選択"></nav>
 <nav class="chips compact-ward-chips" id="chips" aria-label="区で絞り込み"></nav>
 <main>
   <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
@@ -63,7 +63,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-filter-close';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-single-period';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
 const $=id=>document.getElementById(id);

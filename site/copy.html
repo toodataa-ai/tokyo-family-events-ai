@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261008-v115">
+<link rel="stylesheet" href="styles.css?v=20261010-source-filter">
 </head>
 <body class="copy-page" data-season="autumn">
 <section class="site-hero">
@@ -20,6 +20,11 @@
 <section class="search-quick" aria-label="検索と絞り込み">
   <div class="search-quick-row copy-search-quick-row">
     <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
+    <select id="sourceSelect" aria-label="取得元を選択">
+      <option value="all">取得元：両方</option>
+      <option value="ai_cross">AI探索</option>
+      <option value="explicit">固定サイト</option>
+    </select>
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
       <div class="date-refine-panel">
@@ -41,15 +46,15 @@
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261008-v115';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-source-filter';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentRecMin='0',currentPrice='all',currentEnvironment='all',currentReservation='all',currentPeriodStart='';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(){document.body.dataset.season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());}
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
-function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment,reservation:currentReservation};}
-function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
+function filters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:currentRecMin,price:currentPrice,environment:currentEnvironment,reservation:currentReservation,sourceMode:$('sourceSelect').value};}
+function syncUrl(){const f=filters(),p=new URLSearchParams();if(allMode)p.set('date','all');else if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);if(f.sourceMode!=='all')p.set('src',f.sourceMode);history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);$('backLink').href='search.html'+(p.toString()?'?'+p.toString():'');}
 
 async function writeClipboard(text){
   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return;}
@@ -68,15 +73,13 @@ function renderWeekTabs(){
   $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span></button>`+
     periods.map(period=>{const meta=holidayTabMeta(period,manifest);return `<button class="week-tab ${!allMode&&selected===period.start?'active':''} ${period.available?'':'pending'}" data-date="${period.start}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;}).join('');
 }
-function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
+function renderChips(data){const base=filterEvents(data.events,{...filters(),ward:'__all__',registry,decisionAudit:data.decision_audit});const counts=countsByWard(base);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${base.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
 function copyStarSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="width:1em;height:1em;display:block;flex:0 0 1em;fill:#e0a21b;stroke:#b97808;stroke-width:.7"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
 function copyFamilyStars(grade){const n=grade==='A'?3:grade==='B'?2:grade==='C'?1:0;return n?Array.from({length:n},copyStarSvg).join(''):'<span class="no-star">―</span>';}
 function renderCopyAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}
 function copyEventProvenance(ev){
-  const rows=Array.isArray(ev._decision_rows)&&ev._decision_rows.length?ev._decision_rows:[findDecisionForEvent(ev,currentData?.decision_audit)].filter(Boolean);
-  const combined={discovery_sources:rows.flatMap(r=>r?.discovery_sources||[])};
-  return classifyDiscoveryProvenance(ev,combined,registry);
+  return eventDiscoveryProvenance(ev,currentData?.decision_audit,registry);
 }
 function copyProvenanceBadge(prov){
   if(prov.channel==='ai_cross') return '<span class="badge provenance-badge prov-ai">AIのみ</span>';
@@ -87,11 +90,11 @@ function copyProvenanceBadge(prov){
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,filters());window.__visibleEvents=visible;
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});window.__visibleEvents=visible;
   const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
   const prompt=currentData.run?.prompt?.version||'-';
-  const filterBits=[];if(Number(currentRecMin))filterBits.push(currentRecMin==='3'?'★★★':currentRecMin==='2'?'★★以上':'★以上');if(currentPrice!=='all')filterBits.push(currentPrice==='free'?'無料':currentPrice==='mixed'?'無料あり':'有料');if(currentEnvironment!=='all')filterBits.push(currentEnvironment==='indoor'?'屋内':currentEnvironment==='outdoor'?'屋外':'屋内・屋外');if(currentReservation!=='all')filterBits.push(currentReservation==='none'?'申込不要':currentReservation==='required'?'要事前申込':currentReservation==='partial'?'一部要申込':'申込要確認');
+  const filterBits=[];if(Number(currentRecMin))filterBits.push(currentRecMin==='3'?'★★★':currentRecMin==='2'?'★★以上':'★以上');if(currentPrice!=='all')filterBits.push(currentPrice==='free'?'無料':currentPrice==='mixed'?'無料あり':'有料');if(currentEnvironment!=='all')filterBits.push(currentEnvironment==='indoor'?'屋内':currentEnvironment==='outdoor'?'屋外':'屋内・屋外');if(currentReservation!=='all')filterBits.push(currentReservation==='none'?'申込不要':currentReservation==='required'?'要事前申込':currentReservation==='partial'?'一部要申込':'申込要確認');if($('sourceSelect').value!=='all')filterBits.push($('sourceSelect').value==='ai_cross'?'AI探索':'固定サイト');
   $('rangeText').textContent=allMode?`6週間すべて ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION}${filterBits.length?' ／ '+filterBits.join('・'):''}`:`${holidayRangeLabel(currentData.period_start||currentData.sat,currentData.period_end||currentData.sun,manifest)} ／ GitHub手順 ${prompt} ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ 公式確認 ${verified}・詳細待ち ${announced}${filterBits.length?' ／ '+filterBits.join('・'):''}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
@@ -145,7 +148,7 @@ async function loadSelected(){try{
 }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}}
 $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;currentPeriodStart='';$('dateInput').value='';}else{allMode=false;currentPeriodStart=b.dataset.date;$('dateInput').value=b.dataset.date;}loadSelected();});
 $('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});
-$('searchInput').addEventListener('input',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});
-(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);applyHeroSeason();const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';currentPeriodStart=allMode?'':dateParam;$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';currentReservation=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
+$('searchInput').addEventListener('input',render);$('sourceSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});
+(async()=>{try{[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);applyHeroSeason();const p=new URLSearchParams(location.search),dateParam=p.get('date');allMode=!dateParam||dateParam==='all';currentPeriodStart=allMode?'':dateParam;$('dateInput').value=allMode?'':dateParam;const w=p.get('ward');if(WARDS.includes(w))currentWard=w;$('searchInput').value=p.get('q')||'';currentRecMin=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';currentPrice=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';currentEnvironment=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';currentReservation=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';$('sourceSelect').value=['ai_cross','explicit'].includes(p.get('src'))?p.get('src'):'all';renderWeekTabs();await loadSelected();}catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

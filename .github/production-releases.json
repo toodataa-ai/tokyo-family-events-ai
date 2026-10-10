@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-09-r1",
+  "current_public_release": "release/2026-10-10-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -42,7 +42,16 @@
       "workflow_run_id": 37924875933,
       "note": "匿名アクセス解析を導入。ページ表示・イベント/コピペ移動・コピー押下と成功数をCloudflare D1に日次集計。既存検索・コピペ・イベントデータを維持。",
       "public_version": "1.03"
+    },
+    {
+      "release_id": "release/2026-10-10-r1",
+      "branch": "release/2026-10-10-r1",
+      "commit_sha": "33ce3936e045415a68015638a3f78c275e455571",
+      "deployed_at": "2026-10-10T01:19:36Z",
+      "workflow_run_id": 38012697484,
+      "note": "取得経路・区・子連れオススメ度・料金・屋内外・申込条件の複数選択と折りたたみ検索、期間の単一選択復帰、モバイル開閉改善、検索／コピペ用リストの条件連携。回帰テストと本番Pagesデプロイ成功を確認。",
+      "public_version": "1.04"
     }
   ],
-  "current_public_version": "1.03"
+  "current_public_version": "1.04"
 }

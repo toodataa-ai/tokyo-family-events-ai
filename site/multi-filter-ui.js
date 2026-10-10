@@ -132,6 +132,29 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
   });
   $('updateBtn').addEventListener('click',handleDate);
   $('clearFiltersBtn').addEventListener('click',reset);
+  const panel=$('filterPanel');
+  const closePanel=(focusTrigger=false)=>{
+    if(!panel.open)return;
+    panel.open=false;
+    if(focusTrigger)panel.querySelector('summary')?.focus();
+  };
+  // On mobile the floating panel covers its own <summary>, so keep an
+  // always-visible way to dismiss it without resetting any filter state.
+  $('filterCloseBtn').addEventListener('click',()=>closePanel(true));
+  $('filterApplyBtn').addEventListener('click',()=>closePanel(true));
+  panel.querySelector('.multi-filter-backdrop').addEventListener('click',()=>closePanel());
+  document.addEventListener('pointerdown',e=>{
+    if(panel.open && !panel.contains(e.target))closePanel();
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&panel.open){e.preventDefault();closePanel(true);}
+  });
+  panel.addEventListener('toggle',()=>{
+    if(panel.open)$('dateRefine').open=false;
+  });
+  $('dateRefine').addEventListener('toggle',()=>{
+    if($('dateRefine').open)closePanel();
+  });
   renderGroups();
   updateSummary();
   return {filters,renderWeekTabs,renderWardChips,reset,serialize:(q)=>serializeEventFilters({...filters(),q:q||''}),summary:()=>$('filterSummary').textContent};

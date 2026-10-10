@@ -11,7 +11,8 @@ const GROUPS=[
 ];
 function validValues(values,allow){return new Set(values.filter(v=>allow.includes(v)));}
 function initialState(params,periods){
-  const dates=validValues(params.getAll('d'),periods.map(x=>x.start));
+  const validDate=params.getAll('d').find(date=>periods.some(period=>period.start===date));
+  const dates=new Set(validDate?[validDate]:[]);
   const legacyDate=params.get('date');
   if(!dates.size && legacyDate && legacyDate!=='all'){
     const p=periods.find(x=>legacyDate>=x.start&&legacyDate<=x.end);
@@ -54,7 +55,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>6週間</span></button>`+
       periods.map(period=>{
         const meta=holidayTabMeta(period,manifest),checked=state.dates.has(period.start);
-        return `<label class="week-tab ${checked?'active':''} ${period.available?'':'pending'}"><input type="checkbox" data-date="${period.start}" ${checked?'checked':''} aria-label="${escapeHtml(meta.primary)} を選択"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></label>`;
+        return `<button type="button" class="week-tab ${checked?'active':''} ${period.available?'':'pending'}" data-date="${period.start}" aria-pressed="${checked}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;
       }).join('');
   }
   function renderWardChips(data){
@@ -76,20 +77,26 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
   }
   function updateSummary(){
     const parts=[];
-    if(state.dates.size)parts.push('日付'+state.dates.size);
+    if(state.dates.size)parts.push('期間指定');
     if(state.wards.size)parts.push('区'+state.wards.size);
     for(const group of GROUPS){if(state[group.key].size)parts.push(group.title+state[group.key].size);}
     $('filterSummary').textContent=parts.length?`（${parts.join('・')}）`:'（条件なし）';
     // Reset is available even if only the keyword search is active.
-    $('selectedHint').textContent=state.dates.size||state.wards.size?'複数選択中。日付・区の「すべて」で個別に解除できます。':'日付と区は複数選択できます。選ばない場合はすべて対象です。';
+    $('selectedHint').textContent='期間は単一選択、区は複数選択できます。全期間に戻す場合は「全期間」を選んでください。';
   }
   function toggleSet(bucket,value,checked){
     if(checked) bucket.add(value);else bucket.delete(value);
     notify();
   }
+  function choosePeriod(value){
+    state.dates.clear();
+    if(value!=='all')state.dates.add(value);
+    $('dateInput').value='';
+    notify();
+  }
   function handleWeek(e){
-    const input=e.target.closest('input[data-date]');if(!input)return;
-    toggleSet(state.dates,input.dataset.date,input.checked);
+    const button=e.target.closest('button[data-date]');if(!button)return;
+    choosePeriod(button.dataset.date);
   }
   function handleWard(e){
     const input=e.target.closest('input[data-ward]');if(!input)return;
@@ -97,14 +104,14 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
   }
   function handleDate(){
     const date=$('dateInput').value;
-    if(!date){state.dates.clear();notify();return;}
+    if(!date){choosePeriod('all');return;}
     const period=periods.find(p=>date>=p.start&&date<=p.end);
     if(!period){
       const el=$('msgBox');el.textContent='選択した日付は現在の6週間検索対象外です。';el.style.display='block';return;
     }
-    state.dates.add(period.start);
     const el=$('msgBox');el.textContent='';el.style.display='none';
-    notify();
+    choosePeriod(period.start);
+    $('dateRefine').open=false;
   }
   function reset(){
     for(const value of Object.values(state))value.clear();
@@ -112,11 +119,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('searchInput').value='';
     renderGroups();notify();
   }
-  $('weekTabs').addEventListener('change',handleWeek);
-  $('weekTabs').addEventListener('click',e=>{
-    if(!e.target.closest('button[data-date="all"]'))return;
-    state.dates.clear();$('dateInput').value='';notify();
-  });
+  $('weekTabs').addEventListener('click',handleWeek);
   $('chips').addEventListener('change',handleWard);
   $('chips').addEventListener('click',e=>{
     if(!e.target.closest('button[data-ward="__all__"]'))return;

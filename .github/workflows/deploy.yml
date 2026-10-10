@@ -95,6 +95,8 @@ jobs:
         run: python tools/validate_decisions.py --strict site/data
       - name: Validate v1.6 exclusion rereview
         run: python tools/validate_rereview.py --strict site/data
+      - name: Validate official schedule discovery evidence
+        run: python tools/validate_official_schedule_audit.py site/data
       - name: Test copy contract and shared filters
         run: npm test
 
@@ -170,6 +172,8 @@ jobs:
         run: python production-src/tools/validate_decisions.py --strict site/data
       - name: Validate candidate rereview strictly
         run: python production-src/tools/validate_rereview.py --strict site/data
+      - name: Validate candidate official schedule discovery evidence
+        run: python production-src/tools/validate_official_schedule_audit.py site/data
       - name: Run released application regression tests
         working-directory: production-src
         run: npm test

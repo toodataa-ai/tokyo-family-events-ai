@@ -541,9 +541,9 @@ family-fit-v2 decision Validatorは次をFAILにする。
 【C. 完了を実データで判定】
 - 各検索queryごとに実際に利用した語句、時刻、検索媒体、結果/エラーを記録し、各URLごとにURL・HTTP成否・取得日時・公式タイトル・候補行数を記録する。
 - 各区の queries / sources_checked / status=checked はこの実測記録から集計する。固定値で3回・3ソースと埋める、実際に検索せずpassedとする、失敗を0件扱いする行為は禁止。
-- official_schedule_checks[] に source_id, url, status=checked/error, checked_at, official_row_count, matched_candidate_count, unmatched_official_rows[] を残す。
+- official_schedule_checks[] に source_id, url, status=checked/error, checked_at, official_row_count（対象期間内の個別行数）, candidate_ids[], matched_candidate_count, unmatched_official_rows[] を残す。対象期間の該当行が0件の場合も公式表自体を正常解析した証跡を残す。
 - 対象期間の公式行には対応する candidate_id と published/excluded/duplicate decision が必須。未照合の行が1件でもあれば探索失敗（source status=incomplete）で、公開ゲートをFAILにする。
-- HTML取得不能、表の見出し不一致、年度不一致、日付/会場の未解析、対象期間内候補0件（公式掲載があると分かる場合）のいずれも checked や0件として報告せず blocker を明示。
+- HTML取得不能、表の見出し不一致、年度不一致、日付/会場の未解析、対象期間の公式行が存在するのに候補0件のいずれも checked や0件として報告せず blocker を明示。
 - 判定監査の機械的な照合は python3 tools/official_schedule_discovery.py --start YYYY-MM-DD --end YYYY-MM-DD --decision-file site/data/YYYY-MM-DD-decisions.json で実施可能。decisionは候補IDを正本とし、照合しない候補があれば終了コード2で失敗する。
 - 既存の2026-10-07 v1.5 run記録・公開decisionに過去日付の検索証跡を後付けしない。改訂後の新規実行でv1.15の探索/監査証跡を残す。
 
@@ -551,3 +551,8 @@ family-fit-v2 decision Validatorは次をFAILにする。
 - 旧18件の明示参照元をすべて保持し、追加は追記のみ。
 - 掲載一覧・検索・コピペ用リスト・6週間/祝日・画像/料金/適性・ステージング/本番分離の既存契約を変えない。
 - tests/test_official_schedule_discovery.py と tests/discovery_sources.test.mjs を回帰テストに追加。ローカル/CIで成功確認してから本番反映する。
+
+【E. CI強制ゲート】
+- v1.15以降の新規runでは discovery_evidence.wards[23] の query_logs[] と source_checks[] が必須。区ごとの coverage.queries / sources_checked はそれぞれ記録件数 / 成功件数に等しくする。
+- run.official_schedule_checks[] の source_id と candidate_ids[] を decision監査IDに照合し、未照合はFAIL。
+- CIで python3 tools/validate_official_schedule_audit.py site/data を実行する。v1.5以前の履歴は後付け記録なしで互換として扱う。

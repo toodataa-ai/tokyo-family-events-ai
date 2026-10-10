@@ -101,6 +101,7 @@ def extract_candidates(html, start, end):
     output = []
     seen = set()
     in_range_total = 0
+    table_total = 0
     for row in rows:
         if not row or "地区祭名" in " ".join(row):
             continue
@@ -115,6 +116,7 @@ def extract_candidates(html, start, end):
         dates = dates_in(days)
         if not dates:
             raise ValueError("Unparseable date for " + name)
+        table_total += 1
         selected = [date for date in dates if start <= date <= end]
         if not selected:
             continue
@@ -142,8 +144,8 @@ def extract_candidates(html, start, end):
             "source": SOURCE_URL,
             "discovery_sources": [{"channel": "explicit", "source_id": SOURCE_ID, "kind": "official_multi_event_schedule", "url": SOURCE_URL}]
         })
-    if in_range_total == 0:
-        raise ValueError("No official rows in target period; do not report checked")
+    if table_total == 0:
+        raise ValueError("Official table contains no parseable festival rows")
     return output
 
 

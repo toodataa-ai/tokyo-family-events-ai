@@ -25,11 +25,10 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(hikari["discovery_sources"][0]["source_id"], "nerima_district_festivals_2026")
         self.assertIn("ミニSL", next(c["description"] for c in candidates if "田柄" in c["name"]))
 
-    def test_fails_closed_on_missing_year_or_empty_range(self):
+    def test_fails_closed_on_missing_year_but_legitimate_empty_period(self):
         with self.assertRaises(ValueError):
             extract_candidates(FIXTURE.replace("令和8年度", "令和7年度"), dt.date(2026, 10, 10), dt.date(2026, 10, 25))
-        with self.assertRaises(ValueError):
-            extract_candidates(FIXTURE, dt.date(2026, 12, 1), dt.date(2026, 12, 2))
+        self.assertEqual(extract_candidates(FIXTURE, dt.date(2026, 12, 1), dt.date(2026, 12, 2)), [])
 
     def test_missing_coverage_is_not_success(self):
         candidates = extract_candidates(FIXTURE, dt.date(2026, 10, 10), dt.date(2026, 10, 25))

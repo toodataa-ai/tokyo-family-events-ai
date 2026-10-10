@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/family_fit_policy.test.mjs && node tests/discovery_sources.test.mjs && node tests/dedup_policy.test.mjs && node tests/copy_contract.test.mjs && node tests/app_filter.test.mjs && node tests/non_regression_policy.test.mjs && node --test tests/usage_metrics.test.mjs && python3 -m unittest discover -s tests -p test_official_schedule_discovery.py"
+    "test": "node tests/family_fit_policy.test.mjs && node tests/discovery_sources.test.mjs && node tests/dedup_policy.test.mjs && node tests/copy_contract.test.mjs && node tests/app_filter.test.mjs && node tests/non_regression_policy.test.mjs && node --test tests/usage_metrics.test.mjs && python3 -m unittest discover -s tests -p 'test_official_schedule_*.py'"
   }
 }

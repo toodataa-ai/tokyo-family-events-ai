@@ -1,5 +1,5 @@
 operation=nerima-district-festival-backfill
 candidate_sha=17b19d2a6f4173e94cd3ca9694793ba2feba41a0
 base_data_production_sha=40e28a14e576377a34e4bc5ceeb05c23b751df2f
-requested_at=2026-10-10T15:14:00+09:00
-note=Official Nerima district festivals backfill 17 event rows across five weekends; preserve application production release and historical v1.5 audit.
+requested_at=2026-10-10T15:22:00+09:00
+note=Retry 17 Nerima official district festivals with staging audit policy checkout corrected. Previous run did not promote data.

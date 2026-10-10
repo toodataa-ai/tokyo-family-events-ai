@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>コピペ用リスト｜東京23区 子連れイベント AIガイド</title>
-<link rel="stylesheet" href="styles.css?v=20261010-multifilter">
+<link rel="stylesheet" href="styles.css?v=20261010-filter-close">
 </head>
 <body class="copy-page" data-season="autumn">
 <section class="site-hero">
@@ -22,9 +22,17 @@
     <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
     <details class="multi-filter-panel" id="filterPanel">
       <summary>詳細条件 <span id="filterSummary">（条件なし）</span></summary>
-      <div class="multi-filter-sheet">
-        <div id="filterGroups"></div>
-        <button type="button" id="clearFiltersBtn">検索条件をクリア</button>
+      <div class="multi-filter-backdrop" aria-hidden="true"></div>
+      <div class="multi-filter-sheet" role="group" aria-label="詳細検索条件">
+        <div class="multi-filter-sheet-header">
+          <strong>詳細検索条件</strong>
+          <button type="button" id="filterCloseBtn" class="multi-filter-close" aria-label="詳細検索条件を閉じる">× 閉じる</button>
+        </div>
+        <div class="multi-filter-body" id="filterGroups"></div>
+        <div class="multi-filter-actions">
+          <button type="button" id="clearFiltersBtn">検索条件をクリア</button>
+          <button type="button" id="filterApplyBtn">この条件で結果を表示</button>
+        </div>
       </div>
     </details>
     <details class="date-refine" id="dateRefine">
@@ -50,7 +58,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-multifilter';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-filter-close';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;

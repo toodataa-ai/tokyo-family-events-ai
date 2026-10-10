@@ -356,7 +356,9 @@ export function readFiltersFromUrl(){
 export function serializeEventFilters(filters){
   const p=new URLSearchParams();
   if(filters.q) p.set('q',filters.q);
-  const mappings=[['dates','d'],['wards','w'],['ratings','star'],['prices','p'],['environments','e'],['reservations','r'],['sourceModes','s']];
+  // A date range is mutually exclusive: keep only one period, including for old multi-date links.
+  if(Array.isArray(filters.dates) && filters.dates.length) p.set('d',String(filters.dates[0]));
+  const mappings=[['wards','w'],['ratings','star'],['prices','p'],['environments','e'],['reservations','r'],['sourceModes','s']];
   for(const [field,key] of mappings){
     if(Array.isArray(filters[field])) filters[field].forEach(value=>p.append(key,String(value)));
   }

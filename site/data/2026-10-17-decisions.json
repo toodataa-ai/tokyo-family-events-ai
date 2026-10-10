@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 75,
-    "published": 68,
+    "candidate_total": 76,
+    "published": 69,
     "excluded": 5,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -6320,6 +6320,74 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.ikebukuropark.info/sunshine-aquarium-zannen-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "nerima-district-1259a707282c",
+      "name": "第七地区祭（田柄）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "ミニSLやおみこしなど子どもも参加できる催事あり。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "祭りで参加企画がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "日中に小学校で開催。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "地域祭で参加時間の調整が可能。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "雨天時は規模縮小、混雑への注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の公式記載なし。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "予約の公式記載なし。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "ミニSLや模擬店がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式地区祭日程表にミニSLなどの内容を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "basis": "公式地区祭日程表の同一行で名称・日付・会場・内容を確認"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "official_multi_event_schedule",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
         }
       ]
     }

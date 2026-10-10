@@ -98,15 +98,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 75,
-    "published": 68,
+    "candidates": 76,
+    "published": 69,
     "excluded": 5,
     "duplicate_removed": 2,
-    "verified": 68,
+    "verified": 69,
     "announced": 0,
     "corrected": 0,
     "thumbnail_count": 65,
-    "thumbnail_coverage": 0.956,
+    "thumbnail_coverage": 0.942,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 3,
@@ -136,6 +136,13 @@
       "mode": "targeted-duplicate-reaudit",
       "applied_at": "2026-10-07T23:40:00+09:00",
       "note": "14 duplicate decisions were targeted for re-audit; Sumida One-Coin Oktoberfest / Gibier Festival restored as a distinct concurrently held event."
+    },
+    {
+      "version": "nerima-official-district-2026-10-10",
+      "mode": "targeted-official-data-backfill",
+      "applied_at": "2026-10-10",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "count": 1
     }
   ]
 }

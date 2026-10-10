@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,findDecisionForEvent,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
+import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,eventDiscoveryProvenance,findDecisionForEvent,buildCopyUrl,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
 
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
@@ -173,6 +173,38 @@ assert.equal(classifyDiscoveryProvenance(null,legacyDecision,provenanceRegistry)
 assert.equal(classifyDiscoveryProvenance(null,legacyDecision,provenanceRegistry).explicitSources[0].label,'中野');
 assert.equal(classifyDiscoveryProvenance(null,aiDecision,provenanceRegistry).channel,'ai_cross');
 assert.equal(classifyDiscoveryProvenance(null,bothDecision,provenanceRegistry).channel,'both');
+// Source-scope search: events found by both paths belong to both individual modes.
+const bySource=[
+  {id:'ai',name:'AI only',ward:'中野区',_decision_rows:[aiDecision]},
+  {id:'fixed',name:'Fixed only',ward:'中野区',_decision_rows:[legacyDecision]},
+  {id:'both',name:'Both',ward:'中野区',_decision_rows:[bothDecision]},
+  {id:'unknown',name:'Unknown origin',ward:'中野区'}
+];
+assert.deepEqual(filterEvents(bySource,{sourceMode:'ai_cross',registry:provenanceRegistry}).map(x=>x.id),['ai','both']);
+assert.deepEqual(filterEvents(bySource,{sourceMode:'explicit',registry:provenanceRegistry}).map(x=>x.id),['fixed','both']);
+assert.deepEqual(filterEvents(bySource,{sourceMode:'all',registry:provenanceRegistry}).map(x=>x.id),['ai','fixed','both','unknown']);
+assert.equal(filterEvents(bySource,{sourceMode:'invalid'}).length,4);
+assert.equal(filterEvents(bySource,{sourceMode:'explicit',registry:provenanceRegistry,ward:'渋谷区'}).length,0);
+assert.equal(eventDiscoveryProvenance(bySource[2],null,provenanceRegistry).channel,'both');
+// Six-week dedup preserves decision rows for every week.
+assert.equal(mergedPeriods.length,1);
+assert.equal(eventDiscoveryProvenance(mergedPeriods[0],null,provenanceRegistry).channel,'both');
+assert.equal(filterEvents(mergedPeriods,{sourceMode:'ai_cross',registry:provenanceRegistry}).length,1);
+assert.equal(filterEvents(mergedPeriods,{sourceMode:'explicit',registry:provenanceRegistry}).length,1);
+// Single-week data uses its audit if no combined decision rows exist.
+assert.equal(filterEvents([{id:'ai-1',ward:'中野区'}],{sourceMode:'ai_cross',decisionAudit:{decisions:[aiDecision]},registry:provenanceRegistry}).length,1);
+assert.equal(new URL(buildCopyUrl({date:'all',sourceMode:'explicit'}),'https://example.com/').searchParams.get('src'),'explicit');
+assert.equal(new URL(buildCopyUrl({date:'all',sourceMode:'all'}),'https://example.com/').searchParams.has('src'),false);
+const fsSourceUI=(await import('node:fs')).default;
+for(const page of ['search.html','copy.html']){
+  const markup=fsSourceUI.readFileSync(new URL('../site/'+page,import.meta.url),'utf8');
+  assert.match(markup,/id="sourceSelect"/);
+  assert.match(markup,/<option value="all">取得元：両方<\/option>/);
+  assert.match(markup,/<option value="ai_cross">AI探索<\/option>/);
+  assert.match(markup,/<option value="explicit">固定サイト<\/option>/);
+  assert.match(markup,/p\.get\('src'\)/);
+}
+console.log('source scope filter + search/copy UI + six-week provenance: OK');
 const matchAudit={decisions:[{candidate_id:'other-id',name:'江戸川区民まつり',ward:'江戸川区',discovery_sources:[]}]};
 assert.equal(findDecisionForEvent(events[1],matchAudit)?.name,'江戸川区民まつり');
 console.log('discovery provenance compatibility: OK');

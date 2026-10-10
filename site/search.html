@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261008-v114">
+<link rel="stylesheet" href="styles.css?v=20261010-source-filter">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -14,12 +14,17 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・取得元（AI探索／固定サイト／両方）・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
   <div class="search-quick-row">
     <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
+    <select id="sourceSelect" aria-label="取得元を選択">
+      <option value="all">取得元：両方</option>
+      <option value="ai_cross">AI探索</option>
+      <option value="explicit">固定サイト</option>
+    </select>
     <select id="recoSelect" aria-label="子連れオススメ度">
       <option value="0">オススメ度：すべて</option>
       <option value="3">★★★ のみ</option>
@@ -68,17 +73,17 @@
   </div>
   <div class="grid" id="grid"></div>
 </main>
-<footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
+<footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・取得元・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,findDecisionForEvent,classifyDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261008-v114';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261010-source-filter';
 
 let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentPeriodStart='';
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function applyHeroSeason(){const season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
-function currentFilters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value,environment:$('environmentSelect').value,reservation:$('reservationSelect').value};}
-function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);if(allMode)p.set('date','all');history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
+function currentFilters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value,environment:$('environmentSelect').value,reservation:$('reservationSelect').value,sourceMode:$('sourceSelect').value};}
+function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);if(f.sourceMode!=='all')p.set('src',f.sourceMode);if(allMode)p.set('date','all');history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
 
 function renderWeekTabs(){
   if(!manifest)return;
@@ -87,7 +92,7 @@ function renderWeekTabs(){
   $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span></button>`+
     periods.map(period=>{const meta=holidayTabMeta(period,manifest);return `<button class="week-tab ${!allMode&&selected===period.start?'active':''} ${period.available?'':'pending'}" data-date="${period.start}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;}).join('');
 }
-function renderChips(data){const counts=countsByWard(data.events);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${data.events.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
+function renderChips(data){const base=filterEvents(data.events,{...currentFilters(),ward:'__all__',registry,decisionAudit:data.decision_audit});const counts=countsByWard(base);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${base.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
 function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
 function familyStarCount(grade){return grade==='A'?3:grade==='B'?2:grade==='C'?1:0;}
 function starSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="width:1em;height:1em;display:block;flex:0 0 1em;fill:#e0a21b;stroke:#b97808;stroke-width:.7"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
@@ -96,9 +101,7 @@ function renderLegendStars(){document.querySelectorAll('.legend-stars').forEach(
 function renderAxes(fit){const rows=familyFitAxisRows(fit);if(!rows.length)return '';return `<details class="fit-details"><summary>子連れ適性8軸を見る</summary><div class="fit-axis-grid">${rows.map(x=>`<div class="fit-axis"><b>${escapeHtml(x.label)}</b><span class="axis-grade ${fitClass(x.grade)}">${escapeHtml(x.grade)}</span><small>${escapeHtml(x.reason)}</small></div>`).join('')}</div>${fit?.override_reason?`<div class="override"><b>掲載override:</b> ${escapeHtml(fit.override_reason)}</div>`:''}</details>`;}
 
 function eventProvenance(ev){
-  const rows=Array.isArray(ev._decision_rows)&&ev._decision_rows.length?ev._decision_rows:[findDecisionForEvent(ev,currentData?.decision_audit)].filter(Boolean);
-  const combined={discovery_sources:rows.flatMap(r=>r?.discovery_sources||[])};
-  return classifyDiscoveryProvenance(ev,combined,registry);
+  return eventDiscoveryProvenance(ev,currentData?.decision_audit,registry);
 }
 function provenanceBadge(prov){
   if(prov.channel==='ai_cross') return '<span class="badge provenance-badge prov-ai">AIのみ</span>';
@@ -107,7 +110,7 @@ function provenanceBadge(prov){
   return '';
 }
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,currentFilters());$('rangeText').textContent=allMode?'6週間すべて':holidayRangeLabel(currentData.period_start||currentData.sat,currentData.period_end||currentData.sun,manifest);$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=allMode?'6週間すべて':holidayRangeLabel(currentData.period_start||currentData.sat,currentData.period_end||currentData.sun,manifest);$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=filtered.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -146,7 +149,7 @@ async function loadSelected(){
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;currentPeriodStart='';$('dateInput').value='';}else{allMode=false;currentPeriodStart=b.dataset.date;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('reservationSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});$('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
+$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;currentPeriodStart='';$('dateInput').value='';}else{allMode=false;currentPeriodStart=b.dataset.date;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('reservationSelect').addEventListener('change',render);$('sourceSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});$('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
 (async()=>{try{
   renderLegendStars();[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
   const p=new URLSearchParams(location.search),dateParam=p.get('date');
@@ -157,6 +160,7 @@ $('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab')
   $('priceSelect').value=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';
   $('environmentSelect').value=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';
   $('reservationSelect').value=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';
+  $('sourceSelect').value=['ai_cross','explicit'].includes(p.get('src'))?p.get('src'):'all';
   renderWeekTabs();await loadSelected();
 }catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>

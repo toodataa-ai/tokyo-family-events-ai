@@ -80,7 +80,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     if(state.wards.size)parts.push('区'+state.wards.size);
     for(const group of GROUPS){if(state[group.key].size)parts.push(group.title+state[group.key].size);}
     $('filterSummary').textContent=parts.length?`（${parts.join('・')}）`:'（条件なし）';
-    const reset=$('clearFiltersBtn');if(reset)reset.disabled=!parts.length;
+    // Reset is available even if only the keyword search is active.
     $('selectedHint').textContent=state.dates.size||state.wards.size?'複数選択中。日付・区の「すべて」で個別に解除できます。':'日付と区は複数選択できます。選ばない場合はすべて対象です。';
   }
   function toggleSet(bucket,value,checked){

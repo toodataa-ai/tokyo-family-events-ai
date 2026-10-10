@@ -318,6 +318,7 @@ export function filterEvents(events, filters={}){
   const price = filters.price || 'all';
   const environment = filters.environment || 'all';
   const reservation = filters.reservation || 'all';
+  const sourceMode = ['ai_cross','explicit'].includes(filters.sourceMode) ? filters.sourceMode : 'all';
   return (events || []).filter(ev => {
     if(ward !== '__all__' && ev.ward !== ward) return false;
     if(q && !eventSearchText(ev).includes(q)) return false;
@@ -325,6 +326,11 @@ export function filterEvents(events, filters={}){
     if(price !== 'all' && eventPriceCategory(ev) !== price) return false;
     if(environment !== 'all' && indoorOutdoorCategory(ev) !== environment) return false;
     if(reservation !== 'all' && reservationCategory(ev) !== reservation) return false;
+    if(sourceMode !== 'all'){
+      const provenance=eventDiscoveryProvenance(ev,filters.decisionAudit,filters.registry);
+      if(sourceMode==='ai_cross' && !provenance.ai) return false;
+      if(sourceMode==='explicit' && !provenance.explicit) return false;
+    }
     return true;
   });
 }
@@ -338,7 +344,7 @@ export function countsByWard(events){
 export function readFiltersFromUrl(){
   const p = new URLSearchParams(location.search);
   const ward = WARDS.includes(p.get('ward')) ? p.get('ward') : '__all__';
-  return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all',reservation:p.get('reserve')||'all'};
+  return {date:p.get('date')||'',ward,q:p.get('q')||'',recMin:p.get('rec')||'0',price:p.get('price')||'all',environment:p.get('env')||'all',reservation:p.get('reserve')||'all',sourceMode:['ai_cross','explicit'].includes(p.get('src'))?p.get('src'):'all'};
 }
 
 export function buildCopyUrl(filters){
@@ -350,6 +356,7 @@ export function buildCopyUrl(filters){
   if(filters.price && filters.price !== 'all') p.set('price', filters.price);
   if(filters.environment && filters.environment !== 'all') p.set('env', filters.environment);
   if(filters.reservation && filters.reservation !== 'all') p.set('reserve', filters.reservation);
+  if(['ai_cross','explicit'].includes(filters.sourceMode)) p.set('src', filters.sourceMode);
   const qs = p.toString();
   return 'copy.html' + (qs ? '?' + qs : '');
 }
@@ -412,6 +419,14 @@ export function findDecisionForEvent(event,audit){
     if(byUrl) return byUrl;
   }
   return same[0]||null;
+}
+
+export function eventDiscoveryProvenance(event,audit,registry){
+  const rows=Array.isArray(event?._decision_rows)&&event._decision_rows.length
+    ? event._decision_rows
+    : [findDecisionForEvent(event,audit)].filter(Boolean);
+  const combined={discovery_sources:rows.flatMap(row=>row?.discovery_sources||[])};
+  return classifyDiscoveryProvenance(event,combined,registry);
 }
 
 export function classifyDiscoveryProvenance(event,decision,registry){

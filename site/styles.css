@@ -741,3 +741,49 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .week-tab:has(input[type=checkbox]) span{font-size:9px}
   .chip input[type=checkbox]{width:12px;height:12px;min-width:12px}
 }
+
+/* Reliable dismissal on iOS: header and actions remain visible while only options scroll. */
+.multi-filter-panel[open]{z-index:90}
+.multi-filter-backdrop{display:none}
+.multi-filter-sheet{
+  display:flex;flex-direction:column;overflow:hidden;padding:0;
+  max-height:min(65vh,550px);box-sizing:border-box;
+}
+.multi-filter-sheet-header,.multi-filter-actions{
+  flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  gap:10px;background:#fff;padding:10px 12px;
+}
+.multi-filter-sheet-header{border-bottom:1px solid #edf0f3}
+.multi-filter-sheet-header strong{font-size:13px;color:#344054}
+.multi-filter-close{
+  min-height:36px;min-width:85px;border:1px solid #cbd5e1;background:#f8fafc;
+  color:#16324f;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;
+}
+.multi-filter-body{
+  flex:1 1 auto;overflow-x:hidden;overflow-y:auto;min-height:0;
+  padding:10px 12px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+}
+.multi-filter-actions{border-top:1px solid #edf0f3}
+.multi-filter-actions #clearFiltersBtn{min-height:40px;white-space:nowrap}
+#filterApplyBtn{
+  flex:1;min-height:40px;border:0;border-radius:8px;
+  background:#16324f;color:white;font-size:12px;font-weight:700;cursor:pointer;
+}
+@media(max-width:680px){
+  .multi-filter-panel[open] .multi-filter-backdrop{
+    display:block;position:fixed;inset:0;z-index:0;
+    background:rgba(15,23,42,.36);
+  }
+  .multi-filter-panel[open] .multi-filter-sheet{
+    position:fixed;left:10px;right:10px;
+    top:max(56px, calc(env(safe-area-inset-top, 0px) + 10px));
+    bottom:max(62px, calc(env(safe-area-inset-bottom, 0px) + 12px));
+    z-index:1;width:auto;max-height:none;
+    border-radius:12px;box-shadow:0 12px 34px rgba(16,24,40,.27);
+  }
+  .multi-filter-sheet-header{padding:10px 12px}
+  .multi-filter-sheet-header strong{font-size:13px}
+  .multi-filter-close{min-height:38px}
+  .multi-filter-body{padding:8px 12px}
+  .multi-filter-actions{padding:10px 12px}
+}

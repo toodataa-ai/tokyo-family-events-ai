@@ -1594,11 +1594,28 @@
       },
       "corrections": {},
       "note": "限定重複再監査。10/10公演とは日付・出演者・チケットURLが異なる別公演として再確認。"
+    },
+    {
+      "id": "nerima-district-b3c4b467dce3",
+      "status": "verified",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-10練馬区公式日程表で名称・日時・会場を確認。料金と予約は公式に記載なし。"
     }
   ],
   "summary": {
-    "total": 90,
-    "verified": 90,
+    "total": 91,
+    "verified": 91,
     "announced": 0,
     "corrected": 0
   }

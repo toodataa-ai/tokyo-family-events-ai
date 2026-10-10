@@ -98,15 +98,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 97,
-    "published": 90,
+    "candidates": 98,
+    "published": 91,
     "excluded": 4,
     "duplicate_removed": 3,
-    "verified": 90,
+    "verified": 91,
     "announced": 0,
     "corrected": 0,
     "thumbnail_count": 84,
-    "thumbnail_coverage": 0.933,
+    "thumbnail_coverage": 0.923,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 2,
@@ -136,6 +136,14 @@
       "mode": "targeted-duplicate-reaudit",
       "applied_at": "2026-10-07T23:40:00+09:00",
       "note": "14 duplicate decisions were targeted for re-audit; Shinagawa Ebara 2 and GIGAMORI MAX LIVE 10/11 restored as distinct attendance units."
+    },
+    {
+      "version": "nerima-official-district-2026-10-10",
+      "mode": "targeted-official-data-backfill",
+      "applied_at": "2026-10-10",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "count": 1,
+      "note": "v1.5 historical exploration counters preserved; new facts verified from official table."
     }
   ]
 }

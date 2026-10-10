@@ -10,10 +10,10 @@
   "run_file": "2026-10-10-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 97,
+    "candidate_count": 98,
     "duplicate_removed": 3,
     "excluded_count": 4,
-    "published_count": 90,
+    "published_count": 91,
     "wards": [
       {
         "ward": "千代田区",
@@ -191,9 +191,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 9,
-        "published_count": 7,
-        "note": "v1.5完全再探索。候補9件、掲載5件。 v1.6除外再審査反映。"
+        "candidate_count": 10,
+        "published_count": 8,
+        "note": "v1.5完全再探索。候補9件、掲載5件。 v1.6除外再審査反映。 10/10公式地区祭表から1件追加（過去ログは変更しない）。"
       },
       {
         "ward": "足立区",
@@ -226,7 +226,8 @@
   },
   "event_files": [
     "2026-10-10-events-01.json",
-    "2026-10-10-events-parity.json"
+    "2026-10-10-events-parity.json",
+    "2026-10-10-events-nerima-official.json"
   ],
   "events": []
 }

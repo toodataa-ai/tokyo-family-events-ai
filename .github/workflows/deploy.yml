@@ -172,8 +172,13 @@ jobs:
         run: python production-src/tools/validate_decisions.py --strict site/data
       - name: Validate candidate rereview strictly
         run: python production-src/tools/validate_rereview.py --strict site/data
+      - name: Checkout staging audit policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-policy-src
       - name: Validate candidate official schedule discovery evidence
-        run: python production-src/tools/validate_official_schedule_audit.py site/data
+        run: python staging-policy-src/tools/validate_official_schedule_audit.py site/data
       - name: Run released application regression tests
         working-directory: production-src
         run: npm test

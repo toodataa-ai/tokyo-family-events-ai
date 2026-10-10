@@ -729,16 +729,10 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .multi-option{font-size:11px}
 }
 
-/* Native checkbox alignment within the compact, horizontally scrollable date and ward rows. */
-.week-tab:has(input[type=checkbox]){display:flex;align-items:center;flex-wrap:wrap;column-gap:4px;row-gap:1px;align-content:center}
-.week-tab input[type=checkbox]{width:13px;height:13px;min-width:13px;margin:0;accent-color:#16324f}
-.week-tab:has(input[type=checkbox]) b{display:inline;font-size:12px;line-height:1.2}
-.week-tab:has(input[type=checkbox]) span{display:block;flex-basis:100%;font-size:10px}
+/* Keep ward chips multi-select; period tabs are ordinary single-select buttons. */
 .chip:has(input[type=checkbox]){display:inline-flex;align-items:center;gap:5px}
 .chip input[type=checkbox]{width:14px;height:14px;min-width:14px;margin:0;accent-color:#16324f}
 @media(max-width:680px){
-  .week-tab:has(input[type=checkbox]) b{font-size:11px}
-  .week-tab:has(input[type=checkbox]) span{font-size:9px}
   .chip input[type=checkbox]{width:12px;height:12px;min-width:12px}
 }
 

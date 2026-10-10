@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
-<link rel="stylesheet" href="styles.css?v=20261010-source-filter">
+<link rel="stylesheet" href="styles.css?v=20261010-multifilter">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
@@ -14,54 +14,32 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">日付指定なしなら6週間をまとめて横断検索。週・区・取得元（AI探索／固定サイト／両方）・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">6週間のイベントから、日付・区・取得元・オススメ度・料金・屋内外・申込条件を複数選択できます。詳細条件は折りたためます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
   <div class="search-quick-row">
     <input type="search" id="searchInput" class="unified-search-input" placeholder="イベント名・会場・内容を検索" aria-label="キーワード検索">
-    <select id="sourceSelect" aria-label="取得元を選択">
-      <option value="all">取得元：両方</option>
-      <option value="ai_cross">AI探索</option>
-      <option value="explicit">固定サイト</option>
-    </select>
-    <select id="recoSelect" aria-label="子連れオススメ度">
-      <option value="0">オススメ度：すべて</option>
-      <option value="3">★★★ のみ</option>
-      <option value="2">★★ 以上</option>
-      <option value="1">★ 以上</option>
-    </select>
-    <select id="priceSelect" aria-label="料金">
-      <option value="all">料金：すべて</option>
-      <option value="free">無料</option>
-      <option value="mixed">無料あり</option>
-      <option value="paid">有料</option>
-    </select>
-    <select id="environmentSelect" aria-label="屋内・屋外">
-      <option value="all">場所：すべて</option>
-      <option value="indoor">屋内</option>
-      <option value="outdoor">屋外</option>
-      <option value="mixed">屋内・屋外</option>
-    </select>
-    <select id="reservationSelect" aria-label="予約・事前申込">
-      <option value="all">申込：すべて</option>
-      <option value="none">申込不要</option>
-      <option value="required">要事前申込</option>
-      <option value="partial">一部要申込</option>
-      <option value="unknown">申込要確認</option>
-    </select>
+    <details class="multi-filter-panel" id="filterPanel">
+      <summary>詳細条件 <span id="filterSummary">（条件なし）</span></summary>
+      <div class="multi-filter-sheet">
+        <div id="filterGroups"></div>
+        <button type="button" id="clearFiltersBtn">検索条件をクリア</button>
+      </div>
+    </details>
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
       <div class="date-refine-panel">
         <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この週末を表示</button>
+        <button id="updateBtn">この日付を追加</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
     </details>
   </div>
 </section>
-<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末"></nav>
+<p id="selectedHint" class="multi-selection-hint" aria-live="polite"></p>
+<nav class="week-tabs compact-week-tabs" id="weekTabs" aria-label="6週間の週末を複数選択"></nav>
 <nav class="chips compact-ward-chips" id="chips" aria-label="区で絞り込み"></nav>
 <main>
   <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
@@ -76,23 +54,21 @@
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・取得元・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
-import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261010-source-filter';
+import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261010-multifilter';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-multifilter';
 
-let manifest=null,registry=null,currentData=null,currentWard='__all__',allMode=false,currentPeriodStart='';
+let manifest=null,registry=null,currentData=null,filterUI=null;
 const $=id=>document.getElementById(id);
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function applyHeroSeason(){const season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
-function currentFilters(){return {date:allMode?'':$('dateInput').value,ward:currentWard,q:$('searchInput').value.trim(),recMin:$('recoSelect').value,price:$('priceSelect').value,environment:$('environmentSelect').value,reservation:$('reservationSelect').value,sourceMode:$('sourceSelect').value};}
-function syncUrl(){const f=currentFilters(),p=new URLSearchParams();if(f.date)p.set('date',f.date);if(f.ward!=='__all__')p.set('ward',f.ward);if(f.q)p.set('q',f.q);if(Number(f.recMin))p.set('rec',f.recMin);if(f.price!=='all')p.set('price',f.price);if(f.environment!=='all')p.set('env',f.environment);if(f.reservation!=='all')p.set('reserve',f.reservation);if(f.sourceMode!=='all')p.set('src',f.sourceMode);if(allMode)p.set('date','all');history.replaceState(null,'',p.toString()?'?'+p.toString():location.pathname);}
-
-function renderWeekTabs(){
-  if(!manifest)return;
-  const periods=holidayPeriodSlots(manifest,manifest.default);
-  const selected=currentPeriodStart||$('dateInput').value||'';
-  $('weekTabs').innerHTML=`<button class="week-tab all-week-tab ${allMode?'active':''}" data-date="all"><b>全期間</b><span>6週間</span></button>`+
-    periods.map(period=>{const meta=holidayTabMeta(period,manifest);return `<button class="week-tab ${!allMode&&selected===period.start?'active':''} ${period.available?'':'pending'}" data-date="${period.start}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;}).join('');
+function currentFilters(){return {...filterUI.filters(),q:$('searchInput').value.trim()};}
+function syncUrl(){
+  const qs=filterUI.serialize($('searchInput').value.trim());
+  history.replaceState(null,'',qs?'?'+qs:location.pathname);
 }
-function renderChips(data){const base=filterEvents(data.events,{...currentFilters(),ward:'__all__',registry,decisionAudit:data.decision_audit});const counts=countsByWard(base);$('chips').innerHTML=[`<button class="chip ${currentWard==='__all__'?'active':''}" data-ward="__all__">すべて <span>${base.length}</span></button>`,...WARDS.map(w=>`<button class="chip ${currentWard===w?'active':''} ${counts[w]===0?'zero':''}" data-ward="${w}">${w} <span>${counts[w]}</span></button>`)].join('');}
+function renderWeekTabs(){filterUI.renderWeekTabs();}
+function renderChips(data){filterUI.renderWardChips(data);}
+
 function fitClass(grade){return grade==='A'?'fit-a':grade==='B'?'fit-b':grade==='C'?'fit-c':'fit-d';}
 function familyStarCount(grade){return grade==='A'?3:grade==='B'?2:grade==='C'?1:0;}
 function starSvg(){return '<svg class="star-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="width:1em;height:1em;display:block;flex:0 0 1em;fill:#e0a21b;stroke:#b97808;stroke-width:.7"><path d="M12 2.7l2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.92 1.06-6.2L3 9.23l6.22-.9L12 2.7z"/></svg>';}
@@ -110,7 +86,7 @@ function provenanceBadge(prov){
   return '';
 }
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=allMode?'6週間すべて':holidayRangeLabel(currentData.period_start||currentData.sat,currentData.period_end||currentData.sun,manifest);$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'6週間すべて';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=filtered.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -127,41 +103,24 @@ function render(){
 async function loadSelected(){
   try{
     showMsg('');applyHeroSeason();
-    if(allMode){
-      const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
-      const dataRows=loaded.map(x=>x.data).filter(Boolean);
-      currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,publication_tier:'all',events:mergeEventsAcrossWeeks(dataRows),decision_audit:null};
-      render();return;
-    }
-    const selectedDate=$('dateInput').value;
-    const periods=holidayPeriodSlots(manifest,manifest.default);
-    const period=periods.find(x=>selectedDate>=x.start&&selectedDate<=x.end)||null;
-    const sourceSat=period?.sourceSat||saturdayOf(selectedDate);
-    const {entry,data}=await loadWeekend(manifest,sourceSat);
-    currentPeriodStart=period?.start||selectedDate;
-    renderWeekTabs();
-    if(!entry){
-      showMsg('この休日は6週間ローリング探索の対象ですが、現在はデータ取得前です。');
-      currentData=null;$('grid').innerHTML='<p class="empty">次回のローリング更新でイベントを取得します。</p>';$('countText').textContent='';$('rangeText').textContent=period?holidayRangeLabel(period.start,period.end,manifest):selectedDate;return;
-    }
-    const events=period?.kind==='holiday'?eventsOverlappingPeriod(data.events,period.start,period.end):data.events;
-    currentData={...data,events,period_start:period?.start||data.sat,period_end:period?.end||data.sun};render();
+    const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
+    const rows=loaded.map(x=>x.data).filter(Boolean);
+    currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,
+      publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
+    render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
+
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
-$('weekTabs').addEventListener('click',e=>{const b=e.target.closest('.week-tab');if(!b)return;if(b.dataset.date==='all'){allMode=true;currentPeriodStart='';$('dateInput').value='';}else{allMode=false;currentPeriodStart=b.dataset.date;$('dateInput').value=b.dataset.date;}loadSelected();});$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;currentWard=b.dataset.ward;render();});$('searchInput').addEventListener('input',render);$('recoSelect').addEventListener('change',render);$('priceSelect').addEventListener('change',render);$('environmentSelect').addEventListener('change',render);$('reservationSelect').addEventListener('change',render);$('sourceSelect').addEventListener('change',render);$('updateBtn').addEventListener('click',()=>{allMode=!$('dateInput').value;currentPeriodStart='';loadSelected();});$('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
+$('searchInput').addEventListener('input',render);
+$('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
 (async()=>{try{
-  renderLegendStars();[manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
-  const p=new URLSearchParams(location.search),dateParam=p.get('date');
-  allMode=!dateParam||dateParam==='all';const d=allMode?'':dateParam;currentPeriodStart=d;$('dateInput').value=d;applyHeroSeason();
-  const w=p.get('ward');if(WARDS.includes(w))currentWard=w;
-  $('searchInput').value=p.get('q')||'';
-  $('recoSelect').value=['1','2','3'].includes(p.get('rec'))?p.get('rec'):'0';
-  $('priceSelect').value=['free','mixed','paid'].includes(p.get('price'))?p.get('price'):'all';
-  $('environmentSelect').value=['indoor','outdoor','mixed'].includes(p.get('env'))?p.get('env'):'all';
-  $('reservationSelect').value=['none','required','partial','unknown'].includes(p.get('reserve'))?p.get('reserve'):'all';
-  $('sourceSelect').value=['ai_cross','explicit'].includes(p.get('src'))?p.get('src'):'all';
-  renderWeekTabs();await loadSelected();
+  renderLegendStars();
+  [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);
+  $('searchInput').value=new URLSearchParams(location.search).get('q')||'';
+  filterUI=createMultiFilterUI({manifest,registry,onChange:render,getData:()=>currentData});
+  applyHeroSeason();
+  await loadSelected();
 }catch(e){console.error(e);showMsg('初期データの読み込みに失敗しました。');}})();
 </script>
 </body></html>

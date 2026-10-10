@@ -213,18 +213,26 @@ assert.deepEqual(filterEvents(multiScope,{periods:[{start:'2026-10-10',end:'2026
 assert.deepEqual(filterEvents(multiScope,{periods:[{start:'2026-10-17',end:'2026-10-18'}],wards:['杉並区']}).map(x=>x.id),['b']);
 const encoded=serializeEventFilters({q:'祭り',dates:['2026-10-10','2026-10-17'],wards:['中野区','杉並区'],prices:['free','paid'],ratings:['3','2'],sourceModes:['ai_cross']});
 const params=new URLSearchParams(encoded);
-assert.deepEqual(params.getAll('d'),['2026-10-10','2026-10-17']);
+assert.deepEqual(params.getAll('d'),['2026-10-10']);
 assert.deepEqual(params.getAll('w'),['中野区','杉並区']);
 assert.deepEqual(params.getAll('p'),['free','paid']);
 assert.deepEqual(params.getAll('star'),['3','2']);
 assert.deepEqual(params.getAll('s'),['ai_cross']);
 assert.equal(params.get('q'),'祭り');
 assert.equal(new URL(buildCopyUrl({dates:['2026-10-10','2026-10-17'],wards:['中野区','杉並区']}),'https://example.com/').searchParams.getAll('w').length,2);
+assert.deepEqual(new URL(buildCopyUrl({dates:['2026-10-10','2026-10-17']}),'https://example.com/').searchParams.getAll('d'),['2026-10-10']);
 const fsSourceUI=(await import('node:fs')).default;
 const sharedUI=fsSourceUI.readFileSync(new URL('../site/multi-filter-ui.js',import.meta.url),'utf8');
 assert.match(sharedUI,/type="checkbox"/);
 assert.match(sharedUI,/initialState/);
 assert.match(sharedUI,/state\.dates\.add/);
+assert.match(sharedUI,/function choosePeriod\(value\)/);
+assert.match(sharedUI,/state\.dates\.clear\(\);\s*if\(value!=='all'\)state\.dates\.add\(value\)/);
+assert.match(sharedUI,/const validDate=params\.getAll\('d'\)\.find/);
+assert.match(sharedUI,/weekTabs'\)\.addEventListener\('click',handleWeek\)/);
+assert.doesNotMatch(sharedUI,/input type="checkbox" data-date/);
+assert.match(sharedUI,/button type="button" class="week-tab/);
+assert.match(sharedUI,/input type="checkbox" data-ward/);
 assert.match(sharedUI,/toggleSet\(state\.wards/);
 for(const page of ['search.html','copy.html']){
   const markup=fsSourceUI.readFileSync(new URL('../site/'+page,import.meta.url),'utf8');
@@ -234,6 +242,8 @@ for(const page of ['search.html','copy.html']){
   assert.match(markup,/createMultiFilterUI/);
   assert.match(markup,/filterUI\.serialize/);
   assert.doesNotMatch(markup,/id="sourceSelect"/);
+  assert.match(markup,/aria-label="全期間または1つの週末・祝日を選択"/);
+  assert.match(markup,/この期間を表示/);
   assert.match(markup,/id="filterCloseBtn"/);
   assert.match(markup,/id="filterApplyBtn"/);
   assert.match(markup,/class="multi-filter-backdrop"/);

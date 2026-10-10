@@ -234,7 +234,22 @@ for(const page of ['search.html','copy.html']){
   assert.match(markup,/createMultiFilterUI/);
   assert.match(markup,/filterUI\.serialize/);
   assert.doesNotMatch(markup,/id="sourceSelect"/);
+  assert.match(markup,/id="filterCloseBtn"/);
+  assert.match(markup,/id="filterApplyBtn"/);
+  assert.match(markup,/class="multi-filter-backdrop"/);
+  assert.match(markup,/class="multi-filter-body"/);
 }
+assert.match(sharedUI,/\$\('filterCloseBtn'\)\.addEventListener\('click'/);
+assert.match(sharedUI,/\$\('filterApplyBtn'\)\.addEventListener\('click'/);
+assert.match(sharedUI,/\.multi-filter-backdrop'\)\.addEventListener\('click'/);
+assert.match(sharedUI,/document\.addEventListener\('pointerdown'/);
+assert.match(sharedUI,/document\.addEventListener\('keydown'/);
+assert.match(sharedUI,/panel\.open=false/);
+const filterCSS=fsSourceUI.readFileSync(new URL('../site/styles.css',import.meta.url),'utf8');
+assert.match(filterCSS,/\.multi-filter-sheet-header/);
+assert.match(filterCSS,/\.multi-filter-actions/);
+assert.match(filterCSS,/\.multi-filter-body\s*\{/);
+assert.match(filterCSS,/safe-area-inset-bottom/);
 console.log('multi-selection OR/AND, URL state, cross-week date + search/copy UI: OK');
 const matchAudit={decisions:[{candidate_id:'other-id',name:'江戸川区民まつり',ward:'江戸川区',discovery_sources:[]}]};
 assert.equal(findDecisionForEvent(events[1],matchAudit)?.name,'江戸川区民まつり');

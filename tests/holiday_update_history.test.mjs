@@ -29,6 +29,6 @@ assert.equal(result.rolled_out_unique,1);
 assert.equal(uniqueEvents([...now,now]).size,3);
 assert.throws(()=>buildEntry(oldManifest,{...newManifest,generated:oldManifest.generated},old,now,'2026-10-13',base),/timestamp/);
 assert.throws(()=>buildEntry(oldManifest,{...newManifest,weekends:newManifest.weekends.slice(0,5)},old,now,'2026-10-13',base),/6-week/);
-assert.throws(()=>buildEntry(oldManifest,newManifest,old,now,'2026-10-14',base),/Saturday/);
+assert.throws(()=>buildEntry(oldManifest,newManifest,old,now,'2026-10-19',base),/Saturday/);
 assert.throws(()=>buildEntry(oldManifest,newManifest,old,now,'2026-10-13','broken'),/SHA/);
 console.log('holiday update history generator: OK');

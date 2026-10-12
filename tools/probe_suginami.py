@@ -73,6 +73,8 @@ def probe(kind, url):
            ("event" in a["href"] or "event" in a["label"].lower() or "祭" in a["label"]
              or "まつり" in a["label"] or "2026" in a["href"] )][:45]
         row["all_anchor_count"]=len(dom.links)
+        if "required_original" in kind:
+            row["links_tail"]=dom.links[-35:]
         row["body_sample"]=text[:1200]
     if row.get("status_code")==200 and row.get("contains_year"):
         row["status"]="downloaded"
@@ -88,7 +90,9 @@ for m in (10,11):
     ]
     for kind,params in queries:
         row=probe(f"{m:02}-{kind}",BASE+"?"+urlencode(params))
-        print(json.dumps({k:v for k,v in row.items() if k not in ("matching_links","body_sample")},ensure_ascii=False),flush=True)
+        print(json.dumps({k:v for k,v in row.items() if k not in ("matching_links","body_sample","links_tail")},ensure_ascii=False),flush=True)
+        if kind=="required_original":
+            print("OFFICIAL_CALENDAR_LINKS "+str(m)+" "+json.dumps(row.get("links_tail",[]),ensure_ascii=False),flush=True)
         out.append(row)
 os.makedirs("/tmp/suginami-calendar-probe",exist_ok=True)
 with open("/tmp/suginami-calendar-probe/probe.json","w",encoding="utf-8") as f:

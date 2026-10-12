@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-10-r1",
+  "current_public_release": "release/2026-10-13-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -51,7 +51,16 @@
       "workflow_run_id": 38012697484,
       "note": "取得経路・区・子連れオススメ度・料金・屋内外・申込条件の複数選択と折りたたみ検索、期間の単一選択復帰、モバイル開閉改善、検索／コピペ用リストの条件連携。回帰テストと本番Pagesデプロイ成功を確認。",
       "public_version": "1.04"
+    },
+    {
+      "release_id": "release/2026-10-13-r1",
+      "branch": "release/2026-10-13-r1",
+      "commit_sha": "8de461f32ced3e4b9da8462db69213ac83f8521d",
+      "deployed_at": "2026-10-12T23:06:08Z",
+      "workflow_run_id": 38320277789,
+      "note": "日本の祝日と連続休日明けを考慮した日付可変の6週間イベント更新計画。対象週・単独祝日・必須参照元の月別URLを算出し、更新判定と回帰テストを追加。既存イベントデータ、検索UI、公開データ反映方式は変更なし。",
+      "public_version": "1.05"
     }
   ],
-  "current_public_version": "1.04"
+  "current_public_version": "1.05"
 }

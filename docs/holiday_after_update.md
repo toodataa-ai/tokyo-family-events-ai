@@ -15,3 +15,13 @@ planは site/data には書き込めず、検索結果や「checked」「verifie
 変更候補は data-production の基準SHAに基づく data-staging 上のデータ許可ファイルに限定し、Strict検証後のみ既存の data専用デプロイ経路を利用する。production アプリコード・公開Versionは変更しない。
 
 回帰テスト: npm test （Python単体は python3 -m unittest discover -s tests -p test_rolling_horizon.py）。
+
+## 休日明け更新の履歴を必ず保存
+
+実際の23区探索、全公式監査、画像、厳格バリデーションが終わり、未公開の data-staging 候補を作成したあと、data-production の現行SHAを基準に履歴を生成する。
+
+    node tools/holiday_update_history.mjs --write --as-of 2026-10-13 --base-ref <data-production-SHA> --data-dir site/data
+
+これにより既存の履歴を残したまま、更新日・6週間の対象期間・前後のユニークイベント数・追加・変更・掲載終了・対象期間外に出た数の1行が増える。イベント個票は公開アプリの eventIdentityKey と同じキー、verifications とサブファイルを読み込んで数える。実際の更新をしなかった場合は生成しない。
+
+data-staging に上記JSONを含めてコミットする。operation=holiday-after-update のデータ本番反映時は、既存の CI で厳格監査したあと、さらに node staging-policy-src/tools/holiday_update_history.mjs --check ... を実行し、過去履歴の削除、未記録、件数差異や期間差異を検出したら公開を止める。**Pages反映成功後にのみ本番で履歴が見える**。アプリのリリースだけではデータ更新履歴に追加しない。

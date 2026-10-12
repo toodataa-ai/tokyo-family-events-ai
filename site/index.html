@@ -28,8 +28,8 @@
       <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間・重複統合後</small></div>
     </div>
     <details class="update-history-details" id="updateHistoryDetails">
-      <summary><span>休日明けの更新履歴</span><small id="updateHistorySummary">次回更新後に記録</small></summary>
-      <div class="update-history-list" id="updateHistoryList"><p>次回の休日明け更新後に、実行結果をここへ記録します。</p></div>
+      <summary><span>休日明けの更新履歴</span><small id="updateHistorySummary">更新実績なし</small></summary>
+      <div class="update-history-list" id="updateHistoryList"><p>休日明けの6週間データ更新はまだ完了していません。アプリの公開Version更新とは別の履歴です。</p></div>
     </details>
   </section>
 
@@ -137,8 +137,8 @@ function renderUpdateHistory(data){
   const rows=Array.isArray(data?.history)?[...data.history].reverse():[];
   const list=$('updateHistoryList'),summary=$('updateHistorySummary');
   if(!rows.length){
-    summary.textContent='次回更新後に記録';
-    list.innerHTML='<p>次回の休日明け更新後に、実行日・対象期間・更新後の掲載件数・差分をここへ記録します。</p>';
+    summary.textContent='更新実績なし';
+    list.innerHTML='<p>休日明けの6週間データ更新はまだ完了していません。アプリの公開Version更新は下の「公開バージョン履歴」に表示します。</p>';
     return;
   }
   const latest=rows[0];

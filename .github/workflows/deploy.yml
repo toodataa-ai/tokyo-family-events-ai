@@ -179,6 +179,9 @@ jobs:
           path: staging-policy-src
       - name: Validate candidate official schedule discovery evidence
         run: python staging-policy-src/tools/validate_official_schedule_audit.py site/data
+      - name: Validate holiday-after data publication history
+        if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}
+        run: node staging-policy-src/tools/holiday_update_history.mjs --check --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data
       - name: Run released application regression tests
         working-directory: production-src
         run: npm test

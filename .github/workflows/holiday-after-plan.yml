@@ -1,0 +1,69 @@
+name: Plan holiday-after six-week events (read-only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: "Japan date YYYY-MM-DD (blank means current JST)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: holiday-after-update-plan
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging planner
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-src
+      - name: Checkout released prompt policy
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: production-src
+      - name: Checkout published data without modifying it
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate released canonical prompt and history
+        working-directory: production-src
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Calculate read-only six-week refresh plan
+        shell: bash
+        env:
+          AS_OF: ${{ inputs.as_of }}
+        run: |
+          set -euo pipefail
+          date_args=()
+          if [ -n "$AS_OF" ]; then
+            date_args+=(--as-of "$AS_OF")
+          fi
+          base="$(git -C data-src rev-parse HEAD)"
+          python3 staging-src/tools/rolling_horizon.py \
+            "${date_args[@]}" \
+            --manifest data-src/site/data/manifest.json \
+            --sources production-src/site/data/discovery_sources.json \
+            --base-data-production-sha "$base" \
+            --output "$RUNNER_TEMP/holiday-after-update-plan.json"
+      - name: Save plan for human review; never deploy
+        uses: actions/upload-artifact@v4
+        with:
+          name: holiday-after-update-plan
+          path: ${{ runner.temp }}/holiday-after-update-plan.json
+          if-no-files-found: error
+          retention-days: 30

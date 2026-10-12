@@ -80,7 +80,7 @@ class RollingHorizonTests(unittest.TestCase):
         with self.assertRaisesRegex(planner.PlanError, "SHA"):
             planner.calculate(dt.date(2026, 10, 13), HOLIDAYS, MANIFEST, SOURCES, "abc")
     def test_shift_jis_csv(self):
-        data = "国民の祝日・休日月日,国民の祝日・休日名称\n2026-10-12,スポーツの日\n"
+        data = "国民の祝日・休日月日,国民の祝日・休日名称\n2026/10/12,スポーツの日\n"
         r = planner.parse_official_csv(data.encode("cp932"))
         self.assertEqual(r[dt.date(2026, 10, 12)], "スポーツの日")
     def test_disabled_protected_source(self):

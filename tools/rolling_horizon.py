@@ -37,7 +37,7 @@ def parse_official_csv(raw):
         if len(row) < 2:
             continue
         try:
-            day = dt.datetime.strptime(row[0].strip(), "%Y-%m-%d").date()
+            day = dt.datetime.strptime(row[0].strip().replace("/", "-"), "%Y-%m-%d").date()
         except ValueError:
             continue
         name = row[1].strip()

@@ -6,7 +6,9 @@ import html
 from html.parser import HTMLParser
 import json
 import os
+import re
 import sys
+from urllib.parse import urljoin
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -73,6 +75,10 @@ def probe(kind, url):
            ("event" in a["href"] or "event" in a["label"].lower() or "祭" in a["label"]
              or "まつり" in a["label"] or "2026" in a["href"] )][:45]
         row["all_anchor_count"]=len(dom.links)
+        row["official_event_links"]=[x for x in dom.links if re.match(r"^/s\\d+/event/\\d+\\.html$", x["href"])]
+        if kind.startswith("detail:"):
+            row["text_excerpt"]=text[-2400:]
+        row["all_anchor_count"]=len(dom.links)
         if "required_original" in kind:
             row["links_tail"]=dom.links[-35:]
         row["body_sample"]=text[:1200]
@@ -95,8 +101,24 @@ for m in (10,11):
             print("OFFICIAL_CALENDAR_LINKS "+str(m)+" "+json.dumps(row.get("links_tail",[]),ensure_ascii=False),flush=True)
         out.append(row)
 os.makedirs("/tmp/suginami-calendar-probe",exist_ok=True)
+detail_results=[]
+unique_links={}
+for monthly in out:
+    if "required_original" not in monthly["kind"] or monthly.get("status")!="downloaded":
+        continue
+    for e in monthly.get("official_event_links",[]):
+        unique_links.setdefault(e["href"],e["label"])
+for href,label in sorted(unique_links.items()):
+    detail=probe("detail:"+label,urljoin(BASE,href))
+    detail_results.append(detail)
+    print("OFFICIAL_EVENT_DETAIL "+json.dumps({
+        "name":label, "url":detail["url"],"status_code":detail.get("status_code"),
+        "final_url":detail.get("final_url"),"content_length":detail.get("content_length"),
+        "error":detail.get("error"),
+        "text_tail":detail.get("text_excerpt","")[-1200:]
+    },ensure_ascii=False),flush=True)
 with open("/tmp/suginami-calendar-probe/probe.json","w",encoding="utf-8") as f:
-    json.dump({"checked_at":NOW,"results":out},f,ensure_ascii=False,indent=2)
+    json.dump({"checked_at":NOW,"results":out,"official_details":detail_results},f,ensure_ascii=False,indent=2)
 confirmed=[x for x in out if "required_original" in x["kind"] and x["status"]=="downloaded"]
 if len(confirmed)!=2:
     print("RESEARCH_BLOCKER: required category=5 URL not confirmed for both months; do not mark checked.",file=sys.stderr)

@@ -1,0 +1,37 @@
+name: Diagnose Suginami official festival calendar (read-only)
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'tools/probe_suginami.py'
+      - '.github/workflows/probe-suginami.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test exact registered URL and fallback URLs (October and November)
+        id: probe
+        continue-on-error: true
+        run: python3 tools/probe_suginami.py
+      - name: Upload actual responses and HTTP status report
+        uses: actions/upload-artifact@v4
+        with:
+          name: suginami-calendar-probe
+          path: /tmp/suginami-calendar-probe/probe.json
+          if-no-files-found: error
+      - name: Fail if mandatory URLs cannot be verified
+        if: steps.probe.outcome != 'success'
+        run: |
+          echo 'Registered category=5 URL remains a mandatory blocker. Inspect the response report; do not publish unverified data.'
+          exit 1

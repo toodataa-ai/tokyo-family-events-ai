@@ -517,8 +517,8 @@
     {
       "id": "v15-0a4b3977eb8c",
       "status": "verified",
-      "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002933",
-      "source_kind": "organizer_official",
+      "source": "https://nerimakanko.jp/event/detail.php?event_id=e000002968",
+      "source_kind": "official_tourism",
       "fields": {
         "name": "pass",
         "date": "pass",
@@ -528,10 +528,24 @@
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
-        "official_url": "pass"
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13: 練馬区観光協会の2026/10/31個別ページ（11:00〜17:00、欅の音terrace、無料）を再確認。旧detail_idを修復。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002933",
+          "to": "https://nerimakanko.jp/event/detail.php?event_id=e000002968",
+          "reason": "登録されていたe000002933はページが見つからず、練馬区観光協会の2026年10月31日の正しい詳細ページはe000002968である。",
+          "source": "https://nerimakanko.jp/event/detail.php?event_id=e000002968"
+        },
+        "image": {
+          "from": "https://www.nerimakanko.jp/img_data/e000002933.jpeg?1788759244",
+          "to": "https://nerimakanko.jp/img_data/e000002968.png?1791442858=",
+          "reason": "前イベントIDに由来する画像ではなく、正しいイベント詳細の公式ポスター画像に切り替える。",
+          "source": "https://nerimakanko.jp/event/detail.php?event_id=e000002968"
+        }
+      }
     },
     {
       "id": "v15-0940209a4557",

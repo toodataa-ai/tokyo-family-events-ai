@@ -1,0 +1,36 @@
+name: Recheck all 67 event source mismatches (read only)
+
+on:
+  push:
+    branches: [main]
+    paths: ['tools/recheck_67_mismatches.py','.github/workflows/recheck-67.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: stage
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck 67 records and 42 original event URLs
+        run: python3 stage/tools/recheck_67_mismatches.py
+      - name: Save the individual 67-row findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: complete-67-name-mismatch-source-audit
+          path: /tmp/67-verified-source-review/report.json
+          if-no-files-found: error
+          retention-days: 60

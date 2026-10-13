@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-13",
+  "date": "2026-11-03",
+  "run_type": "independent_weekday_holiday_search",
+  "status": "partial_unpublished",
+  "official_calendar_discovered": 7,
+  "search_attempted_all_23_wards": true,
+  "discovery_intent": "Date-scoped web searches, not exhaustive all-source confirmation.",
+  "remaining": [
+    "Inspect each individual official event page for venue, opening hours, pricing and participant restrictions.",
+    "Verify dates separately from multi-day event calendar spans.",
+    "Complete mandatory 23-ward multi-layer search and independent required explicit-source audit."
+  ],
+  "entries": [
+    {
+      "ward": "荒川区",
+      "name": "にっぽり青空こどもまつり",
+      "calendar": "https://www.city.arakawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?month=11&type=2&year=2026",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "練馬区",
+      "name": "ねりおと♪フェスティバル2026",
+      "calendar": "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "練馬区",
+      "name": "ねりすぽフェスティバル",
+      "calendar": "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "練馬区",
+      "name": "ねりぶんシネマday ONE PIECE FILM RED",
+      "calendar": "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "豊島区",
+      "name": "みんなのステージ2026 ダンスの部",
+      "calendar": "https://www.city.toshima.lg.jp/cgi-bin/event_cal/calendar.cgi?event_miryoku=119&month=11&type=2&year=2026",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "大田区",
+      "name": "蒲田地区ボッチャ交流大会",
+      "calendar": "https://www.city.ota.tokyo.jp/event/calendar/list_calendar202611.html",
+      "day": "2026-11-03",
+      "status": "official_calendar_listed_detail_pending"
+    },
+    {
+      "ward": "墨田区",
+      "name": "すみだ五彩の芸術祭 山﨑広太『梅若はまだ帰らない』",
+      "calendar": "https://sumida-artfest.jp/events/",
+      "day": "2026-11-03",
+      "status": "official_event_program_listed_detail_pending"
+    },
+    {
+      "ward": "台東区",
+      "name": "文化の日 親子寄席",
+      "calendar": "https://iko-yo.net/events/603268",
+      "day": "2026-11-03",
+      "status": "nonofficial_media_discovery_verify_organizer"
+    }
+  ]
+}

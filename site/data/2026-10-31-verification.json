@@ -365,8 +365,8 @@
     {
       "id": "v15-f164c9b63e06",
       "status": "verified",
-      "source": "https://www.instagram.com/bmi_jp/p/DdSnnIqyJKi",
-      "source_kind": "organizer_official",
+      "source": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
+      "source_kind": "public_official",
       "fields": {
         "name": "pass",
         "date": "pass",
@@ -376,10 +376,24 @@
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
-        "official_url": "pass"
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13：代々木公園公式で開催日時と会場を再確認。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.instagram.com/bmi_jp/p/DdSnnIqyJKi",
+          "to": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
+          "reason": "元のInstagramは公開HTMLでイベント詳細が確認できない。公園管理者が10/31と11/1の11〜18時、ケヤキ並木を告知している。",
+          "source": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html"
+        },
+        "source": {
+          "from": "https://www.yoyogikoen.info/",
+          "to": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
+          "reason": "公園管理者の公式開催予定表へ参照先を変更。",
+          "source": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html"
+        }
+      }
     },
     {
       "id": "v15-52fd793ab1a6",

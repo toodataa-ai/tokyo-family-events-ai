@@ -145,6 +145,14 @@
       "correct_url": "https://nerimakanko.jp/event/detail.php?event_id=e000002968",
       "reason": "soft-404 old tourism event ID; official event page and image verified",
       "evidence": "https://nerimakanko.jp/event/detail.php?event_id=e000002968"
+    },
+    {
+      "version": "2026-10-13-source-recheck",
+      "mode": "targeted-venue-official-source",
+      "applied_at": "2026-10-13",
+      "event_id": "v15-f164c9b63e06",
+      "official": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
+      "notes": "Replaced JS-only Instagram source."
     }
   ]
 }

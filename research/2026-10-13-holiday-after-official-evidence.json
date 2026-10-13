@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-13",
+  "prompt_version": "v1.15",
+  "status": "evidence_only_unpublished",
+  "base_data_production_sha": "17b19d2a6f4173e94cd3ca9694793ba2feba41a0",
+  "action_run": "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/38326577118",
+  "source_probes": {
+    "required_url_checks": 22,
+    "required_url_http200": 22,
+    "prior_source_urls": 213,
+    "source_http_success": 194,
+    "source_http_failures": [
+      {
+        "url": "https://d3nu0ovbfpktls.cloudfront.net/a017/sport/sports/akispoevent.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://livepocket.jp/e/q4jxr",
+        "error": "HTTP status not 200",
+        "http_status": 202
+      },
+      {
+        "url": "https://livepocket.jp/e/qop2h",
+        "error": "HTTP status not 200",
+        "http_status": 202
+      },
+      {
+        "url": "https://www.animate-onlineshop.jp/contents/fair_event/detail.php?id=116095",
+        "error": "HTTP Error 403: Forbidden",
+        "http_status": null
+      },
+      {
+        "url": "https://www.city.itabashi.tokyo.jp/bousai/1059698/1059720/1065822.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.city.kita.lg.jp/culture-tourism-sports/sports/1010365/1026581.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.city.ota.tokyo.jp/event/event_kodomo/calendar/calendar202610.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/shisetsu-kuyakusyo-chiiki-eba2/shisetsu-kuyakusyo-chiiki-eba2-oshirase/r8-furusato-matsuri-info.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s110/event/29485.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.inclusion-art.jp/archive/event/2026/20261011-420.html",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.inclusion-art.jp'. (_ssl.c:1016)>",
+        "http_status": null
+      },
+      {
+        "url": "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.inclusion-art.jp'. (_ssl.c:1016)>",
+        "http_status": null
+      },
+      {
+        "url": "https://www.inclusion-art.jp/event/index.html",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.inclusion-art.jp'. (_ssl.c:1016)>",
+        "http_status": null
+      },
+      {
+        "url": "https://www.instagram.com/circolo177/",
+        "error": "HTTP Error 429: Too Many Requests",
+        "http_status": null
+      },
+      {
+        "url": "https://www.instagram.com/kasugacho_choukai/",
+        "error": "HTTP Error 429: Too Many Requests",
+        "http_status": null
+      },
+      {
+        "url": "https://www.instagram.com/ouenmatsuri/",
+        "error": "HTTP Error 429: Too Many Requests",
+        "http_status": null
+      },
+      {
+        "url": "https://www.instagram.com/tsukururu_art",
+        "error": "HTTP Error 429: Too Many Requests",
+        "http_status": null
+      },
+      {
+        "url": "https://www.itabashi-ci.org/culturehall/event/detail/4243",
+        "error": "The read operation timed out",
+        "http_status": null
+      },
+      {
+        "url": "https://www.library.city.suginami.tokyo.jp/events/2952.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      },
+      {
+        "url": "https://www.library.shinjuku.tokyo.jp/kids/event/202608/725_89_816_2.html",
+        "error": "HTTP Error 404: Not Found",
+        "http_status": null
+      }
+    ],
+    "prior_event_fact_screen_rows": 329,
+    "title_token_unmatched_count": 67,
+    "title_token_unmatched": [
+      {
+        "id": "v15-7c623586f123",
+        "name": "祝）UENO ART & MARKET",
+        "ward": "台東区",
+        "url": "https://ameyokoinfo.com/UAM",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-7711bd973fb4",
+        "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+        "ward": "練馬区",
+        "url": "https://chihiro.jp/tokyo/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-bc7734cd6fa7",
+        "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+        "ward": "練馬区",
+        "url": "https://chihiro.jp/tokyo/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-0c6fcb6bf768",
+        "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+        "ward": "練馬区",
+        "url": "https://chihiro.jp/tokyo/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-12e084f71441",
+        "name": "祝）楽天食いしんぼう祭",
+        "ward": "渋谷区",
+        "url": "https://event.rakuten.co.jp/food/event/fes/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-ece5b36daf5e",
+        "name": "ガシャポンフレンズと行く！ガシャっと回してポーンツアーズ 2026",
+        "ward": "豊島区",
+        "url": "https://gashapon.jp/gashapon-tours2026/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-cd3125911fbb",
+        "name": "第2回 池袋ウエストグルメパーク2026",
+        "ward": "豊島区",
+        "url": "https://iwgp-gourmet.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-e9c538833268",
+        "name": "祝）第17回 九州観光・物産フェアin代々木2026",
+        "ward": "渋谷区",
+        "url": "https://kyushu-yoyogipark.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-6118237ebddf",
+        "name": "祝）HERO GATE",
+        "ward": "渋谷区",
+        "url": "https://kyushu-yoyogipark.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-62bf2f02d2c9",
+        "name": "祝）〜（月・祝）ピクサーの世界展",
+        "ward": "江東区",
+        "url": "https://mundopixar.com/ja/cities/tokyo",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-ecd097be86ba",
+        "name": "祝）〜（月・祝）ピクサーの世界展",
+        "ward": "江東区",
+        "url": "https://mundopixar.com/ja/cities/tokyo",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-f4cd156831b4",
+        "name": "祝）〜（月・祝）ピクサーの世界展",
+        "ward": "江東区",
+        "url": "https://mundopixar.com/ja/cities/tokyo",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-1a937012bbb6",
+        "name": "祝）〜（月・祝）ピクサーの世界展",
+        "ward": "江東区",
+        "url": "https://mundopixar.com/ja/cities/tokyo",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-89ce6d07da15",
+        "name": "祝）〜（月・祝）ピクサーの世界展",
+        "ward": "江東区",
+        "url": "https://mundopixar.com/ja/cities/tokyo",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-0f83c888916b",
+        "name": "秋の自然たんけんラリー",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-9611dba1436f",
+        "name": "中里の秋さがしミッション！",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-2129bbe736b8",
+        "name": "秋の自然たんけんラリー",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-9abcdd41c48d",
+        "name": "中里の秋さがしミッション！",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-0940209a4557",
+        "name": "秋の自然たんけんラリー",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-fbcf61dbdc3e",
+        "name": "中里の秋さがしミッション！",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-283fd886ff84",
+        "name": "秋の自然たんけんラリー",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-9ac12cf18b5c",
+        "name": "中里の秋さがしミッション！",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-2925b1dfd722",
+        "name": "秋の自然たんけんラリー",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-d435b737b0fe",
+        "name": "中里の秋さがしミッション！",
+        "ward": "練馬区",
+        "url": "https://nakazato.ces-net.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "r16-fcb3bba6d9fa",
+        "name": "Gelato Collection 2026",
+        "ward": "港区",
+        "url": "https://peatix.com/event/5125149",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-559426997918",
+        "name": "祝）下町盆踊りフェス2026 ～屋台グルメ市～",
+        "ward": "台東区",
+        "url": "https://shitamachi-bonodori.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-00035c9b668b",
+        "name": "秋の運河花火まつり in しながわ水辺の観光フェスタ2026",
+        "ward": "品川区",
+        "url": "https://sp2026.unga.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-fcab591dd2d9",
+        "name": "第二回代々木カップ2026 モルック＆モルっ子選手権＆モルック体験会",
+        "ward": "渋谷区",
+        "url": "https://sports.melos.media/events/3965",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "r16-590063a744bd",
+        "name": "東京舞台芸術祭 2026",
+        "ward": "豊島区",
+        "url": "https://tokyofestival.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "r16-e7d26324034d",
+        "name": "東京舞台芸術祭 2026",
+        "ward": "豊島区",
+        "url": "https://tokyofestival.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "r16-06e73ecbe3ab",
+        "name": "東京舞台芸術祭 2026",
+        "ward": "豊島区",
+        "url": "https://tokyofestival.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "r16-14fd96b3815c",
+        "name": "東京舞台芸術祭 2026",
+        "ward": "豊島区",
+        "url": "https://tokyofestival.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-66e7a87baaec",
+        "name": "親子で外遊びを楽しもう！木場プレーパーク（10月）",
+        "ward": "江東区",
+        "url": "https://trip.yumeshokunin.org/program/kiba-playpark/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-7c54df41687c",
+        "name": "祝）TOSHIMA STREET FES 2026",
+        "ward": "豊島区",
+        "url": "https://ts-fes.com",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-c6a02dd601b1",
+        "name": "祝）創エネ・あかりパーク2026",
+        "ward": "台東区",
+        "url": "https://www.akaripark.com",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-237c930495e3",
+        "name": "2026ミナコレ（MINATO COLLECTION）",
+        "ward": "港区",
+        "url": "https://www.city.minato.tokyo.jp/bungeishinkou/minakore/home.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-2ef4cd7cd382",
+        "name": "親子でエコっとプロジェクト～ガムテープのズックやさん",
+        "ward": "港区",
+        "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=14&month=11&siteid=1&type=3&year=2026",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-133c2bee5dc4",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-c149ad2a968f",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-d87c7b953233",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-2f7ba498fc6b",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-993ff6ccb46e",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-83cfaa4db36c",
+        "name": "第71回秋の区民文化祭",
+        "ward": "練馬区",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-547e37e5f152",
+        "name": "品川区民まつり 荏原第一地区",
+        "ward": "品川区",
+        "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-kuyakusyo/shisetsu-kuyakusyo-chiiki/hpg000017088.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-ad3a6e817eea",
+        "name": "企画展講演会・紙芝居実演",
+        "ward": "豊島区",
+        "url": "https://www.city.toshima.lg.jp/500/2608211303.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-4422de70baf9",
+        "name": "ファミ通40周年フェス",
+        "ward": "千代田区",
+        "url": "https://www.famitsu.com/special/content/40th/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-f47091a46f57",
+        "name": "祝）ふるさと東京応援祭 第二回ご当地グルメ 肉VS海鮮フェスin上野不忍池2026",
+        "ward": "台東区",
+        "url": "https://www.furusatotokyofes.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-f164c9b63e06",
+        "name": "第5回 トルコフード フェスティバル",
+        "ward": "渋谷区",
+        "url": "https://www.instagram.com/bmi_jp/p/DdSnnIqyJKi",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-d2655fad9362",
+        "name": "第3回 ウクライナ フェスタ",
+        "ward": "渋谷区",
+        "url": "https://www.instagram.com/bmi_jp/p/DdbJi7FN4Hv/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-52fd793ab1a6",
+        "name": "第6回 ロイカトン フェスティバル",
+        "ward": "渋谷区",
+        "url": "https://www.instagram.com/bmi_jp/p/Ddqv-TiS_NR",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-226331ab1a29",
+        "name": "祝）いきもの超ワールド展 国立科学博物館×ダーウィンが来た！",
+        "ward": "台東区",
+        "url": "https://www.kahaku.go.jp",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-16abce941248",
+        "name": "消費生活フェスタ（交流フェスタ）",
+        "ward": "新宿区",
+        "url": "https://www.koho.metro.tokyo.lg.jp/2026/10/08-moyoshi14.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-6803f9cbfb88",
+        "name": "令和8年特別展「発見された東京の化石」",
+        "ward": "千代田区",
+        "url": "https://www.library.chiyoda.tokyo.jp/information/20260705-tokyonokaseki/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-b233b389bbd2",
+        "name": "森のようちえん～身近なみどりで育てる未来の力～",
+        "ward": "練馬区",
+        "url": "https://www.midorikankyo.net/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-d287609d272e",
+        "name": "目黒区民まつり子ども広場",
+        "ward": "目黒区",
+        "url": "https://www.mkogeki.org/courses",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-a8db0eae54e6",
+        "name": "第49回練馬まつり",
+        "ward": "練馬区",
+        "url": "https://www.nerima-matsuri.com/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-0a4b3977eb8c",
+        "name": "ハロウィンナリ間ルシェ",
+        "ward": "練馬区",
+        "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002933",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-babeed2fcead",
+        "name": "解体前の特別企画「としまえん古城の塔と練馬城歴史探訪ツアー」",
+        "ward": "練馬区",
+        "url": "https://www.nerimakanko.jp/tour/detail.php?tour_id=TO000000045",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-b3d8cfb27327",
+        "name": "祝）UNI9UE PARK MARCHE’26",
+        "ward": "江東区",
+        "url": "https://www.nikoand.jp/uni9ue_park_2026/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-17ea6bab6911",
+        "name": "太子堂八幡神社例大祭",
+        "ward": "世田谷区",
+        "url": "https://www.taishido-hachiman.or.jp/reitaisai/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-be8544871ee0",
+        "name": "アソボ～ノ！ハロウィンイベント",
+        "ward": "文京区",
+        "url": "https://www.tokyo-dome.co.jp/en/asobono/event/post_55.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-9b41cfb50e62",
+        "name": "祝）秋の夜のどうぶつえん",
+        "ward": "台東区",
+        "url": "https://www.tokyo-zoo.net/ueno/news/12716/index.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-76a040217f04",
+        "name": "第22回 豊洲ハロウィン2026",
+        "ward": "江東区",
+        "url": "https://www.toyosu.or.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-5e0e43c28e84",
+        "name": "祝）ACN presents代々木フォレスト・オブ・ライツ ～光の森～",
+        "ward": "渋谷区",
+        "url": "https://www.yoyogiforestoflights.tokyo/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-649ee1f437c7",
+        "name": "子ども子育てフェスタかつしか2026",
+        "ward": "葛飾区",
+        "url": "https://www2.city.katsushika.lg.jp/kosodate/1000056/1023387/1031282.html",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-76eb6eba601d",
+        "name": "やきいもフェス® TOKYO 2026",
+        "ward": "中野区",
+        "url": "https://yakiimofes.jp/",
+        "http_status": 200,
+        "error": null
+      },
+      {
+        "id": "v15-0e0487bb0380",
+        "name": "やきいもフェス® TOKYO 2026",
+        "ward": "中野区",
+        "url": "https://yakiimofes.jp/",
+        "http_status": 200,
+        "error": null
+      }
+    ]
+  },
+  "new_official_candidates": [
+    {
+      "ward": "練馬区",
+      "name": "全国都市農業フェスティバル2027 プレイベント",
+      "days": [
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "venue": "都立光が丘公園けやき広場",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+      "remarks": "10〜16時。参加費未確認。"
+    },
+    {
+      "ward": "江戸川区",
+      "name": "第28回産業ときめきフェアinEDOGAWA",
+      "days": [
+        "2026-11-20",
+        "2026-11-21"
+      ],
+      "venue": "タワーホール船堀",
+      "url": "https://www.city.edogawa.tokyo.jp/event/28tokimeki.html",
+      "remarks": "21日は10〜16時。入場無料・申込不要。"
+    },
+    {
+      "ward": "葛飾区",
+      "name": "子ども子育てフェスタかつしか2026（鎌倉会場）",
+      "days": [
+        "2026-11-21"
+      ],
+      "venue": "子ども未来プラザ鎌倉",
+      "url": "https://www.city.katsushika.lg.jp/kosodate/1000056/1023387/1031282.html",
+      "remarks": "10〜16時。無料、一部有料・予約制ワークショップあり。"
+    },
+    {
+      "ward": "豊島区",
+      "name": "みんなのステージ2026 音楽の部",
+      "days": [
+        "2026-11-22"
+      ],
+      "venue": "南大塚ホール",
+      "url": "https://www.city.toshima.lg.jp/125/bunka/bunka/2607020913.html",
+      "remarks": "14:30開演。無料、申込不要。"
+    },
+    {
+      "ward": "板橋区",
+      "name": "スポーツマッチングテスト in 城北中央公園",
+      "days": [
+        "2026-11-22"
+      ],
+      "venue": "都立城北中央公園陸上競技場（雨天時上板橋体育館）",
+      "url": "https://www.city.itabashi.tokyo.jp/bunka/sports/jigyo/1065553.html",
+      "remarks": "小学生および保護者、1人1000円、抽選申込11月6日17時締切。未就学児不可。"
+    },
+    {
+      "ward": "渋谷区",
+      "name": "COCOLONクリスマスコンサート2026",
+      "days": [
+        "2026-11-23"
+      ],
+      "venue": "東京ウィメンズプラザ",
+      "url": "https://co-co-lon.com/event/xmas_concert26/",
+      "remarks": "13:00/15:30、申込制・一般大人2000円、子ども1000円。"
+    },
+    {
+      "ward": "文京区",
+      "name": "第48回文京菊まつり",
+      "days": [
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23"
+      ],
+      "venue": "湯島天満宮",
+      "url": "https://www.city.bunkyo.lg.jp/b014/p003949.html",
+      "remarks": "11/1〜23、午前6時から日没まで。費用未確認。"
+    },
+    {
+      "ward": "世田谷区",
+      "name": "秋野菜の収穫体験（目黒区主催）",
+      "days": [
+        "2026-11-21"
+      ],
+      "venue": "杉村農園（世田谷区上野毛4-21）",
+      "url": "https://www.city.meguro.tokyo.jp/sangyoukeizai/event/akiyasaiboshu.html",
+      "remarks": "目黒区在住者対象。1組2000円、抽選申込は10月23日必着。雨天時22日。開催地は世田谷区。"
+    },
+    {
+      "ward": "港区",
+      "name": "NIJIN教育万博2026",
+      "days": [
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "venue": "DMM六本木本社24F",
+      "url": "https://visit-minato-city.tokyo/ja-jp/events",
+      "remarks": "入場無料、公式LINE事前登録制。観光協会掲載で確認、主催者ページの個別詳細は要追加監査。"
+    },
+    {
+      "ward": "練馬区",
+      "name": "ねりまの森こどもフェスタ2026内「落ち葉と森の素材あそび」",
+      "days": [
+        "2026-11-21"
+      ],
+      "venue": "南高松の森緑地（高松2-14-4）",
+      "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "remarks": "13:30〜15:30。イベント単位で抽出、フェスタ全期間を毎日開催とはしない。"
+    }
+  ],
+  "limitations": [
+    "Source HTTP 200 or approximate title-token match is not individual verification of time, venue, booking, holiday opening.",
+    "These entries are candidates, not publishable data, and have no newly adjudicated family-fit-v2 decisions.",
+    "Must complete independent November 3 holiday search and six-week event re-audit before publishing.",
+    "Never modify production data solely from this evidence file."
+  ]
+}

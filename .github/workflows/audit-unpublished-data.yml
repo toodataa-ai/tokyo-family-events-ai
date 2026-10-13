@@ -35,6 +35,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Print exact candidate SHA for repeatable audit
+        run: echo "Audited data-staging candidate $(git rev-parse HEAD)"
       - name: Verify baseline has not moved
         run: |
           set -euo pipefail

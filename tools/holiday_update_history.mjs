@@ -68,7 +68,9 @@ export function buildEntry(oldManifest,newManifest,oldWeeks,newWeeks,asOf,baseSh
     else removed++;
   }
   Object.assign(latest,{
-    run_type:'holiday-after-update',as_of_jst:asOf,
+    run_id:'holiday-after-'+asOf+'-'+baseSha.slice(0,12),
+    run_type:'holiday_after_update',as_of_jst:asOf,
+    holiday_block_end:datePlus(asOf,-1),prompt_version:'v1.15',
     target_start:asOf,target_end:datePlus(asOf,41),
     previous_manifest_generated:oldManifest.generated||'',
     new_manifest_generated:newManifest.generated,
@@ -136,7 +138,9 @@ function execute(argv){
   if(!same(preserved,oldHistory.history)) throw Error('previous published history was modified or deleted');
   if(args.mode==='write'){
     if(newHistory.history.length!==oldHistory.history.length) throw Error('candidate already contains new history');
-  }else if(newHistory.history.length!==oldHistory.history.length+1){
+  }
+  const ids=newHistory.history.map(row=>row.run_id).filter(Boolean);
+  if(new Set(ids).size!==ids.length) throw Error('duplicate run_id in update history');else if(newHistory.history.length!==oldHistory.history.length+1){
     throw Error('exactly one new verified holiday-after history row required');
   }
   const asOf=args.mode==='write'?args['as-of']:newHistory.history.at(-1)?.as_of_jst;

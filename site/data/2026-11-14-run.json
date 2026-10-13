@@ -94,17 +94,17 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 38,
-    "published": 34,
-    "excluded": 4,
+    "published": 33,
+    "excluded": 5,
     "duplicate_removed": 0,
     "verified": 25,
-    "announced": 9,
-    "corrected": 1,
+    "announced": 8,
+    "corrected": 2,
     "thumbnail_count": 33,
-    "thumbnail_coverage": 0.971,
+    "thumbnail_coverage": 1,
     "decision_audit_complete": true,
     "hard_excluded": 1,
-    "soft_excluded": 3,
+    "soft_excluded": 4,
     "v16_rereviewed": 6,
     "v16_promoted": 3,
     "v16_kept_excluded": 3
@@ -128,6 +128,15 @@
       "removed_event_id": "v15-89ce6d07da15",
       "reason": "Officially ended 2026-10-12, not 2027-03-20.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    },
+    {
+      "version": "reservation-unavailable-2026-10-13",
+      "mode": "targeted-official-participation-review",
+      "applied_at": "2026-10-13",
+      "event_id": "v15-2ef4cd7cd382",
+      "candidate_id": "web-8b3527f3b8",
+      "reason": "Registration closed Oct 6, 2026 (lottery), not accessible to new participants.",
+      "official": "https://www.city.minato.tokyo.jp/azabumachizukuri/ecot081114.html"
     }
   ]
 }

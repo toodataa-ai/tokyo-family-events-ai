@@ -5,16 +5,17 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 38,
-    "published": 34,
-    "excluded": 4,
+    "published": 33,
+    "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
-    "soft_excluded": 3,
+    "soft_excluded": 4,
     "reason_counts": {
       "narrow_fandom": 1,
       "content_intensity": 1,
       "age_mismatch": 1,
-      "date_mismatch": 1
+      "date_mismatch": 1,
+      "reservation_unavailable": 1
     },
     "v16_rereviewed": 6,
     "v16_promoted": 3,
@@ -2888,7 +2889,7 @@
       "candidate_id": "web-8b3527f3b8",
       "name": "親子でエコっとプロジェクト～ガムテープのズックやさん",
       "ward": "港区",
-      "decision": "published",
+      "decision": "excluded",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -2917,29 +2918,29 @@
             "reason": "料金情報が十分でなく推測しない。"
           },
           "reservation": {
-            "grade": "B",
-            "reason": "大きな予約障壁は未確認。"
+            "grade": "D",
+            "reason": "10月6日締切の8組抽選申込は終了済み。"
           },
           "family_value": {
             "grade": "A",
             "reason": "家族で出かける目的になる体験・特別感がある。"
           }
         },
-        "overall": "A"
+        "overall": "B"
       },
       "hard_exclusion": null,
-      "exclusion_type": null,
-      "primary_reason_code": "family_value_high",
+      "exclusion_type": "soft",
+      "primary_reason_code": "reservation_unavailable",
       "reason_codes": [
-        "family_value_high"
+        "reservation_unavailable"
       ],
       "reasons": [
-        "注意点を踏まえても家族で参加する価値がある。"
+        "港区公式の参加者募集は10月6日で締め切られ、抽選制。10月13日時点の新規申込はできないため、今から参加先を探す利用者向け掲載から除外する。"
       ],
       "evidence": [
         {
-          "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=14&month=11&siteid=1&type=3&year=2026",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "url": "https://www.city.minato.tokyo.jp/azabumachizukuri/ecot081114.html",
+          "basis": "公式サイトに2026年11月14日、区内在住親子5歳以上、8組抽選、申込10月6日までと明記。"
         }
       ],
       "override_reason": "",
@@ -2948,7 +2949,16 @@
           "kind": "v15_web_search",
           "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=14&month=11&siteid=1&type=3&year=2026"
         }
-      ]
+      ],
+      "negative_signals": [
+        "reservation_unavailable"
+      ],
+      "positive_signals": [
+        "child_explicit",
+        "hands_on",
+        "free_or_low_cost"
+      ],
+      "tradeoff_reason": "体験価値は高いが事前抽選申込が既に終了しており当日参加先として提示できない。"
     },
     {
       "candidate_id": "web-4b0de76279",

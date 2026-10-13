@@ -19,7 +19,7 @@ jobs:
           path: stage
       - uses: actions/checkout@v4
         with:
-          ref: data-production
+          ref: 17b19d2a6f4173e94cd3ca9694793ba2feba41a0
           path: published-data
       - uses: actions/setup-python@v5
         with:

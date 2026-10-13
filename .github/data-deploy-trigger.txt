@@ -1,5 +1,5 @@
-operation=targeted-official-source-repair
-candidate_sha=cda20d27e8bc012935864c6646e43f6ea5d51b7e
-base_data_production_sha=681dd6c41d2e247627c803b06e66403cd6491954
-requested_at=2026-10-13T10:15:00+09:00
-note=Correct five verified source-reference issues (Chihiro 3 weekends, Nerima Halloween 1, HERO GATE 1, Meguro children's festival 1; total six weekly event records), preserving all other event data. Includes per-field official evidence and failed 404 URL repair. History unchanged (not six-week holiday after full update).
+operation=targeted-official-source-and-eligibility-correction
+candidate_sha=139b407c11af9a88947e2239896e6fcfb019bd48
+base_data_production_sha=cda20d27e8bc012935864c6646e43f6ea5d51b7e
+requested_at=2026-10-13T16:03:01.611Z
+note=Approved release: source-reference corrections and two audited exclusions only (Nerima Nov07 no scheduled program; Minato Nov14 registration closed). Preserves all other event IDs, production application v1.05 and 2026-10-13 holiday-after update_history status (not completed).

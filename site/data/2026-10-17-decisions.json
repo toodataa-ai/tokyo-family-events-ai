@@ -5,17 +5,18 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 76,
-    "published": 69,
-    "excluded": 5,
+    "published": 68,
+    "excluded": 6,
     "duplicate": 2,
-    "hard_excluded": 2,
+    "hard_excluded": 3,
     "soft_excluded": 3,
     "reason_counts": {
       "narrow_fandom": 1,
       "safety_unsuitable": 1,
       "adult_oriented": 1,
       "outside_23wards": 1,
-      "passive_only": 1
+      "passive_only": 1,
+      "date_mismatch": 1
     },
     "v16_rereviewed": 18,
     "v16_promoted": 13,
@@ -3865,7 +3866,7 @@
       "candidate_id": "lg-717e165521",
       "name": "祝）〜（月・祝）ピクサーの世界展",
       "ward": "江東区",
-      "decision": "published",
+      "decision": "excluded",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -3904,19 +3905,23 @@
         },
         "overall": "B"
       },
-      "hard_exclusion": null,
-      "exclusion_type": null,
-      "primary_reason_code": "family_value_high",
+      "hard_exclusion": "date_mismatch",
+      "exclusion_type": "hard",
+      "primary_reason_code": "date_mismatch",
       "reason_codes": [
-        "family_value_high"
+        "date_mismatch"
       ],
       "reasons": [
-        "注意点を踏まえても家族で参加する価値がある。"
+        "本イベントは2026年10月12日で終了。2026-10-17以降の土日は開催しておらず、以前の2027年3月20日終了という期間は公式販売元の記載と矛盾するため、掲載対象から除外する。"
       ],
       "evidence": [
         {
-          "url": "https://mundopixar.com/ja/cities/tokyo",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "url": "https://tickets.tbs.co.jp/mundopixar/",
+          "basis": "主催者の公式チケット案内に2026年10月12日までと明記。"
+        },
+        {
+          "url": "https://t.pia.jp/pia/events/mundopixar/",
+          "basis": "公式販売元の開催期間2026/03/20〜2026/10/12。"
         }
       ],
       "override_reason": "",
@@ -3929,7 +3934,8 @@
           "kind": "legacy_detail",
           "url": "https://www.toyosuevent.com/pixar-no-sekaiten-2026-toyosu/"
         }
-      ]
+      ],
+      "tradeoff_reason": "以前の開催期間に誤りがあるため、この週の開催は確認できない。"
     },
     {
       "candidate_id": "lg-ff77be21fd",

@@ -74,8 +74,7 @@ def probe(kind, url):
         row["matching_links"]=[a for a in dom.links if
            ("event" in a["href"] or "event" in a["label"].lower() or "祭" in a["label"]
              or "まつり" in a["label"] or "2026" in a["href"] )][:45]
-        row["all_anchor_count"]=len(dom.links)
-        row["official_event_links"]=[x for x in dom.links if re.match(r"^/s\\d+/event/\\d+\\.html$", x["href"])]
+        row["official_event_links"]=[x for x in dom.links if re.match(r"^/s\d+/event/\d+\.html$", x["href"])]
         if kind.startswith("detail:"):
             row["text_excerpt"]=text[-2400:]
         row["all_anchor_count"]=len(dom.links)

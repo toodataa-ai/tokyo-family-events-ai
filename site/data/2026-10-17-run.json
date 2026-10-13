@@ -164,6 +164,19 @@
         "source",
         "reservation"
       ]
+    },
+    {
+      "version": "2026-10-13-source-recheck",
+      "mode": "targeted-venue-official-source",
+      "applied_at": "2026-10-13",
+      "event_id": "v15-d2655fad9362",
+      "changed": [
+        "official_url",
+        "url",
+        "source"
+      ],
+      "official": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
+      "notes": "Replaced JS-only Instagram post with public park authority dated calendar."
     }
   ]
 }

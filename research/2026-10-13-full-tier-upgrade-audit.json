@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-13",
+  "prompt_version": "v1.15",
+  "status": "research_evidence_not_published",
+  "data_base_sha": "17b19d2a6f4173e94cd3ca9694793ba2feba41a0",
+  "next_full_tier_week": "2026-10-24",
+  "historical_announced_count": 8,
+  "items": [
+    {
+      "id": "v15-a3d72cbcb52f",
+      "name": "ディスクゴルフ初心者講習",
+      "ward": "江東区",
+      "date": "2026-10-25",
+      "venue": "辰巳の森海浜公園",
+      "source": "https://www.tptc.co.jp/park/03_01/newsports/02",
+      "observed": "第4日曜日（2026/10/25）、9:30〜11:00、無料。現存値9:30〜16:00は要訂正。",
+      "candidate_action": "correct_time_with_field_changes",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-d7f109579d96",
+      "name": "アーツ中村橋 2026―わたしとまちの記憶",
+      "ward": "練馬区",
+      "date": "2026-10-24/25",
+      "venue": "中村橋周辺",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html",
+      "observed": "9/12〜11/8の地域展示、無料。ただし練馬区立美術館の展示は10/18終了で10/19〜30展示替休館。10/24-25に美術館内展示があるとは表示不可。",
+      "candidate_action": "retain_citywide_with_museum_closed_warning",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-64515ea63f7b",
+      "name": "すみだ五彩の芸術祭",
+      "ward": "墨田区",
+      "date": "2026-10-24/25",
+      "venue": "区内多数のプログラム会場",
+      "source": "https://sumida-artfest.jp/events/",
+      "observed": "芸術祭会期9/4〜12/20、130超の企画ごとに開催日・休演日・会場が違う。10/24・25の個別プログラムの照合がまだ必要。",
+      "candidate_action": "expand_per_program_before_full_verified",
+      "core_name_date_venue_supported": false
+    },
+    {
+      "id": "v15-438a590c39b1",
+      "name": "HIBIYA CINEMA FESTIVAL 2026",
+      "ward": "千代田区",
+      "date": "2026-10-24/25",
+      "venue": "東京ミッドタウン日比谷ほか",
+      "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/line-up/",
+      "observed": "10/24 13:00・15:10、10/25 13:00・15:30の上映を公式番組表で確認。映画ごとに子連れ適性を判定。",
+      "candidate_action": "verify_program_age_suitability",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-c2bde5fb2112",
+      "name": "ハロウィンパレードへようこそ！",
+      "ward": "豊島区",
+      "date": "2026-10-24",
+      "venue": "アイテラス落合南長崎",
+      "source": "https://iterrace.jp/event/",
+      "observed": "施設公式カレンダーに10/24申込終了と明記。応募終了を明示、当日参加可能とは記載不可。",
+      "candidate_action": "evaluate_reservation_unavailable_exclusion_with_evidence",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-0c7f94c1124a",
+      "name": "まるごと台湾フェア2026",
+      "ward": "杉並区",
+      "date": "2026-10-24/25",
+      "venue": "座・高円寺、商店街ほか",
+      "source": "https://suginami-kouryu.org/ev2026102425_fair.html",
+      "observed": "10/24-25マーケットと10/24-25申込制オペラ企画。ワークショップ小学5年生以上・各500円、オペラ小学以上・1000円、グルメ販売あり。",
+      "candidate_action": "correct_mixed_pricing_and_program_reservations",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-16a6e46eeff7",
+      "name": "第21回北斎祭り",
+      "ward": "墨田区",
+      "date": "2026-10-24/25",
+      "venue": "北斎通り・緑町公園・すみだ北斎美術館",
+      "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja",
+      "observed": "10/24 10:30-17:30、10/25 10:30-16:00。ねぷた制作は1000円要メール申込、観覧・公園企画は別の参加条件。",
+      "candidate_action": "correct_venue_price_program_split",
+      "core_name_date_venue_supported": true
+    },
+    {
+      "id": "v15-d29ad9dede43",
+      "name": "キッズフリマ in コレド室町",
+      "ward": "中央区",
+      "date": "2026-10-24/25",
+      "venue": "福徳の森、中央区日本橋室町2-5-10",
+      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4130",
+      "observed": "両日11:00-12:00、14:30-15:30。出店は小学3〜6年生中心・300円抽選、買物は小学6年生以下・無料・予約不要の一般入場あり、未就学児も保護者同行で買物エリアに入れない。雨天中止。",
+      "candidate_action": "correct_age_fee_reservation_and_weather",
+      "core_name_date_venue_supported": true
+    }
+  ],
+  "summary": {
+    "core_name_date_venue_supported": 7,
+    "needs_program_details": 1,
+    "need_field_change_evidence": true,
+    "all_verified_for_publishing": false
+  },
+  "notes": [
+    "Do not promote eight announcements to verified merely because the official host page is HTTP200.",
+    "Previous data cannot be wiped because direct source returned 404/429.",
+    "Need verify individual art-festival programs and update confirmed inaccurate time, fees, eligibility, booking before full-tier strict approval.",
+    "No publication or history entry was made by this audit."
+  ]
+}

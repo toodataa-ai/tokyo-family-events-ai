@@ -1,4 +1,4 @@
-import {WARDS,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
+import {WARDS,saturdayOf,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
 
 // Shared multi-select UI for event search and copy list.
 // Empty selections mean "all". Within a group use OR; across groups use AND.
@@ -18,6 +18,17 @@ export function todayJst(now=new Date()){
 }
 export function visibleQuickPeriods(periods,today=todayJst()){
   return (periods||[]).filter(period=>period?.end>=today);
+}
+// A blank date selection means "from this weekend through the last published
+// weekend", not the entire historical dataset. An explicit past-date selection
+// still uses the original period and never deletes old event records.
+export function currentAndFutureWindow(periods,today=todayJst()){
+  const first=saturdayOf(today);
+  const last=(periods||[]).filter(p=>p?.kind==='weekend').at(-1)?.end;
+  // Preserve a nonempty impossible window if the manifest is stale: without
+  // this guard filterEvents would interpret an empty periods array as ALL.
+  if(!last || first>last) return {start:'9999-12-31',end:'9999-12-31'};
+  return {start:first,end:last};
 }
 function initialState(params,periods){
   const validDate=params.getAll('d').find(date=>periods.some(period=>period.start===date));
@@ -56,12 +67,14 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     ratings:[...state.ratings],prices:[...state.prices],
     environments:[...state.environments],reservations:[...state.reservations],
     sourceModes:[...state.sourceModes],
-    periods:periods.filter(x=>state.dates.has(x.start)).map(x=>({start:x.start,end:x.end}))
+    periods:state.dates.size
+      ?periods.filter(x=>state.dates.has(x.start)).map(x=>({start:x.start,end:x.end}))
+      :[currentAndFutureWindow(periods)]
   });
   function notify(){updateSummary();onChange();}
   function renderWeekTabs(){
     const all=!state.dates.size;
-    $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>6週間</span></button>`+
+    $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>今週末から</span></button>`+
       visibleQuickPeriods(periods).map(period=>{
         const meta=holidayTabMeta(period,manifest),checked=state.dates.has(period.start);
         return `<button type="button" class="week-tab ${checked?'active':''} ${period.available?'':'pending'}" data-date="${period.start}" aria-pressed="${checked}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;

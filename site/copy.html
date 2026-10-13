@@ -58,7 +58,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-hide-past-periods';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
@@ -106,7 +106,9 @@ function render(){
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
   const prompt=currentData.run?.prompt?.version||'-';
   const filterBits=[filterUI.summary()];
-  $('rangeText').textContent=`6週間検索 ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;$('countText').textContent=`全 ${currentData.events.length} 件 ／ コピー対象 ${visible.length} 件`;
+  const periodCount=filterEvents(currentData.events,{periods:filterUI.filters().periods}).length;
+  $('rangeText').textContent=`${filterUI.filters().dates.length?'日付指定':'今週末以降'} ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;
+  $('countText').textContent=`期間内 ${periodCount} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{
     const fields=copyFieldList(ev);

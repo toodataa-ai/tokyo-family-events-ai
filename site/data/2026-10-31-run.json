@@ -135,6 +135,16 @@
       "removed_event_id": "v15-f4cd156831b4",
       "reason": "Officially ended 2026-10-12, not 2027-03-20.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    },
+    {
+      "version": "source-link-correction-2026-10-13",
+      "mode": "targeted-official-url-and-image-correction",
+      "applied_at": "2026-10-13",
+      "event_id": "v15-0a4b3977eb8c",
+      "previous_url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002933",
+      "correct_url": "https://nerimakanko.jp/event/detail.php?event_id=e000002968",
+      "reason": "soft-404 old tourism event ID; official event page and image verified",
+      "evidence": "https://nerimakanko.jp/event/detail.php?event_id=e000002968"
     }
   ]
 }

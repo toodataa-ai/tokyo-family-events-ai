@@ -94,14 +94,14 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 73,
-    "published": 68,
-    "excluded": 3,
+    "published": 67,
+    "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 60,
+    "verified": 59,
     "announced": 8,
     "corrected": 0,
-    "thumbnail_count": 60,
-    "thumbnail_coverage": 0.882,
+    "thumbnail_count": 59,
+    "thumbnail_coverage": 0.881,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 1,
@@ -126,6 +126,15 @@
       "applied_at": "2026-10-10",
       "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
       "count": 8
+    },
+    {
+      "version": "source-fact-correction-2026-10-13",
+      "mode": "targeted-official-date-correction",
+      "applied_at": "2026-10-13",
+      "candidate_id": "lg-f21c3c7ef3",
+      "removed_event_id": "v15-ecd097be86ba",
+      "reason": "Officially ended 2026-10-12, not 2027-03-20.",
+      "official": "https://tickets.tbs.co.jp/mundopixar/"
     }
   ]
 }

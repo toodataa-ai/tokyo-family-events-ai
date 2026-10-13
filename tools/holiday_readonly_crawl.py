@@ -7,6 +7,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import unicodedata
 from urllib.parse import quote,urljoin
 from urllib.request import urlopen,Request
 from urllib.error import HTTPError,URLError
@@ -16,6 +17,10 @@ DATA=Path("data-src/site/data");POLICY=Path("released/site/data")
 REG=json.loads((POLICY/"discovery_sources.json").read_text())
 MAN=json.loads((DATA/"manifest.json").read_text())
 WARDS=[("千代田区","www.city.chiyoda.lg.jp"),("中央区","www.city.chuo.lg.jp"),("港区","www.city.minato.tokyo.jp"),("新宿区","www.city.shinjuku.lg.jp"),("文京区","www.city.bunkyo.lg.jp"),("台東区","www.city.taito.lg.jp"),("墨田区","www.city.sumida.lg.jp"),("江東区","www.city.koto.lg.jp"),("品川区","www.city.shinagawa.tokyo.jp"),("目黒区","www.city.meguro.tokyo.jp"),("大田区","www.city.ota.tokyo.jp"),("世田谷区","www.city.setagaya.lg.jp"),("渋谷区","www.city.shibuya.tokyo.jp"),("中野区","www.city.tokyo-nakano.lg.jp"),("杉並区","www.city.suginami.tokyo.jp"),("豊島区","www.city.toshima.lg.jp"),("北区","www.city.kita.lg.jp"),("荒川区","www.city.arakawa.tokyo.jp"),("板橋区","www.city.itabashi.tokyo.jp"),("練馬区","www.city.nerima.tokyo.jp"),("足立区","www.city.adachi.tokyo.jp"),("葛飾区","www.city.katsushika.lg.jp"),("江戸川区","www.city.edogawa.tokyo.jp")]
+SOURCE_TO_EVENTS={}
+def canon(s):
+ s=unicodedata.normalize("NFKC",str(s or "")).casefold()
+ return re.sub(r"[^0-9a-z\u3040-\u30ff\u3400-\u9fff]+","",s)
 class Parser(HTMLParser):
  def __init__(self):super().__init__();self.links=[];self.active=None;self.title="";self.intitle=False
  def handle_starttag(self,t,a):
@@ -44,6 +49,16 @@ def get(item):
    except UnicodeDecodeError:continue
   else:html=content.decode("utf-8","replace")
   p=Parser();p.feed(html);row["title"]=p.title[:180];row["link_count"]=len(p.links)
+  if kind=="previous_official":
+   page=canon(re.sub(r"<[^>]+>"," ",html))
+   matches=[]
+   for ev in SOURCE_TO_EVENTS.get(url,[]):
+    title=canon(ev.get("name",""))
+    key=title[:min(len(title),9)]
+    matches.append({"id":ev.get("id"),"name":ev.get("name"),"ward":ev.get("ward"),
+      "title_token_present":bool(key and key in page),"title_token":key,
+      "year_2026_present": "2026" in page or "令和8" in page})
+   row["fact_screen"]=matches
   row["candidate_links"]=[{"name":x["label"],"url":urljoin(url,x["href"])} for x in p.links if any(t in x["label"] for t in ("2026","まつり","祭","フェア","子ども","こども","親子","体験","フェス","収穫"))][:90]
  except (HTTPError,URLError,TimeoutError,OSError,ValueError) as e:row["error"]=str(e)[:260]
  return row
@@ -67,9 +82,20 @@ for ward,host in WARDS:
 official=set()
 for w in MAN["weekends"]:
  week=json.loads((DATA/w["file"]).read_text())
+ events=list(week.get("events",[]))
+ for shard in week.get("event_files",[]):
+  events.extend(json.loads((DATA/shard).read_text()))
+ by_id={ev.get("id"):ev for ev in events}
  audit=json.loads((DATA/week["verification_file"]).read_text())
- for ev in audit["events"]:
-  if ev.get("source","").startswith("https://"):official.add(ev["source"])
+ for verified in audit["events"]:
+  url=verified.get("source","")
+  if not url.startswith("https://"):continue
+  official.add(url)
+  ev=by_id.get(verified.get("id"))
+  if ev:
+   pair={k:ev.get(k) for k in ("id","ward","name")}
+   SOURCE_TO_EVENTS.setdefault(url,[])
+   if pair not in SOURCE_TO_EVENTS[url]:SOURCE_TO_EVENTS[url].append(pair)
 old=[("previous_official",url) for url in sorted(official)]
 print("CHECK_COUNTS",json.dumps({"explicit":len(explicit),"ward_queries":len(queries),"previous_official_urls":len(old)}),flush=True)
 a=fetch_all(explicit);b=fetch_all(queries);c=fetch_all(old)
@@ -77,6 +103,9 @@ required_ids={s["id"] for s in REG["explicit_sources"] if s.get("enabled") and s
 source_errors=[{"id":x["kind"],"url":x["url"],"error":x.get("error")} for x in a if x["kind"] in required_ids and x["status"]!="checked"]
 search_errors=[{"ward":x["kind"],"url":x["url"],"error":x.get("error")} for x in b if x["status"]!="checked"]
 summary={"as_of":"2026-10-13","version":"v1.15","read_only":True,"candidate_generated":False,"required_sources_total":len([x for x in explicit if x[0] in required_ids]),"required_source_errors":source_errors,"ward_requests_total":len(queries),"ward_errors":search_errors,"previous_official_total":len(old),"previous_official_success":sum(x["status"]=="checked" for x in c),"limitations":["HTTP 200 never establishes event/date validity","No output is a publishable event or a completed 23-ward official verification","Never re-label previous-run evidence as new-run evidence."]}
+summary["fact_screen_rows"]=sum(len(x.get("fact_screen",[])) for x in c)
+summary["fact_screen_title_matches"]=sum(y["title_token_present"] for x in c for y in x.get("fact_screen",[]))
+summary["fact_screen_unmatched"]=summary["fact_screen_rows"]-summary["fact_screen_title_matches"]
 for file,data in (("summary",summary),("explicit",a),("ward-search",b),("previous-official",c)):
  (OUT/(file+".json")).write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n")
 print("FINAL_AUDIT",json.dumps({k:v for k,v in summary.items() if k not in ("required_source_errors","ward_errors")},ensure_ascii=False),flush=True)

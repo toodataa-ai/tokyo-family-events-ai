@@ -1,0 +1,113 @@
+name: Audit latest data-staging without publishing
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-unpublished-data.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout unpublished data candidate
+        uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 0
+      - name: Checkout released application and policy
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: production-src
+      - name: Checkout staging source-audit policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-policy-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify baseline has not moved
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          expected="cda20d27e8bc012935864c6646e43f6ea5d51b7e"
+          test "$actual" = "$expected" || { echo "BLOCKER: production data changed ($actual)"; exit 1; }
+          echo "Baseline unchanged: $actual"
+      - name: Verify exact event-ID deletions against original and production
+        run: |
+          python - <<'PY'
+          import json,subprocess,pathlib
+          original='17b19d2a6f4173e94cd3ca9694793ba2feba41a0'
+          production='cda20d27e8bc012935864c6646e43f6ea5d51b7e'
+          weeks=['2026-10-10','2026-10-17','2026-10-24','2026-10-31','2026-11-07','2026-11-14']
+          expected_prod={'2026-10-17':'v15-62bf2f02d2c9','2026-10-24':'v15-ecd097be86ba',
+           '2026-10-31':'v15-f4cd156831b4','2026-11-07':'v15-1a937012bbb6',
+           '2026-11-14':'v15-89ce6d07da15'}
+          expected_stage={'2026-11-07':'v15-993ff6ccb46e','2026-11-14':'v15-2ef4cd7cd382'}
+          def read(ref,path):
+            if ref is None:return json.loads(pathlib.Path(path).read_text())
+            return json.loads(subprocess.check_output(['git','show',ref+':'+path],text=True))
+          def events(ref,week):
+            parent='site/data/'
+            doc=read(ref,parent+week+'.json')
+            rows=list(doc.get('events') or [])
+            for f in doc['event_files']: rows.extend(read(ref,parent+f))
+            ids=[e['id'] for e in rows]
+            assert len(ids)==len(set(ids)),(ref,week,'duplicate IDs')
+            assert len(ids)==doc['coverage']['published_count'],(ref,week,'week count mismatch')
+            return {e['id']:e for e in rows}
+          for week in weeks:
+            a=events(original,week)
+            b=events(production,week)
+            c=events(None,week)
+            removed_prod=set(a)-set(b);removed_stage=set(b)-set(c)
+            expected_p={expected_prod[week]} if week in expected_prod else set()
+            expected_s={expected_stage[week]} if week in expected_stage else set()
+            assert removed_prod==expected_p,(week,'unexpected original-to-production losses',removed_prod,expected_p)
+            assert removed_stage==expected_s,(week,'unexpected production-to-staging losses',removed_stage,expected_s)
+            assert not(set(b)-set(a)) and not(set(c)-set(b)),(week,'unexpected added event ID')
+            print(f'{week}: original={len(a)}, production={len(b)}, staging={len(c)}; expected deleted prod={len(removed_prod)} stage={len(removed_stage)}')
+          old=read(original,'site/data/manifest.json')['weekends']
+          prod=read(production,'site/data/manifest.json')['weekends']
+          stage=read(None,'site/data/manifest.json')['weekends']
+          assert [w['sat'] for w in old]==[w['sat'] for w in prod]==[w['sat'] for w in stage]
+          assert sum(x['count'] for x in old)==354
+          assert sum(x['count'] for x in prod)==349
+          assert sum(x['count'] for x in stage)==347
+          print('PASS: 354 -> 349 -> 347, exactly five historical Pixar and two audited stage exclusions; no other event deletions')
+          PY
+      - name: Validate production non-regression
+        run: python production-src/tools/validate_non_regression.py --base-ref cda20d27e8bc012935864c6646e43f6ea5d51b7e site/data
+      - name: Overlay released static policy
+        run: |
+          python - <<'PY'
+          import pathlib,re,shutil
+          src=pathlib.Path('production-src/site/data')
+          dest=pathlib.Path('site/data')
+          runtime=re.compile(r'^20\d{2}-\d{2}-\d{2}.*\.json$')
+          for p in src.iterdir():
+            if p.is_file() and not runtime.match(p.name) and p.name not in {'manifest.json','update_history.json'}:
+              shutil.copy2(p,dest/p.name)
+          PY
+      - name: Validate candidate strictly
+        run: python production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+      - name: Validate published/duplicate/excluded judgments
+        run: python production-src/tools/validate_decisions.py --strict site/data
+      - name: Validate historical rereviews
+        run: python production-src/tools/validate_rereview.py --strict site/data
+      - name: Validate mandatory official schedule evidence
+        run: python staging-policy-src/tools/validate_official_schedule_audit.py site/data
+      - name: Run released app regression suite
+        working-directory: production-src
+        run: npm test
+      - name: Candidate audit success (no publish)
+        run: echo 'Read-only candidate audit completed. data-production and production were not modified.'

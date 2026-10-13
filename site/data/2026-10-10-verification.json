@@ -229,18 +229,39 @@
     {
       "id": "v15-d287609d272e",
       "status": "verified",
-      "source": "https://www.mkogeki.org/courses",
-      "source_kind": "organizer_official",
+      "source": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html",
+      "source_kind": "public_official",
       "fields": {
         "name": "pass",
         "date": "pass",
         "time": "pass",
         "venue": "pass",
         "price": "unknown",
-        "reservation": "pass"
+        "reservation": "pass",
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13: 参照先誤りを公式の個別開催概要に修正。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.mkogeki.org/courses",
+          "to": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html",
+          "reason": "元のURLは演劇講座ページであり、子ども広場を含む目黒区民まつりの公式案内ではないため区公式の第50回目黒区民まつり詳細に変更。",
+          "source": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html"
+        },
+        "source": {
+          "from": "https://www.mkogeki.org/courses",
+          "to": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html",
+          "reason": "元のURLは演劇講座ページであり、子ども広場を含む目黒区民まつりの公式案内ではないため区公式の第50回目黒区民まつり詳細に変更。",
+          "source": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html"
+        },
+        "image": {
+          "from": "https://static.wixstatic.com/media/5e4be5_076ee46f70f8417289dc747fd4dd502e%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/5e4be5_076ee46f70f8417289dc747fd4dd502e%7Emv2.jpg",
+          "to": "",
+          "reason": "旧根拠のWix画像は当該目黒区民まつりの公式写真とは確認できないため表示を取り下げる。",
+          "source": "https://www.city.meguro.tokyo.jp/bunka/bunkasports/kankou/kuminmatsuri47.html"
+        }
+      }
     },
     {
       "id": "v15-82c9f0863028",
@@ -980,7 +1001,7 @@
     {
       "id": "v15-6118237ebddf",
       "status": "verified",
-      "source": "https://kyushu-yoyogipark.com/",
+      "source": "https://herogate.jp/about/",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
@@ -991,10 +1012,24 @@
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
-        "official_url": "pass"
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13: 参照先誤りを公式の個別開催概要に修正。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://kyushu-yoyogipark.com/",
+          "to": "https://herogate.jp/about/",
+          "reason": "元の参照先は九州観光・物産フェアのサイトで、独立開催の音楽ライブHERO GATEの公式開催概要ではない。HERO GATE公式概要へ修復。",
+          "source": "https://herogate.jp/about/"
+        },
+        "source": {
+          "from": "https://www.yoyogikoen.info/",
+          "to": "https://herogate.jp/about/",
+          "reason": "元の参照先は九州観光・物産フェアのサイトで、独立開催の音楽ライブHERO GATEの公式開催概要ではない。HERO GATE公式概要へ修復。",
+          "source": "https://herogate.jp/about/"
+        }
+      }
     },
     {
       "id": "v15-8512160167b8",

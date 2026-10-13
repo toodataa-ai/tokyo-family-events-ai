@@ -464,7 +464,7 @@
     {
       "id": "v15-bc7734cd6fa7",
       "status": "verified",
-      "source": "https://chihiro.jp/tokyo/",
+      "source": "https://chihiro.jp/tokyo/exhibitions/2026/",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
@@ -475,10 +475,24 @@
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
-        "official_url": "pass"
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13公式展覧会一覧照合：10月30日〜翌1月31日・2展示同時開催を確認。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://chihiro.jp/tokyo/",
+          "to": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "reason": "公式トップページでなく2026年度公式展覧会一覧の開催日・展示名を参照",
+          "source": "https://chihiro.jp/tokyo/exhibitions/2026/"
+        },
+        "source": {
+          "from": "https://chihiro.jp/tokyo/",
+          "to": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "reason": "当該同時開催展示を確認できる開催年別の公式ページへ変更",
+          "source": "https://chihiro.jp/tokyo/exhibitions/2026/"
+        }
+      }
     },
     {
       "id": "v15-fb99b306e3c5",

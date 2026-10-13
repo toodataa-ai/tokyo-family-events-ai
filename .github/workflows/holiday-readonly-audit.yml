@@ -1,0 +1,47 @@
+name: Read-only holiday-after official discovery audit
+
+on:
+  push:
+    branches: [main]
+    paths: ['tools/holiday_readonly_crawl.py', '.github/workflows/holiday-readonly-audit.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: stage
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch actual 23-ward, 19 explicit sources, and existing official pages
+        id: crawl
+        continue-on-error: true
+        run: python3 stage/tools/holiday_readonly_crawl.py
+      - name: Save non-fabricated evidence even if sources fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: holiday-source-evidence-2026-10-13
+          path: /tmp/tokyo-holiday-evidence/*.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Enforce fail-closed required-source policy
+        if: steps.crawl.outcome != 'success'
+        run: |
+          echo 'Some required queries failed. Do not publish data without complete official audit.'
+          exit 1

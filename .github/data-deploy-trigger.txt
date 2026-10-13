@@ -1,5 +1,5 @@
-operation=nerima-district-festival-backfill
-candidate_sha=17b19d2a6f4173e94cd3ca9694793ba2feba41a0
-base_data_production_sha=40e28a14e576377a34e4bc5ceeb05c23b751df2f
-requested_at=2026-10-10T15:22:00+09:00
-note=Retry 17 Nerima official district festivals with staging audit policy checkout corrected. Previous run did not promote data.
+operation=targeted-official-end-date-correction
+candidate_sha=681dd6c41d2e247627c803b06e66403cd6491954
+base_data_production_sha=17b19d2a6f4173e94cd3ca9694793ba2feba41a0
+requested_at=2026-10-13T10:00:00+09:00
+note=Remove five incorrect continuing-week entries for Pixar Mundo exhibition ended 2026-10-12. Preserve Oct10 correct event, all other events, and holiday-after history. Full holiday-after research remains incomplete.

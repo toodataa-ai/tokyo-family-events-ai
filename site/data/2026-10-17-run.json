@@ -152,6 +152,18 @@
       "removed_event_id": "v15-62bf2f02d2c9",
       "reason": "Incorrect 2027-03-20 end date. Event officially ended 2026-10-12.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    },
+    {
+      "version": "source-participation-2026-10-13",
+      "mode": "targeted-official-reservation-correction",
+      "applied_at": "2026-10-13",
+      "event_id": "r16-fcb3bba6d9fa",
+      "evidence": "https://www.fmi.co.jp/news/11421.html",
+      "changes": [
+        "official_url",
+        "source",
+        "reservation"
+      ]
     }
   ]
 }

@@ -1164,21 +1164,47 @@
     {
       "id": "r16-fcb3bba6d9fa",
       "status": "verified",
-      "source": "https://peatix.com/event/5125149",
-      "source_kind": "official",
+      "source": "https://www.fmi.co.jp/news/11421.html",
+      "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
         "venue": "pass",
         "time": "pass",
         "price": "pass",
-        "reservation": "unknown",
+        "reservation": "corrected",
         "target": "pass",
         "cancellation": "unknown",
-        "official_url": "pass"
+        "official_url": "corrected"
       },
       "corrections": {},
-      "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+      "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。 2026-10-13: FMI公式で10/17-18、麻布台1-11-9・各部1900円・チケット制を確認。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://peatix.com/event/5125149",
+          "to": "https://www.fmi.co.jp/news/11421.html",
+          "reason": "PeatixページはHTMLで詳細情報が確認しにくいため、共催者FMIの公式告知へ変更。",
+          "source": "https://www.fmi.co.jp/news/11421.html"
+        },
+        "source": {
+          "from": "https://www.roppongievents.com/",
+          "to": "https://www.fmi.co.jp/news/11421.html",
+          "reason": "主催者側が日時・料金・会場・申込を記載した個別ページへ変更。",
+          "source": "https://www.fmi.co.jp/news/11421.html"
+        },
+        "reservation": {
+          "from": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          },
+          "to": {
+            "required": true,
+            "note": "事前チケット制（Peatix）。各部1,900円、各回先着100人。申込ページ: https://peatix.com/event/5125149"
+          },
+          "reason": "共催者公式に各部先着100名・1,900円のPeatix事前チケット制と明記。",
+          "source": "https://www.fmi.co.jp/news/11421.html"
+        }
+      }
     },
     {
       "id": "r16-eba7513d82a0",

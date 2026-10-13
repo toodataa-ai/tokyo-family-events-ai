@@ -1,5 +1,5 @@
-operation=targeted-official-end-date-correction
-candidate_sha=681dd6c41d2e247627c803b06e66403cd6491954
-base_data_production_sha=17b19d2a6f4173e94cd3ca9694793ba2feba41a0
-requested_at=2026-10-13T10:00:00+09:00
-note=Remove five incorrect continuing-week entries for Pixar Mundo exhibition ended 2026-10-12. Preserve Oct10 correct event, all other events, and holiday-after history. Full holiday-after research remains incomplete.
+operation=targeted-official-source-repair
+candidate_sha=cda20d27e8bc012935864c6646e43f6ea5d51b7e
+base_data_production_sha=681dd6c41d2e247627c803b06e66403cd6491954
+requested_at=2026-10-13T10:15:00+09:00
+note=Correct five verified source-reference issues (Chihiro 3 weekends, Nerima Halloween 1, HERO GATE 1, Meguro children's festival 1; total six weekly event records), preserving all other event data. Includes per-field official evidence and failed 404 URL repair. History unchanged (not six-week holiday after full update).

@@ -101,10 +101,10 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     if(checked) bucket.add(value);else bucket.delete(value);
     notify();
   }
-  function choosePeriod(value,keepDateInput=false){
+  function choosePeriod(value){
     state.dates.clear();
     if(value!=='all')state.dates.add(value);
-    if(!keepDateInput)$('dateInput').value='';
+    $('dateInput').value='';
     notify();
   }
   function handleWeek(e){
@@ -123,7 +123,9 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
       const el=$('msgBox');el.textContent='選択した日付は現在の6週間検索対象外です。';el.style.display='block';return;
     }
     const el=$('msgBox');el.textContent='';el.style.display='none';
-    choosePeriod(period.start,true);
+    choosePeriod(period.start);
+    // Keep the explicitly selected historical day visible in the date picker.
+    $('dateInput').value=date;
     $('dateRefine').open=false;
   }
   function reset(){

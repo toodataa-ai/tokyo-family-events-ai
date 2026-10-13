@@ -94,16 +94,16 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 47,
-    "published": 42,
-    "excluded": 3,
+    "published": 41,
+    "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 36,
+    "verified": 35,
     "announced": 6,
-    "corrected": 1,
-    "thumbnail_count": 36,
-    "thumbnail_coverage": 0.857,
+    "corrected": 2,
+    "thumbnail_count": 35,
+    "thumbnail_coverage": 0.854,
     "decision_audit_complete": true,
-    "hard_excluded": 1,
+    "hard_excluded": 2,
     "soft_excluded": 2,
     "v16_rereviewed": 6,
     "v16_promoted": 4,
@@ -135,6 +135,15 @@
       "removed_event_id": "v15-1a937012bbb6",
       "reason": "Officially ended 2026-10-12, not 2027-03-20.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    },
+    {
+      "version": "multi-event-calendar-date-audit-2026-10-13",
+      "mode": "targeted-program-date-exclusion",
+      "applied_at": "2026-10-13",
+      "event_id": "v15-993ff6ccb46e",
+      "candidate_id": "lg-c6558bdf9f",
+      "reason": "Umbrella date range falsely implied events on Nov7/8; published programme has none.",
+      "official": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html"
     }
   ]
 }

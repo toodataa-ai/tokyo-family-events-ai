@@ -5,15 +5,15 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 47,
-    "published": 42,
-    "excluded": 3,
+    "published": 41,
+    "excluded": 4,
     "duplicate": 2,
-    "hard_excluded": 1,
+    "hard_excluded": 2,
     "soft_excluded": 2,
     "reason_counts": {
       "narrow_fandom": 1,
       "content_intensity": 1,
-      "date_mismatch": 1
+      "date_mismatch": 2
     },
     "v16_rereviewed": 6,
     "v16_promoted": 4,
@@ -2435,7 +2435,7 @@
       "candidate_id": "lg-c6558bdf9f",
       "name": "第71回秋の区民文化祭",
       "ward": "練馬区",
-      "decision": "published",
+      "decision": "excluded",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -2474,19 +2474,19 @@
         },
         "overall": "B"
       },
-      "hard_exclusion": null,
-      "exclusion_type": null,
-      "primary_reason_code": "balanced_family_fit",
+      "hard_exclusion": "date_mismatch",
+      "exclusion_type": "hard",
+      "primary_reason_code": "date_mismatch",
       "reason_codes": [
-        "balanced_family_fit"
+        "date_mismatch"
       ],
       "reasons": [
-        "注意点を踏まえても家族で参加する価値がある。"
+        "区公式開催一覧の各プログラム日程には2026年11月7日・8日の催しがない。総会期10月4日〜11月23日だけを根拠にこの週へ掲載するのは誤り。"
       ],
       "evidence": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "basis": "区公式一覧：11月1日洋舞祭の次は11月11日〜15日の練馬書道展。11月7日/8日に開催する演目なし。"
         }
       ],
       "override_reason": "",

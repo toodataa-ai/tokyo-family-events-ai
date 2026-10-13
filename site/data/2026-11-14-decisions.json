@@ -5,15 +5,16 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 38,
-    "published": 35,
-    "excluded": 3,
+    "published": 34,
+    "excluded": 4,
     "duplicate": 0,
-    "hard_excluded": 0,
+    "hard_excluded": 1,
     "soft_excluded": 3,
     "reason_counts": {
       "narrow_fandom": 1,
       "content_intensity": 1,
-      "age_mismatch": 1
+      "age_mismatch": 1,
+      "date_mismatch": 1
     },
     "v16_rereviewed": 6,
     "v16_promoted": 3,
@@ -1720,7 +1721,7 @@
       "candidate_id": "lg-01c2d8de0f",
       "name": "祝）〜（月・祝）ピクサーの世界展",
       "ward": "江東区",
-      "decision": "published",
+      "decision": "excluded",
       "family_fit": {
         "rubric_version": "family-fit-v1",
         "axes": {
@@ -1759,19 +1760,23 @@
         },
         "overall": "B"
       },
-      "hard_exclusion": null,
-      "exclusion_type": null,
-      "primary_reason_code": "family_value_high",
+      "hard_exclusion": "date_mismatch",
+      "exclusion_type": "hard",
+      "primary_reason_code": "date_mismatch",
       "reason_codes": [
-        "family_value_high"
+        "date_mismatch"
       ],
       "reasons": [
-        "注意点を踏まえても家族で参加する価値がある。"
+        "公式開催期間は2026年3月20日〜10月12日。2026-11-14週は開催対象外。従前の2027年3月20日終了という日付は誤り。"
       ],
       "evidence": [
         {
-          "url": "https://mundopixar.com/ja/cities/tokyo",
-          "basis": "イベント名・対象・内容・料金・時間等の判断根拠。"
+          "url": "https://tickets.tbs.co.jp/mundopixar/",
+          "basis": "主催者チケット案内は10月12日までと明示。"
+        },
+        {
+          "url": "https://t.pia.jp/pia/events/mundopixar/",
+          "basis": "正しい開催期間を明示。"
         }
       ],
       "override_reason": "",
@@ -1784,7 +1789,8 @@
           "kind": "legacy_detail",
           "url": "https://www.toyosuevent.com/pixar-no-sekaiten-2026-toyosu/"
         }
-      ]
+      ],
+      "tradeoff_reason": "実際の開催期間に該当しないため除外。"
     },
     {
       "candidate_id": "lg-f2790eeed6",

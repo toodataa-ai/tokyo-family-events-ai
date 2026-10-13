@@ -94,13 +94,13 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 38,
-    "published": 35,
-    "excluded": 3,
+    "published": 34,
+    "excluded": 4,
     "duplicate_removed": 0,
-    "verified": 26,
+    "verified": 25,
     "announced": 9,
     "corrected": 0,
-    "thumbnail_count": 34,
+    "thumbnail_count": 33,
     "thumbnail_coverage": 0.971,
     "decision_audit_complete": true,
     "hard_excluded": 0,
@@ -119,6 +119,15 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-11-14-v16-rereview.json"
+    },
+    {
+      "version": "source-fact-correction-2026-10-13",
+      "mode": "targeted-official-date-correction",
+      "applied_at": "2026-10-13",
+      "candidate_id": "lg-01c2d8de0f",
+      "removed_event_id": "v15-89ce6d07da15",
+      "reason": "Officially ended 2026-10-12, not 2027-03-20.",
+      "official": "https://tickets.tbs.co.jp/mundopixar/"
     }
   ]
 }

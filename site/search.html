@@ -14,7 +14,7 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">6週間の期間は1つずつ選択できます。区・取得元・オススメ度・料金・屋内外・申込条件は複数選択でき、詳細条件は折りたためます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">「全期間」は今週末から掲載最終日までです。終了した週末・祝日のショートカットは非表示ですが、過去の日程は「日付指定」で検索できます。区・取得元・オススメ度・料金・屋内外・申込条件は複数選択できます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
@@ -59,11 +59,11 @@
   </div>
   <div class="grid" id="grid"></div>
 </main>
-<footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では6週間分のイベントを区・取得元・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
+<footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では今週末以降の掲載イベントを表示し、過去の分も「日付指定」で検索できます。区・取得元・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261010-single-period';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
 const $=id=>document.getElementById(id);
@@ -94,7 +94,7 @@ function provenanceBadge(prov){
   return '';
 }
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'6週間すべて';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'今週末以降';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=filtered.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;

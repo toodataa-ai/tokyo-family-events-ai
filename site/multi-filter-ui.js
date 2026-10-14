@@ -1,4 +1,4 @@
-import {WARDS,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
+import {WARDS,saturdayOf,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
 
 // Shared multi-select UI for event search and copy list.
 // Empty selections mean "all". Within a group use OR; across groups use AND.
@@ -10,6 +10,26 @@ const GROUPS=[
   {key:'reservations',param:'r',title:'予約・申込',items:[['none','申込不要'],['required','要事前申込'],['partial','一部要申込'],['unknown','申込要確認']]}
 ];
 function validValues(values,allow){return new Set(values.filter(v=>allow.includes(v)));}
+// Quick shortcuts show ongoing/upcoming periods only. Historical data and
+// query-string/date-picker searches retain the complete six-week period set.
+export function todayJst(now=new Date()){
+  const jst=new Date(now.getTime()+9*60*60*1000);
+  return jst.toISOString().slice(0,10);
+}
+export function visibleQuickPeriods(periods,today=todayJst()){
+  return (periods||[]).filter(period=>period?.end>=today);
+}
+// A blank date selection means "from this weekend through the last published
+// weekend", not the entire historical dataset. An explicit past-date selection
+// still uses the original period and never deletes old event records.
+export function currentAndFutureWindow(periods,today=todayJst()){
+  const first=saturdayOf(today);
+  const last=(periods||[]).filter(p=>p?.kind==='weekend').at(-1)?.end;
+  // Preserve a nonempty impossible window if the manifest is stale: without
+  // this guard filterEvents would interpret an empty periods array as ALL.
+  if(!last || first>last) return {start:'9999-12-31',end:'9999-12-31'};
+  return {start:first,end:last};
+}
 function initialState(params,periods){
   const validDate=params.getAll('d').find(date=>periods.some(period=>period.start===date));
   const dates=new Set(validDate?[validDate]:[]);
@@ -47,13 +67,15 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     ratings:[...state.ratings],prices:[...state.prices],
     environments:[...state.environments],reservations:[...state.reservations],
     sourceModes:[...state.sourceModes],
-    periods:periods.filter(x=>state.dates.has(x.start)).map(x=>({start:x.start,end:x.end}))
+    periods:state.dates.size
+      ?periods.filter(x=>state.dates.has(x.start)).map(x=>({start:x.start,end:x.end}))
+      :[currentAndFutureWindow(periods)]
   });
   function notify(){updateSummary();onChange();}
   function renderWeekTabs(){
     const all=!state.dates.size;
-    $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>6週間</span></button>`+
-      periods.map(period=>{
+    $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>今週末から</span></button>`+
+      visibleQuickPeriods(periods).map(period=>{
         const meta=holidayTabMeta(period,manifest),checked=state.dates.has(period.start);
         return `<button type="button" class="week-tab ${checked?'active':''} ${period.available?'':'pending'}" data-date="${period.start}" aria-pressed="${checked}"><b>${escapeHtml(meta.primary)}</b><span>${escapeHtml(meta.secondary)}</span></button>`;
       }).join('');
@@ -82,7 +104,11 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     for(const group of GROUPS){if(state[group.key].size)parts.push(group.title+state[group.key].size);}
     $('filterSummary').textContent=parts.length?`（${parts.join('・')}）`:'（条件なし）';
     // Reset is available even if only the keyword search is active.
-    $('selectedHint').textContent='期間は単一選択、区は複数選択できます。全期間に戻す場合は「全期間」を選んでください。';
+    const selectedPeriod=periods.find(p=>state.dates.has(p.start));
+    const pastSelection=selectedPeriod && selectedPeriod.end<todayJst();
+    $('selectedHint').textContent=pastSelection
+      ?'過去の期間を検索中です。ほかの過去の日程は「日付指定」から検索できます。「全期間」で解除できます。'
+      :'期間は単一選択、区は複数選択できます。過去の日程は「日付指定」で検索できます。';
   }
   function toggleSet(bucket,value,checked){
     if(checked) bucket.add(value);else bucket.delete(value);
@@ -111,6 +137,8 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     }
     const el=$('msgBox');el.textContent='';el.style.display='none';
     choosePeriod(period.start);
+    // Keep the explicitly selected historical day visible in the date picker.
+    $('dateInput').value=date;
     $('dateRefine').open=false;
   }
   function reset(){
@@ -118,6 +146,11 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('dateInput').value='';
     $('searchInput').value='';
     renderGroups();notify();
+  }
+  // Restore past selections shared by URL even when the shortcut is hidden.
+  const selectedPeriod=periods.find(p=>state.dates.has(p.start));
+  if(selectedPeriod && selectedPeriod.end<todayJst()){
+    $('dateInput').value=selectedPeriod.start;
   }
   $('weekTabs').addEventListener('click',handleWeek);
   $('chips').addEventListener('change',handleWard);

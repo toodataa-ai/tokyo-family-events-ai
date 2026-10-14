@@ -1,5 +1,5 @@
-operation=targeted-official-source-and-eligibility-correction
-candidate_sha=139b407c11af9a88947e2239896e6fcfb019bd48
-base_data_production_sha=cda20d27e8bc012935864c6646e43f6ea5d51b7e
-requested_at=2026-10-13T16:03:01.611Z
-note=Approved release: source-reference corrections and two audited exclusions only (Nerima Nov07 no scheduled program; Minato Nov14 registration closed). Preserves all other event IDs, production application v1.05 and 2026-10-13 holiday-after update_history status (not completed).
+operation=published-data-history-backfill
+candidate_sha=1d3c8c38f7eb2f59a3fd7c2cfc3df92b80f928e5
+base_data_production_sha=139b407c11af9a88947e2239896e6fcfb019bd48
+requested_at=2026-10-14T17:26:00+09:00
+note=History-only backfill for actual Oct13 published data corrections; compare base..candidate proves site/data/update_history.json is the only change; preserves all event data, prompt, application and release version. This does not certify the full six-week holiday-after rolling refresh.

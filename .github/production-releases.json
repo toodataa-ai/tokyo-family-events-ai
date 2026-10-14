@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-13-r1",
+  "current_public_release": "release/2026-10-14-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -60,7 +60,16 @@
       "workflow_run_id": 38320277789,
       "note": "日本の祝日と連続休日明けを考慮した日付可変の6週間イベント更新計画。対象週・単独祝日・必須参照元の月別URLを算出し、更新判定と回帰テストを追加。既存イベントデータ、検索UI、公開データ反映方式は変更なし。",
       "public_version": "1.05"
+    },
+    {
+      "release_id": "release/2026-10-14-r1",
+      "branch": "release/2026-10-14-r1",
+      "commit_sha": "e63aa9bd0df8d3c416a613f92b6cfafd5f82e020",
+      "deployed_at": "2026-10-14T03:50:36Z",
+      "workflow_run_id": 38508272165,
+      "note": "「全期間」を当週土曜日から掲載最終週までに変更。終了した週末・祝日のクイックタブを非表示、過去の明示日付検索・6週間内の長期イベント・検索とコピーリストの連携を維持。既存データ347件に変更なし。独立候補監査と本番Pagesデプロイ成功を確認。",
+      "public_version": "1.06"
     }
   ],
-  "current_public_version": "1.05"
+  "current_public_version": "1.06"
 }

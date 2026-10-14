@@ -1,4 +1,22 @@
 {
   "schema_version": 1,
-  "history": []
+  "history": [
+    {
+      "run_id": "data-correction-2026-10-13-139b407c11af",
+      "run_type": "published_data_correction",
+      "as_of_jst": "2026-10-13",
+      "executed_at": "2026-10-13T10:11:36+09:00",
+      "last_followup_published_at": "2026-10-14T01:03:08+09:00",
+      "target_start": "2026-10-10",
+      "target_end": "2026-11-15",
+      "published_unique_before": 252,
+      "published_unique_after": 250,
+      "published_weekly_records_before": 354,
+      "published_weekly_records_after": 347,
+      "source_rechecks": 67,
+      "baseline_data_production_sha": "17b19d2a6f4173e94cd3ca9694793ba2feba41a0",
+      "resulting_data_production_sha": "139b407c11af9a88947e2239896e6fcfb019bd48",
+      "note": "10/13の公開済み6週間イベントデータを公式情報・掲載適性に基づき補正（参照元67件再点検、10/14未明に追加修正）。新たな6週間ローリング期間への切替は含まれません。件数は同一イベント重複統合後の値です。"
+    }
+  ]
 }

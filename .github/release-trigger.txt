@@ -1,10 +1,9 @@
-# Production release trigger
-# Release is authorized after staging validation and user approval.
-# Public root uses the production branch application; runtime data overlays from data-production.
+# Production app release trigger — approved code-only change.
+# The root application comes from production; event data still overlays data-production.
 operation=release
 production_ref=production
-approved_staging_sha=8de461f32ced3e4b9da8462db69213ac83f8521d
-target_public_version=1.05
-previous_public_release=release/2026-10-10-r1
-updated_at=2026-10-12T23:05:16.834Z
-note=Release approved read-only date-variable Japan-holiday-aware six-week plan, regression tests, and manual GitHub Actions entry. No event-data or public-site UI changes.
+approved_staging_sha=e63aa9bd0df8d3c416a613f92b6cfafd5f82e020
+target_public_version=1.06
+previous_public_release=release/2026-10-13-r1
+updated_at=2026-10-14T03:49:48.739Z
+note=Approved Version 1.06 UI-only: All Period starts with this weekend, hides completed weekend/holiday quick tabs, preserves explicit historical date search and search-to-copy integration. Existing 347 published event records and production data unchanged. Independently verified by workflow 38508168438.

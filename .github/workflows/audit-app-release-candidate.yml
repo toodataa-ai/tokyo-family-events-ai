@@ -1,0 +1,65 @@
+name: Audit approved app release candidate v1.06 (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-app-release-candidate.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Checkout immutable approved release candidate
+        uses: actions/checkout@v4
+        with:
+          ref: e63aa9bd0df8d3c416a613f92b6cfafd5f82e020
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Enforce exactly five approved paths and prior production base
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "e63aa9bd0df8d3c416a613f92b6cfafd5f82e020"
+          test "$(git rev-parse HEAD^)" = "8de461f32ced3e4b9da8462db69213ac83f8521d"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/candidate-changed.txt
+          printf '%s\n' \
+            package.json \
+            site/copy.html \
+            site/multi-filter-ui.js \
+            site/search.html \
+            tests/hidden_past_period_shortcuts.test.mjs | sort > /tmp/expected-changed.txt
+          diff -u /tmp/expected-changed.txt /tmp/candidate-changed.txt
+          echo 'Approved UI-only paths exactly match; event data unchanged.'
+      - name: Check published data pointer remains unchanged
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "139b407c11af9a88947e2239896e6fcfb019bd48"
+          echo "Data production unchanged: $actual"
+      - name: Run full released application test suite with new historical date regression
+        run: npm test
+      - name: Verify search and copy screens and module cache revision
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          ui=Path('site/multi-filter-ui.js').read_text()
+          for page in ('search.html','copy.html'):
+            html=Path('site',page).read_text()
+            assert 'multi-filter-ui.js?v=20261014-all-from-this-weekend' in html, page
+            assert 'id="dateInput"' in html, page
+            assert 'id="weekTabs"' in html, page
+          assert 'currentAndFutureWindow(periods)' in ui
+          assert "periods:state.dates.size" in ui
+          assert '今週末から' in ui
+          assert "state.dates.add(value)" in ui
+          print('PASS: both pages use date-preserving, upcoming All Period logic')
+          PY

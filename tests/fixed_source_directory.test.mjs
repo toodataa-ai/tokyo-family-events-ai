@@ -18,7 +18,7 @@ assert.match(html,/all\.filter\(source=>source && source\.enabled===true\)/);
 assert.match(html,/source\.origin==='official'/);
 assert.match(html,/source\.origin==='official_added'/);
 assert.match(html,/従来からの固定サイト/);
-assert.match(html,/safeHttpUrl\(source\.base_url\|\|source\.search_urls\?\.\[0\]\)/);
+assert.match(html,/safeHttpUrl\(source\.annual_listing_url\|\|source\.base_url\|\|source\.search_urls\?\.\[0\]\)/);
 assert.match(html,/escapeHtml\(source\.label/);
 assert.match(html,/target="_blank" rel="noopener noreferrer"/);
 assert.match(html,/catch\(error\)[\s\S]*固定サイト一覧を取得できませんでした/);

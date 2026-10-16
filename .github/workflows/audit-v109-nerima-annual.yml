@@ -1,0 +1,76 @@
+name: Audit approved v1.09 annual Nerima source (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v109-nerima-annual.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated approved production-based candidate
+        uses: actions/checkout@v4
+        with:
+          ref: d30537b8cb120a2c5313f7642ead42aedee3692c
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check exact scope and baseline without deleting any event data
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "d30537b8cb120a2c5313f7642ead42aedee3692c"
+          test "$(git rev-parse HEAD^)" = "8f5da5caf753c4dd87c63f8e3e0a88aa1aeee1d0"
+          git diff --name-only HEAD^ HEAD | sort >/tmp/actual
+          printf '%s\n' \
+            site/index.html site/data/discovery_sources.json \
+            tools/nerima_annual_resolver.py tools/official_schedule_discovery.py \
+            tools/rolling_horizon.py tools/validate_official_schedule_audit.py \
+            tools/validate_protected_events.py \
+            prompts/tokyo_family_events_complete_prompt_v1.15.txt \
+            tests/test_official_schedule_annual.py tests/fixed_source_directory.test.mjs | sort >/tmp/expected
+          diff -u /tmp/expected /tmp/actual
+          echo 'Exact ten-file approved update; no data record modification.'
+      - name: Regression suite including annual rollover and source directory
+        run: npm test
+      - name: Strict data, decision and official schedule audits
+        run: |
+          python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python tools/validate_decisions.py --strict site/data
+          python tools/validate_official_schedule_audit.py site/data
+      - name: Confirm exact published data still preserved and add-only source upgrade
+        shell: bash
+        run: |
+          git fetch origin data-production --depth=1
+          python - <<'PY'
+          import json,subprocess
+          def git_content(ref,path):
+              return subprocess.check_output(['git','show',ref+':'+path],text=True)
+          expected='40a4c1c600bef6407745c65489c984a6b67b63c3'
+          actual=subprocess.check_output(['git','rev-parse','origin/data-production'],text=True).strip()
+          assert actual==expected,(actual,expected)
+          manifest=json.loads(git_content('origin/data-production','site/data/manifest.json'))
+          assert sum(w['count'] for w in manifest['weekends'])==349
+          old=json.loads(git_content('HEAD^','site/data/discovery_sources.json'))
+          new=json.load(open('site/data/discovery_sources.json'))
+          assert len(new['explicit_sources'])==len(old['explicit_sources'])==22
+          before={x['id']:x for x in old['explicit_sources']}
+          after={x['id']:x for x in new['explicit_sources']}
+          assert set(before)==set(after)
+          for key,source in before.items():
+              if key!='nerima_district_festivals_2026':
+                  assert source==after[key],key
+              else:
+                  for k,v in source.items(): assert after[key].get(k)==v,k
+                  assert after[key]['annual_listing_url'].endswith('/chikusai/index.html')
+          assert json.load(open('policy/approved_event_removals.json'))['approvals']==[]
+          print('PASS: no event data edits, 349 preserved, no source deletion, old dated URL retained')
+          PY

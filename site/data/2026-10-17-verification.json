@@ -1368,11 +1368,51 @@
       "corrections": {},
       "note": "2026-10-16 新規追記。対象イベントのみ公式照合。既存68イベントの再検証は実施していない。",
       "checked_at": "2026-10-16T23:00:00+09:00"
+    },
+    {
+      "id": "fx-20261017-nakano-nabeyoko",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "ためまっぷへの主催者本人投稿から主要開催項目を確認。 個別確認日: 2026-10-17。",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "id": "fx-20261017-nakano-yayoi",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/161456?locale=ja",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "ためまっぷへの主催者本人投稿から主要開催項目を確認。 個別確認日: 2026-10-17。",
+      "checked_at": "2026-10-17"
     }
   ],
   "summary": {
-    "total": 70,
-    "verified": 70,
+    "total": 72,
+    "verified": 72,
     "announced": 0,
     "corrected": 0
   }

@@ -136,7 +136,7 @@ def main():
                     errors.append("previous discovery source removed: " + sid)
                 elif new_map[sid] != row:
                     candidate = new_map[sid]
-                    added = {"annual_listing_url", "annual_resolution_policy"}
+                    added = {"annual_listing_url", "annual_resolution_policy", "annual_listing_label"}
                     historical_unchanged = all(candidate.get(key) == value for key, value in row.items())
                     added_fields_exact = set(candidate) - set(row) == added
                     safe_annual_upgrade = (
@@ -144,6 +144,7 @@ def main():
                         and historical_unchanged and added_fields_exact
                         and candidate.get("annual_listing_url") ==
                             "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"
+                        and candidate.get("annual_listing_label") == "練馬区公式 地区祭（年度別開催日程）"
                         and candidate.get("annual_resolution_policy") ==
                             "resolve_fiscal_year_link_from_official_listing_fail_closed"
                     )

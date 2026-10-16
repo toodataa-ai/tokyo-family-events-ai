@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-17",
   "events": [
     {
       "id": "v15-272dbd09eb0a",
@@ -1141,11 +1141,87 @@
       },
       "corrections": {},
       "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+    },
+    {
+      "id": "fx-20261024-itabashi-kids-smile",
+      "status": "verified",
+      "source": "https://www.tokyo-park.or.jp/park/ukima/news/2026/9.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "媒体記事で発見し自治体または都立公園の公式案内と照合。"
+    },
+    {
+      "id": "fx-20261024-itabashi-fujimi",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006883.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "媒体記事で発見し自治体または都立公園の公式案内と照合。"
+    },
+    {
+      "id": "fx-20261024-itabashi-takashimadaira",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006878.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "媒体記事で発見し自治体または都立公園の公式案内と照合。"
+    },
+    {
+      "id": "fx-20261024-itabashi-market",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/1000779/1000805/1000807/1054191.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "媒体記事で発見し自治体または都立公園の公式案内と照合。"
     }
   ],
   "summary": {
-    "total": 60,
-    "verified": 52,
+    "total": 64,
+    "verified": 56,
     "announced": 8,
     "corrected": 0
   }

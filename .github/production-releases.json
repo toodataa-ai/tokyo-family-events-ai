@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-17-r1",
+  "current_public_release": "release/2026-10-17-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -78,7 +78,16 @@
       "workflow_run_id": 38955322408,
       "note": "公式探索先に中野区観光協会・板橋区公式祭り情報等を追加し、イベントの無承認削除、探索元・履歴の欠損を検知する保護機構を本番導入。既存画面・日付別イベントデータは変更なし。公式追加2件を含む本番データ349延べ掲載レコードを維持。削除承認0件。",
       "public_version": "1.07"
+    },
+    {
+      "release_id": "release/2026-10-17-r2",
+      "branch": "release/2026-10-17-r2",
+      "commit_sha": "8f5da5caf753c4dd87c63f8e3e0a88aa1aeee1d0",
+      "deployed_at": "2026-10-16T22:29:43Z",
+      "workflow_run_id": 38976015534,
+      "note": "抽出ロジックに固定サイト（登録済み参照元）一覧を追加。登録済み22サイトを自治体・観光協会などの公式系と従来サイトに分けて折りたたみ表示し、リンクから参照可能。既存画面文言・検索機能・固定サイト設定・イベントデータは変更なし。349件の延べ掲載データを維持。Pull Request #2 経由で承認済みの4ファイルのみ公開。",
+      "public_version": "1.08"
     }
   ],
-  "current_public_version": "1.07"
+  "current_public_version": "1.08"
 }

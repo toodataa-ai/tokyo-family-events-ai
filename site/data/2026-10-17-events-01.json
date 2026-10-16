@@ -4678,5 +4678,147 @@
       "confidence": "high",
       "discovery_query": "targeted duplicate re-audit v1.11"
     }
+  },
+  {
+    "id": "official-20261017-nakano-komafes",
+    "ward": "中野区",
+    "name": "KOMAFES2026（コマフェス2026）",
+    "url": "https://www.nakano-kanko.com/event-info/event-3830/",
+    "official_url": "https://www.nakano-kanko.com/event-info/event-3830/",
+    "source": "https://www.nakano-kanko.com/event-info/event-3830/",
+    "image": null,
+    "period": "10/17〜10/18",
+    "date_start": "2026-10-17",
+    "date_end": "2026-10-18",
+    "time": "10/17 11:00〜18:00、10/18 10:00〜18:00",
+    "venue": "中野区役所新庁舎1階（ナカノバ・ナカニワ・ソトニワ・絵本ラウンジ等）",
+    "price": null,
+    "description": "相撲体験、コマ撮りアニメーション、遊び・学びの企画、マルシェなど。子どもも参加できる多彩な催し。",
+    "categories": [
+      "祭り",
+      "子ども",
+      "体験"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "注意点を踏まえても家族で参加する価値がある。",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子向け要素が明示される。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "参加・体験要素がある。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "大きな身体・時間負担は確認できない。"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "料金情報が十分でなく推測しない。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で出かける目的になる体験・特別感がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "プログラムごとの参加方法は公式サイトで確認"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "ai": {
+      "checked_at": "2026-10-16T23:00:00+09:00",
+      "confidence": "high",
+      "discovery_query": "ユーザー指摘→公式・主催者ページで追加照合。23区の全件再探索ではない"
+    }
+  },
+  {
+    "id": "official-20261017-itabashi-kumin",
+    "ward": "板橋区",
+    "name": "第55回板橋区民まつり",
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+    "official_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+    "source": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+    "image": null,
+    "period": "10/17〜10/18",
+    "date_start": "2026-10-17",
+    "date_end": "2026-10-18",
+    "time": "10/17 11:00〜17:00、10/18 9:00〜16:00",
+    "venue": "板橋区立グリーンホール前道路および周辺（栄町36番ほか）",
+    "price": null,
+    "description": "区民おどりやパレード、子どもみこし、板橋子ども文化祭、絵本のまちひろば、スポーツ体験などの区民まつり。",
+    "categories": [
+      "祭り",
+      "子ども",
+      "体験"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "注意点を踏まえても家族で参加する価値がある。",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子向け要素が明示される。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "参加・体験要素がある。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "大きな身体・時間負担は確認できない。"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "料金情報が十分でなく推測しない。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で出かける目的になる体験・特別感がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "プログラムごとの参加方法は公式サイトで確認"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "ai": {
+      "checked_at": "2026-10-16T23:00:00+09:00",
+      "confidence": "high",
+      "discovery_query": "ユーザー指摘→公式・主催者ページで追加照合。23区の全件再探索ではない"
+    }
   }
 ]

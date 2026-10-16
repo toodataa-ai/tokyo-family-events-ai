@@ -1,9 +1,9 @@
-# Production app release trigger — approved code-only change.
-# The root application comes from production; event data still overlays data-production.
+# Production app release trigger — approved safety/discovery-only change.
+# Production site remains the released 1.06 UI; dynamic event data overlays data-production.
 operation=release
 production_ref=production
-approved_staging_sha=e63aa9bd0df8d3c416a613f92b6cfafd5f82e020
-target_public_version=1.06
-previous_public_release=release/2026-10-13-r1
-updated_at=2026-10-14T03:49:48.739Z
-note=Approved Version 1.06 UI-only: All Period starts with this weekend, hides completed weekend/holiday quick tabs, preserves explicit historical date search and search-to-copy integration. Existing 347 published event records and production data unchanged. Independently verified by workflow 38508168438.
+approved_staging_sha=354648b58a1b9228404082001d3b5a3453e36096
+target_public_version=1.07
+previous_public_release=release/2026-10-14-r1
+updated_at=2026-10-17T04:32:00+09:00
+note=User-approved official discovery sources and fail-closed approval-required event removal guard. Exact nine-file prod-based candidate passed read-only Actions audit 38955233682. No app HTML/CSS/JS or dated event datasets changed. Preserves 349 weekly event records in data-production 40a4c1c600bef6407745c65489c984a6b67b63c3; deletion approvals remain zero.

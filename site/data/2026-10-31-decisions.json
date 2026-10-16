@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 51,
-    "published": 46,
+    "candidate_total": 52,
+    "published": 47,
     "excluded": 3,
     "duplicate": 2,
     "hard_excluded": 1,
@@ -4022,6 +4022,74 @@
         {
           "kind": "v15_web_search",
           "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=31&event_category=1%2C2%2C4&event_target=0&month=10&type=3&year=2026"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261101-nakano-child-festival",
+      "name": "地域子ども祭り（上高田台公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公園運営委員会が子どもの祭りを案内。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地域の冒険あそび場の祭りで参加が中心。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生・幼児を含む親子向け。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "公園内の催しを自由に回遊できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外なので天候に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "主催者投稿が無料と案内。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "主催者投稿で当日参加可能。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "地域の子ども向け祭りに参加できる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "地域の子ども祭りをプレーパーク主催者が直接開催告知している。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+          "basis": "2026-11-01の開催日、場所、無料・当日参加情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "tamemap_nakano",
+          "kind": "organizer_post",
+          "url": "https://pc.tamemap.net/1311401/event/161749?locale=ja"
         }
       ]
     }

@@ -1,5 +1,5 @@
-operation=published-data-history-backfill
-candidate_sha=1d3c8c38f7eb2f59a3fd7c2cfc3df92b80f928e5
-base_data_production_sha=139b407c11af9a88947e2239896e6fcfb019bd48
-requested_at=2026-10-14T17:26:00+09:00
-note=History-only backfill for actual Oct13 published data corrections; compare base..candidate proves site/data/update_history.json is the only change; preserves all event data, prompt, application and release version. This does not certify the full six-week holiday-after rolling refresh.
+operation=manual-official-append-only
+candidate_sha=40a4c1c600bef6407745c65489c984a6b67b63c3
+base_data_production_sha=1d3c8c38f7eb2f59a3fd7c2cfc3df92b80f928e5
+requested_at=2026-10-16T23:15:00+09:00
+note=Add ONLY KOMAFES2026 and 55th Itabashi Kumin Matsuri to Oct17 weekend. Baseline 347 historical weekly records, candidate 349. Zero prior event/decision/verification record changes, zero deleted files. Unapproved deletion guard enabled in staging-policy. Other weeks unchanged. No application or UX changes.

@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 38,
-    "published": 35,
+    "candidates": 39,
+    "published": 36,
     "excluded": 3,
     "duplicate_removed": 0,
-    "verified": 26,
+    "verified": 27,
     "announced": 9,
     "corrected": 0,
     "thumbnail_count": 34,
-    "thumbnail_coverage": 0.971,
+    "thumbnail_coverage": 0.9444444444444444,
     "decision_audit_complete": true,
     "hard_excluded": 0,
     "soft_excluded": 3,
@@ -119,6 +119,27 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-11-14-v16-rereview.json"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17T08:55:00+09:00",
+      "scope": "fixed-site source discovery + organizer/municipal confirmation; no historical ward search claims",
+      "source_ids": [
+        "itabashi_times_event"
+      ],
+      "candidate_ids": [
+        "fx-20261114-itabashi-agriculture-festival"
+      ],
+      "not_full_run": true,
+      "source_evidence": [
+        {
+          "id": "fx-20261114-itabashi-agriculture-festival",
+          "discovery_url": "https://itabashi-times.com/category/event",
+          "official_or_organizer_url": "https://www.city.itabashi.tokyo.jp/bousai/nougyo/event/matsuri/1066138.html"
+        }
+      ],
+      "note": "2026年度公式日付で確認済み。既存イベント変更なし。"
     }
   ]
 }

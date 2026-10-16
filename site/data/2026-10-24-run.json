@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 73,
-    "published": 67,
+    "candidates": 78,
+    "published": 72,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 59,
+    "verified": 64,
     "announced": 8,
     "corrected": 1,
     "thumbnail_count": 59,
-    "thumbnail_coverage": 0.881,
+    "thumbnail_coverage": 0.8194444444444444,
     "decision_audit_complete": true,
     "hard_excluded": 3,
     "soft_excluded": 1,
@@ -135,6 +135,24 @@
       "removed_event_id": "v15-ecd097be86ba",
       "reason": "Officially ended 2026-10-12, not 2027-03-20.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17",
+      "scope": "Two new fixed sources plus municipality official verification for one event; no 23-ward re-run",
+      "source_ids": [
+        "itabashi_times_event"
+      ],
+      "candidate_ids": [
+        "fx-20261024-itabashi-kids-smile",
+        "fx-20261024-itabashi-fujimi",
+        "fx-20261024-itabashi-takashimadaira",
+        "fx-20261024-itabashi-market",
+        "fx-20261024-itabashi-otani-festival"
+      ],
+      "not_full_run": true,
+      "note": "All existing published events and the Nerima official shard are retained."
     }
   ]
 }

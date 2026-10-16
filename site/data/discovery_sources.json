@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-17",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -386,6 +386,38 @@
       ],
       "event_row_audit_required": true,
       "note": "年度イベント特集を掲載候補確認に使う。将来は年度ごとの公式ページへ差し替え、旧設定は維持する。"
+    },
+    {
+      "id": "tamemap_nakano",
+      "label": "ためまっぷなかの（地域イベントカレンダー）",
+      "origin": "manual",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://pc.tamemap.net/1311401?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+      "search_urls": [
+        "https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
+      ],
+      "event_row_audit_required": true,
+      "note": "対象6週間の各月カレンダーを日付別に開き、対象休日の日毎のイベント・詳細ページを回収する（地図500m表示だけでは区内全域を網羅できないため表示範囲を全域にして照合）。家族・キッズ対象だけでなく地域祭り・工作・図書館・防災等も確認。ためまっぷの投稿内容を公式確定情報とみなさず、主催者（区・施設・投稿者等）の一次情報で別途検証。表示・取得失敗は候補0件と扱わずerrorを記録。"
+    },
+    {
+      "id": "itabashi_times_event",
+      "label": "いたばしTIMES（イベント情報）",
+      "origin": "manual",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://itabashi-times.com/category/event",
+      "search_urls": [
+        "https://itabashi-times.com/category/event",
+        "https://itabashi-times.com/category/event/page/2",
+        "https://itabashi-times.com/archives/event{YYYY}{MM}.html"
+      ],
+      "event_row_audit_required": true,
+      "note": "記事一覧のページ送り、当該月まとめ・週次まとめ記事、各イベント個別記事を別々に確認。まとめ記事は候補の索引として展開し、同一イベントの重複を除外。開催日が探索6週内なら過去公開記事も対象。媒体は候補発見用であり、公開は区・主催者・施設公式の日時・会場照合が必要。URLパターンが不成立ならリンクをたどって検索しerrorを記録する。"
     }
   ],
   "protected_source_ids": [
@@ -410,6 +442,8 @@
     "nerima_district_festivals_2026",
     "nakano_official_tourism",
     "itabashi_official_festival",
-    "itabashi_tourism_festival"
+    "itabashi_tourism_festival",
+    "tamemap_nakano",
+    "itabashi_times_event"
   ]
 }

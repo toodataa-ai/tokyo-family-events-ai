@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-17",
   "events": [
     {
       "id": "v15-e76cca9290ef",
@@ -707,11 +707,30 @@
       },
       "corrections": {},
       "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+    },
+    {
+      "id": "fx-20261107-nakano-food-workshop",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/160996/2026-11-7?locale=ja",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "中野区産業振興課の主催者投稿で内容、申込期間、URLを確認。市公式記事は閲覧時403のため閲覧済みとはしない。"
     }
   ],
   "summary": {
-    "total": 38,
-    "verified": 32,
+    "total": 39,
+    "verified": 33,
     "announced": 6,
     "corrected": 0
   }

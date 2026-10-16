@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 75,
-    "published": 68,
+    "candidate_total": 78,
+    "published": 71,
     "excluded": 5,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -6320,6 +6320,210 @@
         {
           "kind": "legacy_detail",
           "url": "https://www.ikebukuropark.info/sunshine-aquarium-zannen-2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261017-nakano-nabeyoko",
+      "name": "鍋横地区まつり2026",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "参加対象・内容から家族で出かける価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja",
+          "basis": "イベント名・開催日・会場の主催者情報。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "tamemap_nakano",
+          "kind": "source_detail",
+          "url": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261017-nakano-yayoi",
+      "name": "やよい地区まつり",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "参加対象・内容から家族で出かける価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161456?locale=ja",
+          "basis": "イベント名・開催日・会場の主催者情報。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "tamemap_nakano",
+          "kind": "source_detail",
+          "url": "https://pc.tamemap.net/1311401/event/161456?locale=ja"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261017-itabashi-citizen-festival",
+      "name": "第55回板橋区民まつり",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "参加対象・内容から家族で出かける価値がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+          "basis": "イベント名・開催日・会場の主催者情報。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "source_detail",
+          "url": "https://itabashi-times.com/archives/event20261017.html"
         }
       ]
     }

@@ -4516,5 +4516,84 @@
       "confidence": "high",
       "discovery_query": "2026-10-17 source-specific incremental search; not a full re-search"
     }
+  },
+  {
+    "id": "fx-20261024-itabashi-otani-festival",
+    "ward": "板橋区",
+    "name": "令和8年度 大谷口地区フェスティバル",
+    "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html",
+    "official_url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html",
+    "source": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html",
+    "period": "10/25",
+    "date_start": "2026-10-25",
+    "date_end": "2026-10-25",
+    "time": "9:30〜12:30頃（9:20開場）",
+    "venue": "上板橋第二中学校（板橋区向原3-1-12）",
+    "price": "無料・模擬店等は有料",
+    "description": "児童館の工作、餅つき、輪投げ、ゲーム、子どもみこし体験などを楽しめる地域祭り。小雨決行。",
+    "categories": [
+      "地域祭り",
+      "工作",
+      "みこし",
+      "親子"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "工作・遊び・みこし等の家族向け内容が公式に確認できる。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "児童館工作、青少年みこし体験、ゲーム等がある。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "工作、輪投げ、餅つき、みこし体験に参加可能。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "小学生・幼児連れ向きの地域の催し。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "自由に回遊・短時間訪問が可能。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "校庭開催のため天候・混雑に注意。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "参加無料で模擬店・ゲーム等は一部有料。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "事前申込は不要と板橋区が明示。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "親子で遊びと地域交流を体験できる。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "公式情報に事前申込不要と明記"
+    },
+    "indoor_outdoor": "屋外",
+    "discovery_sources": [
+      {
+        "channel": "ai_cross",
+        "source_id": null,
+        "kind": "official_festival_cross_check",
+        "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17T08:58:00+09:00",
+      "confidence": "high",
+      "discovery_query": "additional official event discovered when verifying Itabashi district festival omissions"
+    }
   }
 ]

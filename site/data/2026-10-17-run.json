@@ -98,15 +98,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 78,
-    "published": 70,
+    "candidates": 80,
+    "published": 72,
     "excluded": 6,
     "duplicate_removed": 2,
-    "verified": 70,
+    "verified": 72,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 64,
-    "thumbnail_coverage": 0.914,
+    "thumbnail_coverage": 0.8888888888888888,
     "decision_audit_complete": true,
     "hard_excluded": 3,
     "soft_excluded": 3,
@@ -187,6 +187,21 @@
         "official-20261017-itabashi-kumin"
       ],
       "note": "Only 2 official-confirmed candidate additions; no old event removed, no historical search counters altered. Full 23 ward re-discovery still pending."
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17",
+      "scope": "Newly registered fixed-site incremental discovery, not a full 23-ward re-search",
+      "source_ids": [
+        "tamemap_nakano"
+      ],
+      "candidate_ids": [
+        "fx-20261017-nakano-nabeyoko",
+        "fx-20261017-nakano-yayoi"
+      ],
+      "not_full_run": true,
+      "note": "Production data remains authoritative. Existing Itabashi Citizen Festival has already been published, so its staging duplicate was not re-added."
     }
   ]
 }

@@ -32,6 +32,33 @@ class AuditTests(unittest.TestCase):
         self.assertTrue(any("coverage.queries" in x for x in validate(r, w, d)))
         self.assertTrue(any("missing actual" in x for x in validate(r, w, d)))
 
+    def test_missing_required_official_source_fails(self):
+        run, week, decisions = setup()
+        config = {"explicit_sources": [{
+            "id": "nakano_official_tourism", "enabled": True, "required": True,
+            "search_urls": ["https://www.nakano-kanko.com/event/"],
+            "event_row_audit_required": True,
+        }]}
+        errors = validate(run, week, decisions, config)
+        self.assertTrue(any("required source not checked" in x for x in errors))
+
+    def test_unmatched_official_event_row_fails(self):
+        run, week, decisions = setup()
+        config = {"explicit_sources": [{
+            "id": "nakano_official_tourism", "enabled": True, "required": True,
+            "search_urls": ["https://www.nakano-kanko.com/event/"],
+            "event_row_audit_required": True,
+        }]}
+        run["explicit_source_checks"] = [{
+            "source_id": "nakano_official_tourism", "status": "checked",
+            "search_url": "https://www.nakano-kanko.com/event/",
+            "checked_at": "2026-10-16T23:00:00+09:00",
+            "official_row_count": 1, "candidate_count": 1,
+            "candidate_ids": ["missing-Komafes"], "unmatched_official_rows": [],
+        }]
+        errors = validate(run, week, decisions, config)
+        self.assertTrue(any("unreconciled official event rows" in x for x in errors))
+
     def test_historical_runs_not_retroactively_mutated(self):
         r, w, d = setup()
         r["prompt"]["version"] = "v1.5"

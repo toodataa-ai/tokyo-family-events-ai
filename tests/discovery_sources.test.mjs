@@ -56,3 +56,18 @@ const festival=sources.find(x=>x.id==='nerima_district_festivals_2026');
 assert.ok(festival && festival.required===true && festival.enabled===true);
 assert.ok(festival.search_urls.some(url=>url.includes('/chikusai/20260616103208700.html')));
 assert.match(prompt,/official_schedule_checks/);
+
+// Discovery completeness regression after KOMAFES and Itabashi festival omissions.
+const mandatory={
+  nakano_official_tourism:'https://www.nakano-kanko.com/event/',
+  itabashi_official_festival:'https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html',
+  itabashi_tourism_festival:'https://itabashi-kanko.jp/pickup/detail?id=1799',
+};
+for(const [id,url] of Object.entries(mandatory)){
+  const source=sources.find(x=>x.id===id);
+  assert.ok(source && source.enabled && source.required, `mandatory official source missing or disabled: ${id}`);
+  assert.ok(source.search_urls.includes(url), `official URL missing: ${id}`);
+  assert.equal(source.event_row_audit_required,true,`${id}: official candidate parity is mandatory`);
+}
+assert.ok((data.protected_source_ids||[]).length >= sources.filter(x=>x.enabled).length);
+for(const source of sources.filter(x=>x.enabled)) assert.ok(data.protected_source_ids.includes(source.id),`source not protected from deletion: ${source.id}`);

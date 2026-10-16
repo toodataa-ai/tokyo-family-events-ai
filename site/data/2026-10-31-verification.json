@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-17",
   "events": [
     {
       "id": "v15-6d359a847bb0",
@@ -855,11 +855,30 @@
       },
       "corrections": {},
       "note": "v1.6除外再審査で公式・主催者情報を再確認し掲載へ復活。"
+    },
+    {
+      "id": "fx-20261101-nakano-child-festival",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "上高田台公園運営委員会が直接投稿した11月1日の子ども祭り。"
     }
   ],
   "summary": {
-    "total": 46,
-    "verified": 41,
+    "total": 47,
+    "verified": 42,
     "announced": 5,
     "corrected": 0
   }

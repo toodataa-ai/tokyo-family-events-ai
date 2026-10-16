@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 38,
-    "published": 35,
+    "candidate_total": 39,
+    "published": 36,
     "excluded": 3,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -3007,6 +3007,74 @@
         {
           "kind": "v15_web_search",
           "url": "https://www.city.ota.tokyo.jp/event/calendar/list_calendar202611.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261114-itabashi-agriculture-festival",
+      "name": "第49回板橋農業まつり（令和8年度）",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族も参加できる地域の農業・食の祭り。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "地域の農産物や農業体験に触れられる会場を回遊できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生や幼児と家族で一緒に楽しめる内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "複数会場の屋外・屋内催しを選んで訪問可能。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "広い会場の移動や混雑には注意が必要。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般入場料金の明記は未確認。物販などは有料。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "一般観覧と事前申込制の一部体験は異なり、体験募集は終了。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "板橋区ならではの農業・収穫を家族で学べる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "板橋区公式の2026年農業まつりに家族参加可能な催しが確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/bousai/nougyo/event/matsuri/1066138.html",
+          "basis": "令和8年度公式開催日・時間・会場・内容の告知"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "regional_event_media_search",
+          "url": "https://itabashi-times.com/category/event"
         }
       ]
     }

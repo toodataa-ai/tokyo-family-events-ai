@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 53,
-    "published": 47,
+    "candidates": 54,
+    "published": 48,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 42,
+    "verified": 43,
     "announced": 5,
     "corrected": 1,
     "thumbnail_count": 44,
-    "thumbnail_coverage": 0.936,
+    "thumbnail_coverage": 0.9166666666666666,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 2,
@@ -160,6 +160,20 @@
       "applied_at": "2026-10-13",
       "event_id": "v15-52fd793ab1a6",
       "official": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17",
+      "scope": "Tamemap event discovery only, not 23-ward search",
+      "source_ids": [
+        "tamemap_nakano"
+      ],
+      "candidate_ids": [
+        "fx-20261101-nakano-child-festival"
+      ],
+      "not_full_run": true,
+      "note": "One verified organizer-posted event added; keep existing published events and Nerima shard untouched."
     }
   ]
 }

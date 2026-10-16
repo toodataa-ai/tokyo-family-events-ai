@@ -1,0 +1,31 @@
+name: Nerima annual official source live smoke (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/nerima-annual-live-smoke.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  official-page-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test actual annual index and official 2026 schedule
+        run: |
+          python tools/official_schedule_discovery.py --start 2026-10-17 --end 2026-11-15 --output /tmp/nerima-2026-source.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/nerima-2026-source.json'))
+          assert p['status']=='checked'
+          assert p['official_listing_url'].endswith('/chikusai/index.html')
+          assert len(p['resolved_pages'])==1
+          assert p['resolved_pages'][0]['fiscal_year']==2026
+          assert p['resolved_pages'][0]['resolved_url'].endswith('/chikusai/20260616103208700.html')
+          assert p['candidate_count']>0
+          print('PASS official current fiscal year; candidates=',p['candidate_count'])
+          PY

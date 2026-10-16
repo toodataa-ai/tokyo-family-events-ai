@@ -98,15 +98,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 76,
-    "published": 68,
+    "candidates": 78,
+    "published": 70,
     "excluded": 6,
     "duplicate_removed": 2,
-    "verified": 68,
+    "verified": 70,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 64,
-    "thumbnail_coverage": 0.941,
+    "thumbnail_coverage": 0.914,
     "decision_audit_complete": true,
     "hard_excluded": 3,
     "soft_excluded": 3,
@@ -177,6 +177,16 @@
       ],
       "official": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html",
       "notes": "Replaced JS-only Instagram post with public park authority dated calendar."
+    },
+    {
+      "version": "2026-10-16-official-append",
+      "mode": "targeted-missing-event-addition",
+      "applied_at": "2026-10-16T23:00:00+09:00",
+      "official_ids": [
+        "official-20261017-nakano-komafes",
+        "official-20261017-itabashi-kumin"
+      ],
+      "note": "Only 2 official-confirmed candidate additions; no old event removed, no historical search counters altered. Full 23 ward re-discovery still pending."
     }
   ]
 }

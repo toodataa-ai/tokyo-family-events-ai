@@ -1,9 +1,8 @@
-# Production app release trigger — approved safety/discovery-only change.
-# Production site remains the released 1.06 UI; dynamic event data overlays data-production.
+# Approved app-only release trigger; user explicitly authorized v1.08 production release.
 operation=release
 production_ref=production
-approved_staging_sha=354648b58a1b9228404082001d3b5a3453e36096
-target_public_version=1.07
-previous_public_release=release/2026-10-14-r1
-updated_at=2026-10-17T04:32:00+09:00
-note=User-approved official discovery sources and fail-closed approval-required event removal guard. Exact nine-file prod-based candidate passed read-only Actions audit 38955233682. No app HTML/CSS/JS or dated event datasets changed. Preserves 349 weekly event records in data-production 40a4c1c600bef6407745c65489c984a6b67b63c3; deletion approvals remain zero.
+approved_staging_sha=8f5da5caf753c4dd87c63f8e3e0a88aa1aeee1d0
+target_public_version=1.08
+previous_public_release=release/2026-10-17-r1
+release_date_jst=2026-10-17
+note=PR #2 merged exactly four reviewed UI/test files to production: fixed-site directory under extraction logic with 22 currently registered sources, no event data edits. Candidate audit 38975460702 and staging 38974885960 passed. data-production SHA unchanged: 40a4c1c600bef6407745c65489c984a6b67b63c3 (349 week-records). Existing production copy and search flows preserved.

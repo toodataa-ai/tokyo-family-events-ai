@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 76,
-    "published": 68,
+    "candidate_total": 78,
+    "published": 70,
     "excluded": 6,
     "duplicate": 2,
     "hard_excluded": 3,
@@ -6394,6 +6394,146 @@
           "source_id": "nerima_district_festivals_2026",
           "kind": "official_multi_event_schedule",
           "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "supp-20261016-nakano-komafes",
+      "name": "KOMAFES2026（コマフェス2026）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども参加可能な体験・祭りプログラムが公式に確認でき、家族で訪れる価値が高い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nakano-kanko.com/event-info/event-3830/",
+          "basis": "2026年10月17日・18日の開催、会場、親子向け要素を2026-10-16に公式確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "user_report",
+          "url": "https://www.nakano-kanko.com/event-info/event-3830/"
+        },
+        {
+          "kind": "official_manual_reaudit",
+          "url": "https://www.nakano-kanko.com/event-info/event-3830/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "supp-20261016-itabashi-kumin",
+      "name": "第55回板橋区民まつり",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども参加可能な体験・祭りプログラムが公式に確認でき、家族で訪れる価値が高い。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+          "basis": "2026年10月17日・18日の開催、会場、親子向け要素を2026-10-16に公式確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "user_report",
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"
+        },
+        {
+          "kind": "official_manual_reaudit",
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"
         }
       ]
     }

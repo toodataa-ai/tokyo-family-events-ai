@@ -46,6 +46,11 @@
       <div class="logic-step"><span>6</span><b>判断を監査して公開</b><small>掲載・除外・重複の判断、理由、根拠URLを保存し、検索・トップへ反映します。</small></div>
     </div>
     <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。取得経路はイベント詳細で確認できます。</span></div>
+    <details class="logic-fixed-sources" id="fixedSourceDetails">
+      <summary><span>固定サイト（登録済み参照元）一覧</span><small id="fixedSourceCount">読み込み中</small></summary>
+      <p class="logic-fixed-sources-note">イベント候補の探索先として登録されているサイトです。自治体・観光協会の公式サイトと、従来から使っている地域イベントサイトを分けて表示します。サイト名から参照先を開けます。</p>
+      <div id="fixedSourceList" aria-live="polite"><p>固定サイト情報を読み込み中です。</p></div>
+    </details>
 
     <div class="logic-subhead">
       <div class="eyebrow">WEEKLY UPDATE</div>
@@ -90,7 +95,7 @@
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
-import {loadManifest,loadWeekend,loadUpdateHistory,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml} from './app.js?v=20261008-v115';
+import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261008-v115';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -133,6 +138,36 @@ function renderPublicReleases(data){
   }).join('');
 }
 
+function renderFixedSources(data){
+  const all=Array.isArray(data?.explicit_sources)?data.explicit_sources:[];
+  const active=all.filter(source=>source && source.enabled===true);
+  const groups=[
+    {title:'自治体・観光協会などの公式サイト',items:active.filter(source=>source.origin==='official'||source.origin==='official_added')},
+    {title:'従来からの固定サイト',items:active.filter(source=>source.origin!=='official'&&source.origin!=='official_added')}
+  ];
+  $('fixedSourceCount').textContent=`${active.length}サイト`;
+  $('fixedSourceList').innerHTML=groups.filter(group=>group.items.length).map(group=>{
+    const entries=group.items.map(source=>{
+      // Only show safe URLs. A source label is not proof that each event is officially verified.
+      const url=safeHttpUrl(source.base_url||source.search_urls?.[0]);
+      const name=escapeHtml(source.label||source.id||'名称未設定');
+      const link=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${name}</a>`:`<span>${name}</span>`;
+      return `<li>${link}</li>`;
+    }).join('');
+    return `<div class="logic-fixed-sources-group"><h4>${escapeHtml(group.title)}（${group.items.length}サイト）</h4><ul>${entries}</ul></div>`;
+  }).join('');
+}
+
+async function loadFixedSourcesSection(){
+  try{
+    renderFixedSources(await loadDiscoverySources());
+  }catch(error){
+    console.error('Fixed sources list unavailable',error);
+    $('fixedSourceCount').textContent='取得できませんでした';
+    $('fixedSourceList').innerHTML='<p>固定サイト一覧を取得できませんでした。ほかのイベント情報は引き続きご覧いただけます。</p>';
+  }
+}
+
 function renderUpdateHistory(data){
   const rows=Array.isArray(data?.history)?[...data.history].reverse():[];
   const list=$('updateHistoryList'),summary=$('updateHistorySummary');
@@ -154,6 +189,8 @@ function renderUpdateHistory(data){
     return `<div class="update-history-item"><b>${escapeHtml(formatUpdateDate(row.executed_at))}</b><span>${parts.join(' ／ ')}</span>${row.note?`<small>${escapeHtml(row.note)}</small>`:''}</div>`;
   }).join('');
 }
+
+loadFixedSourcesSection();
 
 (async()=>{
   try{

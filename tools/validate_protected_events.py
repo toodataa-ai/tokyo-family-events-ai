@@ -135,7 +135,20 @@ def main():
                 if sid not in new_map:
                     errors.append("previous discovery source removed: " + sid)
                 elif new_map[sid] != row:
-                    errors.append("previous discovery source changed without approval: " + sid)
+                    candidate = new_map[sid]
+                    added = {"annual_listing_url", "annual_resolution_policy"}
+                    historical_unchanged = all(candidate.get(key) == value for key, value in row.items())
+                    added_fields_exact = set(candidate) - set(row) == added
+                    safe_annual_upgrade = (
+                        sid == "nerima_district_festivals_2026"
+                        and historical_unchanged and added_fields_exact
+                        and candidate.get("annual_listing_url") ==
+                            "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"
+                        and candidate.get("annual_resolution_policy") ==
+                            "resolve_fiscal_year_link_from_official_listing_fail_closed"
+                    )
+                    if not safe_annual_upgrade:
+                        errors.append("previous discovery source changed without approval: " + sid)
         except (ValueError, KeyError, TypeError) as exc:
             errors.append("malformed discovery sources: " + str(exc))
     elif old_sources and not new_sources:

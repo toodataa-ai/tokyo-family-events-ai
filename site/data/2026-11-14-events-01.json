@@ -2513,5 +2513,161 @@
       "confidence": "high",
       "discovery_query": "Fixed-source re-search supplemented by official Itabashi City 2026 event confirmation"
     }
+  },
+  {
+    "id": "fx-20261114-nakano-yato-fes",
+    "ward": "中野区",
+    "name": "谷戸フェス2026",
+    "url": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja",
+    "official_url": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja",
+    "source": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja",
+    "period": "11/14",
+    "date_start": "2026-11-14",
+    "date_end": "2026-11-14",
+    "time": "午前・午後（正確な開始終了時刻は主催者へ）",
+    "venue": "中野区立谷戸小学校",
+    "price": "参加費の指定なし・主催者確認",
+    "description": "谷戸小学校100周年に向け、PTA・学校・地域が協力した祭り。音楽・ダンス・盆踊り・クイズ・球技体験など。",
+    "categories": [
+      "フェスタ・祭り",
+      "親子",
+      "体験"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "主催者の投稿から開催日時・会場・子ども向け内容を確認。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "投稿者がファミリー・キッズ向けと明示。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "球技・クイズ・踊りなどに参加できる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "親子・小学生以下の家族で楽しめる。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "校内の複数企画を自由に回遊できる。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "イベント時刻・混雑を開催直前に確認。"
+        },
+        "cost": {
+          "grade": "B",
+          "reason": "参加費の指定なし・主催者確認"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "実行委員会が告知。参加費指定なし。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で参加しやすい地域イベント。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "実行委員会が告知。参加費指定なし。"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "tamemap_nakano",
+        "kind": "organizer_post",
+        "url": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17T09:02:00+09:00",
+      "confidence": "medium",
+      "discovery_query": "Tamemap November date-level discovery with organizer poster"
+    }
+  },
+  {
+    "id": "fx-20261115-nakano-ritomikku",
+    "ward": "中野区",
+    "name": "親子リトミックコンサート",
+    "url": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja",
+    "official_url": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja",
+    "source": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja",
+    "period": "11/15",
+    "date_start": "2026-11-15",
+    "date_end": "2026-11-15",
+    "time": "午前開催（開催時刻の詳細は主催者へ）",
+    "venue": "東中野区民活動センター",
+    "price": "1,000円未満（詳細は主催者へ）",
+    "description": "親子が一緒に音楽に参加するリトミックコンサート。各回20組程度、11/15当日8時まで申し込み受付。",
+    "categories": [
+      "音楽・アート",
+      "親子",
+      "体験"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "主催者の投稿から開催日時・会場・子ども向け内容を確認。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "投稿者がファミリー・キッズ向けと明示。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "参加型音楽コンサート。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "親子・小学生以下の家族で楽しめる。"
+        },
+        "stay_flexibility": {
+          "grade": "B",
+          "reason": "予約枠の時間拘束がある。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "イベント時刻・混雑を開催直前に確認。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "1,000円未満（詳細は主催者へ）"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "各回20組程度の先着順・要申込。申込〆切11月15日8時。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で参加しやすい地域イベント。"
+        }
+      }
+    },
+    "reservation": {
+      "required": true,
+      "note": "各回20組程度の先着順・要申込。申込〆切11月15日8時。"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "tamemap_nakano",
+        "kind": "organizer_post",
+        "url": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17T09:02:00+09:00",
+      "confidence": "medium",
+      "discovery_query": "Tamemap November date-level discovery with organizer poster"
+    }
   }
 ]

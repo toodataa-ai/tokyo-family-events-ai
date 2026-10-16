@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 69,
-    "published": 64,
+    "candidates": 70,
+    "published": 65,
     "excluded": 3,
     "duplicate_removed": 2,
-    "verified": 56,
+    "verified": 57,
     "announced": 8,
     "corrected": 0,
     "thumbnail_count": 60,
-    "thumbnail_coverage": 0.9375,
+    "thumbnail_coverage": 0.9230769230769231,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 1,
@@ -158,6 +158,22 @@
         }
       ],
       "note": "公式案内と照合し、既存イベント・過去の探索証跡を保持して増分追加。"
+    },
+    {
+      "checked_at": "2026-10-17T08:58:00+09:00",
+      "scope": "cross-search official district-festival check accompanying new fixed-source re-search",
+      "source_ids": [],
+      "candidate_ids": [
+        "fx-20261024-itabashi-otani-festival"
+      ],
+      "not_full_run": true,
+      "source_evidence": [
+        {
+          "id": "fx-20261024-itabashi-otani-festival",
+          "official_or_organizer_url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html"
+        }
+      ],
+      "note": "固定サイト確認から派生した公式会場探索で発見した未掲載祭り。過去の23区探索数・判定は維持。"
     }
   ]
 }

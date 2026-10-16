@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 51,
-    "published": 46,
+    "candidates": 52,
+    "published": 47,
     "excluded": 3,
     "duplicate_removed": 2,
-    "verified": 41,
+    "verified": 42,
     "announced": 5,
     "corrected": 0,
     "thumbnail_count": 45,
-    "thumbnail_coverage": 0.978,
+    "thumbnail_coverage": 0.9574468085106383,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 2,
@@ -119,6 +119,27 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-10-31-v16-rereview.json"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17T09:11:00+09:00",
+      "scope": "Nov 1 newly registered Tamemap source discovery only",
+      "source_ids": [
+        "tamemap_nakano"
+      ],
+      "candidate_ids": [
+        "fx-20261101-nakano-child-festival"
+      ],
+      "not_full_run": true,
+      "source_evidence": [
+        {
+          "id": "fx-20261101-nakano-child-festival",
+          "discovery_url": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+          "official_or_organizer_url": "https://pc.tamemap.net/1311401/event/161749?locale=ja"
+        }
+      ],
+      "note": "投稿者（上高田台公園運営委員会）による公式投稿を確認。既存イベント保持。"
     }
   ]
 }

@@ -96,6 +96,23 @@ def source_targets(config, start, end):
             continue
         if not entry.get("id") or not entry.get("search_urls"):
             raise PlanError("enabled source missing id/search_urls")
+        listing = entry.get("annual_listing_url")
+        if listing:
+            # The original dated URL remains in the registry as a historical
+            # source reference, but it is not a future year's discovery target.
+            from urllib.parse import urlparse
+            parsed = urlparse(listing)
+            if (parsed.scheme != "https" or parsed.hostname != "www.city.nerima.tokyo.jp"
+                    or parsed.path != "/kankomoyoshi/annai/omatsuri/chikusai/index.html"):
+                raise PlanError("invalid official annual listing URL: " + entry["id"])
+            first_year = start.year if start.month >= 4 else start.year - 1
+            last_year = end.year if end.month >= 4 else end.year - 1
+            targets.append({"id": entry["id"], "required": True,
+                            "urls": [listing], "annual_listing_url": listing,
+                            "fiscal_years_to_resolve": list(range(first_year, last_year + 1)),
+                            "resolver": "tools/official_schedule_discovery.py",
+                            "status": "pending", "checked_count": 0})
+            continue
         urls = []
         for template in entry["search_urls"]:
             if not isinstance(template, str) or not template.startswith("https://"):

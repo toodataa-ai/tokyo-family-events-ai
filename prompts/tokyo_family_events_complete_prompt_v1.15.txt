@@ -556,3 +556,10 @@ family-fit-v2 decision Validatorは次をFAILにする。
 - v1.15以降の新規runでは discovery_evidence.wards[23] の query_logs[] と source_checks[] が必須。区ごとの coverage.queries / sources_checked はそれぞれ記録件数 / 成功件数に等しくする。
 - run.official_schedule_checks[] の source_id と candidate_ids[] を decision監査IDに照合し、未照合はFAIL。
 - CIで python3 tools/validate_official_schedule_audit.py site/data を実行する。v1.5以前の履歴は後付け記録なしで互換として扱う。
+
+
+【練馬区地区祭・年度リンク自動解決（固定サイトの年度更新）】
+固定サイト nerima_district_festivals_2026 は互換維持のためIDと従来2026年個別URLを残しているが、探索対象を2026年ページに固定してはいけない。
+毎回 site/data/discovery_sources.json の annual_listing_url（練馬区公式「地区祭」年度一覧）を開き、対象期間が属する会計年度（4月〜翌3月）を判定し、一覧中の「令和N年度 地区祭開催日程」への公式リンクを実測・選択する。年度横断時は必要な各年度を調べる。
+正本の実行処理は tools/official_schedule_discovery.py と tools/nerima_annual_resolver.py を使う。個別ページURLを日付文字列等から推測生成したり、前年ページを新年度として読み替えてはならない。対象年度リンク未掲載・異なる年度・取得失敗・表構造変化・日付不明は探索失敗として監査記録に残し、checkedにはしない。前回までに掲載されたイベントは消去せず維持し、未掲載の新年度候補を捏造しない。
+公式一覧URL、解決された年度と詳細URL、年度別候補数、候補ID、取得日時、未照合行を明示して run.official_schedule_checks/resolved_pages と explicit_source_checks に保存し、掲載・除外・重複の判断台帳と照合する。前年の候補の流用は禁止。履歴にある2026年度の旧URLは監査・過去リンク保持用であり、将来年度の検索ターゲットではない。

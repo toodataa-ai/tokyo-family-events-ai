@@ -2435,5 +2435,83 @@
       "version": "v1.6",
       "source_candidate_id": "lg-2767294542"
     }
+  },
+  {
+    "id": "fx-20261114-itabashi-agriculture-festival",
+    "ward": "板橋区",
+    "name": "第49回板橋農業まつり（令和8年度）",
+    "url": "https://www.city.itabashi.tokyo.jp/bousai/nougyo/event/matsuri/1066138.html",
+    "official_url": "https://www.city.itabashi.tokyo.jp/bousai/nougyo/event/matsuri/1066138.html",
+    "source": "https://itabashi-times.com/category/event",
+    "period": "11/14〜11/15",
+    "date_start": "2026-11-14",
+    "date_end": "2026-11-15",
+    "time": "11/14 11:30〜16:00、11/15 10:00〜15:30",
+    "venue": "赤塚体育館通り・赤塚体育館・下赤塚小学校・赤塚支所ほか",
+    "price": "一般入場料は要確認・物販や一部企画は有料",
+    "description": "板橋の都市農業の魅力を伝える秋の祭り。複数会場で農業・食に関連する催し。事前申込制の一部企画は受付終了。",
+    "categories": [
+      "地域祭り",
+      "農業",
+      "体験"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "農業と地域文化を子どもと一緒に体験できるお祭り。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "家族も参加できる地域の農業・食の祭り。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "地域の農産物や農業体験に触れられる会場を回遊できる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "小学生や幼児と家族で一緒に楽しめる内容。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "複数会場の屋外・屋内催しを選んで訪問可能。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "広い会場の移動や混雑には注意が必要。"
+        },
+        "cost": {
+          "grade": "B",
+          "reason": "一般入場料金の明記は未確認。物販などは有料。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "一般観覧と事前申込制の一部体験は異なり、体験募集は終了。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "板橋区ならではの農業・収穫を家族で学べる。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "一般観覧と事前予約企画は別。事前予約企画の募集は10月6日終了。"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "itabashi_times_event",
+        "kind": "regional_event_media_search",
+        "url": "https://itabashi-times.com/category/event"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17T08:55:00+09:00",
+      "confidence": "high",
+      "discovery_query": "Fixed-source re-search supplemented by official Itabashi City 2026 event confirmation"
+    }
   }
 ]

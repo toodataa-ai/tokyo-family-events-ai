@@ -595,6 +595,23 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .week-tabs .week-tab em{display:none!important}
 
 
+/* Registry-backed, human-readable list of fixed discovery sources */
+.logic-fixed-sources{margin-top:12px;border:1px solid #e4e7ec;border-radius:10px;background:#fbfcfe;padding:10px 12px}
+.logic-fixed-sources>summary{cursor:pointer;display:flex;align-items:center;gap:8px;color:var(--navy);font-size:12px;font-weight:700;list-style:none}
+.logic-fixed-sources>summary::-webkit-details-marker{display:none}
+.logic-fixed-sources>summary::before{content:'＋';font-weight:700}
+.logic-fixed-sources[open]>summary::before{content:'−'}
+.logic-fixed-sources>summary small{font-size:10px;color:var(--sub);font-weight:500}
+.logic-fixed-sources-note{margin:9px 0 11px;color:var(--sub);font-size:11px;line-height:1.6}
+.logic-fixed-sources-group{margin-top:10px}
+.logic-fixed-sources-group h4{margin:0 0 7px;font-size:11px;color:var(--navy)}
+.logic-fixed-sources-group ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px;row-gap:6px;list-style:none;margin:0;padding:0}
+.logic-fixed-sources-group li{min-width:0;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.logic-fixed-sources-group a{color:#24577a;text-underline-offset:2px}
+.logic-fixed-sources-group a:hover{text-decoration-thickness:2px}
+@media(max-width:900px){.logic-fixed-sources-group ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.logic-fixed-sources{padding:10px}.logic-fixed-sources-group ul{grid-template-columns:1fr}}
+
 /* Weekly differential update flow */
 .logic-subhead{
   margin-top:18px;

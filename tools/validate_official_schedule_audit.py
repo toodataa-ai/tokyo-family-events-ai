@@ -19,7 +19,7 @@ def active_version(run):
     return bool(found and int(found.group(1)) >= 15)
 
 
-def validate(run, week, decisions):
+def validate(run, week, decisions, source_config=None):
     if not active_version(run):
         return []
     errors = []
@@ -67,6 +67,51 @@ def validate(run, week, decisions):
     missing = [cid for cid in ids if cid not in known]
     if item.get('unmatched_official_rows') or missing or item.get('matched_candidate_count') != count:
         errors.append(f'{label}: incomplete official-row-to-decision reconciliation ({len(missing)} candidate IDs absent)')
+    # Concrete regressions: both festivals have independently verified official
+    # pages, so a newly generated Oct 17 run must not report an empty candidate
+    # set for Nakano/Itabashi. This check is date-specific, not a synthetic
+    # assertion about historic v1.5 search logs.
+    if week.get('sat') == '2026-10-17':
+        records = [x for x in decisions.get('decisions', [])
+                   if x.get('decision') in ('published', 'excluded', 'duplicate')]
+        for ward, pattern in (('中野区', r'(?i)KOMAFES|コマフェス'),
+                              ('板橋区', r'板橋区民まつり')):
+            if not any(r.get('ward') == ward and re.search(pattern, r.get('name') or '')
+                       for r in records):
+                errors.append(f'{label}/{ward}: known 2026 official festival missing from candidate decisions')
+    # Validate *actual* required-source checks for v1.15+ runs. An HTTP status
+    # alone is not event discovery; required official indexes must reconcile
+    # every discovered row with a candidate-level publication decision.
+    if source_config is not None:
+        source_checks = run.get('explicit_source_checks') or []
+        known_decisions = {d.get('candidate_id') for d in decisions.get('decisions', [])
+                           if d.get('decision') in ('published', 'excluded', 'duplicate')}
+        for source in source_config.get('explicit_sources', []):
+            if not (source.get('enabled') and source.get('required')):
+                continue
+            source_id = source.get('id')
+            checks = [c for c in source_checks if c.get('source_id', c.get('id')) == source_id]
+            for template in source.get('search_urls', []):
+                prefix = template.split('{', 1)[0]
+                matches = [c for c in checks if (c.get('search_url') or c.get('url') or '').startswith(prefix)]
+                if not matches:
+                    errors.append(f'{label}: required source not checked: {source_id}, {template}')
+                    continue
+                for c in matches:
+                    if c.get('status') != 'checked' or not c.get('checked_at'):
+                        errors.append(f'{label}: required source failed: {source_id}')
+                    ids = c.get('candidate_ids')
+                    if not isinstance(ids, list) or len(set(ids)) != len(ids):
+                        errors.append(f'{label}: source candidate IDs missing/duplicated: {source_id}')
+                        continue
+                    if c.get('candidate_count') != len(ids):
+                        errors.append(f'{label}: candidate count not supported by IDs: {source_id}')
+                    if source.get('event_row_audit_required'):
+                        count = c.get('official_row_count')
+                        if not isinstance(count, int) or count < 0 or count != len(ids):
+                            errors.append(f'{label}: official event row parity mismatch: {source_id}')
+                        if c.get('unmatched_official_rows') or any(cid not in known_decisions for cid in ids):
+                            errors.append(f'{label}: unreconciled official event rows: {source_id}')
     return errors
 
 
@@ -76,12 +121,13 @@ def main():
     args = p.parse_args()
     errors = []
     manifest = json.loads((args.directory/'manifest.json').read_text(encoding='utf-8'))
+    source_config = json.loads((args.directory/'discovery_sources.json').read_text(encoding='utf-8'))
     for period in manifest.get('weekends', []):
         week = json.loads((args.directory/period['file']).read_text(encoding='utf-8'))
         run = json.loads((args.directory/week['run_file']).read_text(encoding='utf-8'))
         decisions_path = args.directory/(run.get('source_data') or {}).get('decision_file', period['sat']+'-decisions.json')
         decisions = json.loads(decisions_path.read_text(encoding='utf-8'))
-        errors.extend(validate(run, week, decisions))
+        errors.extend(validate(run, week, decisions, source_config))
     for error in errors:
         print('ERROR', error, file=sys.stderr)
     print(f'official schedule discovery audit: {"FAIL" if errors else "PASS"}')

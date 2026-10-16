@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-10",
+  "updated_at": "2026-10-16",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -337,6 +337,76 @@
         "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
       ],
       "note": "年間地区祭一覧を1行1参加単位に分解。ツール tools/official_schedule_discovery.py で取得日時・各行の日時と場所・候補漏れを監査。年度更新は新年度の公式URLを確認して切替。"
+    },
+    {
+      "id": "nakano_official_tourism",
+      "label": "中野区観光協会・公式イベント",
+      "origin": "official",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.nakano-kanko.com/event/",
+      "search_urls": [
+        "https://www.nakano-kanko.com/event/"
+      ],
+      "event_row_audit_required": true,
+      "note": "公式観光協会のイベント一覧をページ送り含めて確認し、対象期間内の掲載イベントを候補台帳のdecisionと照合する。KOMAFES2026等の取りこぼし回帰対象。"
+    },
+    {
+      "id": "itabashi_official_festival",
+      "label": "板橋区公式・区民まつり",
+      "origin": "official",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
+      "search_urls": [
+        "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
+        "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"
+      ],
+      "event_row_audit_required": true,
+      "note": "公式の区民まつり開催ページは長期前から公表。開催年度と対象日付を確認し、候補未収載をFAILとする。"
+    },
+    {
+      "id": "itabashi_tourism_festival",
+      "label": "板橋区観光協会・区民まつり特集",
+      "origin": "official",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://itabashi-kanko.jp/",
+      "search_urls": [
+        "https://itabashi-kanko.jp/pickup/detail?id=1799"
+      ],
+      "event_row_audit_required": true,
+      "note": "年度イベント特集を掲載候補確認に使う。将来は年度ごとの公式ページへ差し替え、旧設定は維持する。"
     }
+  ],
+  "protected_source_ids": [
+    "sumida",
+    "asakusa",
+    "ueno",
+    "akihabara",
+    "hibiya",
+    "ikebukuro",
+    "shinjuku",
+    "nakano",
+    "yoyogi",
+    "shibuya",
+    "roppongi",
+    "toyosu",
+    "odaiba",
+    "shinagawa",
+    "tachikawa",
+    "iterrace",
+    "nerimakanko",
+    "suginami_festival",
+    "nerima_district_festivals_2026",
+    "nakano_official_tourism",
+    "itabashi_official_festival",
+    "itabashi_tourism_festival"
   ]
 }

@@ -32,6 +32,45 @@ class AuditTests(unittest.TestCase):
         self.assertTrue(any("coverage.queries" in x for x in validate(r, w, d)))
         self.assertTrue(any("missing actual" in x for x in validate(r, w, d)))
 
+    def test_missing_required_official_source_fails(self):
+        run, week, decisions = setup()
+        config = {"explicit_sources": [{
+            "id": "nakano_official_tourism", "enabled": True, "required": True,
+            "search_urls": ["https://www.nakano-kanko.com/event/"],
+            "event_row_audit_required": True,
+        }]}
+        errors = validate(run, week, decisions, config)
+        self.assertTrue(any("required source not checked" in x for x in errors))
+
+    def test_unmatched_official_event_row_fails(self):
+        run, week, decisions = setup()
+        config = {"explicit_sources": [{
+            "id": "nakano_official_tourism", "enabled": True, "required": True,
+            "search_urls": ["https://www.nakano-kanko.com/event/"],
+            "event_row_audit_required": True,
+        }]}
+        run["explicit_source_checks"] = [{
+            "source_id": "nakano_official_tourism", "status": "checked",
+            "search_url": "https://www.nakano-kanko.com/event/",
+            "checked_at": "2026-10-16T23:00:00+09:00",
+            "official_row_count": 1, "candidate_count": 1,
+            "candidate_ids": ["missing-Komafes"], "unmatched_official_rows": [],
+        }]
+        errors = validate(run, week, decisions, config)
+        self.assertTrue(any("unreconciled official event rows" in x for x in errors))
+
+    def test_known_festivals_must_not_be_absent_from_new_oct17_run(self):
+        run, week, decisions = setup()
+        week["sat"] = "2026-10-17"
+        errors = validate(run, week, decisions)
+        self.assertTrue(any("中野区" in x and "missing" in x for x in errors))
+        self.assertTrue(any("板橋区" in x and "missing" in x for x in errors))
+        decisions["decisions"].extend([
+            {"candidate_id": "known-komafes", "ward": "中野区", "name": "KOMAFES2026", "decision": "published"},
+            {"candidate_id": "known-itabashi", "ward": "板橋区", "name": "第55回板橋区民まつり", "decision": "published"},
+        ])
+        self.assertFalse(any("known 2026 official festival missing" in x for x in validate(run, week, decisions)))
+
     def test_historical_runs_not_retroactively_mutated(self):
         r, w, d = setup()
         r["prompt"]["version"] = "v1.5"

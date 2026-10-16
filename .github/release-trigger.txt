@@ -1,8 +1,8 @@
-# Approved app-only release trigger; user explicitly authorized v1.08 production release.
+# User-approved app-only production release; source discovery fix.
 operation=release
 production_ref=production
-approved_staging_sha=8f5da5caf753c4dd87c63f8e3e0a88aa1aeee1d0
-target_public_version=1.08
-previous_public_release=release/2026-10-17-r1
+approved_staging_sha=0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f
+target_public_version=1.09
+previous_public_release=release/2026-10-17-r2
 release_date_jst=2026-10-17
-note=PR #2 merged exactly four reviewed UI/test files to production: fixed-site directory under extraction logic with 22 currently registered sources, no event data edits. Candidate audit 38975460702 and staging 38974885960 passed. data-production SHA unchanged: 40a4c1c600bef6407745c65489c984a6b67b63c3 (349 week-records). Existing production copy and search flows preserved.
+note=PR #3 merges audited ten-file-only annual Nerima festival source fix into production. Resolve actual fiscal-year schedule from official stable index, block old-year fallback, retain all legacy URLs, registered sources and 349 published weekly records. No event data file edits; data-production 40a4c1c600bef6407745c65489c984a6b67b63c3 unchanged. Candidate CI 38978248184 passed; real official source CI 38977445022 passed.

@@ -1328,11 +1328,51 @@
       },
       "corrections": {},
       "note": "2026-10-10時点の練馬区公式日程表で確認。料金・予約不明。"
+    },
+    {
+      "id": "official-20261017-nakano-komafes",
+      "status": "verified",
+      "source": "https://www.nakano-kanko.com/event-info/event-3830/",
+      "source_kind": "official_tourism",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-16 新規追記。対象イベントのみ公式照合。既存68イベントの再検証は実施していない。",
+      "checked_at": "2026-10-16T23:00:00+09:00"
+    },
+    {
+      "id": "official-20261017-itabashi-kumin",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-16 新規追記。対象イベントのみ公式照合。既存68イベントの再検証は実施していない。",
+      "checked_at": "2026-10-16T23:00:00+09:00"
     }
   ],
   "summary": {
-    "total": 68,
-    "verified": 68,
+    "total": 70,
+    "verified": 70,
     "announced": 0,
     "corrected": 0
   }

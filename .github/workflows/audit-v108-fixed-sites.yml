@@ -1,0 +1,69 @@
+name: Audit approved fixed-site directory v1.08 (read-only)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-v108-fixed-sites.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout immutable production-based candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 2bf406f211330da2299c5cab878ad757d0abb0f7
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Confirm exact approved diff and production base
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "2bf406f211330da2299c5cab878ad757d0abb0f7"
+          test "$(git rev-parse HEAD^)" = "354648b58a1b9228404082001d3b5a3453e36096"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual.txt
+          printf '%s\n' package.json site/index.html site/styles.css tests/fixed_source_directory.test.mjs | sort > /tmp/approved.txt
+          diff -u /tmp/approved.txt /tmp/actual.txt
+          echo 'PASS: four approved display/test files only; all dated event JSON and discovery engine untouched.'
+      - name: Run complete regression suite and public fixed-site directory test
+        run: npm test
+      - name: Validate existing candidate data without publishing
+        run: |
+          python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python tools/validate_decisions.py --strict site/data
+          python tools/validate_official_schedule_audit.py site/data
+      - name: Verify published datasets and references were not removed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin data-production --depth=1
+          python - <<'PY'
+          import json,subprocess
+          def src(path):
+              return json.loads(subprocess.check_output(['git','show','origin/data-production:site/data/'+path],text=True))
+          manifest=src('manifest.json')
+          total=sum(w['count'] for w in manifest['weekends'])
+          assert total==349,total
+          week=src('2026-10-17.json')
+          events=list(week.get('events') or [])
+          for p in week.get('event_files') or []: events.extend(src(p))
+          assert len(events)==70,len(events)
+          names={e.get('name') for e in events}
+          assert 'KOMAFES2026（コマフェス2026）' in names
+          assert '第55回板橋区民まつり' in names
+          registry=json.load(open('site/data/discovery_sources.json'))
+          assert len([s for s in registry['explicit_sources'] if s.get('enabled')])==22
+          approvals=json.load(open('policy/approved_event_removals.json'))
+          assert approvals.get('approvals')==[]
+          print('PASS: 349 weekly published rows, 70 for Oct17, 22 fixed sources, no data deletion')
+          PY

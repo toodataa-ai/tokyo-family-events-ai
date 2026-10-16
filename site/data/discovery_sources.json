@@ -413,11 +413,14 @@
       "base_url": "https://itabashi-times.com/category/event",
       "search_urls": [
         "https://itabashi-times.com/category/event",
-        "https://itabashi-times.com/category/event/page/2",
-        "https://itabashi-times.com/archives/event{YYYY}{MM}.html"
+        "https://itabashi-times.com/category/event/page/2"
       ],
       "event_row_audit_required": true,
-      "note": "記事一覧のページ送り、当該月まとめ・週次まとめ記事、各イベント個別記事を別々に確認。まとめ記事は候補の索引として展開し、同一イベントの重複を除外。開催日が探索6週内なら過去公開記事も対象。媒体は候補発見用であり、公開は区・主催者・施設公式の日時・会場照合が必要。URLパターンが不成立ならリンクをたどって検索しerrorを記録する。"
+      "note": "記事一覧のページ送り、当該月まとめ・週次まとめ記事、各イベント個別記事を別々に確認。まとめ記事は候補の索引として展開し、同一イベントの重複を除外。開催日が探索6週内なら過去公開記事も対象。媒体は候補発見用であり、公開は区・主催者・施設公式の日時・会場照合が必要。URLパターンが不成立ならリンクをたどって検索しerrorを記録する。 月次・週次まとめ記事は発行されていれば任意取得とし、未発行（404）を必須サイト故障として扱わない。",
+      "optional_search_urls": [
+        "https://itabashi-times.com/archives/event{YYYY}{MM}.html",
+        "https://itabashi-times.com/archives/event{YYYY}{MM}{DD}.html"
+      ]
     }
   ],
   "protected_source_ids": [

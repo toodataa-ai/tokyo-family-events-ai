@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 47,
-    "published": 41,
+    "candidates": 48,
+    "published": 42,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 35,
+    "verified": 36,
     "announced": 6,
     "corrected": 2,
     "thumbnail_count": 35,
-    "thumbnail_coverage": 0.854,
+    "thumbnail_coverage": 0.8333333333333334,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 2,
@@ -144,6 +144,20 @@
       "candidate_id": "lg-c6558bdf9f",
       "reason": "Umbrella date range falsely implied events on Nov7/8; published programme has none.",
       "official": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17",
+      "scope": "Tamemap Nakano source increment only; not all-ward research",
+      "source_ids": [
+        "tamemap_nakano"
+      ],
+      "candidate_ids": [
+        "fx-20261107-nakano-food-workshop"
+      ],
+      "not_full_run": true,
+      "note": "Only municipal organizer-posted family workshop added. Do not infer site-government verification if underlying municipality link is not accessible."
     }
   ]
 }

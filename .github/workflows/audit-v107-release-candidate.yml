@@ -1,0 +1,78 @@
+name: Audit approved official-discovery release v1.07 (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-v107-release-candidate.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout approved immutable production-based candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 354648b58a1b9228404082001d3b5a3453e36096
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Ensure exact approved scope and preserve every UI and event file
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "354648b58a1b9228404082001d3b5a3453e36096"
+          test "$(git rev-parse HEAD^)" = "e63aa9bd0df8d3c416a613f92b6cfafd5f82e020"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual-paths.txt
+          printf '%s\n' \
+            docs/RELEASE_PROCESS.md \
+            package.json \
+            policy/approved_event_removals.json \
+            site/data/discovery_sources.json \
+            tests/discovery_sources.test.mjs \
+            tests/test_official_schedule_audit.py \
+            tests/test_protected_events.py \
+            tools/validate_official_schedule_audit.py \
+            tools/validate_protected_events.py | sort > /tmp/approved-paths.txt
+          diff -u /tmp/approved-paths.txt /tmp/actual-paths.txt
+          echo 'Approved scope confirmed. No HTML, CSS, JS, or event dataset was edited.'
+      - name: Regression tests including unapproved-delete rejection
+        run: npm test
+      - name: Strict legacy dataset validation (read-only)
+        run: |
+          python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python tools/validate_decisions.py --strict site/data
+          python tools/validate_official_schedule_audit.py site/data
+      - name: Confirm production event counts and named festivals
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin data-production --depth=1
+          python - <<'PY'
+          import json, subprocess
+          def get(name):
+              return json.loads(subprocess.check_output(['git','show','origin/data-production:site/data/'+name],text=True))
+          manifest=get('manifest.json')
+          count=sum(w['count'] for w in manifest['weekends'])
+          assert count==349, count
+          week=get('2026-10-17.json')
+          events=list(week.get('events') or [])
+          for shard in week.get('event_files') or []:
+              events.extend(get(shard))
+          assert len(events)==70
+          names={e.get('name') for e in events}
+          assert 'KOMAFES2026（コマフェス2026）' in names
+          assert '第55回板橋区民まつり' in names
+          ledger=json.load(open('policy/approved_event_removals.json'))
+          assert ledger.get('approvals')==[]
+          print('PASS: 349 published weekly records; Oct 17 = 70; both missing festivals restored; 0 approved deletions')
+          PY

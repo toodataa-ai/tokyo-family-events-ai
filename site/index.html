@@ -150,7 +150,7 @@ function renderFixedSources(data){
     const entries=group.items.map(source=>{
       // Only show safe URLs. A source label is not proof that each event is officially verified.
       const url=safeHttpUrl(source.annual_listing_url||source.base_url||source.search_urls?.[0]);
-      const name=escapeHtml(source.label||source.id||'名称未設定');
+      const name=escapeHtml(source.annual_listing_label||source.label||source.id||'名称未設定');
       const link=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${name}</a>`:`<span>${name}</span>`;
       return `<li>${link}</li>`;
     }).join('');

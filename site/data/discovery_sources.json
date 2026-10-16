@@ -336,7 +336,9 @@
       "search_urls": [
         "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
       ],
-      "note": "年間地区祭一覧を1行1参加単位に分解。ツール tools/official_schedule_discovery.py で取得日時・各行の日時と場所・候補漏れを監査。年度更新は新年度の公式URLを確認して切替。"
+      "note": "年間地区祭一覧を1行1参加単位に分解。ツール tools/official_schedule_discovery.py で取得日時・各行の日時と場所・候補漏れを監査。年度更新は新年度の公式URLを確認して切替。",
+      "annual_listing_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html",
+      "annual_resolution_policy": "resolve_fiscal_year_link_from_official_listing_fail_closed"
     },
     {
       "id": "nakano_official_tourism",

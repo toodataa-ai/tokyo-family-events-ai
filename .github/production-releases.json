@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-14-r1",
+  "current_public_release": "release/2026-10-17-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -69,7 +69,16 @@
       "workflow_run_id": 38508272165,
       "note": "「全期間」を当週土曜日から掲載最終週までに変更。終了した週末・祝日のクイックタブを非表示、過去の明示日付検索・6週間内の長期イベント・検索とコピーリストの連携を維持。既存データ347件に変更なし。独立候補監査と本番Pagesデプロイ成功を確認。",
       "public_version": "1.06"
+    },
+    {
+      "release_id": "release/2026-10-17-r1",
+      "branch": "release/2026-10-17-r1",
+      "commit_sha": "354648b58a1b9228404082001d3b5a3453e36096",
+      "deployed_at": "2026-10-16T19:30:25Z",
+      "workflow_run_id": 38955322408,
+      "note": "公式探索先に中野区観光協会・板橋区公式祭り情報等を追加し、イベントの無承認削除、探索元・履歴の欠損を検知する保護機構を本番導入。既存画面・日付別イベントデータは変更なし。公式追加2件を含む本番データ349延べ掲載レコードを維持。削除承認0件。",
+      "public_version": "1.07"
     }
   ],
-  "current_public_version": "1.06"
+  "current_public_version": "1.07"
 }

@@ -67,6 +67,18 @@ def validate(run, week, decisions, source_config=None):
     missing = [cid for cid in ids if cid not in known]
     if item.get('unmatched_official_rows') or missing or item.get('matched_candidate_count') != count:
         errors.append(f'{label}: incomplete official-row-to-decision reconciliation ({len(missing)} candidate IDs absent)')
+    # Concrete regressions: both festivals have independently verified official
+    # pages, so a newly generated Oct 17 run must not report an empty candidate
+    # set for Nakano/Itabashi. This check is date-specific, not a synthetic
+    # assertion about historic v1.5 search logs.
+    if week.get('sat') == '2026-10-17':
+        records = [x for x in decisions.get('decisions', [])
+                   if x.get('decision') in ('published', 'excluded', 'duplicate')]
+        for ward, pattern in (('中野区', r'(?i)KOMAFES|コマフェス'),
+                              ('板橋区', r'板橋区民まつり')):
+            if not any(r.get('ward') == ward and re.search(pattern, r.get('name') or '')
+                       for r in records):
+                errors.append(f'{label}/{ward}: known 2026 official festival missing from candidate decisions')
     # Validate *actual* required-source checks for v1.15+ runs. An HTTP status
     # alone is not event discovery; required official indexes must reconcile
     # every discovered row with a candidate-level publication decision.

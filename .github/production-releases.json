@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-17-r2",
+  "current_public_release": "release/2026-10-17-r3",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -87,7 +87,16 @@
       "workflow_run_id": 38976015534,
       "note": "抽出ロジックに固定サイト（登録済み参照元）一覧を追加。登録済み22サイトを自治体・観光協会などの公式系と従来サイトに分けて折りたたみ表示し、リンクから参照可能。既存画面文言・検索機能・固定サイト設定・イベントデータは変更なし。349件の延べ掲載データを維持。Pull Request #2 経由で承認済みの4ファイルのみ公開。",
       "public_version": "1.08"
+    },
+    {
+      "release_id": "release/2026-10-17-r3",
+      "branch": "release/2026-10-17-r3",
+      "commit_sha": "0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f",
+      "deployed_at": "2026-10-16T22:53:51Z",
+      "workflow_run_id": 38978360721,
+      "note": "練馬区公式の地区祭を年度別一覧ページから対象年度の日程URLを解決して候補抽出するよう変更。2026年度の旧URL・既存IDを保持し、年度跨ぎ・未公表年度・異年度情報流用を抑止。公式実取得とリリース候補回帰テスト成功。既存のサイト22件・6週間の延べ掲載イベント349件・既存画面／検索機能は保持し、データ削除0件。PR #3経由で10ファイルの差分のみ反映。",
+      "public_version": "1.09"
     }
   ],
-  "current_public_version": "1.08"
+  "current_public_version": "1.09"
 }

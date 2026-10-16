@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 38,
-    "published": 33,
+    "candidates": 41,
+    "published": 36,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 25,
+    "verified": 28,
     "announced": 8,
     "corrected": 2,
     "thumbnail_count": 33,
-    "thumbnail_coverage": 1,
+    "thumbnail_coverage": 0.9166666666666666,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 4,
@@ -137,6 +137,23 @@
       "candidate_id": "web-8b3527f3b8",
       "reason": "Registration closed Oct 6, 2026 (lottery), not accessible to new participants.",
       "official": "https://www.city.minato.tokyo.jp/azabumachizukuri/ecot081114.html"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17",
+      "scope": "Two fixed event sources, weekend Nov14-15 only, not all-ward full re-search",
+      "source_ids": [
+        "tamemap_nakano",
+        "itabashi_times_event"
+      ],
+      "candidate_ids": [
+        "fx-20261114-itabashi-agriculture-festival",
+        "fx-20261114-nakano-yato-fes",
+        "fx-20261115-nakano-ritomikku"
+      ],
+      "not_full_run": true,
+      "note": "Three verified events were appended to current published Nov14 baseline; no old events were reintroduced from main and no removals."
     }
   ]
 }

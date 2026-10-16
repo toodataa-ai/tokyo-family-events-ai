@@ -3155,5 +3155,83 @@
       "version": "v1.6",
       "source_candidate_id": "lg-cf8be5261a"
     }
+  },
+  {
+    "id": "fx-20261101-nakano-child-festival",
+    "ward": "中野区",
+    "name": "地域子ども祭り（上高田台公園）",
+    "url": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+    "official_url": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+    "source": "https://pc.tamemap.net/1311401/event/161749?locale=ja",
+    "period": "11/1",
+    "date_start": "2026-11-01",
+    "date_end": "2026-11-01",
+    "time": "午前・午後開催（時刻は主催者に要確認）",
+    "venue": "中野区立上高田台公園",
+    "price": "無料",
+    "description": "上高田台公園運営委員会による地域の子ども祭り。11月1日に開催、当日参加可能。",
+    "categories": [
+      "子ども向け",
+      "祭り",
+      "公園"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "地域プレーパーク運営委員会の子ども祭り、開催日・無料参加を確認。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "公園運営委員会が子どもの祭りを案内。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "地域の冒険あそび場の祭りで参加が中心。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "小学生・幼児を含む親子向け。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "公園内の催しを自由に回遊できる。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "屋外なので天候に注意。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "主催者投稿が無料と案内。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "主催者投稿で当日参加可能。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "地域の子ども向け祭りに参加できる。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "当日参加可能"
+    },
+    "indoor_outdoor": "屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "tamemap_nakano",
+        "kind": "organizer_post",
+        "url": "https://pc.tamemap.net/1311401/event/161749?locale=ja"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17",
+      "confidence": "high",
+      "discovery_query": "November 1 organizer profile cross-linked to event on Tamemap"
+    }
   }
 ]

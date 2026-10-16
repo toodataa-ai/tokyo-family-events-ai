@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 65,
-    "published": 60,
+    "candidates": 69,
+    "published": 64,
     "excluded": 3,
     "duplicate_removed": 2,
-    "verified": 52,
+    "verified": 56,
     "announced": 8,
     "corrected": 0,
     "thumbnail_count": 60,
-    "thumbnail_coverage": 1.0,
+    "thumbnail_coverage": 0.9375,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 1,
@@ -119,6 +119,45 @@
       "mode": "targeted-exclusion-rereview",
       "applied_at": "2026-10-07T08:37:32+09:00",
       "review_file": "2026-10-24-v16-rereview.json"
+    }
+  ],
+  "manual_incremental_supplements": [
+    {
+      "checked_at": "2026-10-17T08:45:00+09:00",
+      "scope": "only newly registered fixed sources, not a new 23-ward search",
+      "source_ids": [
+        "itabashi_times_event"
+      ],
+      "candidate_ids": [
+        "fx-20261024-itabashi-kids-smile",
+        "fx-20261024-itabashi-fujimi",
+        "fx-20261024-itabashi-takashimadaira",
+        "fx-20261024-itabashi-market"
+      ],
+      "not_full_run": true,
+      "source_evidence": [
+        {
+          "id": "fx-20261024-itabashi-kids-smile",
+          "discovery_url": "https://itabashi-times.com/archives/ukima-kids-smile202610.html",
+          "official_or_organizer_url": "https://www.tokyo-park.or.jp/park/ukima/news/2026/9.html"
+        },
+        {
+          "id": "fx-20261024-itabashi-fujimi",
+          "discovery_url": "https://itabashi-times.com/archives/fujimi-matsuri2026.html",
+          "official_or_organizer_url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006883.html"
+        },
+        {
+          "id": "fx-20261024-itabashi-takashimadaira",
+          "discovery_url": "https://itabashi-times.com/category/event",
+          "official_or_organizer_url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006878.html"
+        },
+        {
+          "id": "fx-20261024-itabashi-market",
+          "discovery_url": "https://itabashi-times.com/archives/ichiba202610.html",
+          "official_or_organizer_url": "https://www.city.itabashi.tokyo.jp/1000779/1000805/1000807/1054191.html"
+        }
+      ],
+      "note": "公式案内と照合し、既存イベント・過去の探索証跡を保持して増分追加。"
     }
   ]
 }

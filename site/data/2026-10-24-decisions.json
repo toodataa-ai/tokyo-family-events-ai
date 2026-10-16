@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 73,
-    "published": 67,
+    "candidate_total": 78,
+    "published": 72,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 3,
@@ -5751,6 +5751,346 @@
           "source_id": "nerima_district_festivals_2026",
           "kind": "official_multi_event_schedule",
           "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261024-itabashi-kids-smile",
+      "name": "第9回 キッズスマイルフェスタ！秋",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "区または都立施設の開催情報で家族参加に適した地域イベント・体験内容が確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tokyo-park.or.jp/park/ukima/news/2026/9.html",
+          "basis": "名称・会場・開催日・体験内容の一次情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "fixed_source_event_discovery",
+          "url": "https://itabashi-times.com/archives/ukima-kids-smile202610.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261024-itabashi-fujimi",
+      "name": "富士見まつり",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "区または都立施設の開催情報で家族参加に適した地域イベント・体験内容が確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006883.html",
+          "basis": "名称・会場・開催日・体験内容の一次情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "fixed_source_event_discovery",
+          "url": "https://itabashi-times.com/archives/fujimi-matsuri2026.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261024-itabashi-takashimadaira",
+      "name": "高島平まつり",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "区または都立施設の開催情報で家族参加に適した地域イベント・体験内容が確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006878.html",
+          "basis": "名称・会場・開催日・体験内容の一次情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "fixed_source_event_discovery",
+          "url": "https://itabashi-times.com/category/event"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261024-itabashi-market",
+      "name": "令和8年度 板橋市場まつり",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族や子どもも参加できる企画が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "催し・体験・展示・模擬店等を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・滞在調整できる形式。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "混雑・天候等の確認は必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会場入場は無料。物販利用などは任意。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "入場に事前申込必須との情報はない。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で共有して楽しめる体験価値がある。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "区または都立施設の開催情報で家族参加に適した地域イベント・体験内容が確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/1000779/1000805/1000807/1054191.html",
+          "basis": "名称・会場・開催日・体験内容の一次情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "itabashi_times_event",
+          "kind": "fixed_source_event_discovery",
+          "url": "https://itabashi-times.com/archives/ichiba202610.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "fx-20261024-itabashi-otani-festival",
+      "name": "令和8年度 大谷口地区フェスティバル",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "児童館工作、青少年みこし体験、ゲーム等がある。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作、輪投げ、餅つき、みこし体験に参加可能。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生・幼児連れ向きの地域の催し。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由に回遊・短時間訪問が可能。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "校庭開催のため天候・混雑に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加無料で模擬店・ゲーム等は一部有料。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と板橋区が明示。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で遊びと地域交流を体験できる。"
+          }
+        },
+        "overall": "A"
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式サイトで子どもの工作・遊び・みこし体験を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html",
+          "basis": "2026年板橋区公式祭り開催情報"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "official_festival_cross_check",
+          "url": "https://www.city.itabashi.tokyo.jp/kusei/profile/event/chiku/1006882.html"
         }
       ]
     }

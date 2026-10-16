@@ -67,6 +67,28 @@ def validate(run, week, decisions, source_config=None):
     missing = [cid for cid in ids if cid not in known]
     if item.get('unmatched_official_rows') or missing or item.get('matched_candidate_count') != count:
         errors.append(f'{label}: incomplete official-row-to-decision reconciliation ({len(missing)} candidate IDs absent)')
+    # Annual official schedules must resolve the fiscal year from the stable
+    # listing, not silently accept a stale 2026 schedule in later years.
+    annual = next((s for s in (source_config or {}).get('explicit_sources', [])
+                   if s.get('id') == SOURCE), None)
+    if annual and annual.get('annual_listing_url'):
+        pages = item.get('resolved_pages') or []
+        from datetime import date
+        saturday = date.fromisoformat(week['sat'])
+        sunday = date.fromisoformat(week.get('sun') or week['sat'])
+        needed = set(range(
+            saturday.year if saturday.month >= 4 else saturday.year - 1,
+            (sunday.year if sunday.month >= 4 else sunday.year - 1) + 1
+        ))
+        resolved = {p.get('fiscal_year') for p in pages if isinstance(p, dict)}
+        if resolved != needed:
+            errors.append(f'{label}: annual schedule resolution missing actual fiscal-year pages')
+        for page in pages:
+            url = page.get('resolved_url', '') if isinstance(page, dict) else ''
+            if (not isinstance(url, str) or not url.startswith(
+                    'https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/')
+                    or not url.endswith('.html') or url == annual.get('annual_listing_url')):
+                errors.append(f'{label}: invalid resolved annual schedule URL')
     # Concrete regressions: both festivals have independently verified official
     # pages, so a newly generated Oct 17 run must not report an empty candidate
     # set for Nakano/Itabashi. This check is date-specific, not a synthetic
@@ -91,7 +113,9 @@ def validate(run, week, decisions, source_config=None):
                 continue
             source_id = source.get('id')
             checks = [c for c in source_checks if c.get('source_id', c.get('id')) == source_id]
-            for template in source.get('search_urls', []):
+            annual_listing = source.get('annual_listing_url')
+            templates = [annual_listing] if annual_listing else source.get('search_urls', [])
+            for template in templates:
                 prefix = template.split('{', 1)[0]
                 matches = [c for c in checks if (c.get('search_url') or c.get('url') or '').startswith(prefix)]
                 if not matches:

@@ -13,6 +13,10 @@ import pathlib
 import re
 import sys
 from urllib.request import Request, urlopen
+try:
+    from .nerima_annual_resolver import LISTING_URL, fiscal_year, reiwa_year, resolve_annual_schedule_urls
+except ImportError:  # Supports direct execution as a script.
+    from nerima_annual_resolver import LISTING_URL, fiscal_year, reiwa_year, resolve_annual_schedule_urls
 
 SOURCE_ID = "nerima_district_festivals_2026"
 SOURCE_URL = "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
@@ -70,7 +74,7 @@ def normalize(value):
     return re.sub(r"[\s　()（）・「」『』\-－]", "", value or "")
 
 
-def dates_in(text):
+def dates_in(text, fiscal_start_year=FISCAL_START_YEAR):
     # Date cells can contain several days, with the month stated only once.
     cleaned = re.sub(r"（[^）]*雨[^）]*）", "", text)
     matches = re.findall(r"(?:(\d{1,2})月\s*)?(\d{1,2})日", cleaned)
@@ -80,7 +84,7 @@ def dates_in(text):
             month = int(mm)
         if not month:
             continue
-        year = FISCAL_START_YEAR if month >= 4 else FISCAL_START_YEAR + 1
+        year = fiscal_start_year if month >= 4 else fiscal_start_year + 1
         try:
             date = dt.date(year, month, int(dd))
         except ValueError:
@@ -90,8 +94,9 @@ def dates_in(text):
     return out
 
 
-def extract_candidates(html, start, end):
-    if EXPECTED_TITLE not in html:
+def extract_candidates(html, start, end, fiscal_start_year=FISCAL_START_YEAR, source_url=SOURCE_URL):
+    expected_title = '令和' + reiwa_year(fiscal_start_year) + '年度'
+    if expected_title not in html:
         raise ValueError("Official source fiscal-year marker missing")
     table = Tables()
     table.feed(html)
@@ -113,7 +118,7 @@ def extract_candidates(html, start, end):
         name, days, time, venue, content = row[offset:offset + 5]
         if not ("地区祭" in name or "広場の祭典" in name):
             continue
-        dates = dates_in(days)
+        dates = dates_in(days, fiscal_start_year)
         if not dates:
             raise ValueError("Unparseable date for " + name)
         table_total += 1
@@ -140,9 +145,9 @@ def extract_candidates(html, start, end):
             "venue": venue,
             "description": content or "",
             "price": None,
-            "official_url": SOURCE_URL,
-            "source": SOURCE_URL,
-            "discovery_sources": [{"channel": "explicit", "source_id": SOURCE_ID, "kind": "official_multi_event_schedule", "url": SOURCE_URL}]
+            "official_url": source_url,
+            "source": source_url,
+            "discovery_sources": [{"channel": "explicit", "source_id": SOURCE_ID, "kind": "official_multi_event_schedule", "url": source_url}]
         })
     if table_total == 0:
         raise ValueError("Official table contains no parseable festival rows")
@@ -163,7 +168,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start", required=True, help="YYYY-MM-DD")
     parser.add_argument("--end", required=True, help="YYYY-MM-DD")
-    parser.add_argument("--html-file", help="Offline HTML fixture, otherwise fetch official URL")
+    parser.add_argument("--html-file", help="Legacy single-year offline HTML fixture (for old tests)")
+    parser.add_argument("--listing-html-file", help="Offline stable official index HTML for link-resolution tests")
+    parser.add_argument("--annual-html-dir", help="Optional offline HTML directory; files YEAR.html for each resolved fiscal year")
     parser.add_argument("--decision-file", action="append", default=[], help="Run decision JSON to reconcile with official candidates")
     parser.add_argument("--output", help="Save report; otherwise stdout")
     args = parser.parse_args(argv)
@@ -174,12 +181,34 @@ def main(argv=None):
         if end < start:
             raise ValueError("end precedes start")
         if args.html_file:
+            # Legacy deterministic fixture mode: source/year stays at the 2026 historical baseline.
             html = pathlib.Path(args.html_file).read_text(encoding="utf-8")
+            candidates = extract_candidates(html, start, end)
+            report.update(status="checked", source_checked=True, candidate_count=len(candidates), candidates=candidates)
         else:
-            with urlopen(Request(SOURCE_URL, headers={"User-Agent": "TokyoFamilyEvents/1.15 (official schedule audit)"}), timeout=30) as response:
-                html = response.read().decode("utf-8")
-        candidates = extract_candidates(html, start, end)
-        report.update(status="checked", source_checked=True, candidate_count=len(candidates), candidates=candidates)
+            # Normal operation always resolves from the evergreen official index.
+            if args.listing_html_file:
+                index = pathlib.Path(args.listing_html_file).read_text(encoding="utf-8")
+            else:
+                with urlopen(Request(LISTING_URL, headers={"User-Agent": "TokyoFamilyEvents/1.16 (annual official schedule index)"}), timeout=30) as response:
+                    index = response.read(4_000_000).decode("utf-8")
+            pages = resolve_annual_schedule_urls(index, start, end)
+            candidates = []
+            audited_pages = []
+            for year, url in pages:
+                if args.annual_html_dir:
+                    html = (pathlib.Path(args.annual_html_dir) / (str(year) + ".html")).read_text(encoding="utf-8")
+                else:
+                    with urlopen(Request(url, headers={"User-Agent": "TokyoFamilyEvents/1.16 (annual official schedule)"}), timeout=30) as response:
+                        html = response.read(4_000_000).decode("utf-8")
+                extracted = extract_candidates(html, start, end, fiscal_start_year=year, source_url=url)
+                candidates.extend(extracted)
+                audited_pages.append({"fiscal_year": year, "resolved_url": url, "candidate_count": len(extracted)})
+            if len({c["candidate_id"] for c in candidates}) != len(candidates):
+                raise ValueError("Repeated candidate ID across fiscal years")
+            report.update(url=LISTING_URL, status="checked", source_checked=True,
+                          candidate_count=len(candidates), candidates=candidates,
+                          resolved_pages=audited_pages, official_listing_url=LISTING_URL)
         if args.decision_file:
             missing = check_decisions(candidates, args.decision_file)
             report["missing_from_decisions"] = [c["candidate_id"] + ": " + c["name"] + " (" + c["venue"] + ")" for c in missing]

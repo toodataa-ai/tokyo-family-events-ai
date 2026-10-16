@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 39,
-    "published": 36,
+    "candidates": 41,
+    "published": 38,
     "excluded": 3,
     "duplicate_removed": 0,
-    "verified": 27,
+    "verified": 29,
     "announced": 9,
     "corrected": 0,
     "thumbnail_count": 34,
-    "thumbnail_coverage": 0.9444444444444444,
+    "thumbnail_coverage": 0.8947368421052632,
     "decision_audit_complete": true,
     "hard_excluded": 0,
     "soft_excluded": 3,
@@ -140,6 +140,31 @@
         }
       ],
       "note": "2026年度公式日付で確認済み。既存イベント変更なし。"
+    },
+    {
+      "checked_at": "2026-10-17T09:02:00+09:00",
+      "scope": "Tamemap family events for Nov 14-15 only, not a full 23-ward re-search",
+      "source_ids": [
+        "tamemap_nakano"
+      ],
+      "candidate_ids": [
+        "fx-20261114-nakano-yato-fes",
+        "fx-20261115-nakano-ritomikku"
+      ],
+      "not_full_run": true,
+      "source_evidence": [
+        {
+          "id": "fx-20261114-nakano-yato-fes",
+          "discovery_url": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja",
+          "official_or_organizer_url": "https://pc.tamemap.net/1311401/event/160474/2026-11-14?locale=ja"
+        },
+        {
+          "id": "fx-20261115-nakano-ritomikku",
+          "discovery_url": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja",
+          "official_or_organizer_url": "https://pc.tamemap.net/1311401/event/132482/2026-11-15?locale=ja"
+        }
+      ],
+      "note": "実行委員会・主催者本人の投稿に基づく確認。料金・時刻未確定は推測なし。"
     }
   ]
 }

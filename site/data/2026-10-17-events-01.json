@@ -4820,5 +4820,159 @@
       "confidence": "high",
       "discovery_query": "ユーザー指摘→公式・主催者ページで追加照合。23区の全件再探索ではない"
     }
+  },
+  {
+    "id": "fx-20261017-nakano-nabeyoko",
+    "ward": "中野区",
+    "name": "鍋横地区まつり2026",
+    "url": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja",
+    "official_url": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja",
+    "source": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja",
+    "period": "10/17〜10/18",
+    "date_start": "2026-10-17",
+    "date_end": "2026-10-18",
+    "time": "開催時間は主催者掲載ページ参照",
+    "venue": "鍋横区民活動センター（本町5-47-13）",
+    "price": "無料",
+    "description": "鍋横地区のお祭り。ファミリー・キッズ向けの催しとして主催者が投稿。",
+    "categories": [
+      "地域祭り",
+      "親子"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "家族向けの地域行事・体験が開催情報で確認できる。",
+      "rubric_version": "family-fit-v1",
+      "overall": "A",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "家族や子どもも参加できる企画が確認できる。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "催し・体験・展示・模擬店等を楽しめる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "自由に回遊・滞在調整できる形式。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "混雑・天候等の確認は必要。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "会場入場は無料。物販利用などは任意。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "入場に事前申込必須との情報はない。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で共有して楽しめる体験価値がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "入場予約不要の情報。特別企画は主催者発表を再確認してください。"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "tamemap_nakano",
+        "kind": "fixed_source_event_discovery",
+        "url": "https://pc.tamemap.net/1311401/event/160398/2026-10-17?locale=ja"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17",
+      "confidence": "medium",
+      "discovery_query": "2026-10-17 source-specific incremental search; not a full re-search"
+    }
+  },
+  {
+    "id": "fx-20261017-nakano-yayoi",
+    "ward": "中野区",
+    "name": "やよい地区まつり",
+    "url": "https://pc.tamemap.net/1311401/event/161456?locale=ja",
+    "official_url": "https://pc.tamemap.net/1311401/event/161456?locale=ja",
+    "source": "https://pc.tamemap.net/1311401/event/161456?locale=ja",
+    "period": "10/17〜10/18",
+    "date_start": "2026-10-17",
+    "date_end": "2026-10-18",
+    "time": "開催時間は主催者掲載ページ参照",
+    "venue": "弥生区民活動センターほか（中野区弥生町1丁目）",
+    "price": "無料",
+    "description": "10月18日に中野本郷小学校の模擬店や、小学生以下が対象のじゃんけん大会などを実施。",
+    "categories": [
+      "地区祭り",
+      "子ども向け"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "家族向けの地域行事・体験が開催情報で確認できる。",
+      "rubric_version": "family-fit-v1",
+      "overall": "A",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "家族や子どもも参加できる企画が確認できる。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "催し・体験・展示・模擬店等を楽しめる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含め家族で訪れやすい内容。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "自由に回遊・滞在調整できる形式。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "混雑・天候等の確認は必要。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "会場入場は無料。物販利用などは任意。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "入場に事前申込必須との情報はない。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で共有して楽しめる体験価値がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "入場予約不要の情報。特別企画は主催者発表を再確認してください。"
+    },
+    "indoor_outdoor": "屋内・屋外",
+    "discovery_sources": [
+      {
+        "channel": "explicit",
+        "source_id": "tamemap_nakano",
+        "kind": "fixed_source_event_discovery",
+        "url": "https://pc.tamemap.net/1311401/event/161456?locale=ja"
+      }
+    ],
+    "ai": {
+      "checked_at": "2026-10-17",
+      "confidence": "medium",
+      "discovery_query": "2026-10-17 source-specific incremental search; not a full re-search"
+    }
   }
 ]

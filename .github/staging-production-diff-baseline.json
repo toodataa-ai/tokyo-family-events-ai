@@ -163,9 +163,9 @@
     },
     {
       "path": "docs/RELEASE_PROCESS.md",
-      "kind": "staging_only",
+      "kind": "different",
       "category": "release_governance",
-      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "reason": "既存の本番ドキュメントを保ち、mainに差分統制とスキル参照節を追記。これはランタイムではなく開発運用手順の差。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

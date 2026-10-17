@@ -71,3 +71,15 @@ for(const [id,url] of Object.entries(mandatory)){
 }
 assert.ok((data.protected_source_ids||[]).length >= sources.filter(x=>x.enabled).length);
 for(const source of sources.filter(x=>x.enabled)) assert.ok(data.protected_source_ids.includes(source.id),`source not protected from deletion: ${source.id}`);
+
+const newMandatory = {
+  tamemap_nakano: 'https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=35.7089745&lng=139.6630981&level=5000&locale=ja',
+  itabashi_times_event: 'https://itabashi-times.com/category/event',
+};
+for (const [id,url] of Object.entries(newMandatory)) {
+  const source=sources.find(x=>x.id===id);
+  assert.ok(source && source.enabled && source.required && source.purpose==='candidate_discovery',`${id} must remain a required discovery source`);
+  assert.ok(source.search_urls.includes(url),`${id}: source endpoint disappeared`);
+  assert.equal(source.event_row_audit_required,true,`${id}: per-event parity missing`);
+  assert.ok(data.protected_source_ids.includes(id),`${id}: source must be protected`);
+}

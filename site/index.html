@@ -48,7 +48,7 @@
     <div class="logic-guard"><b>二層探索＋互換ガード</b><span>AI横断探索を毎回実行しつつ、明示参照元も必ず確認。レガシー由来18系統は保護し、新しい固定サイトは追加可能です。取得経路はイベント詳細で確認できます。</span></div>
     <details class="logic-fixed-sources" id="fixedSourceDetails">
       <summary><span>固定サイト（登録済み参照元）一覧</span><small id="fixedSourceCount">読み込み中</small></summary>
-      <p class="logic-fixed-sources-note">イベント候補の探索先として登録されているサイトです。自治体・観光協会の公式サイトと、従来から使っている地域イベントサイトを分けて表示します。サイト名から参照先を開けます。</p>
+      <p class="logic-fixed-sources-note">イベント候補の探索先として登録されているサイトです。公式サイト・追加登録した地域情報サイト・従来からの固定サイトに分けて表示します。サイト名から参照先を開けます。</p>
       <div id="fixedSourceList" aria-live="polite"><p>固定サイト情報を読み込み中です。</p></div>
     </details>
 
@@ -141,9 +141,13 @@ function renderPublicReleases(data){
 function renderFixedSources(data){
   const all=Array.isArray(data?.explicit_sources)?data.explicit_sources:[];
   const active=all.filter(source=>source && source.enabled===true);
+  const knownOrigins=['official','official_added','manual','legacy'];
   const groups=[
     {title:'自治体・観光協会などの公式サイト',items:active.filter(source=>source.origin==='official'||source.origin==='official_added')},
-    {title:'従来からの固定サイト',items:active.filter(source=>source.origin!=='official'&&source.origin!=='official_added')}
+    {title:'追加登録した地域情報サイト',items:active.filter(source=>source.origin==='manual')},
+    {title:'従来からの固定サイト',items:active.filter(source=>source.origin==='legacy')},
+    // Unrecognized origins must stay visible and be explicitly reclassified later.
+    {title:'その他の固定サイト（要分類）',items:active.filter(source=>!knownOrigins.includes(source.origin))}
   ];
   $('fixedSourceCount').textContent=`${active.length}サイト`;
   $('fixedSourceList').innerHTML=groups.filter(group=>group.items.length).map(group=>{

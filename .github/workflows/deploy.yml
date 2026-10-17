@@ -319,7 +319,7 @@ jobs:
 
   snapshot_data:
     needs: [gate, promote_data, preview]
-    if: ${{ needs.gate.outputs.mode == 'data' && needs.gate.outputs.operation != 'bootstrap' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
+    if: ${{ always() && needs.gate.outputs.mode == 'data' && needs.gate.outputs.operation != 'bootstrap' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

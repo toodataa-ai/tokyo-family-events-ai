@@ -1,8 +1,8 @@
-# User-approved minimal application release v1.10 (staging and isolated audit passed).
+# User-approved minimal app production release v1.11 (source grouping fix).
 operation=release
 production_ref=production
-approved_staging_sha=f031d9ba357c31528307712479c559785d1734a3
-target_public_version=1.10
-previous_public_release=release/2026-10-17-r3
+approved_staging_sha=cb99bc011be90d30769f484ca655a337d0ff70b8
+target_public_version=1.11
+previous_public_release=release/2026-10-17-r4
 release_date_jst=2026-10-17
-note=PR #7 approved by user. 6 production-based files only: two fixed discovery source additions to 24, 3 regression files, initial update history placeholder, rubric version validator. Existing 22 source entries unchanged. Static weekly event data unchanged. Published data-production 361 rows preserved. Pinned candidate audit 39001474327 passed all checks; no staging-only research, release configs, or other unrelated changes promoted.
+note=PR #10: user approved PR #9 staged grouping fix. Only site/index.html and tests/fixed_source_directory.test.mjs modified in production. Four official, two newly added manual community sources (Tamemap Nakano and Itabashi TIMES), eighteen legacy. Registry unchanged (24), published data-production 361 records unchanged. Production-only base f031d9ba357c31528307712479c559785d1734a3. Pinned production candidate audit 39013615911 successful.

@@ -1,0 +1,78 @@
+name: Audit approved v1.11 source grouping release candidate (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v111-source-groups.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact production-based candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 6954dda14f17bce88ad8f59de45560bb39166131
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact approved scope and immutable published data branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 6954dda14f17bce88ad8f59de45560bb39166131
+          test "$(git merge-base HEAD f031d9ba357c31528307712479c559785d1734a3)" = f031d9ba357c31528307712479c559785d1734a3
+          git fetch origin production data-production --depth=1
+          test "$(git rev-parse origin/production)" = f031d9ba357c31528307712479c559785d1734a3
+          test "$(git rev-parse origin/data-production)" = b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
+          git diff --name-only f031d9ba357c31528307712479c559785d1734a3 HEAD | sort >/tmp/actual
+          printf '%s\n' site/index.html tests/fixed_source_directory.test.mjs | sort >/tmp/expected
+          diff -u /tmp/expected /tmp/actual
+      - name: Verify correct grouping, prior sources unchanged, and 361 published records
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          def show(ref,path):
+              return json.loads(subprocess.check_output(['git','show',ref+':'+path],text=True))
+          before=show('f031d9ba357c31528307712479c559785d1734a3','site/data/discovery_sources.json')
+          current=json.load(open('site/data/discovery_sources.json'))
+          assert before==current, 'source registry modified by view change'
+          sources=[s for s in current['explicit_sources'] if s['enabled']]
+          by_origin={k:[s for s in sources if s['origin']==k] for k in ('official','official_added','manual','legacy')}
+          assert len(sources)==24
+          assert len(by_origin['official'])+len(by_origin['official_added'])==4
+          assert len(by_origin['manual'])==2
+          assert len(by_origin['legacy'])==18
+          assert {s['id'] for s in by_origin['manual']}=={'tamemap_nakano','itabashi_times_event'}
+          html=Path('site/index.html').read_text()
+          assert "title:'追加登録した地域情報サイト',items:active.filter(source=>source.origin==='manual')" in html
+          assert "title:'従来からの固定サイト',items:active.filter(source=>source.origin==='legacy')" in html
+          assert "title:'自治体・観光協会などの公式サイト',items:active.filter(source=>source.origin==='official'||source.origin==='official_added')" in html
+          manifest=show('origin/data-production','site/data/manifest.json')
+          assert sum(w['count'] for w in manifest['weekends'])==361
+          for w in manifest['weekends']:
+              meta=show('origin/data-production','site/data/'+w['file'])
+              events=[]
+              for file in meta['event_files']:
+                  events+=show('origin/data-production','site/data/'+file)
+              assert len(events)==w['count'],w['sat']
+              assert len({event['id'] for event in events})==len(events),w['sat']
+          print('PASS: fixed sources 4+2+18=24; event records 361 preserved; no data files changed')
+          PY
+      - name: Run full production-based JS and Python tests
+        run: |
+          npm test
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Validate event data, decisions, rereview and official evidence strictly
+        run: |
+          python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python tools/validate_decisions.py --strict site/data
+          python tools/validate_rereview.py --strict site/data
+          python tools/validate_official_schedule_audit.py site/data

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-17-r4",
+  "current_public_release": "release/2026-10-17-r5",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -105,7 +105,16 @@
       "workflow_run_id": 39001543480,
       "note": "固定参照元にためまっぷなかの・いたばしTIMESを追加し登録22→24。既存22ソースは全フィールド不変。休日明け更新履歴の初期表示文言、イベント評価ルーブリックv1.12〜v1.15判定、回帰テストを含む6ファイルを本番更新。候補CI 39001474327・デプロイCI 39001543480成功。別ブランチdata-productionの公開済み週次361レコード維持、既存レコード削除0件。調査用ファイルはリリース対象外。",
       "public_version": "1.10"
+    },
+    {
+      "release_id": "release/2026-10-17-r5",
+      "branch": "release/2026-10-17-r5",
+      "commit_sha": "cb99bc011be90d30769f484ca655a337d0ff70b8",
+      "deployed_at": "2026-10-17T07:28:14Z",
+      "workflow_run_id": 39013701631,
+      "note": "ユーザー承認の固定サイト一覧表示分類の訂正。公式4件・今回追加の地域情報サイト2件・従来18件。PR #10でsite/index.htmlと対応する回帰テストのみproductionに昇格。固定参照元24件、イベントdata-production 361延べレコードを維持。独立監査39013615911、Pages公開39013701631ともsuccess。",
+      "public_version": "1.11"
     }
   ],
-  "current_public_version": "1.10"
+  "current_public_version": "1.11"
 }

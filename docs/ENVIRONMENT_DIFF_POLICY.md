@@ -53,3 +53,11 @@ production=f031d9ba357c31528307712479c559785d1734a3、main=624fc0dc6528bdc8d746e
 6. 正式版の更新時、台帳のbaseline SHA・リリース名・例外一覧の見直しをする。
 
 **運用正本:** AGENTS.md、.github/skills/staging-production-diff/SKILL.md、.github/staging-production-diff-baseline.json、docs/RELEASE_PROCESS.md。
+
+## v1.11 分類表示修正リリース後の再基準化（2026-10-17）
+
+- PR #10により、固定サイト一覧の`manual`由来2件を「従来から」から分離し、公式4・追加2・従来18に分類した。
+- 本番アプリ正本`production`: `cb99bc011be90d30769f484ca655a337d0ff70b8`、リリース不変スナップショット: `release/2026-10-17-r5`。デプロイ実行 #39013701631 成功。
+- `site/`・`prompts/`のmain/production差分なし。既存イベント本番データは`data-production`で361延べ件のまま。
+- 新設の候補読み取り専用監査`.github/workflows/audit-v111-source-groups.yml`はmainにのみ保存する。管理面の正当な差分は計34件へ更新。
+- 本書のv1.10節は当時の履歴。今後の正本SHAおよび最新の許容差分はJSON台帳を優先する。新しい差分を自動承認してはいけない。

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
   "audited_at_jst": "2026-10-17",
-  "baseline_app_release": "release/2026-10-17-r4",
-  "baseline_production_commit": "f031d9ba357c31528307712479c559785d1734a3",
+  "baseline_app_release": "release/2026-10-17-r5",
+  "baseline_production_commit": "cb99bc011be90d30769f484ca655a337d0ff70b8",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 33,
+  "expected_total_differences_after_governance": 34,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -94,6 +94,14 @@
       "kind": "staging_only",
       "category": "audit_workflow",
       "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-v111-source-groups.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "正式v1.11の本番候補SHAを固定し、ソース分類4+2+18と既存361件不変を検証した読み取り専用監査Actions。mainに履歴として保持しproductionへ混入させない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

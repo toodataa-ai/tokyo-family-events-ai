@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-17-r3",
+  "current_public_release": "release/2026-10-17-r4",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -96,7 +96,16 @@
       "workflow_run_id": 38978360721,
       "note": "練馬区公式の地区祭を年度別一覧ページから対象年度の日程URLを解決して候補抽出するよう変更。2026年度の旧URL・既存IDを保持し、年度跨ぎ・未公表年度・異年度情報流用を抑止。公式実取得とリリース候補回帰テスト成功。既存のサイト22件・6週間の延べ掲載イベント349件・既存画面／検索機能は保持し、データ削除0件。PR #3経由で10ファイルの差分のみ反映。",
       "public_version": "1.09"
+    },
+    {
+      "release_id": "release/2026-10-17-r4",
+      "branch": "release/2026-10-17-r4",
+      "commit_sha": "f031d9ba357c31528307712479c559785d1734a3",
+      "deployed_at": "2026-10-17T04:10:55Z",
+      "workflow_run_id": 39001543480,
+      "note": "固定参照元にためまっぷなかの・いたばしTIMESを追加し登録22→24。既存22ソースは全フィールド不変。休日明け更新履歴の初期表示文言、イベント評価ルーブリックv1.12〜v1.15判定、回帰テストを含む6ファイルを本番更新。候補CI 39001474327・デプロイCI 39001543480成功。別ブランチdata-productionの公開済み週次361レコード維持、既存レコード削除0件。調査用ファイルはリリース対象外。",
+      "public_version": "1.10"
     }
   ],
-  "current_public_version": "1.09"
+  "current_public_version": "1.10"
 }

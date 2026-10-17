@@ -1,0 +1,74 @@
+name: Audit approved v1.10 fixed-source release candidate (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v110-fixed-sources.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact isolated production-based candidate
+        uses: actions/checkout@v4
+        with:
+          ref: d336c623db6c9c2dc34f8f7d92005c1ecb9e59bf
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify production baseline and exact six-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = d336c623db6c9c2dc34f8f7d92005c1ecb9e59bf
+          test "$(git merge-base HEAD 0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f)" = 0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f
+          git fetch origin production data-production
+          test "$(git rev-parse origin/production)" = 0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f
+          test "$(git rev-parse origin/data-production)" = b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
+          git diff --name-only 0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f HEAD | sort >/tmp/actual
+          printf '%s\n' site/data/discovery_sources.json site/index.html tests/discovery_sources.test.mjs tests/fixed_source_directory.test.mjs tests/test_official_schedule_rubric_version.py tools/validate_decisions.py | sort >/tmp/expected
+          diff -u /tmp/expected /tmp/actual
+      - name: Assert no old fixed site was changed and no event was edited
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          def show(ref,path):
+              return json.loads(subprocess.check_output(['git','show',ref+':'+path],text=True))
+          old=show('0bda89dcf1e86c1ff8e46e37cd9bdcd8747b965f','site/data/discovery_sources.json')
+          new=json.load(open('site/data/discovery_sources.json'))
+          orig={x['id']:x for x in old['explicit_sources']}
+          latest={x['id']:x for x in new['explicit_sources']}
+          assert len(orig)==22 and len(latest)==24
+          assert set(latest)-set(orig)=={'tamemap_nakano','itabashi_times_event'}
+          assert all(latest[k]==v for k,v in orig.items())
+          assert all(x in new['protected_source_ids'] for x in latest)
+          assert new['protected_legacy_source_ids']==old['protected_legacy_source_ids']
+          assert all(latest[k]['enabled'] and latest[k]['required'] and latest[k]['event_row_audit_required'] for k in ('tamemap_nakano','itabashi_times_event'))
+          manifest=show('origin/data-production','site/data/manifest.json')
+          assert sum(w['count'] for w in manifest['weekends'])==361,manifest['weekends']
+          for w in manifest['weekends']:
+              meta=show('origin/data-production','site/data/'+w['file'])
+              records=[]
+              for filename in meta['event_files']:
+                  records.extend(show('origin/data-production','site/data/'+filename))
+              assert len(records)==w['count'],(filename,len(records),w['count'])
+              assert len(set(x['id'] for x in records))==len(records),w['sat']
+          print('PASS: 22 prior sources unchanged, 24 enabled, 361 published records intact')
+          PY
+      - name: Run production-based full regression suite
+        run: npm test
+      - name: Test rubric v1.12-v1.15 alignment
+        run: python3 -m unittest discover -s tests -p 'test_official_schedule_rubric_version.py'
+      - name: Validate local data and decisions strictly
+        run: |
+          python3 tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 tools/validate_decisions.py --strict site/data
+          python3 tools/validate_rereview.py --strict site/data
+          python3 tools/validate_official_schedule_audit.py site/data

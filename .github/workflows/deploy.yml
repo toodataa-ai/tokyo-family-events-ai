@@ -101,6 +101,11 @@ jobs:
         run: python tools/validate_official_schedule_audit.py site/data
       - name: Test copy contract and shared filters
         run: npm test
+      - name: Classify intentional staging-only differences (never auto-approve new ones)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_environment_diff_policy.py'
+          python3 tools/audit_environment_diff.py --fetch --ref HEAD --base origin/production
 
   validate_data:
     needs: gate

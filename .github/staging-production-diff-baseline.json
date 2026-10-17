@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
+  "audited_at_jst": "2026-10-17",
+  "baseline_app_release": "release/2026-10-17-r4",
+  "baseline_production_commit": "f031d9ba357c31528307712479c559785d1734a3",
+  "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
+  "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "baseline_existing_differences": 26,
+  "expected_total_differences_after_governance": 33,
+  "allowed_differences": [
+    {
+      "path": ".github/data-deploy-trigger.txt",
+      "kind": "different",
+      "category": "release_control",
+      "reason": "mainで発行するデータ/アプリ公開トリガーの現在値。productionの過去値を丸ごと同期しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/production-releases.json",
+      "kind": "different",
+      "category": "release_control",
+      "reason": "正式公開の単一正本レジストリはmainが保持し、Pagesがそこから本番へ重ねる。production内の履歴台帳を追随コピーしない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/release-trigger.txt",
+      "kind": "different",
+      "category": "release_control",
+      "reason": "mainで発行するデータ/アプリ公開トリガーの現在値。productionの過去値を丸ごと同期しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/skills/staging-production-diff/SKILL.md",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/staging-production-diff-baseline.json",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-app-release-candidate.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-unpublished-data.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-v107-release-candidate.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-v108-fixed-sites.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-v109-nerima-annual.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-v110-fixed-sources.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "kind": "different",
+      "category": "orchestration",
+      "reason": "mainのみがPages公開と安全ゲートを実行。データ削除防止・更新履歴監査・スナップショットの進化はmain側で管理。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/holiday-readonly-audit.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/nerima-annual-live-smoke.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/probe-suginami.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/recheck-67.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "AGENTS.md",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/ENVIRONMENT_DIFF_POLICY.md",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/holiday_after_update.md",
+      "kind": "different",
+      "category": "working_documentation",
+      "reason": "休日明けデータ更新履歴の検証/運用改善はmain側で保守。アプリ本番配信コンテンツではない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/RELEASE_PROCESS.md",
+      "kind": "different",
+      "category": "release_governance",
+      "reason": "既存の本番ドキュメントを保ち、mainに差分統制とスキル参照節を追記。これはランタイムではなく開発運用手順の差。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "package.json",
+      "kind": "different",
+      "category": "staging_test_manifest",
+      "reason": "mainだけの休日明けデータ履歴テストをnpm testに含める。productionアプリの依存や実行機能の差ではない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-10-13-all-67-event-source-recheck.json",
+      "kind": "staging_only",
+      "category": "research_archive",
+      "reason": "検証の証跡・過去調査結果でありサイト配信に不要。削除せず履歴保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-10-13-full-tier-upgrade-audit.json",
+      "kind": "staging_only",
+      "category": "research_archive",
+      "reason": "検証の証跡・過去調査結果でありサイト配信に不要。削除せず履歴保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-10-13-holiday-after-official-evidence.json",
+      "kind": "staging_only",
+      "category": "research_archive",
+      "reason": "検証の証跡・過去調査結果でありサイト配信に不要。削除せず履歴保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-10-13-nov03-holiday-candidate-audit.json",
+      "kind": "staging_only",
+      "category": "research_archive",
+      "reason": "検証の証跡・過去調査結果でありサイト配信に不要。削除せず履歴保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/holiday_update_history.test.mjs",
+      "kind": "staging_only",
+      "category": "staging_test",
+      "reason": "mainの公開データ履歴の検証テスト。production UIには不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/non_regression_policy.test.mjs",
+      "kind": "different",
+      "category": "staging_test",
+      "reason": "main-onlyのデータ公開後バックアップ条件回帰アサーション。productionには配信されない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_environment_diff_policy.py",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/audit_environment_diff.py",
+      "kind": "staging_only",
+      "category": "release_governance",
+      "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/holiday_readonly_crawl.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/holiday_update_history.mjs",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/probe_suginami.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/recheck_67_mismatches.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    }
+  ]
+}

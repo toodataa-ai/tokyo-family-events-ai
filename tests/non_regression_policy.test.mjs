@@ -19,4 +19,5 @@ assert.match(app,/確認済み/);
 assert.ok(fs.existsSync('site/data/update_history.json'));
 assert.match(prompt,/休日明け定期更新の履歴保存/);
 assert.match(prompt,/published_unique_after/);
+assert.match(workflow, /snapshot_data:\s*[\s\S]*?if:\s*\$\{\{\s*always\(\)\s*&&\s*needs\.gate\.outputs\.mode\s*==\s*'data'/, 'Data release snapshot must evaluate even when validate_staging is skipped');
 console.log('non-regression + hallucination policy: OK');

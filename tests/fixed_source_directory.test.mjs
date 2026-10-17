@@ -6,7 +6,7 @@ const css=fs.readFileSync('site/styles.css','utf8');
 const sourceConfig=JSON.parse(fs.readFileSync('site/data/discovery_sources.json','utf8'));
 const sources=sourceConfig.explicit_sources.filter(x=>x.enabled===true);
 
-assert.ok(sources.length>=22,'existing fixed discovery sources must not vanish');
+assert.ok(sources.length>=24,'existing fixed discovery sources must not vanish');
 assert.ok(sources.every(x=>typeof x.label==='string' && x.label.trim()),'all displayed source labels need names');
 assert.match(html,/id="logic"[^>]*aria-labelledby="logicTitle"/,'directory must be inside the extraction explanation');
 assert.match(html,/id="fixedSourceDetails"/);
@@ -24,7 +24,7 @@ assert.match(html,/target="_blank" rel="noopener noreferrer"/);
 assert.match(html,/catch\(error\)[\s\S]*固定サイト一覧を取得できませんでした/);
 assert.match(css,/\.logic-fixed-sources-group ul/);
 assert.match(css,/@media\(max-width:520px\)[^{]*\{\.logic-fixed-sources/);
-for(const id of ['nakano_official_tourism','itabashi_official_festival','itabashi_tourism_festival']){
+for(const id of ['nakano_official_tourism','itabashi_official_festival','itabashi_tourism_festival','tamemap_nakano','itabashi_times_event']){
   assert.ok(sources.some(x=>x.id===id),'new official source included: '+id);
 }
 assert.ok(sources.some(x=>x.id==='nakano'),'legacy Nakano source retained');

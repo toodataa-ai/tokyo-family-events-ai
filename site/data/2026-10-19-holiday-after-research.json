@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "kind": "holiday_after_research_evidence",
+  "run_type": "holiday_after_update",
+  "as_of_jst": "2026-10-19",
+  "holiday_block_start": "2026-10-17",
+  "holiday_block_end": "2026-10-18",
+  "base_data_production_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "prompt": {
+    "version": "v1.15",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+    "pointer": "site/data/latest_prompt.json",
+    "resolved": true
+  },
+  "target_start": "2026-10-19",
+  "target_end": "2026-11-29",
+  "week_starts": [
+    "2026-10-24",
+    "2026-10-31",
+    "2026-11-07",
+    "2026-11-14",
+    "2026-11-21",
+    "2026-11-28"
+  ],
+  "holiday_targets": [
+    {
+      "date": "2026-11-03",
+      "name": "文化の日",
+      "independent_weekday_search": true
+    },
+    {
+      "date": "2026-11-23",
+      "name": "勤労感謝の日",
+      "holiday_block": [
+        "2026-11-21",
+        "2026-11-23"
+      ]
+    }
+  ],
+  "official_holiday_source": "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html",
+  "baseline_counts": {
+    "weekly_records": 361,
+    "unique_across_six_weeks": 264
+  },
+  "candidates": [
+    {
+      "candidate_id": "r20261019-niijin-expo-20261121",
+      "name": "NIJIN教育万博2026",
+      "ward": "港区",
+      "date_start": "2026-11-21",
+      "date_end": "2026-11-22",
+      "venue": "DMM六本木本社24階",
+      "official_url": "https://expo.nijin.co.jp/",
+      "discovery_url": "https://visit-minato-city.tokyo/ja-jp/events/3255",
+      "facts": [
+        "入場無料",
+        "公式LINEで事前登録",
+        "園児～大人",
+        "企業ブース体験・コンテスト"
+      ],
+      "source_kind": "organizer_official",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "web_cross_search",
+          "url": "https://visit-minato-city.tokyo/ja-jp/events/3255"
+        }
+      ],
+      "status": "individual_official_page_checked; existing-id/dedup/family-fit audit pending"
+    },
+    {
+      "candidate_id": "r20261019-nerima-farm-fes-20261121",
+      "name": "全国都市農業フェスティバル2027 プレイベント",
+      "ward": "練馬区",
+      "date_start": "2026-11-21",
+      "date_end": "2026-11-22",
+      "venue": "都立光が丘公園 けやき広場",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+      "discovery_url": "https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar202611.html",
+      "facts": [
+        "10:00～16:00",
+        "JA東京あおば農業祭と共同開催"
+      ],
+      "source_kind": "ward_official",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "official_ward_calendar",
+          "url": "https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar202611.html"
+        }
+      ],
+      "status": "official_page_checked; existing-id/dedup/family-fit audit pending"
+    },
+    {
+      "candidate_id": "r20261019-nerima-district-toyotama-minami-20261129",
+      "name": "第一地区祭（豊玉南小学校）",
+      "ward": "練馬区",
+      "date_start": "2026-11-29",
+      "date_end": "2026-11-29",
+      "venue": "豊玉南小学校（豊玉南2-14-1）",
+      "time": "10:00～12:00",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "annual_listing_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html",
+      "facts": [
+        "高齢者体験",
+        "餅つき",
+        "ゲームコーナー",
+        "昔遊び",
+        "雨天時規模縮小"
+      ],
+      "source_kind": "ward_official",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "nerima_district_festivals_2026",
+          "kind": "annual_official_schedule_row",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        }
+      ],
+      "status": "official_2026_row_checked; all-rows parity and decision pending"
+    },
+    {
+      "candidate_id": "r20261019-shinagawa-ota-wakuwaku-20261015",
+      "name": "品川×大田 旧東海道でつながるまち WAKU☆WAKUラリー",
+      "ward": "品川区・大田区",
+      "date_start": "2026-10-15",
+      "date_end": "2026-11-29",
+      "venue": "旧東海道・大森周辺（品川区・大田区）",
+      "official_url": "https://shinagawa-kanko.or.jp/event/wakuwaku2026/",
+      "discovery_url": "https://www.o-2.jp/event/shinaota-2026/",
+      "facts": [
+        "スタンプラリー",
+        "クイズラリー",
+        "無料"
+      ],
+      "source_kind": "organizer_official",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "tourism_official_search",
+          "url": "https://www.o-2.jp/event/shinaota-2026/"
+        }
+      ],
+      "status": "official_page_checked; prior-event duplicate and holiday operation audit pending"
+    },
+    {
+      "candidate_id": "r20261019-shibuya-dance-20261123",
+      "name": "Shibuya StreetDance Week 2026",
+      "ward": "渋谷区",
+      "date_start": "2026-11-23",
+      "date_end": "2026-11-23",
+      "venue": "都立代々木公園 イベント広場",
+      "official_url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
+      "facts": [
+        "11月23日祝日",
+        "キッズエリア新設"
+      ],
+      "source_kind": "tokyo_official_listing",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "tokyo_official_events_listing",
+          "url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/"
+        }
+      ],
+      "status": "government_listing_checked; individual-organizer/detail verification pending"
+    },
+    {
+      "candidate_id": "r20261019-edogawa-para-sports-20261122",
+      "name": "えどがわパラスポーツ体験会inスポーツセンター",
+      "ward": "江戸川区",
+      "date_start": "2026-11-22",
+      "date_end": "2026-11-22",
+      "official_url": "https://www.city.edogawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?event_area=2&month=11&type=2&year=2026",
+      "source_kind": "ward_official_listing",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "source_id": null,
+          "kind": "official_ward_calendar",
+          "url": "https://www.city.edogawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?event_area=2&month=11&type=2&year=2026"
+        }
+      ],
+      "status": "official_listed; venue/reservation/individual_page pending"
+    }
+  ],
+  "source_access_findings": [
+    {
+      "id": "suginami_festival",
+      "required": true,
+      "registered_template": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1",
+      "web_tool_fetch_result": "unavailable; origin HTTP status not established",
+      "accessible_alternative": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2",
+      "status": "error",
+      "note": "Alternative browseability is not proof registered exact URL has been checked. Do not mark checked."
+    },
+    {
+      "id": "tamemap_nakano",
+      "required": true,
+      "registered_template": "https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+      "web_tool_fetch_result": "unavailable; origin HTTP status not established",
+      "status": "error",
+      "note": "Do not convert fetch failure to zero candidates or remove already published items."
+    }
+  ],
+  "validation": {
+    "required_23_ward_research": "incomplete",
+    "required_24_explicit_source_checks": "incomplete",
+    "official_schedule_row_decision_parity": "incomplete",
+    "candidate_decisions": "incomplete",
+    "strict_validator": "not_run",
+    "npm_test": "not_run",
+    "pages": "not_run",
+    "snapshot": "not_created",
+    "publish_eligible": false
+  },
+  "guardrails": [
+    "This file is an explicitly non-publishable research record; it is not a manifest-listed event shard or run audit.",
+    "Do not claim 23 wards, official rows, or required sources checked without actual evidence.",
+    "Retain existing 361 dated event records and all previous update history; no deletion authorized.",
+    "Only a strict-pass candidate may be copied into data-staging and promoted via existing data-only workflow.",
+    "Do not modify app code or published Version."
+  ],
+  "note": "2026-10-19 official web research saved without fabricating audit results. This branch is isolated from data-staging/data-production and is NOT released."
+}

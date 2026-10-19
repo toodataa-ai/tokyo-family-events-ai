@@ -2,7 +2,7 @@ name: Stage four fact-checked festival subprograms instead of broad umbrella
 on:
   push:
     branches: [audit/data-staging-coverage-20261020]
-    paths: [.github/workflows/stage-exact-festival-subprograms.yml]
+    paths: [.github/workflows/stage-exact-festival-subprograms.yml, tools/add_primary_verified_events.py]
 permissions:
   contents: write
 concurrency:

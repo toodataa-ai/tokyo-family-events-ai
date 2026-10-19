@@ -79,14 +79,21 @@ def build_packet(plan, published_dir, collected):
                             "previous_week": old_sat, "event": ev}
             prior = [x["event"] for x in carried.values()]
         identified = {event_identity(ev) for ev in prior}
+        from datetime import date, timedelta
+        following_day = (date.fromisoformat(sun) + timedelta(days=1)).isoformat()
+        holiday_extension = any(h.get("date") == following_day for h in plan.get("holiday_targets", []))
+        target_dates = [sat, sun] + ([following_day] if holiday_extension else [])
         links = []
         for c in discovered:
             via = c.get("discovered_via") or {}
             week_ref = via.get("query") or ""
+            iso_hit = any(day in week_ref for day in target_dates)
+            local_hit = any(day.replace("-", "年", 1).replace("-", "月", 1) + "日" in week_ref for day in target_dates)
             if via.get("search_url") and (via.get("ward") or "").strip():
-                if sat in week_ref or sat.replace("-", "年", 1).replace("-", "月", 1) + "日" in week_ref:
+                if iso_hit or local_hit:
                     links.append(c)
-            elif c.get("matched_dates") and any(sat <= day <= sun for day in c["matched_dates"]):
+            elif c.get("matched_dates") and any(sat <= day <= (following_day if holiday_extension else sun)
+                                                  for day in c["matched_dates"]):
                 links.append(c)
         weekly.append({
             "sat": sat, "sun": sun, "tier": target["publication_tier"],

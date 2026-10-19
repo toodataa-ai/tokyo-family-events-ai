@@ -165,18 +165,39 @@ def public_row(record):
     return {key: value for key, value in record.items() if key != "body"}
 
 
-def rss_items(body):
+def rss_items(body, audit=None):
+    """Filter search-engine topic drift before it becomes a candidate lead.
+
+    A transport-successful RSS channel is not evidence that the search engine
+    respected the Tokyo/ward query. Nonmatching titles remain counted in the
+    audit as filtered, not silently presented as event leads.
+    """
     root = ET.fromstring(body)
+    if root.tag != "rss" or root.find("channel") is None:
+        raise ValueError("Search endpoint did not return a valid RSS channel")
     out = []
-    for item in root.findall(".//item"):
+    total, rejected = 0, 0
+    for item in root.findall("./channel/item"):
+        total += 1
         name = (item.findtext("title") or "").strip()[:150]
         url = (item.findtext("link") or "").strip()
-        if len(name) < 5 or not url.startswith("https://"):
+        host = (urlsplit(url).hostname or "").lower()
+        japanese_title = bool(re.search(r"[\u3040-\u30ff\u3400-\u9fff]", name))
+        geography = bool(re.search(
+            "Tokyo|東京|千代田|中央区|港区|新宿|文京|台東|墨田|江東|品川|目黒|大田|"
+            "世田谷|渋谷|中野|杉並|豊島|北区|荒川|板橋|練馬|足立|葛飾|江戸川|"
+            "池袋|上野|浅草|豊洲|お台場|銀座|荻窪|六本木", name, re.I))
+        if (len(name) < 5 or not url.startswith("https://")
+                or not EVENT_WORDS.search(name)
+                or not (japanese_title or host.endswith(".jp") or geography)):
+            rejected += 1
             continue
         out.append({"candidate_id": "rss-" + digest(name + "|" + url),
                     "name": name, "discovery_url": url})
-    if root.tag != "rss" or root.find("channel") is None:
-        raise ValueError("Search endpoint did not return a valid RSS channel")
+    if audit is not None:
+        audit.update(search_results_total=total,
+                     search_results_rejected_irrelevant=rejected,
+                     search_results_event_leads=len(out))
     return out[:MAX_LINKS]
 
 
@@ -215,7 +236,7 @@ def inspect(job, fetcher=None):
         return result
     try:
         if job["kind"] in ("ai_cross", "holiday_ai_cross"):
-            result["candidates"] = rss_items(evidence["body"])
+            result["candidates"] = rss_items(evidence["body"], result)
         else:
             title, links = html_links(evidence["body"], job["url"])
             if not title and not links:

@@ -99,6 +99,24 @@ class HolidayAfterCollectTests(unittest.TestCase):
                     lambda url: (200, b"<html><title>Blocked</title></html>", url, "text/html"))
         self.assertEqual(r["status"], "error")
 
+    def test_search_engine_topic_drift_is_not_an_event_lead(self):
+        bad = """<rss><channel>
+        <item><title>WhatsApp - Official Site</title>
+        <link>https://www.whatsapp.com/</link></item>
+        <item><title>PESSIMISTIC | dictionary definition</title>
+        <link>https://dictionary.cambridge.org/english/pessimistic</link></item>
+        <item><title>親子で楽しむ中野区防災イベント2026</title>
+        <link>https://www.city.tokyo-nakano.lg.jp/event/2026.html</link></item>
+        <item><title>Future AI Event in Nevada</title>
+        <link>https://www.elsewhere.com/ev</link></item>
+        </channel></rss>"""
+        counts = {}
+        found = rss_items(bad, counts)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(counts["search_results_total"], 4)
+        self.assertEqual(counts["search_results_rejected_irrelevant"], 3)
+        self.assertIn("中野区", found[0]["name"])
+
     def test_annual_rows_remain_unverified_and_pending_decision(self):
         url = "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"
         result = annual_report({

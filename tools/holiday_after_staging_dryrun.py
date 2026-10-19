@@ -45,6 +45,7 @@ def main():
     requests=load(a.evidence/"requests.json")
     candidates=load(a.evidence/"candidate_pool.json")
     plan=load(a.evidence/"plan.json")
+    official=summary["annual_schedule"][0]
     def ward_evidence(sat):
         entries=[]
         for name in WARDS:
@@ -89,7 +90,6 @@ def main():
         return out
     explicit_records=explicit_source_records()
     plan=load(a.evidence/"plan.json")
-    official=summary["annual_schedule"][0]
     if (plan["as_of_jst"]!="2026-10-19" or summary["base_data_production_sha"]!=
         "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"):
         raise ValueError("baseline plan discrepancy")

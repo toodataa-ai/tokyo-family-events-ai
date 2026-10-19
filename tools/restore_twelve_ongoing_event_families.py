@@ -19,7 +19,7 @@ def gather(root):
   for f in p["event_files"]:events+=load(root/f)
   for e in events:
    if e["id"] in ver:
-    d.setdefault(norm(e["name"]),[]).append((e,ver[e["id"]]))
+    d.setdefault(norm(e["name"]),[]).append((e,ver[e["id"]],week["sat"]))
  return d
 def main():
  p=argparse.ArgumentParser();p.add_argument("--old",type=Path,required=True)
@@ -49,12 +49,19 @@ def main():
     report["already_present"]+=1;continue
    old_matches=old.get(key,[]);stage_matches=stage.get(key,[])
    available=stage_matches+old_matches
-   verified=[(e,a) for e,a in available if a["status"]=="verified"]
+   # Match an old event from the same target weekend when that week
+   # existed historically. Replacing its ID triggers non-regression failure.
+   old_same_week=[(e,a,when) for e,a,when in old_matches if when==sat]
+   candidates=old_same_week+stage_matches+old_matches
+   verified=([(e,a,when) for e,a,when in old_same_week
+              if a.get("status") in ("verified","announced")]
+             if old_same_week else
+             [(e,a,when) for e,a,when in candidates if a["status"]=="verified"])
    if not verified:
     # The previous tier may only have been 'announced' because the new
     # participation dates were not individually audited at that time.
     # The current authority ledger contains explicit dated venue evidence.
-    verified=[(e,a) for e,a in available
+    verified=[(e,a,when) for e,a,when in candidates
               if a.get("status")=="announced"
               and r["source"].startswith("https://")
               and r.get("verified_on")=="2026-10-20"
@@ -62,7 +69,7 @@ def main():
     if not verified:
      raise ValueError("No prior event entry plus real renewed authoritative evidence: "+r["name"])
    # Preserve existing visible/stable same ID where possible.
-   e,a=next(((e,a) for e,a in verified if e["id"] not in present_ids),(None,None))
+   e,a,when=next(((e,a,when) for e,a,when in verified if e["id"] not in present_ids),(None,None,None))
    if e is None:raise ValueError("Historical ID collision: "+r["name"])
    if e["name"]!=r["name"] or not e.get("venue"):raise ValueError("Incorrect historical primary venue: "+r["name"])
    copy_e=copy.deepcopy(e)

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "kind": "manual_authoritative_rolling_published_event_continuity",
+  "baseline_data_production_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "baseline_data_staging_sha": "fb40060423b9402447672859c1a2ce027feed6f4",
+  "rules": [
+    {
+      "name": "2026ミナコレ（MINATO COLLECTION）",
+      "source": "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+      "start": "2026-10-15",
+      "end": "2026-12-20",
+      "reason": "港区公式は区内の参加美術館・博物館を回るスタンプラリーを10/15～12/20と明記。施設ごとの休館日に実施しない。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "いまどきの子育てとマンガ展",
+      "source": "https://www.city.toshima.lg.jp/467/2607241454.html",
+      "start": "2026-09-18",
+      "end": "2026-11-23",
+      "reason": "豊島区公式9/18～11/23、10～18時、トキワ荘通り昭和レトロ館で開催。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "色の引き算―白・黒・いろいろ―",
+      "source": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+      "start": "2026-10-06",
+      "end": "2026-12-20",
+      "reason": "国立国会図書館前期10/6～12/20、9:30～17時、土日営業・祝日休館、無料。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+      "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+      "start": "2026-10-31",
+      "end": "2026-12-27",
+      "reason": "練馬区立美術館主催、10/31～12/27、月休、土日10～18時、当日チケット購入可。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "11月 いつでもものづくり",
+      "source": "https://www.imaginus-suginami.jp/events/?variable=nextevents",
+      "start": "2026-11-01",
+      "end": "2026-11-30",
+      "reason": "主催者11月イベント一覧とイベント記事の大見出しは11/1～30・毎日予約不要。記事内旧10月開催概要は内部矛盾のため注意点として残す。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "特別展「エリック・カールといのちの色‐同じ世界で、ちがう色‐」",
+      "source": "https://www.aquarium.gr.jp/news/events/31639",
+      "start": "2026-07-25",
+      "end": "2026-12-25",
+      "reason": "しながわ水族館7/25～12/25、火曜休、11/14～12/25冬季展示へ切替。11/11～13は特別展休止。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "国際美術展 TOKYO ATLAS",
+      "source": "https://tokyoatlas.jp/",
+      "start": "2026-10-10",
+      "end": "2026-12-20",
+      "reason": "東京都・公式サイト10/10～12/20、原則月曜休、各展示会場土日開場10～17時、一部施設日時予約必要。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "秋の自然たんけんラリー",
+      "source": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
+      "start": "2026-10-14",
+      "end": "2026-11-23",
+      "reason": "練馬区観光協会の公式紹介および施設情報で10/14～11/23、火曜休、9～16:30、無料。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "中里の秋さがしミッション！",
+      "source": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
+      "start": "2026-10-14",
+      "end": "2026-11-23",
+      "reason": "練馬区観光協会の公式紹介および施設情報で10/14～11/23、火曜休、9～16:30、無料。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "森万里子:燦燦",
+      "source": "https://www.mori.art.museum/jp/exhibitions/marikomori/",
+      "start": "2026-10-31",
+      "end": "2027-03-28",
+      "reason": "森美術館10/31～2027/3/28会期中無休。土日10～22時、中学生以下無料、大人3,000円。子どもの深夜入場制限。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "【企画展】「海を渡ってきた植物の物語」",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/makinokinenteien/kikakuten2.html",
+      "start": "2026-09-12",
+      "end": "2026-12-13",
+      "reason": "練馬区公式10/30～12/13後期、牧野記念庭園で9:30～16:30、火曜休、無料。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    },
+    {
+      "name": "祝）ACN presents代々木フォレスト・オブ・ライツ ～光の森～",
+      "source": "https://tickets.tbs.co.jp/yoyogiforestoflights2026/",
+      "start": "2026-11-13",
+      "end": "2027-01-11",
+      "reason": "主催者チケット公式11/13～2027/1/11、17:30～22時、大人休日3800円、小学生1000円、日時指定チケット予約必須。",
+      "verified_on": "2026-10-20",
+      "continuity": "must_restore_if_published_old_event_overlaps_staged_week",
+      "scope": "specific_individual_exhibition_or_joinable_full-period_activity"
+    }
+  ],
+  "special_multi_programs": [
+    {
+      "name": "第71回秋の区民文化祭",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+      "why": "催しごとの日付は分かれており、11/7-8に催事なし、11/21-22は日本舞踊(11/22)と手工芸展(11/19～11/23)に分割。親企画の全期間を毎週開催と判定しない。"
+    },
+    {
+      "name": "すみだ五彩の芸術祭",
+      "url": "https://sumida-artfest.jp/events/",
+      "why": "9/4～12/20は複数独立催事の総合会期。11/21・28の『SUMIDA光のナイトガーデン』など明示の子企画単位で再収集。"
+    }
+  ],
+  "authorizes_promotion": false,
+  "original_published_ids_should_not_be_deleted": true
+}

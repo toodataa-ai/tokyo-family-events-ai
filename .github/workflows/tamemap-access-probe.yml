@@ -1,0 +1,51 @@
+name: Diagnose Tamemap Nakano 403 (read only)
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/tamemap-access-probe.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Compare canonical and equivalent calendar URLs without modifying source registry
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request,urllib.error
+          root='https://pc.tamemap.net/1311401'
+          endpoints=[
+            ('exact_oct',root+'/calendar/2026-10?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'),
+            ('exact_nov',root+'/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'),
+            ('other_coord_oct',root+'/calendar/2026-10?lat=35.7073&level=5000&lng=139.675&locale=ja'),
+            ('other_coord_nov',root+'/calendar/2026-11?lat=35.7073&level=5000&lng=139.675&locale=ja'),
+            ('no_geo_oct',root+'/calendar/2026-10?locale=ja'),
+            ('no_geo_nov',root+'/calendar/2026-11?locale=ja'),
+            ('board_home',root+'?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'),
+          ]
+          headers=[('project','TokyoFamilyEventsEvidence/1.0 (+github.com/toodataa-ai/tokyo-family-events-ai)'),('browser','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/129.0.0.0 Safari/537.36')]
+          out=[]
+          for label,url in endpoints:
+            for kind,agent in headers:
+              row={'label':label,'agent':kind,'url':url}
+              try:
+                request=urllib.request.Request(url,headers={'User-Agent':agent,'Accept-Language':'ja-JP,ja;q=0.9'})
+                with urllib.request.urlopen(request,timeout=9) as res:
+                  raw=res.read(200000); row.update(http_status=res.status,final_url=res.geturl(),bytes=len(raw),looks_like_calendar=(b'2026' in raw and b'calendar' in raw.lower()))
+              except Exception as e:
+                row['error']=str(e)[:200]
+              print(json.dumps(row,ensure_ascii=False),flush=True)
+              out.append(row)
+          with open('/tmp/tamemap-probe.json','w') as f:json.dump(out,f,ensure_ascii=False,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tamemap-retrieval-probe
+          path: /tmp/tamemap-probe.json
+          retention-days: 30

@@ -83,7 +83,7 @@ def main():
    to_add.append(ev)
    existing_id.add(r["id"]);seen_name.add((norm(r["name"]),r["from"]))
   if not to_add:continue
-  shard=sat+"-events-manual-primary.json"
+  shard=sat+"-events-manual-festival-subprograms.json"
   if shard in week["event_files"] or (directory/shard).exists():raise ValueError("collision with existing shard")
   week["event_files"].append(shard)
   w["count"]+=len(to_add)

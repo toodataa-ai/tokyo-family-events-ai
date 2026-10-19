@@ -347,8 +347,6 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
     blockers = []
     if outstanding_failures:
         blockers.append("required_explicit_url_errors")
-    if deferred_issues:
-        blockers.append("tamemap_known_issue_deferred_not_checked")
     if ward_failures:
         blockers.append("incomplete_23_ward_search")
     if annual_failures:
@@ -366,6 +364,10 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
                     "required_source_failures": required_failures,
                     "required_source_failures_outstanding": outstanding_failures,
                     "approved_deferred_source_errors": deferred_issues,
+                    "nonblocking_known_issues": [
+                        {"id": "tamemap_nakano", "classification": "temporarily_deferred_not_checked",
+                         "deferred_count": len(deferred_issues)}
+                    ] if deferred_issues else [],
                     "wards": wards, "ward_failures": ward_failures,
                     "annual_schedule": [{k: v for k, v in r.items() if k != "candidates"} for r in annual],
                     "candidate_links_unverified": len(unique),

@@ -68,7 +68,7 @@ jobs:
         run: |
           python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
           python3 -m unittest discover -s scanner/tests -p 'test_nakano_supplemental_discovery.py' -v
-          python3 -m unittest discover -s scanner/tests -p 'test_official_schedule_audit.py' -v
+          PYTHONPATH=scanner python3 -m unittest discover -s scanner/tests -p 'test_official_schedule_audit.py' -v
       - name: Verify released prompt policy
         working-directory: released
         run: node .github/scripts/validate-prompt-history.mjs

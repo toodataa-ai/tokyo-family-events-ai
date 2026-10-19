@@ -42,7 +42,7 @@ jobs:
             --evidence "$RUNNER_TEMP/real-evidence" \
             --output "$RUNNER_TEMP/rollover-artifacts/candidate/site/data" \
             > "$RUNNER_TEMP/rollover-artifacts/assembly_report.json"
-          cp "$RUNNER_TEMP/rollover-artifacts/candidate_dryrun_status.json" "$RUNNER_TEMP/rollover-artifacts/stage_blockers.json"
+          cp "$RUNNER_TEMP/rollover-artifacts/candidate/site/candidate_dryrun_status.json" "$RUNNER_TEMP/rollover-artifacts/stage_blockers.json"
       - name: Run released strict validations without changing GitHub branches
         shell: bash
         run: |

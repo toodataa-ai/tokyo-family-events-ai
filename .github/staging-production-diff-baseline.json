@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-10-19",
+  "audited_at_jst": "2026-10-20",
   "baseline_app_release": "release/2026-10-17-r5",
   "baseline_production_commit": "cb99bc011be90d30769f484ca655a337d0ff70b8",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 40,
+  "expected_total_differences_after_governance": 43,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -202,6 +202,14 @@
       "requires_user_approval_to_release": true
     },
     {
+      "path": "policy/nakano_supplemental_sources.json",
+      "kind": "staging_only",
+      "category": "staging_policy",
+      "reason": "ためまっぷ Cloudflare403時の中野区公式・社協補完参照元の読み取り専用ステージング設定。元のrequired参照元を置換しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
       "path": "research/2026-10-13-all-67-event-source-recheck.json",
       "kind": "staging_only",
       "category": "research_archive",
@@ -274,6 +282,14 @@
       "requires_user_approval_to_release": true
     },
     {
+      "path": "tests/test_nakano_supplemental_discovery.py",
+      "kind": "staging_only",
+      "category": "staging_test",
+      "reason": "月カレンダーの実年月確認・異なる開催日・地域公式リンク・Tamemap403温存の回帰テスト。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
       "path": "tools/audit_environment_diff.py",
       "kind": "staging_only",
       "category": "release_governance",
@@ -310,6 +326,14 @@
       "kind": "staging_only",
       "category": "staging_tool",
       "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/nakano_supplemental_discovery.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "中野区公式/社会福祉協議会の正規ページから補完候補を抽出し、個別公式詳細確認までは非公開に保持する収集処理。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

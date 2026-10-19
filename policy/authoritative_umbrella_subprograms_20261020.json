@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-19",
+  "rules": [
+    {
+      "name": "第71回秋の区民文化祭",
+      "week": "2026-11-07",
+      "kind": "official_non_occurrence_in_this_week",
+      "expected_children": [],
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+      "basis": "文化祭の総期間は10/4〜11/23だが公式の個別催事日程では11/7-8に実施日なし。11/1の次は11/11〜15の書道展。親期間を偽の週末参加にしない。"
+    },
+    {
+      "name": "第71回秋の区民文化祭",
+      "week": "2026-11-21",
+      "kind": "official_subevents_cover_target_week",
+      "expected_children": [
+        "第71回秋の区民文化祭 手工芸作家展",
+        "第71回秋の区民文化祭 日本舞踊の会"
+      ],
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+      "basis": "練馬区公式11/19-23手工芸作家展と11/22日本舞踊の会、個別開催日・会場・入場無料を確認した。"
+    },
+    {
+      "name": "すみだ五彩の芸術祭",
+      "week": "2026-11-21",
+      "kind": "official_subevents_cover_target_week",
+      "expected_children": [
+        "SUMIDA光のナイトガーデン（旧安田庭園）"
+      ],
+      "official_url": "https://sumida-artfest.jp/programs/3990/",
+      "basis": "公式11/19〜12/27毎日16:30〜20時庭園ライトアップ、無料。複数企画集合の総開催期間で代替しない。"
+    },
+    {
+      "name": "すみだ五彩の芸術祭",
+      "week": "2026-11-28",
+      "kind": "official_subevents_cover_target_week",
+      "expected_children": [
+        "SUMIDA光のナイトガーデン（旧安田庭園）",
+        "MOA美術館墨田児童作品展"
+      ],
+      "official_url": "https://sumida-artfest.jp/programs/4004/",
+      "basis": "公式ライトアップ11/19〜12/27、児童作品展11/28〜29（無料）を別会場・別参加単位として確定した。"
+    }
+  ],
+  "expected_rule_count": 4,
+  "parents_original_data_records_untouched": true,
+  "version": "v1.0"
+}

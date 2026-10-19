@@ -36,7 +36,18 @@ def main():
     p.add_argument("--baseline",required=True,type=Path)
     p.add_argument("--evidence",required=True,type=Path)
     p.add_argument("--output",required=True,type=Path)
+    p.add_argument("--review-ledger",required=True,type=Path,
+                   help="13 primary-source vetted fact reviews, never synthetic status upgrades")
     a=p.parse_args()
+    official_reviews=load(a.review_ledger)
+    if (official_reviews.get("source_kind")!="rechecked_primary_official_and_organizer_pages"
+            or len(official_reviews["records"])!=13
+            or official_reviews["data_baseline_sha"]!="b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"):
+        raise ValueError("no valid factual review ledger for all 13 old events")
+    reviews={row["id"]:row for row in official_reviews["records"]}
+    if len(reviews)!=13 or any(not row.get("source","").startswith("https://")
+                              for row in reviews.values()):
+        raise ValueError("unverified source ledger")
     manifest0=load(a.baseline/"manifest.json")
     manifest=copy.deepcopy(manifest0)
     a.output.mkdir(parents=True,exist_ok=True)
@@ -136,10 +147,61 @@ def main():
             # Preserve v1.5 historical proof rather than falsify a v1.15 re-audit.
             dump(a.output/week["run_file"],run)
             ver=load(a.baseline/week["verification_file"])
-            announced=[r["id"] for r in ver.get("events",[]) if r.get("status")!="verified"]
-            if announced and tier=="full":
+            verified_ids=[]
+            remaining=[]
+            for row in ver.get("events",[]):
+                if tier!="full" or row.get("status")=="verified":
+                    continue
+                ident=row["id"]
+                review=reviews.get(ident)
+                if review is None:
+                    remaining.append(ident)
+                    continue
+                row["status"]="verified"
+                row["source"]=review["source"]
+                row["source_kind"]="organizer_official"
+                original=next((event for file in week.get("event_files",[])
+                               for event in load(a.baseline/file)
+                               if event.get("id")==ident),None)
+                if not original: raise ValueError("reviewed event absent: "+ident)
+                row.setdefault("corrections",{})
+                row.setdefault("field_changes",{})
+                for field,value in (review.get("corrections") or {}).items():
+                    prior=original.get(field)
+                    if prior!=value:
+                        row["corrections"][field]=value
+                        row["field_changes"][field]={
+                           "from":prior,"to":value,
+                           "reason":review["facts"]+" / "+review["limitations"],
+                           "source":review["source"]}
+                verified_fields=("name","date","venue","time","price","reservation","official_url")
+                row.setdefault("fields",{})
+                for key in verified_fields:
+                    row["fields"][key]=("corrected" if key in row.get("corrections",{})
+                                        else "pass")
+                row["note"]="個別公式再監査（2026-10-20）: "+review["facts"]+" 注意: "+review["limitations"]
+                row["review_evidence_url"]=review["source"]
+                verified_ids.append(ident)
+            ver["verified_on"]="2026-10-20" if verified_ids else ver["verified_on"]
+            ver["summary"]["verified"]=sum(r["status"]=="verified" for r in ver["events"])
+            ver["summary"]["announced"]=sum(r["status"]=="announced" for r in ver["events"])
+            if verified_ids:
+                dump(a.output/week["verification_file"],ver)
+                run["summary"]["verified"]=ver["summary"]["verified"]
+                run["summary"]["announced"]=ver["summary"]["announced"]
+                run.setdefault("postprocess_reviews",[]).append({
+                    "version":"official-2026-10-20",
+                    "mode":"evidence-backed-full-tier-reverification",
+                    "source_ledger":"research/2026-10-20-confirmed-13-promotion-source-evidence.json",
+                    "event_ids":verified_ids,
+                    "note":"Corrections only when backed by named official source; original event IDs unchanged."
+                })
+                dump(a.output/week["run_file"],run)
+            if remaining:
                 report["blockers"].append({"sat":sat,"kind":"full_tier_needs_individual_official_recheck",
-                                           "event_ids":announced})
+                                           "event_ids":remaining})
+            report["weeks"].append({"sat":sat,"evidence_verified_event_ids":verified_ids,
+                                    "pending_verifications":remaining})
         else:
             events=[]
             audits=[]

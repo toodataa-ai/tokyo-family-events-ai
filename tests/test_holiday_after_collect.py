@@ -86,12 +86,18 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertEqual(len(links), 1)
         self.assertEqual(links[0]["discovery_url"], "https://www.example.org/events/2026/")
 
-    def test_empty_rss_errors_instead_of_zero_candidates(self):
+    def test_valid_empty_rss_is_measured_zero_not_fetch_failure(self):
         r = inspect({"kind": "ai_cross", "ward": "港区",
                      "url": "https://www.bing.com/search?format=rss&q=x"},
                     lambda url: (200, b"<rss><channel/></rss>", url, "application/rss+xml"))
-        self.assertEqual(r["status"], "error")
+        self.assertEqual(r["status"], "checked")
         self.assertEqual(r["candidate_link_count"], 0)
+
+    def test_html_error_page_is_not_a_checked_rss(self):
+        r = inspect({"kind": "ai_cross", "ward": "港区",
+                     "url": "https://www.bing.com/search?format=rss&q=x"},
+                    lambda url: (200, b"<html><title>Blocked</title></html>", url, "text/html"))
+        self.assertEqual(r["status"], "error")
 
     def test_annual_rows_remain_unverified_and_pending_decision(self):
         url = "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"

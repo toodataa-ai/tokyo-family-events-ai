@@ -2,7 +2,7 @@ name: Reconcile 12 verified ongoing event families on all missing weeks
 on:
   push:
     branches: [audit/data-staging-coverage-20261020]
-    paths: [.github/workflows/restore-twelve-ongoing.yml]
+    paths: [.github/workflows/restore-twelve-ongoing.yml, tools/restore_twelve_ongoing_event_families.py]
 permissions:
   contents: write
 concurrency:

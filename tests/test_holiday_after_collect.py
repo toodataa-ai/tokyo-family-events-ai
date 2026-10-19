@@ -134,6 +134,21 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertEqual(counts["search_results_rejected_irrelevant"], 2)
         self.assertTrue(all("city.nerima.tokyo.jp" in x["discovery_url"] for x in got))
 
+    def test_taiwan_taitung_and_banqiao_not_mistaken_for_tokyo_wards(self):
+        data = """<rss><channel>
+        <item><title>2026台東景點推薦！親子室内行程</title>
+        <link>https://fullfenblog.tw/taitung-lazy-bag/</link></item>
+        <item><title>板橋景點一日遊，親子必去</title>
+        <link>https://myjourney.tw/banqiao-attractions/</link></item>
+        <item><title>台東区こども体験イベント</title>
+        <link>https://www.city.taito.lg.jp/event</link></item>
+        </channel></rss>"""
+        audit = {}
+        found = rss_items(data, audit, ward="台東区")
+        self.assertEqual(len(found), 1)
+        self.assertEqual(audit["search_results_rejected_irrelevant"], 2)
+        self.assertEqual(found[0]["discovery_url"], "https://www.city.taito.lg.jp/event")
+
     def test_annual_rows_remain_unverified_and_pending_decision(self):
         url = "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"
         result = annual_report({

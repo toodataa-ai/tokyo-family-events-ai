@@ -167,8 +167,8 @@ def rss_items(body):
             continue
         out.append({"candidate_id": "rss-" + digest(name + "|" + url),
                     "name": name, "discovery_url": url})
-    if not out:
-        raise ValueError("RSS returned no valid URLs; do not mark the search checked")
+    if root.tag != "rss" or root.find("channel") is None:
+        raise ValueError("Search endpoint did not return a valid RSS channel")
     return out[:MAX_LINKS]
 
 

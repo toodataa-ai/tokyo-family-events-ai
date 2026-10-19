@@ -17,6 +17,9 @@ on:
       - "policy/nakano_supplemental_sources.json"
       - "tools/nakano_supplemental_discovery.py"
       - "tests/test_nakano_supplemental_discovery.py"
+      - "policy/temporary_source_exceptions.json"
+      - "tools/validate_official_schedule_audit.py"
+      - "tests/test_official_schedule_audit.py"
   push:
     branches: [main]
     paths:
@@ -65,6 +68,7 @@ jobs:
         run: |
           python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
           python3 -m unittest discover -s scanner/tests -p 'test_nakano_supplemental_discovery.py' -v
+          python3 -m unittest discover -s scanner/tests -p 'test_official_schedule_audit.py' -v
       - name: Verify released prompt policy
         working-directory: released
         run: node .github/scripts/validate-prompt-history.mjs
@@ -100,6 +104,7 @@ jobs:
             --plan "$RUNNER_TEMP/holiday-after-audit/plan.json" \
             --output-dir "$RUNNER_TEMP/holiday-after-audit" \
             --supplemental-config scanner/policy/nakano_supplemental_sources.json \
+            --exception-policy scanner/policy/temporary_source_exceptions.json \
             --workers 12
       - name: Prepare event-by-event reviewer worklist (never publishes)
         if: always()

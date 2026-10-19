@@ -72,3 +72,18 @@ data-productionの基準SHAで data-staging に許可された日付別JSON、ma
 ### 再検索検証
 
 開発ブランチ限定の1回限りのActionで `--as-of 2026-10-19` を指定し、2026-10-19〜2026-11-29の6週間と11/3・11/23の平日祝日を再検索する。公式候補の取得・収集証拠/未完了をArtifactに残す。開発検証用Actionはmainにマージせず削除する。
+
+
+## 2026-10-20：ためまっぷCloudflare403を今週だけ既知障害として扱う（ユーザー承認）
+
+ユーザー指示：『ためまっぷの不具合はいったん不具合扱いとしつつ、この状態で先に進めてください』。
+
+- 現在のTamemap必須参照元は**残す**。初回HTTP403（`server: cloudflare`, `Just a moment...`）は取得失敗そのものとして生のURL・UTC/JST日時・ステータスとともに記録する。
+- 今回の1回分だけ main側の `policy/temporary_source_exceptions.json` に承認を置き、`2026-10-19`基準の6週間探索だけで、当該URLで発生した実際のCloudflare403を `deferred`（対応待ち既知障害）として扱う。
+- 例外の判定に必要なもの：HTTP 403、Cloudflareのserverヘッダー、チャレンジHTML、登録済みの `/1311401/calendar/` URL、正しい実行日と対象週、例外ID。これらを満たさない取得失敗は通常のblocker。
+- 正式プロンプトv1.15や元の`discovery_sources.json`の `required=true/enabled=true` は変更しない。成功、確認済、候補0件を捏造しない。
+- 補完している中野区公式イベント/子育てカレンダー・社協は、あくまで**追加探索**。Tamemap全件取得の代替や同等網羅性の保証ではない。
+- その他の23区の検索・全required URL・練馬区年度表の行とdecision照合・イベント公式詳細・サムネ・重複・祝日・前回IDの保護・更新履歴・Strict CIは一切免除しない。
+- Web検索RSSがクエリを無視して辞典/WhatsApp等を返すことが判明した。候補には入れず、`search_results_rejected_irrelevant` として記録する。HTTP200を関連イベント発見の成功だと断定しない。
+- 今回の例外を翌回以降に自動適用してはいけない。新しい実行日では再診断、または正式なデータ連携手段を追加する。
+- 本番データに反映できるのは、他のすべての検証が完了し、既存の正式なデータ専用GitHub Actionsが合格した場合のみ。`production`アプリコード・Versionは触らない。

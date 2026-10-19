@@ -19,7 +19,39 @@ def active_version(run):
     return bool(found and int(found.group(1)) >= 15)
 
 
-def validate(run, week, decisions, source_config=None):
+def valid_temporary_exception(run, week, check, source_id, rules):
+    """Only the measured Cloudflare error for this exact one-time run can defer."""
+    from urllib.parse import urlsplit
+    run_meta = run.get("holiday_after") or {}
+    if (run_meta.get("as_of_jst") != "2026-10-19" or
+            run_meta.get("run_type") != "holiday_after_update" or
+            week.get("sat") not in {
+                "2026-10-24", "2026-10-31", "2026-11-07",
+                "2026-11-14", "2026-11-21", "2026-11-28"}):
+        return False
+    for rule in rules:
+        if (source_id != rule.get("source_id") or
+                check.get("exception_ref") != rule.get("id") or
+                check.get("status") != rule.get("expected_observed_status") or
+                check.get("http_status") != rule.get("expected_http_status") or
+                check.get("response_server", "").casefold() != "cloudflare" or
+                check.get("challenge_detected") is not True or
+                rule.get("required_source_stays_enabled") is not True):
+            continue
+        url = check.get("search_url") or check.get("url") or ""
+        parsed = urlsplit(url)
+        if (parsed.scheme != "https" or parsed.hostname != rule.get("expected_host") or
+                not parsed.path.startswith("/1311401/calendar/") or
+                not check.get("checked_at") or
+                "403" not in str(check.get("error") or "")):
+            return False
+        # A real 403 does not become status='checked'; only its scoped blocker
+        # is deferred. The original HTTP error stays in source audit evidence.
+        return True
+    return False
+
+
+def validate(run, week, decisions, source_config=None, temporary_rules=()):
     if not active_version(run):
         return []
     errors = []
@@ -122,6 +154,8 @@ def validate(run, week, decisions, source_config=None):
                     errors.append(f'{label}: required source not checked: {source_id}, {template}')
                     continue
                 for c in matches:
+                    if valid_temporary_exception(run, week, c, source_id, temporary_rules):
+                        continue
                     if c.get('status') != 'checked' or not c.get('checked_at'):
                         errors.append(f'{label}: required source failed: {source_id}')
                     ids = c.get('candidate_ids')
@@ -146,12 +180,21 @@ def main():
     errors = []
     manifest = json.loads((args.directory/'manifest.json').read_text(encoding='utf-8'))
     source_config = json.loads((args.directory/'discovery_sources.json').read_text(encoding='utf-8'))
+    # Read the exception authorization from main/staging audit policy, never
+    # from data-staging itself. Unapproved candidate data cannot self-waive.
+    exception_file = Path(__file__).resolve().parents[1] / 'policy' / 'temporary_source_exceptions.json'
+    temporary_rules = []
+    if exception_file.exists():
+        policy = json.loads(exception_file.read_text(encoding='utf-8'))
+        if policy.get('schema_version') != 1 or policy.get('policy') != 'temporary_known_issue_deferral':
+            raise ValueError('invalid approved temporary source exception ledger')
+        temporary_rules = policy.get('exceptions') or []
     for period in manifest.get('weekends', []):
         week = json.loads((args.directory/period['file']).read_text(encoding='utf-8'))
         run = json.loads((args.directory/week['run_file']).read_text(encoding='utf-8'))
         decisions_path = args.directory/(run.get('source_data') or {}).get('decision_file', period['sat']+'-decisions.json')
         decisions = json.loads(decisions_path.read_text(encoding='utf-8'))
-        errors.extend(validate(run, week, decisions, source_config))
+        errors.extend(validate(run, week, decisions, source_config, temporary_rules))
     for error in errors:
         print('ERROR', error, file=sys.stderr)
     print(f'official schedule discovery audit: {"FAIL" if errors else "PASS"}')

@@ -174,11 +174,18 @@ def main():
                            "from":prior,"to":value,
                            "reason":review["facts"]+" / "+review["limitations"],
                            "source":review["source"]}
-                verified_fields=("name","date","venue","time","price","reservation","official_url")
+                # Never convert an unknown fee, reservation requirement, or
+                # location into a verified "pass" just to satisfy CI.
+                core=("name","date","venue")
                 row.setdefault("fields",{})
-                for key in verified_fields:
+                for key in core:
                     row["fields"][key]=("corrected" if key in row.get("corrections",{})
                                         else "pass")
+                for key in ("time","price","reservation","official_url"):
+                    if key in row.get("corrections",{}):
+                        row["fields"][key]="corrected"
+                    # Otherwise the original actual proof state (including
+                    # unknown) remains unchanged.
                 row["note"]="個別公式再監査（2026-10-20）: "+review["facts"]+" 注意: "+review["limitations"]
                 row["review_evidence_url"]=review["source"]
                 verified_ids.append(ident)

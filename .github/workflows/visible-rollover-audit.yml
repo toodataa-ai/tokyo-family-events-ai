@@ -1,4 +1,4 @@
-name: Compare all old active events with visible six-week windows
+name: Compare active events after 12-family official backfill
 on:
   push:
     branches: [audit/data-staging-coverage-20261020]

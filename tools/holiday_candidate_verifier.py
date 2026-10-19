@@ -38,8 +38,12 @@ class Structured(HTMLParser):
         self.in_title = False
         self.metadata = {}
         self.jsons = []
+        self.visible = []
+        self.script_depth = 0
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag in ("script", "style"):
+            self.script_depth += 1
         if tag == "script" and "ld+json" in attrs.get("type","").lower():
             self.in_json = True
             self.body = []
@@ -52,9 +56,13 @@ class Structured(HTMLParser):
     def handle_data(self, data):
         if self.in_json:
             self.body.append(data)
+        if self.script_depth == 0 and not self.in_title:
+            self.visible.append(data)
         if self.in_title:
             self.title += data
     def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.script_depth = max(0, self.script_depth - 1)
         if tag == "script" and self.in_json:
             self.in_json = False
             try: self.jsons.append(json.loads("".join(self.body)))
@@ -138,7 +146,29 @@ def validate_html(html, candidate, final_url, original):
                 "raw_startDate":node.get("startDate"),"raw_endDate":node.get("endDate"),
                 "source_kind":"primary_structured_event_data"
             })
-    return {"page_title":parsed.title[:180],
+    visible = " ".join(" ".join(parsed.visible).split())[:230000]
+    date_pattern = re.compile(r"(?:2026\s*[年/.-]\s*(\d{1,2})\s*[月/.-]\s*(\d{1,2})\s*日?|"
+                              r"令和\s*8\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日)")
+    date_snippets = []
+    for match in date_pattern.finditer(visible):
+        month, day = (match.group(1), match.group(2)) if match.group(1) else (match.group(3), match.group(4))
+        try:
+            date_string = date(2026, int(month), int(day)).isoformat()
+        except ValueError:
+            continue
+        if not START.isoformat() <= date_string <= END.isoformat():
+            continue
+        if not any(item["date"] == date_string for item in date_snippets):
+            date_snippets.append({"date": date_string, "context": visible[max(0,match.start()-85):match.end()+125]})
+            if len(date_snippets)>=30: break
+    venue_clues = []
+    for match in re.finditer(r"会場|開催場所|開催地|所在地|アクセス",visible):
+        clue = visible[match.start():match.end()+150]
+        if any(ward in clue for ward in WARDS) or "東京都" in clue or "東京" in clue:
+            venue_clues.append(clue)
+            if len(venue_clues)>=6: break
+    return {"target_date_mentions":date_snippets, "venue_clues":venue_clues,
+            "page_title":parsed.title[:180],
             "meta_description":(parsed.metadata.get("description") or
                                 parsed.metadata.get("og:description") or "")[:280],
             "structured_official_event_facts":raw}
@@ -188,15 +218,20 @@ def inspect_one(candidate):
         parsed=validate_html(raw.decode("utf-8","replace"),candidate,final,url)
         base.update(page_title=parsed["page_title"],
                     page_meta=parsed["meta_description"],
+                    target_date_mentions=parsed["target_date_mentions"],
+                    venue_clues=parsed["venue_clues"],
                     final_url=final,
                     page_sha256=hashlib.sha256(raw).hexdigest(),
                     structured_facts=parsed["structured_official_event_facts"])
         if parsed["structured_official_event_facts"]:
             base.update(state="structured_official_fact_candidate",
                         reason="structured_event_date_venue_extracted;human_fidelity_review_pending")
+        elif parsed["target_date_mentions"]:
+            base.update(state="has_official_date_clues_needs_manual_facts",
+                        reason="source_HTML_mentions_target_date_but_venue_and_event_unit_unconfirmed")
         else:
             base.update(state="needs_manual_review",
-                        reason="no_complete_JSONLD_Event_with_Tokyo_venue_in_target_window")
+                        reason="no_individual_dated_event_evidence_in_target_window")
     except (HTTPError,URLError,ValueError,TimeoutError,OSError) as e:
         base.update(state="source_error",reason=str(e)[:200])
     return base

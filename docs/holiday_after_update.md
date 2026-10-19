@@ -54,3 +54,21 @@ data-productionの基準SHAで data-staging に許可された日付別JSON、ma
 アプリコード・productionブランチ・公開Versionは定期データ更新では変えない。
 
 注意: 調査Actionの成功は発見資料の作成成功を示すだけで、本番データ更新完了や掲載審査のPASSではない。
+
+
+## 2026-10-20 ためまっぷCloudflare 403の公式情報補完
+
+- ためまっぷなかのはCloudflareチャレンジでGitHub Actionsから403。登録済みの `tamemap_nakano` は削除・無効化・成功扱いしない。
+- 新規 `policy/nakano_supplemental_sources.json` はデータ公開正本を変更せず、実測候補発見処理だけへ追加する *ステージング専用* 補完登録。
+- 追加した経路：中野区公式イベント全般の月間カレンダー、子育て・教育の月間カレンダー、中野区社会福祉協議会イベント・地域活動一覧（4系列）。
+- カレンダーの `{YYYY}{MM}` 詳細URLが404の場合は `list_calendar.html` を確認する。ただし本文に **指定年・指定月** がない場合は代替成功としない。0件とHTTP失敗を区別する。
+- 区のHTML日付行から独立参加単位を仮候補として抽出する。同日の同一URLは全般/子育て両一覧で重複統合し、異なる日は別の参加単位とする。
+- 社協の掲載物は日付未確認の候補。開催日・会場・対象年齢・予約/料金・サムネ・主催者確定を推測せず、公式個別ページによる確認待ちとする。
+- `tools/holiday_after_collect.py` の `--supplemental-config` 経由で通常の23区横断Actionへ取り込む。`supplemental_sources.json` と `candidate_pool.json` をArtifact化し、`holiday_after_review_packet.py` の各週/祝日レビュー対象へ引き継ぐ。
+- 追加情報源は `tamemap_nakano` の required 検査を満たすものではない。403はそのままblockerに残す。収集候補を掲載確定扱いにして `data-production` を昇格させることは禁止。
+- データ掲載更新へ進むには、従来の正式プロンプトv1.15、全23区・必須固定元・公式詳細・decision・非退行・更新履歴・Strict CIをすべて充足する必要がある。
+- 機械取得で問題ない一次情報サイトを優先し、セキュリティチャレンジの回避や無許可クロールは行わない。
+
+### 再検索検証
+
+開発ブランチ限定の1回限りのActionで `--as-of 2026-10-19` を指定し、2026-10-19〜2026-11-29の6週間と11/3・11/23の平日祝日を再検索する。公式候補の取得・収集証拠/未完了をArtifactに残す。開発検証用Actionはmainにマージせず削除する。

@@ -4,8 +4,8 @@
     "sat": "2026-10-31",
     "sun": "2026-11-01"
   },
-  "horizon_index": 4,
-  "publication_tier": "preview",
+  "horizon_index": 2,
+  "publication_tier": "full",
   "mode": "v1.5-native-full-research",
   "prompt": {
     "version": "v1.5",
@@ -97,8 +97,8 @@
     "published": 48,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 43,
-    "announced": 5,
+    "verified": 48,
+    "announced": 0,
     "corrected": 1,
     "thumbnail_count": 44,
     "thumbnail_coverage": 0.9166666666666666,
@@ -160,6 +160,19 @@
       "applied_at": "2026-10-13",
       "event_id": "v15-52fd793ab1a6",
       "official": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/10.html"
+    },
+    {
+      "version": "official-2026-10-20",
+      "mode": "evidence-backed-full-tier-reverification",
+      "source_ledger": "research/2026-10-20-confirmed-13-promotion-source-evidence.json",
+      "event_ids": [
+        "v15-a6567efc0616",
+        "v15-97ee0aaed408",
+        "v15-f97b5fe1f77b",
+        "v15-0e7113e24145",
+        "v15-3a20f99785fc"
+      ],
+      "note": "Corrections only when backed by named official source; original event IDs unchanged."
     }
   ],
   "manual_incremental_supplements": [

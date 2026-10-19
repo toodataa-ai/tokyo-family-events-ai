@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-07",
+  "events": [
+    {
+      "id": "v15-ad2f72f74ab7",
+      "status": "verified",
+      "source": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-7b30b706f728",
+      "status": "verified",
+      "source": "https://www.city.toshima.lg.jp/129/2609101123.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-0c6fcb6bf768",
+      "status": "verified",
+      "source": "https://chihiro.jp/tokyo/exhibitions/2026/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "corrected"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。 2026-10-13公式展覧会一覧照合：10月30日〜翌1月31日・2展示同時開催を確認。",
+      "field_changes": {
+        "official_url": {
+          "from": "https://chihiro.jp/tokyo/",
+          "to": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "reason": "公式トップページでなく2026年度公式展覧会一覧の開催日・展示名を参照",
+          "source": "https://chihiro.jp/tokyo/exhibitions/2026/"
+        },
+        "source": {
+          "from": "https://chihiro.jp/tokyo/",
+          "to": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "reason": "当該同時開催展示を確認できる開催年別の公式ページへ変更",
+          "source": "https://chihiro.jp/tokyo/exhibitions/2026/"
+        }
+      }
+    },
+    {
+      "id": "v15-8bc88232815c",
+      "status": "verified",
+      "source": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "v15-960da7fa214c",
+      "status": "verified",
+      "source": "https://www.tokyo-park.or.jp/special/flowerandlight/hibiya2026autumn/index.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "target": "unknown",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "nerima-district-0275426b6920",
+      "status": "announced",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "区の公式日程表で日付・会場・催事内容・時間を確認済み。料金・予約は未公表で推測しない。"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "verified": 5,
+    "announced": 1
+  }
+}

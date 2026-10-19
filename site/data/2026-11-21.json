@@ -1,0 +1,231 @@
+{
+  "sample": false,
+  "sat": "2026-11-21",
+  "sun": "2026-11-22",
+  "label": "11/21(土)〜11/22(日)",
+  "generated": "2026-10-19T17:36:28+00:00",
+  "horizon_index": 5,
+  "publication_tier": "announcement",
+  "verification_file": "2026-11-21-verification.json",
+  "run_file": "2026-11-21-run.json",
+  "coverage": {
+    "sources_checked": 23,
+    "candidate_count": 21,
+    "duplicate_removed": 0,
+    "excluded_count": 16,
+    "published_count": 5,
+    "wards": [
+      {
+        "ward": "千代田区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "中央区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "港区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "新宿区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "文京区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "台東区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "墨田区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "江東区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "品川区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "目黒区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "大田区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "世田谷区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "渋谷区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "中野区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "杉並区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "豊島区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "北区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "荒川区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "板橋区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "練馬区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "足立区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "葛飾区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      },
+      {
+        "ward": "江戸川区",
+        "status": "checked",
+        "queries": 4,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+      }
+    ]
+  },
+  "event_files": [
+    "2026-11-21-events-01.json"
+  ],
+  "events": []
+}

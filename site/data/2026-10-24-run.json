@@ -4,8 +4,8 @@
     "sat": "2026-10-24",
     "sun": "2026-10-25"
   },
-  "horizon_index": 3,
-  "publication_tier": "preview",
+  "horizon_index": 1,
+  "publication_tier": "full",
   "mode": "v1.5-native-full-research",
   "prompt": {
     "version": "v1.5",
@@ -97,8 +97,8 @@
     "published": 72,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 64,
-    "announced": 8,
+    "verified": 72,
+    "announced": 0,
     "corrected": 1,
     "thumbnail_count": 59,
     "thumbnail_coverage": 0.8194444444444444,
@@ -135,6 +135,22 @@
       "removed_event_id": "v15-ecd097be86ba",
       "reason": "Officially ended 2026-10-12, not 2027-03-20.",
       "official": "https://tickets.tbs.co.jp/mundopixar/"
+    },
+    {
+      "version": "official-2026-10-20",
+      "mode": "evidence-backed-full-tier-reverification",
+      "source_ledger": "research/2026-10-20-confirmed-13-promotion-source-evidence.json",
+      "event_ids": [
+        "v15-a3d72cbcb52f",
+        "v15-d7f109579d96",
+        "v15-64515ea63f7b",
+        "v15-438a590c39b1",
+        "v15-c2bde5fb2112",
+        "v15-0c7f94c1124a",
+        "v15-16a6e46eeff7",
+        "v15-d29ad9dede43"
+      ],
+      "note": "Corrections only when backed by named official source; original event IDs unchanged."
     }
   ],
   "manual_incremental_supplements": [

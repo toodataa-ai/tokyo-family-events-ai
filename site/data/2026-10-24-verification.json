@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-20",
   "events": [
     {
       "id": "v15-272dbd09eb0a",
@@ -80,22 +80,40 @@
     },
     {
       "id": "v15-a3d72cbcb52f",
-      "status": "announced",
-      "source": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
-      "source_kind": "public_official",
+      "status": "verified",
+      "source": "https://www.tptc.co.jp/park/03_01/newsports/02",
+      "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
         "venue": "pass",
-        "time": "pass",
-        "price": "unknown",
+        "time": "corrected",
+        "price": "corrected",
         "reservation": "pass",
         "target": "pass",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "price": "初心者講習会無料（用具貸出150円／時間の場合あり）",
+        "time": "初心者講習 9:30〜11:00（関連イベントの開催時間は公式案内を確認）"
+      },
+      "note": "個別公式再監査（2026-10-20）: 10月25日 9:30〜11:00 beginner session, location 辰巳の森海浜公園; age >= elementary, free beginner lesson; park disk rental 150円/時。東京都こどもサイトは関連大会含む9:30〜16:00。 注意: 申込方法は公園管理事務所受付、当日の大会には別の条件がある場合あり",
+      "field_changes": {
+        "price": {
+          "from": null,
+          "to": "初心者講習会無料（用具貸出150円／時間の場合あり）",
+          "reason": "10月25日 9:30〜11:00 beginner session, location 辰巳の森海浜公園; age >= elementary, free beginner lesson; park disk rental 150円/時。東京都こどもサイトは関連大会含む9:30〜16:00。 / 申込方法は公園管理事務所受付、当日の大会には別の条件がある場合あり",
+          "source": "https://www.tptc.co.jp/park/03_01/newsports/02"
+        },
+        "time": {
+          "from": "9:30〜16:00",
+          "to": "初心者講習 9:30〜11:00（関連イベントの開催時間は公式案内を確認）",
+          "reason": "10月25日 9:30〜11:00 beginner session, location 辰巳の森海浜公園; age >= elementary, free beginner lesson; park disk rental 150円/時。東京都こどもサイトは関連大会含む9:30〜16:00。 / 申込方法は公園管理事務所受付、当日の大会には別の条件がある場合あり",
+          "source": "https://www.tptc.co.jp/park/03_01/newsports/02"
+        }
+      },
+      "review_evidence_url": "https://www.tptc.co.jp/park/03_01/newsports/02"
     },
     {
       "id": "v15-b3b9fa451277",
@@ -156,22 +174,40 @@
     },
     {
       "id": "v15-d7f109579d96",
-      "status": "announced",
-      "source": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+      "status": "verified",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
-        "venue": "pass",
-        "time": "unknown",
+        "venue": "corrected",
+        "time": "corrected",
         "price": "unknown",
         "reservation": "pass",
         "target": "pass",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "venue": "サンツ中村橋商店街・サンライフ練馬ほか（美術館内の展示は10月18日終了、10月19〜30日は展示替休館）",
+        "time": "各会場の営業・開場時間による（美術館内の展示は10月18日まで）"
+      },
+      "note": "個別公式再監査（2026-10-20）: 9/12〜11/8; 中村橋商店街等の街の作品は期間内鑑賞可; 美術館内の展示は10/18終了、美術館は10/19〜30展示替休館; 街のイベントは無料; 店舗別に営業時間異なる。 注意: 個別会場ごとの開場・定休日は公式会場マップで確認",
+      "field_changes": {
+        "venue": {
+          "from": "中村橋周辺（練馬区立美術館ほか）",
+          "to": "サンツ中村橋商店街・サンライフ練馬ほか（美術館内の展示は10月18日終了、10月19〜30日は展示替休館）",
+          "reason": "9/12〜11/8; 中村橋商店街等の街の作品は期間内鑑賞可; 美術館内の展示は10/18終了、美術館は10/19〜30展示替休館; 街のイベントは無料; 店舗別に営業時間異なる。 / 個別会場ごとの開場・定休日は公式会場マップで確認",
+          "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html"
+        },
+        "time": {
+          "from": "2026年9月12日（土）～11月8日（日） ※美術館内の展示は10月18日（日）まで",
+          "to": "各会場の営業・開場時間による（美術館内の展示は10月18日まで）",
+          "reason": "9/12〜11/8; 中村橋商店街等の街の作品は期間内鑑賞可; 美術館内の展示は10/18終了、美術館は10/19〜30展示替休館; 街のイベントは無料; 店舗別に営業時間異なる。 / 個別会場ごとの開場・定休日は公式会場マップで確認",
+          "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html"
+        }
+      },
+      "review_evidence_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html"
     },
     {
       "id": "v15-86520703f558",
@@ -194,22 +230,33 @@
     },
     {
       "id": "v15-64515ea63f7b",
-      "status": "announced",
-      "source": "https://sumida-artfest.jp",
+      "status": "verified",
+      "source": "https://sumida-artfest.jp/events/",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
         "venue": "pass",
-        "time": "unknown",
+        "time": "corrected",
         "price": "pass",
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "time": "10/24・25開催プログラムあり／時間はプログラムごとに異なる（公式プログラム一覧参照）"
+      },
+      "note": "個別公式再監査（2026-10-20）: 主催者公式プログラム一覧 9/4〜12/20の会期; 10/24には連携展覧会・各所展示、10/25には『すみゆめ踊行列:SUMIBON』を確認。週末の催しごとに場所・時刻・予約・料金が異なる。 注意: 総合イベントの下に多数の独立プログラムあり。親イベントは個別プログラムの参加保証ではない。",
+      "field_changes": {
+        "time": {
+          "from": "",
+          "to": "10/24・25開催プログラムあり／時間はプログラムごとに異なる（公式プログラム一覧参照）",
+          "reason": "主催者公式プログラム一覧 9/4〜12/20の会期; 10/24には連携展覧会・各所展示、10/25には『すみゆめ踊行列:SUMIBON』を確認。週末の催しごとに場所・時刻・予約・料金が異なる。 / 総合イベントの下に多数の独立プログラムあり。親イベントは個別プログラムの参加保証ではない。",
+          "source": "https://sumida-artfest.jp/events/"
+        }
+      },
+      "review_evidence_url": "https://sumida-artfest.jp/events/"
     },
     {
       "id": "v15-95d3c8599365",
@@ -270,22 +317,40 @@
     },
     {
       "id": "v15-438a590c39b1",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
-        "venue": "pass",
-        "time": "unknown",
+        "venue": "corrected",
+        "time": "corrected",
         "price": "pass",
         "reservation": "pass",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "time": "10/24・25上映あり／各作品の上映時間は公式スケジュール参照",
+        "venue": "東京ミッドタウン日比谷 日比谷ステップ広場・日比谷公園・日比谷OKUROJIほか"
+      },
+      "note": "個別公式再監査（2026-10-20）: 10/9〜10/25 東京ミッドタウン日比谷、日比谷公園、日比谷OKUROJI。10/24・25上映プログラムあり、入場無料、映像ごとの開始時刻は公式日別スケジュールを参照。 注意: 一部は子供対象の作品ではないため各作品の内容・開始時刻を確認",
+      "field_changes": {
+        "time": {
+          "from": "",
+          "to": "10/24・25上映あり／各作品の上映時間は公式スケジュール参照",
+          "reason": "10/9〜10/25 東京ミッドタウン日比谷、日比谷公園、日比谷OKUROJI。10/24・25上映プログラムあり、入場無料、映像ごとの開始時刻は公式日別スケジュールを参照。 / 一部は子供対象の作品ではないため各作品の内容・開始時刻を確認",
+          "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/"
+        },
+        "venue": {
+          "from": "により異なる 日比谷OKUROJI：19時〜（予定） 会場 東京ミッドタウン日比谷 日比谷ステップ広場 日比谷公園 日比谷OKUROJI",
+          "to": "東京ミッドタウン日比谷 日比谷ステップ広場・日比谷公園・日比谷OKUROJIほか",
+          "reason": "10/9〜10/25 東京ミッドタウン日比谷、日比谷公園、日比谷OKUROJI。10/24・25上映プログラムあり、入場無料、映像ごとの開始時刻は公式日別スケジュールを参照。 / 一部は子供対象の作品ではないため各作品の内容・開始時刻を確認",
+          "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/"
+        }
+      },
+      "review_evidence_url": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/"
     },
     {
       "id": "v15-2c57e7250de0",
@@ -555,22 +620,63 @@
     },
     {
       "id": "v15-c2bde5fb2112",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.iterrace.jp/event/event_data.php?no=706",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
-        "venue": "pass",
-        "time": "unknown",
-        "price": "unknown",
-        "reservation": "pass",
+        "venue": "corrected",
+        "time": "corrected",
+        "price": "corrected",
+        "reservation": "corrected",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "time": "12:00・14:00・16:00",
+        "venue": "アイテラス落合南長崎 2階 Exhibit Alley（落合南長崎駅直結）",
+        "price": "料金は主催者公式ページに記載なし",
+        "reservation": {
+          "required": true,
+          "note": "事前抽選当選者のみ参加可能。新規申込は終了しています。"
+        }
+      },
+      "note": "個別公式再監査（2026-10-20）: 10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。 注意: 申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起",
+      "field_changes": {
+        "time": {
+          "from": null,
+          "to": "12:00・14:00・16:00",
+          "reason": "10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。 / 申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起",
+          "source": "https://www.iterrace.jp/event/event_data.php?no=706"
+        },
+        "venue": {
+          "from": "豊島区",
+          "to": "アイテラス落合南長崎 2階 Exhibit Alley（落合南長崎駅直結）",
+          "reason": "10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。 / 申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起",
+          "source": "https://www.iterrace.jp/event/event_data.php?no=706"
+        },
+        "price": {
+          "from": null,
+          "to": "料金は主催者公式ページに記載なし",
+          "reason": "10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。 / 申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起",
+          "source": "https://www.iterrace.jp/event/event_data.php?no=706"
+        },
+        "reservation": {
+          "from": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          },
+          "to": {
+            "required": true,
+            "note": "事前抽選当選者のみ参加可能。新規申込は終了しています。"
+          },
+          "reason": "10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。 / 申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起",
+          "source": "https://www.iterrace.jp/event/event_data.php?no=706"
+        }
+      },
+      "review_evidence_url": "https://www.iterrace.jp/event/event_data.php?no=706"
     },
     {
       "id": "v15-137a2a4e48f8",
@@ -821,22 +927,63 @@
     },
     {
       "id": "v15-0c7f94c1124a",
-      "status": "announced",
-      "source": "https://www.city.suginami.tokyo.jp/s030/event/28100.html",
+      "status": "verified",
+      "source": "https://suginami-kouryu.org/ev2026102425_fair.html",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
-        "venue": "pass",
-        "time": "unknown",
-        "price": "pass",
-        "reservation": "pass",
+        "venue": "corrected",
+        "time": "corrected",
+        "price": "corrected",
+        "reservation": "corrected",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "price": "出店販売は商品による。オペラ体験500円、公演1,000円、講演無料（企画により異なる）",
+        "time": "10月24・25日（オペラ体験10/24 15:30～17:00、10/25 14:45～16:15など企画別）",
+        "venue": "座・高円寺および高円寺純情商店街・劇場前広場ほか",
+        "reservation": {
+          "required": null,
+          "note": "オペラ体験・舞台・食文化講演等は企画ごとに申込制。物産販売は現地参加可。"
+        }
+      },
+      "note": "個別公式再監査（2026-10-20）: 杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。 注意: 企画ごとに対象年齢・申込条件は異なる。",
+      "field_changes": {
+        "price": {
+          "from": "】 各回無料 【台湾オペラ】ワークショップ 【要申込】 【台湾オペラ】歌仔戲体験ワークショップ1 時間：午後3時30分～5時 場所：座・高円寺地下2階 阿波おどりホール 費用：500円 対象：小学5年生以上（小学生は保護者同伴） 定員：30名〔事前予約（申込順）〕 ページ下部の",
+          "to": "出店販売は商品による。オペラ体験500円、公演1,000円、講演無料（企画により異なる）",
+          "reason": "杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。 / 企画ごとに対象年齢・申込条件は異なる。",
+          "source": "https://suginami-kouryu.org/ev2026102425_fair.html"
+        },
+        "time": {
+          "from": null,
+          "to": "10月24・25日（オペラ体験10/24 15:30～17:00、10/25 14:45～16:15など企画別）",
+          "reason": "杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。 / 企画ごとに対象年齢・申込条件は異なる。",
+          "source": "https://suginami-kouryu.org/ev2026102425_fair.html"
+        },
+        "venue": {
+          "from": "座・高円寺 〒166-0002 杉並区高円寺北2-1-2 Google Mapsで地図を開く",
+          "to": "座・高円寺および高円寺純情商店街・劇場前広場ほか",
+          "reason": "杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。 / 企画ごとに対象年齢・申込条件は異なる。",
+          "source": "https://suginami-kouryu.org/ev2026102425_fair.html"
+        },
+        "reservation": {
+          "from": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          },
+          "to": {
+            "required": null,
+            "note": "オペラ体験・舞台・食文化講演等は企画ごとに申込制。物産販売は現地参加可。"
+          },
+          "reason": "杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。 / 企画ごとに対象年齢・申込条件は異なる。",
+          "source": "https://suginami-kouryu.org/ev2026102425_fair.html"
+        }
+      },
+      "review_evidence_url": "https://suginami-kouryu.org/ev2026102425_fair.html"
     },
     {
       "id": "v15-7c47c376e50f",
@@ -878,22 +1025,56 @@
     },
     {
       "id": "v15-16a6e46eeff7",
-      "status": "announced",
+      "status": "verified",
       "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja",
       "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
         "venue": "pass",
-        "time": "unknown",
-        "price": "unknown",
-        "reservation": "pass",
+        "time": "corrected",
+        "price": "corrected",
+        "reservation": "corrected",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "time": "10/24 10:30〜17:30、10/25 10:30〜16:00（内容・会場による）",
+        "price": "観覧・公園イベントは無料のものあり。金魚ねぷた制作は1個1,000円・募集終了",
+        "reservation": {
+          "required": null,
+          "note": "金魚ねぷた制作は事前申込が終了。弘前ねぷた運行や公園催しの見学は当日可。"
+        }
+      },
+      "note": "個別公式再監査（2026-10-20）: 10/24 10:30〜15:00 北斎美術館(ねぷた制作有料1000円申込終了),11:00〜15:30緑町公園、16:00〜17:30北斎通り 弘前ねぷた運行、10/25 10:30〜16:00緑町公園だるま絵制作 見学無料。 注意: 制作ワークショップは募集終了",
+      "field_changes": {
+        "time": {
+          "from": null,
+          "to": "10/24 10:30〜17:30、10/25 10:30〜16:00（内容・会場による）",
+          "reason": "10/24 10:30〜15:00 北斎美術館(ねぷた制作有料1000円申込終了),11:00〜15:30緑町公園、16:00〜17:30北斎通り 弘前ねぷた運行、10/25 10:30〜16:00緑町公園だるま絵制作 見学無料。 / 制作ワークショップは募集終了",
+          "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja"
+        },
+        "price": {
+          "from": null,
+          "to": "観覧・公園イベントは無料のものあり。金魚ねぷた制作は1個1,000円・募集終了",
+          "reason": "10/24 10:30〜15:00 北斎美術館(ねぷた制作有料1000円申込終了),11:00〜15:30緑町公園、16:00〜17:30北斎通り 弘前ねぷた運行、10/25 10:30〜16:00緑町公園だるま絵制作 見学無料。 / 制作ワークショップは募集終了",
+          "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja"
+        },
+        "reservation": {
+          "from": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          },
+          "to": {
+            "required": null,
+            "note": "金魚ねぷた制作は事前申込が終了。弘前ねぷた運行や公園催しの見学は当日可。"
+          },
+          "reason": "10/24 10:30〜15:00 北斎美術館(ねぷた制作有料1000円申込終了),11:00〜15:30緑町公園、16:00〜17:30北斎通り 弘前ねぷた運行、10/25 10:30〜16:00緑町公園だるま絵制作 見学無料。 / 制作ワークショップは募集終了",
+          "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja"
+        }
+      },
+      "review_evidence_url": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja"
     },
     {
       "id": "v15-c027bb020dd0",
@@ -935,22 +1116,63 @@
     },
     {
       "id": "v15-d29ad9dede43",
-      "status": "announced",
-      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/chuoku",
-      "source_kind": "public_official",
+      "status": "verified",
+      "source": "https://kids-fm.jp/event/515_day1",
+      "source_kind": "organizer_official",
       "fields": {
         "name": "pass",
         "date": "pass",
-        "venue": "pass",
-        "time": "unknown",
-        "price": "unknown",
-        "reservation": "pass",
+        "venue": "corrected",
+        "time": "corrected",
+        "price": "corrected",
+        "reservation": "corrected",
         "target": "unknown",
         "cancellation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+      "corrections": {
+        "time": "第一部11:00〜12:00／第二部14:30〜15:30（両日）",
+        "venue": "コレド室町 福徳の森（東京都中央区日本橋室町2-5-10）",
+        "price": "来場無料。子ども出店1ブース300円（出店受付終了）",
+        "reservation": {
+          "required": null,
+          "note": "出店受付終了。来場・優先入場の受付方法は公式主催者ページ参照。"
+        }
+      },
+      "note": "個別公式再監査（2026-10-20）: 10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。 注意: 売買は小学生だけが行う。雨天中止。",
+      "field_changes": {
+        "time": {
+          "from": null,
+          "to": "第一部11:00〜12:00／第二部14:30〜15:30（両日）",
+          "reason": "10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。 / 売買は小学生だけが行う。雨天中止。",
+          "source": "https://kids-fm.jp/event/515_day1"
+        },
+        "venue": {
+          "from": "コレド室町",
+          "to": "コレド室町 福徳の森（東京都中央区日本橋室町2-5-10）",
+          "reason": "10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。 / 売買は小学生だけが行う。雨天中止。",
+          "source": "https://kids-fm.jp/event/515_day1"
+        },
+        "price": {
+          "from": null,
+          "to": "来場無料。子ども出店1ブース300円（出店受付終了）",
+          "reason": "10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。 / 売買は小学生だけが行う。雨天中止。",
+          "source": "https://kids-fm.jp/event/515_day1"
+        },
+        "reservation": {
+          "from": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          },
+          "to": {
+            "required": null,
+            "note": "出店受付終了。来場・優先入場の受付方法は公式主催者ページ参照。"
+          },
+          "reason": "10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。 / 売買は小学生だけが行う。雨天中止。",
+          "source": "https://kids-fm.jp/event/515_day1"
+        }
+      },
+      "review_evidence_url": "https://kids-fm.jp/event/515_day1"
     },
     {
       "id": "r16-51d104472e95",
@@ -1362,8 +1584,8 @@
   ],
   "summary": {
     "total": 72,
-    "verified": 64,
-    "announced": 8,
+    "verified": 72,
+    "announced": 0,
     "corrected": 0
   }
 }

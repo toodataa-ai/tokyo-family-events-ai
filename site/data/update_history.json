@@ -17,6 +17,26 @@
       "baseline_data_production_sha": "17b19d2a6f4173e94cd3ca9694793ba2feba41a0",
       "resulting_data_production_sha": "139b407c11af9a88947e2239896e6fcfb019bd48",
       "note": "10/13の公開済み6週間イベントデータを公式情報・掲載適性に基づき補正（参照元67件再点検、10/14未明に追加修正）。新たな6週間ローリング期間への切替は含まれません。件数は同一イベント重複統合後の値です。"
+    },
+    {
+      "run_id": "holiday-after-2026-10-19-b1282eb0f24e",
+      "run_type": "holiday_after_update",
+      "as_of_jst": "2026-10-19",
+      "holiday_block_end": "2026-10-18",
+      "prompt_version": "v1.15",
+      "target_start": "2026-10-19",
+      "target_end": "2026-11-29",
+      "previous_manifest_generated": "2026-10-07T23:40:00+09:00",
+      "new_manifest_generated": "2026-10-19T17:36:28+00:00",
+      "base_data_production_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+      "published_unique_before": 264,
+      "published_unique_after": 153,
+      "added_unique": 7,
+      "changed_unique": 7,
+      "removed_unique": 9,
+      "rolled_out_unique": 109,
+      "executed_at": "2026-10-19T17:36:28.652Z",
+      "note": "休日明け6週間の公式実測照合済みデータ候補（data-staging。productionは未反映）"
     }
   ]
 }

@@ -26,13 +26,24 @@ function unique(raw){
  return map;
 }
 const prev=unique(old),next=unique(now);
+const stagedById=new Map(now.map(x=>[x.ev.id,x.ev]));
 const missing=[];
 for(const [key,ev] of prev){
  if(next.has(key))continue;
  missing.push({id:ev.id,name:ev.name,ward:ev.ward,
    start:ev.date_start,end:ev.date_end,old_week:ev.old_week,
    official_url:ev.official_url||ev.url||"",
-   category:ev.date_end&&ev.date_end<"2026-10-19"?"rolled_out":"potential_unapproved_removal"});
+   category:ev.date_end&&ev.date_end<"2026-10-19"?"rolled_out":"potential_unapproved_removal",
+   still_present_id:stagedById.has(ev.id),
+   current_same_id:stagedById.has(ev.id)?{
+     name:stagedById.get(ev.id).name,
+     start:stagedById.get(ev.id).date_start,
+     end:stagedById.get(ev.id).date_end,
+     venue:stagedById.get(ev.id).venue
+   }:null,
+   matching_name_events:now.filter(x=>x.ev.name===ev.name).map(x=>({
+      id:x.ev.id,week:x.week,date_start:x.ev.date_start,date_end:x.ev.date_end,
+      venue:x.ev.venue})).slice(0,6)});
 }
 const history=read("new/site/data/update_history.json").history.at(-1);
 const activeDropped=missing.filter(x=>x.category==="potential_unapproved_removal");

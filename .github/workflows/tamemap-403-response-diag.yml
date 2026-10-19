@@ -20,6 +20,8 @@ jobs:
           import json, urllib.request, urllib.error, socket, datetime
           url='https://pc.tamemap.net'
           targets={
+            'domain_root':url+'/',
+            'personal_landing':url+'/personal?locale=ja',
             'nakano_home':url+'/1311401',
             'nakano_calendar':url+'/1311401/calendar/2026-10?locale=ja',
             'tamemap_robots':url+'/robots.txt',

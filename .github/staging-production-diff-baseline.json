@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-10-17",
+  "audited_at_jst": "2026-10-19",
   "baseline_app_release": "release/2026-10-17-r5",
   "baseline_production_commit": "cb99bc011be90d30769f484ca655a337d0ff70b8",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 34,
+  "expected_total_differences_after_governance": 39,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -110,6 +110,14 @@
       "kind": "different",
       "category": "orchestration",
       "reason": "mainのみがPages公開と安全ゲートを実行。データ削除防止・更新履歴監査・スナップショットの進化はmain側で管理。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/holiday-after-evidence.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "全23区の実測HTTP探索・公式日程表抽出を読み取り専用でActionsに保存。公開サイトへ配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -242,10 +250,42 @@
       "requires_user_approval_to_release": true
     },
     {
+      "path": "tests/test_holiday_after_collect.py",
+      "kind": "staging_only",
+      "category": "staging_test",
+      "reason": "日付可変23区検索・取得失敗・年間日程表パリティを検証するmain専用単体テスト。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_holiday_after_review_packet.py",
+      "kind": "staging_only",
+      "category": "staging_test",
+      "reason": "過去の掲載IDの保護・月曜祝日候補の抽出・未検証掲載禁止を検証するmain専用単体テスト。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
       "path": "tools/audit_environment_diff.py",
       "kind": "staging_only",
       "category": "release_governance",
       "reason": "今回追加する差分判断の恒久規程・スキル・監査台帳・実行テスト。mainが管理する公開運用の内部規則。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/holiday_after_collect.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "全23区・必須固定サイトを実測し候補リンクと取得証跡だけを作る、非公開・ステージング専用処理。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/holiday_after_review_packet.py",
+      "kind": "staging_only",
+      "category": "staging_tool",
+      "reason": "既存データを変更せずに次6週間の継続掲載・新規候補のレビューパケットを作るmain専用処理。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -281,5 +321,6 @@
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }
-  ]
+  ],
+  "latest_verified_staging_baseline_commit": "c5de42b4e8e1b3400458a837488c88145b9d42ac"
 }

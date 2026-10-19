@@ -60,6 +60,8 @@ def main():
  p=argparse.ArgumentParser();p.add_argument("--data-dir",type=Path,required=True)
  p.add_argument("--ledger",type=Path,required=True);p.add_argument("--report",type=Path,required=True)
  p.add_argument("--expected-stage-sha",required=True)
+ p.add_argument("--shard-suffix",default="manual-festival-subprograms")
+
  args=p.parse_args()
  ledger=load(args.ledger);guard_ledger(ledger,args.expected_stage_sha)
  directory=args.data_dir;man=load(directory/"manifest.json")
@@ -83,7 +85,9 @@ def main():
    to_add.append(ev)
    existing_id.add(r["id"]);seen_name.add((norm(r["name"]),r["from"]))
   if not to_add:continue
-  shard=sat+"-events-manual-festival-subprograms.json"
+  if not re.fullmatch(r"[a-z0-9-]{3,70}",args.shard_suffix):
+   raise ValueError("invalid event shard suffix")
+  shard=sat+"-events-"+args.shard_suffix+".json"
   if shard in week["event_files"] or (directory/shard).exists():raise ValueError("collision with existing shard")
   week["event_files"].append(shard)
   w["count"]+=len(to_add)

@@ -180,7 +180,7 @@ def build_jobs(plan):
         for week in plan["weekends"]:
             date = week["sat"].replace("-", "年", 1).replace("-", "月", 1) + "日"
             for phrase in PHRASES:
-                query = f"{ward} {date} {phrase} 2026"
+                query = f"{ward} {date} {phrase}"
                 jobs.append({"kind": "ai_cross", "ward": ward, "week": week["sat"],
                              "query": query,
                              "url": "https://www.bing.com/search?format=rss&q=" + quote(query)})

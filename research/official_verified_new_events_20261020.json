@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "kind": "manually_primary_source_rechecked_individual_participation_units",
+  "reviewed_on_jst": "2026-10-20",
+  "baseline_stage_expected_sha": "551212315fb79c20e6ff4a365110c3c1d18bfc65",
+  "one_time_data_only": true,
+  "public_website_publish_authorized": false,
+  "expected_primary_source_count": 9,
+  "events": [
+    {
+      "id": "official-2026-suginami-festa",
+      "ward": "杉並区",
+      "name": "すぎなみフェスタ2026（キッズタウン・スポーツ体験）",
+      "from": "2026-11-07",
+      "to": "2026-11-08",
+      "time": "11/7 10:00〜15:30・11/8 10:00〜15:00",
+      "venue": "桃井原っぱ公園（杉並区桃井3-8-1）ほか",
+      "price": "入場無料／すぎなみキッズタウン300円・パルクール500円など企画により有料",
+      "reservation": {
+        "required": null,
+        "note": "全体会場は当日来場。各体験の参加・受付条件は公式案内を確認。"
+      },
+      "description": "すぎなみキッズタウンでお仕事体験。スポーツパークではクリケット、キックターゲット、パルクールなど。地場農産物・ステージもあり。",
+      "categories": [
+        "祭り",
+        "お仕事体験",
+        "スポーツ",
+        "親子"
+      ],
+      "indoor_outdoor": "屋外",
+      "source": "https://www.sugifes.com/event/",
+      "source_kind": "organizer_official",
+      "date_venue_evidence": "2026年11月7・8日、桃井原っぱ公園。主催者掲載のステージ・キッズタウン参加費で確認。",
+      "tags": [
+        "親子向け企画明示",
+        "お仕事/スポーツ体験",
+        "年齢は企画別",
+        "短時間から利用",
+        "屋外混雑と雨天",
+        "一部300〜500円",
+        "参加枠は当日確認",
+        "家族で複数体験"
+      ],
+      "grade": "A"
+    },
+    {
+      "id": "official-2026-yayoi-fukusaku",
+      "ward": "中野区",
+      "name": "第4回やよいふくさく祭り",
+      "from": "2026-11-07",
+      "to": "2026-11-07",
+      "time": "10:30〜14:00（南中野児童館企画は12:00まで）",
+      "venue": "中野区立弥生福祉作業所・南中野児童館（中野区弥生町4-36-15）",
+      "price": "入場無料／飲食・物販・一部体験は有料",
+      "reservation": {
+        "required": false,
+        "note": "申込不要。"
+      },
+      "description": "子ども向けゲーム・輪投げ・釣り・スライム作りなど。小学生以下にミニポップコーンプレゼント（数量・条件あり）。",
+      "categories": [
+        "祭り",
+        "工作",
+        "地域交流",
+        "親子"
+      ],
+      "indoor_outdoor": "屋内・屋外",
+      "source": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14590",
+      "source_kind": "organizer_official",
+      "date_venue_evidence": "中野区社協公開の主催施設告知で11月7日、10:30～14:00、弥生町4-36-15、入場無料と申込不要確認。",
+      "tags": [
+        "小学生以下特典",
+        "スライム・輪投げなど体験",
+        "幼児も体験内容選択可",
+        "短時間参加可",
+        "昼前混雑や雨天",
+        "入場無料で一部有料",
+        "事前申込不要",
+        "児童館と世代間交流"
+      ],
+      "grade": "A"
+    },
+    {
+      "id": "official-2026-shirasagi-stamp",
+      "ward": "中野区",
+      "name": "親子も！シニアも！まちあるきスタンプラリー",
+      "from": "2026-11-07",
+      "to": "2026-11-07",
+      "time": "14:00〜16:00（最終受付15:30）",
+      "venue": "しらさぎ桜苑（受付：中野区白鷺1-14-8）と鷺宮・白鷺・若宮の街なか",
+      "price": "無料",
+      "reservation": {
+        "required": true,
+        "note": "電話・申し込みフォームで事前申込。締切11月3日（火・祝）。"
+      },
+      "description": "親子で街を歩き、スタンプを集めてミッションに挑戦。景品あり。小雨決行・荒天中止。",
+      "categories": [
+        "スタンプラリー",
+        "街歩き",
+        "親子"
+      ],
+      "indoor_outdoor": "屋外",
+      "source": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+      "source_kind": "organizer_official",
+      "date_venue_evidence": "中野区社会福祉協議会の公開案内で11月7日14〜16時、無料、しらさぎ桜苑受付、申込締切11月3日。",
+      "tags": [
+        "親子対象が明示",
+        "街歩きミッション・景品",
+        "歩ける年齢と体力を確認",
+        "1〜2時間程度",
+        "小雨決行・荒天中止",
+        "無料",
+        "11/3締切の事前申込",
+        "地域探索と交流"
+      ],
+      "grade": "A"
+    },
+    {
+      "id": "official-2026-nijin-expo",
+      "ward": "港区",
+      "name": "NIJIN教育万博2026（子ども体験・ワークショップ）",
+      "from": "2026-11-21",
+      "to": "2026-11-22",
+      "time": "親子向けブースは両日11:00〜16:00（夜間の教育者企画は別）",
+      "venue": "DMM六本木本社24階（六本木グランドタワー、港区六本木3丁目）",
+      "price": "入場無料",
+      "reservation": {
+        "required": true,
+        "note": "公式LINEで来場者各自の無料参加登録が必要。コンテスト応募は別途締切。"
+      },
+      "description": "子どもの才能を社会につなぐ教育イベント。企業ワークショップ、アート展示、コンテスト本選、体験ブース等。会場は六本木一丁目駅直結。",
+      "categories": [
+        "教育",
+        "ワークショップ",
+        "子ども",
+        "親子"
+      ],
+      "indoor_outdoor": "屋内",
+      "source": "https://expo.nijin.co.jp/venue-real/",
+      "source_kind": "organizer_official",
+      "date_venue_evidence": "主催者会場案内で11月21・22日、DMM六本木本社24F、11〜16時体験、入場無料、LINE登録必須確認。",
+      "tags": [
+        "子どもの才能と挑戦が中心",
+        "企業ブース・コンテスト",
+        "園児から大人が参加可",
+        "回遊できる常設ブース",
+        "都心高層フロアの混雑",
+        "入場無料",
+        "LINE登録必須、応募締切は企画別",
+        "教育と創作体験"
+      ],
+      "grade": "A"
+    },
+    {
+      "id": "official-2026-urban-agriculture-pre",
+      "ward": "練馬区",
+      "name": "全国都市農業フェスティバル2027 プレイベント",
+      "from": "2026-11-21",
+      "to": "2026-11-22",
+      "time": "両日10:00〜16:00",
+      "venue": "都立光が丘公園 けやき広場（練馬区光が丘）",
+      "price": "入場料金は練馬区公式ページに明記なし（農産物購入は有料）",
+      "reservation": {
+        "required": null,
+        "note": "練馬区公式開催概要に入場予約条件の明記なし。"
+      },
+      "description": "練馬大根や全国の15自治体の農産物・特産品が集結。JA東京あおば農業祭と共同開催。",
+      "categories": [
+        "農業",
+        "地域イベント",
+        "マルシェ",
+        "家族"
+      ],
+      "indoor_outdoor": "屋外",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+      "source_kind": "public_official",
+      "date_venue_evidence": "練馬区2026-10-18更新の公式開催概要で11月21・22日10〜16時、光が丘公園けやき広場・農産物販売を確認。",
+      "tags": [
+        "親子専用とは明記されない",
+        "農産物や地域文化を見られる",
+        "幼児連れでも歩いて見学",
+        "短時間回遊型",
+        "混雑と屋外天候",
+        "商品購入は有料、入場未記載",
+        "申込条件未記載",
+        "旬の農産物と地域交流"
+      ],
+      "grade": "B"
+    },
+    {
+      "id": "official-2026-edogawa-parasports",
+      "ward": "江戸川区",
+      "name": "えどがわパラスポーツ体験会inスポーツセンター（参加対象要確認）",
+      "from": "2026-11-22",
+      "to": "2026-11-22",
+      "time": "10:00〜16:00",
+      "venue": "江戸川区スポーツセンター（江戸川区西葛西4-2-20）",
+      "price": "無料",
+      "reservation": {
+        "required": null,
+        "note": "主催者公式ページに申込要否の明記なし。障害のある方と保護者・関係者が対象。"
+      },
+      "description": "障害のある方（手帳を持たない対象者も含む）と保護者・関係者が参加できるパラスポーツ体験。一般の子連れ家族全員を無条件対象とはしない。手話通訳・看護師・理学療法士の支援あり。",
+      "categories": [
+        "スポーツ",
+        "体験",
+        "インクルーシブ"
+      ],
+      "indoor_outdoor": "屋内",
+      "source": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+      "source_kind": "public_official",
+      "date_venue_evidence": "江戸川区公式で11月22日10〜16時スポーツセンター、無料、障害のある方と保護者・関係者対象を確認。",
+      "tags": [
+        "対象は障害のある方等に限定",
+        "複数パラスポーツを体験",
+        "参加条件に該当する家族が対象",
+        "体調に応じてブース回遊",
+        "体育館で室内履き要・専門職サポート",
+        "無料",
+        "申込の有無は要確認",
+        "当事者向けのスポーツ参加機会"
+      ],
+      "grade": "B"
+    },
+    {
+      "id": "official-2026-lumina-nogata",
+      "ward": "中野区",
+      "name": "LUMINA STUDIO第2回お披露目会（子どものピアノ・バレエ・ミュージカル）",
+      "from": "2026-11-28",
+      "to": "2026-11-28",
+      "time": "午前：ピアノ／午後：バレエ・ミュージカル（開始時刻は主催者に確認）",
+      "venue": "野方区民ホール（中野区野方5-3-1）",
+      "price": "無料",
+      "reservation": {
+        "required": true,
+        "note": "事前予約制。主催者公式LINEまたはInstagramのDMから申込。前年度満席のため残席要確認。"
+      },
+      "description": "子どもたちのピアノ・バレエ・ミュージカルの発表公演。スタジオに通っていない家族も観覧可。",
+      "categories": [
+        "音楽",
+        "舞台",
+        "子ども",
+        "親子"
+      ],
+      "indoor_outdoor": "屋内",
+      "source": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47",
+      "source_kind": "venue_official",
+      "date_venue_evidence": "中野区文化施設公式の主催者案内で11月28日野方区民ホール、入場無料、事前申込要と確認。",
+      "tags": [
+        "子どもの舞台が主役",
+        "鑑賞主体で体験はなし",
+        "未就学児同伴は主催者条件確認",
+        "午前午後の公演別",
+        "屋内だが座席満席に注意",
+        "無料",
+        "事前申込・満席に注意",
+        "芸術活動を家族で応援"
+      ],
+      "grade": "B"
+    },
+    {
+      "id": "official-2026-nihonbashi-komichi",
+      "ward": "中央区",
+      "name": "みちみちこみち2026 小道探偵と謎解き問答日本橋",
+      "from": "2026-10-01",
+      "to": "2026-11-30",
+      "time": "土日祝は日本橋案内所10:00〜19:30受付（所要90〜120分目安）",
+      "venue": "日本橋北詰商店会エリア（日本橋案内所：コレド室町1地下・中央区日本橋室町）",
+      "price": "参加無料（先着の買い物券は配布条件あり）",
+      "reservation": {
+        "required": false,
+        "note": "予約不要。日本橋案内所で謎解き用紙を受け取る。"
+      },
+      "description": "日本橋の街を歩きながら謎解きに挑戦。1回90〜120分程度。先着順で200円分の買い物券付きマップ配布（数量限定）。",
+      "categories": [
+        "謎解き",
+        "街歩き",
+        "親子"
+      ],
+      "indoor_outdoor": "屋外",
+      "source": "https://www.keepallsmiles.com/komichi2026",
+      "source_kind": "organizer_official",
+      "date_venue_evidence": "日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。",
+      "tags": [
+        "家族参加歓迎の謎解き",
+        "謎を解きながら街を探索",
+        "小さな子どもは大人の補助が必要",
+        "90〜120分で途中休憩可",
+        "長めの徒歩移動・天候",
+        "無料",
+        "予約不要・先着配布",
+        "街と歴史の学び"
+      ],
+      "grade": "A"
+    },
+    {
+      "id": "official-2026-haneda-museum",
+      "ward": "大田区",
+      "name": "第10回羽田航空博物館展 in HICity",
+      "from": "2026-09-05",
+      "to": "2026-11-29",
+      "time": "9:00〜18:00（施設休館・個別催事時間は要確認）",
+      "venue": "羽田イノベーションシティ Zone C 2階 Terminal.0 Atelier（大田区羽田空港1-1-4）",
+      "price": "入場無料（関連体験は別途条件あり）",
+      "reservation": {
+        "required": null,
+        "note": "展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。"
+      },
+      "description": "羽田開港95周年・朝日新聞航空部100周年の歴史資料や写真などを展示。11月28〜29日は航空グッズ等を扱う関連催事も実施。",
+      "categories": [
+        "飛行機",
+        "展示",
+        "親子",
+        "博物館"
+      ],
+      "indoor_outdoor": "屋内",
+      "source": "https://www.o-2.jp/en/event/hasmhicity2026/",
+      "source_kind": "official_tourism",
+      "date_venue_evidence": "大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。",
+      "tags": [
+        "飛行機好きの子どもと家族向け",
+        "航空資料の見学と関連催事",
+        "幼児も見学可能・工作は年齢制限",
+        "展示を自由に回れる",
+        "施設休館・関連プログラムに注意",
+        "展示は無料、一部体験は条件別",
+        "工作など個別予約が必要",
+        "航空の歴史と模型に触れる"
+      ],
+      "grade": "A"
+    }
+  ],
+  "guarantees": [
+    "No event added unless source/date/venue explicitly documented",
+    "Unknown reservation and fee are not rewritten into known pass",
+    "Holidays outside Sat-Sun data model must be audited separately",
+    "Prior event IDs and shards cannot be deleted"
+  ]
+}

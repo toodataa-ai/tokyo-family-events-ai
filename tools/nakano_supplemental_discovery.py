@@ -88,7 +88,7 @@ def calendar_candidates(html, page_url, month, start, end, source_id):
             seen.add(identity)
             output.append({
                 "candidate_id": "nakano-official-" + hashlib.sha256(
-                    (source_id + "|" + identity[0] + "|" + identity[1]).encode()).hexdigest()[:16],
+                    (identity[0] + "|" + identity[1]).encode()).hexdigest()[:16],
                 "name": label, "ward": "中野区", "matched_dates": [last_day.isoformat()],
                 "date_from_calendar": last_day.isoformat(),
                 "discovery_url": url, "source_page": page_url,

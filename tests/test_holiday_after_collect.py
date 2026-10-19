@@ -117,6 +117,23 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertEqual(counts["search_results_rejected_irrelevant"], 3)
         self.assertIn("中野区", found[0]["name"])
 
+    def test_ward_aware_rss_rejects_japanese_overseas_events(self):
+        rss = """<rss><channel>
+        <item><title>アメリカ11月のおすすめ観光文化体験</title>
+        <link>https://www.travel-in-usa.jp/events</link></item>
+        <item><title>WhatsApp 日本語イベント</title>
+        <link>https://www.whatsapp.com/?lang=ja</link></item>
+        <item><title>練馬区こども祭り2026</title>
+        <link>https://www.city.nerima.tokyo.jp/event/2026.html</link></item>
+        <item><title>親子科学体験教室</title>
+        <link>https://www.city.nerima.tokyo.jp/event/science.html</link></item>
+        </channel></rss>"""
+        counts = {}
+        got = rss_items(rss, counts, ward="練馬区")
+        self.assertEqual(len(got), 2)
+        self.assertEqual(counts["search_results_rejected_irrelevant"], 2)
+        self.assertTrue(all("city.nerima.tokyo.jp" in x["discovery_url"] for x in got))
+
     def test_annual_rows_remain_unverified_and_pending_decision(self):
         url = "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html"
         result = annual_report({

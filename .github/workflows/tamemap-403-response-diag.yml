@@ -1,0 +1,50 @@
+name: Diagnose Tamemap 403 response provenance (read only)
+
+on:
+  push:
+    branches:
+      - diagnostic/tamemap-403-http-response-20261020
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect response metadata without cookies or login
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error, socket, datetime
+          url='https://pc.tamemap.net'
+          targets={
+            'nakano_home':url+'/1311401',
+            'nakano_calendar':url+'/1311401/calendar/2026-10?locale=ja',
+            'tamemap_robots':url+'/robots.txt',
+            'official_control':'https://www.city.tokyo-nakano.lg.jp/',
+          }
+          for name,target in targets.items():
+            record={'case':name,'url':target,'checked_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+            try:
+              req=urllib.request.Request(target,headers={'User-Agent':'TokyoFamilyEvents-Diagnostic/1.0','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'})
+              try:
+                response=urllib.request.urlopen(req,timeout=15)
+              except urllib.error.HTTPError as exc:
+                response=exc
+              with response:
+                body=response.read(2048)
+                header_names=('server','via','x-cache','x-amz-cf-id','x-amz-cf-pop','cf-ray','cf-cache-status','x-request-id','x-amzn-requestid','location','content-type','content-length','set-cookie','x-powered-by')
+                record['http_status']=response.getcode()
+                record['final_url']=response.geturl()
+                record['headers']={key:response.headers.get(key) for key in header_names if response.headers.get(key) and key!='set-cookie'}
+                record['has_set_cookie']=bool(response.headers.get('set-cookie'))
+                record['body_preview']=body.decode('utf-8','replace')[:900]
+            except Exception as err:
+              record['error']=str(err)[:350]
+            print(json.dumps(record,ensure_ascii=False),flush=True)
+          try:
+            print('DNS_TAMEMAP',json.dumps(sorted({x[4][0] for x in socket.getaddrinfo('pc.tamemap.net',443)})))
+          except Exception as e:print('DNS_ERROR',str(e))
+          PY

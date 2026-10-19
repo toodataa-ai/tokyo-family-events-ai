@@ -147,6 +147,14 @@ def fetch_url(url, fetcher=None, attempts=2):
                     "body": body}
         except (HTTPError, URLError, OSError, ValueError, UnicodeError, TimeoutError) as error:
             evidence["error"] = str(error)[:350]
+            if isinstance(error, HTTPError):
+                evidence["http_status"] = error.code
+                evidence["response_server"] = error.headers.get("Server", "")
+                evidence["challenge_detected"] = (
+                    error.code == 403
+                    and evidence["response_server"].casefold() == "cloudflare"
+                    and b"Just a moment" in error.read(2048)
+                )
             if attempt + 1 < attempts:
                 time.sleep(0.4 * (attempt + 1))
     return evidence
@@ -258,7 +266,8 @@ def annual_report(job, index_record, fetcher=None):
                 "error": str(error)}
 
 
-def collect(plan, fetcher=None, max_workers=12, supplemental_config=None):
+def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
+            exception_policy=None):
     if plan.get("status") != "eligible":
         raise ValueError("holiday-after plan is not eligible")
     if plan.get("publication_permitted") is not False:
@@ -287,6 +296,27 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None):
         }
     required_failures = [{"id": r.get("source_id"), "url": r["url"], "error": r.get("error")}
                          for r in rows if r["kind"] == "explicit" and r["required"] and r["status"] != "checked"]
+    deferred_issues, outstanding_failures = [], []
+    approved = (exception_policy or {}).get("exceptions") or []
+    allowed_run = (exception_policy or {}).get("only_for_run") or {}
+    for failure in required_failures:
+        record = next((row for row in rows if
+                       row.get("source_id") == failure["id"] and
+                       row.get("url") == failure["url"]), {})
+        scoped = allowed_run.get("as_of_jst") == plan.get("as_of_jst") == "2026-10-19"
+        rule = next((x for x in approved if
+                     x.get("source_id") == failure["id"] == "tamemap_nakano"
+                     and x.get("expected_http_status") == record.get("http_status") == 403
+                     and x.get("expected_observed_status") == record.get("status") == "error"
+                     and x.get("required_source_stays_enabled") is True), None)
+        if scoped and rule and record.get("challenge_detected") is True:
+            deferred_issues.append({**failure, "status": "error", "http_status": 403,
+                                    "exception_ref": rule["id"],
+                                    "checked_at": record["checked_at"],
+                                    "response_server": record.get("response_server"),
+                                    "challenge_detected": True})
+        else:
+            outstanding_failures.append(failure)
     ward_failures = [{"ward": ward, **stat} for ward, stat in wards.items()
                      if stat["errors"]]
     annual_failures = [row for row in annual if row["status"] != "checked"]
@@ -315,8 +345,10 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None):
             unique[identity].setdefault("other_discoveries", []).append(
                 candidate.get("discovered_via", candidate.get("discovery_sources")))
     blockers = []
-    if required_failures:
+    if outstanding_failures:
         blockers.append("required_explicit_url_errors")
+    if deferred_issues:
+        blockers.append("tamemap_known_issue_deferred_not_checked")
     if ward_failures:
         blockers.append("incomplete_23_ward_search")
     if annual_failures:
@@ -332,6 +364,8 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None):
                     "publishable": False, "request_count": len(rows),
                     "requests_success": sum(r["status"] == "checked" for r in rows),
                     "required_source_failures": required_failures,
+                    "required_source_failures_outstanding": outstanding_failures,
+                    "approved_deferred_source_errors": deferred_issues,
                     "wards": wards, "ward_failures": ward_failures,
                     "annual_schedule": [{k: v for k, v in r.items() if k != "candidates"} for r in annual],
                     "candidate_links_unverified": len(unique),
@@ -355,14 +389,19 @@ def main(argv=None):
     parser.add_argument("--workers", type=int, default=12)
     parser.add_argument("--supplemental-config", type=Path,
                         help="Additive, read-only Nakano official and community sources")
+    parser.add_argument("--exception-policy", type=Path,
+                        help="Explicit one-run user-approved source-error classification; never upgrades checked")
     args = parser.parse_args(argv)
     plan = json.loads(args.plan.read_text(encoding="utf-8"))
     if not 1 <= args.workers <= 20:
         parser.error("--workers must be 1..20")
     supplemental_config = (json.loads(args.supplemental_config.read_text(encoding="utf-8"))
                            if args.supplemental_config else None)
+    exception_policy = (json.loads(args.exception_policy.read_text(encoding="utf-8"))
+                        if args.exception_policy else None)
     result = collect(plan, max_workers=args.workers,
-                     supplemental_config=supplemental_config)
+                     supplemental_config=supplemental_config,
+                     exception_policy=exception_policy)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     for name, payload in result.items():
         (args.output_dir / (name + ".json")).write_text(

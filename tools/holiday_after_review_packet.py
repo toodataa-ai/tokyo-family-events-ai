@@ -89,12 +89,13 @@ def build_packet(plan, published_dir, collected):
             week_ref = via.get("query") or ""
             iso_hit = any(day in week_ref for day in target_dates)
             local_hit = any(day.replace("-", "年", 1).replace("-", "月", 1) + "日" in week_ref for day in target_dates)
-            if via.get("search_url") and (via.get("ward") or "").strip():
+            if c.get("matched_dates") and any(
+                sat <= day <= (following_day if holiday_extension else sun)
+                for day in c["matched_dates"]):
+                links.append(c)
+            elif via.get("search_url") and (via.get("ward") or "").strip():
                 if iso_hit or local_hit:
                     links.append(c)
-            elif c.get("matched_dates") and any(sat <= day <= (following_day if holiday_extension else sun)
-                                                  for day in c["matched_dates"]):
-                links.append(c)
         weekly.append({
             "sat": sat, "sun": sun, "tier": target["publication_tier"],
             "existing_week": already_listed,
@@ -103,6 +104,10 @@ def build_packet(plan, published_dir, collected):
             "carryover_needs_daily_confirmation": not already_listed,
             "protected_prior_event_ids": sorted({ev.get("id") for ev in prior if ev.get("id")}),
             "suggested_discoveries_count": len(links),
+            "undated_supplemental_candidates": [
+                c for c in discovered if c.get("date_unverified") and
+                (c.get("discovered_via") or {}).get("ward") == "中野区"
+            ] if sat == plan["weekends"][0]["sat"] else [],
             "suggested_discoveries": links,
             "review_state": "needs_individual_official_event_checks_and_decisions"
         })

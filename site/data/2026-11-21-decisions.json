@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 38,
-    "published": 22,
+    "candidate_total": 41,
+    "published": 25,
     "excluded": 16,
     "duplicate": 0
   },
@@ -2538,6 +2538,210 @@
           "basis": "主催者チケット公式11/13～2027/1/11、17:30～22時、大人休日3800円、小学生1000円、日時指定チケット予約必須。"
         }
       ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-nerima-cultural-craft-2026-11-21",
+      "name": "第71回秋の区民文化祭 手工芸作家展",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "B",
+        "overall": "B",
+        "reason": "手工芸を学ぶ機会",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "一般向け工芸展示"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "制作作品を観覧"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生なら親子で鑑賞可"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "途中入退場しやすい"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "鑑賞中心で体験は別"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "手工芸を学ぶ機会"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の手工芸作家展行：11月19日〜23日10〜17時、石神井公園ふるさと文化館、無料。",
+        "練馬区第71回区民文化祭の独立企画。手工芸作家の作品を鑑賞する展示会。土日11/21〜22を含む。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+          "basis": "練馬区公式の手工芸作家展行：11月19日〜23日10〜17時、石神井公園ふるさと文化館、無料。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-nerima-cultural-dance-2026-11-21",
+      "name": "第71回秋の区民文化祭 日本舞踊の会",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "B",
+        "overall": "B",
+        "reason": "日本文化にふれる",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "一般向けの伝統舞踊"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "日本舞踊の舞台鑑賞"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子連れ同伴可・静かに鑑賞できる年齢向け"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "長時間のため短い鑑賞で検討"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "座席で静粛な観覧が必要"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "一般入場可"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "日本文化にふれる"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式の日本舞踊の会行：11月22日11〜17:30、練馬文化センター小ホール、入場無料。",
+        "区内の日本舞踊連盟の舞台発表。伝統文化に触れられる一般向け鑑賞公演。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+          "basis": "練馬区公式の日本舞踊の会行：11月22日11〜17:30、練馬文化センター小ホール、入場無料。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-sumida-light-garden-2026-11-21",
+      "name": "SUMIDA光のナイトガーデン（旧安田庭園）",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "B",
+        "overall": "B",
+        "reason": "季節の自然と光を体験",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "全年齢で観覧可能"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "庭園ライトアップ・回遊"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子どもは大人同伴が前提"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "滞在時間を調整可"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "夜間・寒さ・足元に注意"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込の記載なし"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の自然と光を体験"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。",
+        "すみだ五彩の芸術祭の独立企画。旧安田庭園の紅葉・水面を夜間ライトアップ、回遊して鑑賞する。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp/programs/3990/",
+          "basis": "主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
       "override_reason": ""
     }
   ]

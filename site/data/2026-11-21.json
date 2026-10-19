@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 38,
+    "candidate_count": 41,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 22,
+    "published_count": 25,
     "wards": [
       {
         "ward": "千代田区",
@@ -74,8 +74,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -191,8 +191,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 6,
+        "candidate_count": 8,
+        "published_count": 8,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -228,7 +228,8 @@
     "2026-11-21-events-01.json",
     "2026-11-21-events-carryover.json",
     "2026-11-21-events-manual-primary.json",
-    "2026-11-21-events-verified-continuity.json"
+    "2026-11-21-events-verified-continuity.json",
+    "2026-11-21-events-manual-festival-subprograms.json"
   ],
   "events": []
 }

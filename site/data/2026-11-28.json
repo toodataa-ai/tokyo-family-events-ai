@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 32,
+    "candidate_count": 34,
     "duplicate_removed": 0,
     "excluded_count": 15,
-    "published_count": 17,
+    "published_count": 19,
     "wards": [
       {
         "ward": "千代田区",
@@ -74,8 +74,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -227,7 +227,8 @@
   "event_files": [
     "2026-11-28-events-01.json",
     "2026-11-28-events-manual-primary.json",
-    "2026-11-28-events-verified-continuity.json"
+    "2026-11-28-events-verified-continuity.json",
+    "2026-11-28-events-manual-festival-subprograms.json"
   ],
   "events": []
 }

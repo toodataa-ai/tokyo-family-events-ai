@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 32,
-    "published": 17,
+    "candidate_total": 34,
+    "published": 19,
     "excluded": 15,
     "duplicate": 0
   },
@@ -2126,6 +2126,142 @@
           "basis": "主催者チケット公式11/13～2027/1/11、17:30～22時、大人休日3800円、小学生1000円、日時指定チケット予約必須。"
         }
       ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-sumida-light-garden-2026-11-28",
+      "name": "SUMIDA光のナイトガーデン（旧安田庭園）",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "B",
+        "overall": "B",
+        "reason": "季節の自然と光を体験",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "全年齢で観覧可能"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "庭園ライトアップ・回遊"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子どもは大人同伴が前提"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "滞在時間を調整可"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "夜間・寒さ・足元に注意"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込の記載なし"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の自然と光を体験"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。",
+        "すみだ五彩の芸術祭の独立企画。旧安田庭園の紅葉・水面を夜間ライトアップ、回遊して鑑賞する。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp/programs/3990/",
+          "basis": "主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-sumida-moa-art-2026-11-28",
+      "name": "MOA美術館墨田児童作品展",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "A",
+        "overall": "A",
+        "reason": "創作意欲の刺激",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "児童の作品が中心"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子どもの絵画鑑賞"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "同年代の作品に親しめる"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "短時間でも回遊可"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "展示で観覧が中心"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約条件の記載なし"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "創作意欲の刺激"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者公式11/28(土)9〜21時と11/29(日)9〜15時、すみだユートリヤギャラリー、無料。",
+        "区内の児童が自然・環境について描いた作品の展覧会と表彰企画。すみだ五彩の芸術祭の独立企画。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sumida-artfest.jp/programs/4004/",
+          "basis": "主催者公式11/28(土)9〜21時と11/29(日)9〜15時、すみだユートリヤギャラリー、無料。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
       "override_reason": ""
     }
   ]

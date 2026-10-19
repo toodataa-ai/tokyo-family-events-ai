@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 43,
+  "expected_total_differences_after_governance": 46,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -210,6 +210,14 @@
       "requires_user_approval_to_release": true
     },
     {
+      "path": "policy/temporary_source_exceptions.json",
+      "kind": "staging_only",
+      "category": "source_incident_governance",
+      "reason": "ユーザー明示承認による2026-10-19分限定のTamemap Cloudflare403保留。登録済みrequiredは変更しない。後続の公式照合/Strict CI免除なし。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
       "path": "research/2026-10-13-all-67-event-source-recheck.json",
       "kind": "staging_only",
       "category": "research_archive",
@@ -290,6 +298,14 @@
       "requires_user_approval_to_release": true
     },
     {
+      "path": "tests/test_official_schedule_audit.py",
+      "kind": "different",
+      "category": "staging_test",
+      "reason": "本番アプリ公開用の旧テストは残し、mainで実測403の例外境界・非退行・他ソース免除禁止の回帰テストを追加。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
       "path": "tools/audit_environment_diff.py",
       "kind": "staging_only",
       "category": "release_governance",
@@ -350,6 +366,14 @@
       "kind": "staging_only",
       "category": "staging_tool",
       "reason": "休日明け実探索・診断・データ履歴生成用。サイト本番runtimeには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_official_schedule_audit.py",
+      "kind": "different",
+      "category": "staging_tool",
+      "reason": "data専用公開CIでmainの厳格公式監査を維持しつつ、取得HTTPステータスとCloudflare証跡がある同一runの保留のみ許容。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

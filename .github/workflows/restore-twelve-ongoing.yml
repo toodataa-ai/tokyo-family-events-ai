@@ -1,0 +1,115 @@
+name: Reconcile 12 verified ongoing event families on all missing weeks
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/restore-twelve-ongoing.yml]
+permissions:
+  contents: write
+concurrency:
+  group: verified-ongoing-12-20261020
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: research/holiday-after-individual-fact-crawl-20261020
+          path: research-tools
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: old
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Confirm immutable baseline and previous stage before edits
+        id: lock
+        run: |
+          set -euo pipefail
+          old="$(git -C old rev-parse HEAD)"
+          stage="$(git -C candidate rev-parse HEAD)"
+          test "$old" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
+          test "$stage" = "fb40060423b9402447672859c1a2ce027feed6f4"
+          test "$(git -C candidate ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
+          git -C candidate fetch --depth=1 origin refs/heads/data-production:refs/remotes/origin/data-production
+          echo "old=$old" >> "$GITHUB_OUTPUT"
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+      - name: Reconcile 12 former published programs only with current authoritative official facts
+        run: |
+          mkdir -p "$RUNNER_TEMP/proof"
+          python3 audit/tools/restore_twelve_ongoing_event_families.py \
+            --old old/site/data --stage candidate/site/data \
+            --ledger audit/research/verified_ongoing_12_event_families_20261020.json \
+            --expected-stage-sha "${{ steps.lock.outputs.stage }}" \
+            --report "$RUNNER_TEMP/proof/recheck-12.json"
+      - name: Recalculate the history from immutable original published data
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import pathlib,json
+          p=pathlib.Path("site/data/update_history.json");v=json.loads(p.read_text())
+          assert len(v["history"])==2
+          assert v["history"][-1]["run_id"]=="holiday-after-2026-10-19-b1282eb0f24e"
+          v["history"].pop()
+          p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+"\n")
+          PY
+          node ../research-tools/tools/holiday_after_history_candidate.mjs "${{ steps.lock.outputs.old }}"
+      - name: Run ALL strict official, continuity, data, family-fit, protected, history and full app tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd candidate
+          python3 ../released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../released/tools/validate_decisions.py --strict site/data
+          python3 ../audit/tools/validate_official_schedule_audit.py site/data
+          python3 ../audit/tools/validate_protected_events.py --base-ref "${{ steps.lock.outputs.old }}" site/data
+          python3 ../audit/tools/validate_non_regression.py --base-ref "${{ steps.lock.outputs.old }}" site/data
+          python3 ../released/tools/validate_rereview.py site/data --strict
+          node ../research-tools/tools/holiday_update_history.mjs --check --data-dir site/data --base-ref "${{ steps.lock.outputs.old }}"
+          cd ../audit && npm test
+          echo ALL_STRICT_PASSED
+      - name: Confirm no files removed or nondata modified
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          git add -A -- site/data
+          git diff --cached --name-status
+          if git diff --cached --name-status | grep -E '^(D|R)[[:space:]]'; then exit 1; fi
+          git diff --cached --name-only | grep -vE '^site/data/([0-9]{4}-[0-9]{2}-[0-9]{2}[^/]*\.json|manifest\.json|update_history\.json)$' > "$RUNNER_TEMP/proof/illegal.txt" || true
+          test ! -s "$RUNNER_TEMP/proof/illegal.txt"
+          git diff --cached --check
+      - name: Promote within data-staging only, not production
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/data-staging | cut -f1)" = "${{ steps.lock.outputs.stage }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data-staging: restore independently confirmed ongoing events across six-week rolling view"
+          git push origin HEAD:refs/heads/data-staging
+          echo "VERIFIED_STAGING_SHA=$(git rev-parse HEAD)"
+          echo DATA_PRODUCTION_UNCHANGED
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verified-ongoing-continuity-proof
+          path: ${{ runner.temp }}/proof/
+          retention-days: 30
+          if-no-files-found: warn

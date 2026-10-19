@@ -111,6 +111,21 @@ def build_packet(plan, published_dir, collected):
             "suggested_discoveries": links,
             "review_state": "needs_individual_official_event_checks_and_decisions"
         })
+    holiday_reviews = []
+    for holiday in plan.get("holiday_targets", []):
+        day = holiday["date"]
+        candidates = []
+        for candidate in discovered:
+            via = candidate.get("discovered_via") or {}
+            query = str(via.get("query") or "")
+            if day in candidate.get("matched_dates", []) or day in query or (
+                day.replace("-", "年", 1).replace("-", "月", 1) + "日") in query:
+                candidates.append(candidate)
+        holiday_reviews.append({
+            "date": day, "name": holiday.get("name"), "candidates": candidates,
+            "candidate_count": len(candidates),
+            "independent_official_date_and_opening_check": "pending"
+        })
     return {
         "schema_version": 1, "kind": "holiday_after_reviewer_packet",
         "read_only": True, "publication_permitted": False,
@@ -120,6 +135,7 @@ def build_packet(plan, published_dir, collected):
         "annual_schedule": summary.get("annual_schedule") or [],
         "wards": summary["wards"],
         "weeks": weekly,
+        "independent_holiday_reviews": holiday_reviews,
         "approval_requirements": [
             "Reconcile every official schedule row with a published/excluded/duplicate decision",
             "Verify each new event's date, venue and official evidence for its participation unit",

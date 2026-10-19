@@ -1,0 +1,36 @@
+name: Compare all old active events with visible six-week windows
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/visible-rollover-audit.yml]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: old
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: new
+      - name: Compare all old active IDs and equivalent events across each newly visible week
+        run: |
+          set +e
+          python3 audit/tools/validate_visible_rollover.py \
+            --old old/site/data --new new/site/data --report "$RUNNER_TEMP/active-report.json"
+          status="$?"
+          echo "VISIBILITY_GATE_STATUS=$status"
+          if [ "$status" != 0 ]; then echo "UNRESOLVED: Published ongoing event continuity must be reviewed before completeness approval"; fi
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: all-still-active-legacy-event-visibility
+          path: ${{ runner.temp }}/active-report.json
+          if-no-files-found: error

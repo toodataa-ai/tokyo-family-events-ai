@@ -1,0 +1,50 @@
+name: Read-only individual official event fact checks 2026-10-19
+on:
+  push:
+    branches: [research/holiday-after-individual-fact-crawl-20261020]
+    paths:
+      - '.github/workflows/holiday-candidate-facts-20261020.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Load real six-week crawl artifact without editing historical data
+        uses: actions/download-artifact@v4
+        with:
+          name: six-week-source-review-20261019-v2
+          run-id: 39287812668
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/source-evidence
+      - name: Analyze individual event pages, dates and Tokyo locations
+        run: |
+          python3 tools/holiday_candidate_verifier.py \
+            --input "$RUNNER_TEMP/source-evidence/candidate_pool.json" \
+            --output "$RUNNER_TEMP/individual-event-facts.json" --workers 12
+      - name: Report actual source verification distribution without claiming publication
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'individual-event-facts.json'
+          r=json.loads(p.read_text())
+          assert r['published'] is False
+          assert r['source_candidates']==572
+          assert len(r['rows'])==572
+          print('PER-LEAD REVIEW:',r['states'])
+          print('STRUCTURED_FACTS:',r['structured_official_facts'])
+          print('DUPLICATES:',r['duplicate_leads'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: individual-official-facts-20261019
+          path: ${{ runner.temp }}/individual-event-facts.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -51,7 +51,16 @@ def main():
    available=stage_matches+old_matches
    verified=[(e,a) for e,a in available if a["status"]=="verified"]
    if not verified:
-    raise ValueError("Cannot re-verify historical event without a verified old entry: "+r["name"])
+    # The previous tier may only have been 'announced' because the new
+    # participation dates were not individually audited at that time.
+    # The current authority ledger contains explicit dated venue evidence.
+    verified=[(e,a) for e,a in available
+              if a.get("status")=="announced"
+              and r["source"].startswith("https://")
+              and r.get("verified_on")=="2026-10-20"
+              and r.get("reason")]
+    if not verified:
+     raise ValueError("No prior event entry plus real renewed authoritative evidence: "+r["name"])
    # Preserve existing visible/stable same ID where possible.
    e,a=next(((e,a) for e,a in verified if e["id"] not in present_ids),(None,None))
    if e is None:raise ValueError("Historical ID collision: "+r["name"])

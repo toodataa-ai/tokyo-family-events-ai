@@ -1,0 +1,141 @@
+name: Repair staged cross-week active event continuity (DATA ONLY)
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/repair-active-carryovers.yml]
+permissions:
+  contents: write
+concurrency:
+  group: repair-staged-event-continuity-20261020
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: research/holiday-after-individual-fact-crawl-20261020
+          path: research-tools
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: prior
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Assert immutable original and expected staged candidate SHA
+        id: base
+        shell: bash
+        run: |
+          set -euo pipefail
+          old="$(git -C prior rev-parse HEAD)"
+          stage="$(git -C candidate rev-parse HEAD)"
+          test "$old" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
+          test "$stage" = "cdbf24926b2552b13ae302e0fd63fd0c7a91bf43"
+          test "$(git -C candidate ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
+          echo "old=$old" >> "$GITHUB_OUTPUT"
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+      - name: Correct only published old ID continuity under verified organizer schedule
+        run: |
+          python3 audit/tools/restore_verified_carryovers.py \
+            --previous prior/site/data --staging candidate/site/data \
+            --report "$RUNNER_TEMP/proof/organizer_carryover.json"
+      - name: Recompute canonical holiday history against original published baseline
+        shell: bash
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path("site/data/update_history.json")
+          j=json.loads(p.read_text())
+          assert j["history"][-1]["run_id"]=="holiday-after-2026-10-19-b1282eb0f24e"
+          assert len(j["history"])==2
+          j["history"].pop()
+          p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+"\n")
+          PY
+          node ../research-tools/tools/holiday_after_history_candidate.mjs "${{ steps.base.outputs.old }}"
+      - name: Strict published app + source + protected + history validations
+        shell: bash
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          python3 ../released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../released/tools/validate_decisions.py --strict site/data
+          python3 ../audit/tools/validate_official_schedule_audit.py site/data
+          python3 ../audit/tools/validate_protected_events.py --base-ref "${{ steps.base.outputs.old }}" site/data
+          python3 ../audit/tools/validate_non_regression.py --base-ref "${{ steps.base.outputs.old }}" site/data
+          python3 ../released/tools/validate_rereview.py site/data --strict
+          node ../research-tools/tools/holiday_update_history.mjs --check --data-dir site/data --base-ref "${{ steps.base.outputs.old }}"
+          echo "STRICT_OK"
+      - name: Full repository regression + explicit active identity continuity
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd audit && npm test
+          cd ..
+          python3 - <<'PY'
+          import pathlib,json,datetime
+          p=pathlib.Path("candidate/site/data")
+          m=json.loads((p/"manifest.json").read_text())
+          all_ids={}
+          for week in m["weekends"]:
+            d=json.loads((p/week["file"]).read_text())
+            ids=set()
+            for shard in d["event_files"]:
+              ids.update(x["id"] for x in json.loads((p/shard).read_text()))
+            all_ids[week["sat"]]=ids
+          expected={
+            "v15-51c3d03b1d28":["2026-10-24","2026-10-31","2026-11-07"],
+            "legacy-gap-2026-10-10-zannen3":["2026-10-24","2026-10-31","2026-11-07","2026-11-14","2026-11-21"]
+          }
+          for identity,sats in expected.items():
+            for sat in sats:
+              assert identity in all_ids[sat], (identity,sat)
+          print("ACTIVE_IDENTITY_CONTINUITY_PASS",json.dumps(expected))
+          PY
+      - name: Check additive data-only diff, no deletions or production changes
+        shell: bash
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/proof"
+          git add -A -- site/data
+          git diff --cached --name-status | tee "$RUNNER_TEMP/proof/diff.txt"
+          if grep -E '^(D|R)[[:space:]]' "$RUNNER_TEMP/proof/diff.txt"; then exit 1; fi
+          awk 'NF>=2 && $2 !~ /^site\/data\/([0-9]{4}-[0-9]{2}-[0-9]{2}[^/]*\.json|manifest\.json|update_history\.json)$/ {print "DISALLOWED",$2;bad=1} END {exit bad}' "$RUNNER_TEMP/proof/diff.txt"
+          git diff --cached --check
+      - name: Commit ONLY to data-staging after every PASS
+        shell: bash
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/data-staging | cut -f1)" = "${{ steps.base.outputs.stage }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data-staging: preserve both already published ongoing exhibitions across all qualifying weeks"
+          git push origin HEAD:refs/heads/data-staging
+          echo "STAGING_REPAIRED_SHA=$(git rev-parse HEAD)"
+          echo "DATA_PRODUCTION_NOT_PUSHED"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: active-event-carryover-proof
+          path: ${{ runner.temp }}/proof/
+          if-no-files-found: warn
+          retention-days: 30

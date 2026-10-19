@@ -2,7 +2,7 @@ name: One-time staged event preservation semantic audit
 on:
   push:
     branches: [audit/data-staging-coverage-20261020]
-    paths: [.github/workflows/semantic-removed-event-audit.yml]
+    paths: [.github/workflows/semantic-removed-event-audit.yml, tools/audit_staging_semantic_removals.mjs]
 permissions:
   contents: read
 jobs:

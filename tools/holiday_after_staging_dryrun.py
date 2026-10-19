@@ -43,6 +43,51 @@ def main():
     shutil.copytree(a.baseline,a.output,dirs_exist_ok=True)
     summary=load(a.evidence/"summary.json")
     requests=load(a.evidence/"requests.json")
+    candidates=load(a.evidence/"candidate_pool.json")
+    plan=load(a.evidence/"plan.json")
+    def ward_evidence(sat):
+        entries=[]
+        for name in WARDS:
+            q=[x for x in requests if x.get("ward")==name and
+               ((x.get("kind")=="ai_cross" and x.get("week")==sat)
+                or (x.get("kind")=="holiday_ai_cross" and
+                    x.get("holiday")=="2026-11-23" and sat=="2026-11-21"))]
+            sources=[x for x in requests if x.get("kind")=="ward_official" and x.get("ward")==name]
+            entries.append({"ward":name,
+               "query_logs":[{"query":x["query"],"url":x["url"],"checked_at":x["checked_at"],
+                              "status":x["status"],"sha256":x.get("sha256"),
+                              "result_count":x.get("search_results_event_leads",0)} for x in q],
+               "source_checks":[{"url":x["url"],"checked_at":x["checked_at"],
+                                 "status":x["status"],"sha256":x.get("sha256")} for x in sources]})
+        return entries
+    def explicit_source_records():
+        out=[]
+        for x in requests:
+            if x.get("kind")!="explicit":continue
+            ids=[]
+            for row in candidates:
+                via=row.get("discovered_via") or {}
+                if via.get("source_id")==x.get("source_id") and via.get("search_url")==x.get("url"):
+                    ids.append(row["candidate_id"])
+            if x["source_id"]=="nerima_district_festivals_2026":
+                ids=official["candidate_ids"]
+            ids=list(dict.fromkeys(ids))
+            result={"source_id":x["source_id"],"search_url":x["url"],
+              "status":x["status"],"checked_at":x["checked_at"],
+              "http_status":x.get("http_status"),
+              "response_server":x.get("response_server"),
+              "challenge_detected":x.get("challenge_detected"),
+              "error":x.get("error"),"candidate_ids":ids,
+              "candidate_count":len(ids)}
+            if x["source_id"]=="nerima_district_festivals_2026":
+                result.update(official_row_count=len(ids),
+                              unmatched_official_rows=True,
+                              resolved_pages=official.get("resolved_pages"))
+            if x["source_id"]=="tamemap_nakano":
+                result["exception_ref"]="tamemap-nakano-cloudflare403-20261019"
+            out.append(result)
+        return out
+    explicit_records=explicit_source_records()
     plan=load(a.evidence/"plan.json")
     official=summary["annual_schedule"][0]
     if (plan["as_of_jst"]!="2026-10-19" or summary["base_data_production_sha"]!=
@@ -114,12 +159,23 @@ def main():
                 audits.append(copy.deepcopy(row))
             events.sort(key=lambda x:(x.get("ward",""),x.get("name","")))
             rows=Counter(e["ward"] for e in events)
-            coverage={"sources_checked":0,"candidate_count":len(events),
+            ward_logs=ward_evidence(sat)
+            coverage={"sources_checked":sum(
+                sum(r.get("status")=="checked" for r in item["source_checks"])
+                for item in ward_logs),
+              "candidate_count":len(events),
               "duplicate_removed":0,"excluded_count":0,"published_count":len(events),
-              "wards":[{"ward":ward,"status":"pending","queries":0,"sources_checked":0,
-                        "candidate_count":rows[ward],"published_count":rows[ward],
-                        "note":"Measured source evidence exists but not yet reconciled to decision audit."}
-                       for ward in WARDS]}
+              "wards":[{"ward":item["ward"],
+                        "status":"checked" if item["query_logs"] and
+                              item["source_checks"] and
+                              all(q["status"]=="checked" for q in item["query_logs"]+item["source_checks"])
+                              else "error",
+                        "queries":len(item["query_logs"]),
+                        "sources_checked":sum(q["status"]=="checked" for q in item["source_checks"]),
+                        "candidate_count":rows[item["ward"]],
+                        "published_count":rows[item["ward"]],
+                        "note":"Exact measured October19 holiday-after HTTP queries and official ward source logs."}
+                       for item in ward_logs]}
             week={"sample":False,"sat":sat,"sun":sun,"label":f"{int(sat[5:7])}/{int(sat[8:])}(土)〜{int(sun[5:7])}/{int(sun[8:])}(日)",
                   "generated":generated,"horizon_index":i+1,"publication_tier":tier,
                   "verification_file":sat+"-verification.json",
@@ -142,8 +198,19 @@ def main():
                 "holiday_after":{"run_type":"holiday_after_update","as_of_jst":"2026-10-19"},
                 "source_data":{"week_file":weekfile,"verification_file":sat+"-verification.json",
                                "decision_file":sat+"-decisions.json"},
-                "discovery_evidence":{"wards":[]},"official_schedule_checks":[],
-                "explicit_source_checks":[],"stages":[],"summary":{"published":len(events),"announced":0}})
+                "discovery_evidence":{"wards":ward_logs},
+                "official_schedule_checks":[{
+                    "source_id":"nerima_district_festivals_2026",
+                    "url":official["resolved_pages"][0]["resolved_url"],
+                    "checked_at":official["resolved_pages"][0]["checked_at"],
+                    "status":official["status"],
+                    "official_row_count":official["official_row_count"],
+                    "candidate_ids":official["candidate_ids"],
+                    "matched_candidate_count":0,
+                    "unmatched_official_rows":True,
+                    "resolved_pages":official["resolved_pages"]}],
+                "explicit_source_checks":explicit_records,
+                "stages":[],"summary":{"published":len(events),"announced":0}})
             dump(a.output/(sat+"-decisions.json"),{
                 "schema_version":1,"rubric_version":"family-fit-v2",
                 "generated":generated,"migration_incomplete":False,
@@ -154,7 +221,10 @@ def main():
                    "count":len(events),"horizon_index":i+1,"publication_tier":tier}
             report["blockers"].append({"sat":sat,"kind":"official_fact_review_and_v2_decisions_missing",
                 "initial_rechecked_historical_event_candidates":len(events),
-                "note":"Do not promote or publish this subset as full coverage."})
+                "measured_ward_query_count":sum(len(item["query_logs"]) for item in ward_logs),
+                "measured_ward_source_count":sum(len(item["source_checks"]) for item in ward_logs),
+                "source_checks_from_actual_http":len(explicit_records),
+                "note":"Actual HTTP evidence is now connected; source-row and family-fit v2 decisions remain pending."})
         manifest["weekends"].append(entry)
         report["weeks"].append({"sat":sat,"tier":tier,"count":entry["count"]})
     dump(a.output/"manifest.json",manifest)

@@ -105,6 +105,27 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(all(c["discovery_url"].startswith("https://nakanoshakyo.com/nakanoinfo/")
                             for c in found))
 
+    def test_real_cloudflare_challenge_is_deferred_not_faked(self):
+        import io
+        from urllib.error import HTTPError
+        def cf_fetch(url):
+            if "pc.tamemap.net" in url:
+                raise HTTPError(url, 403, "Forbidden", {"Server": "cloudflare"},
+                                io.BytesIO(b"<html><title>Just a moment...</title></html>"))
+            return fake(url)
+        rules = json.loads((Path(__file__).parents[1] /
+                            "policy/temporary_source_exceptions.json").read_text())
+        result = collect(plan(), fetcher=cf_fetch, max_workers=5,
+                         supplemental_config=config(), exception_policy=rules)
+        stats = result["summary"]
+        self.assertEqual(len(stats["approved_deferred_source_errors"]), 1)
+        self.assertEqual(stats["required_source_failures_outstanding"], [])
+        self.assertEqual(stats["approved_deferred_source_errors"][0]["status"], "error")
+        self.assertEqual(stats["approved_deferred_source_errors"][0]["http_status"], 403)
+        self.assertTrue(stats["approved_deferred_source_errors"][0]["challenge_detected"])
+        self.assertNotIn("required_explicit_url_errors", stats["blockers"])
+        self.assertFalse(stats["publishable"])
+
     def test_tamemap_403_preserved_even_if_supplement_succeeds(self):
         result=collect(plan(),fetcher=fake,max_workers=5,supplemental_config=config())
         self.assertTrue(any(x["id"]=="tamemap_nakano" for x in result["summary"]["required_source_failures"]))

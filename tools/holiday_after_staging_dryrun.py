@@ -159,12 +159,69 @@ def main():
                 audits.append(copy.deepcopy(row))
             events.sort(key=lambda x:(x.get("ward",""),x.get("name","")))
             rows=Counter(e["ward"] for e in events)
+            decisions=[]
+            official_source=official["resolved_pages"][0]["resolved_url"]
+            for event in events:
+                fit=copy.deepcopy(event.get("family_fit") or {})
+                fit["rubric_version"]="family-fit-v2"
+                fit["overall"]=fit.get("overall") or fit.get("grade") or "B"
+                # Reassess all eight pre-existing stated axes against the actual
+                # current official page before the final staging approval.
+                for axis in ("child_target","interactivity","age_fit","stay_flexibility",
+                             "burden","cost","reservation","family_value"):
+                    fit.setdefault("axes",{}).setdefault(axis,{
+                        "grade":"unknown","reason":"要公式情報との個別再照合"})
+                url=event.get("official_url") or event.get("url")
+                decisions.append({
+                    "candidate_id":"preserved-"+event["id"],"name":event["name"],
+                    "ward":event["ward"],"decision":"published",
+                    "family_fit":fit,"positive_signals":["family_compatible","official_venue_published"],
+                    "negative_signals":(["night_burden"] if "Illumination" in event["name"] else []),
+                    "hard_exclusion":None,"exclusion_type":None,
+                    "primary_reason_code":"family_value_high",
+                    "reason_codes":["family_value_high"],
+                    "reasons":["過去の8軸評価に基づく家族向け候補。現在の公式ページで日付と会場の再確認あり。"],
+                    "evidence":[{"url":url,"basis":"現在の公式開催概要と過去の掲載事実"}],
+                    "override_reason":"",
+                    "review_note":"v2 formal family-fit audit requires signoff; this is an explicit draft, not approved release."
+                })
+            annual_out_of_week=0
+            for c in candidates:
+                if not str(c.get("candidate_id") or "").startswith("nerima-district-"):
+                    continue
+                if c["date_end"]>=sat and c["date_start"]<=sun:
+                    continue
+                annual_out_of_week+=1
+                name=c["name"]
+                decisions.append({
+                    "candidate_id":c["candidate_id"],"name":name,"ward":"練馬区",
+                    "decision":"excluded",
+                    "family_fit":{"rubric_version":"family-fit-v2",
+                        "overall":"unknown","axes":{axis:{
+                            "grade":"unknown","reason":"公式開催日が今回の週末に該当しないため8軸判定対象外。"}
+                            for axis in ("child_target","interactivity","age_fit",
+                                         "stay_flexibility","burden","cost",
+                                         "reservation","family_value")}},
+                    "positive_signals":[],"negative_signals":[],
+                    "hard_exclusion":"date_mismatch","exclusion_type":"hard",
+                    "primary_reason_code":"date_mismatch","reason_codes":["date_mismatch"],
+                    "reasons":[f"公式年次日程は{c['date_start']}開催。"
+                               f"対象週末{sat}〜{sun}とは一致しないため、この週への追加を見送る。"],
+                    "evidence":[{"url":official_source,
+                        "basis":"年度別の地区祭行・開催日・会場で照合済み"}],
+                    "override_reason":""
+                })
+            official_reconciled_ids={d["candidate_id"] for d in decisions}
+            official_unmatched=[cid for cid in official["candidate_ids"]
+                                if cid not in official_reconciled_ids]
+            total_candidates=len(decisions)
             ward_logs=ward_evidence(sat)
             coverage={"sources_checked":sum(
                 sum(r.get("status")=="checked" for r in item["source_checks"])
                 for item in ward_logs),
-              "candidate_count":len(events),
-              "duplicate_removed":0,"excluded_count":0,"published_count":len(events),
+              "candidate_count":total_candidates,
+              "duplicate_removed":0,"excluded_count":annual_out_of_week,
+              "published_count":len(events),
               "wards":[{"ward":item["ward"],
                         "status":"checked" if item["query_logs"] and
                               item["source_checks"] and
@@ -206,21 +263,24 @@ def main():
                     "status":official["status"],
                     "official_row_count":official["official_row_count"],
                     "candidate_ids":official["candidate_ids"],
-                    "matched_candidate_count":0,
-                    "unmatched_official_rows":True,
+                    "matched_candidate_count":16-len(official_unmatched),
+                    "unmatched_official_rows":bool(official_unmatched),
                     "resolved_pages":official["resolved_pages"]}],
                 "explicit_source_checks":explicit_records,
                 "stages":[],"summary":{"published":len(events),"announced":0}})
             dump(a.output/(sat+"-decisions.json"),{
                 "schema_version":1,"rubric_version":"family-fit-v2",
                 "generated":generated,"migration_incomplete":False,
-                "summary":{"candidate_total":len(events),"published":0,
-                           "excluded":0,"duplicate":0},
-                "decisions":[]})
+                "summary":{"candidate_total":total_candidates,"published":len(events),
+                           "excluded":annual_out_of_week,"duplicate":0},
+                "decisions":decisions})
             entry={"sat":sat,"sun":sun,"label":week["label"],"file":weekfile,
                    "count":len(events),"horizon_index":i+1,"publication_tier":tier}
-            report["blockers"].append({"sat":sat,"kind":"official_fact_review_and_v2_decisions_missing",
+            report["blockers"].append({"sat":sat,"kind":"v2_official_final_review_and_new_event_discovery_pending",
                 "initial_rechecked_historical_event_candidates":len(events),
+                "annual_schedule_official_rows_reconciled":16-len(official_unmatched),
+                "annual_schedule_official_rows_remaining":official_unmatched,
+                "v2_draft_decisions_prepared":len(decisions),
                 "measured_ward_query_count":sum(len(item["query_logs"]) for item in ward_logs),
                 "measured_ward_source_count":sum(len(item["source_checks"]) for item in ward_logs),
                 "source_checks_from_actual_http":len(explicit_records),

@@ -1,0 +1,116 @@
+name: Stage primary-source verified family events (strict gated, data only)
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/add-primary-event-staging.yml]
+permissions:
+  contents: write
+concurrency:
+  group: stage-new-primary-events-20261020
+  cancel-in-progress: false
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: research/holiday-after-individual-fact-crawl-20261020
+          path: research-tools
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: previous
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Assert both repository branch heads and fetch immutable history parent
+        id: base
+        run: |
+          set -euo pipefail
+          base="$(git -C previous rev-parse HEAD)"
+          stage="$(git -C candidate rev-parse HEAD)"
+          test "$base" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
+          test "$stage" = "551212315fb79c20e6ff4a365110c3c1d18bfc65"
+          test "$(git -C candidate ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
+          git -C candidate fetch --depth=1 origin refs/heads/data-production:refs/remotes/origin/data-production
+          test "$(git -C candidate rev-parse origin/data-production)" = "$base"
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+      - name: Stage all personally sourced new family events with conservative restrictions
+        run: |
+          set -euo pipefail
+          python3 audit/tools/add_primary_verified_events.py \
+            --data-dir candidate/site/data \
+            --ledger audit/research/official_verified_new_events_20261020.json \
+            --expected-stage-sha "${{ steps.base.outputs.stage }}" \
+            --report "$RUNNER_TEMP/proof/individually_verified_new_events.json"
+      - name: Recompute only latest holiday history against published baseline
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path("site/data/update_history.json")
+          j=json.loads(p.read_text())
+          assert len(j["history"])==2
+          assert j["history"][-1]["run_id"]=="holiday-after-2026-10-19-b1282eb0f24e"
+          j["history"].pop()
+          p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+"\n")
+          PY
+          node ../research-tools/tools/holiday_after_history_candidate.mjs "${{ steps.base.outputs.base }}"
+      - name: Validate strict data, decisions, official source, old IDs, non-regression, history
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          python3 ../released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../released/tools/validate_decisions.py --strict site/data
+          python3 ../audit/tools/validate_official_schedule_audit.py site/data
+          python3 ../audit/tools/validate_protected_events.py --base-ref "${{ steps.base.outputs.base }}" site/data
+          python3 ../audit/tools/validate_non_regression.py --base-ref "${{ steps.base.outputs.base }}" site/data
+          python3 ../released/tools/validate_rereview.py site/data --strict
+          node ../research-tools/tools/holiday_update_history.mjs --check --data-dir site/data --base-ref "${{ steps.base.outputs.base }}"
+          echo "PRIMARY_SOURCE_STAGE_STRICT_PASS"
+      - name: Full JS/Python repository regression, data-only mutation check
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd audit && npm test && cd ..
+          cd candidate
+          git add -A -- site/data
+          git diff --cached --name-status | tee "$RUNNER_TEMP/proof/changed.json-files.txt"
+          if grep -E '^(D|R)[[:space:]]' "$RUNNER_TEMP/proof/changed.json-files.txt"; then exit 1; fi
+          awk 'NF>=2 && $2 !~ /^site\/data\/([0-9]{4}-[0-9]{2}-[0-9]{2}[^/]*\.json|manifest\.json|update_history\.json)$/ {print "DISALLOWED",$2;bad=1} END {exit bad}' "$RUNNER_TEMP/proof/changed.json-files.txt"
+          git diff --cached --check
+      - name: Commit only on data-staging, never data-production
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/data-staging | cut -f1)" = "${{ steps.base.outputs.stage }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data-staging: add 9 individually confirmed family events from official sources"
+          git push origin HEAD:refs/heads/data-staging
+          echo "DATA_STAGING_COMMIT=$(git rev-parse HEAD)"
+          echo "DATA_PRODUCTION_UNCHANGED"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: primary-new-events-staging-proof
+          path: ${{ runner.temp }}/proof/
+          if-no-files-found: warn
+          retention-days: 30

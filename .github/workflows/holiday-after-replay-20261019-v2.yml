@@ -1,0 +1,100 @@
+name: One-time approved Oct 19 evidence replay v2 (NO PUBLICATION)
+on:
+  push:
+    branches: [research/holiday-after-20261019-replay-v2]
+    paths: [".github/workflows/holiday-after-replay-20261019-v2.yml"]
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: scanner
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check collector, official source and event reviewer regression tests
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
+          python3 -m unittest discover -s scanner/tests -p 'test_nakano_supplemental_discovery.py' -v
+          PYTHONPATH=scanner python3 -m unittest discover -s scanner/tests -p 'test_official_schedule_audit.py' -v
+      - name: Generate published-policy six-week JST plan
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/holiday-replay"
+          python3 scanner/tools/rolling_horizon.py --as-of 2026-10-19 \
+            --base-data-production-sha "$(git -C data-src rev-parse HEAD)" \
+            --manifest data-src/site/data/manifest.json \
+            --sources released/site/data/discovery_sources.json \
+            --output "$RUNNER_TEMP/holiday-replay/plan.json"
+      - name: Crawl all 23 wards and 24 fixed sources, with specifically deferred Tamemap 403
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          python3 scanner/tools/holiday_after_collect.py \
+            --plan "$RUNNER_TEMP/holiday-replay/plan.json" \
+            --supplemental-config scanner/policy/nakano_supplemental_sources.json \
+            --exception-policy scanner/policy/temporary_source_exceptions.json \
+            --output-dir "$RUNNER_TEMP/holiday-replay" --workers 12
+          status="$?"
+          set -e
+          if [ "$status" != "0" ] && [ "$status" != "2" ]; then
+            echo "Unexpected source collection failure: $status"
+            exit "$status"
+          fi
+      - name: Carry over immutable previous event ID references for review
+        run: |
+          set -euo pipefail
+          python3 scanner/tools/holiday_after_review_packet.py \
+            --plan "$RUNNER_TEMP/holiday-replay/plan.json" \
+            --evidence-dir "$RUNNER_TEMP/holiday-replay" \
+            --published-data data-src/site/data \
+            --output "$RUNNER_TEMP/holiday-replay/review_packet.json"
+      - name: Assert 403 stays error and all other sources actually checked
+        run: |
+          python3 - <<'PY'
+          import os,json,pathlib
+          root=pathlib.Path(os.environ["RUNNER_TEMP"])/"holiday-replay"
+          read=lambda name:json.loads((root/(name+".json")).read_text())
+          summary=read("summary"); packet=read("review_packet")
+          assert summary["as_of_jst"]=="2026-10-19"
+          assert summary["publishable"] is False
+          assert packet["publication_permitted"] is False
+          assert len(summary["wards"])==23
+          assert len(packet["weeks"])==6
+          assert summary["supplemental_checked"]==6
+          assert summary["ward_failures"]==[]
+          assert len(summary["required_source_failures"])==2
+          assert len(summary["approved_deferred_source_errors"])==2
+          assert summary["required_source_failures_outstanding"]==[]
+          assert all(item["status"]=="error" and item["http_status"]==403
+                     for item in summary["approved_deferred_source_errors"])
+          assert len(summary["annual_schedule"])==1
+          assert summary["annual_schedule"][0]["official_row_count"]==16
+          assert "unverified_candidate_decisions_and_official_event_facts" in summary["blockers"]
+          print("PASS: all-ward searches, 24 registered sources, 6 supplemental checks")
+          print("PASS: specifically deferred Cloudflare errors=2, nothing faked")
+          print("Pending event-level source decisions; publication never authorized.")
+          print("LINKS_UNVERIFIED",summary["candidate_links_unverified"])
+          PY
+      - name: Upload review evidence even if tests or source access fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: six-week-source-review-20261019-v2
+          path: ${{ runner.temp }}/holiday-replay/
+          retention-days: 30
+          if-no-files-found: warn

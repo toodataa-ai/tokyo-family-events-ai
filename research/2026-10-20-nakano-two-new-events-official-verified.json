@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "kind": "new_nakano_primary_source_participation_unit_review",
+  "as_of_jst": "2026-10-20",
+  "baseline_data_production_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "publishable": false,
+  "new_primary_verified": [
+    {
+      "name": "第4回やよいふくさく祭り",
+      "ward": "中野区",
+      "event_date": "2026-11-07",
+      "time": "10:30–14:00",
+      "venue": "中野区立弥生福祉作業所（弥生町4-36-15）",
+      "admission": "無料（飲食・販売・体験コーナーは一部有料）",
+      "reservation": "不要",
+      "organizer_primary_url": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14590",
+      "discovery_channel": "nakano_shakyo_events",
+      "duplicate_check": "not present in 2026-11-07 data-production week",
+      "family_specific_activity": "児童館など連携の地域のお祭り、親子参加可能。詳細参加対象とサムネは要確認",
+      "decision": "new_publish_candidate_pending_strict_validation"
+    },
+    {
+      "name": "親子も！シニアも！まちあるきスタンプラリー",
+      "ward": "中野区",
+      "event_date": "2026-11-07",
+      "time": "14:00–16:00（受付15:30まで）",
+      "venue": "しらさぎ桜苑（白鷺1-14-8）を受付として鷺宮・白鷺・若宮地区",
+      "admission": "無料",
+      "reservation": "電話またはGoogleフォーム申込、締切11月3日",
+      "organizer_primary_url": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+      "discovery_channel": "nakano_shakyo_events",
+      "duplicate_check": "not present in 2026-11-07 data-production week",
+      "family_specific_activity": "子どもと大人の町歩き・ミッション・景品あり",
+      "decision": "new_publish_candidate_pending_strict_validation"
+    }
+  ],
+  "previous_published_duplicate": [
+    {
+      "name": "2026なかの東北絆まつり",
+      "ward": "中野区",
+      "event_date": "2026-10-24–2026-10-25",
+      "source": "https://www.city.tokyo-nakano.lg.jp/event/kanko/nakanotohokukizunamaturi2026.html",
+      "existing_id": "v15-07bcea6ff53e",
+      "date_status": "official_confirmed",
+      "action": "retain_previous_id_no_duplicate"
+    }
+  ],
+  "remaining": [
+    "Verify original thumbnail URL rights/coverage.",
+    "Generate required family-fit and per-source decision audit for the entire week.",
+    "Do not silently downgrade previously published event facts.",
+    "Strict CI for 6-week candidate before data-staging/public release."
+  ],
+  "status": "primary_details_verified_for_2; ready_for_candidate_review_not_published"
+}

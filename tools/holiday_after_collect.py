@@ -51,7 +51,8 @@ EVENT_WORDS = re.compile(
 )
 MAX_BYTES = 2_000_000
 MAX_LINKS = 100
-USER_AGENT = "TokyoFamilyEventsEvidence/1.0 (+github.com/toodataa-ai/tokyo-family-events-ai)"
+USER_AGENT = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
 
 class VisibleLinks(HTMLParser):
@@ -127,7 +128,8 @@ def fetch_url(url, fetcher=None, attempts=2):
                 status, raw, final_url, content_type = fetcher(url)
             else:
                 request = Request(url, headers={
-                    "User-Agent": USER_AGENT, "Accept-Language": "ja,en;q=0.5"})
+                    "User-Agent": USER_AGENT, "Accept-Language": "ja-JP,ja;q=0.9,en;q=0.5",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
                 with urlopen(request, timeout=18) as resp:
                     status, raw, final_url, content_type = (
                         resp.status, resp.read(MAX_BYTES + 1),

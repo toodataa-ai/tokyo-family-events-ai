@@ -4,6 +4,7 @@ on:
     branches: [research/holiday-after-individual-fact-crawl-20261020]
     paths:
       - '.github/workflows/holiday-candidate-facts-20261020.yml'
+      - 'tools/holiday_candidate_verifier.py'
 permissions:
   contents: read
   actions: read

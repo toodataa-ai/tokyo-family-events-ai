@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 39,
+  "expected_total_differences_after_governance": 40,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -150,6 +150,14 @@
       "kind": "staging_only",
       "category": "audit_workflow",
       "reason": "main内の個別検証・過去リリース再現・読み取り専用調査用Actions。productionには不要。過去SHA固定の監査は新規実行の正本に流用しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/tamemap-access-probe.yml",
+      "kind": "staging_only",
+      "category": "audit_workflow",
+      "reason": "ためまっぷなかのHTTP403の原因調査を行うread-only Actions。14種類のルート/UA条件を比較し本番データやアプリを変更しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 44,
-    "published": 39,
+    "candidate_total": 46,
+    "published": 41,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -3445,6 +3445,140 @@
         "family_compatible"
       ],
       "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "continuity-ongoing-20261114-v15-237c930495e3-2026-11-14",
+      "name": "2026ミナコレ（MINATO COLLECTION）",
+      "ward": "港区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "注意点を踏まえても家族で参加する価値がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "prior_published_verified",
+        "current_authoritative_source"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "港区公式は区内の参加美術館・博物館を回るスタンプラリーを10/15～12/20と明記。施設ごとの休館日に実施しない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+          "basis": "港区公式は区内の参加美術館・博物館を回るスタンプラリーを10/15～12/20と明記。施設ごとの休館日に実施しない。"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "continuity-ongoing-20261114-v15-daa813b5a665-2026-11-14",
+      "name": "11月 いつでもものづくり",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "注意点を踏まえても家族で参加する価値がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "prior_published_verified",
+        "current_authoritative_source"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者11月イベント一覧とイベント記事の大見出しは11/1～30・毎日予約不要。記事内旧10月開催概要は内部矛盾のため注意点として残す。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.imaginus-suginami.jp/events/?variable=nextevents",
+          "basis": "主催者11月イベント一覧とイベント記事の大見出しは11/1～30・毎日予約不要。記事内旧10月開催概要は内部矛盾のため注意点として残す。"
+        }
+      ],
       "override_reason": ""
     }
   ]

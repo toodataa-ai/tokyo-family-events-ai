@@ -905,11 +905,60 @@
       },
       "corrections": {},
       "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。"
+    },
+    {
+      "id": "ongoing-20261107-v15-97ee0aaed408",
+      "status": "verified",
+      "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "corrected",
+        "price": "corrected",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20主催/自治体再確認: 練馬区立美術館主催、10/31～12/27、月休、土日10～18時、当日チケット購入可。",
+      "field_changes": {
+        "time": {
+          "from": null,
+          "to": "10:00〜18:00（入場17:30まで、月曜原則休館）",
+          "reason": "10/31〜12/27 練馬区立美術館、10:00〜18:00。一般1000円、高校大学生800円、中学生以下無料、月休（祝日11/23は開館）。 / 期間中休館日あり",
+          "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+        },
+        "price": {
+          "from": null,
+          "to": "一般1,000円、高校・大学生800円、中学生以下無料",
+          "reason": "10/31〜12/27 練馬区立美術館、10:00〜18:00。一般1000円、高校大学生800円、中学生以下無料、月休（祝日11/23は開館）。 / 期間中休館日あり",
+          "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+        }
+      },
+      "review_evidence_url": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+    },
+    {
+      "id": "ongoing-20261107-v15-daa813b5a665",
+      "status": "verified",
+      "source": "https://www.imaginus-suginami.jp/events/?variable=nextevents",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20主催/自治体再確認: 主催者11月イベント一覧とイベント記事の大見出しは11/1～30・毎日予約不要。記事内旧10月開催概要は内部矛盾のため注意点として残す。 ※公式個別ページの開催概要欄は旧10月日付が残存。公式一覧と個別見出しを優先し、現地日程確認を推奨。"
     }
   ],
   "summary": {
-    "total": 49,
-    "verified": 38,
+    "total": 51,
+    "verified": 40,
     "announced": 11,
     "corrected": 0
   }

@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 41,
-    "published": 39,
+    "published": 41,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 29,
+    "verified": 31,
     "announced": 10,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -179,6 +179,20 @@
         "https://www.o-2.jp/en/event/hasmhicity2026/"
       ],
       "source_ledger_path": "research/official_verified_new_events_20261020.json"
+    }
+  ],
+  "continuity_reverification": [
+    {
+      "as_of": "2026-10-20",
+      "ids": [
+        "ongoing-20261114-v15-237c930495e3",
+        "ongoing-20261114-v15-daa813b5a665"
+      ],
+      "authority": [
+        "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+        "https://www.imaginus-suginami.jp/events/?variable=nextevents"
+      ],
+      "multi_program_parents_automatically_rolled": false
     }
   ]
 }

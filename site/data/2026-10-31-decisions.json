@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 58,
-    "published": 52,
+    "candidate_total": 61,
+    "published": 55,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -4521,6 +4521,207 @@
         "family_compatible"
       ],
       "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "continuity-ongoing-20261031-v15-237c930495e3-2026-10-31",
+      "name": "2026ミナコレ（MINATO COLLECTION）",
+      "ward": "港区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "注意点を踏まえても家族で参加する価値がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "参加・体験要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "一定の時間条件はあるが大きな制約はない。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金情報が十分でなく推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "prior_published_verified",
+        "current_authoritative_source"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "港区公式は区内の参加美術館・博物館を回るスタンプラリーを10/15～12/20と明記。施設ごとの休館日に実施しない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+          "basis": "港区公式は区内の参加美術館・博物館を回るスタンプラリーを10/15～12/20と明記。施設ごとの休館日に実施しない。"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "continuity-ongoing-20261031-v15-8d59fcc6e04c-2026-10-31",
+      "name": "いまどきの子育てとマンガ展",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "reason": "注意点を踏まえても家族で参加する価値がある。",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども向け明示は弱い一般向け企画。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "会場回遊等の参加余地がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "全年齢参加可能だが専用設計ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "夜間・混雑等の子連れ負担に注意。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "C",
+            "reason": "家族利用可能だが強い目的性は限定的。"
+          }
+        }
+      },
+      "positive_signals": [
+        "prior_published_verified",
+        "current_authoritative_source"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "豊島区公式9/18～11/23、10～18時、トキワ荘通り昭和レトロ館で開催。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/467/2607241454.html",
+          "basis": "豊島区公式9/18～11/23、10～18時、トキワ荘通り昭和レトロ館で開催。"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "continuity-ongoing-20261031-v15-272dbd09eb0a-2026-10-31",
+      "name": "色の引き算―白・黒・いろいろ―",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "reason": "注意点を踏まえても家族で参加する価値がある。",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子向け要素が明示される。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞・展示中心。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "回遊・自由観覧型で滞在調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "大きな身体・時間負担は確認できない。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料または無料要素があり負担が小さい。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で出かける目的になる体験・特別感がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "prior_published_verified",
+        "current_authoritative_source"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "国立国会図書館前期10/6～12/20、9:30～17時、土日営業・祝日休館、無料。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+          "basis": "国立国会図書館前期10/6～12/20、9:30～17時、土日営業・祝日休館、無料。"
+        }
+      ],
       "override_reason": ""
     }
   ]

@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 48,
-    "published": 49,
+    "published": 51,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 38,
+    "verified": 40,
     "announced": 11,
     "corrected": 2,
     "thumbnail_count": 35,
@@ -191,6 +191,20 @@
         "https://www.o-2.jp/en/event/hasmhicity2026/"
       ],
       "source_ledger_path": "research/official_verified_new_events_20261020.json"
+    }
+  ],
+  "continuity_reverification": [
+    {
+      "as_of": "2026-10-20",
+      "ids": [
+        "ongoing-20261107-v15-97ee0aaed408",
+        "ongoing-20261107-v15-daa813b5a665"
+      ],
+      "authority": [
+        "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+        "https://www.imaginus-suginami.jp/events/?variable=nextevents"
+      ],
+      "multi_program_parents_automatically_rolled": false
     }
   ]
 }

@@ -1576,8 +1576,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 9,
-    "verified": 5,
+    "published": 17,
+    "verified": 13,
     "announced": 4
   },
   "individual_primary_official_additions": [
@@ -1594,6 +1594,32 @@
         "https://www.o-2.jp/en/event/hasmhicity2026/"
       ],
       "source_ledger_path": "research/official_verified_new_events_20261020.json"
+    }
+  ],
+  "continuity_reverification": [
+    {
+      "as_of": "2026-10-20",
+      "ids": [
+        "ongoing-20261128-v15-237c930495e3",
+        "ongoing-20261128-v15-97ee0aaed408",
+        "ongoing-20261128-v15-daa813b5a665",
+        "ongoing-20261128-v15-d7b35a2aa60b",
+        "ongoing-20261128-r16-a998e43102c9",
+        "ongoing-20261128-r16-d1fc65f778d6",
+        "ongoing-20261128-r16-c2947a676a15",
+        "ongoing-20261128-v15-5e0e43c28e84"
+      ],
+      "authority": [
+        "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+        "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+        "https://www.imaginus-suginami.jp/events/?variable=nextevents",
+        "https://www.aquarium.gr.jp/news/events/31639",
+        "https://tokyoatlas.jp/",
+        "https://www.mori.art.museum/jp/exhibitions/marikomori/",
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/makinokinenteien/kikakuten2.html",
+        "https://tickets.tbs.co.jp/yoyogiforestoflights2026/"
+      ],
+      "multi_program_parents_automatically_rolled": false
     }
   ]
 }

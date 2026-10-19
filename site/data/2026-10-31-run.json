@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 54,
-    "published": 52,
+    "published": 55,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 52,
+    "verified": 55,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 44,
@@ -214,6 +214,22 @@
         "https://www.o-2.jp/en/event/hasmhicity2026/"
       ],
       "source_ledger_path": "research/official_verified_new_events_20261020.json"
+    }
+  ],
+  "continuity_reverification": [
+    {
+      "as_of": "2026-10-20",
+      "ids": [
+        "ongoing-20261031-v15-237c930495e3",
+        "ongoing-20261031-v15-8d59fcc6e04c",
+        "ongoing-20261031-v15-272dbd09eb0a"
+      ],
+      "authority": [
+        "https://www.city.minato.tokyo.jp/kouhou/event/261015-minatocollection.html",
+        "https://www.city.toshima.lg.jp/467/2607241454.html",
+        "https://www.kodomo.go.jp/event/exhibition/tenji2026-02"
+      ],
+      "multi_program_parents_automatically_rolled": false
     }
   ]
 }

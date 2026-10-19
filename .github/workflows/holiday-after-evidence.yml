@@ -1,0 +1,106 @@
+name: Holiday-after real-source evidence (read only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: "Japan date YYYY-MM-DD (blank = today JST)"
+        required: false
+        type: string
+  pull_request:
+    paths:
+      - "tools/holiday_after_collect.py"
+      - "tests/test_holiday_after_collect.py"
+      - ".github/workflows/holiday-after-evidence.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/holiday_after_collect.py"
+      - "tests/test_holiday_after_collect.py"
+      - ".github/workflows/holiday-after-evidence.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: holiday-after-read-only-evidence
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - name: Checkout tested scanner policy
+        uses: actions/checkout@v4
+        with:
+          path: scanner
+      - name: Checkout released application policy
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - name: Checkout published data without editing
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-src
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify evidence extractor regression tests
+        run: python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_collect.py' -v
+      - name: Verify released prompt policy
+        working-directory: released
+        run: node .github/scripts/validate-prompt-history.mjs
+      - name: Produce official holiday-after plan
+        env:
+          AS_OF: ${{ github.event.inputs.as_of }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/holiday-after-audit"
+          base="$(git -C data-src rev-parse HEAD)"
+          args=()
+          if [ -n "$AS_OF" ]; then
+            args+=(--as-of "$AS_OF")
+          fi
+          python3 scanner/tools/rolling_horizon.py \
+            "${args[@]}" \
+            --manifest data-src/site/data/manifest.json \
+            --sources released/site/data/discovery_sources.json \
+            --base-data-production-sha "$base" \
+            --output "$RUNNER_TEMP/holiday-after-audit/plan.json"
+      - name: Crawl sources and save individual request evidence
+        id: collection
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$RUNNER_TEMP/holiday-after-audit/plan.json")" = "skipped" ]; then
+            echo "Not a holiday-after date; read-only no-op"
+            exit 0
+          fi
+          python3 scanner/tools/holiday_after_collect.py \
+            --plan "$RUNNER_TEMP/holiday-after-audit/plan.json" \
+            --output-dir "$RUNNER_TEMP/holiday-after-audit" \
+            --workers 12
+      - name: Preserve read-only audit artifacts on success or failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: holiday-after-source-evidence
+          path: ${{ runner.temp }}/holiday-after-audit/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Block publication when discovery or verification incomplete
+        if: steps.collection.outcome != 'success'
+        run: |
+          echo "Actual discovery or proof checks incomplete: see uploaded evidence."
+          echo "This workflow never edits data-production, data-staging, app code or Pages."
+          exit 1

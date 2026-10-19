@@ -86,7 +86,8 @@ class AuditTests(unittest.TestCase):
             'search_urls': ['https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=x'],
         }]}
         failure = {'source_id': 'tamemap_nakano', 'status': 'error',
-                   'http_status': 403, 'error': 'HTTP Error 403: Forbidden',
+                   'http_status': 403, 'response_server': 'cloudflare',
+                   'challenge_detected': True, 'error': 'HTTP Error 403: Forbidden',
                    'search_url': 'https://pc.tamemap.net/1311401/calendar/2026-11?lat=x',
                    'checked_at': '2026-10-20T00:30:00+09:00',
                    'exception_ref': 'tamemap-nakano-cloudflare403-20261019'}
@@ -110,7 +111,8 @@ class AuditTests(unittest.TestCase):
             'search_urls': ['https://pc.tamemap.net/1311401/calendar/{YYYY-MM}'],
         }]}
         failure = {'source_id': 'tamemap_nakano', 'status': 'error',
-                   'http_status': 403, 'error': 'HTTP Error 403: Forbidden',
+                   'http_status': 403, 'response_server': 'cloudflare',
+                   'challenge_detected': True, 'error': 'HTTP Error 403: Forbidden',
                    'search_url': 'https://pc.tamemap.net/1311401/calendar/2026-11',
                    'checked_at': '2026-10-20T00:30:00+09:00',
                    'exception_ref': 'tamemap-nakano-cloudflare403-20261019'}
@@ -118,6 +120,8 @@ class AuditTests(unittest.TestCase):
         scenarios = [
             {'status': 'checked', 'http_status': 403},
             {'status': 'error', 'http_status': 404},
+            {'status': 'error', 'response_server': 'nginx'},
+            {'status': 'error', 'challenge_detected': False},
             {'status': 'error', 'error': 'blocked without HTTP evidence'},
             {'status': 'error', 'search_url': 'https://other.net/1311401/calendar/2026-11'},
             {'status': 'error', 'exception_ref': 'unapproved'},

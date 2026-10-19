@@ -73,6 +73,14 @@ def main():
    if e is None:raise ValueError("Historical ID collision: "+r["name"])
    if e["name"]!=r["name"] or not e.get("venue"):raise ValueError("Incorrect historical primary venue: "+r["name"])
    copy_e=copy.deepcopy(e)
+   original_id=copy_e["id"]
+   # Released non-regression matches each previous week ID once across
+   # ALL common weeks, so duplicate ID across a new future week would be
+   # ambiguous. Retain the true original ID only on its original week.
+   if when!=sat:
+    copy_e["id"]="ongoing-"+sat.replace("-","")+"-"+original_id
+   if copy_e["id"] in present_ids:
+    raise ValueError("future-week participation ID collision: "+copy_e["id"])
    original_start,original_end=copy_e["date_start"],copy_e["date_end"]
    copy_e["date_start"],copy_e["date_end"]=r["start"],r["end"]
    if copy_e["date_start"]>sun or copy_e["date_end"]<sat:
@@ -81,6 +89,7 @@ def main():
    copy_e["ai"]["discovery_query"]="recheck-2026-10-20 protected ongoing event continuity"
    copy_e["description"]=str(copy_e.get("description") or "")+" 継続開催の根拠："+r["reason"]
    new_a=copy.deepcopy(a)
+   new_a["id"]=copy_e["id"]
    new_a["status"]="verified"
    new_a["source"]=r["source"]
    new_a["source_kind"]="organizer_official" if "city." not in r["source"] else "public_official"
@@ -110,7 +119,7 @@ def main():
    family_fit=copy.deepcopy(copy_e["family_fit"])
    family_fit["rubric_version"]=dec["rubric_version"]
    if not all(isinstance(family_fit.get("axes",{}).get(k),dict) for k in AXES):raise ValueError("old eight axes absent: "+r["name"])
-   cand="continuity-"+e["id"]+"-"+sat
+   cand="continuity-"+copy_e["id"]+"-"+sat
    dec["decisions"].append({
      "candidate_id":cand,"name":e["name"],"ward":e["ward"],"decision":"published",
      "family_fit":family_fit,"positive_signals":["prior_published_verified","current_authoritative_source"],

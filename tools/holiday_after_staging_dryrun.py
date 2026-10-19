@@ -226,6 +226,51 @@ def main():
                 dedup.add(k)
                 events.append(copy.deepcopy(ev))
                 audits.append(copy.deepcopy(row))
+            if sat=="2026-11-28":
+                missing_official="nerima-district-0275426b6920"
+                if missing_official not in official["candidate_ids"]:
+                    raise ValueError("Nov29 official festival row not evidenced")
+                if any(ev.get("id")==missing_official for ev in events):
+                    raise ValueError("official event ID collision")
+                url=official["resolved_pages"][0]["resolved_url"]
+                source_event={
+                    "id":missing_official,"ward":"練馬区",
+                    "name":"第一地区祭（豊玉南小学校）",
+                    "url":url,"official_url":url,"source":url,
+                    "image":None,"period":"11/29","date_start":"2026-11-29",
+                    "date_end":"2026-11-29","time":"10:00〜12:00",
+                    "venue":"豊玉南小学校（練馬区豊玉南2-14-1）",
+                    "price":None,
+                    "description":"高齢者体験、餅つき、ゲームコーナー、昔遊び等。雨天時は規模縮小。料金・予約要否は区の公開日程表に記載なし。",
+                    "categories":["祭り","地域イベント","子ども向け体験"],
+                    "family_fit":{
+                      "rubric_version":"family-fit-v2","grade":"A","overall":"A",
+                      "reason":"練馬区が公式日程表に登録した、親子で体験や昔遊びを楽しめる地域の地区祭。",
+                      "axes":{
+                        "child_target":{"grade":"A","reason":"ゲームコーナー・昔遊びが明記されている。"},
+                        "interactivity":{"grade":"A","reason":"高齢者体験・餅つき・ゲーム体験など参加型の催事。"},
+                        "age_fit":{"grade":"A","reason":"地域の子ども・家族を含む行事。各体験の年齢制限は別途確認。"},
+                        "stay_flexibility":{"grade":"A","reason":"10〜12時の短時間で複数の催事を回遊可能。"},
+                        "burden":{"grade":"B","reason":"学校行事の混雑と雨天時の規模縮小に注意。"},
+                        "cost":{"grade":"unknown","reason":"練馬区の公式年次日程表は料金を明示していない。"},
+                        "reservation":{"grade":"unknown","reason":"練馬区の公式年次日程表に申込方法の明示なし。"},
+                        "family_value":{"grade":"A","reason":"餅つき・昔遊び・世代間交流を家族で体験できる。"}
+                      }
+                    },
+                    "reservation":{"required":None,"note":"申込要否は公式日程表に明記なし。個別参加条件を開催元へ確認。"},
+                    "indoor_outdoor":"屋内・屋外",
+                    "ai":{"checked_at":"2026-10-20","confidence":"high",
+                           "discovery_query":"2026年度練馬区公式地区祭日程表：豊玉南小学校行"}
+                }
+                events.append(source_event)
+                audits.append({
+                    "id":missing_official,"status":"announced","source":url,
+                    "source_kind":"public_official",
+                    "fields":{"name":"pass","date":"pass","venue":"pass","time":"pass",
+                              "price":"unknown","reservation":"unknown","official_url":"pass"},
+                    "corrections":{},
+                    "note":"区の公式日程表で日付・会場・催事内容・時間を確認済み。料金・予約は未公表で推測しない。"
+                })
             events.sort(key=lambda x:(x.get("ward",""),x.get("name","")))
             rows=Counter(e["ward"] for e in events)
             decisions=[]
@@ -242,7 +287,9 @@ def main():
                         "grade":"unknown","reason":"要公式情報との個別再照合"})
                 url=event.get("official_url") or event.get("url")
                 decisions.append({
-                    "candidate_id":"preserved-"+event["id"],"name":event["name"],
+                    "candidate_id":(event["id"] if event["id"]=="nerima-district-0275426b6920"
+                                    else "preserved-"+event["id"]),
+                    "name":event["name"],
                     "ward":event["ward"],"decision":"published",
                     "family_fit":fit,"positive_signals":["family_compatible","official_venue_published"],
                     "negative_signals":(["night_burden"] if "Illumination" in event["name"] else []),
@@ -335,7 +382,11 @@ def main():
                     "matched_candidate_count":16-len(official_unmatched),
                     "unmatched_official_rows":bool(official_unmatched),
                     "resolved_pages":official["resolved_pages"]}],
-                "explicit_source_checks":explicit_records,
+                "explicit_source_checks":[({
+                    **check,
+                    "unmatched_official_rows":bool(official_unmatched)
+                } if check["source_id"]=="nerima_district_festivals_2026"
+                    else check) for check in explicit_records],
                 "stages":[],"summary":{"published":len(events),"announced":0}})
             dump(a.output/(sat+"-decisions.json"),{
                 "schema_version":1,"rubric_version":"family-fit-v2",

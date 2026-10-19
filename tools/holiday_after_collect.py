@@ -184,8 +184,8 @@ def rss_items(body, audit=None, ward=None):
         host = (urlsplit(url).hostname or "").lower()
         japanese_title = bool(re.search(r"[\u3040-\u30ff\u3400-\u9fff]", name))
         geographic_marker = bool(re.search(
-            "Tokyo|東京|千代田|中央区|港区|新宿|文京|台東|墨田|江東|品川|目黒|大田|"
-            "世田谷|渋谷|中野|杉並|豊島|北区|荒川|板橋|練馬|足立|葛飾|江戸川|"
+            "Tokyo|東京|千代田区|中央区|港区|新宿区|文京区|台東区|墨田区|江東区|品川区|目黒区|大田区|"
+            "世田谷区|渋谷区|中野区|杉並区|豊島区|北区|荒川区|板橋区|練馬区|足立区|葛飾区|江戸川区|"
             "池袋|上野|浅草|豊洲|お台場|銀座|荻窪|六本木|石神井|光が丘|"
             "小石川|高円寺|阿佐ヶ谷|自由が丘|錦糸町|蒲田|葛西|赤羽", name, re.I))
         matching_ward_host = any(ward == w and host == official_host

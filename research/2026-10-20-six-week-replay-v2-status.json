@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "verified_research_run_summary_not_data_release",
+  "run_as_of": "2026-10-19",
+  "run_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/39287812668",
+  "original_data_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "run_status": "read_only_success",
+  "requests": {
+    "total": 513,
+    "successful": 511,
+    "required_failed_original": 2,
+    "required_failed_outstanding": 0,
+    "source_id_deferred": "tamemap_nakano",
+    "approved_deferred_403": 2
+  },
+  "nakano_supplemental_checks": 6,
+  "official_festival_schedule": {
+    "source_id": "nerima_district_festivals_2026",
+    "official_rows": 16,
+    "historical_published_matches": 15,
+    "historical_published_same_id": 14,
+    "historical_published_different_id": 1,
+    "new_nov29_candidate": 1
+  },
+  "candidates": {
+    "unverified_links_before_filter": 785,
+    "unverified_links_after_filter": 572,
+    "additional_review_needed": true
+  },
+  "carryover": {
+    "unique_participation_units": 19,
+    "nov21_historical_ids": 27,
+    "nov28_historical_ids": 19,
+    "warning": "Historical ID rows across old weeks are NOT unique events; some events published repeatedly under distinct IDs."
+  },
+  "identified_primary_source_anomalies": [
+    {
+      "event": "第71回秋の区民文化祭",
+      "status": "cannot_treat_multi_event_schedule_as_one_continuous_event",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html"
+    },
+    {
+      "event": "11月 いつでもものづくり",
+      "status": "conflicting_month_display_on_official_page_needs_manual_check",
+      "url": "https://www.imaginus-suginami.jp/events/2026/10/01/11852/"
+    },
+    {
+      "event": "公共交通応援キャンペーン",
+      "status": "not_each_calendar_day_a_distinct_child_visit_event",
+      "url": "https://www.city.tokyo-nakano.lg.jp/machizukuri/koutsu/tiikikoukyou/mobilitymanagement/campaign.html"
+    }
+  ],
+  "publication_eligibility": false,
+  "final_data_staging_validation": "not_attempted_because_individual_facts_and_decisions_missing",
+  "existing_published_events_modified": 0,
+  "note": "Actual HTTP query success is not proof of search-result relevancy or all 23 ward event discovery; Bing RSS currently has demonstrable geographic drift, including unrelated Taiwan travel results."
+}

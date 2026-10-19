@@ -358,7 +358,9 @@ def main():
             dump(a.output/(sat+"-events-01.json"),events)
             dump(a.output/(sat+"-verification.json"),{
                 "schema_version":1,"verified_on":"2026-10-07",
-                "events":audits,"summary":{"total":len(events),"verified":len(audits),"announced":0}})
+                "events":audits,"summary":{"total":len(events),
+                   "verified":sum(r.get("status")=="verified" for r in audits),
+                   "announced":sum(r.get("status")=="announced" for r in audits)}})
             # Explicitly reject publication: no review decisions or source logs
             # have been invented for these fresh weekend participation units.
             dump(a.output/(sat+"-run.json"),{
@@ -387,7 +389,9 @@ def main():
                     "unmatched_official_rows":bool(official_unmatched)
                 } if check["source_id"]=="nerima_district_festivals_2026"
                     else check) for check in explicit_records],
-                "stages":[],"summary":{"published":len(events),"announced":0}})
+                "stages":[],"summary":{"published":len(events),
+                   "verified":sum(r.get("status")=="verified" for r in audits),
+                   "announced":sum(r.get("status")=="announced" for r in audits)}})
             dump(a.output/(sat+"-decisions.json"),{
                 "schema_version":1,"rubric_version":"family-fit-v2",
                 "generated":generated,"migration_incomplete":False,

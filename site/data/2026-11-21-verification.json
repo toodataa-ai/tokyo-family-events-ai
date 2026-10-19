@@ -122,11 +122,96 @@
       },
       "corrections": {},
       "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。（2026-10-20ローリング引継再確認）サンシャイン水族館公式で3月13日～11月23日、展示開催期間を確認。休業日・営業時間は公式案内を参照。"
+    },
+    {
+      "id": "official-2026-nijin-expo",
+      "status": "announced",
+      "source": "https://expo.nijin.co.jp/venue-real/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20公式照合: 主催者会場案内で11月21・22日、DMM六本木本社24F、11〜16時体験、入場無料、LINE登録必須確認。。公式LINEで来場者各自の無料参加登録が必要。コンテスト応募は別途締切。"
+    },
+    {
+      "id": "official-2026-urban-agriculture-pre",
+      "status": "announced",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20公式照合: 練馬区2026-10-18更新の公式開催概要で11月21・22日10〜16時、光が丘公園けやき広場・農産物販売を確認。。練馬区公式開催概要に入場予約条件の明記なし。"
+    },
+    {
+      "id": "official-2026-edogawa-parasports",
+      "status": "announced",
+      "source": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20公式照合: 江戸川区公式で11月22日10〜16時スポーツセンター、無料、障害のある方と保護者・関係者対象を確認。。主催者公式ページに申込要否の明記なし。障害のある方と保護者・関係者が対象。"
+    },
+    {
+      "id": "official-2026-nihonbashi-komichi",
+      "status": "announced",
+      "source": "https://www.keepallsmiles.com/komichi2026",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20公式照合: 日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。。予約不要。日本橋案内所で謎解き用紙を受け取る。"
+    },
+    {
+      "id": "official-2026-haneda-museum",
+      "status": "announced",
+      "source": "https://www.o-2.jp/en/event/hasmhicity2026/",
+      "source_kind": "official_tourism",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。"
     }
   ],
   "summary": {
-    "total": 6,
+    "total": 11,
     "verified": 6,
-    "announced": 0
+    "announced": 5
   }
 }

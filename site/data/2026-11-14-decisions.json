@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 42,
-    "published": 37,
+    "candidate_total": 44,
+    "published": 39,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -3310,6 +3310,142 @@
         "official_venue_published"
       ],
       "negative_signals": []
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-nihonbashi-komichi-2026-11-14",
+      "name": "みちみちこみち2026 小道探偵と謎解き問答日本橋",
+      "ward": "中央区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "grade": "A",
+        "overall": "A",
+        "reason": "街と歴史の学び",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "家族参加歓迎の謎解き"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "謎を解きながら街を探索"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小さな子どもは大人の補助が必要"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "90〜120分で途中休憩可"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "長めの徒歩移動・天候"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約不要・先着配布"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "街と歴史の学び"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。",
+        "日本橋の街を歩きながら謎解きに挑戦。1回90〜120分程度。先着順で200円分の買い物券付きマップ配布（数量限定）。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.keepallsmiles.com/komichi2026",
+          "basis": "日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "manual-primary-official-2026-haneda-museum-2026-11-14",
+      "name": "第10回羽田航空博物館展 in HICity",
+      "ward": "大田区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "grade": "A",
+        "overall": "A",
+        "reason": "航空の歴史と模型に触れる",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "飛行機好きの子どもと家族向け"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "航空資料の見学と関連催事"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幼児も見学可能・工作は年齢制限"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "展示を自由に回れる"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "施設休館・関連プログラムに注意"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "展示は無料、一部体験は条件別"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "工作など個別予約が必要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "航空の歴史と模型に触れる"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。",
+        "羽田開港95周年・朝日新聞航空部100周年の歴史資料や写真などを展示。11月28〜29日は航空グッズ等を扱う関連催事も実施。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.o-2.jp/en/event/hasmhicity2026/",
+          "basis": "大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。"
+        }
+      ],
+      "positive_signals": [
+        "confirmed_official_day_venue",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "override_reason": ""
     }
   ]
 }

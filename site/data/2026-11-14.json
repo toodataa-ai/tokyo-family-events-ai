@@ -10,10 +10,10 @@
   "run_file": "2026-11-14-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 42,
+    "candidate_count": 44,
     "duplicate_removed": 0,
     "excluded_count": 5,
-    "published_count": 37,
+    "published_count": 39,
     "wards": [
       {
         "ward": "千代田区",
@@ -29,8 +29,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "v1.5完全再探索。候補0件、掲載0件。"
       },
       {
@@ -110,8 +110,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "v1.5完全再探索。候補2件、掲載2件。"
       },
       {
@@ -226,7 +226,8 @@
   },
   "event_files": [
     "2026-11-14-events-01.json",
-    "2026-11-14-events-carryover.json"
+    "2026-11-14-events-carryover.json",
+    "2026-11-14-events-manual-primary.json"
   ],
   "events": []
 }

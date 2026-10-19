@@ -1760,9 +1760,9 @@
   ],
   "stages": [],
   "summary": {
-    "published": 6,
+    "published": 11,
     "verified": 6,
-    "announced": 0
+    "announced": 5
   },
   "carryover_organizer_rechecks": [
     {
@@ -1773,6 +1773,26 @@
       "official_sources": [
         "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
       ]
+    }
+  ],
+  "individual_primary_official_additions": [
+    {
+      "verified_on": "2026-10-20",
+      "participation_unit_ids": [
+        "official-2026-nijin-expo",
+        "official-2026-urban-agriculture-pre",
+        "official-2026-edogawa-parasports",
+        "official-2026-nihonbashi-komichi",
+        "official-2026-haneda-museum"
+      ],
+      "evidence_sources": [
+        "https://expo.nijin.co.jp/venue-real/",
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+        "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+        "https://www.keepallsmiles.com/komichi2026",
+        "https://www.o-2.jp/en/event/hasmhicity2026/"
+      ],
+      "source_ledger_path": "research/official_verified_new_events_20261020.json"
     }
   ]
 }

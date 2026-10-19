@@ -94,11 +94,11 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 41,
-    "published": 37,
+    "published": 39,
     "excluded": 5,
     "duplicate_removed": 0,
     "verified": 29,
-    "announced": 8,
+    "announced": 10,
     "corrected": 2,
     "thumbnail_count": 33,
     "thumbnail_coverage": 0.9166666666666666,
@@ -165,6 +165,20 @@
       "official_sources": [
         "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
       ]
+    }
+  ],
+  "individual_primary_official_additions": [
+    {
+      "verified_on": "2026-10-20",
+      "participation_unit_ids": [
+        "official-2026-nihonbashi-komichi",
+        "official-2026-haneda-museum"
+      ],
+      "evidence_sources": [
+        "https://www.keepallsmiles.com/komichi2026",
+        "https://www.o-2.jp/en/event/hasmhicity2026/"
+      ],
+      "source_ledger_path": "research/official_verified_new_events_20261020.json"
     }
   ]
 }

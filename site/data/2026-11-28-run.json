@@ -1576,8 +1576,24 @@
   ],
   "stages": [],
   "summary": {
-    "published": 6,
+    "published": 9,
     "verified": 5,
-    "announced": 1
-  }
+    "announced": 4
+  },
+  "individual_primary_official_additions": [
+    {
+      "verified_on": "2026-10-20",
+      "participation_unit_ids": [
+        "official-2026-lumina-nogata",
+        "official-2026-nihonbashi-komichi",
+        "official-2026-haneda-museum"
+      ],
+      "evidence_sources": [
+        "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47",
+        "https://www.keepallsmiles.com/komichi2026",
+        "https://www.o-2.jp/en/event/hasmhicity2026/"
+      ],
+      "source_ledger_path": "research/official_verified_new_events_20261020.json"
+    }
+  ]
 }

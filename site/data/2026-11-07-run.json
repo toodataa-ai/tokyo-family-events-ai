@@ -94,11 +94,11 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 48,
-    "published": 44,
+    "published": 49,
     "excluded": 4,
     "duplicate_removed": 2,
     "verified": 38,
-    "announced": 6,
+    "announced": 11,
     "corrected": 2,
     "thumbnail_count": 35,
     "thumbnail_coverage": 0.8333333333333334,
@@ -171,6 +171,26 @@
         "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
         "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
       ]
+    }
+  ],
+  "individual_primary_official_additions": [
+    {
+      "verified_on": "2026-10-20",
+      "participation_unit_ids": [
+        "official-2026-suginami-festa",
+        "official-2026-yayoi-fukusaku",
+        "official-2026-shirasagi-stamp",
+        "official-2026-nihonbashi-komichi",
+        "official-2026-haneda-museum"
+      ],
+      "evidence_sources": [
+        "https://www.sugifes.com/event/",
+        "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14590",
+        "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+        "https://www.keepallsmiles.com/komichi2026",
+        "https://www.o-2.jp/en/event/hasmhicity2026/"
+      ],
+      "source_ledger_path": "research/official_verified_new_events_20261020.json"
     }
   ]
 }

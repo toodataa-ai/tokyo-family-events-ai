@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "kind": "full_tier_promotion_reverification",
+  "as_of_jst": "2026-10-19",
+  "source_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "scope": "October24 and October31 formerly preview -> now full",
+  "rows_count": 13,
+  "individual_names": 12,
+  "rows": [
+    {
+      "week": "2026-10-24",
+      "id": "v15-a3d72cbcb52f",
+      "name": "ディスクゴルフ初心者講習",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-25",
+      "date_end": "2026-10-25",
+      "official_url": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
+      "observed_recheck": {
+        "status": "official_date_time_age_confirmed",
+        "note": "10/25 9:30-16:00 辰巳の森海浜公園 小学生以上。詳細参加条件・費用を個別確認。",
+        "source": "https://www.tokyo-kodomo-hp.metro.tokyo.lg.jp/event/"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-d7f109579d96",
+      "name": "アーツ中村橋 2026―わたしとまちの記憶",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-09-12",
+      "date_end": "2026-11-08",
+      "official_url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+      "observed_recheck": {
+        "status": "official_exhibition_span_confirmed",
+        "note": "9/12～11/8、10/24～25のカレンダーにも実測掲載。個別会場・休館・料金情報確認が残る。",
+        "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-64515ea63f7b",
+      "name": "すみだ五彩の芸術祭",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-09-04",
+      "date_end": "2026-12-20",
+      "official_url": "https://sumida-artfest.jp",
+      "observed_recheck": {
+        "status": "multi_program_calendar_incomplete",
+        "note": "分散会場/独立参加単位の集合。9/4～12/20という親イベント期間だけで当日開催確定としない。",
+        "source": "https://sumida-artfest.jp"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-438a590c39b1",
+      "name": "HIBIYA CINEMA FESTIVAL 2026",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-09",
+      "date_end": "2026-10-25",
+      "official_url": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/",
+      "observed_recheck": {
+        "status": "official_day_program_confirmed",
+        "note": "10/24～25上映スケジュールが公式に掲載。入場無料の一般映画祭だが各作品の年齢/対象は別に確認。",
+        "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/line-up/"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-c2bde5fb2112",
+      "name": "ハロウィンパレードへようこそ！",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-24",
+      "official_url": "https://www.iterrace.jp/event/event_data.php?no=706",
+      "observed_recheck": {
+        "status": "official_date_confirmed_registration_closed",
+        "note": "10/24、12時・14時・16時。抽選の申込終了。新規参加可能とは表示しない。旧IDは削除しない。",
+        "source": "https://www.iterrace.jp/event/event_data.php?no=706"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-0c7f94c1124a",
+      "name": "まるごと台湾フェア2026（座・高円寺ほか）",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-25",
+      "official_url": "https://www.city.suginami.tokyo.jp/s030/event/28100.html",
+      "observed_recheck": {
+        "status": "official_primary_detail_unavailable_in_reviewer_tool",
+        "note": "正式参照元の杉並区イベントページはこの閲覧環境では取得できない。別経路で公式検証を要する。",
+        "source": "https://www.city.suginami.tokyo.jp/s030/event/28100.html"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-16a6e46eeff7",
+      "name": "第21回 北斎祭り",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-25",
+      "official_url": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja",
+      "observed_recheck": {
+        "status": "official_day_and_participation_units_confirmed",
+        "note": "10/24～25。10/24の有料金魚ねぷた制作は抽選申込、10/25の公園だるま絵は見学無料。参加単位を区別。",
+        "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-24",
+      "id": "v15-d29ad9dede43",
+      "name": "キッズフリマ in コレド室町",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-25",
+      "official_url": "https://kodomo-smile.metro.tokyo.lg.jp/events/chuoku",
+      "observed_recheck": {
+        "status": "organizer_day_and_venue_confirmed",
+        "note": "10/24～25 コレド室町・福徳の森、11時/14:30の部。子ども主体の参加条件を確認。",
+        "source": "https://kids-fm.jp/"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-31",
+      "id": "v15-a6567efc0616",
+      "name": "子どもの権利の日フォーラムなかの2026",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-11-01",
+      "date_end": "2026-11-01",
+      "official_url": "https://www.city.tokyo-nakano.lg.jp/kusei/kousou/seido/kodomokyoiku/kodomonokenri/kodomonokenrinohiforamu2025.html",
+      "observed_recheck": {
+        "status": "official_day_program_confirmed",
+        "note": "11/1 14:00～16:00 中野区役所1F。公式2026記事のURLに2025文字列があっても公開本文は2026。",
+        "source": "https://www.city.tokyo-nakano.lg.jp/kusei/kousou/seido/kodomokyoiku/kodomonokenri/kodomonokenrinohiforamu2025.html"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-31",
+      "id": "v15-97ee0aaed408",
+      "name": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-31",
+      "date_end": "2026-12-27",
+      "official_url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+      "observed_recheck": {
+        "status": "organizer_exhibition_and_fee_confirmed",
+        "note": "10/31～12/27、10:00～18:00、月曜休館、11/23例外開館、一般1,000円、中学生以下無料。",
+        "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-31",
+      "id": "v15-f97b5fe1f77b",
+      "name": "すみだ五彩の芸術祭",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-09-04",
+      "date_end": "2026-12-20",
+      "official_url": "https://sumida-artfest.jp",
+      "observed_recheck": {
+        "status": "multi_program_calendar_incomplete",
+        "note": "分散会場/独立参加単位の集合。9/4～12/20という親イベント期間だけで当日開催確定としない。",
+        "source": "https://sumida-artfest.jp"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-31",
+      "id": "v15-0e7113e24145",
+      "name": "六本木アートナイト2026",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-31",
+      "date_end": "2026-11-01",
+      "official_url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=31&event_category=1%2C2%2C4&event_target=0&month=10&type=3&year=2026",
+      "observed_recheck": {
+        "status": "official_date_venue_confirmed",
+        "note": "10/31 17時～11/1 6時を中心に六本木各会場、無料（一部有料）。深夜の参加を幼児家族に推奨しない。",
+        "source": "https://www.city.minato.tokyo.jp/kouhou/event/261031-roppongiartnight.html"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    },
+    {
+      "week": "2026-10-31",
+      "id": "v15-3a20f99785fc",
+      "name": "第16回目黒マルシェ「集結祭」",
+      "source_data_status": "announced",
+      "required_new_full_tier_status": "verified",
+      "date_start": "2026-10-31",
+      "date_end": "2026-11-01",
+      "official_url": "https://meguromarche.com/",
+      "observed_recheck": {
+        "status": "organizer_date_and_child_activity_confirmed",
+        "note": "10/31～11/1 11:00～17:00、目黒通り歩道。子どもが関わるKIDNIAあり。11/3は予備日で開催確約ではない。",
+        "source": "https://meguromarche.com/"
+      },
+      "final_verification_status": "pending_all_fields",
+      "event_data_unmodified": true
+    }
+  ],
+  "strict_full_tier_pass": false,
+  "no_previous_event_edits": true,
+  "source_detail_checks_partial": true,
+  "reason": "For full-tier verification every event must have all mandatory factual fields and no closed-entry representation error; source page existence or preliminary matching alone cannot flip announced to verified."
+}

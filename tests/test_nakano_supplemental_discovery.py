@@ -19,7 +19,9 @@ MONTH = """<html><head><title>2026年11月カレンダー</title></head>
 OCT = """<html><title>2026年10月カレンダー</title><h1>2026年10月カレンダー</h1>
 <table><tr><td>24日 土曜日</td><td><a href="/event/2026/oct.html">なかの子ども体験</a></td></tr></table></html>"""
 COMMUNITY = """<html><title>なかの情報 イベント一覧</title><a href="/nakanoinfo/event/result/?id=3">
-親子も楽しむスタンプラリー</a></html>"""
+親子も楽しむスタンプラリー</a>
+<a href="/nakanoinfo/event/result/?id=4">おもちゃDAY</a>
+<a href="/contact/">イベント情報はこちら</a></html>"""
 RSS = """<rss><channel><item><title>子どもイベント</title>
 <link>https://www.city.tokyo-nakano.lg.jp/event/test</link></item></channel></rss>"""
 INDEX = """<html><title>地区祭</title><a href="20260616103208700.html">
@@ -93,6 +95,15 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(all(s["attempts"][0]["status"]=="error" for s in oct_row))
         self.assertFalse(r["tamemap_required_check_satisfied"])
         self.assertFalse(r["publishable"])
+
+    def test_short_non_keyword_community_programs_are_not_lost(self):
+        from nakano_supplemental_discovery import community_listing_links
+        found = community_listing_links(COMMUNITY,
+                                       "https://nakanoshakyo.com/nakanoinfo/event/index.php")
+        self.assertEqual(len(found), 2)
+        self.assertIn("おもちゃDAY", [c["name"] for c in found])
+        self.assertTrue(all(c["discovery_url"].startswith("https://nakanoshakyo.com/nakanoinfo/")
+                            for c in found))
 
     def test_tamemap_403_preserved_even_if_supplement_succeeds(self):
         result=collect(plan(),fetcher=fake,max_workers=5,supplemental_config=config())

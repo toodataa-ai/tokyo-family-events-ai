@@ -1,0 +1,42 @@
+name: Strict semantic six-week continuity with independent child schedule evidence
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/strict-semantic-six-week-completeness.yml]
+permissions:
+  contents: read
+jobs:
+  strict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: old
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: new
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: All still-active historical events in visible weeks must pass
+        run: |
+          set -euo pipefail
+          test "$(git -C old rev-parse HEAD)" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
+          test "$(git -C new rev-parse HEAD)" = "ca22faff99acebdfca89e82e09ea7d524bcb8e20"
+          python3 audit/tools/validate_visible_rollover.py \
+            --old old/site/data --new new/site/data \
+            --policy audit/policy/authoritative_umbrella_subprograms_20261020.json \
+            --report "$RUNNER_TEMP/semantically_complete.json"
+          echo SEMANTIC_CONTINUITY_PASS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-completeness-after-official-program-split
+          path: ${{ runner.temp }}/semantically_complete.json
+          retention-days: 30

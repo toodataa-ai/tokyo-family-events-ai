@@ -111,7 +111,10 @@ def main():
      "hard_exclusion":None,"exclusion_type":None,
      "primary_reason_code":"family_value_high","reason_codes":["family_value_high"],
      "reasons":[r["reason"]],"evidence":[{"url":r["source"],"basis":r["reason"]}],
-     "override_reason":""})
+     "override_reason":(
+       "過去に掲載済みのイベントを無断で消さず、主催者が今週の開催を公式確認しているため注意点を明示して継続掲載。"
+       "子ども向け適性Cのため、料金・夜間負担・内容は公式で個別確認し家族の判断に委ねる。"
+       if family_fit.get("overall") in ("C","D") else "")})
    to_add.append(copy_e);audits.append(new_a)
    present.add(key);present_ids.add(e["id"])
   if not to_add:continue

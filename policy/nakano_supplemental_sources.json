@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "purpose": "Read-only supplemental candidate discovery when Tamemap Nakano is blocked; does not replace or satisfy its required source check.",
+  "sources": [
+    {
+      "id": "nakano_city_calendar_all",
+      "origin": "official",
+      "ward": "中野区",
+      "label": "中野区公式 全イベント月間カレンダー",
+      "kind": "official_calendar",
+      "month_path": "https://www.city.tokyo-nakano.lg.jp/event/calendar/list_calendar{YYYY}{MM}.html",
+      "current_path": "https://www.city.tokyo-nakano.lg.jp/event/calendar/list_calendar.html",
+      "require_month_marker": true,
+      "required_for_supplement": true
+    },
+    {
+      "id": "nakano_city_calendar_children",
+      "origin": "official",
+      "ward": "中野区",
+      "label": "中野区公式 子育て・教育月間カレンダー",
+      "kind": "official_calendar",
+      "month_path": "https://www.city.tokyo-nakano.lg.jp/event/kosodate/calendar/list_calendar{YYYY}{MM}.html",
+      "current_path": "https://www.city.tokyo-nakano.lg.jp/event/kosodate/calendar/list_calendar.html",
+      "require_month_marker": true,
+      "required_for_supplement": true
+    },
+    {
+      "id": "nakano_shakyo_events",
+      "origin": "regional_primary",
+      "ward": "中野区",
+      "label": "中野区社会福祉協議会・イベント講座",
+      "kind": "listing",
+      "search_urls": [
+        "https://nakanoshakyo.com/nakanoinfo/event/index.php"
+      ],
+      "required_for_supplement": true
+    },
+    {
+      "id": "nakano_shakyo_community",
+      "origin": "regional_primary",
+      "ward": "中野区",
+      "label": "中野区社会福祉協議会・地域の居場所活動",
+      "kind": "listing",
+      "search_urls": [
+        "https://nakanoshakyo.com/nakanoinfo/"
+      ],
+      "required_for_supplement": true
+    }
+  ],
+  "notes": [
+    "All source checks are supplemental, independent of protected source tamemap_nakano, which remains enabled and required in production registry.",
+    "City month-specific pages must show the exact requested month; stale current-page fallback is forbidden.",
+    "Only actual retrieved links are candidates; each needs current organizer/primary event-page date, venue, booking, thumbnail and family-fit verification before publishing.",
+    "Recurring social-welfare activities have no assumed calendar date until independently confirmed."
+  ]
+}

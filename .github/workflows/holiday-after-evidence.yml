@@ -14,12 +14,18 @@ on:
       - "tests/test_holiday_after_review_packet.py"
       - "tools/holiday_after_review_packet.py"
       - ".github/workflows/holiday-after-evidence.yml"
+      - "policy/nakano_supplemental_sources.json"
+      - "tools/nakano_supplemental_discovery.py"
+      - "tests/test_nakano_supplemental_discovery.py"
   push:
     branches: [main]
     paths:
       - "tools/holiday_after_collect.py"
       - "tests/test_holiday_after_collect.py"
       - ".github/workflows/holiday-after-evidence.yml"
+      - "policy/nakano_supplemental_sources.json"
+      - "tools/nakano_supplemental_discovery.py"
+      - "tests/test_nakano_supplemental_discovery.py"
 
 permissions:
   contents: read
@@ -56,7 +62,9 @@ jobs:
         with:
           node-version: "22"
       - name: Verify evidence extractor regression tests
-        run: python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
+        run: |
+          python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
+          python3 -m unittest discover -s scanner/tests -p 'test_nakano_supplemental_discovery.py' -v
       - name: Verify released prompt policy
         working-directory: released
         run: node .github/scripts/validate-prompt-history.mjs
@@ -91,6 +99,7 @@ jobs:
           python3 scanner/tools/holiday_after_collect.py \
             --plan "$RUNNER_TEMP/holiday-after-audit/plan.json" \
             --output-dir "$RUNNER_TEMP/holiday-after-audit" \
+            --supplemental-config scanner/policy/nakano_supplemental_sources.json \
             --workers 12
       - name: Prepare event-by-event reviewer worklist (never publishes)
         if: always()

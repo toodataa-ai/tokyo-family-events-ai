@@ -11,7 +11,7 @@ import hashlib
 import re
 from urllib.parse import urljoin, urlsplit
 
-from holiday_after_collect import fetch_url, html_links, now, public_row
+from holiday_after_collect import fetch_url, VisibleLinks, digest, public_row
 
 
 def months_between(start, end):
@@ -100,6 +100,26 @@ def calendar_candidates(html, page_url, month, start, end, source_id):
     return output
 
 
+def community_listing_links(html, page_url):
+    """Capture actual Shakyo result pages without dropping titles like おもちゃDAY."""
+    parser = VisibleLinks()
+    parser.feed(html)
+    seen, output = set(), []
+    for link in parser.links:
+        label = " ".join(link["name"].split())
+        url = urljoin(page_url, link["href"])
+        parsed = urlsplit(url)
+        if (parsed.hostname != "nakanoshakyo.com"
+                or not parsed.path.startswith("/nakanoinfo/")
+                or "/result" not in parsed.path
+                or len(label) < 3 or url in seen):
+            continue
+        seen.add(url)
+        output.append({"candidate_id": "shakyo-" + digest(url),
+                       "name": label, "discovery_url": url})
+    return output
+
+
 def collect_supplemental(plan, config, fetcher=None):
     start, end = date.fromisoformat(plan["target_start"]), date.fromisoformat(plan["target_end"])
     if end < start or len(plan.get("weekends", [])) != 6:
@@ -142,7 +162,7 @@ def collect_supplemental(plan, config, fetcher=None):
                        "status": response["status"], "search_url": url,
                        "checked_at": response["checked_at"], "attempts": [public_row(response)]}
                 if response["status"] == "checked":
-                    _, links = html_links(response["body"], url)
+                    links = community_listing_links(response["body"], url)
                     row["candidate_count"] = len(links)
                     row["candidate_ids"] = []
                     for link in links:

@@ -45,7 +45,7 @@ jobs:
           base="$(git -C previous rev-parse HEAD)"
           stage="$(git -C candidate rev-parse HEAD)"
           test "$base" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
-          test "$stage" = "551212315fb79c20e6ff4a365110c3c1d18bfc65"
+          test "$stage" = "61b84d12dddcb65787ee9bc03094ad212f13af4f"
           test "$(git -C candidate ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
           git -C candidate fetch --depth=1 origin refs/heads/data-production:refs/remotes/origin/data-production
           test "$(git -C candidate rev-parse origin/data-production)" = "$base"

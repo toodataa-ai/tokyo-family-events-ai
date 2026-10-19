@@ -1,0 +1,622 @@
+{
+  "schema_version": 1,
+  "kind": "historical_carryover_event_review",
+  "as_of": "2026-10-20",
+  "baseline_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "status": "review_required_not_publishable",
+  "new_weeks": [
+    {
+      "sat": "2026-11-21",
+      "sun": "2026-11-22",
+      "prior_long_running_to_review": [
+        {
+          "id": "v15-272dbd09eb0a",
+          "name": "色の引き算―白・黒・いろいろ―",
+          "ward": "台東区",
+          "venue": "国際子ども図書館 レンガ棟3階 本のミュージアム",
+          "date_start": "2026-10-06",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "事前申込不要"
+          }
+        },
+        {
+          "id": "v15-53252402655d",
+          "name": "企画展「Made in としまの紙芝居～日本画劇が残したもの～」",
+          "ward": "豊島区",
+          "venue": "豊島区立郷土資料館（IKE・Biz 7階）",
+          "date_start": "2026-10-17",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.city.toshima.lg.jp/129/2609101123.html",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "直接会場へ"
+          }
+        },
+        {
+          "id": "v15-64515ea63f7b",
+          "name": "すみだ五彩の芸術祭",
+          "ward": "墨田区",
+          "venue": "・プログラムにより異なる（詳細は公式サイトにて発表予定） 会場 UDCすみだ、ユートリヤすみだ生涯学習センター、すみだトリフォニーホール、すみだパークシアター倉、曳舟文化センターほか墨田区内各所 最寄駅：錦糸町駅、押上駅、曳舟駅、本所吾妻橋駅など各会場により異なります。",
+          "date_start": "2026-09-04",
+          "date_end": "2026-12-20",
+          "official_url": "https://sumida-artfest.jp",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-d7b35a2aa60b",
+          "name": "特別展「エリック・カールといのちの色‐同じ世界で、ちがう色‐」",
+          "ward": "品川区",
+          "venue": "しながわ水族館 地下1階「クマノミルーム」",
+          "date_start": "2026-07-25",
+          "date_end": "2026-12-25",
+          "official_url": "https://www.aquarium.gr.jp/news/events/31639",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-2129bbe736b8",
+          "name": "秋の自然たんけんラリー",
+          "ward": "練馬区",
+          "venue": "練馬区立中里郷土の森緑地",
+          "date_start": "2026-10-14",
+          "date_end": "2026-11-23",
+          "official_url": "https://nakazato.ces-net.jp/",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-9abcdd41c48d",
+          "name": "中里の秋さがしミッション！",
+          "ward": "練馬区",
+          "venue": "練馬区立中里郷土の森緑地",
+          "date_start": "2026-10-14",
+          "date_end": "2026-11-23",
+          "official_url": "https://nakazato.ces-net.jp/",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-d87c7b953233",
+          "name": "第71回秋の区民文化祭",
+          "ward": "練馬区",
+          "venue": "練馬文化センター、生涯学習センター、練馬区立・産業プラザ3階ココネリホール、向山庭園、光が丘体育館、石神井公園ふるさと文化館、石神井公園区民交流センター",
+          "date_start": "2026-10-04",
+          "date_end": "2026-11-23",
+          "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "r16-a998e43102c9",
+          "name": "国際美術展 TOKYO ATLAS",
+          "ward": "江東区",
+          "venue": "台場公園・お台場海浜公園、テレコムセンタービル、青海南ふ頭公園、地下駐車場（青海南ふ頭公園内）、アイルしながわ、WHAT MUSEUM",
+          "date_start": "2026-10-10",
+          "date_end": "2026-12-20",
+          "official_url": "https://tokyoatlas.jp/",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "v15-97ee0aaed408",
+          "name": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+          "ward": "練馬区",
+          "venue": "練馬区立美術館",
+          "date_start": "2026-10-31",
+          "date_end": "2026-12-27",
+          "official_url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "開館時間・観覧料は公式ページで確認"
+          }
+        },
+        {
+          "id": "v15-7711bd973fb4",
+          "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+          "ward": "練馬区",
+          "venue": "ちひろ美術館・東京",
+          "date_start": "2026-10-30",
+          "date_end": "2027-01-31",
+          "official_url": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-daa813b5a665",
+          "name": "11月 いつでもものづくり",
+          "ward": "杉並区",
+          "venue": "IMAGINUS ものづくりラボ",
+          "date_start": "2026-11-01",
+          "date_end": "2026-11-30",
+          "official_url": "https://www.imaginus-suginami.jp/events/2026/10/01/11852/",
+          "source_files": [
+            "2026-10-31-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "r16-d1fc65f778d6",
+          "name": "森万里子:燦燦",
+          "ward": "港区",
+          "venue": "森美術館（六本木ヒルズ森タワー53階）",
+          "date_start": "2026-10-31",
+          "date_end": "2027-03-28",
+          "official_url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "r16-9b0b812bf9cd",
+          "name": "【企画展】「海を渡ってきた植物の物語」",
+          "ward": "練馬区",
+          "venue": "牧野記念庭園 記念館企画展示室",
+          "date_start": "2026-10-30",
+          "date_end": "2026-12-13",
+          "official_url": "https://www.makinoteien.jp/",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "v15-237c930495e3",
+          "name": "2026ミナコレ（MINATO COLLECTION）",
+          "ward": "港区",
+          "venue": "港区内の参加ミュージアム・文化施設",
+          "date_start": "2026-10-15",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.city.minato.tokyo.jp/bungeishinkou/minakore/home.html",
+          "source_files": [
+            "2026-11-07-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "料金・開館時間は各参加施設で異なる"
+          }
+        },
+        {
+          "id": "v15-8d59fcc6e04c",
+          "name": "いまどきの子育てとマンガ展",
+          "ward": "豊島区",
+          "venue": "トキワ荘通り昭和レトロ館 1階 多目的室1",
+          "date_start": "2026-09-18",
+          "date_end": "2026-11-23",
+          "official_url": "https://www.city.toshima.lg.jp/467/2607241454.html",
+          "source_files": [
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "直接会場へ"
+          }
+        },
+        {
+          "id": "v15-8bc88232815c",
+          "name": "HIBIYA Magic Time Illumination 2026",
+          "ward": "千代田区",
+          "venue": "東京ミッドタウン日比谷 日比谷ステップ広場・6F パークビューガーデン／日比谷仲通り",
+          "date_start": "2026-11-12",
+          "date_end": "2027-02-28",
+          "official_url": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-960da7fa214c",
+          "name": "Hibiya Art Park 2026 - Timeless Phenomena 確かにありそうなもの -",
+          "ward": "千代田区",
+          "venue": "日比谷公園",
+          "date_start": "2026-11-13",
+          "date_end": "2026-11-29",
+          "official_url": "https://www.tokyo-park.or.jp/special/flowerandlight/hibiya2026autumn/index.html",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-5e0e43c28e84",
+          "name": "祝）ACN presents代々木フォレスト・オブ・ライツ ～光の森～",
+          "ward": "渋谷区",
+          "venue": "代々木公園内サイクリングロードエリア",
+          "date_start": "2026-11-13",
+          "date_end": "2027-01-11",
+          "official_url": "https://www.yoyogiforestoflights.tokyo/",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        }
+      ]
+    },
+    {
+      "sat": "2026-11-28",
+      "sun": "2026-11-29",
+      "prior_long_running_to_review": [
+        {
+          "id": "v15-272dbd09eb0a",
+          "name": "色の引き算―白・黒・いろいろ―",
+          "ward": "台東区",
+          "venue": "国際子ども図書館 レンガ棟3階 本のミュージアム",
+          "date_start": "2026-10-06",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "事前申込不要"
+          }
+        },
+        {
+          "id": "v15-53252402655d",
+          "name": "企画展「Made in としまの紙芝居～日本画劇が残したもの～」",
+          "ward": "豊島区",
+          "venue": "豊島区立郷土資料館（IKE・Biz 7階）",
+          "date_start": "2026-10-17",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.city.toshima.lg.jp/129/2609101123.html",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "直接会場へ"
+          }
+        },
+        {
+          "id": "v15-64515ea63f7b",
+          "name": "すみだ五彩の芸術祭",
+          "ward": "墨田区",
+          "venue": "・プログラムにより異なる（詳細は公式サイトにて発表予定） 会場 UDCすみだ、ユートリヤすみだ生涯学習センター、すみだトリフォニーホール、すみだパークシアター倉、曳舟文化センターほか墨田区内各所 最寄駅：錦糸町駅、押上駅、曳舟駅、本所吾妻橋駅など各会場により異なります。",
+          "date_start": "2026-09-04",
+          "date_end": "2026-12-20",
+          "official_url": "https://sumida-artfest.jp",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-d7b35a2aa60b",
+          "name": "特別展「エリック・カールといのちの色‐同じ世界で、ちがう色‐」",
+          "ward": "品川区",
+          "venue": "しながわ水族館 地下1階「クマノミルーム」",
+          "date_start": "2026-07-25",
+          "date_end": "2026-12-25",
+          "official_url": "https://www.aquarium.gr.jp/news/events/31639",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "r16-a998e43102c9",
+          "name": "国際美術展 TOKYO ATLAS",
+          "ward": "江東区",
+          "venue": "台場公園・お台場海浜公園、テレコムセンタービル、青海南ふ頭公園、地下駐車場（青海南ふ頭公園内）、アイルしながわ、WHAT MUSEUM",
+          "date_start": "2026-10-10",
+          "date_end": "2026-12-20",
+          "official_url": "https://tokyoatlas.jp/",
+          "source_files": [
+            "2026-10-24-events-01.json",
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "v15-97ee0aaed408",
+          "name": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+          "ward": "練馬区",
+          "venue": "練馬区立美術館",
+          "date_start": "2026-10-31",
+          "date_end": "2026-12-27",
+          "official_url": "https://www.neribun.or.jp/event/museum.cgi?genre=2026",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "開館時間・観覧料は公式ページで確認"
+          }
+        },
+        {
+          "id": "v15-7711bd973fb4",
+          "name": "没後70年 茂田井武とパリの画家たち　―Parisの破片(カケラ)― ＜同時開催＞ ちひろ 旅のたのしみ",
+          "ward": "練馬区",
+          "venue": "ちひろ美術館・東京",
+          "date_start": "2026-10-30",
+          "date_end": "2027-01-31",
+          "official_url": "https://chihiro.jp/tokyo/exhibitions/2026/",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-daa813b5a665",
+          "name": "11月 いつでもものづくり",
+          "ward": "杉並区",
+          "venue": "IMAGINUS ものづくりラボ",
+          "date_start": "2026-11-01",
+          "date_end": "2026-11-30",
+          "official_url": "https://www.imaginus-suginami.jp/events/2026/10/01/11852/",
+          "source_files": [
+            "2026-10-31-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "r16-d1fc65f778d6",
+          "name": "森万里子:燦燦",
+          "ward": "港区",
+          "venue": "森美術館（六本木ヒルズ森タワー53階）",
+          "date_start": "2026-10-31",
+          "date_end": "2027-03-28",
+          "official_url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "r16-9b0b812bf9cd",
+          "name": "【企画展】「海を渡ってきた植物の物語」",
+          "ward": "練馬区",
+          "venue": "牧野記念庭園 記念館企画展示室",
+          "date_start": "2026-10-30",
+          "date_end": "2026-12-13",
+          "official_url": "https://www.makinoteien.jp/",
+          "source_files": [
+            "2026-10-31-events-01.json",
+            "2026-11-07-events-01.json",
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "参加条件・予約状況は公式サイトで最新情報を確認。"
+          }
+        },
+        {
+          "id": "v15-237c930495e3",
+          "name": "2026ミナコレ（MINATO COLLECTION）",
+          "ward": "港区",
+          "venue": "港区内の参加ミュージアム・文化施設",
+          "date_start": "2026-10-15",
+          "date_end": "2026-12-20",
+          "official_url": "https://www.city.minato.tokyo.jp/bungeishinkou/minakore/home.html",
+          "source_files": [
+            "2026-11-07-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": false,
+            "note": "料金・開館時間は各参加施設で異なる"
+          }
+        },
+        {
+          "id": "v15-8bc88232815c",
+          "name": "HIBIYA Magic Time Illumination 2026",
+          "ward": "千代田区",
+          "venue": "東京ミッドタウン日比谷 日比谷ステップ広場・6F パークビューガーデン／日比谷仲通り",
+          "date_start": "2026-11-12",
+          "date_end": "2027-02-28",
+          "official_url": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-960da7fa214c",
+          "name": "Hibiya Art Park 2026 - Timeless Phenomena 確かにありそうなもの -",
+          "ward": "千代田区",
+          "venue": "日比谷公園",
+          "date_start": "2026-11-13",
+          "date_end": "2026-11-29",
+          "official_url": "https://www.tokyo-park.or.jp/special/flowerandlight/hibiya2026autumn/index.html",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        },
+        {
+          "id": "v15-5e0e43c28e84",
+          "name": "祝）ACN presents代々木フォレスト・オブ・ライツ ～光の森～",
+          "ward": "渋谷区",
+          "venue": "代々木公園内サイクリングロードエリア",
+          "date_start": "2026-11-13",
+          "date_end": "2027-01-11",
+          "official_url": "https://www.yoyogiforestoflights.tokyo/",
+          "source_files": [
+            "2026-11-14-events-01.json"
+          ],
+          "verification_state": "historically_listed_date_span_only_not_weekend_confirmed",
+          "reservation": {
+            "required": null,
+            "note": "最新の参加方法は公式サイトで確認"
+          }
+        }
+      ]
+    }
+  ],
+  "published_files_unchanged": true,
+  "notes": [
+    "Historical date_start/date_end overlap does not certify opening each Sat/Sun/holiday",
+    "Do not overwrite an older event ID, event facts or status until individual official evidence is checked",
+    "Original dated files must be preserved in data-production and data-staging"
+  ]
+}

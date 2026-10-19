@@ -4,6 +4,7 @@ on:
     branches: [research/holiday-after-individual-fact-crawl-20261020]
     paths:
       - '.github/workflows/holiday-stage-dryrun-20261020.yml'
+      - 'tools/holiday_after_staging_dryrun.py'
 permissions:
   contents: read
   actions: read

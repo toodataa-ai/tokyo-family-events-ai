@@ -12,9 +12,10 @@ from holiday_after_review_packet import build_packet, event_identity, is_overlap
 def plan():
     sats = ["2026-10-24", "2026-10-31", "2026-11-07",
             "2026-11-14", "2026-11-21", "2026-11-28"]
+    from datetime import date, timedelta
     return {"status": "eligible", "as_of_jst": "2026-10-19",
             "base_data_production_sha": "a" * 40,
-            "weekends": [{"sat": sat, "sun": sat[:8] + str(int(sat[8:]) + 1).zfill(2),
+            "weekends": [{"sat": sat, "sun": (date.fromisoformat(sat) + timedelta(days=1)).isoformat(),
                           "publication_tier": "preview"} for sat in sats],
             "holiday_targets": [{"date": "2026-11-23"}]}
 

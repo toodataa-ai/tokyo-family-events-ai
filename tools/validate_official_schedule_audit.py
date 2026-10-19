@@ -34,6 +34,8 @@ def valid_temporary_exception(run, week, check, source_id, rules):
                 check.get("exception_ref") != rule.get("id") or
                 check.get("status") != rule.get("expected_observed_status") or
                 check.get("http_status") != rule.get("expected_http_status") or
+                check.get("response_server", "").casefold() != "cloudflare" or
+                check.get("challenge_detected") is not True or
                 rule.get("required_source_stays_enabled") is not True):
             continue
         url = check.get("search_url") or check.get("url") or ""

@@ -1,0 +1,67 @@
+name: Tamemap public search-index alternative probe
+
+on:
+  push:
+    branches:
+      - diagnostic/tamemap-index-alternative-20261020
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Query public search-index RSS for indexed Tamemap listings
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request, urllib.parse
+          import xml.etree.ElementTree as ET
+          from urllib.parse import urlsplit
+          queries=[
+            'site:pc.tamemap.net/1311401/calendar/2026-11 ためまっぷなかの',
+            'site:pc.tamemap.net/1311401/event/ 2026年11月22日',
+            'site:pc.tamemap.net/1311401/event/ 2026-11-22',
+            'site:pc.tamemap.net/1311401/event/ ママほっとキッチン',
+            'site:pc.tamemap.net/1311401/event/ おひさまリトミック',
+            'site:pc.tamemap.net/1311401/event/ 防災教室 2026',
+            'site:pc.tamemap.net/1311401/event/ 親子 2026年11月',
+            'site:pc.tamemap.net/1311401/calendar/2026-10 ためまっぷなかの',
+            'ママほっとキッチン 2026年11月22日 中野 主催'
+          ]
+          results=[]
+          for query in queries:
+            url='https://www.bing.com/search?format=rss&q='+urllib.parse.quote(query)
+            row={'query':query,'engine':'Bing RSS public search index','search_url':url,'status':'error','results':[]}
+            try:
+              req=urllib.request.Request(url,headers={'User-Agent':'TokyoFamilyEventsEvidence/1.0','Accept-Language':'ja,en;q=0.5'})
+              with urllib.request.urlopen(req,timeout=15) as res:
+                body=res.read(600000)
+                row['http_status']=res.status
+              root=ET.fromstring(body)
+              if root.tag!='rss':
+                raise ValueError('not RSS document')
+              items=root.findall('./channel/item')
+              for item in items:
+                label=(item.findtext('title') or '').strip()
+                link=(item.findtext('link') or '').strip()
+                if link.startswith('https://'):
+                  row['results'].append({'title':label[:170],'url':link})
+              row['status']='checked'
+              row['indexed_tamemap_matches']=sum(urlsplit(i['url']).hostname=='pc.tamemap.net' for i in row['results'])
+              row['result_count']=len(row['results'])
+            except Exception as e: row['error']=str(e)[:350]
+            results.append(row)
+            print(json.dumps({'query':query,'status':row['status'],'matches':row.get('indexed_tamemap_matches'),'result_count':row.get('result_count'),'sample':row['results'][:3]},ensure_ascii=False),flush=True)
+            time.sleep(0.2)
+          with open('/tmp/tamemap-search-index-evidence.json','w') as f:
+            json.dump({'read_only':True,'candidate_status':'unverified','queries':results},f,ensure_ascii=False,indent=2)
+          PY
+      - name: Upload read-only index report
+        uses: actions/upload-artifact@v4
+        with:
+          name: tamemap-search-index-evidence
+          path: /tmp/tamemap-search-index-evidence.json
+          retention-days: 30

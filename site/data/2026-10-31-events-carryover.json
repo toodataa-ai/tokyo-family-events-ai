@@ -1,0 +1,145 @@
+[
+  {
+    "id": "v15-51c3d03b1d28",
+    "ward": "渋谷区",
+    "name": "Kids meet × Studio oowa「こうえん」～あの子のスペースをつくる～",
+    "url": "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+    "official_url": "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+    "source": "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+    "image": null,
+    "period": "10/10〜11/8",
+    "date_start": "2026-10-10",
+    "date_end": "2026-11-08",
+    "time": "11:00〜19:00",
+    "venue": "東京都渋谷公園通りギャラリー 交流スペース",
+    "price": "無料",
+    "description": "障害のある子どもたちを中心に、障害の有無を問わず誰でも参加できる交流プログラム。",
+    "categories": [
+      "アート",
+      "交流",
+      "インクルーシブ"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "reason": "注意点を踏まえても家族で参加する価値がある。",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子向け要素が明示される。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "会場回遊等の参加余地がある。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "回遊・自由観覧型で滞在調整しやすい。"
+        },
+        "burden": {
+          "grade": "C",
+          "reason": "夜間・混雑等の子連れ負担に注意。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "無料または無料要素があり負担が小さい。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族で出かける目的になる体験・特別感がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "交流スペースは自由参加。関連イベントは別途申込の場合あり。"
+    },
+    "indoor_outdoor": "屋内",
+    "ai": {
+      "checked_at": "2026-10-07T06:00:00+09:00",
+      "confidence": "high",
+      "discovery_query": "v1.5 native full re-search"
+    }
+  },
+  {
+    "id": "legacy-gap-2026-10-10-zannen3",
+    "ward": "豊島区",
+    "name": "サンシャイン水族館 特別展「ざんねんないきもの展３」",
+    "url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+    "official_url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+    "source": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+    "image": "https://www.ikebukuropark.info/wp-content/uploads/2026/03/image-4.jpg",
+    "period": "3/13〜11/23",
+    "date_start": "2026-03-13",
+    "date_end": "2026-11-23",
+    "time": null,
+    "venue": "サンシャイン水族館 特別展会場",
+    "price": null,
+    "description": "大人気書籍『ざんねんないきもの事典』とコラボし、個性豊かな生き物の生態を楽しめる特別展。対象週末も会期内。",
+    "categories": [
+      "動物",
+      "水族館",
+      "展示",
+      "親子"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v1",
+      "reason": "生き物を題材にした親子向け展示で、家族のおでかけ目的として明確。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子ども・親子が楽しみやすい生き物展示。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "生体展示を見ながら発見・学びを楽しめる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児・小学生を含む家族で楽しみやすい。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "館内展示で滞在時間を調整しやすい。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "屋内中心で天候の影響を受けにくい。"
+        },
+        "cost": {
+          "grade": "B",
+          "reason": "特別展の入場料金が必要。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "入場条件はあるが大きな予約障壁は未確認。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "生き物への興味と学びにつながる家族体験。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "入場・チケット条件は公式サイトで確認。"
+    },
+    "indoor_outdoor": "屋内",
+    "ai": {
+      "checked_at": "2026-10-07T19:14:00+09:00",
+      "confidence": "high",
+      "discovery_query": "legacy parity audit + official verification"
+    }
+  }
+]

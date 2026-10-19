@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-20",
   "events": [
     {
       "id": "v15-ad2f72f74ab7",
@@ -106,11 +106,27 @@
       },
       "corrections": {},
       "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。"
+    },
+    {
+      "id": "legacy-gap-2026-10-10-zannen3",
+      "status": "verified",
+      "source": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。（2026-10-20ローリング引継再確認）サンシャイン水族館公式で3月13日～11月23日、展示開催期間を確認。休業日・営業時間は公式案内を参照。"
     }
   ],
   "summary": {
-    "total": 5,
-    "verified": 5,
+    "total": 6,
+    "verified": 6,
     "announced": 0
   }
 }

@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 78,
-    "published": 72,
+    "published": 74,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 72,
+    "verified": 74,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 59,
@@ -169,6 +169,19 @@
       ],
       "not_full_run": true,
       "note": "All existing published events and the Nerima official shard are retained."
+    }
+  ],
+  "carryover_organizer_rechecks": [
+    {
+      "date": "2026-10-20",
+      "published_old_ids": [
+        "v15-51c3d03b1d28",
+        "legacy-gap-2026-10-10-zannen3"
+      ],
+      "official_sources": [
+        "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+        "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
+      ]
     }
   ]
 }

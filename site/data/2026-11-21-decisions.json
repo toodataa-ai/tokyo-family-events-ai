@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 21,
-    "published": 5,
+    "candidate_total": 22,
+    "published": 6,
     "excluded": 16,
     "duplicate": 0
   },
@@ -1343,6 +1343,87 @@
         }
       ],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "carryover-legacy-gap-2026-10-10-zannen3-2026-11-21",
+      "name": "サンシャイン水族館 特別展「ざんねんないきもの展３」",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "生き物を題材にした親子向け展示で、家族のおでかけ目的として明確。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しみやすい生き物展示。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "生体展示を見ながら発見・学びを楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児・小学生を含む家族で楽しみやすい。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "館内展示で滞在時間を調整しやすい。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内中心で天候の影響を受けにくい。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "特別展の入場料金が必要。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "入場条件はあるが大きな予約障壁は未確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "生き物への興味と学びにつながる家族体験。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "サンシャイン水族館公式で3月13日～11月23日、展示開催期間を確認。休業日・営業時間は公式案内を参照。"
+      ],
+      "evidence": [
+        {
+          "url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+          "basis": "サンシャイン水族館公式で3月13日～11月23日、展示開催期間を確認。休業日・営業時間は公式案内を参照。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_parity_verification",
+          "url": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
+        },
+        {
+          "kind": "legacy_media",
+          "url": "https://www.ikebukuropark.info/"
+        },
+        {
+          "kind": "legacy_detail",
+          "url": "https://www.ikebukuropark.info/sunshine-aquarium-zannen-2026/"
+        }
+      ],
+      "review_note": "過去の公開済み公式確認を維持し、10/20時点の主催者開催期間を再確認。",
+      "positive_signals": [
+        "official_venue_published"
+      ],
+      "negative_signals": []
     }
   ]
 }

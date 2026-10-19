@@ -10,10 +10,10 @@
   "run_file": "2026-10-31-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 54,
+    "candidate_count": 56,
     "duplicate_removed": 2,
     "excluded_count": 4,
-    "published_count": 48,
+    "published_count": 50,
     "wards": [
       {
         "ward": "千代田区",
@@ -128,8 +128,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 6,
-        "published_count": 5,
+        "candidate_count": 7,
+        "published_count": 6,
         "note": "v1.5完全再探索。候補6件、掲載5件。 v1.6除外再審査反映。"
       },
       {
@@ -155,8 +155,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 6,
-        "published_count": 6,
+        "candidate_count": 7,
+        "published_count": 7,
         "note": "v1.5完全再探索。候補6件、掲載4件。 v1.6除外再審査反映。"
       },
       {
@@ -226,7 +226,8 @@
   },
   "event_files": [
     "2026-10-31-events-01.json",
-    "2026-10-31-events-nerima-official.json"
+    "2026-10-31-events-nerima-official.json",
+    "2026-10-31-events-carryover.json"
   ],
   "events": []
 }

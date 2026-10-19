@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 48,
-    "published": 42,
+    "published": 44,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 36,
+    "verified": 38,
     "announced": 6,
     "corrected": 2,
     "thumbnail_count": 35,
@@ -158,6 +158,19 @@
       ],
       "not_full_run": true,
       "note": "Published listing retained to document the announced event; full dates and time verified by Nakano City. All sessions fully booked as of 2026-10-17; candidate clearly labeled 受付終了; no new booking availability implied. Not a full 23-ward search."
+    }
+  ],
+  "carryover_organizer_rechecks": [
+    {
+      "date": "2026-10-20",
+      "published_old_ids": [
+        "v15-51c3d03b1d28",
+        "legacy-gap-2026-10-10-zannen3"
+      ],
+      "official_sources": [
+        "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+        "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
+      ]
     }
   ]
 }

@@ -1580,11 +1580,43 @@
       "corrections": {},
       "note": "板橋区公式令和8年地区まつり詳細の日時・会場・児童館工作・みこしを照合。 個別確認日: 2026-10-17。",
       "checked_at": "2026-10-17"
+    },
+    {
+      "id": "v15-51c3d03b1d28",
+      "status": "verified",
+      "source": "https://www.inclusion-art.jp/archive/interactive/2026/20261010-390.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "v1.5完全再探索で公式・主催者等の根拠と開催情報を再突合。（2026-10-20ローリング引継再確認）主催者公式で10月10日～11月8日、交流スペースのプログラム期間を確認。元の公開ID・審査結果を継承。"
+    },
+    {
+      "id": "legacy-gap-2026-10-10-zannen3",
+      "status": "verified",
+      "source": "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html",
+      "source_kind": "official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "time": "pass",
+        "venue": "pass",
+        "price": "pass",
+        "reservation": "pass"
+      },
+      "corrections": {},
+      "note": "レガシー照合で未収載を検知。公式ページで対象週末の開催を確認して追加。（2026-10-20ローリング引継再確認）サンシャイン水族館公式で3月13日～11月23日、展示開催期間を確認。休業日・営業時間は公式案内を参照。"
     }
   ],
   "summary": {
-    "total": 72,
-    "verified": 72,
+    "total": 74,
+    "verified": 74,
     "announced": 0,
     "corrected": 0
   }

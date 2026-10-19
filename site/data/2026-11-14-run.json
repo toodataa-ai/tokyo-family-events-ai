@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 41,
-    "published": 36,
+    "published": 37,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 28,
+    "verified": 29,
     "announced": 8,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -154,6 +154,17 @@
       ],
       "not_full_run": true,
       "note": "Three verified events were appended to current published Nov14 baseline; no old events were reintroduced from main and no removals."
+    }
+  ],
+  "carryover_organizer_rechecks": [
+    {
+      "date": "2026-10-20",
+      "published_old_ids": [
+        "legacy-gap-2026-10-10-zannen3"
+      ],
+      "official_sources": [
+        "https://sunshinecity.jp/aquarium/event_performance/event/entry-36530.html"
+      ]
     }
   ]
 }

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "kind": "partial_official_event_fact_verification",
+  "as_of_jst": "2026-10-20",
+  "target_window": [
+    "2026-10-19",
+    "2026-11-29"
+  ],
+  "source_data_baseline_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "research_only": true,
+  "publishable": false,
+  "known_issue": {
+    "source_id": "tamemap_nakano",
+    "status": "error_403_deferred_with_user_approval_for_this_run_only",
+    "evidence": "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/39275175781",
+    "other_checks_not_waived": true
+  },
+  "official_facts": [
+    {
+      "id": "review-niijin-20261121",
+      "ward": "港区",
+      "name": "NIJIN教育万博2026",
+      "start": "2026-11-21",
+      "end": "2026-11-22",
+      "venue": "DMM六本木本社24階",
+      "price": "入場無料",
+      "reservation": "公式LINE登録必須、各人登録",
+      "official_url": "https://expo.nijin.co.jp/",
+      "official_fact_checks": [
+        "date",
+        "venue",
+        "child_accessibility",
+        "price",
+        "registration"
+      ],
+      "not_verified": [
+        "event_specific_image_rights",
+        "cross_event_duplicate",
+        "complete_family_fit_decision",
+        "precise_schedule_by_day"
+      ],
+      "decision": "pending"
+    },
+    {
+      "id": "review-nerima-farm-20261121",
+      "ward": "練馬区",
+      "name": "全国都市農業フェスティバル2027 プレイベント",
+      "start": "2026-11-21",
+      "end": "2026-11-22",
+      "time": "10:00-16:00",
+      "venue": "都立光が丘公園 けやき広場",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+      "official_fact_checks": [
+        "date",
+        "time",
+        "venue",
+        "organizer"
+      ],
+      "not_verified": [
+        "price",
+        "reservation",
+        "thumbnail",
+        "cross_event_duplicate",
+        "family_fit_decision"
+      ],
+      "decision": "pending"
+    },
+    {
+      "id": "review-nerima-district-20261129",
+      "ward": "練馬区",
+      "name": "第一地区祭（豊玉南小学校）",
+      "start": "2026-11-29",
+      "end": "2026-11-29",
+      "time": "10:00-12:00",
+      "venue": "豊玉南小学校（豊玉南2-14-1）",
+      "description": "高齢者体験、餅つき、ゲームコーナー、昔遊び等。雨天時は規模縮小。",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "official_fact_checks": [
+        "date",
+        "time",
+        "venue",
+        "child_interest"
+      ],
+      "not_verified": [
+        "price",
+        "reservation",
+        "thumbnail",
+        "cross_event_duplicate",
+        "family_fit_decision"
+      ],
+      "decision": "pending"
+    },
+    {
+      "id": "review-edogawa-para-20261122",
+      "ward": "江戸川区",
+      "name": "えどがわパラスポーツ体験会inスポーツセンター",
+      "start": "2026-11-22",
+      "end": "2026-11-22",
+      "time": "10:00-16:00",
+      "venue": "江戸川区スポーツセンター（西葛西4-2-20）",
+      "price": "無料",
+      "official_url": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+      "official_fact_checks": [
+        "date",
+        "time",
+        "venue",
+        "price",
+        "participant_eligibility"
+      ],
+      "audience_note": "障害のある方を対象とし、その保護者や関係者も参加可能。一般の家族全員が無条件に対象とは解釈しない。",
+      "not_verified": [
+        "reservation",
+        "thumbnail",
+        "cross_event_duplicate",
+        "family_fit_decision"
+      ],
+      "decision": "pending"
+    }
+  ],
+  "horizon_status": "individual_facts_partial_not_a_complete_23_ward_review",
+  "strict_pass": false,
+  "data_staging_candidate_created": false,
+  "production_published": false,
+  "guardrails": [
+    "Only validated official facts are recorded; unknown fields remain unknown.",
+    "Do not infer 2026 official availability from previous-year entries.",
+    "Do not publish without all official candidate decisions and unchanged data-only strict CI.",
+    "Do not change JRA or other projects."
+  ]
+}

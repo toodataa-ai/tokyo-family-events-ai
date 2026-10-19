@@ -1,0 +1,33 @@
+name: One-time staged event preservation semantic audit
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/semantic-removed-event-audit.yml]
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: old
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: new
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Compare original published event identity with candidate manifest
+        run: node audit/tools/audit_staging_semantic_removals.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-event-removal-audit
+          path: audit-comparison.json
+          if-no-files-found: warn

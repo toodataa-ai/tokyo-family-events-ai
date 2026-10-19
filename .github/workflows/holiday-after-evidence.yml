@@ -11,6 +11,8 @@ on:
     paths:
       - "tools/holiday_after_collect.py"
       - "tests/test_holiday_after_collect.py"
+      - "tests/test_holiday_after_review_packet.py"
+      - "tools/holiday_after_review_packet.py"
       - ".github/workflows/holiday-after-evidence.yml"
   push:
     branches: [main]
@@ -54,7 +56,7 @@ jobs:
         with:
           node-version: "22"
       - name: Verify evidence extractor regression tests
-        run: python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_collect.py' -v
+        run: python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
       - name: Verify released prompt policy
         working-directory: released
         run: node .github/scripts/validate-prompt-history.mjs
@@ -90,6 +92,21 @@ jobs:
             --plan "$RUNNER_TEMP/holiday-after-audit/plan.json" \
             --output-dir "$RUNNER_TEMP/holiday-after-audit" \
             --workers 12
+      - name: Prepare event-by-event reviewer worklist (never publishes)
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          packet_dir="$RUNNER_TEMP/holiday-after-audit"
+          if [ -f "$packet_dir/summary.json" ] && [ -f "$packet_dir/candidate_pool.json" ]; then
+            python3 scanner/tools/holiday_after_review_packet.py \
+              --plan "$packet_dir/plan.json" \
+              --evidence-dir "$packet_dir" \
+              --published-data data-src/site/data \
+              --output "$packet_dir/review_packet.json"
+          else
+            echo "No actual research available; leaving published data untouched"
+          fi
       - name: Preserve read-only audit artifacts on success or failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -98,9 +115,28 @@ jobs:
           path: ${{ runner.temp }}/holiday-after-audit/
           retention-days: 30
           if-no-files-found: warn
-      - name: Block publication when discovery or verification incomplete
-        if: steps.collection.outcome != 'success'
+      - name: Confirm this run cannot publish without candidate verification
+        if: always()
+        shell: bash
         run: |
-          echo "Actual discovery or proof checks incomplete: see uploaded evidence."
-          echo "This workflow never edits data-production, data-staging, app code or Pages."
-          exit 1
+          set -euo pipefail
+          packet="$RUNNER_TEMP/holiday-after-audit"
+          if [ ! -f "$packet/summary.json" ]; then
+            if [ -f "$packet/plan.json" ] && grep -q '"status": "skipped"' "$packet/plan.json"; then
+              echo "Not a holiday-after eligible date; correctly skipped"
+              exit 0
+            fi
+            echo "No actual evidence summary was produced" >&2
+            exit 1
+          fi
+          python3 - "$packet/summary.json" "$packet/review_packet.json" <<'PY'
+          import json,sys
+          summary=json.load(open(sys.argv[1]))
+          packet=json.load(open(sys.argv[2]))
+          if summary.get("publishable") is not False or packet.get("publication_permitted") is not False:
+              raise SystemExit("Unsafe publication permission in evidence")
+          if not summary.get("blockers"):
+              raise SystemExit("Missing explicit review/publication blockers")
+          print("Read-only evidence exported. Publication BLOCKED by:", summary["blockers"])
+          print("There is no push, data candidate, or Pages release in this audit workflow.")
+          PY

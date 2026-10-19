@@ -165,7 +165,7 @@ def public_row(record):
     return {key: value for key, value in record.items() if key != "body"}
 
 
-def rss_items(body, audit=None):
+def rss_items(body, audit=None, ward=None):
     """Filter search-engine topic drift before it becomes a candidate lead.
 
     A transport-successful RSS channel is not evidence that the search engine
@@ -183,13 +183,20 @@ def rss_items(body, audit=None):
         url = (item.findtext("link") or "").strip()
         host = (urlsplit(url).hostname or "").lower()
         japanese_title = bool(re.search(r"[\u3040-\u30ff\u3400-\u9fff]", name))
-        geography = bool(re.search(
+        geographic_marker = bool(re.search(
             "Tokyo|東京|千代田|中央区|港区|新宿|文京|台東|墨田|江東|品川|目黒|大田|"
             "世田谷|渋谷|中野|杉並|豊島|北区|荒川|板橋|練馬|足立|葛飾|江戸川|"
-            "池袋|上野|浅草|豊洲|お台場|銀座|荻窪|六本木", name, re.I))
+            "池袋|上野|浅草|豊洲|お台場|銀座|荻窪|六本木|石神井|光が丘|"
+            "小石川|高円寺|阿佐ヶ谷|自由が丘|錦糸町|蒲田|葛西|赤羽", name, re.I))
+        matching_ward_host = any(ward == w and host == official_host
+                                 for w, official_host in WARDS)
+        search_is_relevant = (matching_ward_host or
+                              bool(ward and ward in name) or
+                              geographic_marker)
         if (len(name) < 5 or not url.startswith("https://")
                 or not EVENT_WORDS.search(name)
-                or not (japanese_title or host.endswith(".jp") or geography)):
+                or not (search_is_relevant if ward else (
+                    japanese_title or host.endswith(".jp") or geographic_marker))):
             rejected += 1
             continue
         out.append({"candidate_id": "rss-" + digest(name + "|" + url),
@@ -236,7 +243,7 @@ def inspect(job, fetcher=None):
         return result
     try:
         if job["kind"] in ("ai_cross", "holiday_ai_cross"):
-            result["candidates"] = rss_items(evidence["body"], result)
+            result["candidates"] = rss_items(evidence["body"], result, ward=job.get("ward"))
         else:
             title, links = html_links(evidence["body"], job["url"])
             if not title and not links:

@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-20",
+  "run_as_of_jst": "2026-10-19",
+  "data_baseline_sha": "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b",
+  "read_only_research": true,
+  "source_kind": "rechecked_primary_official_and_organizer_pages",
+  "purpose": "Evidence-backed 13 formerly announced events becoming full-tier. Status updates must preserve IDs and record actual uncertainties.",
+  "records": [
+    {
+      "id": "v15-a3d72cbcb52f",
+      "event": "ディスクゴルフ初心者講習",
+      "source": "https://www.tptc.co.jp/park/03_01/newsports/02",
+      "secondary_source": "https://tokyo-kodomo-hp.metro.tokyo.lg.jp/event/",
+      "facts": "10月25日 9:30〜11:00 beginner session, location 辰巳の森海浜公園; age >= elementary, free beginner lesson; park disk rental 150円/時。東京都こどもサイトは関連大会含む9:30〜16:00。",
+      "corrections": {
+        "price": "初心者講習会無料（用具貸出150円／時間の場合あり）",
+        "time": "初心者講習 9:30〜11:00（関連イベントの開催時間は公式案内を確認）"
+      },
+      "validation": "primary_fee_date_age_and_venue_verified",
+      "limitations": "申込方法は公園管理事務所受付、当日の大会には別の条件がある場合あり"
+    },
+    {
+      "id": "v15-d7f109579d96",
+      "event": "アーツ中村橋 2026―わたしとまちの記憶",
+      "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/museum/tenrankai/arts_nakamurabashi.html",
+      "facts": "9/12〜11/8; 中村橋商店街等の街の作品は期間内鑑賞可; 美術館内の展示は10/18終了、美術館は10/19〜30展示替休館; 街のイベントは無料; 店舗別に営業時間異なる。",
+      "corrections": {
+        "venue": "サンツ中村橋商店街・サンライフ練馬ほか（美術館内の展示は10月18日終了、10月19〜30日は展示替休館）",
+        "time": "各会場の営業・開場時間による（美術館内の展示は10月18日まで）"
+      },
+      "validation": "official_dates_street_venue_and_museum_closure_verified",
+      "limitations": "個別会場ごとの開場・定休日は公式会場マップで確認"
+    },
+    {
+      "id": "v15-64515ea63f7b",
+      "event": "すみだ五彩の芸術祭",
+      "source": "https://sumida-artfest.jp/events/",
+      "facts": "主催者公式プログラム一覧 9/4〜12/20の会期; 10/24には連携展覧会・各所展示、10/25には『すみゆめ踊行列:SUMIBON』を確認。週末の催しごとに場所・時刻・予約・料金が異なる。",
+      "corrections": {
+        "time": "10/24・25開催プログラムあり／時間はプログラムごとに異なる（公式プログラム一覧参照）"
+      },
+      "validation": "official_umbrella_period_and_specific_program_existence_verified",
+      "limitations": "総合イベントの下に多数の独立プログラムあり。親イベントは個別プログラムの参加保証ではない。"
+    },
+    {
+      "id": "v15-438a590c39b1",
+      "event": "HIBIYA CINEMA FESTIVAL 2026",
+      "source": "https://www.hibiya.tokyo-midtown.com/hibiya-cinema-festival/",
+      "secondary_source": "https://www.hibiya.tokyo-midtown.com/jp/event/7556/",
+      "facts": "10/9〜10/25 東京ミッドタウン日比谷、日比谷公園、日比谷OKUROJI。10/24・25上映プログラムあり、入場無料、映像ごとの開始時刻は公式日別スケジュールを参照。",
+      "corrections": {
+        "time": "10/24・25上映あり／各作品の上映時間は公式スケジュール参照",
+        "venue": "東京ミッドタウン日比谷 日比谷ステップ広場・日比谷公園・日比谷OKUROJIほか"
+      },
+      "validation": "official_dates_venue_admission_program_schedule_verified",
+      "limitations": "一部は子供対象の作品ではないため各作品の内容・開始時刻を確認"
+    },
+    {
+      "id": "v15-c2bde5fb2112",
+      "event": "ハロウィンパレードへようこそ！",
+      "source": "https://www.iterrace.jp/event/event_data.php?no=706",
+      "facts": "10/24 アイテラス落合南長崎 2階 Exhibit Alley、12:00/14:00/16:00の3回。ホームページ抽選の当選者のみ。新規申込終了。料金は主催者詳細に記載なし。",
+      "corrections": {
+        "time": "12:00・14:00・16:00",
+        "venue": "アイテラス落合南長崎 2階 Exhibit Alley（落合南長崎駅直結）",
+        "price": "料金は主催者公式ページに記載なし",
+        "reservation": {
+          "required": true,
+          "note": "事前抽選当選者のみ参加可能。新規申込は終了しています。"
+        }
+      },
+      "validation": "official_day_times_location_eligibility_registration_closed_verified",
+      "limitations": "申込終了のため一般の新規参加は不可。既存掲載IDは保護し、閲覧者へ明確に注意喚起"
+    },
+    {
+      "id": "v15-0c7f94c1124a",
+      "event": "まるごと台湾フェア2026",
+      "source": "https://suginami-kouryu.org/ev2026102425_fair.html",
+      "facts": "杉並区交流協会主催10/24-25 高円寺フェス同日。座・高円寺等で物産販売、台湾オペラ講座/公演。ワークショップ小学5年生以上500円、舞台小学生以上1000円、食文化講演無料。企画により申込制。",
+      "corrections": {
+        "price": "出店販売は商品による。オペラ体験500円、公演1,000円、講演無料（企画により異なる）",
+        "time": "10月24・25日（オペラ体験10/24 15:30～17:00、10/25 14:45～16:15など企画別）",
+        "venue": "座・高円寺および高円寺純情商店街・劇場前広場ほか",
+        "reservation": {
+          "required": null,
+          "note": "オペラ体験・舞台・食文化講演等は企画ごとに申込制。物産販売は現地参加可。"
+        }
+      },
+      "validation": "organizer_dates_fee_by_unit_venue_age_application_verified",
+      "limitations": "企画ごとに対象年齢・申込条件は異なる。"
+    },
+    {
+      "id": "v15-16a6e46eeff7",
+      "event": "第21回 北斎祭り",
+      "source": "https://hokusai-museum.jp/modules/Event/events/view/5065?lang=ja",
+      "facts": "10/24 10:30〜15:00 北斎美術館(ねぷた制作有料1000円申込終了),11:00〜15:30緑町公園、16:00〜17:30北斎通り 弘前ねぷた運行、10/25 10:30〜16:00緑町公園だるま絵制作 見学無料。",
+      "corrections": {
+        "time": "10/24 10:30〜17:30、10/25 10:30〜16:00（内容・会場による）",
+        "price": "観覧・公園イベントは無料のものあり。金魚ねぷた制作は1個1,000円・募集終了",
+        "reservation": {
+          "required": null,
+          "note": "金魚ねぷた制作は事前申込が終了。弘前ねぷた運行や公園催しの見学は当日可。"
+        }
+      },
+      "validation": "official_dates_venues_by_program_fees_registration_status_verified",
+      "limitations": "制作ワークショップは募集終了"
+    },
+    {
+      "id": "v15-d29ad9dede43",
+      "event": "キッズフリマ in コレド室町",
+      "source": "https://kids-fm.jp/event/515_day1",
+      "secondary_source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4130",
+      "facts": "10/24・25 福徳の森（日本橋室町） 11:00〜12:00/14:30〜15:30。買い手は子供対象、入場無料、出店料300円、出店受付終了。買い手入場の受付別途。雨天中止。",
+      "corrections": {
+        "time": "第一部11:00〜12:00／第二部14:30〜15:30（両日）",
+        "venue": "コレド室町 福徳の森（東京都中央区日本橋室町2-5-10）",
+        "price": "来場無料。子ども出店1ブース300円（出店受付終了）",
+        "reservation": {
+          "required": null,
+          "note": "出店受付終了。来場・優先入場の受付方法は公式主催者ページ参照。"
+        }
+      },
+      "validation": "organizer_day_times_venue_fee_participant_age_confirmed",
+      "limitations": "売買は小学生だけが行う。雨天中止。"
+    },
+    {
+      "id": "v15-a6567efc0616",
+      "event": "子どもの権利の日フォーラムなかの2026",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kusei/kousou/seido/kodomokyoiku/kodomonokenri/kodomonokenrinohiforamu2025.html",
+      "facts": "11/1 中野区役所1階。フォーラム14:00〜16:00、ものづくりワークショップ13時・14時（3歳〜小6、予約制/1回目締切）、プレーパーク14:00〜16:00申込不要、スタンプラリー13:30〜17:00。一般参加無料。",
+      "corrections": {
+        "time": "ものづくり13:00・14:00、フォーラム14:00〜16:00、プレーパーク14:00〜16:00",
+        "reservation": {
+          "required": null,
+          "note": "フォーラム・プレーパーク・スタンプラリーは当日参加可。工作は事前申込、13時回は受付終了。"
+        }
+      },
+      "validation": "ward_primary_date_venue_program_age_booking_confirmed",
+      "limitations": "各プログラムで予約条件が異なる"
+    },
+    {
+      "id": "v15-97ee0aaed408",
+      "event": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+      "source": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+      "facts": "10/31〜12/27 練馬区立美術館、10:00〜18:00。一般1000円、高校大学生800円、中学生以下無料、月休（祝日11/23は開館）。",
+      "corrections": {
+        "time": "10:00〜18:00（入場17:30まで、月曜原則休館）",
+        "price": "一般1,000円、高校・大学生800円、中学生以下無料"
+      },
+      "validation": "museum_primary_date_time_fee_venue_eligibility_confirmed",
+      "limitations": "期間中休館日あり"
+    },
+    {
+      "id": "v15-f97b5fe1f77b",
+      "event": "すみだ五彩の芸術祭",
+      "source": "https://sumida-artfest.jp/events/",
+      "facts": "公式一覧10/31-11/1の会期内、9/4〜12/20の展示が複数（子供を対象とする個別プログラムも）。日時・会場・料金・予約は個別プログラムで異なる。",
+      "corrections": {
+        "time": "10/31・11/1開催プログラムあり／詳細時間は公式プログラム一覧参照"
+      },
+      "validation": "official_umbrella_period_and_specific_exhibitions_verified",
+      "limitations": "このレコードは総合芸術祭の案内であり、個別の展示・イベントの開催を保証しない"
+    },
+    {
+      "id": "v15-0e7113e24145",
+      "event": "六本木アートナイト2026",
+      "source": "https://www.city.minato.tokyo.jp/kouhou/event/261031-roppongiartnight.html",
+      "facts": "10/31 17:00〜11/1 06:00コアタイム。10/31 10:00〜11/1 22:00インスタレーションもある。六本木各所、無料（一部有料）。原則当日直接、一部個別施設制限。深夜に18歳未満禁止エリア（森美術館等）。",
+      "corrections": {
+        "time": "10/31 17:00〜11/1 6:00を中心に開催（一部日中・深夜展示あり）",
+        "price": "入場無料（一部企画・美術館展示は有料）",
+        "reservation": {
+          "required": null,
+          "note": "基本は当日参加可。一部施設・企画は条件あり。子どもの深夜滞在は推奨しない。"
+        }
+      },
+      "validation": "minato_primary_date_venue_admission_program_eligibility_confirmed",
+      "limitations": "子どもに適さない深夜プログラムあり"
+    },
+    {
+      "id": "v15-3a20f99785fc",
+      "event": "第16回目黒マルシェ「集結祭」",
+      "source": "https://meguromarche.com/",
+      "facts": "10/31〜11/1 11:00〜17:00、目黒通り大鳥神社〜清水交差点周辺。地域の子供が運営するKIDNIAは両日開催。11/3は予備日で開催確約ではない。",
+      "corrections": {
+        "time": "10/31・11/1 ともに11:00〜17:00",
+        "venue": "目黒通り歩道（大鳥神社交差点〜清水交差点周辺）"
+      },
+      "validation": "organizer_days_hours_venue_children_activity_confirmed",
+      "limitations": "11/3は予備日。予備日を追加日扱いしない"
+    }
+  ]
+}

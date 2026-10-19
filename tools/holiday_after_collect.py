@@ -258,7 +258,7 @@ def annual_report(job, index_record, fetcher=None):
                 "error": str(error)}
 
 
-def collect(plan, fetcher=None, max_workers=12):
+def collect(plan, fetcher=None, max_workers=12, supplemental_config=None):
     if plan.get("status") != "eligible":
         raise ValueError("holiday-after plan is not eligible")
     if plan.get("publication_permitted") is not False:
@@ -301,6 +301,11 @@ def collect(plan, fetcher=None, max_workers=12):
     for annual_item in annual:
         for c in annual_item.get("candidates", []):
             raw_candidates.append({**c, "status": "unverified"})
+    supplemental = None
+    if supplemental_config is not None:
+        from nakano_supplemental_discovery import collect_supplemental
+        supplemental = collect_supplemental(plan, supplemental_config, fetcher)
+        raw_candidates.extend(supplemental["candidates"])
     unique = {}
     for candidate in raw_candidates:
         identity = candidate.get("candidate_id")
@@ -316,6 +321,8 @@ def collect(plan, fetcher=None, max_workers=12):
         blockers.append("incomplete_23_ward_search")
     if annual_failures:
         blockers.append("official_annual_schedule_errors")
+    if supplemental and supplemental["supplemental_failures"]:
+        blockers.append("supplemental_primary_source_errors")
     # HTTP 200 and candidate discovery do not prove published event facts.
     blockers.append("unverified_candidate_decisions_and_official_event_facts")
     return {
@@ -327,7 +334,15 @@ def collect(plan, fetcher=None, max_workers=12):
                     "required_source_failures": required_failures,
                     "wards": wards, "ward_failures": ward_failures,
                     "annual_schedule": [{k: v for k, v in r.items() if k != "candidates"} for r in annual],
-                    "candidate_links_unverified": len(unique), "blockers": blockers},
+                    "candidate_links_unverified": len(unique),
+                    "supplemental_checked": (supplemental or {}).get("supplemental_success", 0),
+                    "supplemental_failures": [
+                        {"source_id": x["source_id"], "month": x.get("month"), "error": x.get("error")}
+                        for x in (supplemental or {}).get("supplemental_failures", [])
+                    ],
+                    "tamemap_source_still_required": True,
+                    "blockers": blockers},
+        "supplemental_sources": (supplemental or {}).get("source_checks", []),
         "requests": [{k: v for k, v in r.items() if k != "candidates"} for r in rows],
         "candidate_pool": list(unique.values())
     }
@@ -338,11 +353,16 @@ def main(argv=None):
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=12)
+    parser.add_argument("--supplemental-config", type=Path,
+                        help="Additive, read-only Nakano official and community sources")
     args = parser.parse_args(argv)
     plan = json.loads(args.plan.read_text(encoding="utf-8"))
     if not 1 <= args.workers <= 20:
         parser.error("--workers must be 1..20")
-    result = collect(plan, max_workers=args.workers)
+    supplemental_config = (json.loads(args.supplemental_config.read_text(encoding="utf-8"))
+                           if args.supplemental_config else None)
+    result = collect(plan, max_workers=args.workers,
+                     supplemental_config=supplemental_config)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     for name, payload in result.items():
         (args.output_dir / (name + ".json")).write_text(

@@ -1,0 +1,94 @@
+name: Holiday Oct19 final data-staging strict read-only audit
+on:
+  push:
+    branches: [audit/data-staging-coverage-20261020]
+    paths: [.github/workflows/holiday-20261021-final-stage-audit.yml]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: old
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: new
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - uses: actions/checkout@v4
+        with:
+          ref: research/holiday-after-individual-fact-crawl-20261020
+          path: research-tools
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Freeze exact published and staged SHA
+        run: |
+          set -euo pipefail
+          test "$(git -C old rev-parse HEAD)" = "b1282eb0f24ec6436b1ef8cf52d3df597b262c0b"
+          test "$(git -C new rev-parse HEAD)" = "ca22faff99acebdfca89e82e09ea7d524bcb8e20"
+          test "$(git -C old ls-remote origin refs/heads/data-production | cut -f1)" = "$(git -C old rev-parse HEAD)"
+          test "$(git -C new ls-remote origin refs/heads/data-staging | cut -f1)" = "$(git -C new rev-parse HEAD)"
+          git -C new fetch --depth=1 origin refs/heads/data-production:refs/remotes/origin/data-production
+          echo "IMMUTABLE_PRODUCTION_AND_STAGE_REFS_CONFIRMED"
+      - name: Mandatory strict publication and non-regression validators (no write)
+        working-directory: new
+        run: |
+          set -euo pipefail
+          python3 ../released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../released/tools/validate_decisions.py --strict site/data
+          python3 ../audit/tools/validate_official_schedule_audit.py site/data
+          python3 ../audit/tools/validate_protected_events.py --base-ref b1282eb0f24ec6436b1ef8cf52d3df597b262c0b site/data
+          python3 ../audit/tools/validate_non_regression.py --base-ref b1282eb0f24ec6436b1ef8cf52d3df597b262c0b site/data
+          python3 ../released/tools/validate_rereview.py site/data --strict
+          node ../research-tools/tools/holiday_update_history.mjs --check --data-dir site/data --base-ref b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
+          echo "COMPLETE_STAGED_DATA_STRICT_PASS"
+      - name: All six rolling weeks must preserve individually dated active published events
+        run: |
+          set -euo pipefail
+          python3 audit/tools/validate_visible_rollover.py --old old/site/data --new new/site/data --policy audit/policy/authoritative_umbrella_subprograms_20261020.json --report "$RUNNER_TEMP/continuity.json"
+          echo "REAL_DATED_CONTINUITY_PASS"
+      - name: Explain all unique-key history removals without touching any records
+        run: |
+          set -euo pipefail
+          node audit/tools/audit_staging_semantic_removals.mjs
+          python3 - <<'PY'
+          import json
+          a=json.load(open('audit-comparison.json'))
+          assert a['history']['removed'] == len(a['activeDropped'])
+          assert a['history']['removed'] == 7, a['history']
+          assert a['history']['after'] == a['new_unique']
+          for e in a['activeDropped']:
+              print(json.dumps({'id':e['id'],'name':e['name'],'date_end':e['end'],'still_present_id':e['still_present_id'],'matching_name_events':e['matching_name_events']},ensure_ascii=False))
+          print("ALL_SEVEN_UNIQUE_IDENTITY_DIFFERENCES_IDENTIFIED")
+          PY
+      - name: Full repository regression test suite
+        working-directory: audit
+        run: |
+          set -euo pipefail
+          npm test
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          echo "ALL_REPOSITORY_REGRESSION_PASS"
+      - name: Preserve audit proofs (never publish or alter data)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: holiday-oct19-final-read-only-stage-proof
+          path: |
+            audit-comparison.json
+            ${{ runner.temp }}/continuity.json
+          if-no-files-found: warn
+          retention-days: 30

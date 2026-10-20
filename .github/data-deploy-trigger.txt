@@ -3,4 +3,4 @@ candidate_sha=59266b5587c3cd868b8d5637b2a363f1e3f52cd9
 base_data_production_sha=b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
 requested_on=2026-10-21
 approval=user-explicit-production-release-request
-note=Approved 2026-10-19 holiday-after six-week candidate after real 24-source review, with the official-source parity gate and the immutable-candidate history calculation restored. Strict validators must succeed on original candidate bytes. Zero event-file deletions or app/UI changes. Authorized prior tamemap one-run 403 exception only.
+note=Approved final retry for 2026-10-19 holiday-after six-week events, 169 unique events. Pre-promotion strict data validation against original production base is mandatory. Preview after promotion verifies frozen identical stage/prod SHA without invalid self-comparison; rollback on deployment failure. No event deletion or app/UI change. All required fixed source link audits reconciled and Tamemap 403 one-run deferral retained.

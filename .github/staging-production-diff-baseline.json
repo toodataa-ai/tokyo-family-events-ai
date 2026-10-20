@@ -432,6 +432,14 @@
       "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
       "disposition": "pending_release",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/fixed_source_directory.test.mjs",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "杉並区固定公式取得元追加に伴う回帰テストとPython収集テスト実行を追加",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "c5de42b4e8e1b3400458a837488c88145b9d42ac"

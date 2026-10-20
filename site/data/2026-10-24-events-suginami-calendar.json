@@ -1,0 +1,145 @@
+[
+  {
+    "id": "suginami-official-28531",
+    "ward": "杉並区",
+    "name": "花と緑の井草祭り（井草森公園）",
+    "url": "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+    "official_url": "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+    "source": "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+    "image": null,
+    "period": "10/24",
+    "date_start": "2026-10-24",
+    "date_end": "2026-10-24",
+    "time": "10:00〜14:00",
+    "venue": "井草森公園（杉並区井草4丁目12番1号）",
+    "price": "無料",
+    "description": "井草ガーデンタウンプロジェクトの一環。花と野菜の即売、地方物産の販売、花のプレゼント抽選会など。対象はどなたでも。当日直接会場へ。",
+    "categories": [
+      "祭り",
+      "花",
+      "地域イベント"
+    ],
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "reason": "地域の催しとして家族で参加可能。",
+      "rubric_version": "family-fit-v2",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "公式対象はどなたでも。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "即売会・抽選会・会場回遊。"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "幼児からの家族同伴が可能。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "自由来場型。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "開催時間が日中で、大きな負担の記載なし。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "公式入場無料。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "当日直接会場へ。"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "家族の週末お出かけとして参加価値あり。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "申込不要。当日直接会場へ。"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-10-21",
+      "confidence": "high",
+      "discovery_query": "suginami_calendar_all official day 2026-10-24"
+    }
+  },
+  {
+    "id": "suginami-official-28567",
+    "ward": "杉並区",
+    "name": "杉並清掃工場環境フェア2026",
+    "url": "https://www.city.suginami.tokyo.jp/s104/event/28567.html",
+    "official_url": "https://www.city.suginami.tokyo.jp/s104/event/28567.html",
+    "source": "https://www.city.suginami.tokyo.jp/s104/event/28567.html",
+    "image": "https://www.city.suginami.tokyo.jp/images/28567/kengaku.jpg",
+    "period": "10/25",
+    "date_start": "2026-10-25",
+    "date_end": "2026-10-25",
+    "time": "10:00〜15:00（最終入場14:30）",
+    "venue": "杉並清掃工場（杉並区高井戸東3丁目7番6号）",
+    "price": "無料",
+    "description": "親子で楽しめる工場見学、専用地下道探検、キャンドル作りなど。一部企画は事前予約や整理券が必要。車・バイクでの来場不可。",
+    "categories": [
+      "環境",
+      "工場見学",
+      "体験",
+      "親子"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "reason": "親子で参加しやすい体験型イベント。",
+      "rubric_version": "family-fit-v2",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "公式に親子の体験を明示。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "見学・体験・工作など。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "幼児からの家族同伴が可能。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "自由来場型。"
+        },
+        "burden": {
+          "grade": "A",
+          "reason": "開催時間が日中で、大きな負担の記載なし。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "公式入場無料。"
+        },
+        "reservation": {
+          "grade": "C",
+          "reason": "入場申込不要だが一部企画は予約や整理券が必要。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "家族の週末お出かけとして参加価値あり。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "入場は申込不要。地下道探検は事前予約（10/23正午まで受付予定）、キャンドル作りなどは整理券が必要。"
+    },
+    "indoor_outdoor": "屋内",
+    "ai": {
+      "checked_at": "2026-10-21",
+      "confidence": "high",
+      "discovery_query": "suginami_calendar_all official day 2026-10-25"
+    }
+  }
+]

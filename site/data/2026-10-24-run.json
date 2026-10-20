@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 78,
-    "published": 78,
+    "candidates": 80,
+    "published": 80,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 78,
+    "verified": 80,
     "announced": 0,
     "corrected": 1,
-    "thumbnail_count": 59,
-    "thumbnail_coverage": 0.8194444444444444,
+    "thumbnail_count": 60,
+    "thumbnail_coverage": 0.75,
     "decision_audit_complete": true,
     "hard_excluded": 3,
     "soft_excluded": 1,
@@ -211,5 +211,21 @@
       ],
       "multi_program_parents_automatically_rolled": false
     }
-  ]
+  ],
+  "suginami_daily_official_recovery": {
+    "as_of_jst": "2026-10-21",
+    "verified_detail_pages": [
+      "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+      "https://www.city.suginami.tokyo.jp/s104/event/28567.html"
+    ],
+    "calendar_day_pages": [
+      "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=24&month=10&type=3&year=2026",
+      "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=25&month=10&type=3&year=2026"
+    ],
+    "added": 2,
+    "removed": 0,
+    "older_rows_untouched": true,
+    "all_42_day_parity_completed": false,
+    "publication_eligibility": "pending_expanded_calendar_row_audit"
+  }
 }

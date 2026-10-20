@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-20",
+  "verified_on": "2026-10-21",
   "events": [
     {
       "id": "v15-272dbd09eb0a",
@@ -1680,11 +1680,49 @@
       },
       "corrections": {},
       "note": "2026-10-20主催/自治体再確認: 豊島区公式9/18～11/23、10～18時、トキワ荘通り昭和レトロ館で開催。"
+    },
+    {
+      "id": "suginami-official-28531",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "杉並区公式により対象どなたでも・申込不要・料金無料を確認。"
+    },
+    {
+      "id": "suginami-official-28567",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s104/event/28567.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "target": "pass",
+        "cancellation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "杉並区公式により親子向け体験と一部予約・整理券を確認。"
     }
   ],
   "summary": {
-    "total": 78,
-    "verified": 78,
+    "total": 80,
+    "verified": 80,
     "announced": 0,
     "corrected": 0
   }

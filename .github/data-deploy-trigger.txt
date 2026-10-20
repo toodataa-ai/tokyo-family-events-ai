@@ -1,5 +1,6 @@
-operation=manual-fixed-source-append-only
-candidate_sha=b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
-base_data_production_sha=40a4c1c600bef6407745c65489c984a6b67b63c3
-requested_at=2026-10-17T12:51:00+09:00
-note=Append 12 official or organizer-verified event rows discovered from Tamemap Nakano and Itabashi Times. Preserve all 349 preexisting published rows and event details unchanged; 361 total across 6 weeks. All 5 modified weeks: 0 prior-row deletion, 0 prior-row mutation, 0 duplicate ID; event verification records present. Workshop marked fully booked according to Nakano City. No site code, application UX, or existing event removals. Incremental search, not full 23-ward search.
+operation=holiday-after-update
+candidate_sha=ca22faff99acebdfca89e82e09ea7d524bcb8e20
+base_data_production_sha=b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
+requested_on=2026-10-21
+approval=user-explicit-production-release-request
+note=Release the independently strict-audited 2026-10-19 holiday-after six-week data candidate. Keep all archived previously published event records. No UI/code promotion; no unauthorized removal. Previous staged preview run 39464906300 and full independent audit run 39459527285 passed. Tamemap 403 deferred only for this dated run with recorded evidence.

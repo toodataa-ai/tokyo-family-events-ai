@@ -115,6 +115,35 @@ def html_links(body, source_url):
     return " ".join(p.title).strip()[:180], out
 
 
+def suginami_official_event_links(body, source_url):
+    """Extract every official event ID, not just keyword-matched titles.
+
+    The unfiltered daily calendar contains event rows and complete multi-day
+    ranges. The monthly view is truncated; a successful HTTP 200 alone does
+    not establish completeness.
+    """
+    if "イベントカレンダー" not in body:
+        raise ValueError("not a Suginami event calendar")
+    parser = VisibleLinks()
+    parser.feed(body)
+    events = {}
+    for link in parser.links:
+        url = urljoin(source_url, link["href"])
+        m = re.fullmatch(r"https://www\.city\.suginami\.tokyo\.jp/s\d+/event/(\d+)\.html", url)
+        if not m:
+            continue
+        raw_title = link["name"].replace("\u00a0", " ")
+        name = re.split(r"\s+20\d\d年", raw_title, maxsplit=1)[0].strip()
+        if not name:
+            raise ValueError("official event link missing title: " + url)
+        events[m.group(1)] = {
+            "candidate_id": "suginami-official-" + m.group(1),
+            "name": name, "discovery_url": url, "official_url": url,
+            "source_id": "suginami_calendar_all"
+        }
+    return list(events.values())
+
+
 def fetch_url(url, fetcher=None, attempts=2):
     """Return real retrieval evidence. A transport success is NOT event verification."""
     evidence = {"url": url, "checked_at": now(), "status": "error"}
@@ -244,6 +273,10 @@ def inspect(job, fetcher=None):
     try:
         if job["kind"] in ("ai_cross", "holiday_ai_cross"):
             result["candidates"] = rss_items(evidence["body"], result, ward=job.get("ward"))
+        elif job.get("source_id") == "suginami_calendar_all":
+            result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
+            result["page_title"] = "杉並区公式イベントカレンダー"
+            result["official_event_link_count"] = len(result["candidates"])
         else:
             title, links = html_links(evidence["body"], job["url"])
             if not title and not links:

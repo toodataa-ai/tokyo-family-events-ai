@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-17",
+  "updated_at": "2026-10-21",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -421,6 +421,22 @@
         "https://itabashi-times.com/archives/event{YYYY}{MM}.html",
         "https://itabashi-times.com/archives/event{YYYY}{MM}{DD}.html"
       ]
+    },
+    {
+      "id": "suginami_calendar_all",
+      "label": "杉並区公式イベントカレンダー（全ジャンル・日別巡回）",
+      "origin": "official_added",
+      "enabled": true,
+      "required": true,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.city.suginami.tokyo.jp/event/index.html",
+      "search_urls": [
+        "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}"
+      ],
+      "calendar_daily_unfiltered": true,
+      "event_row_audit_required": true,
+      "note": "従来のおまつり限定を保持したまま追加。月別一覧は最大5件程度で省略されるため、6週間内の42日の日別無条件一覧(type=3)を必ず全走査し、/s数字/event/数字.htmlの全候補をID別に監査する。掲載確定は別の公式詳細確認・採否監査後。"
     }
   ],
   "protected_source_ids": [
@@ -447,6 +463,7 @@
     "itabashi_official_festival",
     "itabashi_tourism_festival",
     "tamemap_nakano",
-    "itabashi_times_event"
+    "itabashi_times_event",
+    "suginami_calendar_all"
   ]
 }

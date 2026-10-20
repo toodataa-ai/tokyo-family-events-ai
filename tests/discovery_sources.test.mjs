@@ -83,3 +83,9 @@ for (const [id,url] of Object.entries(newMandatory)) {
   assert.equal(source.event_row_audit_required,true,`${id}: per-event parity missing`);
   assert.ok(data.protected_source_ids.includes(id),`${id}: source must be protected`);
 }
+
+const suginamiAll=sources.find(x=>x.id==='suginami_calendar_all');
+assert.ok(suginamiAll?.enabled && suginamiAll?.required && suginamiAll?.calendar_daily_unfiltered);
+assert.equal(suginamiAll.event_row_audit_required,true);
+assert.ok(data.protected_source_ids.includes(suginamiAll.id));
+console.log('Suginami official all-category daily source: OK');

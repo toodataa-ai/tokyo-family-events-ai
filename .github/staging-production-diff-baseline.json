@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-10-20",
+  "audited_at_jst": "2026-10-21",
   "baseline_app_release": "release/2026-10-17-r5",
   "baseline_production_commit": "cb99bc011be90d30769f484ca655a337d0ff70b8",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
@@ -375,6 +375,62 @@
       "category": "staging_tool",
       "reason": "data専用公開CIでmainの厳格公式監査を維持しつつ、取得HTTPステータスとCloudflare証跡がある同一runの保留のみ許容。",
       "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/app.js",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/data/discovery_sources.json",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/rolling_horizon.py",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/app_filter.test.mjs",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/discovery_sources.test.mjs",
+      "kind": "different",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_suginami_calendar.py",
+      "kind": "staging_only",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/SUGINAMI_CALENDAR_COVERAGE.md",
+      "kind": "staging_only",
+      "category": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
+      "disposition": "pending_release",
       "requires_user_approval_to_release": true
     }
   ],

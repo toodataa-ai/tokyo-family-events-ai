@@ -275,8 +275,12 @@ jobs:
             python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
             python3 ../production-src/tools/validate_decisions.py --strict site/data
             python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
-            python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data
-            python3 ../staging-src/tools/validate_non_regression.py --base-ref "$base" site/data
+            if [ "$stage" != "$base" ]; then
+              python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data
+              python3 ../staging-src/tools/validate_non_regression.py --base-ref "$base" site/data
+            else
+              echo "ALREADY_PROMOTED_SAME_SHA: pre-promotion validate_data passed, no self-comparison required"
+            fi
             python3 ../production-src/tools/validate_rereview.py site/data --strict
             if [ "$stage" != "$base" ]; then
               node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data

@@ -68,7 +68,12 @@
 
 静的な収集ポリシーやプロンプト設定は production 側を使用する。
 
-ステージングは `main/site` に最新の `data-production` 動的データを重ねるため、改修確認時も本番相当の最新データで確認できる。
+ステージング `/staging/` は **`main/site` + `data-staging/site/data` の動的データ候補**を使用する。これは更新候補の実表示と更新履歴を本番公開前に確認できるようにするためである。一方、公開ルート `/` は常に **`production/site` + `data-production/site/data`** を維持し、ステージング候補を本番へ混ぜない。
+
+- Pagesプレビューの合成前に `data-production` と `data-staging` のコミットSHAとリモートHEADを固定確認し、ステージング候補の全Strict監査・非退行・既存レコード保護・更新履歴整合を再検証する。監査NG時は当該プレビュー配信を止め、正常表示を偽装しない。
+- ステージング画面右下の帯は `STAGING <アプリSHA> / DATA <候補データSHA>` とし、どの候補が表示されているか識別する。
+- 本番 `data-production` の更新は定例データ更新専用の `main/.github/data-deploy-trigger.txt` による別ゲートだけで実行する。プレビュー配信が `data-production` や `production` ブランチを更新してはいけない。
+- ステージング側の169件等は更新候補の集計であり、6週間ローリングの開始日が変わるため、旧本番の264件との差をそのまま削除件数と呼ばない。
 
 ## 6. アプリのロールバック
 

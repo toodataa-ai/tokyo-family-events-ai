@@ -4,9 +4,9 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 34,
+    "candidate_total": 35,
     "published": 19,
-    "excluded": 15,
+    "excluded": 16,
     "duplicate": 0
   },
   "decisions": [
@@ -2263,6 +2263,77 @@
       ],
       "negative_signals": [],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "link-ccaf49e9645fc53e",
+      "name": "第13回 中野区検定",
+      "ward": "中野区",
+      "decision": "excluded",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "C",
+        "axes": {
+          "child_target": {
+            "grade": "C",
+            "reason": "子ども専用の参加型催事ではなく、地域知識を問う個人受験の一般向け検定。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "公式日程は60分の筆記試験で、遊びや親子共同体験は案内されていない。"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "小中学生は受験可能だが幼児向けでなく、家族で一緒に遊ぶ催事ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "試験時刻が固定（10時開始、60分）で途中参加や自由回遊ができない。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "試験時間中の着席が求められ、幼児同伴の気軽なレジャーとしての負荷が高い。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "小中学生検定料500円。一般1500円で家族構成により支出する。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込必須、11月16日締切、先着100人。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "中野区の地域学習の価値はあるが、親子で楽しむ体験イベントとは異なる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "educational_value"
+      ],
+      "negative_signals": [
+        "age_mismatch",
+        "passive_only",
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": "soft",
+      "primary_reason_code": "age_mismatch",
+      "reason_codes": [
+        "age_mismatch",
+        "passive_only",
+        "reservation_difficult"
+      ],
+      "reasons": [
+        "公式日程では11月29日に実施される受験者個人向け検定。子どもの受検は可能だが、幼児を含む家族が共に参加・体験する休日イベントではなく、60分の試験・事前申し込みが必要なため、子連れレジャーとしての掲載を見送る。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nakano-kanko.com/event-info/event-3797/",
+          "basis": "公式11月29日実施、10時から60分の試験、11月16日申込締切、小中学生500円・事前予約・先着100名を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-10-21: source index had this dated event among 10 raw links. Reviewed individually, and excluded on family-oriented leisure rubric. All other nine raw source leads preserved and reconciled in 2026-11-28-run.json."
     }
   ]
 }

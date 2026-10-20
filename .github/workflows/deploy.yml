@@ -249,6 +249,40 @@ jobs:
         with:
           ref: data-production
           path: data-production-src
+      - name: Checkout unpublished staging data candidate
+        uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 0
+          path: data-staging-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate staging preview data separately and freeze both data branch heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$(git -C data-production-src rev-parse HEAD)"
+          stage="$(git -C data-staging-src rev-parse HEAD)"
+          test "$(git -C data-production-src ls-remote origin refs/heads/data-production | cut -f1)" = "$base"
+          test "$(git -C data-staging-src ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
+          git -C data-staging-src merge-base --is-ancestor "$base" "$stage"
+          (
+            cd data-staging-src
+            python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+            python3 ../production-src/tools/validate_decisions.py --strict site/data
+            python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+            python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data
+            python3 ../staging-src/tools/validate_non_regression.py --base-ref "$base" site/data
+            python3 ../production-src/tools/validate_rereview.py site/data --strict
+            if [ "$stage" != "$base" ]; then
+              node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data
+            fi
+          )
+          echo "STAGING_PREVIEW_DATA_STRICT_PASS stage=$stage production=$base"
       - name: Compose production root and hidden staging preview
         shell: bash
         run: |
@@ -262,9 +296,10 @@ jobs:
           import shutil
           import subprocess
 
-          data_src = Path("data-production-src/site/data")
+          production_data_src = Path("data-production-src/site/data")
+          staging_data_src = Path("data-staging-src/site/data")
 
-          def overlay_runtime_data(dest):
+          def overlay_runtime_data(data_src, dest):
               dest = Path(dest)
               dest.mkdir(parents=True, exist_ok=True)
               for p in dest.glob("20??-??-??*.json"):
@@ -281,8 +316,18 @@ jobs:
                       raise SystemExit(f"missing runtime data file: {src}")
                   shutil.copy2(src, dest / name)
 
-          overlay_runtime_data("pages/data")
-          overlay_runtime_data("pages/staging/data")
+          # Production and preview are intentionally backed by independent branches.
+          # Never promote data-staging or modify the production tree in a preview run.
+          overlay_runtime_data(production_data_src, "pages/data")
+          overlay_runtime_data(staging_data_src, "pages/staging/data")
+          for source, dest in [
+              (production_data_src, Path("pages/data")),
+              (staging_data_src, Path("pages/staging/data")),
+          ]:
+              for name in ("manifest.json", "update_history.json"):
+                  if (dest / name).read_bytes() != (source / name).read_bytes():
+                      raise SystemExit(f"Preview composition mismatch: {dest / name}")
+          print("PRODUCTION_DATA_UNCHANGED_AND_STAGING_CANDIDATE_VISIBLE")
 
           release_registry = Path("staging-src/.github/production-releases.json")
           if release_registry.exists():
@@ -293,6 +338,10 @@ jobs:
               ["git","-C","staging-src","rev-parse","--short=7","HEAD"],
               text=True
           ).strip()
+          data_sha = subprocess.check_output(
+              ["git","-C","data-staging-src","rev-parse","--short=7","HEAD"],
+              text=True
+          ).strip()
 
           marker = '<meta name="robots" content="noindex,nofollow">'
           style = '''<style id="staging-visual-marker">
@@ -300,7 +349,7 @@ jobs:
           .staging-visual-marker{position:fixed;right:6px;bottom:6px;display:flex;align-items:center;gap:5px;background:rgba(138,75,8,.92);color:#fff7ed;border-radius:999px;padding:4px 7px;font-family:"Meiryo UI",Meiryo,sans-serif;font-size:9px;font-weight:800;line-height:1;letter-spacing:.02em;z-index:2147483647;box-shadow:0 1px 3px rgba(0,0,0,.18);pointer-events:none}
           .staging-visual-marker small{font-size:8px;font-weight:700;opacity:.9}
           </style>'''
-          banner = f'<div class="staging-visual-marker" role="status">STAGING <small>{short_sha}</small></div>'
+          banner = f'<div class="staging-visual-marker" role="status">STAGING <small>{short_sha} / DATA {data_sha}</small></div>'
 
           for p in Path("pages/staging").glob("*.html"):
               s=p.read_text(encoding="utf-8")

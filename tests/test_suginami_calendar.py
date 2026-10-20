@@ -43,5 +43,20 @@ class TestSuginamiCalendar(unittest.TestCase):
         self.assertEqual(row["candidates"], [])
 
 
+    def test_daily_inspection_keeps_official_page_ids(self):
+        page = """<html><title>イベントカレンダー</title>
+        <a href="/s033/event/28531.html">花と緑の井草祭り</a>
+        <a href="/s104/event/28567.html">杉並清掃工場環境フェア2026</a></html>"""
+        def fixture(url):
+            return 200, page.encode("utf-8"), url, "text/html;charset=utf-8"
+        row = inspect({"kind": "explicit", "source_id": "suginami_calendar_all",
+                       "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3"},
+                      fixture)
+        self.assertEqual(row["status"], "checked")
+        self.assertEqual(row["official_event_link_count"], 2)
+        self.assertEqual({x["candidate_id"] for x in row["candidates"]},
+                         {"suginami-official-28531", "suginami-official-28567"})
+
+
 if __name__ == "__main__":
     unittest.main()

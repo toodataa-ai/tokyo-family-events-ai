@@ -16,8 +16,8 @@ class TestSuginamiCalendar(unittest.TestCase):
         selected = source_targets(sources, dt.date(2026, 10, 21), dt.date(2026, 12, 1))
         all_source = next(x for x in selected if x["id"] == "suginami_calendar_all")
         self.assertEqual(len(all_source["urls"]), 45)  # 3 months + 42 calendar days
-        self.assertIn("calendar.cgi?day=24&month=10&type=3&year=2026", all_source["urls"])
-        self.assertIn("calendar.cgi?day=25&month=10&type=3&year=2026", all_source["urls"])
+        self.assertTrue(any(x.endswith("calendar.cgi?day=24&month=10&type=3&year=2026") for x in all_source["urls"]))
+        self.assertTrue(any(x.endswith("calendar.cgi?day=25&month=10&type=3&year=2026") for x in all_source["urls"]))
         legacy = next(x for x in selected if x["id"] == "suginami_festival")
         self.assertTrue(all("event_category=5" in x for x in legacy["urls"]))
 

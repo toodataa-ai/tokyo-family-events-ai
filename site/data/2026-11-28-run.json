@@ -1465,6 +1465,10 @@
       "challenge_detected": null,
       "error": null,
       "candidate_ids": [
+        "link-ccaf49e9645fc53e"
+      ],
+      "candidate_count": 1,
+      "raw_link_candidate_ids": [
         "link-dfe9e6dfc156258a",
         "link-7b6d2f38824f00f2",
         "link-d0a2b21d2b273209",
@@ -1476,7 +1480,132 @@
         "link-aaf7e6ffe9951a72",
         "link-d92292ed9f6ab336"
       ],
-      "candidate_count": 10
+      "raw_link_candidate_count": 10,
+      "raw_link_reviews": [
+        {
+          "candidate_id": "link-dfe9e6dfc156258a",
+          "name": "KOMAFES2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3830/",
+          "official_date_start": "2026-10-17",
+          "official_date_end": "2026-10-18",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3830/"
+        },
+        {
+          "candidate_id": "link-7b6d2f38824f00f2",
+          "name": "2026なかの東北絆まつり",
+          "url": "https://www.nakano-kanko.com/event-info/event-3839/",
+          "official_date_start": "2026-10-24",
+          "official_date_end": "2026-10-25",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3839/"
+        },
+        {
+          "candidate_id": "link-d0a2b21d2b273209",
+          "name": "中野ショートフィルムフェスティバル「ナカンヌ」作品募集",
+          "url": "https://www.nakano-kanko.com/event-info/event-3888/",
+          "official_date_start": null,
+          "official_date_end": null,
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "作品募集の案内。対象週の来場・参加イベント開催日ではない。サイトの日付表示も矛盾するため開催日と推定しない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3888/"
+        },
+        {
+          "candidate_id": "link-fb9d7e7c6d8cc18d",
+          "name": "MIYA SONIC 2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3846/",
+          "official_date_start": "2026-11-07",
+          "official_date_end": "2026-11-07",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3846/"
+        },
+        {
+          "candidate_id": "link-ccaf49e9645fc53e",
+          "name": "第13回 中野区検定",
+          "url": "https://www.nakano-kanko.com/event-info/event-3797/",
+          "official_date_start": "2026-11-29",
+          "official_date_end": "2026-11-29",
+          "target_week": "2026-11-28",
+          "classification": "valid_dated_event_reviewed_excluded",
+          "reason": "小中学生も受験可能だが、時間固定の個人筆記試験・事前申込で、家族のレジャー参加単位としての適合が低い",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3797/"
+        },
+        {
+          "candidate_id": "link-658433a4061af2c9",
+          "name": "中野×杉並×豊島アニメ・マンガフェス2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3881/",
+          "official_date_start": "2026-12-05",
+          "official_date_end": "2026-12-05",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象の6週間より先に開催予定",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3881/"
+        },
+        {
+          "candidate_id": "link-885937bb09f17a3a",
+          "name": "WILDチャンプルー",
+          "url": "https://www.nakano-kanko.com/event-info/event-3826/",
+          "official_date_start": "2026-10-11",
+          "official_date_end": "2026-10-11",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3826/"
+        },
+        {
+          "candidate_id": "link-5531c4baa5dc9de7",
+          "name": "RUN伴なかの2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3788/",
+          "official_date_start": "2026-09-19",
+          "official_date_end": "2026-09-19",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3788/"
+        },
+        {
+          "candidate_id": "link-aaf7e6ffe9951a72",
+          "name": "熱狂中野ラーメン祭2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3790/",
+          "official_date_start": "2026-09-19",
+          "official_date_end": "2026-09-27",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "対象週より前に終了したイベント",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3790/"
+        },
+        {
+          "candidate_id": "link-d92292ed9f6ab336",
+          "name": "10th TOKYO TANPEN fest. 2026",
+          "url": "https://www.nakano-kanko.com/event-info/event-3791/",
+          "official_date_start": "2026-09-29",
+          "official_date_end": "2026-09-30",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "公式は長期イベント期間表示だが中野会場の独立上映会は9/29・9/30のみ。対象週開催を裏付ける日別告知なし",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.nakano-kanko.com/event-info/event-3791/"
+        }
+      ],
+      "official_row_count": 1,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     },
     {
       "source_id": "itabashi_official_festival",
@@ -1487,11 +1616,42 @@
       "response_server": null,
       "challenge_detected": null,
       "error": null,
-      "candidate_ids": [
+      "candidate_ids": [],
+      "candidate_count": 0,
+      "raw_link_candidate_ids": [
         "link-8053f40d8f96eab2",
         "link-ea34d2126c257c44"
       ],
-      "candidate_count": 2
+      "raw_link_candidate_count": 2,
+      "raw_link_reviews": [
+        {
+          "candidate_id": "link-8053f40d8f96eab2",
+          "name": "文化・スポーツ・産業（案内）",
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/index.html",
+          "official_date_start": null,
+          "official_date_end": null,
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "カテゴリ案内ページであり独立したイベントではない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.city.itabashi.tokyo.jp/bunka/index.html"
+        },
+        {
+          "candidate_id": "link-ea34d2126c257c44",
+          "name": "ぐるっと板橋LINEスタンプラリー（過年度）",
+          "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1055151.html",
+          "official_date_start": "2025-12-11",
+          "official_date_end": "2026-01-28",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "区公式が令和7年度開催終了と明記。今回の週末に開催しない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1055151.html"
+        }
+      ],
+      "official_row_count": 0,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     },
     {
       "source_id": "itabashi_official_festival",
@@ -1503,7 +1663,13 @@
       "challenge_detected": null,
       "error": null,
       "candidate_ids": [],
-      "candidate_count": 0
+      "candidate_count": 0,
+      "raw_link_candidate_ids": [],
+      "raw_link_candidate_count": 0,
+      "raw_link_reviews": [],
+      "official_row_count": 0,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     },
     {
       "source_id": "itabashi_tourism_festival",
@@ -1514,12 +1680,55 @@
       "response_server": null,
       "challenge_detected": null,
       "error": null,
-      "candidate_ids": [
+      "candidate_ids": [],
+      "candidate_count": 0,
+      "raw_link_candidate_ids": [
         "link-bb708e37f5b6a99c",
         "link-6dad17e528aa8edd",
         "link-183095598ab653fc"
       ],
-      "candidate_count": 3
+      "raw_link_candidate_count": 3,
+      "raw_link_reviews": [
+        {
+          "candidate_id": "link-bb708e37f5b6a99c",
+          "name": "イベント情報（案内）",
+          "url": "https://itabashi-kanko.jp/event/",
+          "official_date_start": null,
+          "official_date_end": null,
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "観光協会のイベント一覧ページ。単一イベントの開催日ではない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://itabashi-kanko.jp/event/"
+        },
+        {
+          "candidate_id": "link-6dad17e528aa8edd",
+          "name": "スポーツひろば（第55回板橋区民まつり内）",
+          "url": "https://itabashi-kanko.jp/pickup/detail?id=1799#act9",
+          "official_date_start": "2026-10-17",
+          "official_date_end": "2026-10-18",
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "区民まつり2026年10/17・10/18の実施区画であり対象週より前に終了",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://itabashi-kanko.jp/pickup/detail?id=1799#act9"
+        },
+        {
+          "candidate_id": "link-183095598ab653fc",
+          "name": "板橋区スポーツ協会（案内）",
+          "url": "https://www.itabashi-sa.or.jp/",
+          "official_date_start": null,
+          "official_date_end": null,
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "団体公式ホームページであり参加日時のある独立イベントではない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://www.itabashi-sa.or.jp/"
+        }
+      ],
+      "official_row_count": 0,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     },
     {
       "source_id": "tamemap_nakano",
@@ -1556,10 +1765,29 @@
       "response_server": null,
       "challenge_detected": null,
       "error": null,
-      "candidate_ids": [
+      "candidate_ids": [],
+      "candidate_count": 0,
+      "raw_link_candidate_ids": [
         "link-4dfd20b05dd5381d"
       ],
-      "candidate_count": 1
+      "raw_link_candidate_count": 1,
+      "raw_link_reviews": [
+        {
+          "candidate_id": "link-4dfd20b05dd5381d",
+          "name": "イベント情報（カテゴリ）",
+          "url": "https://itabashi-times.com/category/event",
+          "official_date_start": null,
+          "official_date_end": null,
+          "target_week": "2026-11-28",
+          "classification": "not_eligible_participation_unit_on_target_week",
+          "reason": "イベント記事一覧へのナビゲーション。単一イベントではない",
+          "reviewed_on": "2026-10-21",
+          "evidence_url": "https://itabashi-times.com/category/event"
+        }
+      ],
+      "official_row_count": 0,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     },
     {
       "source_id": "itabashi_times_event",
@@ -1571,14 +1799,23 @@
       "challenge_detected": null,
       "error": null,
       "candidate_ids": [],
-      "candidate_count": 0
+      "candidate_count": 0,
+      "raw_link_candidate_ids": [],
+      "raw_link_candidate_count": 0,
+      "raw_link_reviews": [],
+      "official_row_count": 0,
+      "unmatched_official_rows": false,
+      "source_event_reconciliation": "all original HTML link leads retained in raw_link_reviews; only dated in-week individual participation units counted"
     }
   ],
   "stages": [],
   "summary": {
     "published": 19,
     "verified": 13,
-    "announced": 6
+    "announced": 6,
+    "candidates": 35,
+    "excluded": 16,
+    "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
   "individual_primary_official_additions": [
     {

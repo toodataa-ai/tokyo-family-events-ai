@@ -3,4 +3,4 @@ candidate_sha=59266b5587c3cd868b8d5637b2a363f1e3f52cd9
 base_data_production_sha=b1282eb0f24ec6436b1ef8cf52d3df597b262c0b
 requested_on=2026-10-21
 approval=user-explicit-production-release-request
-note=Retry approved 2026-10-19 holiday-after data release after preserving and fact-checking all 16 raw HTML link leads for each of Nov21 and Nov28. Source review records navigation links and out-of-window events separately from official in-week event rows, and explicitly excludes the Nov29 Nakano examination on documented family-fit grounds. Full production strict gate must PASS. Preserve all existing published IDs; do not modify app/UI or unauthorized data.
+note=Approved 2026-10-19 holiday-after six-week candidate after real 24-source review, with the official-source parity gate and the immutable-candidate history calculation restored. Strict validators must succeed on original candidate bytes. Zero event-file deletions or app/UI changes. Authorized prior tamemap one-run 403 exception only.

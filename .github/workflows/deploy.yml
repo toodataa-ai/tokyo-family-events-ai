@@ -171,8 +171,10 @@ jobs:
                   continue
               shutil.copy2(p, dst / p.name)
           PY
-      - name: Enrich candidate thumbnails for validation only
-        run: python production-src/tools/enrich_images.py site/data
+      # The candidate SHA is the ONLY publishable data source. Image discovery
+      # must happen before the candidate is frozen in data-staging: enrichment
+      # here mutates event JSON in the runner and invalidates update_history.
+      # The following strict validator checks existing thumbnail coverage without edits.
       - name: Validate candidate event data strictly
         run: python production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
       - name: Validate candidate family-fit decisions strictly
@@ -191,6 +193,232 @@ jobs:
       - name: Validate holiday-after data publication history
         if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}
         run: node staging-policy-src/tools/holiday_update_history.mjs --check --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data
+      - name: Fail closed if validation changed any publishable candidate bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed="$(git diff --name-only -- site/data)"
+          if printf '%s\n' "$changed" | grep -E '^site/data/(20[0-9]{2}-[0-9]{2}-[0-9]{2}[^/]*[.]json|manifest[.]json|update_history[.]json)
+        working-directory: production-src
+        run: npm test
+
+  promote_data:
+    needs: [gate, validate_data]
+    if: ${{ needs.gate.outputs.mode == 'data' && needs.validate_data.result == 'success' }}
+    runs-on: ubuntu-latest
+    outputs:
+      previous_sha: ${{ steps.promote.outputs.previous_sha }}
+      candidate_sha: ${{ steps.promote.outputs.candidate_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.gate.outputs.candidate_sha }}
+          fetch-depth: 0
+      - id: promote
+        shell: bash
+        run: |
+          expected="${{ needs.gate.outputs.base_data_production_sha }}"
+          candidate="$(git rev-parse HEAD)"
+          current="$(git ls-remote origin refs/heads/data-production | awk '{print $1}')"
+
+          if [ "$current" != "$expected" ]; then
+            echo "data-production moved: expected $expected but found $current" >&2
+            exit 1
+          fi
+
+          git push origin "HEAD:refs/heads/data-production" --force-with-lease="refs/heads/data-production:$expected"
+          echo "previous_sha=$expected" >> "$GITHUB_OUTPUT"
+          echo "candidate_sha=$candidate" >> "$GITHUB_OUTPUT"
+
+  preview:
+    needs: [gate, validate_staging, validate_data, promote_data]
+    if: >-
+      ${{ always() &&
+          ((needs.gate.outputs.mode == 'staging' && needs.validate_staging.result == 'success') ||
+           (needs.gate.outputs.mode == 'data' && needs.validate_data.result == 'success' && needs.promote_data.result == 'success')) }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}staging/
+    steps:
+      - name: Checkout staging application
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-src
+      - name: Checkout production application
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: production-src
+      - name: Checkout production data
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: data-production-src
+      - name: Checkout unpublished staging data candidate
+        uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 0
+          path: data-staging-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate staging preview data separately and freeze both data branch heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$(git -C data-production-src rev-parse HEAD)"
+          stage="$(git -C data-staging-src rev-parse HEAD)"
+          test "$(git -C data-production-src ls-remote origin refs/heads/data-production | cut -f1)" = "$base"
+          test "$(git -C data-staging-src ls-remote origin refs/heads/data-staging | cut -f1)" = "$stage"
+          git -C data-staging-src merge-base --is-ancestor "$base" "$stage"
+          (
+            cd data-staging-src
+            python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+            python3 ../production-src/tools/validate_decisions.py --strict site/data
+            python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+            python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data
+            python3 ../staging-src/tools/validate_non_regression.py --base-ref "$base" site/data
+            python3 ../production-src/tools/validate_rereview.py site/data --strict
+            if [ "$stage" != "$base" ]; then
+              node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data
+            fi
+          )
+          echo "STAGING_PREVIEW_DATA_STRICT_PASS stage=$stage production=$base"
+      - name: Compose production root and hidden staging preview
+        shell: bash
+        run: |
+          mkdir -p pages
+          cp -a production-src/site/. pages/
+          mkdir -p pages/staging
+          cp -a staging-src/site/. pages/staging/
+
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          import subprocess
+
+          production_data_src = Path("data-production-src/site/data")
+          staging_data_src = Path("data-staging-src/site/data")
+
+          def overlay_runtime_data(data_src, dest):
+              dest = Path(dest)
+              dest.mkdir(parents=True, exist_ok=True)
+              for p in dest.glob("20??-??-??*.json"):
+                  p.unlink()
+              for name in ("manifest.json", "update_history.json"):
+                  p = dest / name
+                  if p.exists():
+                      p.unlink()
+              for p in data_src.glob("20??-??-??*.json"):
+                  shutil.copy2(p, dest / p.name)
+              for name in ("manifest.json", "update_history.json"):
+                  src = data_src / name
+                  if not src.exists():
+                      raise SystemExit(f"missing runtime data file: {src}")
+                  shutil.copy2(src, dest / name)
+
+          # Production and preview are intentionally backed by independent branches.
+          # Never promote data-staging or modify the production tree in a preview run.
+          overlay_runtime_data(production_data_src, "pages/data")
+          overlay_runtime_data(staging_data_src, "pages/staging/data")
+          for source, dest in [
+              (production_data_src, Path("pages/data")),
+              (staging_data_src, Path("pages/staging/data")),
+          ]:
+              for name in ("manifest.json", "update_history.json"):
+                  if (dest / name).read_bytes() != (source / name).read_bytes():
+                      raise SystemExit(f"Preview composition mismatch: {dest / name}")
+          print("PRODUCTION_DATA_UNCHANGED_AND_STAGING_CANDIDATE_VISIBLE")
+
+          release_registry = Path("staging-src/.github/production-releases.json")
+          if release_registry.exists():
+              shutil.copy2(release_registry, "pages/data/production-releases.json")
+              shutil.copy2(release_registry, "pages/staging/data/production-releases.json")
+
+          short_sha = subprocess.check_output(
+              ["git","-C","staging-src","rev-parse","--short=7","HEAD"],
+              text=True
+          ).strip()
+          data_sha = subprocess.check_output(
+              ["git","-C","data-staging-src","rev-parse","--short=7","HEAD"],
+              text=True
+          ).strip()
+
+          marker = '<meta name="robots" content="noindex,nofollow">'
+          style = '''<style id="staging-visual-marker">
+          html::after{content:"";position:fixed;inset:0;border:2px solid rgba(138,75,8,.8);pointer-events:none;z-index:2147483646}
+          .staging-visual-marker{position:fixed;right:6px;bottom:6px;display:flex;align-items:center;gap:5px;background:rgba(138,75,8,.92);color:#fff7ed;border-radius:999px;padding:4px 7px;font-family:"Meiryo UI",Meiryo,sans-serif;font-size:9px;font-weight:800;line-height:1;letter-spacing:.02em;z-index:2147483647;box-shadow:0 1px 3px rgba(0,0,0,.18);pointer-events:none}
+          .staging-visual-marker small{font-size:8px;font-weight:700;opacity:.9}
+          </style>'''
+          banner = f'<div class="staging-visual-marker" role="status">STAGING <small>{short_sha} / DATA {data_sha}</small></div>'
+
+          for p in Path("pages/staging").glob("*.html"):
+              s=p.read_text(encoding="utf-8")
+              if marker not in s:
+                  s=s.replace("<head>", "<head>\n"+marker, 1)
+              if 'id="staging-visual-marker"' not in s:
+                  s=s.replace("</head>", style+"\n</head>", 1)
+              if 'class="staging-visual-marker"' not in s:
+                  body_pos=s.find("<body")
+                  if body_pos != -1:
+                      body_end=s.find(">", body_pos)
+                      if body_end != -1:
+                          s=s[:body_end+1]+"\n"+banner+s[body_end+1:]
+              p.write_text(s,encoding="utf-8")
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  snapshot_data:
+    needs: [gate, promote_data, preview]
+    if: ${{ always() && needs.gate.outputs.mode == 'data' && needs.gate.outputs.operation != 'bootstrap' && needs.promote_data.result == 'success' && needs.preview.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+      - name: Preserve immutable production-data snapshot
+        shell: bash
+        run: |
+          stamp="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          branch="data-release/${stamp}-r${GITHUB_RUN_NUMBER}"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Snapshot already exists: $branch"
+          else
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+          echo "Preserved $branch at $(git rev-parse HEAD)"
+
+  rollback_data_on_deploy_failure:
+    needs: [gate, promote_data, preview]
+    if: ${{ always() && needs.gate.outputs.mode == 'data' && needs.promote_data.result == 'success' && needs.preview.result != 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 0
+      - name: Restore prior production-data pointer
+        shell: bash
+        run: |
+          previous="${{ needs.promote_data.outputs.previous_sha }}"
+          candidate="${{ needs.promote_data.outputs.candidate_sha }}"
+          git fetch origin "$previous"
+          git push origin "$previous:refs/heads/data-production" --force-with-lease="refs/heads/data-production:$candidate"
+; then
+            echo "Validation mutated immutable candidate: hard stop" >&2
+            exit 1
+          fi
+          echo "CANONICAL_STAGED_DATA_IMMUTABLE"
       - name: Run released application regression tests
         working-directory: production-src
         run: npm test

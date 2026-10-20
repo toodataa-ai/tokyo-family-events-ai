@@ -32,6 +32,7 @@ class TestSuginamiCalendar(unittest.TestCase):
         self.assertEqual({x["candidate_id"] for x in found},
                          {"suginami-official-28531", "suginami-official-28567", "suginami-official-99999"})
         self.assertEqual(len(found), 3)
+        self.assertTrue(all(x["discovery_url"].startswith("https://www.city.suginami.tokyo.jp/") for x in found))
 
     def test_failed_request_does_not_become_empty_success(self):
         def broken(_url):

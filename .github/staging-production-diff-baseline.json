@@ -381,64 +381,64 @@
       "path": "site/app.js",
       "kind": "different",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "site/data/discovery_sources.json",
       "kind": "different",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "tools/rolling_horizon.py",
       "kind": "different",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "tests/app_filter.test.mjs",
       "kind": "different",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "tests/discovery_sources.test.mjs",
       "kind": "different",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "tests/test_suginami_calendar.py",
       "kind": "staging_only",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "docs/SUGINAMI_CALENDAR_COVERAGE.md",
       "kind": "staging_only",
       "category": "pending_release",
-      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。",
-      "disposition": "pending_release",
+      "reason": "2026-10-21 杉並区全ジャンル公式日別収集と同一展覧会の表示重複修正。未承認のため本番移植不可。 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "tests/fixed_source_directory.test.mjs",
       "kind": "different",
       "category": "pending_release",
-      "reason": "杉並区固定公式取得元追加に伴う回帰テストとPython収集テスト実行を追加",
-      "disposition": "pending_release",
+      "reason": "杉並区固定公式取得元追加に伴う回帰テストとPython収集テスト実行を追加 正式承認前のステージング作業としてのみ登録。本番リリース承認ではない。",
+      "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }
   ],

@@ -264,25 +264,24 @@ def main():
         if pb:
             parent_bundles.append(pb)
 
-    current_events = []
-    current_verification = {}
-    current_decisions = []
-    for bundle in current_bundles:
-        current_events.extend(bundle["events"])
-        current_verification.update(bundle["verification"])
-        current_decisions.extend(bundle["decisions"])
-
-    by_key = {}
-    for event in current_events:
-        for key in event_keys(event):
-            by_key.setdefault(key, []).append(event)
-
-    matched_current_ids = set()
+    # Preserve the week dimension. A long-running event may have the same ID
+    # in several weekly shards. Global by_key would consider these ambiguous,
+    # then falsely report that the event disappeared. Checking each matched
+    # weekend is stricter: losing just one occurrence is now detected.
+    current_by_sat = {b["week"].get("sat"): b for b in current_bundles}
+    current_decisions = [row for b in current_bundles for row in b["decisions"]]
     errors = []
     checked = 0
-    seen_previous = set()
 
     for bundle in parent_bundles:
+        sat = bundle["week"].get("sat")
+        current_bundle = current_by_sat.get(sat) or {"events": [], "verification": {}}
+        by_key = {}
+        for event in current_bundle["events"]:
+            for key in event_keys(event):
+                by_key.setdefault(key, []).append(event)
+        matched_current_ids = set()
+        seen_previous = set()
         for prev in bundle["events"]:
             prev_identity = str(prev.get("id") or "") or repr(event_keys(prev))
             if prev_identity in seen_previous:
@@ -307,7 +306,7 @@ def main():
 
             matched_current_ids.add(id(curr))
             checked += 1
-            row = current_verification.get(curr.get("id")) or {}
+            row = current_bundle["verification"].get(curr.get("id")) or {}
 
             for field in FACTUAL_FIELDS:
                 before = field_value(prev, field)

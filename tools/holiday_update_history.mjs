@@ -82,6 +82,76 @@ export function buildEntry(oldManifest,newManifest,oldWeeks,newWeeks,asOf,baseSh
   return latest;
 }
 
+
+// Strictly additive official event supplements are NOT holiday-after runs.
+// This branch checks the full existing 6-week corpus and all unchanged facts.
+// It cannot be used to authorize deletions, hidden rows or data publication.
+export function checkStagingOfficialAddition(oldManifest,newManifest,oldWeeks,newWeeks,row,baseSha){
+  if(!shaPattern.test(baseSha)||row?.base_data_production_sha!==baseSha)
+    throw Error('staging addition base SHA mismatch');
+  if(row.run_type!=='staging_manual_official_addition'||row.status!=='stage_candidate_only')
+    throw Error('not an unpublished manual official addition');
+  if(!isoDay.test(row.as_of_jst)||row.run_id!=='staging-suginami-official-two-events-'+row.as_of_jst)
+    throw Error('invalid staging-only event addition identifier');
+  if(!row.executed_at||!Number.isFinite(Date.parse(row.executed_at)))
+    throw Error('invalid staging addition execution timestamp');
+  if(!newManifest.generated||newManifest.generated===oldManifest.generated||
+     !(Date.parse(newManifest.generated)>Date.parse(oldManifest.generated)))
+    throw Error('staging addition manifest timestamp absent, unchanged or stale');
+  if(oldManifest.default!==newManifest.default||
+     oldManifest.rolling_horizon_weeks!==6||newManifest.rolling_horizon_weeks!==6||
+     oldManifest.weekends?.length!==6||newManifest.weekends?.length!==6)
+    throw Error('staging addition may not roll the six-week manifest');
+  if(oldWeeks.length!==6||newWeeks.length!==6)
+    throw Error('staging addition requires all six weeks');
+
+  let added=0,changed=0,removed=0;
+  const newIds=new Set();
+  for(let i=0;i<6;i++){
+    const oldEntry=oldManifest.weekends[i],newEntry=newManifest.weekends[i];
+    if(oldEntry.sat!==newEntry.sat||oldEntry.sun!==newEntry.sun||
+       oldEntry.file!==newEntry.file||
+       oldWeeks[i].sat!==newWeeks[i].sat||oldWeeks[i].sat!==oldEntry.sat)
+      throw Error('staging addition changed an existing weekend');
+    const prev=new Map(),next=new Map();
+    for(const e of oldWeeks[i].events){
+      if(!e.id||prev.has(e.id)) throw Error('duplicate/missing previous event ID in '+oldEntry.sat);
+      prev.set(e.id,e);
+    }
+    for(const e of newWeeks[i].events){
+      if(!e.id||next.has(e.id)) throw Error('duplicate/missing new event ID in '+oldEntry.sat);
+      next.set(e.id,e);
+    }
+    for(const [id,original] of prev){
+      if(!next.has(id)){removed++;continue;}
+      if(!same(stableFacts(original),stableFacts(next.get(id)))) changed++;
+    }
+    for(const [id,e] of next){
+      if(prev.has(id)) continue;
+      added++;
+      if(newIds.has(id)) throw Error('new official event ID duplicated across weeks');
+      newIds.add(id);
+      const official=e.official_url||'';
+      if(!/^https:\/\/www\.city\.suginami\.tokyo\.jp\/s\d+\/event\/\d+\.html$/.test(official)||
+         e.ward!=='杉並区')
+        throw Error('new record not sourced from a Suginami official detail: '+id);
+      if(!e.date_start||e.date_start!==e.date_end||
+         (e.date_start!=='2026-10-24'&&e.date_start!=='2026-10-25')||
+         !((i===0)&&newEntry.sat==='2026-10-24'))
+        throw Error('new Suginami event not in approved staging recovery weekend');
+    }
+    if(newEntry.count!==oldEntry.count+next.size-prev.size)
+      throw Error('manifest event count differs from the new week rows');
+  }
+  if(added!==2||changed!==0||removed!==0||
+     !newIds.has('suginami-official-28531')||!newIds.has('suginami-official-28567')||
+     row.added_weekly_records!==added||
+     row.changed_existing_records!==changed||row.removed_weekly_records!==removed||
+     row.target_start!=='2026-10-24'||row.target_end!=='2026-10-25')
+    throw Error('official staging addition must contain exactly two approved records and preserve all others');
+  return {added,changed,removed,retained:oldWeeks.reduce((n,w)=>n+w.events.length,0)};
+}
+
 function parseJson(raw,label){
   try{return JSON.parse(raw);}catch(e){throw Error('invalid JSON '+label+': '+e.message);}
 }
@@ -145,6 +215,15 @@ function execute(argv){
   }
   const asOf=args.mode==='write'?args['as-of']:newHistory.history.at(-1)?.as_of_jst;
   if(!asOf) throw Error('missing actual as-of date');
+  if(args.mode==='check' && newHistory.history.at(-1)?.run_type==='staging_manual_official_addition'){
+    const rows=checkStagingOfficialAddition(oldManifest,newManifest,
+      loadWeeks(oldManifest,fromBase),loadWeeks(newManifest,fromCurrent),
+      newHistory.history.at(-1),baseRef);
+    process.stdout.write('Strict staging-only official addition history verified: '+
+      rows.added+' new, '+rows.changed+' changed, '+rows.removed+
+      ' removed, '+rows.retained+' prior event rows retained. Not authorized for publication.\n');
+    return;
+  }
   const entry=buildEntry(oldManifest,newManifest,loadWeeks(oldManifest,fromBase),
     loadWeeks(newManifest,fromCurrent),asOf,baseRef);
   if(args.mode==='write'){

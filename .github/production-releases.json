@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-21-r1",
+  "current_public_release": "release/2026-10-21-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -123,7 +123,16 @@
       "workflow_run_id": 39589530148,
       "note": "ユーザー承認の本番アプリv1.12。アーツ中村橋の3週分既存データを削除せず検索一覧1件に集約。杉並区公式全ジャンル日別イベントカレンダーの探索元追加、対象日展開、回帰テスト。前本番production直接子孫の独立候補8ファイルのみPR #16を経て昇格。隔離候補監査39589345118、本番Pages39589530148成功。区の選択UI変更なし。動的イベント2件はdata-staging側で別の公開ゲート。",
       "public_version": "1.12"
+    },
+    {
+      "release_id": "release/2026-10-21-r2",
+      "branch": "release/2026-10-21-r2",
+      "commit_sha": "38818700dcd4c22fa4693ce40b936fe52b9433d3",
+      "deployed_at": "2026-10-21T11:13:35Z",
+      "workflow_run_id": 39590256061,
+      "note": "本番データ公開ゲートで同一イベントIDが複数開催週に含まれると誤って消失扱いする旧非退行監査を修正。週単位に照合し、実際の1週欠落は引き続き失敗させる。PR #17で2ファイルのみ。検証実データでもイベント既存欠落ゼロ、隔離候補監査39590132674と本番Pages39590256061成功。v1.12の画面・杉並区固定サイト・公開済み動的データを維持。",
+      "public_version": "1.13"
     }
   ],
-  "current_public_version": "1.12"
+  "current_public_version": "1.13"
 }

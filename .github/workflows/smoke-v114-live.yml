@@ -1,0 +1,65 @@
+name: Verify live v1.14 production omission directory (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/smoke-v114-live.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  live-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Checkout published dynamic data from released branch
+        uses: actions/checkout@v4
+        with:
+          ref: 59266b5587c3cd868b8d5637b2a363f1e3f52cd9
+          path: published-data
+      - name: Verify actual live root endpoints and unchanged published manifest (retry CDN propagation)
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,time,urllib.request,urllib.error
+          from pathlib import Path
+          origin='https://toodataa-ai.github.io/tokyo-family-events-ai/'
+          paths=['index.html','omitted.html','omitted.css','omitted.js','curation/suginami_review_20261022.json','data/production-releases.json','data/manifest.json']
+          expected=Path('published-data/site/data/manifest.json').read_bytes()
+          ua={'User-Agent':'TokyoFamilyEvents-V114-Production-Live-Smoke/1.0'}
+          error=None
+          for attempt in range(24):
+              try:
+                  content={}
+                  for path in paths:
+                      req=urllib.request.Request(origin+path+'?release=v114-live-audit',headers=ua)
+                      with urllib.request.urlopen(req,timeout=14) as resp:
+                          assert resp.status==200,(path,resp.status)
+                          content[path]=resp.read()
+                  home=content['index.html'].decode('utf-8')
+                  page=content['omitted.html'].decode('utf-8')
+                  script=content['omitted.js'].decode('utf-8')
+                  data=json.loads(content['curation/suginami_review_20261022.json'])
+                  registry=json.loads(content['data/production-releases.json'])
+                  assert 'href="omitted.html"' in home
+                  assert '掲載を見送ったイベントと、その理由' in home
+                  assert '掲載見送り・掲載判断一覧' in page
+                  assert 'curation/suginami_review_20261022.json' in script
+                  assert len(data['rows'])==310
+                  assert data['counts']=={'対象外':200,'掲載候補':95,'ステージング既登録':8,'要確認':3,'前回のみ・再取得要':4}
+                  assert sum(bool(x.get('official_url')) for x in data['rows'])==306
+                  assert registry['current_public_version']=='1.14',registry['current_public_version']
+                  assert registry['current_public_release']=='release/2026-10-22-r1'
+                  assert content['data/manifest.json']==expected,'LIVE EVENT DATA MANIFEST MISMATCH'
+                  print('PASS real public site:',origin+'omitted.html')
+                  print('PASS 310 decisions and 306 official URLs, live v1.14 registry')
+                  print('PASS protected event manifest exact bytes',hashlib.sha256(expected).hexdigest())
+                  break
+              except Exception as exc:
+                  error=exc
+                  print('LIVE_RETRY',attempt+1,'of 24:',str(exc)[:250])
+                  if attempt==23: raise
+                  time.sleep(4)
+          PY

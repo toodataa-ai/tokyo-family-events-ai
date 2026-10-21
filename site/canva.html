@@ -114,7 +114,11 @@ $('copyCanvaLink').addEventListener('click',async()=>{
   const qs=new URLSearchParams(location.search);
   const linkIds=qs.getAll('id');
   selectedIds=linkIds.length?saveCanvaSelection(linkIds,window.localStorage):readCanvaSelection(window.localStorage);
+  const activeIds=new Set(allEvents.map(ev=>ev.id));
+  const missing=selectedIds.filter(id=>!activeIds.has(id)).length;
+  selectedIds=saveCanvaSelection(selectedIds.filter(id=>activeIds.has(id)),window.localStorage);
   loaded=true;render();
+  if(missing)alertStatus('掲載期間外または削除済みの候補'+missing+'件は選択から外しました。');
 }catch(e){console.error(e);alertStatus('イベントの読込に失敗しました。サイトを再読み込みしてください。');}})();
 </script>
 </body></html>

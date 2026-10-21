@@ -4,13 +4,14 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>イベント検索｜東京23区子連れイベントAI収集</title>
 <link rel="stylesheet" href="styles.css?v=20261010-single-period">
+<link rel="stylesheet" href="canva-draft.css?v=1">
 </head>
 <body class="search-page" data-season="winter">
 <section class="site-hero">
   <div class="hero-inner">
     <div class="site-topbar">
       <a class="site-brand" href="index.html">東京23区子連れイベントAI収集</a>
-      <nav class="site-nav"><a href="index.html">トップ</a><button id="copyBtn">コピペ用リスト</button></nav>
+      <nav class="site-nav"><a href="index.html">トップ</a><button id="copyBtn">コピペ用リスト</button><a href="canva.html">Canva投稿ドラフト</a></nav>
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
@@ -51,6 +52,7 @@
 <nav class="chips compact-ward-chips" id="chips" aria-label="区で絞り込み"></nav>
 <main>
   <div class="result-head result-head-simple"><span class="result-count-label">検索結果 <b id="countText">-</b></span></div>
+  <div id="canvaPickBar" class="canva-pickbar" aria-label="Canva投稿候補" hidden><span id="canvaPickCount" class="canva-pickbar-count">Canva投稿候補 0/10件</span><div class="canva-pickbar-actions"><button type="button" id="canvaClearBtn">選択を解除</button><a id="canvaPrepareLink" href="canva.html" aria-disabled="true">Canvaドラフトへ進む →</a></div></div>
   <div class="recommendation-legend" aria-label="子連れオススメ度の凡例">
     <span class="legend-title">子連れオススメ度</span>
     <span class="legend-item"><span class="legend-stars" data-stars="3"></span><span>とてもおすすめ</span></span>
@@ -64,9 +66,18 @@
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection} from './canva-draft-contract.js?v=1';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
 const $=id=>document.getElementById(id);
+let canvaSelectedIds=readCanvaSelection(window.localStorage);
+function updateCanvaPickbar(){
+  const count=canvaSelectedIds.length,bar=$('canvaPickBar');
+  bar.hidden=count===0;
+  $('canvaPickCount').textContent=`Canva投稿候補 ${count}/${CANVA_FORMAT.maxEvents}件`;
+  $('canvaPrepareLink').setAttribute('aria-disabled',String(count===0));
+}
+
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function applyHeroSeason(){const season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());document.body.dataset.season=season;const meta=heroSeasonMeta(season),credit=$('heroPhotoCredit');if(credit){credit.href=meta.source;credit.textContent=`背景写真: ${meta.label} / Unsplash`;}}
 function currentFilters(){return {...filterUI.filters(),q:$('searchInput').value.trim()};}
@@ -94,7 +105,7 @@ function provenanceBadge(prov){
   return '';
 }
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'今週末以降';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);updateCanvaPickbar();const filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'今週末以降';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=filtered.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -103,7 +114,7 @@ function render(){
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
     const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge price-badge price-${priceClass}">${escapeHtml(priceText)}</span><span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
-    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
+    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="canva-card-actions"><label class="canva-select-label"><input type="checkbox" class="canva-select-check" data-id="${escapeHtml(ev.id)}" ${canvaSelectedIds.includes(ev.id)?'checked':''}>Canvaに追加</label></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
   }).join('');
   syncUrl();
 }
@@ -120,6 +131,18 @@ async function loadSelected(){
 }
 
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.event-expand-btn');if(!b)return;const card=b.closest('.event-list-card'),panel=card?.querySelector('.event-list-detail');if(!panel)return;const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'詳細を開く':'詳細を閉じる');b.textContent=open?'＋':'−';panel.hidden=open;});
+$('grid').addEventListener('change',e=>{
+  const check=e.target.closest('.canva-select-check');if(!check)return;
+  const id=check.dataset.id;
+  if(check.checked && !canvaSelectedIds.includes(id)){
+    if(canvaSelectedIds.length>=CANVA_FORMAT.maxEvents){check.checked=false;window.alert('Canva投稿は最大10件まで選択できます。');return;}
+    canvaSelectedIds.push(id);
+  }else if(!check.checked){canvaSelectedIds=canvaSelectedIds.filter(x=>x!==id);}
+  canvaSelectedIds=saveCanvaSelection(canvaSelectedIds,window.localStorage);
+  updateCanvaPickbar();
+});
+$('canvaClearBtn').addEventListener('click',()=>{canvaSelectedIds=saveCanvaSelection([],window.localStorage);render();});
+$('canvaPrepareLink').addEventListener('click',e=>{if(!canvaSelectedIds.length)e.preventDefault();});
 $('searchInput').addEventListener('input',render);
 $('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
 (async()=>{try{

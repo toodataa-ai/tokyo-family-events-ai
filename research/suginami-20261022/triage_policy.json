@@ -27,6 +27,7 @@
     "27604",
     "27627",
     "27628",
+    "27652",
     "27713",
     "27842",
     "27879",
@@ -112,7 +113,6 @@
   ],
   "needs_individual_follow_up_page_ids": [
     "24563",
-    "27652",
     "28532",
     "28593"
   ],
@@ -125,6 +125,7 @@
   "already_registered_in_data_staging_ids": [
     "27457",
     "27627",
+    "27652",
     "28100",
     "28531",
     "28567",
@@ -135,9 +136,9 @@
   "safety": "No data-staging, data-production, production changes. Exclusion is candidate-level only; do not delete any existing event, including no ID deletion.",
   "caveats": [
     "A family-eligible candidate is not a verified publishable event until title, age, dates, venue, reservation status, unique identity and image are checked.",
-    "ID 27652's event venue is in Nerima, not Suginami; ward correction / existing Nerima event duplicate check required.",
+    "ID 27652's source is Suginami but the correct venue and existing record are Nerima v15-137a2a4e48f8; confirmed identical, do not add a duplicate.",
     "Historic four IDs exist in first crawl but not second; must not silently declare excluded.",
-    "As of this ledger stage, 7 of the family IDs match data-staging, including the two new entries not yet in production.",
+    "8 family IDs match data-staging, including 2 new entries not yet in production.",
     "Separate events inside Suginami Festa (industry fair, agriculture fair) may or may not warrant independent cards after identity audit.",
     "No synthetic HTTP 200, source checked, publisher decision or approved deletion may be created."
   ]

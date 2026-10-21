@@ -1,0 +1,68 @@
+name: Audit v1.12 Arts and Suginami approved app candidate
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v112-arts-suginami-release.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout pinned production-derived candidate
+        uses: actions/checkout@v4
+        with:
+          ref: dedb9d829f968e9ef66b90a956941ca1a1b3a079
+          fetch-depth: 0
+          path: candidate
+      - name: Checkout protected staging data
+        uses: actions/checkout@v4
+        with:
+          ref: 89d3828d170f04508069880f6cdfdd97ea055ff4
+          fetch-depth: 0
+          path: staged-data
+      - name: Checkout main data-protection policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: audit-policy
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Confirm parent is current approved production release and only ten named files changed
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "dedb9d829f968e9ef66b90a956941ca1a1b3a079"
+          test "$(git rev-parse HEAD^)" = "cb99bc011be90d30769f484ca655a337d0ff70b8"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual-paths
+          printf '%s\n' site/app.js site/index.html site/search.html site/data/discovery_sources.json tools/rolling_horizon.py tests/app_filter.test.mjs tests/discovery_sources.test.mjs tests/fixed_source_directory.test.mjs tests/test_suginami_calendar.py tests/staging_real_arts_identity.test.mjs | sort > /tmp/expected-paths
+          diff -u /tmp/expected-paths /tmp/actual-paths
+          git diff --name-only HEAD^ HEAD | grep -Eq 'site/(app\.js|search\.html|index\.html)'
+          ! git diff --name-only HEAD^ HEAD | grep -Eq '^site/data/(20[0-9]{2}-|manifest\.json|update_history\.json)'
+          echo "PASS: exactly ten approved app and test paths; no dynamic data modified"
+      - name: Run released application regression suite
+        working-directory: candidate
+        run: npm test
+      - name: Run Suginami official daily-calendar regression suite
+        working-directory: candidate
+        run: python3 -m unittest discover -s tests -p test_suginami_calendar.py -v
+      - name: Verify actual Arts source rows all survive but collapse to one visible result
+        run: node candidate/tests/staging_real_arts_identity.test.mjs staged-data/site/data
+      - name: Prove staging event IDs and history are preserved against published data
+        working-directory: staged-data
+        run: |
+          set -euo pipefail
+          git fetch origin data-production
+          python3 ../audit-policy/tools/validate_protected_events.py --base-ref origin/data-production site/data
+          python3 ../audit-policy/tools/validate_non_regression.py --base-ref origin/data-production site/data
+          python3 ../audit-policy/tools/validate_official_schedule_audit.py site/data
+          echo "PASS: no unapproved event removal or historical loss"

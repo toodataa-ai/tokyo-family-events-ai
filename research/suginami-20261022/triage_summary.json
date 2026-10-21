@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "crawl_run": 39639929211,
+  "historical_crawl_run": 39591645380,
+  "latest_actual_official_candidate_count": 306,
+  "previous_candidate_count": 309,
+  "unique_candidates_union": 310,
+  "full_detail_success_count": 306,
+  "triage_counts": {
+    "対象外": 200,
+    "掲載候補": 95,
+    "ステージング既登録": 7,
+    "要確認": 4,
+    "前回のみ・再取得要": 4
+  },
+  "family_candidate_publishable": false,
+  "required_additional_check": "official verification of 95 eligible events including existing alias dedup, official dates, venue ward, age restrictions, reservation status, thumbnail, and 4 pending plus 4 vanished",
+  "modified_production": false,
+  "modified_data_staging": false,
+  "modified_data_production": false
+}

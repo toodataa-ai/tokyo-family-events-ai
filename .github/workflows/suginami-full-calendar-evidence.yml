@@ -1,0 +1,59 @@
+name: Suginami 42-day official calendar complete read-only audit
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/suginami-full-calendar-evidence.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  full-calendar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: inspector
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: stage-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Actually fetch 42 daily calendar pages and three monthly indexes, retain HTTP source evidence
+        continue-on-error: true
+        id: source-check
+        run: |
+          python3 inspector/tools/suginami_full_calendar_evidence.py \
+            --stage-data stage-data/site/data \
+            --output "${RUNNER_TEMP}/suginami-42day-evidence" \
+            --start 2026-10-21 \
+            --end 2026-12-01
+      - name: Report actual completeness and fail closed for missing official-event decisions
+        if: always()
+        run: |
+          python3 - "${RUNNER_TEMP}/suginami-42day-evidence/summary.json" <<'PY'
+          import json,sys
+          d=json.load(open(sys.argv[1]))
+          print("Actual requests",d["days_scanned"],"daily +",d["monthly_indexes_scanned"],"monthly")
+          print("Request errors",d["failed_requests"])
+          print("Official distinct candidates",d["distinct_official_candidate_ids"])
+          print("Needs individual candidate review",d["candidate_ids_needing_manual_review"])
+          for c in d["unreviewed_official_candidate_examples"][:20]:
+              print("UNREVIEWED",c["candidate_id"],c["name"],c["official_url"])
+          if d["failed_requests"] or d["candidate_ids_needing_manual_review"]:
+              raise SystemExit("Publication not permitted: actual source coverage or candidate decisions incomplete")
+          PY
+      - name: Save authentic read-only HTTP evidence (no GitHub write)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: suginami-42day-authentic-official-evidence
+          path: ${{ runner.temp }}/suginami-42day-evidence/
+          retention-days: 30
+          if-no-files-found: warn

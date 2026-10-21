@@ -1,8 +1,12 @@
-# User-approved minimal app production release v1.11 (source grouping fix).
+# User-approved independent production app release v1.12 (Arts Nakamurabashi identity + Suginami official daily calendar).
 operation=release
 production_ref=production
-approved_staging_sha=cb99bc011be90d30769f484ca655a337d0ff70b8
-target_public_version=1.11
-previous_public_release=release/2026-10-17-r4
-release_date_jst=2026-10-17
-note=PR #10: user approved PR #9 staged grouping fix. Only site/index.html and tests/fixed_source_directory.test.mjs modified in production. Four official, two newly added manual community sources (Tamemap Nakano and Itabashi TIMES), eighteen legacy. Registry unchanged (24), published data-production 361 records unchanged. Production-only base f031d9ba357c31528307712479c559785d1734a3. Pinned production candidate audit 39013615911 successful.
+production_sha=4a78726b80b650fdc2f47a71b61a1705bbbd17a0
+approved_staging_sha=4814b931c4039feecdd7ab80b2d85accbb2460ec
+candidate_sha=150372aa300bca26f48fc0f7e8c4716ace199e58
+previous_production_sha=cb99bc011be90d30769f484ca655a337d0ff70b8
+pr=16
+target_public_version=1.12
+release_date_jst=2026-10-21
+audit_run=39589345118
+note=Only eight approved static app/test files published. Unapproved data changes and staging-only collector/diagnostic files are excluded. Ward selection is unchanged. No event record deletions.

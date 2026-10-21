@@ -1,0 +1,65 @@
+name: Audit v1.13 per-week event preservation hotfix candidate
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v113-nonregression-safety.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated production-derived validator candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 90a7cf78bd2b1091ebdef033b8710255a808dc8b
+          fetch-depth: 0
+          path: candidate
+      - name: Checkout frozen staged data
+        uses: actions/checkout@v4
+        with:
+          ref: 89d3828d170f04508069880f6cdfdd97ea055ff4
+          fetch-depth: 0
+          path: staged-data
+      - name: Checkout main protected-data audit policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: audit-policy
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert this is a direct child of app v1.12 and ONLY safety validator and focused regression changed
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "90a7cf78bd2b1091ebdef033b8710255a808dc8b"
+          test "$(git rev-parse HEAD^)" = "4a78726b80b650fdc2f47a71b61a1705bbbd17a0"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual
+          printf '%s\n' tools/validate_non_regression.py tests/test_nonregression_multweek.py | sort > /tmp/expected
+          diff -u /tmp/expected /tmp/actual
+          echo "PASS: exact two approved safety paths; dynamic data and other app files unchanged"
+      - name: Run full existing production application regression tests
+        working-directory: candidate
+        run: npm test
+      - name: Prove identical event IDs across separate weeks are accepted, but true removal in one week fails
+        working-directory: candidate
+        run: python3 -m unittest discover -s tests -p test_nonregression_multweek.py -v
+      - name: Prove staged Suginami additions pass newly strict validator against real published data
+        working-directory: staged-data
+        run: |
+          set -euo pipefail
+          git fetch origin data-production
+          test "$(git rev-parse origin/data-production)" = "59266b5587c3cd868b8d5637b2a363f1e3f52cd9"
+          python3 ../candidate/tools/validate_non_regression.py --base-ref origin/data-production site/data
+          python3 ../audit-policy/tools/validate_protected_events.py --base-ref origin/data-production site/data
+          python3 ../audit-policy/tools/validate_official_schedule_audit.py site/data
+          echo "PASS: no existing week records deleted, source evidence intact"

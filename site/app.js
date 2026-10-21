@@ -274,23 +274,52 @@ export function eventIdentityKey(ev){
   return `${name}|${dateToken}|${identity}`;
 }
 
+// Guard against one event published by different sources with different venue
+// descriptions. Require same ward, normalized name, exact dates and a concrete
+// common venue anchor; otherwise preserve separate performances/branches.
+function sameEventAcrossWeeks(a,b){
+  if((a?.ward||'') !== (b?.ward||'')) return false;
+  const title=v=>normalizeText(v||'').replace(/[\s　・･「」『』【】()（）ー－‐―:：!?！？]/g,'');
+  if(!title(a?.name) || title(a?.name)!==title(b?.name)) return false;
+  const date=v=>[v?.date_start||'',v?.date_end||'',normalizeText(v?.period||'')].join('|');
+  if(date(a)!==date(b)) return false;
+  const anchors=v=>normalizeText(v||'').split(/[、,，・／\/（）()\s　]+/)
+    .map(x=>x.replace(/(?:ほか|など|周辺|付近|会場)$/g,''))
+    .filter(x=>x.length>=5 && !/^(?:東京都|練馬区|杉並区|区内|複数会場)$/.test(x));
+  const av=anchors(a?.venue), bv=anchors(b?.venue);
+  return av.length>0 && bv.length>0 && av.some(x=>bv.some(y=>x===y));
+}
+
 export function mergeEventsAcrossWeeks(weekData){
   const map=new Map();
   for(const data of (weekData||[])){
     for(const ev of (data?.events||[])){
       const key=eventIdentityKey(ev);
-      if(!map.has(key)){
-        map.set(key,{...ev,_decision_rows:[],_week_sats:[]});
+      // Different descriptions of a shared multi-venue event have different
+      // exact keys. Keep the first public ID and merge only confirmed anchors.
+      const actualKey=map.has(key)?key:([...map.entries()].find(([,row])=>
+        // Match against every already-verified venue alias in the cluster.
+        // With A↔B and B↔C matches, the third row must not reappear as C.
+        (row._identity_venues||[row.venue]).some(venue=>sameEventAcrossWeeks({...row,venue},ev))
+      )?.[0]||key);
+      if(!map.has(actualKey)){
+        map.set(actualKey,{...ev,_identity_venues:ev.venue?[ev.venue]:[],_decision_rows:[],_week_sats:[]});
       }else{
-        const cur=map.get(key);
+        const cur=map.get(actualKey);
+        // Preserve the venue descriptions from all verified sources for future
+        // matches; never overwrite source records or erase distinct venues.
+        cur._identity_venues ||= cur.venue?[cur.venue]:[];
+        if(ev.venue && !cur._identity_venues.includes(ev.venue)) cur._identity_venues.push(ev.venue);
         const prefer=(v,a)=>a||v;
         cur.image=prefer(cur.image,ev.image);
-        cur.official_url=prefer(cur.official_url,ev.official_url);
+        // Prefer an event detail over a genre/list URL when both are official.
+        const detailUrl=url=>/\/event\/detail_[a-z]+\.cgi\?/i.test(url||'');
+        cur.official_url=detailUrl(ev.official_url)&&!detailUrl(cur.official_url)?ev.official_url:prefer(cur.official_url,ev.official_url);
         cur.url=prefer(cur.url,ev.url);
         cur.description=(ev.description||'').length>(cur.description||'').length?ev.description:cur.description;
         if(ev.verification?.status==='verified' && cur.verification?.status!=='verified') cur.verification=ev.verification;
       }
-      const merged=map.get(key);
+      const merged=map.get(actualKey);
       const d=findDecisionForEvent(ev,data?.decision_audit);
       if(d && !merged._decision_rows.includes(d)) merged._decision_rows.push(d);
       if(data?.sat && !merged._week_sats.includes(data.sat)) merged._week_sats.push(data.sat);

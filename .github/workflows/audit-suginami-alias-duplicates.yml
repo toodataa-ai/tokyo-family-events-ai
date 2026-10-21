@@ -1,0 +1,99 @@
+name: Audit staged event aliases for reviewed Suginami candidate IDs
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-suginami-alias-duplicates.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check-aliases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/suginami-20261022-310-candidates
+          path: audit
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: data
+      - name: Cross-check every currently favorable candidate against staged 6-week names, dates and official URLs
+        run: |
+          python3 - <<'PY'
+          import json,re,unicodedata,difflib
+          from pathlib import Path
+          from collections import Counter
+          folder=Path('audit/research/suginami-20261022')
+          table=json.loads((folder/'official_candidate_triage_310.json').read_text())
+          data=Path('data/site/data')
+          manifest=json.loads((data/'manifest.json').read_text())
+          rows=[]
+          for w in manifest['weekends']:
+              m=json.loads((data/w['file']).read_text())
+              week_events=list(m.get('events',[]))
+              for file in m.get('event_files',[]):
+                  week_events+=json.loads((data/file).read_text())
+              audit=json.loads((data/m['verification_file']).read_text())
+              correction_by_id={r.get('id'):r.get('corrections',{}) for r in audit.get('events',[])}
+              for e in week_events:
+                  e={**e,**correction_by_id.get(e.get('id'),{})}
+                  e['source_sat']=w['sat']
+                  rows.append(e)
+          distinct={}
+          for e in rows: distinct.setdefault(e.get('id'),e)
+          rows=list(distinct.values())
+          norm=lambda x:re.sub(r'[\s\u3000\W_]+','',unicodedata.normalize('NFKC',str(x or '')).lower())
+          ucanon=lambda x:str(x or '').split('?')[0].rstrip('/').lower()
+          evidence=[]
+          for c in table:
+              if c['decision'] not in ('掲載候補','要確認','ステージング既登録'): continue
+              cd=set(c.get('listed_dates') or [])
+              findings=[]
+              for e in rows:
+                  s1=norm(c['name']);s2=norm(e.get('name'))
+                  if not s1 or not s2:continue
+                  exact_source=ucanon(c['official_url']) in {ucanon(e.get('url')),ucanon(e.get('official_url'))}
+                  sim=difflib.SequenceMatcher(None,s1,s2).ratio()
+                  exact_name=s1==s2
+                  contains=len(s1)>12 and len(s2)>12 and (s1 in s2 or s2 in s1)
+                  if not (exact_source or exact_name or contains or sim>=.72):continue
+                  st=e.get('date_start') or ''
+                  en=e.get('date_end') or st
+                  overlap=bool(cd) and bool(st) and any(st<=d<=(en or st) for d in cd)
+                  if not (exact_source or overlap):continue
+                  findings.append({'staged_id':e.get('id'),'staged_name':e.get('name'),
+                    'staged_ward':e.get('ward'),'staged_date_start':st,'staged_date_end':en,
+                    'similarity':round(sim,3),'exact_source':exact_source,
+                    'exact_normalized_name':exact_name,'date_overlap':overlap})
+              findings.sort(key=lambda v:(v['exact_source'],v['exact_normalized_name'],v['similarity']),reverse=True)
+              evidence.append({'candidate_id':c['candidate_id'],'candidate_name':c['name'],
+                               'candidate_decision':c['decision'],
+                               'candidate_dates':c.get('listed_dates',[]),
+                               'possible_alias_matches':findings[:5],
+                               'automerge_allowed':False})
+          counts=Counter()
+          for x in evidence:
+              if x['possible_alias_matches']:
+                  if x['possible_alias_matches'][0]['exact_source']:counts['exact_url_existing']+=1
+                  else:counts['fuzzy_or_name_alias_needs_review']+=1
+              else:counts['no_likely_alias_in_existing_staging']+=1
+          assert len(evidence)==106,(len(evidence),counts)
+          output={'data_staging_commit':'89d3828d170f04508069880f6cdfdd97ea055ff4',
+                  'reviewed_candidates':106,'counts':dict(counts),
+                  'note':'Fuzzy matches are review-only; never drop or suppress events on fuzzy similarity alone.',
+                  'rows':evidence}
+          (folder/'existing_alias_screening.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({'candidates':len(evidence),'counts':dict(counts),'examples':[{'id':e['candidate_id'],'name':e['candidate_name'],'matches':e['possible_alias_matches']} for e in evidence if e['possible_alias_matches'] and not e['possible_alias_matches'][0]['exact_source']][:20]},ensure_ascii=False))
+          PY
+      - name: Commit non-destructive alias screening result to isolated audit branch
+        working-directory: audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/suginami-20261022/existing_alias_screening.json
+          git commit -m "audit: screen 106 eligible and pending Suginami records for staged duplicate aliases"
+          git push origin HEAD:audit/suginami-20261022-310-candidates

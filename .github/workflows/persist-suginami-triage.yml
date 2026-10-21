@@ -1,0 +1,174 @@
+name: Persist 310 Suginami official candidate decisions into isolated audit branch
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/persist-suginami-triage.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive-decisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout isolated audit destination (not production, staging or data branches)
+        uses: actions/checkout@v4
+        with:
+          ref: audit/suginami-20261022-310-candidates
+          path: audit
+      - name: Download frozen first and second real official HTTP crawl artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/current evidence/prior
+          gh run download 39639929211 -R "$GITHUB_REPOSITORY" -n suginami-42day-authentic-official-evidence -D evidence/current
+          gh run download 39591645380 -R "$GITHUB_REPOSITORY" -n suginami-42day-authentic-official-evidence -D evidence/prior
+          test -s evidence/current/all_candidate_index.json
+          test -s evidence/prior/http_evidence.json
+      - name: Join frozen official detail data with the manually reviewed non-destructive decisions
+        run: |
+          python3 - <<'PY'
+          import csv, json
+          from pathlib import Path
+          from collections import Counter
+
+          folder=Path('audit/research/suginami-20261022')
+          policy=json.loads((folder/'triage_policy.json').read_text())
+          base=Path('evidence/current')
+          current=[]
+          for p in sorted(base.glob('candidate_details_*.json')):
+              current+=json.loads(p.read_text())
+          prior=json.loads((Path('evidence/prior')/'http_evidence.json').read_text())
+          old_ids=set()
+          for row in prior['checked_requests']:
+              old_ids.update(row['candidate_ids'])
+          all_ids={x['candidate_id'] for x in current}
+          historical=old_ids-all_ids
+          names={x['candidate_id'].split('-')[-1] for x in current}
+          family=set(policy['family_eligible_or_low_rating_candidate_page_ids'])
+          needs=set(policy['needs_individual_follow_up_page_ids'])
+          stage=set(policy['already_registered_in_data_staging_ids'])
+          archive=set(policy['old_only_page_ids'])
+          assert len(current)==306 and len(all_ids)==306
+          assert len(old_ids)==309 and len(historical)==4 and len(all_ids|old_ids)==310
+          assert historical=={'suginami-official-'+x for x in archive}
+          assert family.isdisjoint(needs) and stage.issubset(family)
+          assert family|needs==family.union(needs) and (family|needs)<=names
+          assert len(family)==102 and len(stage)==7
+          assert all(x['detail_status']=='checked' and x.get('detail_sha256') for x in current)
+
+          def heading(text,heading,stops):
+              lines=[s.strip() for s in (text or '').splitlines() if s.strip()]
+              try: offset=lines.index(heading)+1
+              except ValueError: return ''
+              selected=[]
+              for line in lines[offset:offset+12]:
+                  if line in stops:break
+                  selected.append(line)
+                  if sum(len(z) for z in selected)>380:break
+              return ' / '.join(selected)
+
+          cols=['candidate_id','name','decision','reason','official_url','official_date','official_target','official_venue','official_content_excerpt','listed_dates','official_detail_sha256','detail_checked_at','evidence_run','scope_note']
+          stops={'開催日','開催時間','対象者','開催場所','内容','申し込み','費用','定員','主催','講師','イベント情報詳細','申し込み期間','申込先','問い合わせ','持ち物','その他','関連情報','お問い合わせ先','ここまでが本文です。'}
+          table=[]
+          pending_reasons={
+             '24563':'全年齢の講座索引であり、個別講座の子連れ参加条件・開催日を分解する必要がある。',
+             '27652':'絵本展だが会場は練馬区ちひろ美術館。正しい区・同名既存イベントとの重複照合が必要。',
+             '28532':'障害のある方向け調理体験。対象年齢と保護者同伴可否を追加確認。',
+             '28593':'樹冠の観察・環境講座の対象年齢と子どもの参加可否を追加確認。'}
+          for x in current:
+              id=x['candidate_id'].split('-')[-1]
+              if id in stage:
+                  status='ステージング既登録'
+                  reason='ステージングに同じ公式URLまたは候補IDが存在。2件はまだ本番未反映、重複追加しない。'
+              elif id in needs:
+                  status='要確認';reason=pending_reasons[id]
+              elif id in family:
+                  status='掲載候補'
+                  reason='公式本文の開催日・参加対象・内容が子どもや家族の鑑賞・体験に適合。予約・開催枠・独立性は掲載前の個別監査対象。'
+              else:
+                  status='対象外'
+                  dates=[d for d in x.get('dates',[]) if '2026-10-24'<=d<='2026-11-29']
+                  date=heading(x.get('official_text'),'開催日',stops)
+                  target=heading(x.get('official_text'),'対象者',stops)
+                  title=x['name']
+                  if not dates:
+                      reason='6週間の対象期間内に公式日別カレンダーの掲載日がない。'
+                  elif any(y in x.get('official_text','') for y in ['傍聴のみ可能です。','傍聴のみ可能です','傍聴のみ']):
+                      reason='行政会議の傍聴であり、子ども・家族向けのお出かけではない。'
+                  elif '募集終了' in title or id=='27651':
+                      reason='応募終了または申込期間満了で、新規の親子参加ができない。'
+                  elif any(y in x.get('official_text','') for y in ['60歳以上の方','65歳以上の方']) and not any(y in target for y in ['小学生','未就学児']):
+                      reason='公式の参加条件が高齢者向けで、子どもは対象外。'
+                  elif '成人' in target and not any(y in target for y in ['小学生','未就学児','中学生']):
+                      reason='公式対象が成人向けで子ども自身の体験・家族お出かけの趣旨に合わない。'
+                  elif any(y in title for y in ['講演会','セミナー','相談','就職','就労','審議会','協議会','委員会','仕事','税','介護','高齢者','相続','フレイル']):
+                      reason='内容が成人向け講義・業務・相談・行政手続き等で、親子体験の根拠がない。'
+                  else:
+                      reason='公式対象者・内容・日時から子連れレジャーとしての適性が不十分。'
+              table.append({
+                  'candidate_id':x['candidate_id'],'name':x['name'],'decision':status,'reason':reason,
+                  'official_url':x['official_url'],
+                  'official_date':heading(x.get('official_text'),'開催日',stops),
+                  'official_target':heading(x.get('official_text'),'対象者',stops),
+                  'official_venue':heading(x.get('official_text'),'開催場所',stops),
+                  'official_content_excerpt':heading(x.get('official_text'),'内容',stops)[:250],
+                  'listed_dates':x.get('dates',[]),
+                  'official_detail_sha256':x['detail_sha256'],
+                  'detail_checked_at':x['detail_checked_at'],
+                  'evidence_run':39639929211,
+                  'scope_note':'候補採否のみ。本番イベントの削除・編集は禁止。'
+              })
+          for code in sorted(archive):
+              found='suginami-official-'+code
+              listed=[(row.get('day') or row.get('month')) for row in prior['checked_requests'] if found in row['candidate_ids']]
+              table.append({
+                  'candidate_id':found,'name':'以前の公式一覧で検出（再取得後の詳細本文なし）','decision':'前回のみ・再取得要',
+                  'reason':'前回309候補のクロールには存在したが次回306候補にはなく、詳細が保存されていない。URLと実開催状況の追加確認要。',
+                  'official_url':'','official_date':'','official_target':'','official_venue':'','official_content_excerpt':'',
+                  'listed_dates':listed,
+                  'official_detail_sha256':'','detail_checked_at':'','evidence_run':39591645380,
+                  'scope_note':'旧回収分の消失をもってイベント自体の取消とみなさない。'
+              })
+          count=Counter(x['decision'] for x in table)
+          expected={'対象外':200,'掲載候補':95,'ステージング既登録':7,'要確認':4,'前回のみ・再取得要':4}
+          assert dict(count)==expected,(count,expected)
+          assert len(table)==310
+          (folder/'official_candidate_triage_310.json').write_text(json.dumps(table,ensure_ascii=False,indent=2)+'\n')
+          with (folder/'official_candidate_triage_310.csv').open('w',encoding='utf-8-sig',newline='') as f:
+              w=csv.DictWriter(f,fieldnames=cols);w.writeheader()
+              for x in table:w.writerow({**x,'listed_dates':','.join(x['listed_dates'])})
+          summary={'schema_version':1,'crawl_run':39639929211,'historical_crawl_run':39591645380,
+                   'latest_actual_official_candidate_count':306,'previous_candidate_count':309,
+                   'unique_candidates_union':310,'full_detail_success_count':306,
+                   'triage_counts':expected,'family_candidate_publishable':False,
+                   'required_additional_check':'official verification of 95 eligible events including existing alias dedup, official dates, venue ward, age restrictions, reservation status, thumbnail, and 4 pending plus 4 vanished',
+                   'modified_production':False,'modified_data_staging':False,'modified_data_production':False}
+          (folder/'triage_summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+          (folder/'README.md').write_text(
+             '# 杉並区公式イベント候補・全件仕分け（2026-10-22）\n\n'
+             '10/21前回309件と今回306件の和集合310件。全公式詳細306ページを実HTTP取得して1候補ずつ採否分類。'
+             '判定は掲載準備用の候補分類であり、公開可否やイベント取消の承認ではありません。'
+             '公式証跡はGitHub Actions 39639929211（今回）と39591645380（前回）。'
+             '未確認8件の処理、掲載候補95件の独立した公式確認・年齢・会場区・日程・重複・予約・サムネ検証が残ります。'
+             'イベント既存データは一切削除していません。\n\n'
+             '区別例：suginami-official-27652は実際の練馬区にあるちひろ美術館、'
+             'suginami-official-28531/28567はステージングに存在するが本番反映は安全ゲート待ち。\n')
+          print(json.dumps(summary,ensure_ascii=False))
+          PY
+      - name: Persist auditable candidate-level evidence without touching app or production data
+        working-directory: audit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/suginami-20261022/
+          git diff --cached --stat
+          git commit -m "audit: preserve evidence-linked classification for all 310 Suginami official candidates"
+          git push origin HEAD:audit/suginami-20261022-310-candidates

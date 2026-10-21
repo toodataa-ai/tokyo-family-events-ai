@@ -24,19 +24,19 @@ class OfficialText(HTMLParser):
         if tag in ('script','style','nav','footer','svg'): self.skip+=1
         if tag=='h1':self.in_h1=True
         if tag in ('p','div','h1','h2','h3','li','td','dd','tr','br'):
-            self.segments.append('\\n')
+            self.segments.append('\n')
     def handle_endtag(self,tag):
         if tag in ('script','style','nav','footer','svg') and self.skip:self.skip-=1
         if tag=='h1':self.in_h1=False
-        if tag in ('p','div','h1','h2','h3','li','td','dd','tr'):self.segments.append('\\n')
+        if tag in ('p','div','h1','h2','h3','li','td','dd','tr'):self.segments.append('\n')
     def handle_data(self,text):
         if self.skip:return
-        text=re.sub(r'\\s+',' ',text).strip()
+        text=re.sub(r'\s+',' ',text).strip()
         if text:
             self.segments.append(text+' ')
             if self.in_h1:self.title+=text+' '
     def content(self):
-        return '\\n'.join(s.strip() for s in ''.join(self.segments).split('\\n') if s.strip())[:12000]
+        return '\n'.join(s.strip() for s in ''.join(self.segments).split('\n') if s.strip())[:12000]
 
 def fetch_detail(candidate):
     item=dict(candidate)
@@ -132,10 +132,10 @@ def main():
         detail_rows=list(pool.map(fetch_detail,sorted(all_candidates.values(),key=lambda x:x["candidate_id"])))
     for i in range(0,len(detail_rows),25):
         (args.output/f"candidate_details_{i//25+1:02d}.json").write_text(
-            json.dumps(detail_rows[i:i+25],ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+            json.dumps(detail_rows[i:i+25],ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (args.output/"all_candidate_index.json").write_text(
         json.dumps([{k:v for k,v in row.items() if k not in ("official_text",)}
-                    for row in detail_rows],ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+                    for row in detail_rows],ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     detail_failures=[x for x in detail_rows if x["detail_status"]!="checked"]
     failures=[x for x in stats if x["status"]!="checked"]
     missing=[c for c in all_candidates.values() if not c["in_staged_events"] and not c["in_staged_decisions"]]

@@ -1,12 +1,13 @@
-# User-approved production safety follow-on release v1.13 to unblock verified data publication.
+# User-approved app-only release v1.14: omitted event audit directory and safe official links.
 operation=release
 production_ref=production
-production_sha=38818700dcd4c22fa4693ce40b936fe52b9433d3
-previous_production_sha=4a78726b80b650fdc2f47a71b61a1705bbbd17a0
-approved_staging_sha=931e095c1e0da9f1e443167425a2bdeeed2cee73
-candidate_sha=90a7cf78bd2b1091ebdef033b8710255a808dc8b
-pr=17
-target_public_version=1.13
-release_date_jst=2026-10-21
-audit_run=39590132674
-note=Only two approved strict validator and test paths. Correct per-week long-running event matching, still fail genuine individual week loss. Event data unchanged, safety strictness preserved.
+production_sha=0f2195c918525d14f0ae36b211f525e98b87ca0a
+previous_production_sha=38818700dcd4c22fa4693ce40b936fe52b9433d3
+approved_staging_sha=ca32f2b44dbb1382cf3ac9876980a54e3cd32e28
+candidate_sha=e2d46176b4e98ee5569695b7d6ac5055d3b6daaa
+pr=20
+target_public_version=1.14
+release_date_jst=2026-10-22
+audit_run=39695510842
+staging_validation_run=39694433253
+note=Only 7 authorized paths: homepage link, omission audit HTML CSS JS, 310-row static Suginami decision snapshot, npm regression wiring and test. data-production and data-staging unchanged. No other main-only improvements released.

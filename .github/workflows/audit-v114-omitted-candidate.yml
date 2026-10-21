@@ -1,0 +1,64 @@
+name: Audit v1.14 isolated excluded-event directory candidate
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v114-omitted-candidate.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exactly the approved production-derived candidate
+        uses: actions/checkout@v4
+        with:
+          ref: e2d46176b4e98ee5569695b7d6ac5055d3b6daaa
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Strict seven-path release scope and base SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 'e2d46176b4e98ee5569695b7d6ac5055d3b6daaa'
+          test "$(git rev-parse HEAD^)" = '38818700dcd4c22fa4693ce40b936fe52b9433d3'
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual-release-files
+          printf '%s\n' package.json site/curation/suginami_review_20261022.json site/index.html site/omitted.css site/omitted.html site/omitted.js tests/omitted_page_contract.test.mjs | sort > /tmp/expected-release-files
+          diff -u /tmp/expected-release-files /tmp/actual-release-files
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = '59266b5587c3cd868b8d5637b2a363f1e3f52cd9'
+          test "$(git ls-remote origin refs/heads/data-staging | cut -f1)" = '89d3828d170f04508069880f6cdfdd97ea055ff4'
+          echo 'Approved seven paths only; event records and both data branch pointers unchanged.'
+      - name: Check released governance and application regression suite
+        run: npm test
+      - name: Validate candidate decisions, URLs, homepage and production-root isolation
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          from collections import Counter
+          root=Path('site')
+          data=json.loads((root/'curation/suginami_review_20261022.json').read_text())
+          rows=data['rows']
+          expected={'対象外':200,'掲載候補':95,'ステージング既登録':8,'要確認':3,'前回のみ・再取得要':4}
+          assert len(rows)==310 and dict(Counter(x['status'] for x in rows))==expected
+          assert all(x['reason'] for x in rows)
+          assert sum(bool(x['official_url']) for x in rows)==306
+          assert sum(not x['official_url'] for x in rows)==4
+          assert all(not (x['official_url'] or '').startswith('http://') for x in rows)
+          assert 'href="omitted.html"' in (root/'index.html').read_text()
+          assert 'curation/suginami_review_20261022.json' in (root/'omitted.js').read_text()
+          assert all((root/p).is_file() for p in ['omitted.html','omitted.js','omitted.css'])
+          assert all(not p.name.startswith('2026-') for p in root.glob('curation/*.json'))
+          assert not list(root.glob('data/2026-10-*.json')) == [], 'Existing published event files preserved'
+          print('RELEASE CANDIDATE PASS: 310 rows, 306 official links, 4 missing, 0 changed dynamic event files.')
+          PY

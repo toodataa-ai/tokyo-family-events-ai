@@ -126,6 +126,8 @@ async function loadSelected(){
     const rows=loaded.map(x=>x.data).filter(Boolean);
     currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,
       publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
+    const knownIds=new Set(currentData.events.map(ev=>ev.id));
+    canvaSelectedIds=saveCanvaSelection(canvaSelectedIds.filter(id=>knownIds.has(id)),window.localStorage);
     render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }

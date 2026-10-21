@@ -1567,8 +1567,8 @@
   {
     "candidate_id": "suginami-official-27652",
     "name": "武田美穂展 絵本づくりはドキドキなのだ！（ちひろ美術館・東京）",
-    "decision": "要確認",
-    "reason": "絵本展だが会場は練馬区ちひろ美術館。正しい区・同名既存イベントとの重複照合が必要。",
+    "decision": "ステージング既登録",
+    "reason": "練馬区ちひろ美術館・東京の同一展覧会がステージングに登録済み（v15-137a2a4e48f8）。開催期間2026-07-25〜10-25、展示内容・会場が一致。別公式URLの再取得候補なので新規追加しない。",
     "official_url": "https://www.city.suginami.tokyo.jp/s113/event/27652.html",
     "official_date": "2026年7月25日（土曜日） から2026年10月25日（日曜日）",
     "official_target": "どなたでも",
@@ -1584,7 +1584,7 @@
     "official_detail_sha256": "cc1163de71dc417d0c09f39287ddc581509a95bd6999100a6b20ca46cd1f8a6b",
     "detail_checked_at": "2026-10-22T02:01:08+09:00",
     "evidence_run": 39639929211,
-    "scope_note": "候補採否のみ。本番イベントの削除・編集は禁止。"
+    "scope_note": "別公式URLの重複。練馬区登録（v15-137a2a4e48f8）を保持し、新規追加しない。"
   },
   {
     "candidate_id": "suginami-official-27656",

@@ -297,11 +297,19 @@ export function mergeEventsAcrossWeeks(weekData){
       const key=eventIdentityKey(ev);
       // Different descriptions of a shared multi-venue event have different
       // exact keys. Keep the first public ID and merge only confirmed anchors.
-      const actualKey=map.has(key)?key:([...map.entries()].find(([,row])=>sameEventAcrossWeeks(row,ev))?.[0]||key);
+      const actualKey=map.has(key)?key:([...map.entries()].find(([,row])=>
+        // Match against every already-verified venue alias in the cluster.
+        // With A↔B and B↔C matches, the third row must not reappear as C.
+        (row._identity_venues||[row.venue]).some(venue=>sameEventAcrossWeeks({...row,venue},ev))
+      )?.[0]||key);
       if(!map.has(actualKey)){
-        map.set(actualKey,{...ev,_decision_rows:[],_week_sats:[]});
+        map.set(actualKey,{...ev,_identity_venues:ev.venue?[ev.venue]:[],_decision_rows:[],_week_sats:[]});
       }else{
         const cur=map.get(actualKey);
+        // Preserve the venue descriptions from all verified sources for future
+        // matches; never overwrite source records or erase distinct venues.
+        cur._identity_venues ||= cur.venue?[cur.venue]:[];
+        if(ev.venue && !cur._identity_venues.includes(ev.venue)) cur._identity_venues.push(ev.venue);
         const prefer=(v,a)=>a||v;
         cur.image=prefer(cur.image,ev.image);
         // Prefer an event detail over a genre/list URL when both are official.

@@ -287,6 +287,8 @@ jobs:
             fi
           )
           echo "STAGING_PREVIEW_DATA_STRICT_PASS stage=$stage production=$base"
+      - name: Verify real staging all-period event identity
+        run: node staging-src/tests/staging_real_arts_identity.test.mjs data-staging-src/site/data
       - name: Compose production root and hidden staging preview
         shell: bash
         run: |

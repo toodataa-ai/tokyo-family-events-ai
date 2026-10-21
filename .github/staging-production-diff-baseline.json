@@ -456,6 +456,30 @@
       "reason": "2026-10-21 6週間の長期イベントが同じIDでも各週の真正な欠落・事実変更を検出する非退行監査の修正。未承認のステージング専用改修。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/index.html",
+      "kind": "different",
+      "category": "staging_event_identity_fix",
+      "reason": "2026-10-21 アーツ中村橋の実ステージング3週分の連鎖重複を解消し、JSキャッシュ刷新・実データ必須回帰検証を追加。本番承認には当たらない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/search.html",
+      "kind": "different",
+      "category": "staging_event_identity_fix",
+      "reason": "2026-10-21 アーツ中村橋の実ステージング3週分の連鎖重複を解消し、JSキャッシュ刷新・実データ必須回帰検証を追加。本番承認には当たらない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/staging_real_arts_identity.test.mjs",
+      "kind": "staging_only",
+      "category": "staging_event_identity_fix",
+      "reason": "2026-10-21 アーツ中村橋の実ステージング3週分の連鎖重複を解消し、JSキャッシュ刷新・実データ必須回帰検証を追加。本番承認には当たらない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "c5de42b4e8e1b3400458a837488c88145b9d42ac"

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-17-r5",
+  "current_public_release": "release/2026-10-21-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -114,7 +114,16 @@
       "workflow_run_id": 39013701631,
       "note": "ユーザー承認の固定サイト一覧表示分類の訂正。公式4件・今回追加の地域情報サイト2件・従来18件。PR #10でsite/index.htmlと対応する回帰テストのみproductionに昇格。固定参照元24件、イベントdata-production 361延べレコードを維持。独立監査39013615911、Pages公開39013701631ともsuccess。",
       "public_version": "1.11"
+    },
+    {
+      "release_id": "release/2026-10-21-r1",
+      "branch": "release/2026-10-21-r1",
+      "commit_sha": "4a78726b80b650fdc2f47a71b61a1705bbbd17a0",
+      "deployed_at": "2026-10-21T11:07:44Z",
+      "workflow_run_id": 39589530148,
+      "note": "ユーザー承認の本番アプリv1.12。アーツ中村橋の3週分既存データを削除せず検索一覧1件に集約。杉並区公式全ジャンル日別イベントカレンダーの探索元追加、対象日展開、回帰テスト。前本番production直接子孫の独立候補8ファイルのみPR #16を経て昇格。隔離候補監査39589345118、本番Pages39589530148成功。区の選択UI変更なし。動的イベント2件はdata-staging側で別の公開ゲート。",
+      "public_version": "1.12"
     }
   ],
-  "current_public_version": "1.11"
+  "current_public_version": "1.12"
 }

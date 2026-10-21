@@ -24,7 +24,7 @@ assert.match(html,/source\.origin==='legacy'/,'legacy section must include only 
 assert.doesNotMatch(html,/source\.origin!=='official'&&source\.origin!=='official_added'/,'non-official must not be mislabeled legacy');
 assert.match(html,/その他の固定サイト（要分類）/,'new origins must remain visible instead of being mislabeled');
 const originCounts = Object.groupBy(sources, source=>source.origin);
-assert.equal((originCounts.official||[]).length+(originCounts.official_added||[]).length,4,'keep four official sources');
+assert.equal((originCounts.official||[]).length+(originCounts.official_added||[]).length,5,'keep the four existing official sources plus new Suginami full-calendar source');
 assert.equal((originCounts.legacy||[]).length,18,'only 18 previous fixed sources');
 assert.equal((originCounts.manual||[]).length,2,'two newly added community sites');
 assert.ok((originCounts.manual||[]).some(source=>source.id==='tamemap_nakano'));

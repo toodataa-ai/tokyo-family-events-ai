@@ -125,6 +125,21 @@ def source_targets(config, start, end):
                     raise PlanError("unresolved URL placeholder for " + entry["id"])
                 if url not in urls:
                     urls.append(url)
+        if entry.get("calendar_daily_unfiltered") is True:
+            # Month views truncate daily listings. Only this whitelisted host
+            # may receive the 42-day unfiltered expansion.
+            if entry["id"] != "suginami_calendar_all":
+                raise PlanError("daily calendar expansion is not allowed: " + entry["id"])
+            from urllib.parse import urlparse
+            p = urlparse(entry["base_url"])
+            if p.scheme != "https" or p.hostname != "www.city.suginami.tokyo.jp":
+                raise PlanError("untrusted Suginami calendar origin")
+            for offset in range((end - start).days + 1):
+                d = start + dt.timedelta(days=offset)
+                daily = ("https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/"
+                         f"calendar.cgi?day={d.day}&month={d.month}&type=3&year={d.year}")
+                if daily not in urls:
+                    urls.append(daily)
         targets.append({"id": entry["id"], "required": entry.get("required") is True,
                         "urls": urls, "status": "pending", "checked_count": 0})
     if not targets:

@@ -529,3 +529,44 @@ for(const sat of [...new Set(legacyBaseline.map(x=>x.sat))]){
   }
 }
 console.log(`legacy parity regression: ${legacyBaseline.length}/${legacyBaseline.length} rows accounted for`);
+
+
+const artsName='アーツ中村橋 2026―わたしとまちの記憶';
+const artsWeeks=mergeEventsAcrossWeeks([
+  {sat:'2026-10-24',events:[{id:'arts-1',ward:'練馬区',name:artsName,date_start:'2026-09-12',date_end:'2026-11-08',venue:'中村橋周辺（練馬区立美術館ほか）',official_url:'https://www.neribun.or.jp/event/museum.cgi?genre=2026'}]},
+  {sat:'2026-10-31',events:[{id:'arts-2',ward:'練馬区',name:artsName,date_start:'2026-09-12',date_end:'2026-11-08',venue:'練馬区立美術館・サンライフ練馬・サンツ中村橋商店街 ほか',official_url:'https://www.neribun.or.jp/event/detail_m.cgi?id=202606301782802063'}]},
+  {sat:'2026-11-07',events:[{id:'arts-3',ward:'練馬区',name:artsName,date_start:'2026-09-12',date_end:'2026-11-08',venue:'中村橋周辺（練馬区立美術館ほか）'}]}
+]);
+assert.equal(artsWeeks.length,1,'Arts Nakamurabashi must appear once across the six-week search');
+assert.equal(artsWeeks[0].id,'arts-1','preserve original event ID');
+assert.equal(artsWeeks[0]._week_sats.length,3);
+assert.match(artsWeeks[0].official_url,/detail_m.cgi/);
+const separateVenues=mergeEventsAcrossWeeks([{events:[
+  {name:'同名イベント',ward:'練馬区',date_start:'2026-10-24',date_end:'2026-10-24',venue:'練馬区立美術館'},
+  {name:'同名イベント',ward:'練馬区',date_start:'2026-10-24',date_end:'2026-10-24',venue:'区立スポーツセンター'}
+]}]);
+assert.equal(separateVenues.length,2,'independent venues must remain separate');
+console.log('Arts Nakamurabashi duplicate regression + distinct venue guard: OK');
+
+
+const correctedArtsWeeks=mergeEventsAcrossWeeks([
+  {sat:'2026-10-24',events:[{id:'arts-s24',ward:'練馬区',name:artsName,
+    date_start:'2026-09-12',date_end:'2026-11-08',period:'9/12〜11/8',
+    venue:'サンツ中村橋商店街・サンライフ練馬ほか（美術館内の展示は10月18日終了、10月19〜30日は展示替休館）'}]},
+  {sat:'2026-10-31',events:[{id:'arts-s31',ward:'練馬区',name:artsName,
+    date_start:'2026-09-12',date_end:'2026-11-08',period:'9/12〜11/8',
+    venue:'練馬区立美術館・サンライフ練馬・サンツ中村橋商店街 ほか'}]},
+  {sat:'2026-11-07',events:[{id:'arts-n07',ward:'練馬区',name:artsName,
+    date_start:'2026-09-12',date_end:'2026-11-08',period:'9/12〜11/8',
+    venue:'中村橋周辺（練馬区立美術館ほか）'}]}
+]);
+assert.equal(correctedArtsWeeks.length,1,'the corrected venue chain must collapse A-B-C to ONE event');
+assert.deepEqual(correctedArtsWeeks[0]._week_sats,['2026-10-24','2026-10-31','2026-11-07']);
+assert.equal(correctedArtsWeeks[0]._identity_venues.length,3,'all trusted venue aliases should remain');
+assert.equal(correctedArtsWeeks[0].id,'arts-s24','original event ID preserved');
+const nonMatchingDate=mergeEventsAcrossWeeks([{events:[
+  {id:'separate-date1',ward:'練馬区',name:artsName,venue:'練馬区立美術館',date_start:'2026-10-24',date_end:'2026-10-24'},
+  {id:'separate-date2',ward:'練馬区',name:artsName,venue:'練馬区立美術館',date_start:'2026-10-25',date_end:'2026-10-25'}
+]}]);
+assert.equal(nonMatchingDate.length,2,'independent events on different dates must not merge');
+console.log('actual verification venue correction chain A-B-C: OK');

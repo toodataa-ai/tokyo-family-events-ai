@@ -32,3 +32,33 @@ assert.throws(()=>buildEntry(oldManifest,{...newManifest,weekends:newManifest.we
 assert.throws(()=>buildEntry(oldManifest,newManifest,old,now,'2026-10-19',base),/Saturday/);
 assert.throws(()=>buildEntry(oldManifest,newManifest,old,now,'2026-10-13','broken'),/SHA/);
 console.log('holiday update history generator: OK');
+
+
+import {checkStagingOfficialAddition} from '../tools/holiday_update_history.mjs';
+const manualBase='b'.repeat(40);
+const manualManifest={generated:'2026-10-19T17:36:28+00:00',default:'2026-10-24',rolling_horizon_weeks:6,
+  weekends:['2026-10-24','2026-10-31','2026-11-07','2026-11-14','2026-11-21','2026-11-28'].map(s=>({
+    sat:s,sun:new Date(Date.parse(s+'T00:00:00Z')+86400000).toISOString().slice(0,10),
+    file:s+'.json',count:1}))};
+const oldRows=manualManifest.weekends.map(w=>({sat:w.sat,events:[{id:'prior-'+w.sat,ward:'練馬区',name:'保存対象',date_start:w.sat,date_end:w.sun,official_url:'https://example.jp/original'}]}));
+const addedRows=[
+  {id:'suginami-official-28531',ward:'杉並区',name:'花と緑の井草祭り',date_start:'2026-10-24',date_end:'2026-10-24',official_url:'https://www.city.suginami.tokyo.jp/s033/event/28531.html'},
+  {id:'suginami-official-28567',ward:'杉並区',name:'杉並清掃工場環境フェア2026',date_start:'2026-10-25',date_end:'2026-10-25',official_url:'https://www.city.suginami.tokyo.jp/s104/event/28567.html'},
+];
+const currentRows=oldRows.map((w,i)=>({...w,events:i===0?[...w.events,...addedRows]:[...w.events]}));
+const manualNext={...manualManifest,generated:'2026-10-21T09:00:00+09:00',
+  weekends:manualManifest.weekends.map((x,i)=>({...x,count:i===0?3:1}))};
+const manualRow={run_id:'staging-suginami-official-two-events-2026-10-21',
+  run_type:'staging_manual_official_addition',status:'stage_candidate_only',as_of_jst:'2026-10-21',
+  executed_at:'2026-10-21T09:00:00+09:00',base_data_production_sha:manualBase,
+  target_start:'2026-10-24',target_end:'2026-10-25',
+  added_weekly_records:2,changed_existing_records:0,removed_weekly_records:0};
+assert.deepEqual(checkStagingOfficialAddition(manualManifest,manualNext,oldRows,currentRows,manualRow,manualBase),
+  {added:2,changed:0,removed:0,retained:6});
+assert.throws(()=>checkStagingOfficialAddition(manualManifest,manualNext,oldRows,
+  currentRows.map((w,i)=>i===1?{...w,events:[]}:w),manualRow,manualBase),/exactly two approved records|event count|preserve/);
+assert.throws(()=>checkStagingOfficialAddition(manualManifest,manualNext,oldRows,
+  currentRows.map((w,i)=>i===1?{...w,events:[{...w.events[0],price:'changed'}]}:w),manualRow,manualBase),/exactly two approved records/);
+assert.throws(()=>checkStagingOfficialAddition(manualManifest,manualNext,oldRows,currentRows,
+  {...manualRow,run_type:'holiday_after_update'},manualBase),/not an unpublished/);
+console.log('strict incremental event staging history & protected weekly rows: OK');

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-21-r2",
+  "current_public_release": "release/2026-10-22-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -132,7 +132,16 @@
       "workflow_run_id": 39590256061,
       "note": "本番データ公開ゲートで同一イベントIDが複数開催週に含まれると誤って消失扱いする旧非退行監査を修正。週単位に照合し、実際の1週欠落は引き続き失敗させる。PR #17で2ファイルのみ。検証実データでもイベント既存欠落ゼロ、隔離候補監査39590132674と本番Pages39590256061成功。v1.12の画面・杉並区固定サイト・公開済み動的データを維持。",
       "public_version": "1.13"
+    },
+    {
+      "release_id": "release/2026-10-22-r1",
+      "branch": "release/2026-10-22-r1",
+      "commit_sha": "0f2195c918525d14f0ae36b211f525e98b87ca0a",
+      "deployed_at": "2026-10-21T23:47:49Z",
+      "workflow_run_id": 39695619684,
+      "note": "ユーザー承認の本番アプリv1.14。トップから「掲載見送り・掲載判断一覧」へ遷移、杉並区公式カレンダー310候補（見送り200、審査中95、既登録8、要確認3、再取得4）の個別理由・公式リンク306件を閲覧可能に。production v1.13を直接親とする隔離候補7ファイルのみPR #20マージ。独立監査39695510842、Pages39695619684成功。data-staging/data-production変更なし。ほかのmain開発中機能は含めない。",
+      "public_version": "1.14"
     }
   ],
-  "current_public_version": "1.13"
+  "current_public_version": "1.14"
 }

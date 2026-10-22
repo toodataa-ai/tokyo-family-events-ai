@@ -139,7 +139,8 @@ export function buildCanvaPrompt(draft,template){
     '必ず元デザインから新しい作業用コピーを作り、以前の保存版を変更しないでください。',
     '1行タイトルは80〜82px、2行タイトルは70〜74px、本文は37〜46pxを初期目安に最大化。',
     '未選択イベント枠は枠ごと非表示。画像には出典：サイト名と参照元URLを記録。',
-    '掲載許諾が不明なら公開・Instagram投稿しない。',
+    '汎用OGP・サイトロゴなどはイベント画像か確認し、画像には出典を付けてください。',
+    '掲載許諾が不明なら公開・Instagram投稿はしない。',
     '全7ページのプレビューを確認し、作業用コピーに確定保存して編集リンクを返してください。',
     '選択件数：'+draft.selected_count+'件。表紙タイトル：'+(draft.autofill_fields?.COVER_TITLE?.text||''),
     eventPromptBlocks(draft)

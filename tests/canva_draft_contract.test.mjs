@@ -124,3 +124,36 @@ test('real clipboard instruction renders all fields and protects absent slots',(
  assert.ok(!text.includes('{{'));
  assert.throws(()=>renderCanvaPromptTemplate('',d));
 });
+
+const visualQualityV1=readFileSync(new URL('../docs/canva_visual_quality_contract_v1.md',import.meta.url),'utf8');
+test('Instagram example is a qualified reference, never a secretly changed template',()=>{
+  assert.match(liveV2,/https:\/\/www\.instagram\.com\/p\/Dev8XdMHRvr\//);
+  assert.match(liveV2,/取得できない場合は見た目を推測/);
+  assert.match(liveV2,/https:\/\/canva\.link\/8zgsm5y1cwwgd5e|\{\{TEMPLATE_URL\}\}/);
+  assert.match(visualQualityV1,/DAHYo7noxKY/);
+  assert.match(visualQualityV1,/1080×1350px・7ページ固定/);
+  assert.match(visualQualityV1,/画像そのものを取得できていない/);
+});
+test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
+ const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 おでかけ2選'});
+ const p=renderCanvaPromptTemplate(liveV2,d);
+ assert.match(p,/本文は46pxから試し/);
+ assert.match(p,/2pxずつ減らす/);
+ assert.match(p,/約幅540px/);
+ assert.match(p,/写真.*重なり|重なり.*写真/);
+ assert.match(p,/同じ基準フォントファミリー/);
+ assert.match(p,/画像.*配置.*最終表示/);
+ assert.match(p,/全7ページのプレビュー/);
+ assert.match(p,/未使用.*非表示/);
+ assert.match(p,/共通OGP/);
+ assert.match(p,/元テンプレート.*前回/);
+ assert.match(p,/画像専用\/共通\/準備中/);
+ assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
+ assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
+ for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
+ assert.match(p,/G01〜G08/);
+ assert.match(p,/出典：サイト名/);
+ assert.match(p,/画像出典候補ページ:/);
+ assert.match(p,/公式確認根拠URL:/);
+ assert.match(p,/Instagram投稿はしない/);
+});

@@ -90,3 +90,16 @@ test('organiser-specific image candidates are not assumed licensed for publicati
   assert.ok(buildCanvaPrompt(d).includes('1行タイトルは80〜82px'));
   assert.ok(buildCanvaPrompt(d).includes('汎用OGP・サイトロゴ'));
 });
+
+test('exported Canva prompt carries approved hide-frame, cover-count and save rules',()=>{
+  const d=buildCanvaDraft([event('a'),event('b')],['a','b'],{coverTitle:'東京23区 週末子連れイベント2選'});
+  const p=buildCanvaPrompt(d);
+  assert.ok(p.includes('表紙タイトル: 東京23区 週末子連れイベント2選'));
+  assert.ok(p.includes('選択件数（2選）'));
+  assert.ok(p.includes('枠ごと非表示'));
+  assert.ok(p.includes('説明文・会場・日時もできる限り大きく'));
+  assert.ok(p.includes('確定保存して編集リンクを返してください'));
+  assert.ok(p.includes('前年ポスター・重複画像は禁止'));
+  assert.ok(!p.includes('余分なイベント枠を空欄'));
+  assert.ok(!p.includes('保存前に承認を求めてください'));
+});

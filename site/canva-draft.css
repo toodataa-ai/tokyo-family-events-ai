@@ -1,0 +1,47 @@
+/* Separate opt-in Canva workflow: does not change existing event cards. */
+.canva-pickbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:12px auto 18px;padding:12px 16px;border:1px solid #b7d9cc;background:#f2faf6;border-radius:12px;max-width:1080px}
+.canva-pickbar[hidden]{display:none}
+.canva-pickbar-count{font-weight:700;font-size:14px;color:#166047}
+.canva-pickbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.canva-pickbar-actions a,.canva-pickbar-actions button{border-radius:8px;border:1px solid #91b7a3;padding:8px 12px;background:white;color:#154b36;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer}
+.canva-pickbar-actions a{background:#18704f;border-color:#18704f;color:white}
+.canva-pickbar-actions a[aria-disabled="true"]{pointer-events:none;opacity:.45}
+.canva-select-label{display:inline-flex;align-items:center;gap:7px;cursor:pointer;padding:7px 10px;border-radius:9px;border:1px solid #b2d2be;background:#eef9f1;color:#12523a;font-weight:700;font-size:13px}
+.canva-select-label input{width:17px;height:17px;accent-color:#08774d}
+.canva-card-actions{padding:0 14px 10px;display:flex;justify-content:flex-end}
+.canva-draft-page{background:#f6f8f6;color:#23372f;font-family:"Meiryo UI","Meiryo",sans-serif;min-height:100vh}
+.canva-draft-header{background:#e9f5ee;border-bottom:1px solid #cae3d1;padding:30px max(20px,calc((100vw - 1020px)/2))}
+.canva-back{display:inline-block;margin-bottom:14px;color:#165b41;font-size:14px}
+.canva-draft-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.canva-eyebrow{font-size:12px;letter-spacing:1.7px;font-weight:700;color:#377358}
+.canva-draft-heading h1{font-size:28px;margin:5px 0 10px}
+.canva-draft-heading p{line-height:1.7;margin:0;max-width:710px;font-size:14px}
+.canva-template-link{padding:10px 14px;border:1px solid #bdd6c4;border-radius:8px;background:white;color:#205a3d;text-decoration:none;font-size:13px;font-weight:700}
+.canva-main{max-width:1040px;margin:20px auto;padding:0 18px 45px;display:grid;gap:18px}
+.canva-panel{background:white;padding:22px;border:1px solid #d9e7dd;border-radius:14px}
+.canva-step{display:flex;align-items:flex-start;gap:12px}
+.canva-step>span{background:#207e56;color:white;display:grid;place-items:center;border-radius:50%;width:28px;height:28px;flex:0 0 28px;font-weight:700}
+.canva-step h2{font-size:19px;margin:0 0 7px}
+.canva-step p{font-size:13px;line-height:1.7;color:#52645b;margin:0}
+.canva-count{font-weight:700;font-size:15px;margin:19px 0 10px}
+.canva-chosen{display:grid;gap:9px;padding:0;margin:14px 0;list-style:none}
+.canva-item{display:flex;align-items:center;gap:12px;border:1px solid #dae7dd;border-radius:10px;padding:12px}
+.canva-slot{flex:0 0 25px;text-align:center;color:#207e56;font-size:19px;font-weight:700}
+.canva-item-main{flex:1;min-width:0}
+.canva-item-main strong{display:block;font-size:14px;line-height:1.5}
+.canva-item-main small{display:block;color:#67776b;line-height:1.5;margin-top:4px;font-size:12px}
+.canva-order{display:flex;gap:5px}
+.canva-order button{border:1px solid #cfdfd4;background:#fff;border-radius:7px;padding:6px 9px;cursor:pointer;color:#245d40}
+.canva-order button:disabled{opacity:.25;cursor:default}
+.canva-empty,.canva-notice{padding:14px;background:#f0f8f4;border-radius:8px;font-size:14px}
+.canva-form-label{display:block;font-weight:700;font-size:13px;margin:17px 0 6px}
+.canva-title-input{border:1px solid #a9c8b4;border-radius:8px;font-size:15px;padding:11px 12px;max-width:620px;width:100%;box-sizing:border-box}
+.canva-warnings{font-size:13px;line-height:1.6;color:#8a5a12}
+.canva-handoff-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.canva-handoff-actions button{padding:11px 15px;border:1px solid #94bda3;border-radius:9px;background:#fff;color:#18573a;font-weight:700;cursor:pointer}
+.canva-handoff-actions button.canva-primary{background:#187a50;color:#fff;border-color:#187a50}
+.canva-handoff-actions button:disabled{opacity:.35;cursor:not-allowed}
+.canva-handoff-guide{background:#f5f9f5;padding:15px;border-radius:10px;font-size:13px;line-height:1.8}
+.canva-handoff-guide p{margin:7px 0}
+.canva-panel details{margin-top:18px;font-size:13px;line-height:1.7}
+@media(max-width:600px){.canva-draft-header{padding:20px}.canva-panel{padding:15px}.canva-item{flex-wrap:wrap}.canva-order{margin-left:auto}.canva-handoff-actions button{flex:1 1 100%}.canva-draft-heading h1{font-size:22px}}

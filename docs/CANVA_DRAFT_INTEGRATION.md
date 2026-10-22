@@ -53,3 +53,19 @@ Canva Connect API の `create_from_design` autofill を採用する。Canva公�
 - `EVENT_NN_SOURCE` – 公式URL
 
 個票には `id`、`verification_status`、`verification_source`、`image_reference_url` を保持してトレースする。10件未満なら古いテンプレート内容が残るのを防ぐため、手動仕上げが必要。独立したCanvas画像を生成したり勝手に架空のイベントで埋めたりはしない。
+
+## 2026-10-22 非公開ドラフト用の公式サムネイル候補と文字拡大
+
+- `image_reference_url` は参照情報。公式イベント固有のURLと判別できる場合に `event_image_candidate` を付与。Canva下書きに取り込む候補とし、権利を取得済みだとは主張しない。
+- 共通OGP、汎用SNSロゴ、複数イベントで重複する画像、ドメインが異なる参照画像は区別する。`generic_site_image`、`shared_or_duplicate`、`external_image_requires_review` は自動転用しない。
+- イベントの実在・画像との一致・文字が読める構図を確認して非公開の作業用コピーだけに配置。掲載・SNS投稿・配布は別途許諾が確認できた画像だけに限定する。
+- 初期サイズは一行80〜82px、二行70〜74px。必ず文字の実際のbounding boxを比較し、見出し・会場・日時・写真の重なりを解消する。以前の文書の72px/64〜68pxは旧値。
+- 10件未満なら空き枠は枠ごと隠し、古いイベント本文・写真を残さない。表紙の『N選』は選択件数と一致させる。
+- 画像判定はブラウザ側の**候補ラベル**にすぎず、WebサイトのURLをもとにCanvaへ直接アップロードするOAuth/Connect APIは未実装。Canva連携で送る指示文を使い、ChatGPT側で画像と権利を確認してからドラフトへ反映する。
+- この更新はステージングのアプリ差分だけ。既存データ、`production`、`data-production`のレコード削除・変更は一切しない。
+
+### 今回のCanva保存済み検証例
+
+- 元テンプレート `DAHYo7noxKY` と前回確定版 `DAHYr_sNh7I` を変更せず、修正版コピー `DAHYt_NTgxA` に8件の文字拡大を保存。
+- イベント専用の告知画像を特定できたもののみ2件配置（「東京自然いきもの展」「秋のキッズフェスタ2026」）。その他6件は汎用OGP・著作権未確認・別年画像のため「画像準備中」を維持。
+- SNS投稿と本番サイト公開は未実施。

@@ -99,7 +99,7 @@ export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連
       '7ページ構成は表紙1・イベント2件ずつ5ページ・締め1を基本とする。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
       'タイトルは短い1行80〜82px、長い2行70〜74pxを目安とし、会場や日時と重ならない最大値に調整する。',
-      'イベント専用画像は非公開のCanvaドラフトでのみ候補使用とし、共有OGP・サイトロゴ・複数イベント共通画像は除外する。',
+      'イベント専用画像を最優先。共有OGP・サイトロゴ・重複画像は自動採用せず、当該公式ページでの掲載とイベントとの適合性を確認して非公開ドラフトの候補としてのみ使用できる。',
       '画像の使用権利は未確認。SNS公開・配布には権利者の許諾確認が必要。',
       '完成したデザインは下書きとして保存し、公開・SNS投稿は行わない。'
     ]
@@ -113,6 +113,8 @@ export function eventPromptBlocks(draft){
     '料金: '+(r.price||'要確認'),
     '説明: '+r.description,
     '公式: '+r.official_url,
+    '公式確認根拠URL: '+(r.verification_source||'未確認'),
+    '画像出典候補ページ: '+(r.official_url||'未確認'),
     '画像参照: '+(r.image_reference_url||'なし')+'（出典確認・公開権利は別途確認）',
     '画像判定: '+r.image_candidate_status,
     '確認状態: '+r.verification_status
@@ -140,6 +142,8 @@ export function buildCanvaPrompt(draft,template){
     '1行タイトルは80〜82px、2行タイトルは70〜74px、本文は37〜46pxを初期目安に最大化。',
     '未選択イベント枠は枠ごと非表示。画像には出典：サイト名と参照元URLを記録。',
     '汎用OGP・サイトロゴなどはイベント画像か確認し、画像には出典を付けてください。',
+    'Canva品質基準 https://github.com/toodataa-ai/tokyo-family-events-ai/blob/main/docs/canva_visual_quality_contract_v1.md のG01〜G08を確認し全7ページプレビューと再チェックを実施。',
+    '同じ役割のフォント・文字サイズ・行間を揃え、文字の欠け・要素重なりゼロを確認。フォントファミリー未検証なら未検証と明記。',
     '掲載許諾が不明なら公開・Instagram投稿はしない。',
     '全7ページのプレビューを確認し、作業用コピーに確定保存して編集リンクを返してください。',
     '選択件数：'+draft.selected_count+'件。表紙タイトル：'+(draft.autofill_fields?.COVER_TITLE?.text||''),

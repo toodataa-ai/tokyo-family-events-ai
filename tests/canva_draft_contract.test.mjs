@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
-import {CANVA_FORMAT,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from '../site/canva-draft-contract.js';
+import {CANVA_FORMAT,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -67,4 +67,26 @@ test('CSV has one header and one row, escapes quotes and protects Japanese UTF-8
   assert.ok(csv.startsWith('\uFEFF'));
   assert.ok(csv.includes('""で""'));
   assert.equal(csv.trim().split(/\r?\n/).length,2);
+});
+
+test('image screening blocks shared banners, generic site OG logos, and unknown permissions',()=>{
+  const same='https://www.metro.tokyo.lg.jp/2026/10/images/shared.jpg';
+  const e=[
+    event('a',{image:'https://www.city.toshima.lg.jp/shared/site_rn2025/images/sns/logo.jpg'}),
+    event('b',{image:same}),
+    event('c',{image:same}),
+    event('d',{image:'https://example.org/image.jpg'})
+  ];
+  const d=buildCanvaDraft(e,['a','b','c','d']);
+  assert.deepEqual(d.events.map(r=>r.image_candidate_status),['generic_site_image','shared_or_duplicate','shared_or_duplicate','external_image_requires_review']);
+  assert.equal(d.image_review.permission,'unconfirmed');
+  assert.equal(Object.keys(d.autofill_fields).some(x=>x.endsWith('_IMAGE')),false);
+});
+test('organiser-specific image candidates are not assumed licensed for publication',()=>{
+  const e=event('a',{official_url:'https://sp.minato-kagaku.tokyo/event-2026autumnexhibition/',image:'https://sp.minato-kagaku.tokyo/wp-content/uploads/2026/08/banner.jpg'});
+  const d=buildCanvaDraft([e],['a']);
+  assert.equal(d.events[0].image_candidate_status,'event_image_candidate');
+  assert.equal(d.events[0].image_use_permission,'unconfirmed');
+  assert.ok(buildCanvaPrompt(d).includes('1行タイトルは80〜82px'));
+  assert.ok(buildCanvaPrompt(d).includes('汎用OGP・サイトロゴ'));
 });

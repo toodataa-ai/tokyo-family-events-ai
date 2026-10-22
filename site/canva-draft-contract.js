@@ -52,8 +52,28 @@ export function eventDraftRow(ev){
     family_fit_grade:grade
   };
 }
+// Candidate analysis only: a source URL never grants publishing rights.
+export function classifyCanvaImageCandidates(rows){
+  const counts=new Map();
+  for(const r of rows){const url=r.image_reference_url||'';if(url)counts.set(url,(counts.get(url)||0)+1);}
+  return rows.map(r=>{
+    const url=r.image_reference_url||'';
+    let status='missing';
+    if(url){
+      const path=new URL(url).pathname.toLowerCase();
+      if(counts.get(url)>1)status='shared_or_duplicate';
+      else if(/(?:^|\/)(?:og|ogp|logo|favicon|default)(?:[._\/-]|$)|\/images\/sns\/|\/meta\/event\//.test(path))status='generic_site_image';
+      else {
+        try{status=new URL(r.official_url).hostname===new URL(url).hostname?'event_image_candidate':'external_image_requires_review';}
+        catch{status='external_image_requires_review';}
+      }
+    }
+    return {...r,image_candidate_status:status,image_use_permission:'unconfirmed'};
+  });
+}
+
 export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連れイベント10選'}={}){
-  const rows=selectedEvents(events,ids).map(eventDraftRow);
+  const rows=classifyCanvaImageCandidates(selectedEvents(events,ids).map(eventDraftRow));
   const title=safeText(coverTitle).slice(0,120)||'東京23区 週末子連れイベント10選';
   const fields={COVER_TITLE:{type:'text',text:title},COVER_DATE:{type:'text',text:rows[0]?.period||''}};
   rows.forEach((row,i)=>{
@@ -72,13 +92,15 @@ export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連
     source_design_url:CANVA_FORMAT.templateUrl,
     layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents},
     selected_count:rows.length,selection_ids:rows.map(r=>r.id),events:rows,
+    image_review:{permission:'unconfirmed',candidate_count:rows.filter(r=>r.image_candidate_status==='event_image_candidate').length,needs_review_count:rows.filter(r=>r.image_candidate_status!=='event_image_candidate').length},
     autofill_fields:fields,
     notes:[
       '元デザインは変更せず必ずコピーしてから編集する。',
       '7ページ構成は表紙1・イベント2件ずつ5ページ・締め1を基本とする。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
-      'タイトル基本72px、長いタイトルは見切れない範囲で64〜68pxを目安に調整する。',
-      '写真URLは参照のみ。転載許諾が未確認なら画像を自動取り込みしない。',
+      'タイトルは短い1行80〜82px、長い2行70〜74pxを目安とし、会場や日時と重ならない最大値に調整する。',
+      'イベント専用画像は非公開のCanvaドラフトでのみ候補使用とし、共有OGP・サイトロゴ・複数イベント共通画像は除外する。',
+      '画像の使用権利は未確認。SNS公開・配布には権利者の許諾確認が必要。',
       '完成したデザインは下書きとして保存し、公開・SNS投稿は行わない。'
     ]
   };
@@ -91,7 +113,8 @@ export function buildCanvaPrompt(draft){
     '料金: '+(r.price||'要確認'),
     '説明: '+r.description,
     '公式: '+r.official_url,
-    '画像参照: '+(r.image_reference_url||'なし')+'（許諾未確認の転載禁止）',
+    '画像参照: '+(r.image_reference_url||'なし')+'（権利未確認・公開転載禁止）',
+    '画像判定: '+r.image_candidate_status,
     '確認状態: '+r.verification_status
   ].join('\n')).join('\n\n');
   return [
@@ -99,9 +122,9 @@ export function buildCanvaPrompt(draft){
     '使用する元テンプレート（変更禁止）: '+CANVA_FORMAT.templateUrl,
     'レイアウト: 1080×1350px／7ページ／1ページ目表紙／2～6ページ目は各2イベント／7ページ目締め。',
     '必ず元デザインから新しい作業用コピーを作り、コピーにだけ内容を差し込んでください。',
-    '前回仕上げた配色・写真枠・配置を保持。タイトルは基本72px、長いもののみ64～68px程度にし、横幅を超えないよう調整。',
+    '前回仕上げた配色・写真枠・配置を保持。1行タイトルは80〜82px、長い2行は70〜74pxを目安に会場・日時に重ならず枠幅内で最大化。',
     '選択は'+draft.selected_count+'件。10件未満なら未選択枠に古いイベントを残さず、余分なイベント枠を空欄にして確認を求めてください。',
-    '主催者写真の掲載許諾が不明な場合、前回投稿の別イベント写真を残さず、写真枠を「画像準備中」にしてください。参照URLは記録のみとし無断転載しないでください。',
+    'イベント専用と確認できる公式サムネイルは非公開Canva作業コピーの候補として置き、画像出典・掲載権利未確認を記録。汎用OGP・サイトロゴ・他イベント写真・重複画像は禁止。判別できない枠は「画像準備中」。掲載許諾未確認の画像を公開・SNS投稿・配布しない。',
     '公式情報にない日時、料金、予約情報は創作しない。公開・Instagram投稿はしない。',
     '変更後は全7ページのプレビューを確認し、保存前に承認を求めてください。',
     '以下がサイトで選んだイベント情報です。\n\n'+items

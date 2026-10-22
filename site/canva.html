@@ -47,7 +47,7 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=1';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=2';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false;
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
@@ -56,14 +56,17 @@ function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorag
 function render(){
   if(!loaded)return;
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
+  const imageStates=new Map(buildCanvaDraft(allEvents,selectedIds).events.map(row=>[row.id,row.image_candidate_status]));
   $('canvaCount').textContent=`選択 ${found.length}/${CANVA_FORMAT.maxEvents}件`+(found.length===CANVA_FORMAT.maxEvents?' ／ 10件そろいました':' ／ 10件で全枠を利用できます');
   $('canvaEmpty').hidden=found.length>0;
   $('canvaChosen').innerHTML=found.map((ev,i)=>{
     const grade=ev.family_fit?.overall||ev.family_fit?.grade||'-';
     const status=ev.verification?.status==='verified'?'公式確認済み':ev.verification?.status==='announced'?'開催発表':'確認要';
+    const img=imageStates.get(ev.id)||'missing';
+    const imageNote=({event_image_candidate:'画像候補あり・許諾確認要',generic_site_image:'共通ロゴ・画像要確認',shared_or_duplicate:'画像重複・要確認',external_image_requires_review:'外部画像・要確認',missing:'画像未登録'})[img];
     return `<li class="canva-item" data-id="${escapeHtml(ev.id)}">
       <span class="canva-slot">${i+1}</span>
-      <div class="canva-item-main"><strong>${escapeHtml(ev.name)}</strong><small>${escapeHtml(ev.ward)} ／ ${escapeHtml(ev.period||'日付要確認')} ／ ${escapeHtml(status)} ／ 子連れ${escapeHtml(grade)}</small></div>
+      <div class="canva-item-main"><strong>${escapeHtml(ev.name)}</strong><small>${escapeHtml(ev.ward)} ／ ${escapeHtml(ev.period||'日付要確認')} ／ ${escapeHtml(status)} ／ 子連れ${escapeHtml(grade)} ／ ${escapeHtml(imageNote)}</small></div>
       <div class="canva-order">
         <button type="button" data-move="-1" aria-label="${i+1}番を上へ" ${i===0?'disabled':''}>↑</button>
         <button type="button" data-move="1" aria-label="${i+1}番を下へ" ${i===found.length-1?'disabled':''}>↓</button>
@@ -72,10 +75,10 @@ function render(){
   }).join('');
   const warnings=[];
   if(missing.length)warnings.push('公開中のデータで見つからない選択IDが'+missing.length+'件あります。ドラフトには入れず、必要なら再選択してください。');
-  if(found.length<10&&found.length>0)warnings.push('7ページ版は10イベント用です。10件未満の場合は、未選択枠の古い内容が残らないようCanva編集時に調整します。');
+  if(found.length<10&&found.length>0)warnings.push('7ページ版は10イベント用です。10件未満の場合は、未選択枠は枠ごと非表示にし、旧イベント写真も残しません。');
   const unverified=found.filter(e=>e.verification?.status!=='verified');
   if(unverified.length)warnings.push('公式確認完了ではないイベントが'+unverified.length+'件含まれます。公開前に必ず公式情報をご確認ください。');
-  if(found.some(e=>e.image))warnings.push('画像URLは参考情報として渡します。権利確認なしに画像をCanvaへ自動転載しません。');
+  if(found.some(e=>e.image))warnings.push('イベント専用画像は非公開Canvaドラフトの候補です。共有ロゴや他イベント画像は配置しません。SNS投稿・配布する前に画像の利用許諾を確認してください。');
   $('canvaWarnings').innerHTML=warnings.map(w=>`<p>※ ${escapeHtml(w)}</p>`).join('');
   ['copyCanvaPrompt','downloadCanvaCsv','downloadCanvaJson','copyCanvaLink'].forEach(id=>$(id).disabled=!found.length);
 }

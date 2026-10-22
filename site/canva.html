@@ -49,7 +49,8 @@
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
 import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=2';
 const $=id=>document.getElementById(id);
-let allEvents=[],selectedIds=[],loaded=false;
+let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
+$('canvaCoverTitle').addEventListener('input',()=>{coverTitleCustom=true;});
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
 function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value});}
 function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorage);render();}
@@ -57,6 +58,7 @@ function render(){
   if(!loaded)return;
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
   const imageStates=new Map(buildCanvaDraft(allEvents,selectedIds).events.map(row=>[row.id,row.image_candidate_status]));
+  if(!coverTitleCustom&&found.length){$('canvaCoverTitle').value=`東京23区 週末子連れイベント${found.length}選`;}
   $('canvaCount').textContent=`選択 ${found.length}/${CANVA_FORMAT.maxEvents}件`+(found.length===CANVA_FORMAT.maxEvents?' ／ 10件そろいました':' ／ 10件で全枠を利用できます');
   $('canvaEmpty').hidden=found.length>0;
   $('canvaChosen').innerHTML=found.map((ev,i)=>{

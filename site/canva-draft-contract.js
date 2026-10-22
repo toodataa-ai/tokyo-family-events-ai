@@ -105,30 +105,45 @@ export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連
     ]
   };
 }
-export function buildCanvaPrompt(draft){
-  const items=(draft.events||[]).map((r,i)=>[
+export function eventPromptBlocks(draft){
+  return (draft.events||[]).map((r,i)=>[
     (i+1)+'. '+r.title,
     '日付: '+r.period+(r.time?'／'+r.time:''),
     '場所: '+r.venue+'（'+r.ward+'）',
     '料金: '+(r.price||'要確認'),
     '説明: '+r.description,
     '公式: '+r.official_url,
-    '画像参照: '+(r.image_reference_url||'なし')+'（権利未確認・公開転載禁止）',
+    '画像参照: '+(r.image_reference_url||'なし')+'（出典確認・公開権利は別途確認）',
     '画像判定: '+r.image_candidate_status,
     '確認状態: '+r.verification_status
   ].join('\n')).join('\n\n');
+}
+export function renderCanvaPromptTemplate(template,draft){
+  if(typeof template!=='string'||!template.trim())throw new Error('Canva指示テンプレートを読み込めません');
+  const fields={
+    TEMPLATE_URL:CANVA_FORMAT.templateUrl,
+    SELECTED_COUNT:String(draft.selected_count),
+    COVER_TITLE:draft.autofill_fields?.COVER_TITLE?.text||'',
+    EVENT_BLOCKS:eventPromptBlocks(draft)
+  };
+  const output=template.replace(/\{\{(TEMPLATE_URL|SELECTED_COUNT|COVER_TITLE|EVENT_BLOCKS)\}\}/g,(_,key)=>fields[key]);
+  if(/\{\{[A-Z_]+\}\}/.test(output))throw new Error('未定義のCanva指示変数があります');
+  return output;
+}
+// Backward-compatible programmatic helper. The browser handoff uses the canonical .txt.
+export function buildCanvaPrompt(draft,template){
+  if(template!==undefined)return renderCanvaPromptTemplate(template,draft);
   return [
     'Canva連携で投稿ドラフトを作ってください。',
     '使用する元テンプレート（変更禁止）: '+CANVA_FORMAT.templateUrl,
-    'レイアウト: 1080×1350px／7ページ／1ページ目表紙／2～6ページ目は各2イベント／7ページ目締め。',
-    '必ず元デザインから新しい作業用コピーを作り、コピーにだけ内容を差し込んでください。',
-    '前回仕上げた配色・写真枠・配置を保持。1行タイトルは80〜82px、長い2行タイトルは70〜74pxを目安に枠幅内で最大化。説明文・会場・日時もできる限り大きくし、改行位置を調整して文字切れ・写真枠や隣接要素との重なりを防いでください。',
-    '選択は'+draft.selected_count+'件。表紙タイトル: '+(draft.autofill_fields?.COVER_TITLE?.text||'')+'。表紙に「○選」を使う場合は選択件数（'+draft.selected_count+'選）と一致させ、ユーザーが指定した表紙文言を尊重してください。',
-    '10件未満の場合、未選択のイベント枠は写真・文字・装飾を含めて枠ごと非表示にし、以前のイベント情報や画像を一切残さないでください。7ページ構成は維持してください。',
-    'イベント専用と確認できる公式サムネイルは非公開Canva作業コピーの候補として置き、画像出典URLと掲載権利未確認を記録。汎用OGP・サイトロゴ・他イベント写真・前年ポスター・重複画像は禁止。判別できない枠は「画像準備中」。掲載許諾未確認の画像を公開・SNS投稿・配布しない。',
-    'イベント専用画像と開催年の一致を公式情報で確認する。公式情報にない日時、料金、予約情報は創作しない。公開・Instagram投稿はしない。',
-    '全7ページをプレビューして文字切れ・重なり・画像一致・未使用枠の非表示を確認し、Canva作業用コピーに確定保存して編集リンクを返してください。保存操作に別途承認が必要な場合は、その承認を得てから保存してください。',
-    '以下がサイトで選んだイベント情報です。\n\n'+items
+    '必ず元デザインから新しい作業用コピーを作り、以前の保存版を変更しないでください。',
+    '1行タイトルは80〜82px、2行タイトルは70〜74px、本文は37〜46pxを初期目安に最大化。',
+    '未選択イベント枠は枠ごと非表示。画像には出典：サイト名と参照元URLを記録。',
+    '汎用OGP・サイトロゴなどはイベント画像か確認し、画像には出典を付けてください。',
+    '掲載許諾が不明なら公開・Instagram投稿はしない。',
+    '全7ページのプレビューを確認し、作業用コピーに確定保存して編集リンクを返してください。',
+    '選択件数：'+draft.selected_count+'件。表紙タイトル：'+(draft.autofill_fields?.COVER_TITLE?.text||''),
+    eventPromptBlocks(draft)
   ].join('\n');
 }
 export function draftAsCsv(draft){

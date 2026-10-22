@@ -47,9 +47,20 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=2';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=3';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
+const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261022';
+let loadedPromptTemplate=null;
+async function getCanvaTemplate(){
+  if(loadedPromptTemplate!==null)return loadedPromptTemplate;
+  const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
+  if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
+  const text=await response.text();
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{TEMPLATE_URL}}'))throw new Error('テンプレートが不正です');
+  loadedPromptTemplate=text;
+  return text;
+}
 $('canvaCoverTitle').addEventListener('input',()=>{coverTitleCustom=true;});
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
 function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value});}
@@ -80,7 +91,7 @@ function render(){
   if(found.length<10&&found.length>0)warnings.push('7ページ版は10イベント用です。10件未満の場合は、未選択枠は枠ごと非表示にし、旧イベント写真も残しません。');
   const unverified=found.filter(e=>e.verification?.status!=='verified');
   if(unverified.length)warnings.push('公式確認完了ではないイベントが'+unverified.length+'件含まれます。公開前に必ず公式情報をご確認ください。');
-  if(found.some(e=>e.image))warnings.push('イベント専用画像は非公開Canvaドラフトの候補です。共有ロゴや他イベント画像は配置しません。SNS投稿・配布する前に画像の利用許諾を確認してください。');
+  if(found.some(e=>e.image))warnings.push('公式イベント画像・公式ページ内の共通画像・当年チラシを順に確認し、非公開Canvaドラフトに出典付きで配置する候補にします。出典表記だけではSNS公開の許諾になりません。');
   $('canvaWarnings').innerHTML=warnings.map(w=>`<p>※ ${escapeHtml(w)}</p>`).join('');
   ['copyCanvaPrompt','downloadCanvaCsv','downloadCanvaJson','copyCanvaLink'].forEach(id=>$(id).disabled=!found.length);
 }
@@ -103,8 +114,8 @@ function download(text,type,filename){
   setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 $('copyCanvaPrompt').addEventListener('click',async()=>{
-  try{await clipboard(buildCanvaPrompt(currentDraft()));alertStatus('Canva作成指示をコピーしました。ChatGPTへ貼り付けて送信してください。');}
-  catch{alertStatus('コピーできませんでした。ブラウザのクリップボード許可をご確認ください。');}
+  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva v2指示（公式画像・出典・本文拡大・未使用枠非表示）をコピーしました。');}
+  catch(error){alertStatus('Canva v2指示を取得・コピーできませんでした。古い指示への切り替えは行いません。ページを再読み込みするか通信状態をご確認ください。');console.error(error);}
 });
 $('downloadCanvaCsv').addEventListener('click',()=>{download(draftAsCsv(currentDraft()),'text/csv;charset=utf-8','canva-family-events.csv');alertStatus('CSVを出力しました。');});
 $('downloadCanvaJson').addEventListener('click',()=>{download(JSON.stringify(currentDraft(),null,2),'application/json;charset=utf-8','canva-family-events.json');alertStatus('JSONを出力しました。');});

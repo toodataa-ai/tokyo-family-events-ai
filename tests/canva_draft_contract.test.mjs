@@ -98,9 +98,9 @@ test('exported Canva prompt carries approved hide-frame, cover-count and save ru
   assert.ok(p.includes('表紙タイトル: 東京23区 週末子連れイベント2選'));
   assert.ok(p.includes('2選'));
   assert.ok(p.includes('枠ごと非表示'));
-  assert.ok(p.includes('枠内で可能な限り大きく'));
+  assert.ok(p.includes('収まる範囲で最大化'));
   assert.ok(p.includes('確定保存して編集リンクを返してください'));
-  assert.ok(p.includes('別年の画像を流用せず'));
+  assert.ok(p.includes('別年の写真を使わず'));
   assert.ok(!p.includes('余分なイベント枠を空欄'));
   assert.ok(!p.includes('保存前に承認を求めてください'));
 });
@@ -110,7 +110,7 @@ const docsV2=readFileSync(new URL('../docs/canva_prompt_template_v2.txt',import.
 test('published Canva prompt and docs mirror remain identical',()=>{
   assert.equal(liveV2,docsV2);
   assert.ok(liveV2.includes('出典：'));
-  assert.ok(liveV2.includes('本文37〜46px'));
+  assert.ok(liveV2.includes('通常37〜46px'));
 });
 test('real clipboard instruction renders all fields and protects absent slots',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});

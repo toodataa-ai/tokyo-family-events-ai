@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
-import {CANVA_FORMAT,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from '../site/canva-draft-contract.js';
+import {readFileSync} from 'node:fs';
+import {CANVA_FORMAT,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -102,4 +103,24 @@ test('exported Canva prompt carries approved hide-frame, cover-count and save ru
   assert.ok(p.includes('前年ポスター・重複画像は禁止'));
   assert.ok(!p.includes('余分なイベント枠を空欄'));
   assert.ok(!p.includes('保存前に承認を求めてください'));
+});
+
+const liveV2=readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8');
+const docsV2=readFileSync(new URL('../docs/canva_prompt_template_v2.txt',import.meta.url),'utf8');
+test('published Canva prompt and docs mirror remain identical',()=>{
+  assert.equal(liveV2,docsV2);
+  assert.ok(liveV2.includes('出典：'));
+  assert.ok(liveV2.includes('本文37〜46px'));
+});
+test('real clipboard instruction renders all fields and protects absent slots',()=>{
+ const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});
+ const text=renderCanvaPromptTemplate(liveV2,d);
+ assert.ok(text.includes('東京23区 週末イベント2選'));
+ assert.ok(text.includes('2選'));
+ assert.ok(text.includes('枠ごと非表示'));
+ assert.ok(text.includes('出典：'));
+ assert.ok(text.includes('日時・料金・予約条件'));
+ assert.ok(text.indexOf('親子ワークショップ b')<text.indexOf('親子ワークショップ a'));
+ assert.ok(!text.includes('{{'));
+ assert.throws(()=>renderCanvaPromptTemplate('',d));
 });

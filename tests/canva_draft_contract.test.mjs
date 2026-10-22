@@ -132,7 +132,7 @@ test('Instagram example is a qualified reference, never a secretly changed templ
   assert.match(liveV2,/https:\/\/canva\.link\/8zgsm5y1cwwgd5e|\{\{TEMPLATE_URL\}\}/);
   assert.match(visualQualityV1,/DAHYo7noxKY/);
   assert.match(visualQualityV1,/1080×1350px・7ページ固定/);
-  assert.match(visualQualityV1,/画像そのものを取得できていない/);
+  assert.match(visualQualityV1,/投稿画像を直接取得できていない/);
 });
 test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 おでかけ2選'});

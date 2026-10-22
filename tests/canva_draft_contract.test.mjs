@@ -98,9 +98,9 @@ test('exported Canva prompt carries approved hide-frame, cover-count and save ru
   assert.ok(p.includes('表紙タイトル: 東京23区 週末子連れイベント2選'));
   assert.ok(p.includes('2選'));
   assert.ok(p.includes('枠ごと非表示'));
-  assert.ok(p.includes('枠内で可能な限り大きく'));
+  assert.ok(p.includes('収まる範囲で最大化'));
   assert.ok(p.includes('確定保存して編集リンクを返してください'));
-  assert.ok(p.includes('別年の画像を流用せず'));
+  assert.ok(p.includes('別年の写真を使わず'));
   assert.ok(!p.includes('余分なイベント枠を空欄'));
   assert.ok(!p.includes('保存前に承認を求めてください'));
 });
@@ -110,7 +110,7 @@ const docsV2=readFileSync(new URL('../docs/canva_prompt_template_v2.txt',import.
 test('published Canva prompt and docs mirror remain identical',()=>{
   assert.equal(liveV2,docsV2);
   assert.ok(liveV2.includes('出典：'));
-  assert.ok(liveV2.includes('本文37〜46px'));
+  assert.ok(liveV2.includes('通常37〜46px'));
 });
 test('real clipboard instruction renders all fields and protects absent slots',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});
@@ -123,4 +123,37 @@ test('real clipboard instruction renders all fields and protects absent slots',(
  assert.ok(text.indexOf('親子ワークショップ b')<text.indexOf('親子ワークショップ a'));
  assert.ok(!text.includes('{{'));
  assert.throws(()=>renderCanvaPromptTemplate('',d));
+});
+
+const visualQualityV1=readFileSync(new URL('../docs/canva_visual_quality_contract_v1.md',import.meta.url),'utf8');
+test('Instagram example is a qualified reference, never a secretly changed template',()=>{
+  assert.match(liveV2,/https:\/\/www\.instagram\.com\/p\/Dev8XdMHRvr\//);
+  assert.match(liveV2,/取得できない場合は見た目を推測/);
+  assert.match(liveV2,/https:\/\/canva\.link\/8zgsm5y1cwwgd5e|\{\{TEMPLATE_URL\}\}/);
+  assert.match(visualQualityV1,/DAHYo7noxKY/);
+  assert.match(visualQualityV1,/1080×1350px・7ページ固定/);
+  assert.match(visualQualityV1,/画像そのものを取得できていない/);
+});
+test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
+ const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 おでかけ2選'});
+ const p=renderCanvaPromptTemplate(liveV2,d);
+ assert.match(p,/本文は46pxから試し/);
+ assert.match(p,/2pxずつ減らす/);
+ assert.match(p,/約幅540px/);
+ assert.match(p,/写真.*重なり|重なり.*写真/);
+ assert.match(p,/同じ基準フォントファミリー/);
+ assert.match(p,/画像.*配置.*最終表示/);
+ assert.match(p,/全7ページのプレビュー/);
+ assert.match(p,/未使用.*非表示/);
+ assert.match(p,/共通OGP/);
+ assert.match(p,/元テンプレート.*前回/);
+ assert.match(p,/画像専用\/共通\/準備中/);
+ assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
+ assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
+ for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
+ assert.match(p,/G01〜G08/);
+ assert.match(p,/出典：サイト名/);
+ assert.match(p,/画像出典候補ページ:/);
+ assert.match(p,/公式確認根拠URL:/);
+ assert.match(p,/Instagram投稿はしない/);
 });

@@ -1,12 +1,13 @@
-# User-approved app-only release v1.15: Canva selection workflow and file-driven v2 prompt.
+# User-approved app-only release v1.16: Canva golden layout prompt export with exact date/typography and post-save audit.
 operation=release
 production_ref=production
-production_sha=a5e8d23cc97be23fd493d715514b59c1440251b8
-previous_production_sha=0f2195c918525d14f0ae36b211f525e98b87ca0a
-approved_staging_sha=8c580092b0f6f177614b4f68a3952d6eb585002f
-candidate_sha=0ffefad57117d3c902ab19df7c9220b009d8c1aa
-pr=26
-target_public_version=1.15
+production_sha=7fd222062a1d2efb30b670122b20c22c1aa60557
+previous_production_sha=a5e8d23cc97be23fd493d715514b59c1440251b8
+approved_staging_sha=2de1a94b4cd8c1c29a8533c554985b12a4218bea
+candidate_sha=900b889d0c7cd1f02f614a36253b5cd139c7788f
+pr=30
+target_public_version=1.16
 release_date_jst=2026-10-23
-staging_validation_run=39801172637
-note=Only 7 authorized paths: Canva HTML CSS JS prompt and docs, plus surgically modified search selection. No event data changes or unrelated main improvements.
+staging_validation_run=39957577526
+canva_regression_run=39957447741
+note=Only seven authorized Canva layout/export and documentation files, no search/UI CSS/event data changes; immutable Golden Master DAHY1F7Rv_k; commit then reload validation.

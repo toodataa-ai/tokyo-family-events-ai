@@ -42,7 +42,7 @@
     </div>
     <div class="canva-handoff-guide">
       <b>ChatGPTでの使い方</b>
-      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介ページの日時54px（3行は52px）、画像・出典、全7ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
+      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトルの1行優先・枠内最大サイズ、紹介ページの日時54px（3行は52px）、画像・出典、全7ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPTを開く ↗</a>
     </div>
     <details><summary>Canva APIを使った直接ドラフト生成について</summary><p>ボタン1回でCanva上に新規ドラフトを生成するには、Canva Connect APIのOAuth接続と、Canvaの差し込みフィールド設定が必要です。接続情報をブラウザや公開GitHubに直接保存せず、サーバー側に安全に設定した後で有効化します。接続前に「作成済み」とは表示しません。</p></details>
@@ -50,17 +50,17 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261023-golden-layout-v1';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-title-one-line-v1';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
-const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261023-golden-layout-v1';
+const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-title-one-line-v1';
 let loadedPromptTemplate=null;
 async function getCanvaTemplate(){
   if(loadedPromptTemplate!==null)return loadedPromptTemplate;
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}'))throw new Error('レイアウト契約未反映の古いテンプレートです');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('【タイトル最適化・2026-10-24承認済み・最優先】'))throw new Error('タイトル1行優先・Golden Master契約未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }
@@ -118,7 +118,7 @@ function download(text,type,filename){
   setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 $('copyCanvaPrompt').addEventListener('click',async()=>{
-  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウトv1指示（確定版をコピー・日時54px・表紙固定・保存後実体検証）をコピーしました。');}
+  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウト指示（タイトル1行優先・日時54px・表紙固定・保存後実体検証）をコピーしました。');}
   catch(error){alertStatus('Canva固定レイアウト指示を取得できません。古いテンプレートへの自動切替は行いません。再読込をお願いします。');console.error(error);}
 });
 $('downloadCanvaCsv').addEventListener('click',()=>{download(draftAsCsv(currentDraft()),'text/csv;charset=utf-8','canva-family-events.csv');alertStatus('CSVを出力しました。');});

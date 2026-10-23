@@ -12,6 +12,7 @@ export const CANVA_FORMAT=Object.freeze({
   coverFontSize:80,coverCountFontSize:158,coverSuffixFontSize:78,
   coverCaptionFontSize:82,eventDateFontSize:54,eventThreeLineDateFontSize:52,
   eventBodyTargetMin:50,eventBodyTargetMax:54,
+  eventTitleLayoutPolicy:'single_line_first_max_fit_v1',
   width:1080,height:1350,pages:7,maxEvents:10,
   selectionStorageKey:'tokyo-family-events-canva-selection-v1'
 });
@@ -104,13 +105,14 @@ export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連
     original_template_id:CANVA_FORMAT.templateId,
     original_template_url:CANVA_FORMAT.templateUrl,
     golden_layout_contract:CANVA_FORMAT.goldenContractUrl,
-    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents},
+    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents,event_title_policy:CANVA_FORMAT.eventTitleLayoutPolicy},
     selected_count:rows.length,selection_ids:rows.map(r=>r.id),events:rows,
     image_review:{permission:'unconfirmed',candidate_count:rows.filter(r=>r.image_candidate_status==='event_image_candidate').length,needs_review_count:rows.filter(r=>r.image_candidate_status!=='event_image_candidate').length},
     autofill_fields:fields,
     notes:[
       '承認済みGolden Masterを毎回新しい別IDの作業用コピーに複製。Golden Master・初期テンプレート・過去版は変更禁止。',
       '7ページ構成は表紙1・イベント2件ずつ5ページ・締め1を基本とする。',
+      'イベント紹介タイトルは1行優先。旧版から引き継いだ手動改行を解除し、全文を維持して実フレーム幅で最大サイズを計測。不要な2行禁止、2行は1行で読みやすく収まらない時だけ。表紙と日時54pxは独立。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
       '表紙の東京23区は80px、10選の数字158px・選78px、下部キャッチ82pxを固定。イベント紹介の日時は54px、3行のみ52px例外。本文は50〜54px優先、本文が収まらなければ事実を保った短文化後に縮小。',
       '各回の表紙の日付は必ず投稿対象週末に差し替える。先頭イベントの長期開催期間や前回の10/24〜25を流用しない。',

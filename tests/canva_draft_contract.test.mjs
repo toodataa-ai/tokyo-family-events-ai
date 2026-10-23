@@ -203,7 +203,7 @@ test('draft never invents cover date using first long-running event',()=>{
 test('site uses uncached pinned instruction with explicit date entry and protections',()=>{
  assert.match(canvaPage,/id="canvaCoverDate"/);
  assert.match(canvaPage,/canvaCoverDate'\)\.value/);
- assert.match(canvaPage,/20261023-golden-layout-v1/);
+ assert.match(canvaPage,/20261024-title-one-line-v1/);
  assert.match(canvaPage,/古いテンプレートへの自動切替は行いません/);
  assert.match(canvaPage,/Yr0CiLUWgATkd1R/);
 });
@@ -215,4 +215,23 @@ test('golden layout contract locks cover safe areas, fonts and persistence',()=>
  assert.match(goldenLayoutV1,/日時は\*\*54px/);
  assert.match(goldenLayoutV1,/\*\*50〜54px/);
  assert.match(goldenLayoutV1,/get_design.*get_design_content.*get_design_pages/);
+});
+
+test('2026-10-24 approved single-line-first title policy survives website clipboard output and externalized mirror',()=>{
+  assert.equal(CANVA_FORMAT.eventTitleLayoutPolicy,'single_line_first_max_fit_v1');
+  const d=buildCanvaDraft([event('a',{name:'中里の秋さがしミッション！'}),event('b',{name:'長いタイトルを省略せず二行目へ移す場合だけ確認'})],['a','b'],{coverDate:'10/31(土)〜11/1(日)'});
+  assert.equal(d.layout.event_title_policy,'single_line_first_max_fit_v1');
+  const prompt=renderCanvaPromptTemplate(liveV2,d);
+  assert.equal(liveV2,docsV2);
+  assert.ok(prompt.includes('【タイトル最適化・2026-10-24承認済み・最優先】'));
+  assert.match(prompt,/手動改行を次回へ継承してはならない/);
+  assert.match(prompt,/2行にするのは/);
+  assert.match(prompt,/不必要な2行が1件でもあればG05不合格/);
+  assert.match(prompt,/DAHY1eRnUgU/);
+  assert.match(prompt,/DAHY1F7Rv_k/);
+  assert.match(prompt,/日時54px/);
+  assert.match(prompt,/10\/31\(土\)〜11\/1\(日\)/);
+  assert.match(canvaPage,/text\.includes\('【タイトル最適化/);
+  assert.match(goldenLayoutV1,/タイトル最適化の承認済み追補/);
+  assert.match(visualQualityV1,/不要2行が1件でも残ればG05不合格/);
 });

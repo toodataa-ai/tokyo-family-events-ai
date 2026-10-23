@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-22-r1",
+  "current_public_release": "release/2026-10-23-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -141,7 +141,25 @@
       "workflow_run_id": 39695619684,
       "note": "ユーザー承認の本番アプリv1.14。トップから「掲載見送り・掲載判断一覧」へ遷移、杉並区公式カレンダー310候補（見送り200、審査中95、既登録8、要確認3、再取得4）の個別理由・公式リンク306件を閲覧可能に。production v1.13を直接親とする隔離候補7ファイルのみPR #20マージ。独立監査39695510842、Pages39695619684成功。data-staging/data-production変更なし。ほかのmain開発中機能は含めない。",
       "public_version": "1.14"
+    },
+    {
+      "release_id": "release/2026-10-23-r1",
+      "branch": "release/2026-10-23-r1",
+      "commit_sha": "a5e8d23cc97be23fd493d715514b59c1440251b8",
+      "deployed_at": "2026-10-22T22:46:13Z",
+      "workflow_run_id": 39867235424,
+      "note": "事後台帳補完：ユーザー承認のCanvaドラフト選択・v2指示を7ファイルのみ反映した本番アプリv1.15。production PR #26の公開断面を2026-10-22 Pages成功run #39867235424で確認し、当時のSHAへ不変スナップショットを後追い追加。ほかのmain差分とイベントデータは含めない。",
+      "public_version": "1.15"
+    },
+    {
+      "release_id": "release/2026-10-23-r2",
+      "branch": "release/2026-10-23-r2",
+      "commit_sha": "7fd222062a1d2efb30b670122b20c22c1aa60557",
+      "deployed_at": "2026-10-23T13:14:28Z",
+      "workflow_run_id": 39959408381,
+      "note": "ユーザー承認の本番v1.16。Canva完成版Golden Master DAHY1F7Rv_kから新規コピーを作り、表紙安全域・日時54px/3行52px・説明50〜54px・出典・保存後再読込を指示出力。production a5e8d23から派生したPR #30のCanva専用7ファイルだけ反映。検索UI/フィルタ/共通CSS・イベントdata-production SHA 59266b5587c3cd868b8d5637b2a363f1e3f52cd9は変更なし。Pages run 39959408381 success。",
+      "public_version": "1.16"
     }
   ],
-  "current_public_version": "1.14"
+  "current_public_version": "1.16"
 }

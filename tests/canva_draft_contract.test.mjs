@@ -259,7 +259,7 @@ test('selection of 30 events survives storage, share UI, JSON/CSV and dynamic Ca
   assert.equal(d.autofill_fields.EVENT_30_TITLE.text,all[29].name);
   assert.equal(d.autofill_fields.EVENT_31_TITLE,undefined);
   assert.equal(Object.keys(d.autofill_fields).length,152);
-  assert.equal(draftAsCsv(d).trim().split(/\\r?\\n/).length,2);
+  assert.equal(draftAsCsv(d).trim().split(String.fromCharCode(13,10)).length,2);
   assert.match(canvaPageAssignments(d),/29番：16ページ上段/);
   assert.match(canvaPageAssignments(d),/30番：16ページ下段/);
   const prompt=renderCanvaPromptTemplate(liveV2,d);

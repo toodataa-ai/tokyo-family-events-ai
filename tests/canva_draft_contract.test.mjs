@@ -18,6 +18,12 @@ function memoryStore(){
 test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.templateId,'DAHYo7noxKY');
   assert.equal(CANVA_FORMAT.templateUrl,'https://canva.link/8zgsm5y1cwwgd5e');
+  assert.equal(CANVA_FORMAT.goldenMasterId,'DAHY1F7Rv_k');
+  assert.equal(CANVA_FORMAT.goldenMasterUrl,'https://www.canva.com/d/Yr0CiLUWgATkd1R');
+  assert.equal(CANVA_FORMAT.eventDateFontSize,54);
+  assert.equal(CANVA_FORMAT.eventThreeLineDateFontSize,52);
+  assert.equal(CANVA_FORMAT.coverSuffixFontSize,78);
+  assert.equal(CANVA_FORMAT.eventBodyTargetMax,54);
   assert.equal(CANVA_FORMAT.pages,7);
   assert.equal(CANVA_FORMAT.maxEvents,10);
 });
@@ -46,6 +52,9 @@ test('read-only extraction preserves original title and status, no invented clai
   assert.equal(draft.events[0].verification_status,'unverified');
   assert.equal(draft.autofill_fields.EVENT_02_TITLE,undefined);
   assert.equal(draft.events[0].image_reference_url,'https://example.org/photo.jpg');
+  assert.match(draft.autofill_fields.COVER_DATE.text,/未指定/);
+  assert.equal(draft.source_design_id,CANVA_FORMAT.goldenMasterId);
+  assert.equal(draft.original_template_id,CANVA_FORMAT.templateId);
 });
 test('unsafe external URLs are dropped and images remain reference-only',()=>{
   const row=eventDraftRow(event('x',{official_url:'javascript:alert(1)',url:'https://safe.example/',image:'data:text/html,bad'}));
@@ -110,7 +119,8 @@ const docsV2=readFileSync(new URL('../docs/canva_prompt_template_v2.txt',import.
 test('published Canva prompt and docs mirror remain identical',()=>{
   assert.equal(liveV2,docsV2);
   assert.ok(liveV2.includes('出典：'));
-  assert.ok(liveV2.includes('通常37〜46px'));
+  assert.ok(liveV2.includes('初期目標50〜54px'));
+  assert.match(liveV2,/紹介の.*日時は54px|日時は54pxを基準/);
 });
 test('real clipboard instruction renders all fields and protects absent slots',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});
@@ -137,7 +147,7 @@ test('Instagram example is a qualified reference, never a secretly changed templ
 test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 おでかけ2選'});
  const p=renderCanvaPromptTemplate(liveV2,d);
- assert.match(p,/本文は46pxから試し/);
+ assert.match(p,/本文は54pxから試し/);
  assert.match(p,/2pxずつ減らす/);
  assert.match(p,/約幅540px/);
  assert.match(p,/写真.*重なり|重なり.*写真/);
@@ -146,14 +156,61 @@ test('quality-directed exported prompt includes reproducible typography and imag
  assert.match(p,/全7ページのプレビュー/);
  assert.match(p,/未使用.*非表示/);
  assert.match(p,/共通OGP/);
- assert.match(p,/元テンプレート.*前回/);
+ assert.match(p,/初期テンプレート・Golden Master・以前の保存版/);
  assert.match(p,/画像専用\/共通\/準備中/);
  assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
  assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
  for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
  assert.match(p,/G01〜G08/);
+ assert.match(p,/DAHY1F7Rv_k/);
+ assert.match(p,/保存済み本体をget_design/);
+ assert.match(p,/日時は54pxを基準/);
  assert.match(p,/出典：サイト名/);
  assert.match(p,/画像出典候補ページ:/);
  assert.match(p,/公式確認根拠URL:/);
  assert.match(p,/Instagram投稿はしない/);
+});
+
+const goldenLayoutV1=readFileSync(new URL('../docs/canva_golden_layout_contract_v1.md',import.meta.url),'utf8');
+const canvaPage=readFileSync(new URL('../site/canva.html',import.meta.url),'utf8');
+test('next prompt pins the saved golden master rather than rebuilding from old template',()=>{
+ const draft=buildCanvaDraft([event('a')],['a'],{coverDate:'10/31(土)〜11/1(日)'});
+ assert.equal(draft.source_design_id,'DAHY1F7Rv_k');
+ assert.equal(draft.original_template_id,'DAHYo7noxKY');
+ assert.equal(draft.autofill_fields.COVER_DATE.text,'10/31(土)〜11/1(日)');
+ const prompt=renderCanvaPromptTemplate(liveV2,draft);
+ assert.match(prompt,/制作するデザイン|コピー元|レイアウト正本/);
+ assert.match(prompt,/DAHY1F7Rv_k/);
+ assert.match(prompt,/10\/31\(土\)〜11\/1\(日\)/);
+ assert.match(prompt,/東京23区.*x75 y196/);
+ assert.match(prompt,/選.*x829 y735/);
+ assert.match(prompt,/日時は54px/);
+ assert.match(prompt,/3行だけ52px/);
+ assert.match(prompt,/commit後の本体再読取/);
+ assert.match(prompt,/以前の保存版/);
+ assert.doesNotMatch(prompt,/\{\{[A-Z_]+\}\}/);
+});
+test('draft never invents cover date using first long-running event',()=>{
+ const d=buildCanvaDraft([event('a',{period:'9/16〜11/8'})],['a']);
+ assert.match(d.autofill_fields.COVER_DATE.text,/未指定/);
+ assert.ok(!d.autofill_fields.COVER_DATE.text.includes('9/16'));
+ const p=renderCanvaPromptTemplate(liveV2,d);
+ assert.match(p,/未指定/);
+ assert.match(p,/流用禁止/);
+});
+test('site uses uncached pinned instruction with explicit date entry and protections',()=>{
+ assert.match(canvaPage,/id="canvaCoverDate"/);
+ assert.match(canvaPage,/canvaCoverDate'\)\.value/);
+ assert.match(canvaPage,/20261023-golden-layout-v1/);
+ assert.match(canvaPage,/古いテンプレートへの自動切替は行いません/);
+ assert.match(canvaPage,/Yr0CiLUWgATkd1R/);
+});
+test('golden layout contract locks cover safe areas, fonts and persistence',()=>{
+ assert.match(goldenLayoutV1,/DAHY1F7Rv_k/);
+ assert.match(goldenLayoutV1,/DAHYo7noxKY/);
+ assert.match(goldenLayoutV1,/「東京23区」: x=75, y=196, w=460, font=80/);
+ assert.match(goldenLayoutV1,/「選」: x=829, y=735, w=102, font=78/);
+ assert.match(goldenLayoutV1,/日時は\*\*54px/);
+ assert.match(goldenLayoutV1,/\*\*50〜54px/);
+ assert.match(goldenLayoutV1,/get_design.*get_design_content.*get_design_pages/);
 });

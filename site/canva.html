@@ -11,8 +11,8 @@
   <a href="search.html" class="canva-back">← イベント検索に戻る</a>
   <div class="canva-draft-heading">
     <div><div class="canva-eyebrow">CANVA POST DRAFT</div><h1>Canva投稿ドラフト</h1>
-      <p>検索画面で選んだイベントを、仕上げ済みの7ページテンプレートに当てはめる準備をします。ここからSNSへの公開は行いません。</p></div>
-    <a class="canva-template-link" target="_blank" rel="noopener" href="https://canva.link/8zgsm5y1cwwgd5e">最終テンプレートを確認 ↗</a>
+      <p>検索画面で選んだイベントを、2026-10-23確定の7ページ完成版と同じ配置に差し替えます。毎回完成版を新しく複製し、元の保存版は変更しません。ここからSNSへの公開は行いません。</p></div>
+    <a class="canva-template-link" target="_blank" rel="noopener" href="https://www.canva.com/d/Yr0CiLUWgATkd1R">固定レイアウトの完成版を見る ↗</a>
   </div>
 </header>
 <main class="canva-main">
@@ -27,6 +27,9 @@
     <div class="canva-step"><span>2</span><div><h2>投稿タイトル・内容の確認</h2><p>掲載データから日時・会場・料金を転記します。公式確認が必要な項目は推測せず、編集時の確認対象とします。</p></div></div>
     <label class="canva-form-label" for="canvaCoverTitle">表紙タイトル</label>
     <input id="canvaCoverTitle" class="canva-title-input" maxlength="120" value="東京23区 週末子連れイベント10選">
+    <label class="canva-form-label" for="canvaCoverDate">表紙に記載する対象週末（日付は毎回更新）</label>
+    <input id="canvaCoverDate" class="canva-title-input" maxlength="100" placeholder="例：10/31(土)〜11/1(日)　空欄の場合は要確認">
+    <p class="canva-notice">元の完成版にある「10/24〜25」は次回へ流用しません。対象週末の日時を入力してください。</p>
     <div id="canvaWarnings" class="canva-warnings" aria-live="polite"></div>
   </section>
   <section class="canva-panel">
@@ -39,7 +42,7 @@
     </div>
     <div class="canva-handoff-guide">
       <b>ChatGPTでの使い方</b>
-      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。Canvaの最終テンプレートをコピーして編集する指示と、選択したイベント情報が含まれています。</p>
+      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介ページの日時54px（3行は52px）、画像・出典、全7ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPTを開く ↗</a>
     </div>
     <details><summary>Canva APIを使った直接ドラフト生成について</summary><p>ボタン1回でCanva上に新規ドラフトを生成するには、Canva Connect APIのOAuth接続と、Canvaの差し込みフィールド設定が必要です。接続情報をブラウザや公開GitHubに直接保存せず、サーバー側に安全に設定した後で有効化します。接続前に「作成済み」とは表示しません。</p></details>
@@ -47,23 +50,23 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=3';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261023-golden-layout-v1';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
-const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261022';
+const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261023-golden-layout-v1';
 let loadedPromptTemplate=null;
 async function getCanvaTemplate(){
   if(loadedPromptTemplate!==null)return loadedPromptTemplate;
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{TEMPLATE_URL}}'))throw new Error('テンプレートが不正です');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}'))throw new Error('レイアウト契約未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }
 $('canvaCoverTitle').addEventListener('input',()=>{coverTitleCustom=true;});
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
-function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value});}
+function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value,coverDate:$('canvaCoverDate').value});}
 function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorage);render();}
 function render(){
   if(!loaded)return;
@@ -89,6 +92,7 @@ function render(){
   const warnings=[];
   if(missing.length)warnings.push('公開中のデータで見つからない選択IDが'+missing.length+'件あります。ドラフトには入れず、必要なら再選択してください。');
   if(found.length<10&&found.length>0)warnings.push('7ページ版は10イベント用です。10件未満の場合は、未選択枠は枠ごと非表示にし、旧イベント写真も残しません。');
+  if(found.length&&!$('canvaCoverDate').value.trim())warnings.push('表紙の日付が未入力です。完成版の日付を流用しません。コピーした指示は日付確認を求めます。');
   const unverified=found.filter(e=>e.verification?.status!=='verified');
   if(unverified.length)warnings.push('公式確認完了ではないイベントが'+unverified.length+'件含まれます。公開前に必ず公式情報をご確認ください。');
   if(found.some(e=>e.image))warnings.push('公式イベント画像・公式ページ内の共通画像・当年チラシを順に確認し、非公開Canvaドラフトに出典付きで配置する候補にします。出典表記だけではSNS公開の許諾になりません。');
@@ -114,8 +118,8 @@ function download(text,type,filename){
   setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 $('copyCanvaPrompt').addEventListener('click',async()=>{
-  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva v2指示（公式画像・出典・本文拡大・未使用枠非表示）をコピーしました。');}
-  catch(error){alertStatus('Canva v2指示を取得・コピーできませんでした。古い指示への切り替えは行いません。ページを再読み込みするか通信状態をご確認ください。');console.error(error);}
+  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウトv1指示（確定版をコピー・日時54px・表紙固定・保存後実体検証）をコピーしました。');}
+  catch(error){alertStatus('Canva固定レイアウト指示を取得できません。古いテンプレートへの自動切替は行いません。再読込をお願いします。');console.error(error);}
 });
 $('downloadCanvaCsv').addEventListener('click',()=>{download(draftAsCsv(currentDraft()),'text/csv;charset=utf-8','canva-family-events.csv');alertStatus('CSVを出力しました。');});
 $('downloadCanvaJson').addEventListener('click',()=>{download(JSON.stringify(currentDraft(),null,2),'application/json;charset=utf-8','canva-family-events.json');alertStatus('JSONを出力しました。');});

@@ -42,7 +42,7 @@
     </div>
     <div class="canva-handoff-guide">
       <b>ChatGPTでの使い方</b>
-      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトルの1行優先・枠内最大サイズ、紹介ページの日時54px（3行は52px）、画像・出典、生成した全ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
+      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトル55px・イベント番号68px・本文36px・会場28px・日時36pxの全枠固定と要素別検品、画像・出典、生成した全ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPTを開く ↗</a>
     </div>
     <details><summary>Canva APIを使った直接ドラフト生成について</summary><p>ボタン1回でCanva上に新規ドラフトを生成するには、Canva Connect APIのOAuth接続と、Canvaの差し込みフィールド設定が必要です。接続情報をブラウザや公開GitHubに直接保存せず、サーバー側に安全に設定した後で有効化します。接続前に「作成済み」とは表示しません。</p></details>
@@ -50,17 +50,17 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-max30-v1';
+import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-fixed-font-55-68-36-28-36-v1';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
-const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-max30-v1';
+const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-fixed-font-55-68-36-28-36-v1';
 let loadedPromptTemplate=null;
 async function getCanvaTemplate(){
   if(loadedPromptTemplate!==null)return loadedPromptTemplate;
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【タイトル最適化・2026-10-24承認済み・最優先】'))throw new Error('最大30件・タイトル1行優先・Golden Master契約未反映の古いテンプレートです');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】')||!text.includes('タイトル：**55px固定**')||!text.includes('イベント番号：**68px固定**')||!text.includes('説明本文：**36px固定**')||!text.includes('場所・会場名：**28px固定**')||!text.includes('日時：**36px固定**'))throw new Error('最大30件・固定フォントサイズ5種・Golden Master契約が未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }
@@ -120,7 +120,7 @@ function download(text,type,filename){
   setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 $('copyCanvaPrompt').addEventListener('click',async()=>{
-  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウト指示（タイトル1行優先・日時54px・表紙固定・保存後実体検証）をコピーしました。');}
+  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウト指示（タイトル55・番号68・本文36・会場28・日時36px固定、全件数値検品・保存後再照合）をコピーしました。');}
   catch(error){alertStatus('Canva固定レイアウト指示を取得できません。古いテンプレートへの自動切替は行いません。再読込をお願いします。');console.error(error);}
 });
 $('downloadCanvaCsv').addEventListener('click',()=>{download(draftAsCsv(currentDraft()),'text/csv;charset=utf-8','canva-family-events.csv');alertStatus('CSVを出力しました。');});

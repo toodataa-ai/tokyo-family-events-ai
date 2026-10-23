@@ -11,7 +11,7 @@
   <a href="search.html" class="canva-back">← イベント検索に戻る</a>
   <div class="canva-draft-heading">
     <div><div class="canva-eyebrow">CANVA POST DRAFT</div><h1>Canva投稿ドラフト</h1>
-      <p>検索画面で選んだイベントを、2026-10-23確定の7ページ完成版と同じ配置に差し替えます。毎回完成版を新しく複製し、元の保存版は変更しません。ここからSNSへの公開は行いません。</p></div>
+      <p>検索画面で選んだイベントを、2026-10-23確定の完成版と同じ配置に差し替えます（30件なら17ページ）。毎回完成版を新しく複製し、元の保存版は変更しません。ここからSNSへの公開は行いません。</p></div>
     <a class="canva-template-link" target="_blank" rel="noopener" href="https://www.canva.com/d/Yr0CiLUWgATkd1R">固定レイアウトの完成版を見る ↗</a>
   </div>
 </header>
@@ -60,7 +60,7 @@ async function getCanvaTemplate(){
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('【タイトル最適化・2026-10-24承認済み・最優先】'))throw new Error('タイトル1行優先・Golden Master契約未反映の古いテンプレートです');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【タイトル最適化・2026-10-24承認済み・最優先】'))throw new Error('最大30件・タイトル1行優先・Golden Master契約未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }

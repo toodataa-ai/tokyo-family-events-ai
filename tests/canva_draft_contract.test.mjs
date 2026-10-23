@@ -21,15 +21,25 @@ test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.goldenMasterId,'DAHY1F7Rv_k');
   assert.equal(CANVA_FORMAT.goldenMasterUrl,'https://www.canva.com/d/Yr0CiLUWgATkd1R');
   assert.deepEqual(CANVA_FORMAT.eventTypography,{title:55,titleNumber:68,body:36,venue:28,datetime:36});
-  assert.equal(CANVA_FORMAT.coverSuffixFontSize,78);
+  assert.equal(CANVA_FORMAT.coverSuffixFontSize,75);
+  assert.equal(CANVA_FORMAT.coverFontSize,79);
+  assert.equal(CANVA_FORMAT.coverCountFontSize,191);
+  assert.equal(CANVA_FORMAT.coverDateDigitFontSize,126);
+  assert.equal(CANVA_FORMAT.coverDateUnitFontSize,77);
+  assert.equal(CANVA_FORMAT.coverDateHyphenFontSize,77);
+  assert.equal(CANVA_FORMAT.coverCaptionFontSize,129);
+  assert.equal(CANVA_FORMAT.coverSaveFontSize,44);
+  assert.equal(CANVA_FORMAT.eventBodyFontFamily,'けいふぉんと');
+  assert.equal(CANVA_FORMAT.closingReferenceId,'DAHYlmzKyq4');
+  assert.equal(CANVA_FORMAT.closingReferencePageId,'PBKb7PtCH0dWRJyg');
   assert.equal(CANVA_FORMAT.pages,7);
-  assert.equal(CANVA_FORMAT.maxPages,17);
-  assert.equal(CANVA_FORMAT.maxEvents,30);
+  assert.equal(CANVA_FORMAT.maxPages,20);
+  assert.equal(CANVA_FORMAT.maxEvents,36);
   assert.equal(CANVA_FORMAT.eventsPerPage,2);
 });
-test('selection is deterministic, deduplicated and capped at thirty',()=>{
-  const ids=Array.from({length:32},(_,i)=>'e'+i);
-  assert.deepEqual(uniqueEventIds(['e0','e0',...ids]),ids.slice(0,30));
+test('selection is deterministic, deduplicated and capped at thirty-six',()=>{
+  const ids=Array.from({length:40},(_,i)=>'e'+i);
+  assert.deepEqual(uniqueEventIds(['e0','e0',...ids]),ids.slice(0,36));
   const store=memoryStore();
   saveCanvaSelection(['e0','e1','e0'],store);
   assert.deepEqual(readCanvaSelection(store),['e0','e1']);
@@ -102,17 +112,17 @@ test('organiser-specific image candidates are not assumed licensed for publicati
 });
 
 test('exported Canva prompt carries approved hide-frame, cover-count and save rules',()=>{
-  const d=buildCanvaDraft([event('a'),event('b')],['a','b'],{coverTitle:'東京23区 週末子連れイベント2選'});
+  const d=buildCanvaDraft([event('a'),event('b')],['a','b'],{coverTitle:'無効な上書き指示'});
   const p=buildCanvaPrompt(d,readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8'));
-  assert.ok(p.includes('表紙タイトル: 東京23区 週末子連れイベント2選'));
+  assert.ok(p.includes('表紙タイトル: 東京 週末イベント2選'));
   assert.ok(p.includes('2選'));
   assert.ok(p.includes('枠ごと非表示'));
   assert.ok(p.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】'));
   assert.ok(p.includes('55pxのままで自然に改行'));
   assert.ok(p.includes('【保存後の二重検品】'));
-  assert.ok(p.includes('コピーの編集transactionをcommit'));
+  assert.ok(p.includes('コピー編集transactionをcommit'));
   assert.ok(p.includes('保存済み本体をget_design'));
-  assert.ok(p.includes('編集リンク'));
+  assert.ok(p.includes('編集URL'));
   assert.ok(p.includes('別年の写真を使わず'));
   assert.ok(!p.includes('余分なイベント枠を空欄'));
   assert.ok(!p.includes('保存前に承認を求めてください'));
@@ -129,7 +139,7 @@ test('published Canva prompt and docs mirror remain identical',()=>{
 test('real clipboard instruction renders all fields and protects absent slots',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});
  const text=renderCanvaPromptTemplate(liveV2,d);
- assert.ok(text.includes('東京23区 週末イベント2選'));
+ assert.ok(text.includes('東京 週末イベント2選'));
  assert.ok(text.includes('2選'));
  assert.ok(text.includes('枠ごと非表示'));
  assert.ok(text.includes('出典：'));
@@ -145,7 +155,7 @@ test('Instagram example is a qualified reference, never a secretly changed templ
   assert.match(liveV2,/取得できない場合は見た目を推測/);
   assert.match(liveV2,/https:\/\/canva\.link\/8zgsm5y1cwwgd5e|\{\{TEMPLATE_URL\}\}/);
   assert.match(visualQualityV1,/DAHYo7noxKY/);
-  assert.match(visualQualityV1,/1080×1350px・7〜17ページ/);
+  assert.match(visualQualityV1,/1080×1350px・7〜20ページ/);
   assert.match(visualQualityV1,/投稿画像を直接取得できていない/);
 });
 test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
@@ -155,13 +165,13 @@ test('quality-directed exported prompt includes reproducible typography and imag
  assert.match(p,/イベント番号：\*\*68px固定\*\*/);
  assert.match(p,/約幅540px/);
  assert.match(p,/写真.*重なり|重なり.*写真/);
- assert.match(p,/同じ基準フォントファミリー/);
+ assert.match(p,/説明本文だけは必ず「けいふぉんと」/);
  assert.match(p,/画像.*配置.*最終表示/);
- assert.match(p,/全7ページのプレビュー/);
+ assert.match(p,/全7ページを実画像で目視/);
  assert.match(p,/未使用.*非表示/);
  assert.match(p,/共通OGP/);
  assert.match(p,/初期テンプレート・Golden Master・以前の保存版/);
- assert.match(p,/画像専用\/共通\/準備中/);
+ assert.match(p,/参照第7ページ/);
  assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
  assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
  for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
@@ -186,11 +196,11 @@ test('next prompt pins the saved golden master rather than rebuilding from old t
  assert.match(prompt,/制作するデザイン|コピー元|レイアウト正本/);
  assert.match(prompt,/DAHY1F7Rv_k/);
  assert.match(prompt,/10\/31\(土\)〜11\/1\(日\)/);
- assert.match(prompt,/東京23区.*x75 y196/);
- assert.match(prompt,/選.*x829 y735/);
+ assert.match(prompt,/「東京」79px/);
+ assert.match(prompt,/「選」75px/);
  assert.match(prompt,/タイトル：\*\*55px固定\*\*/);
  assert.match(prompt,/3行になっても36px/);
- assert.match(prompt,/commit後の本体再読取/);
+ assert.match(prompt,/commit後の保存済みコピー/);
  assert.match(prompt,/以前の保存版/);
  assert.doesNotMatch(prompt,/\{\{[A-Z_]+\}\}/);
 });
@@ -205,21 +215,21 @@ test('draft never invents cover date using first long-running event',()=>{
 test('site uses uncached pinned instruction with explicit date entry and protections',()=>{
  assert.match(canvaPage,/id="canvaCoverDate"/);
  assert.match(canvaPage,/canvaCoverDate'\)\.value/);
- assert.match(canvaPage,/20261024-fixed-font-55-68-36-28-36-v1/);
+ assert.match(canvaPage,/20261024-fixed-cover-36-v1/);
  assert.match(canvaPage,/古いテンプレートへの自動切替は行いません/);
  assert.match(canvaPage,/Yr0CiLUWgATkd1R/);
 });
 test('golden layout contract locks cover safe areas, fonts and persistence',()=>{
  assert.match(goldenLayoutV1,/DAHY1F7Rv_k/);
  assert.match(goldenLayoutV1,/DAHYo7noxKY/);
- assert.match(goldenLayoutV1,/「東京23区」: x=75, y=196, w=460, font=80/);
- assert.match(goldenLayoutV1,/「選」: x=829, y=735, w=102, font=78/);
+ assert.match(goldenLayoutV1,/「東京」79px固定/);
+ assert.match(goldenLayoutV1,/「選」75px固定/);
  assert.match(goldenLayoutV1,/日時は\*\*36px固定/);
  assert.match(goldenLayoutV1,/本文は\*\*36px固定/);
  assert.match(goldenLayoutV1,/get_design.*get_design_content.*get_design_pages/);
 });
 
-test('2026-10-24 typography is fixed for every introduction role, while cover stays unchanged',()=>{
+test('2026-10-24 typography is fixed for introductions and latest cover typography',()=>{
   assert.equal(CANVA_FORMAT.eventTitleLayoutPolicy,'fixed_55px_wrap_if_needed_v1');
   const d=buildCanvaDraft([event('a',{name:'中里の秋さがしミッション！'}),event('b')],['a','b'],{coverDate:'10/31(土)〜11/1(日)'});
   assert.deepEqual(d.layout.event_typography_px,{title:55,titleNumber:68,body:36,venue:28,datetime:36});
@@ -242,8 +252,8 @@ test('2026-10-24 typography is fixed for every introduction role, while cover st
   assert.match(visualQualityV1,/G05: すべての使用イベント枠/);
   assert.match(canvaPage,/text.includes\('【イベント紹介文字サイズ固定/);
   assert.match(p,/10\/31\(土\)〜11\/1\(日\)/);
-  assert.equal(CANVA_FORMAT.coverCountFontSize,158); // cover number unaffected
-  assert.equal(CANVA_FORMAT.coverFontSize,80);
+  assert.equal(CANVA_FORMAT.coverCountFontSize,191); // latest cover count
+  assert.equal(CANVA_FORMAT.coverFontSize,79);
 });
 test('stale or one-number-wrong external prompt cannot be rendered or copied as valid',()=>{
   const d=buildCanvaDraft([event('a')],['a']);
@@ -262,43 +272,43 @@ test('stale or one-number-wrong external prompt cannot be rendered or copied as 
 });
 
 const searchPage=readFileSync(new URL('../site/search.html',import.meta.url),'utf8');
-test('selection of 30 events survives storage, share UI, JSON/CSV and dynamic Canva mapping',()=>{
-  assert.match(searchPage,/Canva投稿候補 0\/30件/);
-  assert.match(searchPage,/最大30件まで選択できます/);
+test('selection of 36 events survives storage, share UI, JSON/CSV and 20 page Canva mapping',()=>{
+  assert.match(searchPage,/Canva投稿候補 0\/36件/);
+  assert.match(searchPage,/最大36件まで選択できます/);
   assert.match(searchPage,/CANVA_FORMAT\.maxEvents/);
-  const all=Array.from({length:31},(_,i)=>event('event-'+String(i+1).padStart(2,'0')));
+  const all=Array.from({length:38},(_,i)=>event('event-'+String(i+1).padStart(2,'0')));
   const ids=all.map(e=>e.id);
   const store=memoryStore();
   saveCanvaSelection(ids,store);
-  assert.equal(readCanvaSelection(store).length,30);
+  assert.equal(readCanvaSelection(store).length,36);
   const d=buildCanvaDraft(all,ids,{coverDate:'10/31(土)〜11/1(日)'});
-  assert.equal(d.selected_count,30);
-  assert.equal(d.events.length,30);
-  assert.equal(d.layout.pages,17);
-  assert.equal(d.layout.event_pages,15);
-  assert.equal(d.layout.added_event_pages,10);
-  assert.equal(d.layout.event_slots,30);
+  assert.equal(d.selected_count,36);
+  assert.equal(d.events.length,36);
+  assert.equal(d.layout.pages,20);
+  assert.equal(d.layout.event_pages,18);
+  assert.equal(d.layout.added_event_pages,13);
+  assert.equal(d.layout.event_slots,36);
   assert.deepEqual(d.layout.event_typography_px,{title:55,titleNumber:68,body:36,venue:28,datetime:36});
-  assert.equal(d.autofill_fields.COVER_TITLE.text,'東京23区 週末子連れイベント30選');
-  assert.equal(d.autofill_fields.EVENT_30_TITLE.text,all[29].name);
-  assert.equal(d.autofill_fields.EVENT_31_TITLE,undefined);
-  assert.equal(Object.keys(d.autofill_fields).length,152);
+  assert.equal(d.autofill_fields.COVER_TITLE.text,'東京 週末イベント36選');
+  assert.equal(d.autofill_fields.EVENT_36_TITLE.text,all[35].name);
+  assert.equal(d.autofill_fields.EVENT_37_TITLE,undefined);
+  assert.equal(Object.keys(d.autofill_fields).length,182);
   assert.equal(draftAsCsv(d).trim().split(String.fromCharCode(13,10)).length,2);
-  assert.match(canvaPageAssignments(d),/29番：16ページ上段/);
-  assert.match(canvaPageAssignments(d),/30番：16ページ下段/);
+  assert.match(canvaPageAssignments(d),/35番：19ページ上段/);
+  assert.match(canvaPageAssignments(d),/36番：19ページ下段/);
   const prompt=renderCanvaPromptTemplate(liveV2,d);
-  assert.match(prompt,/全17ページ/);
-  assert.match(prompt,/追加紹介ページ10ページ/);
-  assert.match(prompt,/最終17ページ目は締め/);
-  assert.match(prompt,/30番：16ページ下段/);
+  assert.match(prompt,/全20ページ/);
+  assert.match(prompt,/追加紹介ページ13ページ/);
+  assert.match(prompt,/最終20ページ目は参照デザイン/);
+  assert.match(prompt,/36番：19ページ下段/);
   assert.ok(!prompt.includes('{{'));
 });
 test('page counts stay compatible with 7-page Golden Master, add only required pages',()=>{
-  for(const [n,want] of [[0,7],[1,7],[9,7],[10,7],[11,8],[12,8],[19,12],[20,12],[21,13],[29,17],[30,17],[31,17]]){
+  for(const [n,want] of [[0,7],[1,7],[9,7],[10,7],[11,8],[12,8],[19,12],[20,12],[21,13],[29,17],[30,17],[31,18],[35,20],[36,20],[37,20]]){
     assert.equal(canvaPageCount(n),want,'selected_count='+n);
   }
-  const all=Array.from({length:30},(_,i)=>event('e'+i));
-  for(const n of [1,10,11,29,30]){
+  const all=Array.from({length:36},(_,i)=>event('e'+i));
+  for(const n of [1,10,11,29,30,35,36]){
     const d=buildCanvaDraft(all,all.slice(0,n).map(x=>x.id));
     assert.equal(d.layout.pages,canvaPageCount(n));
     assert.equal(d.layout.pages-2,d.layout.event_pages);
@@ -311,7 +321,7 @@ test('page counts stay compatible with 7-page Golden Master, add only required p
 });
 
 test('QA rules and site cache reject the old adjustable font guidance',()=>{
-  assert.match(canvaPage,/20261024-fixed-font-55-68-36-28-36-v1/);
+  assert.match(canvaPage,/20261024-fixed-cover-36-v1/);
   assert.ok(canvaPage.includes("text.includes('タイトル：**55px固定**')"));
   assert.ok(canvaPage.includes("text.includes('イベント番号：**68px固定**')"));
   assert.ok(canvaPage.includes("text.includes('説明本文：**36px固定**')"));
@@ -320,9 +330,53 @@ test('QA rules and site cache reject the old adjustable font guidance',()=>{
   for(const value of ['55','68','36','28']){
     assert.match(visualQualityV1,new RegExp(value+'px'));
   }
-  assert.match(visualQualityV1,/取得不能時は未検証/);
-  assert.match(goldenLayoutV1,/保存後再読取したコピー/);
+  assert.match(visualQualityV1,/取得不能は未検証|取得できないものは未検証/);
+  assert.match(goldenLayoutV1,/再取得/);
   assert.ok(!liveV2.includes('80〜82px'));
   assert.ok(!liveV2.includes('50〜54px'));
   assert.ok(!liveV2.includes('日時54px'));
+});
+
+test('36-selection cover is immutable, base plus separate reference closing stays explicit',()=>{
+  const e=[event('a'),event('b')],d=buildCanvaDraft(e,['a','b'],{coverTitle:'勝手な表紙',coverDate:'11/7(土)〜11/8(日)'});
+  assert.equal(d.autofill_fields.COVER_TITLE.text,'東京 週末イベント2選');
+  assert.equal(d.source_design_id,'DAHY1F7Rv_k');
+  assert.equal(d.closing_source_design_id,'DAHYlmzKyq4');
+  assert.equal(d.closing_source_page,7);
+  assert.equal(d.closing_source_page_id,'PBKb7PtCH0dWRJyg');
+  assert.equal(d.closing_excluded_page_id,'PBh7x4Vd0Srrb1ly');
+  assert.equal(d.layout.event_body_font_family,'けいふぉんと');
+  assert.equal(d.layout.uniform_white_card_height,true);
+  assert.deepEqual(d.layout.cover_typography_px,{
+    city:79,date_digit:126,date_unit:77,date_hyphen:77,caption:129,save:44,count_digit:191,count_suffix:75
+  });
+  assert.deepEqual(d.layout.cover_fixed_labels,{city:'東京',caption:'週末イベント',save:'保存してあとから見返す'});
+  assert.match(canvaPage,/readonly aria-readonly="true"/);
+  const p=renderCanvaPromptTemplate(liveV2,d);
+  for(const marker of ['「東京」＝**79px固定**','日付の各数字＝**126px固定**','「週末イベント」＝**129px固定**','「保存してあとから見返す」＝**44px固定**','「けいふぉんと」','白い背景','PBKb7PtCH0dWRJyg','PBh7x4Vd0Srrb1ly','DAHYlmzKyq4']){
+    assert.ok(p.includes(marker),'missing:'+marker);
+  }
+  assert.match(p,/第6ページ.*使用禁止|6ページ目.*使用禁止|6ページ目.*使わない/);
+  assert.match(p,/commit後/);
+});
+test('any stale latest cover, font or source-page rule is rejected before export',()=>{
+ const d=buildCanvaDraft([event('a')],['a']);
+ const cases=[
+   ['「東京」＝**79px固定**','「東京」＝**80px固定**'],
+   ['日付の各数字＝**126px固定**','日付の各数字＝**125px固定**'],
+   ['日付の「月」「日」＝**77px固定**','日付の「月」「日」＝**70px固定**'],
+   ['日付の区切りハイフン「-」＝**77px固定**','日付の区切りハイフン「-」＝**79px固定**'],
+   ['「週末イベント」＝**129px固定**','「週末イベント」＝**128px固定**'],
+   ['「保存してあとから見返す」＝**44px固定**','「保存してあとから見返す」＝**43px固定**'],
+   ['数字部分＝**191px固定**','数字部分＝**190px固定**'],
+   ['「選」＝**75px固定**','「選」＝**76px固定**'],
+   ['本文のフォントファミリー：けいふぉんと','本文のフォントファミリー：別フォント'],
+   ['PBKb7PtCH0dWRJyg','OTHER'],
+   ['PBh7x4Vd0Srrb1ly','OTHER'],
+   ['全紹介枠の白い背景','白い背景は自由']
+ ];
+ for(const [needle,wrong] of cases){
+   assert.ok(liveV2.includes(needle));
+   assert.throws(()=>renderCanvaPromptTemplate(liveV2.replace(needle,wrong),d),/固定文字サイズ・検品契約が欠落/);
+ }
 });

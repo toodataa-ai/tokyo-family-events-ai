@@ -171,7 +171,7 @@ test('quality-directed exported prompt includes reproducible typography and imag
  assert.match(p,/未使用.*非表示/);
  assert.match(p,/共通OGP/);
  assert.match(p,/初期テンプレート・Golden Master・以前の保存版/);
- assert.match(p,/参照第7ページ/);
+ assert.match(p,/参照元.*7ページ|参照デザイン.*7ページ/);
  assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
  assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
  for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
@@ -200,7 +200,7 @@ test('next prompt pins the saved golden master rather than rebuilding from old t
  assert.match(prompt,/「選」75px/);
  assert.match(prompt,/タイトル：\*\*55px固定\*\*/);
  assert.match(prompt,/3行になっても36px/);
- assert.match(prompt,/commit後の保存済みコピー/);
+ assert.match(prompt,/commit後.*保存済み/);
  assert.match(prompt,/以前の保存版/);
  assert.doesNotMatch(prompt,/\{\{[A-Z_]+\}\}/);
 });
@@ -249,7 +249,7 @@ test('2026-10-24 typography is fixed for introductions and latest cover typograp
   assert.ok(!p.includes('日時54px'));
   assert.ok(!p.includes('本文50〜54px'));
   assert.match(goldenLayoutV1,/タイトル55px、イベント番号68px、本文36px、場所28px、日時36px/);
-  assert.match(visualQualityV1,/G05: すべての使用イベント枠/);
+  assert.match(visualQualityV1,/G05: 全使用イベント枠/);
   assert.match(canvaPage,/text.includes\('【イベント紹介文字サイズ固定/);
   assert.match(p,/10\/31\(土\)〜11\/1\(日\)/);
   assert.equal(CANVA_FORMAT.coverCountFontSize,191); // latest cover count

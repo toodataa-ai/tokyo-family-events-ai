@@ -53,6 +53,18 @@ export function saveCanvaSelection(ids,storage){
   return safe;
 }
 function safeText(v){return typeof v==='string'?v.trim():'';}
+// Only an explicitly selected search period may prefill the cover date; never infer from event dates.
+function canonicalJstCalendarDay(iso){
+  if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(iso))return '';
+  const value=new Date(iso+'T00:00:00Z');
+  if(Number.isNaN(value.getTime())||value.toISOString().slice(0,10)!==iso)return '';
+  return String(value.getUTCMonth()+1)+'月'+String(value.getUTCDate())+'日（'+'日月火水木金土'[value.getUTCDay()]+'）';
+}
+export function canvaCoverDateForPeriod(start,end){
+  const a=canonicalJstCalendarDay(start),b=canonicalJstCalendarDay(end);
+  return a&&b&&start<=end?a+'-'+b:'';
+}
+
 // Carry the explicitly entered weekend across navigation/reloads; never infer it from long-running events.
 export function readCanvaCoverDate(storage){
   try{return safeText(storage?.getItem(CANVA_FORMAT.coverDateStorageKey)).slice(0,100);}catch{return '';}

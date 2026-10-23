@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFileSync} from 'node:fs';
-import {CANVA_FORMAT,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
+import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -25,11 +25,13 @@ test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.coverSuffixFontSize,78);
   assert.equal(CANVA_FORMAT.eventBodyTargetMax,54);
   assert.equal(CANVA_FORMAT.pages,7);
-  assert.equal(CANVA_FORMAT.maxEvents,10);
+  assert.equal(CANVA_FORMAT.maxPages,17);
+  assert.equal(CANVA_FORMAT.maxEvents,30);
+  assert.equal(CANVA_FORMAT.eventsPerPage,2);
 });
-test('selection is deterministic, deduplicated and capped at ten',()=>{
-  const ids=Array.from({length:12},(_,i)=>'e'+i);
-  assert.deepEqual(uniqueEventIds(['e0','e0',...ids]),ids.slice(0,10));
+test('selection is deterministic, deduplicated and capped at thirty',()=>{
+  const ids=Array.from({length:32},(_,i)=>'e'+i);
+  assert.deepEqual(uniqueEventIds(['e0','e0',...ids]),ids.slice(0,30));
   const store=memoryStore();
   saveCanvaSelection(['e0','e1','e0'],store);
   assert.deepEqual(readCanvaSelection(store),['e0','e1']);
@@ -143,7 +145,7 @@ test('Instagram example is a qualified reference, never a secretly changed templ
   assert.match(liveV2,/取得できない場合は見た目を推測/);
   assert.match(liveV2,/https:\/\/canva\.link\/8zgsm5y1cwwgd5e|\{\{TEMPLATE_URL\}\}/);
   assert.match(visualQualityV1,/DAHYo7noxKY/);
-  assert.match(visualQualityV1,/1080×1350px・7ページ固定/);
+  assert.match(visualQualityV1,/1080×1350px・7〜17ページ/);
   assert.match(visualQualityV1,/投稿画像を直接取得できていない/);
 });
 test('quality-directed exported prompt includes reproducible typography and image gates',()=>{
@@ -203,7 +205,7 @@ test('draft never invents cover date using first long-running event',()=>{
 test('site uses uncached pinned instruction with explicit date entry and protections',()=>{
  assert.match(canvaPage,/id="canvaCoverDate"/);
  assert.match(canvaPage,/canvaCoverDate'\)\.value/);
- assert.match(canvaPage,/20261024-title-one-line-v1/);
+ assert.match(canvaPage,/20261024-max30-v1/);
  assert.match(canvaPage,/古いテンプレートへの自動切替は行いません/);
  assert.match(canvaPage,/Yr0CiLUWgATkd1R/);
 });
@@ -234,4 +236,52 @@ test('2026-10-24 approved single-line-first title policy survives website clipbo
   assert.match(canvaPage,/text\.includes\('【タイトル最適化/);
   assert.match(goldenLayoutV1,/タイトル最適化の承認済み追補/);
   assert.match(visualQualityV1,/不要2行が1件でも残ればG05不合格/);
+});
+
+const searchPage=readFileSync(new URL('../site/search.html',import.meta.url),'utf8');
+test('selection of 30 events survives storage, share UI, JSON/CSV and dynamic Canva mapping',()=>{
+  assert.match(searchPage,/Canva投稿候補 0\/30件/);
+  assert.match(searchPage,/最大30件まで選択できます/);
+  assert.match(searchPage,/CANVA_FORMAT\.maxEvents/);
+  const all=Array.from({length:31},(_,i)=>event('event-'+String(i+1).padStart(2,'0')));
+  const ids=all.map(e=>e.id);
+  const store=memoryStore();
+  saveCanvaSelection(ids,store);
+  assert.equal(readCanvaSelection(store).length,30);
+  const d=buildCanvaDraft(all,ids,{coverDate:'10/31(土)〜11/1(日)'});
+  assert.equal(d.selected_count,30);
+  assert.equal(d.events.length,30);
+  assert.equal(d.layout.pages,17);
+  assert.equal(d.layout.event_pages,15);
+  assert.equal(d.layout.added_event_pages,10);
+  assert.equal(d.layout.event_slots,30);
+  assert.equal(d.autofill_fields.COVER_TITLE.text,'東京23区 週末子連れイベント30選');
+  assert.equal(d.autofill_fields.EVENT_30_TITLE.text,all[29].name);
+  assert.equal(d.autofill_fields.EVENT_31_TITLE,undefined);
+  assert.equal(Object.keys(d.autofill_fields).length,152);
+  assert.equal(draftAsCsv(d).trim().split(String.fromCharCode(13,10)).length,2);
+  assert.match(canvaPageAssignments(d),/29番：16ページ上段/);
+  assert.match(canvaPageAssignments(d),/30番：16ページ下段/);
+  const prompt=renderCanvaPromptTemplate(liveV2,d);
+  assert.match(prompt,/全17ページ/);
+  assert.match(prompt,/追加紹介ページ10ページ/);
+  assert.match(prompt,/最終17ページ目は締め/);
+  assert.match(prompt,/30番：16ページ下段/);
+  assert.ok(!prompt.includes('{{'));
+});
+test('page counts stay compatible with 7-page Golden Master, add only required pages',()=>{
+  for(const [n,want] of [[0,7],[1,7],[9,7],[10,7],[11,8],[12,8],[19,12],[20,12],[21,13],[29,17],[30,17],[31,17]]){
+    assert.equal(canvaPageCount(n),want,'selected_count='+n);
+  }
+  const all=Array.from({length:30},(_,i)=>event('e'+i));
+  for(const n of [1,10,11,29,30]){
+    const d=buildCanvaDraft(all,all.slice(0,n).map(x=>x.id));
+    assert.equal(d.layout.pages,canvaPageCount(n));
+    assert.equal(d.layout.pages-2,d.layout.event_pages);
+    assert.equal(d.layout.pages-7,d.layout.added_event_pages);
+    assert.equal(d.events.length,n);
+    const p=renderCanvaPromptTemplate(liveV2,d);
+    assert.match(p,new RegExp('全'+d.layout.pages+'ページ'));
+    assert.ok(!p.includes('{{'));
+  }
 });

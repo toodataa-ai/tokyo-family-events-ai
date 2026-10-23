@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFileSync} from 'node:fs';
-import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,readCanvaCoverDate,saveCanvaCoverDate,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
+import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,readCanvaCoverDate,saveCanvaCoverDate,canvaCoverDateForPeriod,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -38,6 +38,16 @@ test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.maxPages,20);
   assert.equal(CANVA_FORMAT.maxEvents,36);
   assert.equal(CANVA_FORMAT.eventsPerPage,2);
+});
+test('explicit selected weekend dates carry correct weekdays into Canva handoff',()=>{
+  assert.equal(canvaCoverDateForPeriod('2026-10-24','2026-10-25'),'10月24日（土）-10月25日（日）');
+  assert.equal(canvaCoverDateForPeriod('2026-10-31','2026-11-01'),'10月31日（土）-11月1日（日）');
+  assert.equal(canvaCoverDateForPeriod('2026-02-30','2026-03-01'),'');
+  assert.equal(canvaCoverDateForPeriod('2026-10-25','2026-10-24'),'');
+  const source=readFileSync(new URL('../site/search.html',import.meta.url),'utf8');
+  assert.match(source,/canvaCoverDateForPeriod\(period\.start,period\.end\)/);
+  assert.match(source,/url\.searchParams\.set\('coverDate',coverDate\)/);
+  assert.match(source,/chosen\?\.dates\?\.length===1/);
 });
 test('explicit cover date survives storage and remains present in clipboard instructions',()=>{
   const store=memoryStore();

@@ -373,7 +373,7 @@ test('any stale latest cover, font or source-page rule is rejected before export
    ['本文のフォントファミリー：けいふぉんと','本文のフォントファミリー：別フォント'],
    ['PBKb7PtCH0dWRJyg','OTHER'],
    ['PBh7x4Vd0Srrb1ly','OTHER'],
-   ['全紹介枠の白い背景','白い背景は自由']
+   ['【白い背景長方形・全件同一高さ】','【背景は自由】']
  ];
  for(const [needle,wrong] of cases){
    assert.ok(liveV2.includes(needle));

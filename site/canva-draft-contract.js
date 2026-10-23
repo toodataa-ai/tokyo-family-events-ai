@@ -144,8 +144,16 @@ export function eventPromptBlocks(draft){
 export function canvaPageAssignments(draft){
   return (draft.events||[]).map((r,i)=>`${i+1}番：${2+Math.floor(i/CANVA_FORMAT.eventsPerPage)}ページ${i%2?'下段':'上段'}／${r.title}`).join('\n');
 }
-export function renderCanvaPromptTemplate(template,draft){
+export function assertCanvaTypographyTemplate(template){
   if(typeof template!=='string'||!template.trim())throw new Error('Canva指示テンプレートを読み込めません');
+  // Reject stale templates even when a direct caller bypasses the browser's cache guard.
+  const markers=['【イベント紹介文字サイズ固定・2026-10-24最優先】','イベントタイトル：**55px固定**','イベント番号：**68px固定**','説明本文：**36px固定**','場所・会場名：**28px固定**','日時：**36px固定**','【固定pxの必須検品／G05に追加】','【保存後の二重検品】'];
+  const missing=markers.filter(marker=>!template.includes(marker));
+  if(missing.length)throw new Error('固定文字サイズ・検品契約が欠落: '+missing.join(' / '));
+  return true;
+}
+export function renderCanvaPromptTemplate(template,draft){
+  assertCanvaTypographyTemplate(template);
   const fields={
     TEMPLATE_URL:CANVA_FORMAT.templateUrl,
     GOLDEN_MASTER_URL:CANVA_FORMAT.goldenMasterUrl,

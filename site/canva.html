@@ -17,7 +17,7 @@
 </header>
 <main class="canva-main">
   <section class="canva-panel">
-    <div class="canva-step"><span>1</span><div><h2>イベントを選択・並べ替え</h2><p>最大10件／並び順がCanvaの1〜10番に対応します。前回のデザインは1ページ目が表紙、2〜6ページ目がイベント、7ページ目が締めです。</p></div></div>
+    <div class="canva-step"><span>1</span><div><h2>イベントを選択・並べ替え</h2><p>最大30件／並び順がCanvaの1〜30番に対応します。承認済みの7ページ構成を基準に、11件以上なら紹介ページを追加し、最後に締めページを配置します（最大17ページ）。</p></div></div>
     <p id="canvaCount" class="canva-count" aria-live="polite">選択イベントを読み込み中…</p>
     <p id="canvaStatus" class="canva-notice" role="status" hidden></p>
     <ol id="canvaChosen" class="canva-chosen"></ol>
@@ -26,7 +26,7 @@
   <section class="canva-panel">
     <div class="canva-step"><span>2</span><div><h2>投稿タイトル・内容の確認</h2><p>掲載データから日時・会場・料金を転記します。公式確認が必要な項目は推測せず、編集時の確認対象とします。</p></div></div>
     <label class="canva-form-label" for="canvaCoverTitle">表紙タイトル</label>
-    <input id="canvaCoverTitle" class="canva-title-input" maxlength="120" value="東京23区 週末子連れイベント10選">
+    <input id="canvaCoverTitle" class="canva-title-input" maxlength="120" value="東京23区 週末子連れイベント30選">
     <label class="canva-form-label" for="canvaCoverDate">表紙に記載する対象週末（日付は毎回更新）</label>
     <input id="canvaCoverDate" class="canva-title-input" maxlength="100" placeholder="例：10/31(土)〜11/1(日)　空欄の場合は要確認">
     <p class="canva-notice">元の完成版にある「10/24〜25」は次回へ流用しません。対象週末の日時を入力してください。</p>
@@ -42,7 +42,7 @@
     </div>
     <div class="canva-handoff-guide">
       <b>ChatGPTでの使い方</b>
-      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトルの1行優先・枠内最大サイズ、紹介ページの日時54px（3行は52px）、画像・出典、全7ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
+      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトルの1行優先・枠内最大サイズ、紹介ページの日時54px（3行は52px）、画像・出典、生成した全ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPTを開く ↗</a>
     </div>
     <details><summary>Canva APIを使った直接ドラフト生成について</summary><p>ボタン1回でCanva上に新規ドラフトを生成するには、Canva Connect APIのOAuth接続と、Canvaの差し込みフィールド設定が必要です。接続情報をブラウザや公開GitHubに直接保存せず、サーバー側に安全に設定した後で有効化します。接続前に「作成済み」とは表示しません。</p></details>
@@ -50,10 +50,10 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-title-one-line-v1';
+import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-max30-v1';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false,coverTitleCustom=false;
-const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-title-one-line-v1';
+const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-max30-v1';
 let loadedPromptTemplate=null;
 async function getCanvaTemplate(){
   if(loadedPromptTemplate!==null)return loadedPromptTemplate;
@@ -73,7 +73,7 @@ function render(){
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
   const imageStates=new Map(buildCanvaDraft(allEvents,selectedIds).events.map(row=>[row.id,row.image_candidate_status]));
   if(!coverTitleCustom&&found.length){$('canvaCoverTitle').value=`東京23区 週末子連れイベント${found.length}選`;}
-  $('canvaCount').textContent=`選択 ${found.length}/${CANVA_FORMAT.maxEvents}件`+(found.length===CANVA_FORMAT.maxEvents?' ／ 10件そろいました':' ／ 10件で全枠を利用できます');
+  $('canvaCount').textContent=`選択 ${found.length}/${CANVA_FORMAT.maxEvents}件 ／ Canva全${canvaPageCount(found.length)}ページ`+(found.length===CANVA_FORMAT.maxEvents?' ／ 30件そろいました':'');
   $('canvaEmpty').hidden=found.length>0;
   $('canvaChosen').innerHTML=found.map((ev,i)=>{
     const grade=ev.family_fit?.overall||ev.family_fit?.grade||'-';
@@ -91,7 +91,9 @@ function render(){
   }).join('');
   const warnings=[];
   if(missing.length)warnings.push('公開中のデータで見つからない選択IDが'+missing.length+'件あります。ドラフトには入れず、必要なら再選択してください。');
-  if(found.length<10&&found.length>0)warnings.push('7ページ版は10イベント用です。10件未満の場合は、未選択枠は枠ごと非表示にし、旧イベント写真も残しません。');
+  if(found.length>0&&found.length%2)warnings.push('奇数件のため最後の紹介ページ下段は、旧イベントの文章・写真・装飾・出典を含めて枠ごと非表示にします。');
+  if(found.length>10)warnings.push('11件以上ではGolden Masterから紹介ページを'+(canvaPageCount(found.length)-CANVA_FORMAT.pages)+'ページ追加します。締めページは最終ページです。');
+  if(found.length>0&&found.length<10)warnings.push('10件未満の未使用イベント枠は、旧イベント写真も含め枠ごと非表示にします。');
   if(found.length&&!$('canvaCoverDate').value.trim())warnings.push('表紙の日付が未入力です。完成版の日付を流用しません。コピーした指示は日付確認を求めます。');
   const unverified=found.filter(e=>e.verification?.status!=='verified');
   if(unverified.length)warnings.push('公式確認完了ではないイベントが'+unverified.length+'件含まれます。公開前に必ず公式情報をご確認ください。');

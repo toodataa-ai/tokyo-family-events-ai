@@ -1,13 +1,14 @@
-# User-approved app-only release v1.16: Canva golden layout prompt export with exact date/typography and post-save audit.
+# User-approved app-only release v1.17: Canva 36 events, immutable cover and last-page contracts.
 operation=release
 production_ref=production
-production_sha=7fd222062a1d2efb30b670122b20c22c1aa60557
-previous_production_sha=a5e8d23cc97be23fd493d715514b59c1440251b8
-approved_staging_sha=2de1a94b4cd8c1c29a8533c554985b12a4218bea
-candidate_sha=900b889d0c7cd1f02f614a36253b5cd139c7788f
-pr=30
-target_public_version=1.16
-release_date_jst=2026-10-23
-staging_validation_run=39957577526
-canva_regression_run=39957447741
-note=Only seven authorized Canva layout/export and documentation files, no search/UI CSS/event data changes; immutable Golden Master DAHY1F7Rv_k; commit then reload validation.
+production_sha=8cf76f2ef47125511e38ec0c67f60438e3c147f8
+previous_production_sha=7fd222062a1d2efb30b670122b20c22c1aa60557
+approved_staging_sha=80689ddbc043356bb7750326912e84f6205cc5ff
+candidate_sha=88e76ce83fef40b2717405f25342f9ee2c277411
+pr=35
+target_public_version=1.17
+release_date_jst=2026-10-24
+isolated_release_audit_run=40037837815
+prior_staging_validation_run=40033913709
+expected_data_production_sha=59266b5587c3cd868b8d5637b2a363f1e3f52cd9
+note=Isolated eight Canva application and documentation paths only. Search Canva selection capped at 36, 20 pages, fixed cover and introduction typography, Keifont, equal white card height, unchanged last page from Canva reference design DAHYlmzKyq4. Other UI, source event data, and Canva originals unchanged.

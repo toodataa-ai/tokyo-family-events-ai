@@ -9,11 +9,19 @@ export const CANVA_FORMAT=Object.freeze({
   goldenMasterId:'DAHY1F7Rv_k',
   goldenMasterUrl:'https://www.canva.com/d/Yr0CiLUWgATkd1R',
   goldenContractUrl:'https://github.com/toodataa-ai/tokyo-family-events-ai/blob/main/docs/canva_golden_layout_contract_v1.md',
-  coverFontSize:80,coverCountFontSize:158,coverSuffixFontSize:78,
-  coverCaptionFontSize:82,
+  coverFontSize:79,coverCountFontSize:191,coverSuffixFontSize:75,
+  coverDateDigitFontSize:126,coverDateUnitFontSize:77,coverDateHyphenFontSize:77,
+  coverCaptionFontSize:129,coverSaveFontSize:44,
+  coverFixedLabels:Object.freeze({city:'東京',caption:'週末イベント',save:'保存してあとから見返す'}),
+  closingReferenceId:'DAHYlmzKyq4',
+  closingReferenceUrl:'https://canva.link/uwsg71kb39p2t7c',
+  closingReferencePage:7,closingReferencePageId:'PBKb7PtCH0dWRJyg',
+  closingExcludedPage:6,closingExcludedPageId:'PBh7x4Vd0Srrb1ly',
+  eventBodyFontFamily:'けいふぉんと',
+  uniformWhiteCardHeight:true,
   eventTypography:Object.freeze({title:55,titleNumber:68,body:36,venue:28,datetime:36}),
   eventTitleLayoutPolicy:'fixed_55px_wrap_if_needed_v1',
-  width:1080,height:1350,pages:7,maxPages:17,maxEvents:30,eventsPerPage:2,
+  width:1080,height:1350,pages:7,maxPages:20,maxEvents:36,eventsPerPage:2,
   selectionStorageKey:'tokyo-family-events-canva-selection-v1'
 });
 
@@ -85,9 +93,9 @@ export function classifyCanvaImageCandidates(rows){
   });
 }
 
-export function buildCanvaDraft(events,ids,{coverTitle='',coverDate=''}={}){
+export function buildCanvaDraft(events,ids,{coverDate=''}={}){
   const rows=classifyCanvaImageCandidates(selectedEvents(events,ids).map(eventDraftRow));
-  const title=safeText(coverTitle).slice(0,120)||`東京23区 週末子連れイベント${rows.length}選`;
+  const title=`東京 週末イベント${rows.length}選`; // Immutable cover wording; changes to selected count only.
   // A long-running first event cannot determine the weekend on the cover.
   // Force explicit confirmation instead of reusing the Golden Master's old date.
   const coverDateText=safeText(coverDate).slice(0,100);
@@ -106,19 +114,24 @@ export function buildCanvaDraft(events,ids,{coverTitle='',coverDate=''}={}){
     source_site:'https://toodataa-ai.github.io/tokyo-family-events-ai/',
     source_design_id:CANVA_FORMAT.goldenMasterId,
     source_design_url:CANVA_FORMAT.goldenMasterUrl,
+    closing_source_design_id:CANVA_FORMAT.closingReferenceId,
+    closing_source_design_url:CANVA_FORMAT.closingReferenceUrl,
+    closing_source_page:CANVA_FORMAT.closingReferencePage,
+    closing_source_page_id:CANVA_FORMAT.closingReferencePageId,
+    closing_excluded_page_id:CANVA_FORMAT.closingExcludedPageId,
     original_template_id:CANVA_FORMAT.templateId,
     original_template_url:CANVA_FORMAT.templateUrl,
     golden_layout_contract:CANVA_FORMAT.goldenContractUrl,
-    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:canvaPageCount(rows.length),base_pages:CANVA_FORMAT.pages,max_pages:CANVA_FORMAT.maxPages,event_pages:canvaPageCount(rows.length)-2,added_event_pages:canvaPageCount(rows.length)-CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents,slots_per_page:CANVA_FORMAT.eventsPerPage,event_title_policy:CANVA_FORMAT.eventTitleLayoutPolicy,event_typography_px:{...CANVA_FORMAT.eventTypography}},
+    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:canvaPageCount(rows.length),base_pages:CANVA_FORMAT.pages,max_pages:CANVA_FORMAT.maxPages,event_pages:canvaPageCount(rows.length)-2,added_event_pages:canvaPageCount(rows.length)-CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents,slots_per_page:CANVA_FORMAT.eventsPerPage,event_title_policy:CANVA_FORMAT.eventTitleLayoutPolicy,event_typography_px:{...CANVA_FORMAT.eventTypography},cover_typography_px:{city:CANVA_FORMAT.coverFontSize,date_digit:CANVA_FORMAT.coverDateDigitFontSize,date_unit:CANVA_FORMAT.coverDateUnitFontSize,date_hyphen:CANVA_FORMAT.coverDateHyphenFontSize,caption:CANVA_FORMAT.coverCaptionFontSize,save:CANVA_FORMAT.coverSaveFontSize,count_digit:CANVA_FORMAT.coverCountFontSize,count_suffix:CANVA_FORMAT.coverSuffixFontSize},cover_fixed_labels:{...CANVA_FORMAT.coverFixedLabels},uniform_white_card_height:CANVA_FORMAT.uniformWhiteCardHeight,event_body_font_family:CANVA_FORMAT.eventBodyFontFamily,closing_source_page_id:CANVA_FORMAT.closingReferencePageId,closing_source_page_number:CANVA_FORMAT.closingReferencePage},
     selected_count:rows.length,selection_ids:rows.map(r=>r.id),events:rows,
     image_review:{permission:'unconfirmed',candidate_count:rows.filter(r=>r.image_candidate_status==='event_image_candidate').length,needs_review_count:rows.filter(r=>r.image_candidate_status!=='event_image_candidate').length},
     autofill_fields:fields,
     notes:[
       '承認済みGolden Masterを毎回新しい別IDの作業用コピーに複製。Golden Master・初期テンプレート・過去版は変更禁止。',
-      '承認済み7ページの構成を起点に、11〜30件では紹介ページを必要数だけ締めの直前に複製追加する。1ページ2件、最多17ページ。締めは必ず最終ページ。',
+      '承認済み7ページの表紙・紹介レイアウトを起点に11〜36件では紹介ページを締めの直前に追加する。1ページ2件、最多20ページ。最後は別参照デザインDAHYlmzKyq4の第7ページそのものを無変更コピーし、同デザインの6ページ目を使わない。'
       'イベント紹介の固定サイズはタイトル55px、イベント番号68px、本文36px、会場28px、日時36px。いずれも拡大縮小禁止。タイトルは55pxのまま折り返し可。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
-      '表紙の文字サイズはGolden Masterの従来値を保持。表紙のN選の数字とイベント番号68pxを混同しない。紹介全件の5種類×要素数を検品し、保存後も再読取して合否確認。',
+      '表紙は東京79、日付数字126、月日77、ハイフン77、週末イベント129、保存してあとから見返す44、選数字191、選75pxを固定。紹介の白背景長方形は全件同一高さ、本文けいふぉんとを要素ごとに検品。'
       '各回の表紙の日付は必ず投稿対象週末に差し替える。先頭イベントの長期開催期間や前回の10/24〜25を流用しない。',
       'イベント専用画像を最優先。共有OGP・サイトロゴ・重複画像は自動採用せず、当該公式ページでの掲載とイベントとの適合性を確認して非公開ドラフトの候補としてのみ使用できる。',
       '画像の使用権利は未確認。SNS公開・配布には権利者の許諾確認が必要。',
@@ -147,7 +160,7 @@ export function canvaPageAssignments(draft){
 export function assertCanvaTypographyTemplate(template){
   if(typeof template!=='string'||!template.trim())throw new Error('Canva指示テンプレートを読み込めません');
   // Reject stale templates even when a direct caller bypasses the browser's cache guard.
-  const markers=['【イベント紹介文字サイズ固定・2026-10-24最優先】','イベントタイトル：**55px固定**','イベント番号：**68px固定**','説明本文：**36px固定**','場所・会場名：**28px固定**','日時：**36px固定**','【固定pxの必須検品／G05に追加】','【保存後の二重検品】'];
+  const markers=['【イベント紹介文字サイズ固定・2026-10-24最優先】','イベントタイトル：**55px固定**','イベント番号：**68px固定**','説明本文：**36px固定**','場所・会場名：**28px固定**','日時：**36px固定**','【固定pxの必須検品／G05に追加】','【保存後の二重検品】','【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】','「東京」＝**79px固定**','日付の各数字＝**126px固定**','日付の「月」「日」＝**77px固定**','日付の区切りハイフン「-」＝**77px固定**','「週末イベント」＝**129px固定**','「保存してあとから見返す」＝**44px固定**','数字部分＝**191px固定**','「選」＝**75px固定**','本文のフォントファミリー：けいふぉんと','全紹介枠の白い背景','DAHYlmzKyq4','PBKb7PtCH0dWRJyg','PBh7x4Vd0Srrb1ly'];
   const missing=markers.filter(marker=>!template.includes(marker));
   if(missing.length)throw new Error('固定文字サイズ・検品契約が欠落: '+missing.join(' / '));
   return true;
@@ -180,10 +193,13 @@ export function buildCanvaPrompt(draft,template){
   return [
     'Canva連携で投稿ドラフトを作ってください。',
     '旧元テンプレート（変更禁止）: '+CANVA_FORMAT.templateUrl,
-    '今後の複製元は承認済みGolden Master（変更禁止）: '+CANVA_FORMAT.goldenMasterUrl,
+    '表紙・紹介ページ複製元は承認済みGolden Master（変更禁止）: '+CANVA_FORMAT.goldenMasterUrl,
+    '最終ページをそのままコピーする参照元（変更禁止）: '+CANVA_FORMAT.closingReferenceUrl+' の7ページ目',
     'レイアウト契約: '+CANVA_FORMAT.goldenContractUrl,
     '必ず元デザインから新しい作業用コピーを作り、以前の保存版を変更しないでください。',
-    'イベント紹介のフォント厳守：タイトル55px／イベント番号68px／説明本文36px／場所28px／日時36px。長さ・行数で変更しない。表紙はGolden Masterの書式を維持。',
+    'イベント紹介のフォント厳守：タイトル55px／イベント番号68px／説明本文36px／場所28px／日時36px。長さ・行数で変更しない。',
+    '表紙は東京79、日付数字126、月日77、ハイフン77、週末イベント129、保存してあとから見返す44、選数字191、選75px固定。文言も変更不可。',
+    '本文けいふぉんと全件一致、全イベント白い背景四角の高さ統一、最終ページは別参照DAHYlmzKyq4第7ページの無変更コピー、参照6ページ目は使用禁止。',
     '全イベントの5種類すべてのfont_sizeとbounding boxを実測して検品。不一致・取得不能はG05不合格／未検証扱いで、完成と報告しない。commit後の保存本体も可能な限り再照合。',
     '未選択イベント枠は枠ごと非表示。画像には出典：サイト名と参照元URLを記録。',
     '汎用OGP・サイトロゴなどはイベント画像か確認し、画像には出典を付けてください。',

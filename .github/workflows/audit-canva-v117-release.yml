@@ -1,0 +1,71 @@
+name: Audit Canva v1.17 isolated production candidate (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-canva-v117-release.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout approved isolated production candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 88e76ce83fef40b2717405f25342f9ee2c277411
+          fetch-depth: 0
+          path: candidate
+      - name: Checkout staging QA tests (not shipped to production)
+        uses: actions/checkout@v4
+        with:
+          ref: 80689ddbc043356bb7750326912e84f6205cc5ff
+          path: test-source
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert direct production parent and exact approved eight-file diff
+        run: |
+          set -euo pipefail
+          cd candidate
+          test "$(git rev-parse HEAD)" = "88e76ce83fef40b2717405f25342f9ee2c277411"
+          git merge-base --is-ancestor 7fd222062a1d2efb30b670122b20c22c1aa60557 HEAD
+          git diff --name-only 7fd222062a1d2efb30b670122b20c22c1aa60557 HEAD | sort > /tmp/actual.txt
+          printf '%s\n' \
+            docs/canva_golden_layout_contract_v1.md \
+            docs/canva_prompt_rules_v2.md \
+            docs/canva_prompt_template_v2.txt \
+            docs/canva_visual_quality_contract_v1.md \
+            site/canva-draft-contract.js \
+            site/canva-prompt-template-v2.txt \
+            site/canva.html \
+            site/search.html | sort > /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/actual.txt
+          test "$(git diff 7fd222062a1d2efb30b670122b20c22c1aa60557 HEAD -- site/search.html | grep '^+' | grep -v '^+++' | wc -l)" = "3"
+          cmp site/canva-prompt-template-v2.txt docs/canva_prompt_template_v2.txt
+          echo "APPROVED_8_FILES_ONLY; DATA_AND_OTHER_APP_PATHS_UNCHANGED"
+      - name: Validate JavaScript and Canva 36/20 prompt contracts against candidate
+        run: |
+          set -euo pipefail
+          cp test-source/tests/canva_draft_contract.test.mjs candidate/tests/canva_draft_contract.test.mjs
+          cd candidate
+          node --check site/canva-draft-contract.js
+          node --test tests/canva_draft_contract.test.mjs
+      - name: Run production baseline full regression suite
+        working-directory: candidate
+        run: npm test
+      - name: Verify production data branch remains unchanged
+        run: |
+          set -euo pipefail
+          cd candidate
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "59266b5587c3cd868b8d5637b2a363f1e3f52cd9"
+          echo "PRODUCTION_DATA_UNCHANGED: $actual"

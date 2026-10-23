@@ -67,7 +67,7 @@ async function getCanvaTemplate(){
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
 function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value,coverDate:$('canvaCoverDate').value});}
 function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorage);render();}
-$('canvaCoverDate').addEventListener('input',()=>{saveCanvaCoverDate($('canvaCoverDate').value,window.localStorage);render();});
+$('canvaCoverDate').addEventListener('input',()=>{saveCanvaCoverDate($('canvaCoverDate').value,window.sessionStorage);render();});
 function render(){
   if(!loaded)return;
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
@@ -134,7 +134,7 @@ $('copyCanvaLink').addEventListener('click',async()=>{
   const loadedRows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
   allEvents=mergeEventsAcrossWeeks(loadedRows.map(x=>x.data).filter(Boolean));
   const qs=new URLSearchParams(location.search);
-  const linkDate=qs.get('coverDate');$('canvaCoverDate').value=linkDate!==null?saveCanvaCoverDate(linkDate,window.localStorage):readCanvaCoverDate(window.localStorage);
+  const linkDate=qs.get('coverDate');$('canvaCoverDate').value=linkDate!==null?saveCanvaCoverDate(linkDate,window.sessionStorage):readCanvaCoverDate(window.sessionStorage);
   const linkIds=qs.getAll('id');
   selectedIds=linkIds.length?saveCanvaSelection(linkIds,window.localStorage):readCanvaSelection(window.localStorage);
   const activeIds=new Set(allEvents.map(ev=>ev.id));

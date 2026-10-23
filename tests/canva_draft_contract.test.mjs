@@ -135,6 +135,12 @@ test('published Canva prompt and docs mirror remain identical',()=>{
   assert.ok(liveV2.includes('出典：'));
   assert.ok(liveV2.includes('日時：**36px固定**'));
   assert.ok(liveV2.includes('説明本文：**36px固定**'));
+  assert.match(liveV2,/1、2、…36の番号/);
+  assert.match(liveV2,/【未使用枠】全7〜20ページ/);
+  assert.doesNotMatch(liveV2,/1、2、…30の番号/);
+  assert.doesNotMatch(liveV2,/【未使用枠】全7〜17ページ/);
+  assert.match(liveV2,/けいふぉんと.*Golden Masterの異なる書体を引き継がない/);
+  assert.match(liveV2,/スラッシュ区切りでも.*固定サイズ別要素/);
 });
 test('real clipboard instruction renders all fields and protects absent slots',()=>{
  const d=buildCanvaDraft([event('a'),event('b')],['b','a'],{coverTitle:'東京23区 週末イベント2選'});
@@ -379,4 +385,17 @@ test('any stale latest cover, font or source-page rule is rejected before export
    assert.ok(liveV2.includes(needle));
    assert.throws(()=>renderCanvaPromptTemplate(liveV2.replace(needle,wrong),d),/固定文字サイズ・検品契約が欠落/);
  }
+});
+
+test('36-event prompt rejects hidden actionable 30/17-era instructions even with newest header',()=>{
+ const d=buildCanvaDraft([event('a')],['a'],{coverDate:'11/7(土)〜11/8(日)'});
+ assert.equal(assertCanvaTypographyTemplate(liveV2),true);
+ for(const old of ['1、2、…30の番号','【未使用枠】全7〜17ページ']){
+   assert.throws(()=>renderCanvaPromptTemplate(liveV2+'\n'+old,d),/古いCanva仕様が残存/);
+ }
+ const rendered=renderCanvaPromptTemplate(liveV2,d);
+ assert.match(rendered,/【未使用枠】全7〜20ページ/);
+ assert.match(rendered,/1、2、…36の番号/);
+ assert.match(rendered,/スラッシュ区切りでも/);
+ assert.match(rendered,/説明本文のfont_familyだけは最優先/);
 });

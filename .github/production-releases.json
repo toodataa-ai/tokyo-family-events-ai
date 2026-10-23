@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-23-r2",
+  "current_public_release": "release/2026-10-24-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -159,7 +159,15 @@
       "workflow_run_id": 39959408381,
       "note": "ユーザー承認の本番v1.16。Canva完成版Golden Master DAHY1F7Rv_kから新規コピーを作り、表紙安全域・日時54px/3行52px・説明50〜54px・出典・保存後再読込を指示出力。production a5e8d23から派生したPR #30のCanva専用7ファイルだけ反映。検索UI/フィルタ/共通CSS・イベントdata-production SHA 59266b5587c3cd868b8d5637b2a363f1e3f52cd9は変更なし。Pages run 39959408381 success。",
       "public_version": "1.16"
+    },
+    {
+      "release_id": "release/2026-10-24-r1",
+      "branch": "release/2026-10-24-r1",
+      "commit_sha": "8cf76f2ef47125511e38ec0c67f60438e3c147f8",
+      "deployed_at": "2026-10-23T23:09:11Z",
+      "workflow_run_id": 40037901500,
+      "note": "ユーザー明示承認の本番v1.17。現行production v1.16から直接分岐したPR #35で承認済みCanva専用8ファイルだけ本番更新。選択上限36件・最大20ページ、表紙8値と紹介5値の固定サイズ、本文けいふぉんと、白背景四角高さ統一、別Canva DAHYlmzKyq4最終7ページのみ無変更コピー（同6ページ不採用）、旧仕様混入を拒否する検品指示。検索条件・共通CSS・イベント掲載個票・data-production 59266b5587c3cd868b8d5637b2a363f1e3f52cd9・元Canvaは不変。隔離候補監査40037837815成功、本番Pages公開40037901500成功。"
     }
   ],
-  "current_public_version": "1.16"
+  "current_public_version": "1.17"
 }

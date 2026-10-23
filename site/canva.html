@@ -60,7 +60,7 @@ async function getCanvaTemplate(){
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】')||!text.includes('タイトル：**55px固定**')||!text.includes('イベント番号：**68px固定**')||!text.includes('説明本文：**36px固定**')||!text.includes('場所・会場名：**28px固定**')||!text.includes('日時：**36px固定**')||!text.includes('【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】')||!text.includes('PBh7x4Vd0Srrb1ly')&&text.includes('PBKb7PtCH0dWRJyg')||!text.includes('けいふぉんと'))throw new Error('最大36件・固定フォントサイズ5種・表紙・末尾・Golden Master契約が未反映の古いテンプレートです');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】')||!text.includes('タイトル：**55px固定**')||!text.includes('イベント番号：**68px固定**')||!text.includes('説明本文：**36px固定**')||!text.includes('場所・会場名：**28px固定**')||!text.includes('日時：**36px固定**')||!text.includes('【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】')||!text.includes('PBh7x4Vd0Srrb1ly')||!text.includes('PBKb7PtCH0dWRJyg')||!text.includes('けいふぉんと'))throw new Error('最大36件・固定フォントサイズ5種・表紙・末尾・Golden Master契約が未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }

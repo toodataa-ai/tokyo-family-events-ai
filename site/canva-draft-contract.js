@@ -155,13 +155,14 @@ export function renderCanvaPromptTemplate(template,draft){
     SELECTED_COUNT:String(draft.selected_count),
     PAGE_COUNT:String(draft.layout.pages),
     EVENT_PAGE_COUNT:String(draft.layout.event_pages),
+    LAST_EVENT_PAGE:String(draft.layout.event_pages+1),
     EXTRA_PAGE_COUNT:String(draft.layout.added_event_pages),
     MAX_EVENTS:String(CANVA_FORMAT.maxEvents),
     PAGE_ASSIGNMENTS:canvaPageAssignments(draft),
     COVER_TITLE:draft.autofill_fields?.COVER_TITLE?.text||'',
     EVENT_BLOCKS:eventPromptBlocks(draft)
   };
-  const output=template.replace(/\{\{(TEMPLATE_URL|GOLDEN_MASTER_URL|GOLDEN_MASTER_ID|GOLDEN_CONTRACT_URL|COVER_DATE|SELECTED_COUNT|PAGE_COUNT|EVENT_PAGE_COUNT|EXTRA_PAGE_COUNT|MAX_EVENTS|PAGE_ASSIGNMENTS|COVER_TITLE|EVENT_BLOCKS)\}\}/g,(_,key)=>fields[key]);
+  const output=template.replace(/\{\{(TEMPLATE_URL|GOLDEN_MASTER_URL|GOLDEN_MASTER_ID|GOLDEN_CONTRACT_URL|COVER_DATE|SELECTED_COUNT|PAGE_COUNT|EVENT_PAGE_COUNT|LAST_EVENT_PAGE|EXTRA_PAGE_COUNT|MAX_EVENTS|PAGE_ASSIGNMENTS|COVER_TITLE|EVENT_BLOCKS)\}\}/g,(_,key)=>fields[key]);
   if(/\{\{[A-Z_]+\}\}/.test(output))throw new Error('未定義のCanva指示変数があります');
   return output;
 }

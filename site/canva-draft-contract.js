@@ -162,6 +162,10 @@ export function assertCanvaTypographyTemplate(template){
   // Reject stale templates even when a direct caller bypasses the browser's cache guard.
   const markers=['【イベント紹介文字サイズ固定・2026-10-24最優先】','イベントタイトル：**55px固定**','イベント番号：**68px固定**','説明本文：**36px固定**','場所・会場名：**28px固定**','日時：**36px固定**','【固定pxの必須検品／G05に追加】','【保存後の二重検品】','【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】','「東京」＝**79px固定**','日付の各数字＝**126px固定**','日付の「月」「日」＝**77px固定**','日付の区切りハイフン「-」＝**77px固定**','「週末イベント」＝**129px固定**','「保存してあとから見返す」＝**44px固定**','数字部分＝**191px固定**','「選」＝**75px固定**','本文のフォントファミリー：けいふぉんと','【白い背景長方形・全件同一高さ】','DAHYlmzKyq4','PBKb7PtCH0dWRJyg','PBh7x4Vd0Srrb1ly'];
   const missing=markers.filter(marker=>!template.includes(marker));
+  // A correct priority header does not excuse actionable 30/17-era instructions.
+  const stale=['1、2、…30の番号','【未使用枠】全7〜17ページ'];
+  const conflicting=stale.filter(marker=>template.includes(marker));
+  if(conflicting.length)throw new Error('古いCanva仕様が残存: '+conflicting.join(' / '));
   if(missing.length)throw new Error('固定文字サイズ・検品契約が欠落: '+missing.join(' / '));
   return true;
 }

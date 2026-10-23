@@ -13,10 +13,14 @@ export const CANVA_FORMAT=Object.freeze({
   coverCaptionFontSize:82,eventDateFontSize:54,eventThreeLineDateFontSize:52,
   eventBodyTargetMin:50,eventBodyTargetMax:54,
   eventTitleLayoutPolicy:'single_line_first_max_fit_v1',
-  width:1080,height:1350,pages:7,maxEvents:10,
+  width:1080,height:1350,pages:7,maxPages:17,maxEvents:30,eventsPerPage:2,
   selectionStorageKey:'tokyo-family-events-canva-selection-v1'
 });
 
+export function canvaPageCount(count){
+  const n=Math.max(0,Math.min(CANVA_FORMAT.maxEvents,Math.floor(Number(count)||0)));
+  return Math.max(CANVA_FORMAT.pages,2+Math.ceil(n/CANVA_FORMAT.eventsPerPage));
+}
 export function uniqueEventIds(ids,max=CANVA_FORMAT.maxEvents){
   const seen=new Set();
   for(const id of Array.isArray(ids)?ids:[]){
@@ -81,9 +85,9 @@ export function classifyCanvaImageCandidates(rows){
   });
 }
 
-export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連れイベント10選',coverDate=''}={}){
+export function buildCanvaDraft(events,ids,{coverTitle='',coverDate=''}={}){
   const rows=classifyCanvaImageCandidates(selectedEvents(events,ids).map(eventDraftRow));
-  const title=safeText(coverTitle).slice(0,120)||'東京23区 週末子連れイベント10選';
+  const title=safeText(coverTitle).slice(0,120)||`東京23区 週末子連れイベント${rows.length}選`;
   // A long-running first event cannot determine the weekend on the cover.
   // Force explicit confirmation instead of reusing the Golden Master's old date.
   const coverDateText=safeText(coverDate).slice(0,100);
@@ -105,13 +109,13 @@ export function buildCanvaDraft(events,ids,{coverTitle='東京23区 週末子連
     original_template_id:CANVA_FORMAT.templateId,
     original_template_url:CANVA_FORMAT.templateUrl,
     golden_layout_contract:CANVA_FORMAT.goldenContractUrl,
-    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents,event_title_policy:CANVA_FORMAT.eventTitleLayoutPolicy},
+    layout:{width:CANVA_FORMAT.width,height:CANVA_FORMAT.height,pages:canvaPageCount(rows.length),base_pages:CANVA_FORMAT.pages,max_pages:CANVA_FORMAT.maxPages,event_pages:canvaPageCount(rows.length)-2,added_event_pages:canvaPageCount(rows.length)-CANVA_FORMAT.pages,event_slots:CANVA_FORMAT.maxEvents,slots_per_page:CANVA_FORMAT.eventsPerPage,event_title_policy:CANVA_FORMAT.eventTitleLayoutPolicy},
     selected_count:rows.length,selection_ids:rows.map(r=>r.id),events:rows,
     image_review:{permission:'unconfirmed',candidate_count:rows.filter(r=>r.image_candidate_status==='event_image_candidate').length,needs_review_count:rows.filter(r=>r.image_candidate_status!=='event_image_candidate').length},
     autofill_fields:fields,
     notes:[
       '承認済みGolden Masterを毎回新しい別IDの作業用コピーに複製。Golden Master・初期テンプレート・過去版は変更禁止。',
-      '7ページ構成は表紙1・イベント2件ずつ5ページ・締め1を基本とする。',
+      '承認済み7ページの構成を起点に、11〜30件では紹介ページを必要数だけ締めの直前に複製追加する。1ページ2件、最多17ページ。締めは必ず最終ページ。',
       'イベント紹介タイトルは1行優先。旧版から引き継いだ手動改行を解除し、全文を維持して実フレーム幅で最大サイズを計測。不要な2行禁止、2行は1行で読みやすく収まらない時だけ。表紙と日時54pxは独立。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
       '表紙の東京23区は80px、10選の数字158px・選78px、下部キャッチ82pxを固定。イベント紹介の日時は54px、3行のみ52px例外。本文は50〜54px優先、本文が収まらなければ事実を保った短文化後に縮小。',
@@ -137,6 +141,9 @@ export function eventPromptBlocks(draft){
     '確認状態: '+r.verification_status
   ].join('\n')).join('\n\n');
 }
+export function canvaPageAssignments(draft){
+  return (draft.events||[]).map((r,i)=>`${i+1}番：${2+Math.floor(i/CANVA_FORMAT.eventsPerPage)}ページ${i%2?'下段':'上段'}／${r.title}`).join('\n');
+}
 export function renderCanvaPromptTemplate(template,draft){
   if(typeof template!=='string'||!template.trim())throw new Error('Canva指示テンプレートを読み込めません');
   const fields={
@@ -146,10 +153,15 @@ export function renderCanvaPromptTemplate(template,draft){
     GOLDEN_CONTRACT_URL:CANVA_FORMAT.goldenContractUrl,
     COVER_DATE:draft.autofill_fields?.COVER_DATE?.text||'未指定（投稿対象週末を要確認）',
     SELECTED_COUNT:String(draft.selected_count),
+    PAGE_COUNT:String(draft.layout.pages),
+    EVENT_PAGE_COUNT:String(draft.layout.event_pages),
+    EXTRA_PAGE_COUNT:String(draft.layout.added_event_pages),
+    MAX_EVENTS:String(CANVA_FORMAT.maxEvents),
+    PAGE_ASSIGNMENTS:canvaPageAssignments(draft),
     COVER_TITLE:draft.autofill_fields?.COVER_TITLE?.text||'',
     EVENT_BLOCKS:eventPromptBlocks(draft)
   };
-  const output=template.replace(/\{\{(TEMPLATE_URL|GOLDEN_MASTER_URL|GOLDEN_MASTER_ID|GOLDEN_CONTRACT_URL|COVER_DATE|SELECTED_COUNT|COVER_TITLE|EVENT_BLOCKS)\}\}/g,(_,key)=>fields[key]);
+  const output=template.replace(/\{\{(TEMPLATE_URL|GOLDEN_MASTER_URL|GOLDEN_MASTER_ID|GOLDEN_CONTRACT_URL|COVER_DATE|SELECTED_COUNT|PAGE_COUNT|EVENT_PAGE_COUNT|EXTRA_PAGE_COUNT|MAX_EVENTS|PAGE_ASSIGNMENTS|COVER_TITLE|EVENT_BLOCKS)\}\}/g,(_,key)=>fields[key]);
   if(/\{\{[A-Z_]+\}\}/.test(output))throw new Error('未定義のCanva指示変数があります');
   return output;
 }
@@ -165,12 +177,12 @@ export function buildCanvaPrompt(draft,template){
     '1行タイトルは80〜82px。イベントの日時は基本54px、3行のみ52px。本文は50〜54pxを優先し、収まらなければ37〜46pxの範囲まで段階調整。表紙は基準版のサイズと位置を維持する。',
     '未選択イベント枠は枠ごと非表示。画像には出典：サイト名と参照元URLを記録。',
     '汎用OGP・サイトロゴなどはイベント画像か確認し、画像には出典を付けてください。',
-    'Canva品質基準 https://github.com/toodataa-ai/tokyo-family-events-ai/blob/main/docs/canva_visual_quality_contract_v1.md のG01〜G08を確認し全7ページプレビューと再チェックを実施。',
+    'Canva品質基準 https://github.com/toodataa-ai/tokyo-family-events-ai/blob/main/docs/canva_visual_quality_contract_v1.md のG01〜G08を確認し全'+draft.layout.pages+'ページプレビューと再チェックを実施。',
     '同じ役割のフォント・文字サイズ・行間を揃え、文字の欠け・要素重なりゼロを確認。フォントファミリー未検証なら未検証と明記。',
     '掲載許諾が不明なら公開・Instagram投稿はしない。',
-    '全7ページのプレビューを確認し、作業用コピーに確定保存。その後、保存済み本体を読み直して旧イベント残存ゼロ・表紙の文字切れゼロを監査してから編集リンクを返してください。',
+    '全'+draft.layout.pages+'ページのプレビューを確認し、作業用コピーに確定保存。その後、保存済み本体を読み直して旧イベント残存ゼロ・表紙の文字切れゼロを監査してから編集リンクを返してください。',
     '表紙の日付（元版から流用禁止）：'+(draft.autofill_fields?.COVER_DATE?.text||'未指定、要確認'),
-    '選択件数：'+draft.selected_count+'件。表紙タイトル：'+(draft.autofill_fields?.COVER_TITLE?.text||''),
+    '選択件数：'+draft.selected_count+'件／全'+draft.layout.pages+'ページ。必要な紹介ページ追加数：'+draft.layout.added_event_pages+'ページ。表紙タイトル：'+(draft.autofill_fields?.COVER_TITLE?.text||''),
     eventPromptBlocks(draft)
   ].join('\n');
 }

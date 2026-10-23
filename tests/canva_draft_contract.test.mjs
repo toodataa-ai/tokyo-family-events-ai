@@ -107,7 +107,7 @@ test('exported Canva prompt carries approved hide-frame, cover-count and save ru
   assert.ok(p.includes('表紙タイトル: 東京23区 週末子連れイベント2選'));
   assert.ok(p.includes('2選'));
   assert.ok(p.includes('枠ごと非表示'));
-  assert.ok(p.includes('収まる範囲で最大化'));
+  assert.ok(p.includes('1行に収まる最大の文字サイズを選ぶ'));
   assert.ok(p.includes('コピーの編集transactionをcommit'));
   assert.ok(p.includes('保存済み本体をget_design'));
   assert.ok(p.includes('編集リンク'));

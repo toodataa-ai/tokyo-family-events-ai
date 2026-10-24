@@ -194,7 +194,47 @@ jobs:
           python -m unittest discover -s staging-policy-src/tests -p 'test_event_image_identity.py'
       - name: Prevent historical event removal without user approval
         run: python staging-policy-src/tools/validate_protected_events.py --base-ref ${{ needs.gate.outputs.base_data_production_sha }} site/data
+      - name: Prove the exact one-field thumbnail-only correction
+        if: ${{ needs.gate.outputs.operation == 'thumbnail-correction' }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          baseline = "${{ needs.gate.outputs.base_data_production_sha }}"
+          changed = subprocess.check_output(
+              ["git", "diff", "--name-only", baseline, "HEAD"], text=True
+          ).splitlines()
+          path = "site/data/2026-10-24-events-01.json"
+          if changed != [path]:
+              raise SystemExit(f"THUMBNAIL-ONLY GUARD: expected only {path}, got {changed!r}")
+          before = json.loads(subprocess.check_output(
+              ["git", "show", f"{baseline}:{path}"], text=True
+          ))
+          after = json.loads(Path(path).read_text(encoding="utf-8"))
+          if len(before) != len(after):
+              raise SystemExit("THUMBNAIL-ONLY GUARD: event count changed")
+          target_id = "v15-16abce941248"
+          old = "https://www.koho.metro.tokyo.lg.jp/2026/10/images/202610_moyoshi14_07.png"
+          new = "https://www.koho.metro.tokyo.lg.jp/2026/10/images/202610_moyoshi14_06.jpg"
+          touched = []
+          for a, b in zip(before, after):
+              if a.get("id") != b.get("id"):
+                  raise SystemExit("THUMBNAIL-ONLY GUARD: event order or ID changed")
+              if a != b:
+                  touched.append(a.get("id"))
+                  expect = dict(a)
+                  expect["image"] = new
+                  if a.get("id") != target_id or a.get("image") != old or b != expect:
+                      raise SystemExit("THUMBNAIL-ONLY GUARD: unauthorized record or field change")
+          if touched != [target_id]:
+              raise SystemExit(f"THUMBNAIL-ONLY GUARD: changed event ids {touched!r}")
+          print("THUMBNAIL-ONLY GUARD PASS: one evidence-backed image URL correction; all other files/records intact")
+          PY
       - name: Validate candidate official schedule discovery evidence
+        if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         run: python staging-policy-src/tools/validate_official_schedule_audit.py site/data
       - name: Validate holiday-after data publication history
         if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}

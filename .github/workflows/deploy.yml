@@ -91,6 +91,10 @@ jobs:
         run: python tools/validate_protected_events.py --base-ref HEAD^ site/data
       - name: Enrich thumbnail URLs for validation only
         run: python tools/enrich_images.py site/data
+      - name: Audit event-specific images on multi-event official pages
+        run: |
+          python tools/audit_event_image_identity.py site/data --strict
+          python -m unittest discover -s tests -p 'test_event_image_identity.py'
       - name: Validate event data strictly
         run: python tools/validate_data.py --strict --min-image-coverage 0.70 site/data
       - name: Validate family-fit decision audit strictly
@@ -184,6 +188,10 @@ jobs:
         with:
           ref: main
           path: staging-policy-src
+      - name: Audit image-to-event assignment before data promotion
+        run: |
+          python staging-policy-src/tools/audit_event_image_identity.py site/data --strict
+          python -m unittest discover -s staging-policy-src/tests -p 'test_event_image_identity.py'
       - name: Prevent historical event removal without user approval
         run: python staging-policy-src/tools/validate_protected_events.py --base-ref ${{ needs.gate.outputs.base_data_production_sha }} site/data
       - name: Validate candidate official schedule discovery evidence

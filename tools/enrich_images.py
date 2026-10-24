@@ -34,6 +34,15 @@ def attrs(tag):
     return {m.group(1).lower(): html.unescape(m.group(3).strip()) for m in ATTR_RE.finditer(tag)}
 
 
+def is_generic_social_image(url):
+    """Site-wide OG/logo cards are not trustworthy event thumbnails."""
+    path = urlsplit(url or '').path.lower()
+    filename = path.rsplit('/', 1)[-1]
+    return ('/common/meta/' in path
+            or '/sns/' in path
+            or bool(re.match(r'^(?:og|ogp|ogimage|logo|favicon|default|no-?image)[_.-]', filename)))
+
+
 def normalize_image_url(base_url, value):
     if not value:
         return None
@@ -104,7 +113,7 @@ def extract_image(base_url, text):
         key = (a.get('property') or a.get('name') or a.get('itemprop') or '').lower()
         if key in priorities and a.get('content'):
             u = normalize_image_url(base_url, a['content'])
-            if u:
+            if u and not is_generic_social_image(u):
                 found.append((priorities[key], u))
     if found:
         found.sort(key=lambda x: x[0])
@@ -176,16 +185,35 @@ def candidate_pages(ev):
     return out
 
 
-def enrich_event(ev):
+def enrich_event(ev, ambiguous_pages=None):
     if is_http(ev.get('image')):
         return False, ev.get('image')
     for page in candidate_pages(ev):
+        if ambiguous_pages and canonical_page(page) in ambiguous_pages:
+            continue
         image = fetch_image_from_page(page)
         if image:
             ev['image'] = image
             return True, image
     return False, None
 
+
+
+
+def canonical_page(url):
+    """Ignore tracking parameters while grouping records from one article."""
+    parts = urlsplit(url)
+    return (parts.netloc.lower().removeprefix('www.'), parts.path.rstrip('/'))
+
+
+def shared_multi_event_pages(events):
+    """On a multi-event article, a page-wide OG image cannot identify the event."""
+    titles_by_page = {}
+    for ev in events:
+        title = re.sub(r'\s+', '', str(ev.get('name') or '')).lower()
+        for page in candidate_pages(ev):
+            titles_by_page.setdefault(canonical_page(page), set()).add(title)
+    return {page for page, titles in titles_by_page.items() if len(titles) > 1}
 
 def load_event_files(data_dir):
     return sorted(data_dir.glob('*-events-*.json'))
@@ -213,24 +241,23 @@ def main():
         all_events.extend(data)
 
     unresolved = [ev for ev in all_events if not is_http(ev.get('image'))]
+    ambiguous_pages = shared_multi_event_pages(all_events)
 
     def worker(ev):
-        changed, image = enrich_event(ev)
-        return ev.get('id'), changed, image
+        # Prefer a unique event-detail page. Never fall back to a shared
+        # multi-event listing when its image-to-title anchor is unverified.
+        return enrich_event(ev, ambiguous_pages)
 
     enriched = 0
     if unresolved:
         with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.workers)) as ex:
-            futures = [ex.submit(worker, ev) for ev in unresolved]
-            result_by_id = {}
-            for fut in concurrent.futures.as_completed(futures):
-                eid, changed, image = fut.result()
-                result_by_id[eid] = (changed, image)
-        for ev in unresolved:
-            changed, image = result_by_id.get(ev.get('id'), (False, None))
-            if changed and image:
-                ev['image'] = image
-                enriched += 1
+            future_to_event = {ex.submit(worker, ev): ev for ev in unresolved}
+            for fut in concurrent.futures.as_completed(future_to_event):
+                changed, image = fut.result()
+                if changed and image:
+                    enriched += 1
+    if ambiguous_pages:
+        print(f'Shared multi-event source pages held for event-specific image review: {len(ambiguous_pages)}')
 
     for path, data in datasets:
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')

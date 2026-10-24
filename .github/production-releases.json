@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-24-r1",
+  "current_public_release": "release/2026-10-24-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -167,7 +167,16 @@
       "deployed_at": "2026-10-23T23:09:11Z",
       "workflow_run_id": 40037901500,
       "note": "ユーザー明示承認の本番v1.17。現行production v1.16から直接分岐したPR #35で承認済みCanva専用8ファイルだけ本番更新。選択上限36件・最大20ページ、表紙8値と紹介5値の固定サイズ、本文けいふぉんと、白背景四角高さ統一、別Canva DAHYlmzKyq4最終7ページのみ無変更コピー（同6ページ不採用）、旧仕様混入を拒否する検品指示。検索条件・共通CSS・イベント掲載個票・data-production 59266b5587c3cd868b8d5637b2a363f1e3f52cd9・元Canvaは不変。隔離候補監査40037837815成功、本番Pages公開40037901500成功。"
+    },
+    {
+      "release_id": "release/2026-10-24-r2",
+      "branch": "release/2026-10-24-r2",
+      "commit_sha": "9e758a4c8452f53fd63a9a4b2287e55d56db8bdb",
+      "deployed_at": "2026-10-24T05:54:10Z",
+      "workflow_run_id": 40068006770,
+      "note": "ユーザー明示承認の本番アプリv1.18。サムネイル取り違え再発防止（共有記事の画像誤流用防止、汎用OG/ロゴ除外、イベント固有画像の衝突監査、回帰10テスト）の3ファイルのみをproduction v1.17の直接子孫候補からPR #38で昇格。隔離候補監査40067934832・Pages公開40068006770はsuccess。イベント6週間分のID/件数監査合格。既存画像訂正はdata-production SHA 312436898933372993ee866293fcd4c1c9069d1cをそのまま使用し、イベントデータ・検索UI・Canva・他のmain変更は今回のアプリリリースに含めない。",
+      "public_version": "1.18"
     }
   ],
-  "current_public_version": "1.17"
+  "current_public_version": "1.18"
 }

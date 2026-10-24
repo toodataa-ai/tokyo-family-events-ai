@@ -187,6 +187,23 @@ def enrich_event(ev):
     return False, None
 
 
+
+
+def canonical_page(url):
+    """Ignore tracking parameters while grouping records from one article."""
+    parts = urlsplit(url)
+    return (parts.netloc.lower().removeprefix('www.'), parts.path.rstrip('/'))
+
+
+def shared_multi_event_pages(events):
+    """On a multi-event article, a page-wide OG image cannot identify the event."""
+    titles_by_page = {}
+    for ev in events:
+        title = re.sub(r'\s+', '', str(ev.get('name') or '')).lower()
+        for page in candidate_pages(ev):
+            titles_by_page.setdefault(canonical_page(page), set()).add(title)
+    return {page for page, titles in titles_by_page.items() if len(titles) > 1}
+
 def load_event_files(data_dir):
     return sorted(data_dir.glob('*-events-*.json'))
 
@@ -213,24 +230,24 @@ def main():
         all_events.extend(data)
 
     unresolved = [ev for ev in all_events if not is_http(ev.get('image'))]
+    ambiguous_pages = shared_multi_event_pages(all_events)
 
     def worker(ev):
-        changed, image = enrich_event(ev)
-        return ev.get('id'), changed, image
+        if any(canonical_page(p) in ambiguous_pages for p in candidate_pages(ev)):
+            # Do not silently give multiple distinct events the article's OG image.
+            return False, None
+        return enrich_event(ev)
 
     enriched = 0
     if unresolved:
         with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.workers)) as ex:
-            futures = [ex.submit(worker, ev) for ev in unresolved]
-            result_by_id = {}
-            for fut in concurrent.futures.as_completed(futures):
-                eid, changed, image = fut.result()
-                result_by_id[eid] = (changed, image)
-        for ev in unresolved:
-            changed, image = result_by_id.get(ev.get('id'), (False, None))
-            if changed and image:
-                ev['image'] = image
-                enriched += 1
+            future_to_event = {ex.submit(worker, ev): ev for ev in unresolved}
+            for fut in concurrent.futures.as_completed(future_to_event):
+                changed, image = fut.result()
+                if changed and image:
+                    enriched += 1
+    if ambiguous_pages:
+        print(f'Shared multi-event source pages held for event-specific image review: {len(ambiguous_pages)}')
 
     for path, data in datasets:
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')

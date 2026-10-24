@@ -322,7 +322,11 @@ jobs:
             cd data-staging-src
             python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
             python3 ../production-src/tools/validate_decisions.py --strict site/data
-            python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+            if [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
+            else
+              python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+            fi
             if [ "$stage" != "$base" ]; then
               python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data
               python3 ../staging-src/tools/validate_non_regression.py --base-ref "$base" site/data

@@ -50,6 +50,16 @@ test('next-generation instructions require finishing end-to-end and reporting on
     assert.match(source,/未検証.*合格/);
   }
 });
+test('cover source page 1 preserves original screenshot artwork and text color hierarchy',()=>{
+  assert.equal(CANVA_FORMAT.coverReferenceId,'DAHYlmzKyq4');
+  assert.equal(CANVA_FORMAT.coverReferencePage,1);
+  assert.equal(CANVA_FORMAT.coverReferencePageId,'PBNNkYtVkTs2bZLw');
+  const tpl=readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8');
+  assert.match(tpl,/表紙デザイン完全継承/);
+  assert.match(tpl,/観覧車の写真/);
+  assert.match(tpl,/Golden Master DAHY1F7Rv_k の表紙.*参照禁止/);
+  assert.match(tpl,/第1ページ/);
+});
 test('explicit selected weekend dates carry correct weekdays into Canva handoff',()=>{
   assert.equal(canvaCoverDateForPeriod('2026-10-24','2026-10-25'),'10月24日（土）-10月25日（日）');
   assert.equal(canvaCoverDateForPeriod('2026-10-31','2026-11-01'),'10月31日（土）-11月1日（日）');

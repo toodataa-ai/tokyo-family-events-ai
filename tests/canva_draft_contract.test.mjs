@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFileSync} from 'node:fs';
-import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
+import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,readCanvaCoverDate,saveCanvaCoverDate,canvaCoverDateForPeriod,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -31,11 +31,57 @@ test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.coverSaveFontSize,44);
   assert.equal(CANVA_FORMAT.eventBodyFontFamily,'けいふぉんと');
   assert.equal(CANVA_FORMAT.closingReferenceId,'DAHYlmzKyq4');
-  assert.equal(CANVA_FORMAT.closingReferencePageId,'PBKb7PtCH0dWRJyg');
+  assert.equal(CANVA_FORMAT.closingReferencePageId,'PBh7x4Vd0Srrb1ly');
+  assert.equal(CANVA_FORMAT.closingReferencePage,6);
+  assert.equal(CANVA_FORMAT.closingExcludedPageId,'PBKb7PtCH0dWRJyg');
   assert.equal(CANVA_FORMAT.pages,7);
   assert.equal(CANVA_FORMAT.maxPages,20);
   assert.equal(CANVA_FORMAT.maxEvents,36);
   assert.equal(CANVA_FORMAT.eventsPerPage,2);
+});
+test('next-generation instructions require finishing end-to-end and reporting only actual blockers',()=>{
+  const template=readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8');
+  const rules=readFileSync(new URL('../docs/canva_prompt_rules_v2.md',import.meta.url),'utf8');
+  const quality=readFileSync(new URL('../docs/canva_visual_quality_contract_v1.md',import.meta.url),'utf8');
+  for(const source of [template,rules,quality]){
+    assert.match(source,/完遂・blocker限定報告/);
+    assert.match(source,/途中で打ち切らず/);
+    assert.match(source,/進行不能な場合のみ/);
+    assert.match(source,/未検証.*合格/);
+  }
+});
+test('explicit selected weekend dates carry correct weekdays into Canva handoff',()=>{
+  assert.equal(canvaCoverDateForPeriod('2026-10-24','2026-10-25'),'10月24日（土）-10月25日（日）');
+  assert.equal(canvaCoverDateForPeriod('2026-10-31','2026-11-01'),'10月31日（土）-11月1日（日）');
+  assert.equal(canvaCoverDateForPeriod('2026-02-30','2026-03-01'),'');
+  assert.equal(canvaCoverDateForPeriod('2026-10-25','2026-10-24'),'');
+  const source=readFileSync(new URL('../site/search.html',import.meta.url),'utf8');
+  assert.match(source,/canvaCoverDateForPeriod\(period\.start,period\.end\)/);
+  assert.match(source,/url\.searchParams\.set\('coverDate',coverDate\)/);
+  assert.match(source,/chosen\?\.dates\?\.length===1/);
+});
+test('explicit cover date survives storage and remains present in clipboard instructions',()=>{
+  const store=memoryStore();
+  assert.equal(readCanvaCoverDate(store),'');
+  assert.equal(saveCanvaCoverDate(' 10月24日（土）-10月25日（日） ',store),'10月24日（土）-10月25日（日）');
+  assert.equal(readCanvaCoverDate(store),'10月24日（土）-10月25日（日）');
+  const date=readCanvaCoverDate(store);
+  const draft=buildCanvaDraft([event('a')],['a'],{coverDate:date});
+  const prompt=renderCanvaPromptTemplate(readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8'),draft);
+  assert.ok(prompt.includes('】'+date));
+  assert.ok(prompt.includes('投稿対象日付：'+date));
+  assert.equal(draft.closing_source_page,6);
+  assert.equal(draft.closing_source_page_id,'PBh7x4Vd0Srrb1ly');
+  assert.equal(draft.closing_excluded_page_id,'PBKb7PtCH0dWRJyg');
+});
+test('handoff blocks copying an absent cover date and transfers it in share URLs',()=>{
+  const source=readFileSync(new URL('../site/canva.html',import.meta.url),'utf8');
+  assert.match(source,/if\(!date\).*表紙日付が未入力/);
+  assert.match(source,/saveCanvaCoverDate/);
+  assert.match(source,/readCanvaCoverDate/);
+  assert.match(source,/url\.searchParams\.set\('coverDate',date\)/);
+  assert.match(source,/text\.includes\('PBh7x4Vd0Srrb1ly'\)/);
+  assert.match(source,/text\.includes\('PBKb7PtCH0dWRJyg'\)/);
 });
 test('selection is deterministic, deduplicated and capped at thirty-six',()=>{
   const ids=Array.from({length:40},(_,i)=>'e'+i);
@@ -177,7 +223,7 @@ test('quality-directed exported prompt includes reproducible typography and imag
  assert.match(p,/未使用.*非表示/);
  assert.match(p,/共通OGP/);
  assert.match(p,/初期テンプレート・Golden Master・以前の保存版/);
- assert.match(p,/参照元.*7ページ|参照デザイン.*7ページ/);
+ assert.match(p,/参照元.*6ページ|参照デザイン.*6ページ/);
  assert.ok(p.indexOf('親子ワークショップ b')<p.indexOf('親子ワークショップ a'));
  assert.ok(!p.includes('{{EVENT_BLOCKS}}'));
  for(let i=1;i<=8;i++)assert.match(visualQualityV1,new RegExp('G0'+i+':'));
@@ -221,7 +267,7 @@ test('draft never invents cover date using first long-running event',()=>{
 test('site uses uncached pinned instruction with explicit date entry and protections',()=>{
  assert.match(canvaPage,/id="canvaCoverDate"/);
  assert.match(canvaPage,/canvaCoverDate'\)\.value/);
- assert.match(canvaPage,/20261024-fixed-cover-36-v1/);
+ assert.match(canvaPage,/20261024-coverdate-profile-v2/);
  assert.match(canvaPage,/古いテンプレートへの自動切替は行いません/);
  assert.match(canvaPage,/Yr0CiLUWgATkd1R/);
 });
@@ -327,7 +373,7 @@ test('page counts stay compatible with 7-page Golden Master, add only required p
 });
 
 test('QA rules and site cache reject the old adjustable font guidance',()=>{
-  assert.match(canvaPage,/20261024-fixed-cover-36-v1/);
+  assert.match(canvaPage,/20261024-coverdate-profile-v2/);
   assert.ok(canvaPage.includes("text.includes('タイトル：**55px固定**')"));
   assert.ok(canvaPage.includes("text.includes('イベント番号：**68px固定**')"));
   assert.ok(canvaPage.includes("text.includes('説明本文：**36px固定**')"));
@@ -348,9 +394,9 @@ test('36-selection cover is immutable, base plus separate reference closing stay
   assert.equal(d.autofill_fields.COVER_TITLE.text,'東京 週末イベント2選');
   assert.equal(d.source_design_id,'DAHY1F7Rv_k');
   assert.equal(d.closing_source_design_id,'DAHYlmzKyq4');
-  assert.equal(d.closing_source_page,7);
-  assert.equal(d.closing_source_page_id,'PBKb7PtCH0dWRJyg');
-  assert.equal(d.closing_excluded_page_id,'PBh7x4Vd0Srrb1ly');
+  assert.equal(d.closing_source_page,6);
+  assert.equal(d.closing_source_page_id,'PBh7x4Vd0Srrb1ly');
+  assert.equal(d.closing_excluded_page_id,'PBKb7PtCH0dWRJyg');
   assert.equal(d.layout.event_body_font_family,'けいふぉんと');
   assert.equal(d.layout.uniform_white_card_height,true);
   assert.deepEqual(d.layout.cover_typography_px,{
@@ -362,7 +408,7 @@ test('36-selection cover is immutable, base plus separate reference closing stay
   for(const marker of ['「東京」＝**79px固定**','日付の各数字＝**126px固定**','「週末イベント」＝**129px固定**','「保存してあとから見返す」＝**44px固定**','「けいふぉんと」','白い背景','PBKb7PtCH0dWRJyg','PBh7x4Vd0Srrb1ly','DAHYlmzKyq4']){
     assert.ok(p.includes(marker),'missing:'+marker);
   }
-  assert.match(p,/第6ページ.*使用禁止|6ページ目.*使用禁止|6ページ目.*使わない/);
+  assert.match(p,/第7ページ.*使用禁止|7ページ目.*使用禁止|7ページ目.*使わない/);
   assert.match(p,/commit後/);
 });
 test('any stale latest cover, font or source-page rule is rejected before export',()=>{

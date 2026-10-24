@@ -69,6 +69,29 @@ class ThumbnailIdentityTests(unittest.TestCase):
         rows = [event("a", "交流フェスタ"), event("a", "交流フェスタ")]
         self.assertEqual(enrich_images.shared_multi_event_pages(rows), set())
 
+    def test_generic_og_image_does_not_beat_event_specific_body_photo(self):
+        html = '''
+            <meta property="og:image" content="/assets/og.png">
+            <img src="/media/actual-event.jpg" alt="イベントの案内" width="400" height="200">
+        '''
+        selected = enrich_images.extract_image("https://example.org/event/123", html)
+        self.assertEqual(selected, "https://example.org/media/actual-event.jpg")
+
+    def test_skips_shared_listing_but_still_uses_unique_event_detail(self):
+        shared_page = "https://example.org/events/"
+        detail = "https://example.org/events/one"
+        item = event("one", "イベントその1", None, detail)
+        item["source"] = shared_page
+        item2 = event("two", "イベントその2", None, shared_page)
+        blocked = enrich_images.shared_multi_event_pages([item, item2])
+        self.assertIn(enrich_images.canonical_page(shared_page), blocked)
+        with patch.object(enrich_images, "fetch_image_from_page",
+                          return_value="https://example.org/one.jpg") as fetch:
+            changed, image = enrich_images.enrich_event(item, blocked)
+        self.assertTrue(changed)
+        self.assertEqual(image, "https://example.org/one.jpg")
+        fetch.assert_called_once_with(detail)
+
     def test_real_file_audit_detects_shared_poster(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d)

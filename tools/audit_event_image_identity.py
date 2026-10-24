@@ -18,7 +18,7 @@ from urllib.parse import urlsplit, urlunsplit
 from validate_data import load_week, merge_corrections
 
 GENERIC_IMAGE_RE = re.compile(
-    r"(?:^|[/_.-])(?:ogp|ogimage|logo|favicon|placeholder|noimage|no-image|"
+    r"(?:^|[/_.-])(?:og|ogp|ogimage|logo|favicon|placeholder|noimage|no-image|"
     r"default|sns|site-logo|brand-logo)(?:[/_.-]|$)|/common/meta/",
     re.I,
 )

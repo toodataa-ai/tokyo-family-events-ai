@@ -1,9 +1,7 @@
-# Approved staged official event additions for 2026-10-24, released through isolated data safety gate.
-operation=holiday-after-update
-candidate_sha=89d3828d170f04508069880f6cdfdd97ea055ff4
+# Authorized isolated data-only thumbnail correction: unrelated staged events are preserved in backup/data-staging-before-thumbnail-fix-20261024.
+operation=thumbnail-correction
+candidate_sha=312436898933372993ee866293fcd4c1c9069d1c
 base_data_production_sha=59266b5587c3cd868b8d5637b2a363f1e3f52cd9
-approved_by=user_2026-10-21
-approved_scope=two_suginami_official_events_and_verification_metadata_no_record_removals
-app_release=1.13
-retry_after_safety_validator_v1_13=run_39589865600_failed_only_on_10_cross_week_false_positives
-safety_audit=39590132674
+approved_by=user_2026-10-24
+approved_scope=one_official_image_for_v15-16abce941248_no_other_changes
+pending_stage_backup=backup/data-staging-before-thumbnail-fix-20261024

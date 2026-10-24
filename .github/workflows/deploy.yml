@@ -309,6 +309,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # When the production-data SHA advances, pending additive staging history must
+      # be rebased to that exact SHA before the immutable preview audit is rerun.
       - name: Validate staging preview data separately and freeze both data branch heads
         shell: bash
         run: |

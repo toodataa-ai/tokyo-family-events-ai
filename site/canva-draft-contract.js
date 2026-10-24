@@ -13,6 +13,9 @@ export const CANVA_FORMAT=Object.freeze({
   coverDateDigitFontSize:126,coverDateUnitFontSize:77,coverDateHyphenFontSize:77,
   coverCaptionFontSize:129,coverSaveFontSize:44,
   coverFixedLabels:Object.freeze({city:'東京',caption:'週末イベント',save:'保存してあとから見返す'}),
+  coverReferenceId:'DAHYlmzKyq4',
+  coverReferencePage:1,
+  coverReferencePageId:'PBNNkYtVkTs2bZLw',
   closingReferenceId:'DAHYlmzKyq4',
   closingReferenceUrl:'https://canva.link/uwsg71kb39p2t7c',
   closingReferencePage:6,closingReferencePageId:'PBh7x4Vd0Srrb1ly',
@@ -149,7 +152,7 @@ export function buildCanvaDraft(events,ids,{coverDate=''}={}){
     image_review:{permission:'unconfirmed',candidate_count:rows.filter(r=>r.image_candidate_status==='event_image_candidate').length,needs_review_count:rows.filter(r=>r.image_candidate_status!=='event_image_candidate').length},
     autofill_fields:fields,
     notes:[
-      '承認済みGolden Masterを毎回新しい別IDの作業用コピーに複製。Golden Master・初期テンプレート・過去版は変更禁止。',
+      '紹介ページは承認済みGolden Masterから新規コピーを使用。ただし表紙だけは別参照デザインDAHYlmzKyq4の第1ページ（PBNNkYtVkTs2bZLw）の完全複製を最優先。観覧車・白枠・ピンク円・吹き出し・白字黒縁・しおりの元デザインを保持し、Golden Masterの表紙を流用しない。元版・過去版は変更禁止。',
       '承認済み7ページの表紙・紹介レイアウトを起点に11〜36件では紹介ページを締めの直前に追加する。1ページ2件、最多20ページ。最後は別参照デザインDAHYlmzKyq4の人物紹介付き第6ページ（PBh7x4Vd0Srrb1ly）を無変更コピーし、写真なしイベント一覧の第7ページ（PBKb7PtCH0dWRJyg）を使わない。',
       'イベント紹介の固定サイズはタイトル55px、イベント番号68px、本文36px、会場28px、日時36px。いずれも拡大縮小禁止。タイトルは55pxのまま折り返し可。',
       'イベント本文は必ずデータに基づき、日時・金額・予約情報を推測で追加しない。',
@@ -219,7 +222,8 @@ export function buildCanvaPrompt(draft,template){
   return [
     'Canva連携で投稿ドラフトを作ってください。',
     '旧元テンプレート（変更禁止）: '+CANVA_FORMAT.templateUrl,
-    '表紙・紹介ページ複製元は承認済みGolden Master（変更禁止）: '+CANVA_FORMAT.goldenMasterUrl,
+    '表紙だけの厳密コピー元：'+CANVA_FORMAT.closingReferenceUrl+' の第1ページ（PBNNkYtVkTs2bZLw）。背景・色・文字の輪郭・観覧車・吹き出し・保存のしおりを同一保持。',
+    'イベント紹介ページは承認済みGolden Masterの2〜6ページを新規コピーに複製（変更禁止）: '+CANVA_FORMAT.goldenMasterUrl,
     '最終ページをそのままコピーする参照元（変更禁止）: '+CANVA_FORMAT.closingReferenceUrl+' の人物紹介ページ（現第6ページ）',
     'レイアウト契約: '+CANVA_FORMAT.goldenContractUrl,
     '必ず元デザインから新しい作業用コピーを作り、以前の保存版を変更しないでください。',

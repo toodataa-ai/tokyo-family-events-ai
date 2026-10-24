@@ -11,7 +11,7 @@
   <a href="search.html" class="canva-back">← イベント検索に戻る</a>
   <div class="canva-draft-heading">
     <div><div class="canva-eyebrow">CANVA POST DRAFT</div><h1>Canva投稿ドラフト</h1>
-      <p>検索画面で選んだイベントを、承認済みの紹介ページ配置を使って最大36件・20ページのCanvaドラフトに引き継ぎます。表紙の新しい固定書式を適用し、ラストは別の指定Canvaテンプレートの7ページ目だけをそのまま使用します。作業用コピー以外の元デザインは変更しません。ここからSNSへの公開は行いません。</p></div>
+      <p>検索画面で選んだイベントを、承認済みの紹介ページ配置を使って最大36件・20ページのCanvaドラフトに引き継ぎます。表紙の新しい固定書式を適用し、ラストは指定Canva参照元の人物紹介ページ（現6ページ目）だけをそのまま使用します。作業用コピー以外の元デザインは変更しません。ここからSNSへの公開は行いません。</p></div>
     <a class="canva-template-link" target="_blank" rel="noopener" href="https://www.canva.com/d/Yr0CiLUWgATkd1R">固定レイアウトの完成版を見る ↗</a>
   </div>
 </header>
@@ -42,7 +42,7 @@
     </div>
     <div class="canva-handoff-guide">
       <b>ChatGPTでの使い方</b>
-      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトル55px・イベント番号68px・本文36px・会場28px・日時36pxの固定、本文けいふぉんと、白背景高さ統一、表紙の文言と全固定サイズ、参照テンプレ7ページ目のみを最終ページにコピーする検品、画像・出典、生成した全ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
+      <p>「Canvaドラフト作成指示をコピー」を押し、Canvaを利用できるChatGPTのチャットに貼り付けて送信してください。今回確定したCanva完成版を新規コピーし、表紙の文字位置、紹介タイトル55px・イベント番号68px・本文36px・会場28px・日時36pxの固定、本文けいふぉんと、白背景高さ統一、表紙の文言と全固定サイズ、人物紹介の締めページのみを最終ページにコピーする検品、画像・出典、生成した全ページの見た目、確定保存後の本体確認まで行う指示と、選択したイベント情報が含まれています。</p>
       <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPTを開く ↗</a>
     </div>
     <details><summary>Canva APIを使った直接ドラフト生成について</summary><p>ボタン1回でCanva上に新規ドラフトを生成するには、Canva Connect APIのOAuth接続と、Canvaの差し込みフィールド設定が必要です。接続情報をブラウザや公開GitHubに直接保存せず、サーバー側に安全に設定した後で有効化します。接続前に「作成済み」とは表示しません。</p></details>
@@ -50,7 +50,7 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
+import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,readCanvaCoverDate,saveCanvaCoverDate,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-coverdate-profile-v2';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false;
 const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-fixed-cover-36-v1';
@@ -60,13 +60,14 @@ async function getCanvaTemplate(){
   const response=await fetch(PROMPT_TEMPLATE_URL,{cache:'no-store'});
   if(!response.ok)throw new Error('テンプレート取得HTTP '+response.status);
   const text=await response.text();
-  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】')||!text.includes('タイトル：**55px固定**')||!text.includes('イベント番号：**68px固定**')||!text.includes('説明本文：**36px固定**')||!text.includes('場所・会場名：**28px固定**')||!text.includes('日時：**36px固定**')||!text.includes('【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】')||!text.includes('PBKb7PtCH0dWRJyg')||!text.includes('けいふぉんと'))throw new Error('最大36件・固定フォントサイズ5種・表紙・末尾・Golden Master契約が未反映の古いテンプレートです');
+  if(!text.includes('{{EVENT_BLOCKS}}')||!text.includes('{{GOLDEN_MASTER_URL}}')||!text.includes('{{COVER_DATE}}')||!text.includes('{{PAGE_COUNT}}')||!text.includes('{{PAGE_ASSIGNMENTS}}')||!text.includes('【イベント紹介文字サイズ固定・2026-10-24最優先】')||!text.includes('タイトル：**55px固定**')||!text.includes('イベント番号：**68px固定**')||!text.includes('説明本文：**36px固定**')||!text.includes('場所・会場名：**28px固定**')||!text.includes('日時：**36px固定**')||!text.includes('【表紙・白い背景・本文書体・ラストページ絶対契約／2026-10-24最新版／全規則より優先】')||!text.includes('PBh7x4Vd0Srrb1ly')||!text.includes('PBKb7PtCH0dWRJyg')||!text.includes('けいふぉんと'))throw new Error('最大36件・固定フォントサイズ5種・表紙・末尾・Golden Master契約が未反映の古いテンプレートです');
   loadedPromptTemplate=text;
   return text;
 }
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
 function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value,coverDate:$('canvaCoverDate').value});}
 function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorage);render();}
+$('canvaCoverDate').addEventListener('input',()=>{saveCanvaCoverDate($('canvaCoverDate').value,window.sessionStorage);render();});
 function render(){
   if(!loaded)return;
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
@@ -93,7 +94,7 @@ function render(){
   if(found.length>0&&found.length%2)warnings.push('奇数件のため最後の紹介ページ下段は、旧イベントの文章・写真・装飾・出典を含めて枠ごと非表示にします。');
   if(found.length>10)warnings.push('11件以上ではGolden Masterから紹介ページを'+(canvaPageCount(found.length)-CANVA_FORMAT.pages)+'ページ追加します。締めページは最終ページです。');
   if(found.length>0&&found.length<10)warnings.push('10件未満の未使用イベント枠は、旧イベント写真も含め枠ごと非表示にします。');
-  if(found.length&&!$('canvaCoverDate').value.trim())warnings.push('表紙の日付が未入力です。完成版の日付を流用しません。コピーした指示は日付確認を求めます。');
+  if(found.length&&!$('canvaCoverDate').value.trim())warnings.push('表紙の日付が未入力です。必ず対象週末の日付を入力してください。未入力のままCanva作成指示はコピーできません。');
   const unverified=found.filter(e=>e.verification?.status!=='verified');
   if(unverified.length)warnings.push('公式確認完了ではないイベントが'+unverified.length+'件含まれます。公開前に必ず公式情報をご確認ください。');
   if(found.some(e=>e.image))warnings.push('公式イベント画像・公式ページ内の共通画像・当年チラシを順に確認し、非公開Canvaドラフトに出典付きで配置する候補にします。出典表記だけではSNS公開の許諾になりません。');
@@ -119,13 +120,13 @@ function download(text,type,filename){
   setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 $('copyCanvaPrompt').addEventListener('click',async()=>{
-  try{const template=await getCanvaTemplate();await clipboard(buildCanvaPrompt(currentDraft(),template));alertStatus('Canva固定レイアウト指示（紹介5値・表紙8値固定、本文けいふぉんと、白四角同じ高さ、固定ラスト第7ページの検品・保存後再照合）をコピーしました。');}
+  try{const date=$('canvaCoverDate').value.trim();if(!date){alertStatus('表紙日付が未入力です。対象週末を入力してからコピーしてください。');$('canvaCoverDate').focus();return;}const template=await getCanvaTemplate();const prompt=buildCanvaPrompt(currentDraft(),template);if(!prompt.includes('【今回の表紙日付')||!prompt.includes('】'+date)||!prompt.includes('投稿対象日付：'+date))throw new Error('日付引き渡し検証に失敗');await clipboard(prompt);alertStatus('表紙日付「'+date+'」を確認し、人物紹介ページ固定のCanva作成指示をコピーしました。');}
   catch(error){alertStatus('Canva固定レイアウト指示を取得できません。古いテンプレートへの自動切替は行いません。再読込をお願いします。');console.error(error);}
 });
 $('downloadCanvaCsv').addEventListener('click',()=>{download(draftAsCsv(currentDraft()),'text/csv;charset=utf-8','canva-family-events.csv');alertStatus('CSVを出力しました。');});
 $('downloadCanvaJson').addEventListener('click',()=>{download(JSON.stringify(currentDraft(),null,2),'application/json;charset=utf-8','canva-family-events.json');alertStatus('JSONを出力しました。');});
 $('copyCanvaLink').addEventListener('click',async()=>{
-  const url=new URL(location.href);url.search='';selectedIds.forEach(id=>url.searchParams.append('id',id));
+  const url=new URL(location.href);url.search='';selectedIds.forEach(id=>url.searchParams.append('id',id));const date=$('canvaCoverDate').value.trim();if(date)url.searchParams.set('coverDate',date);
   try{await clipboard(url.href);alertStatus('選択内容のリンクをコピーしました。');}catch{alertStatus('リンクのコピーに失敗しました。');}
 });
 (async()=>{try{
@@ -133,6 +134,7 @@ $('copyCanvaLink').addEventListener('click',async()=>{
   const loadedRows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
   allEvents=mergeEventsAcrossWeeks(loadedRows.map(x=>x.data).filter(Boolean));
   const qs=new URLSearchParams(location.search);
+  const linkDate=qs.get('coverDate');$('canvaCoverDate').value=linkDate!==null?saveCanvaCoverDate(linkDate,window.sessionStorage):readCanvaCoverDate(window.sessionStorage);
   const linkIds=qs.getAll('id');
   selectedIds=linkIds.length?saveCanvaSelection(linkIds,window.localStorage):readCanvaSelection(window.localStorage);
   const activeIds=new Set(allEvents.map(ev=>ev.id));

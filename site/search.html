@@ -66,7 +66,7 @@
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
-import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
+import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection,canvaCoverDateForPeriod} from './canva-draft-contract.js?v=20261024-coverdate-profile-v2';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
 const $=id=>document.getElementById(id);
@@ -144,7 +144,15 @@ $('grid').addEventListener('change',e=>{
   updateCanvaPickbar();
 });
 $('canvaClearBtn').addEventListener('click',()=>{canvaSelectedIds=saveCanvaSelection([],window.localStorage);render();});
-$('canvaPrepareLink').addEventListener('click',e=>{if(!canvaSelectedIds.length)e.preventDefault();});
+$('canvaPrepareLink').addEventListener('click',e=>{
+  if(!canvaSelectedIds.length){e.preventDefault();return;}
+  const chosen=filterUI?.filters();
+  const period=chosen?.dates?.length===1&&chosen?.periods?.length===1?chosen.periods[0]:null;
+  const url=new URL('canva.html',location.href);
+  // A selected weekend is explicit input; do not use the first event's long-running period or a past template date.
+  if(period){const coverDate=canvaCoverDateForPeriod(period.start,period.end);if(coverDate)url.searchParams.set('coverDate',coverDate);}
+  $('canvaPrepareLink').href=url.href;
+});
 $('searchInput').addEventListener('input',render);
 $('copyBtn').addEventListener('click',()=>{location.href=buildCopyUrl(currentFilters());});
 (async()=>{try{

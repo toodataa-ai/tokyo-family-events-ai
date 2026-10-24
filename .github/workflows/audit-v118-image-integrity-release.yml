@@ -1,0 +1,82 @@
+name: Audit v1.18 approved image-integrity release (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v118-image-integrity-release.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout immutable production-based release candidate
+        uses: actions/checkout@v4
+        with:
+          ref: d1ef83fe54826c54b5e72bbef16940a68f6ee219
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert direct production parent and exactly three approved changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "d1ef83fe54826c54b5e72bbef16940a68f6ee219"
+          test "$(git rev-parse HEAD^)" = "8cf76f2ef47125511e38ec0c67f60438e3c147f8"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/observed.txt
+          printf '%s\n' tests/test_event_image_identity.py tools/audit_event_image_identity.py tools/enrich_images.py | sort > /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/observed.txt
+          echo "ISOLATED_V118_RELEASE_DIFF_PASS: no site data, UI, Canva, or prompt modifications."
+      - name: Verify actual released production-data pointer
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "312436898933372993ee866293fcd4c1c9069d1c"
+          echo "UNCHANGED_RELEASED_DATA_SHA=$actual"
+      - name: Checkout current immutable production data
+        uses: actions/checkout@v4
+        with:
+          ref: 312436898933372993ee866293fcd4c1c9069d1c
+          path: released-data
+      - name: Validate official image correction and all protected event rows
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("released-data/site/data")
+          src = json.loads((root / "2026-10-24-events-01.json").read_text(encoding="utf-8"))
+          byid={e["id"]: e for e in src}
+          assert byid["v15-16abce941248"]["image"] == "https://www.koho.metro.tokyo.lg.jp/2026/10/images/202610_moyoshi14_06.jpg"
+          assert byid["v15-198cf881ea08"]["image"] == "https://www.koho.metro.tokyo.lg.jp/2026/10/images/202610_moyoshi14_07.png"
+          manifest=json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+          assert len(manifest["weekends"]) == 6
+          for w in manifest["weekends"]:
+              doc=json.loads((root / w["file"]).read_text(encoding="utf-8"))
+              events=doc.get("events", [])
+              for shard in doc.get("event_files", []):
+                  events+=json.loads((root / shard).read_text(encoding="utf-8"))
+              assert len(events)==w["count"]==doc["coverage"]["published_count"],w["sat"]
+              ids=[e["id"] for e in events]
+              assert len(ids)==len(set(ids)),w["sat"]
+          print("RELEASED_DATA_ID_AND_COUNT_PARITY_PASS; six published weeks unmodified")
+          PY
+      - name: Run thumbnail identity tests and production-data audit
+        shell: bash
+        run: |
+          python -m unittest discover -s tests -p 'test_event_image_identity.py' -v
+          python tools/audit_event_image_identity.py released-data/site/data --strict
+          python tools/validate_data.py --strict --min-image-coverage 0.70 released-data/site/data
+      - name: Run complete release candidate application regression suite
+        run: npm test
+      - name: Release gate conclusion
+        run: echo "V1_18_RELEASE_CANDIDATE_STRICT_PASS"

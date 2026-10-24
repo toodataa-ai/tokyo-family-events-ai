@@ -34,6 +34,15 @@ def attrs(tag):
     return {m.group(1).lower(): html.unescape(m.group(3).strip()) for m in ATTR_RE.finditer(tag)}
 
 
+def is_generic_social_image(url):
+    """Site-wide OG/logo cards are not trustworthy event thumbnails."""
+    path = urlsplit(url or '').path.lower()
+    filename = path.rsplit('/', 1)[-1]
+    return ('/common/meta/' in path
+            or '/sns/' in path
+            or bool(re.match(r'^(?:og|ogp|ogimage|logo|favicon|default|no-?image)[_.-]', filename)))
+
+
 def normalize_image_url(base_url, value):
     if not value:
         return None
@@ -104,7 +113,7 @@ def extract_image(base_url, text):
         key = (a.get('property') or a.get('name') or a.get('itemprop') or '').lower()
         if key in priorities and a.get('content'):
             u = normalize_image_url(base_url, a['content'])
-            if u:
+            if u and not is_generic_social_image(u):
                 found.append((priorities[key], u))
     if found:
         found.sort(key=lambda x: x[0])
@@ -176,10 +185,12 @@ def candidate_pages(ev):
     return out
 
 
-def enrich_event(ev):
+def enrich_event(ev, ambiguous_pages=None):
     if is_http(ev.get('image')):
         return False, ev.get('image')
     for page in candidate_pages(ev):
+        if ambiguous_pages and canonical_page(page) in ambiguous_pages:
+            continue
         image = fetch_image_from_page(page)
         if image:
             ev['image'] = image
@@ -233,10 +244,9 @@ def main():
     ambiguous_pages = shared_multi_event_pages(all_events)
 
     def worker(ev):
-        if any(canonical_page(p) in ambiguous_pages for p in candidate_pages(ev)):
-            # Do not silently give multiple distinct events the article's OG image.
-            return False, None
-        return enrich_event(ev)
+        # Prefer a unique event-detail page. Never fall back to a shared
+        # multi-event listing when its image-to-title anchor is unverified.
+        return enrich_event(ev, ambiguous_pages)
 
     enriched = 0
     if unresolved:

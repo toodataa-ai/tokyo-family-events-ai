@@ -39,6 +39,17 @@ test('latest user-approved Canva template and layout stay pinned',()=>{
   assert.equal(CANVA_FORMAT.maxEvents,36);
   assert.equal(CANVA_FORMAT.eventsPerPage,2);
 });
+test('next-generation instructions require finishing end-to-end and reporting only actual blockers',()=>{
+  const template=readFileSync(new URL('../site/canva-prompt-template-v2.txt',import.meta.url),'utf8');
+  const rules=readFileSync(new URL('../docs/canva_prompt_rules_v2.md',import.meta.url),'utf8');
+  const quality=readFileSync(new URL('../docs/canva_visual_quality_contract_v1.md',import.meta.url),'utf8');
+  for(const source of [template,rules,quality]){
+    assert.match(source,/完遂・blocker限定報告/);
+    assert.match(source,/途中で打ち切らず/);
+    assert.match(source,/進行不能な場合のみ/);
+    assert.match(source,/未検証.*合格/);
+  }
+});
 test('explicit selected weekend dates carry correct weekdays into Canva handoff',()=>{
   assert.equal(canvaCoverDateForPeriod('2026-10-24','2026-10-25'),'10月24日（土）-10月25日（日）');
   assert.equal(canvaCoverDateForPeriod('2026-10-31','2026-11-01'),'10月31日（土）-11月1日（日）');

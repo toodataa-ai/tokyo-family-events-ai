@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 84,
-    "published": 78,
+    "candidate_total": 86,
+    "published": 80,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 3,
@@ -6515,6 +6515,158 @@
         }
       ],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "suginami-official-28531",
+      "name": "花と緑の井草祭り（井草森公園）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "reason": "地域の催しとして家族で参加可能。",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "公式対象はどなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "即売会・抽選会・会場回遊。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幼児からの家族同伴が可能。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由来場型。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "開催時間が日中で、大きな負担の記載なし。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式入場無料。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日直接会場へ。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族の週末お出かけとして参加価値あり。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "地域の催しとして家族で参加可能。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s033/event/28531.html",
+          "basis": "杉並区公式の開催日・時間・対象・会場・費用・参加条件を個別確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "suginami_calendar_all",
+          "kind": "official_calendar_day",
+          "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=24&month=10&type=3&year=2026"
+        },
+        {
+          "channel": "explicit",
+          "source_id": "suginami_calendar_all",
+          "kind": "official_detail",
+          "url": "https://www.city.suginami.tokyo.jp/s033/event/28531.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "suginami-official-28567",
+      "name": "杉並清掃工場環境フェア2026",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "reason": "親子で参加しやすい体験型イベント。",
+        "rubric_version": "family-fit-v1",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式に親子の体験を明示。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "見学・体験・工作など。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児からの家族同伴が可能。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由来場型。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "開催時間が日中で、大きな負担の記載なし。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式入場無料。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "入場申込不要だが一部企画は予約や整理券が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族の週末お出かけとして参加価値あり。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "親子で参加しやすい体験型イベント。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s104/event/28567.html",
+          "basis": "杉並区公式の開催日・時間・対象・会場・費用・参加条件を個別確認。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "source_id": "suginami_calendar_all",
+          "kind": "official_calendar_day",
+          "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=25&month=10&type=3&year=2026"
+        },
+        {
+          "channel": "explicit",
+          "source_id": "suginami_calendar_all",
+          "kind": "official_detail",
+          "url": "https://www.city.suginami.tokyo.jp/s104/event/28567.html"
+        }
+      ]
     }
   ]
 }

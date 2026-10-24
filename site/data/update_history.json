@@ -37,6 +37,20 @@
       "rolled_out_unique": 109,
       "executed_at": "2026-10-19T22:51:09.462Z",
       "note": "休日明け6週間の公式実測照合済みデータ候補（data-staging。productionは未反映）"
+    },
+    {
+      "run_id": "staging-suginami-official-two-events-2026-10-21",
+      "run_type": "staging_manual_official_addition",
+      "as_of_jst": "2026-10-21",
+      "executed_at": "2026-10-21T09:00:00+09:00",
+      "target_start": "2026-10-24",
+      "target_end": "2026-10-25",
+      "base_data_production_sha": "59266b5587c3cd868b8d5637b2a363f1e3f52cd9",
+      "added_weekly_records": 2,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "status": "stage_candidate_only",
+      "note": "杉並区公式2日・詳細2件の根拠による加算。全42日検証は別途未了。承認前の本番公開不可。"
     }
   ]
 }

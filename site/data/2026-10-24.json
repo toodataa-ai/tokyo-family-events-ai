@@ -10,10 +10,10 @@
   "run_file": "2026-10-24-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 84,
+    "candidate_count": 86,
     "duplicate_removed": 2,
     "excluded_count": 4,
-    "published_count": 78,
+    "published_count": 80,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "v1.5完全再探索。候補3件、掲載3件。"
+        "candidate_count": 5,
+        "published_count": 5,
+        "note": "v1.5完全再探索。候補3件、掲載3件。 10/21公式日別2件追補（全42日照合は別途必要）。"
       },
       {
         "ward": "豊島区",
@@ -229,7 +229,8 @@
     "2026-10-24-events-nerima-official.json",
     "2026-10-24-events-carryover.json",
     "2026-10-24-events-manual-primary.json",
-    "2026-10-24-events-verified-continuity.json"
+    "2026-10-24-events-verified-continuity.json",
+    "2026-10-24-events-suginami-calendar.json"
   ],
   "events": []
 }

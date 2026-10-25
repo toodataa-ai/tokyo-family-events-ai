@@ -1,0 +1,82 @@
+name: Audit 2026 Nov 3 isolated event data candidate
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-nov03-data-candidate.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout immutable data candidate and its protected parent
+        uses: actions/checkout@v4
+        with:
+          ref: 416d3012b054ac24552f53a47a3e834b94a1e0de
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Checkout released application validators
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released-app
+      - name: Checkout main-side nonregression and history policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: audit-policy
+      - name: Exactly seven allowed additive data files based on current published SHA
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "416d3012b054ac24552f53a47a3e834b94a1e0de"
+          test "$(git rev-parse HEAD^)" = "312436898933372993ee866293fcd4c1c9069d1c"
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "312436898933372993ee866293fcd4c1c9069d1c"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual
+          printf '%s\n' \
+            site/data/manifest.json \
+            site/data/2026-10-31.json \
+            site/data/2026-10-31-verification.json \
+            site/data/2026-10-31-decisions.json \
+            site/data/2026-10-31-run.json \
+            site/data/update_history.json \
+            site/data/2026-10-31-events-holiday-2026-11-03.json | sort > /tmp/expected
+          diff -u /tmp/actual /tmp/expected
+      - name: Every released-app strict validator and 6-week event non-regression
+        run: |
+          python3 released-app/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 released-app/tools/validate_decisions.py --strict site/data
+          python3 released-app/tools/validate_rereview.py --strict site/data
+          python3 audit-policy/tools/validate_protected_events.py --base-ref 312436898933372993ee866293fcd4c1c9069d1c site/data
+          python3 audit-policy/tools/validate_non_regression.py --base-ref 312436898933372993ee866293fcd4c1c9069d1c site/data
+          python3 audit-policy/tools/validate_official_schedule_audit.py site/data
+          node audit-policy/tools/holiday_update_history.mjs --check --base-ref 312436898933372993ee866293fcd4c1c9069d1c --data-dir site/data
+      - name: Assert exactly 9 Nov3 extras and preserved 6-week manifest
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          old=json.loads(subprocess.check_output(["git","show","312436898933372993ee866293fcd4c1c9069d1c:site/data/manifest.json"],text=True))
+          new=json.loads(Path("site/data/manifest.json").read_text())
+          for a,b in zip(old["weekends"],new["weekends"]):
+              assert a["sat"]==b["sat"]
+              assert a["count"]==b["count"]-(9 if a["sat"]=="2026-10-31" else 0)
+          ev=json.loads(Path("site/data/2026-10-31-events-holiday-2026-11-03.json").read_text())
+          assert len(ev)==9 and len(set(x["id"] for x in ev))==9
+          assert all(x["date_start"]==x["date_end"]=="2026-11-03" for x in ev)
+          assert all(str(x["official_url"]).startswith("https://") for x in ev)
+          assert all(x.get("reservation",{}).get("note") for x in ev)
+          print("NOV03_NINE_NEW_OFFICIAL_EVENTS_EXISTING_ROWS_UNCHANGED")
+          PY
+      - name: Test updated app's holiday-tab and no-ordinary-weekdays contract
+        run: |
+          cd released-app
+          npm test
+      - name: Mark CI evidence
+        run: echo "NOV03_DATA_CANDIDATE_STRICT_PASS"

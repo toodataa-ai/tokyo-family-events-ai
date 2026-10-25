@@ -53,8 +53,10 @@ class HolidayGapTest(unittest.TestCase):
     def test_unregistered_weekday_is_not_admitted(self):
         with self.assertRaisesRegex(ValueError, "not an official registered holiday"):
             audit(MANIFEST, [], [], "2026-11-04")
+        extended = {**MANIFEST, "holidays": [
+            *MANIFEST["holidays"], {"date": "2026-11-17", "name": "test date"}]}
         with self.assertRaisesRegex(ValueError, "not attached"):
-            audit(MANIFEST, [], [], "2026-11-03X")
+            audit(extended, [], [], "2026-11-17")
 
     def test_canonical_official_url_strips_query_and_www(self):
         self.assertEqual(normalize_url("https://www.city.nerima.tokyo.jp/path?ref=calendar"),

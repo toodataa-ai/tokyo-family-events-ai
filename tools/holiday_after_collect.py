@@ -43,6 +43,12 @@ PHRASES = [
     "祭り フェス マルシェ 文化 展示 無料",
     "鉄道 動物 科学 防災 消防 スタンプラリー",
 ]
+HOLIDAY_PHRASES = (
+    "祝日 子ども 親子 キッズ 体験 ワークショップ",
+    "文化の日 イベント 祭り フェス ステージ 無料",
+    "施設 博物館 美術館 公園 図書館 特別イベント 家族",
+)
+
 EVENT_WORDS = re.compile(
     r"祭|フェス|イベント|体験|ワークショップ|展示|展覧|子ども|こども|"
     r"キッズ|親子|無料|鉄道|電車|マルシェ|科学|スタンプラリー|"
@@ -331,10 +337,11 @@ def build_jobs(plan):
                              "url": "https://www.bing.com/search?format=rss&q=" + quote(query)})
         for holiday in plan.get("holiday_targets", []):
             if holiday.get("requires_independent_23_ward_search"):
-                query = f"{ward} {holiday['date']} 祝日 子ども 親子 イベント 祭り"
-                jobs.append({"kind": "holiday_ai_cross", "ward": ward,
-                             "holiday": holiday["date"], "query": query,
-                             "url": "https://www.bing.com/search?format=rss&q=" + quote(query)})
+                for phrase in HOLIDAY_PHRASES:
+                    query = f"{ward} {holiday['date']} {phrase}"
+                    jobs.append({"kind": "holiday_ai_cross", "ward": ward,
+                                 "holiday": holiday["date"], "query": query,
+                                 "url": "https://www.bing.com/search?format=rss&q=" + quote(query)})
     for holiday in plan.get("holiday_targets", []):
         jobs.extend(holiday_calendar_jobs(holiday))
     for source in plan["explicit_source_checks"]:

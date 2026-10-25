@@ -1,15 +1,13 @@
-# User-approved app-only release v1.19: touch-first fluid Canva sorting with large 44px grab handles.
+# User-approved app-only release v1.20: weekday holiday records validated safely.
 operation=release
 production_ref=production
-production_sha=29c74668e7f46b9a6d6ff8f9369bcf410dd753cf
-previous_production_sha=9e758a4c8452f53fd63a9a4b2287e55d56db8bdb
-approved_staging_sha=28009a23786cd774fbcb0fc30e8dc0b4c9c1e180
-candidate_sha=57ed538e399b11f9f870cb9a7cfad8a3ce91a68d
-pr=39
-target_public_version=1.19
-release_date_jst=2026-10-25
-isolated_release_audit_run=40166016944
-prior_staging_validation_run=40165543777
+production_sha=8e8064277b77010d13e2b21c212ebc396faeb71b
+previous_production_sha=29c74668e7f46b9a6d6ff8f9369bcf410dd753cf
+candidate_sha=3e083daeb94d211c828bfe149d74a388347594d5
+pr=40
+target_public_version=1.20
+release_date_jst=2026-10-26
+isolated_release_audit_run=40237720268
 expected_data_production_sha=312436898933372993ee866293fcd4c1c9069d1c
-approved_scope=package.json;site/canva-draft-contract.js;site/canva-draft.css;site/canva-fluid-sort.js;site/canva.html;tests/canva_draft_contract.test.mjs;tests/canva_fluid_sort.test.mjs
-note=Approved iPhone fluid Canva sorting and larger grab handles only. No event records, search/date range UI, discovery rules, shared CSS, Canva prompt, original Canva templates, or other staging features.
+approved_scope=tools/validate_data.py;tests/test_independent_holiday.py;package.json
+note=Strict weekday holiday date acceptance only if explicitly in manifest and attached to previous published weekend; original data, weekend records, all unapproved staging UI and collection changes unchanged.

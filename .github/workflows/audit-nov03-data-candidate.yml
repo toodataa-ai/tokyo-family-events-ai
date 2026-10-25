@@ -14,7 +14,7 @@ jobs:
       - name: Checkout immutable data candidate and its protected parent
         uses: actions/checkout@v4
         with:
-          ref: 416d3012b054ac24552f53a47a3e834b94a1e0de
+          ref: 605f7144b99944201663055105e076e3b1237ebd
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -35,7 +35,7 @@ jobs:
       - name: Exactly seven allowed additive data files based on current published SHA
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "416d3012b054ac24552f53a47a3e834b94a1e0de"
+          test "$(git rev-parse HEAD)" = "605f7144b99944201663055105e076e3b1237ebd"
           test "$(git rev-parse HEAD^)" = "312436898933372993ee866293fcd4c1c9069d1c"
           test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "312436898933372993ee866293fcd4c1c9069d1c"
           git diff --name-only HEAD^ HEAD | sort > /tmp/actual

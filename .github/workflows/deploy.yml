@@ -235,7 +235,14 @@ jobs:
           PY
       - name: Validate candidate official schedule discovery evidence
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
-        run: python staging-policy-src/tools/validate_official_schedule_audit.py site/data
+        shell: bash
+        run: |
+          if [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
+            python staging-policy-src/tools/validate_official_schedule_audit.py site/data \
+              --allow-unchanged-historical-gaps-base "${{ needs.gate.outputs.base_data_production_sha }}"
+          else
+            python staging-policy-src/tools/validate_official_schedule_audit.py site/data
+          fi
       - name: Validate holiday-after data publication history
         if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}
         run: node staging-policy-src/tools/holiday_update_history.mjs --check --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data
@@ -327,7 +334,12 @@ jobs:
             if [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
             else
-              python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+              if [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
+                python3 ../staging-src/tools/validate_official_schedule_audit.py site/data \
+                  --allow-unchanged-historical-gaps-base "$base"
+              else
+                python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
+              fi
             fi
             if [ "$stage" != "$base" ]; then
               python3 ../staging-src/tools/validate_protected_events.py --base-ref "$base" site/data

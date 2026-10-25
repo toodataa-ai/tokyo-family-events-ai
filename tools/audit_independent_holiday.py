@@ -33,7 +33,7 @@ def get_events(root, manifest):
             entries += json.loads((root / shard).read_text(encoding="utf-8"))
         if len(entries) != week["count"]:
             raise ValueError(f"manifest count differs from actual data: {week['sat']}")
-        events.extend(entries)
+        events.extend({**row, "_audit_week_sat": week["sat"]} for row in entries)
     return events
 
 
@@ -50,8 +50,14 @@ def audit(manifest, published, leads, holiday):
                       else date.fromisoformat(w["sat"]) + timedelta(days=7))), None)
     if not assigned:
         raise ValueError("holiday is not attached to any published weekend")
-    exact_day = [r for r in published if r.get("date_start") == holiday and r.get("date_end") == holiday]
-    broad = [r for r in published if str(r.get("date_start") or "") <= holiday <= str(r.get("date_end") or "")]
+    # Each multiweek event is repeated in other shards; never count other weeks
+    # as additional holiday programs or as proof the assigned week is covered.
+    assigned_rows = [r for r in published
+                     if r.get("_audit_week_sat", assigned["sat"]) == assigned["sat"]]
+    exact_day = [r for r in assigned_rows
+                 if r.get("date_start") == holiday and r.get("date_end") == holiday]
+    broad = [r for r in assigned_rows
+             if str(r.get("date_start") or "") <= holiday <= str(r.get("date_end") or "")]
     seen = set()
     queue = []
     for lead in leads:
@@ -63,7 +69,7 @@ def audit(manifest, published, leads, holiday):
         if (name,url) in seen:
             continue
         seen.add((name,url))
-        matched = next((r for r in published
+        matched = next((r for r in assigned_rows
                         if str(r.get("date_start") or "") <= holiday <= str(r.get("date_end") or "")
                         and (normalize(r.get("name")) == name
                              or (url and normalize_url(r.get("official_url")) == url))), None)

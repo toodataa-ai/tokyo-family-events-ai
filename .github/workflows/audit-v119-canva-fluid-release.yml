@@ -1,0 +1,77 @@
+name: Audit v1.19 approved Canva touch sorter (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v119-canva-fluid-release.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 57ed538e399b11f9f870cb9a7cfad8a3ce91a68d
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert approved seven-file scope and direct production parent
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "57ed538e399b11f9f870cb9a7cfad8a3ce91a68d"
+          test "$(git rev-parse HEAD^)" = "9e758a4c8452f53fd63a9a4b2287e55d56db8bdb"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual.txt
+          printf '%s\\n' 'package.json' 'site/canva-draft-contract.js' 'site/canva-draft.css' 'site/canva-fluid-sort.js' 'site/canva.html' 'tests/canva_draft_contract.test.mjs' 'tests/canva_fluid_sort.test.mjs' | sort > /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/actual.txt
+          ! grep -E '^(site/data/|site/search.html|site/copy.html|site/app.js|site/multi-filter-ui.js|site/styles.css|prompts/)' /tmp/actual.txt
+          echo "CANVA_ONLY_DIFF_PASS"
+      - name: Assert event-production pointer immutability
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "312436898933372993ee866293fcd4c1c9069d1c"
+          echo "DATA_PRODUCTION_SHA_UNCHANGED=$actual"
+      - name: Checkout current published events
+        uses: actions/checkout@v4
+        with:
+          ref: 312436898933372993ee866293fcd4c1c9069d1c
+          path: published-data
+      - name: Audit existing published events for duplicate IDs and count parity
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("published-data/site/data")
+          manifest=json.loads((root/"manifest.json").read_text(encoding="utf-8"))
+          assert len(manifest["weekends"])==6
+          count=0
+          for w in manifest["weekends"]:
+              doc=json.loads((root/w["file"]).read_text(encoding="utf-8"))
+              rows=list(doc.get("events", []))
+              for shard in doc.get("event_files", []):
+                  rows.extend(json.loads((root/shard).read_text(encoding="utf-8")))
+              ids=[e["id"] for e in rows]
+              assert len(ids)==len(set(ids)),w["sat"]
+              assert len(rows)==w["count"]==doc["coverage"]["published_count"],w["sat"]
+              count+=len(rows)
+          print("UNCHANGED_PUBLISHED_SIX_WEEKS="+str(count))
+          PY
+      - name: Run entire production-based test suite including touch drag
+        run: npm test
+      - name: Verify approved touch controls and clipboard contract
+        shell: bash
+        run: |
+          node --test tests/canva_fluid_sort.test.mjs tests/canva_draft_contract.test.mjs
+          grep -Fq 'canva-draft.css?v=20261025-large-touch-v3' site/canva.html
+          grep -Fq 'createFluidCanvaSorter' site/canva.html
+          grep -Fq 'min-width:44px;width:44px;height:44px' site/canva-draft.css
+          echo "V1_19_RELEASE_CANDIDATE_STRICT_PASS"

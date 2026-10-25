@@ -9,11 +9,11 @@
   "verification_file": "2026-10-31-verification.json",
   "run_file": "2026-10-31-run.json",
   "coverage": {
-    "sources_checked": 69,
-    "candidate_count": 61,
+    "sources_checked": 77,
+    "candidate_count": 70,
     "duplicate_removed": 2,
     "excluded_count": 4,
-    "published_count": 55,
+    "published_count": 64,
     "wards": [
       {
         "ward": "千代田区",
@@ -82,19 +82,19 @@
         "ward": "江東区",
         "status": "checked",
         "queries": 3,
-        "sources_checked": 3,
-        "candidate_count": 3,
-        "published_count": 2,
-        "note": "v1.5完全再探索。候補3件、掲載2件。 v1.6除外再審査反映。"
+        "sources_checked": 4,
+        "candidate_count": 4,
+        "published_count": 3,
+        "note": "v1.5完全再探索。候補3件、掲載2件。 v1.6除外再審査反映。 11/3単独祝日公式イベント追記1件。"
       },
       {
         "ward": "品川区",
         "status": "checked",
         "queries": 3,
-        "sources_checked": 3,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "v1.5完全再探索。候補1件、掲載1件。"
+        "sources_checked": 4,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補1件、掲載1件。 11/3単独祝日公式イベント追記1件。"
       },
       {
         "ward": "目黒区",
@@ -154,10 +154,10 @@
         "ward": "豊島区",
         "status": "checked",
         "queries": 3,
-        "sources_checked": 3,
-        "candidate_count": 8,
-        "published_count": 8,
-        "note": "v1.5完全再探索。候補6件、掲載4件。 v1.6除外再審査反映。"
+        "sources_checked": 4,
+        "candidate_count": 9,
+        "published_count": 9,
+        "note": "v1.5完全再探索。候補6件、掲載4件。 v1.6除外再審査反映。 11/3単独祝日公式イベント追記1件。"
       },
       {
         "ward": "北区",
@@ -172,10 +172,10 @@
         "ward": "荒川区",
         "status": "checked",
         "queries": 3,
-        "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "v1.5完全再探索。候補0件、掲載0件。"
+        "sources_checked": 4,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補0件、掲載0件。 11/3単独祝日公式イベント追記1件。"
       },
       {
         "ward": "板橋区",
@@ -190,10 +190,10 @@
         "ward": "練馬区",
         "status": "checked",
         "queries": 3,
-        "sources_checked": 3,
-        "candidate_count": 15,
-        "published_count": 14,
-        "note": "v1.5完全再探索。候補13件、掲載10件。 v1.6除外再審査反映。 練馬区公式地区祭一覧から2件補完。旧runの探索カウンタは変更なし。"
+        "sources_checked": 8,
+        "candidate_count": 20,
+        "published_count": 19,
+        "note": "v1.5完全再探索。候補13件、掲載10件。 v1.6除外再審査反映。 練馬区公式地区祭一覧から2件補完。旧runの探索カウンタは変更なし。 11/3単独祝日公式イベント追記5件。"
       },
       {
         "ward": "足立区",
@@ -229,7 +229,8 @@
     "2026-10-31-events-nerima-official.json",
     "2026-10-31-events-carryover.json",
     "2026-10-31-events-manual-primary.json",
-    "2026-10-31-events-verified-continuity.json"
+    "2026-10-31-events-verified-continuity.json",
+    "2026-10-31-events-holiday-2026-11-03.json"
   ],
   "events": []
 }

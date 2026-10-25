@@ -37,6 +37,30 @@
       "rolled_out_unique": 109,
       "executed_at": "2026-10-19T22:51:09.462Z",
       "note": "休日明け6週間の公式実測照合済みデータ候補（data-staging。productionは未反映）"
+    },
+    {
+      "run_id": "manual-independent-holiday-2026-11-03-312436898933",
+      "run_type": "manual_independent_holiday_addition",
+      "status": "official_verified_addition",
+      "as_of_jst": "2026-10-26",
+      "target_holiday": "2026-11-03",
+      "base_data_production_sha": "312436898933372993ee866293fcd4c1c9069d1c",
+      "added_weekly_records": 9,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "new_event_ids": [
+        "official-20261103-nerima-nerioto",
+        "official-20261103-nerima-nerisupo",
+        "official-20261103-nerima-cinemaday-red",
+        "official-20261103-toshima-dance-stage",
+        "official-20261103-nerima-mori-fair",
+        "official-20261103-nerima-mori-leaves",
+        "official-20261103-shinagawa-ebara",
+        "official-20261103-koto-bumb",
+        "official-20261103-arakawa-obake-author"
+      ],
+      "executed_at": "2026-10-26T07:02:00+09:00",
+      "note": "文化の日専用公式9件を土日週データに追記。元の6週間と既存掲載IDを不変保持。未確認情報は明示。"
     }
   ]
 }

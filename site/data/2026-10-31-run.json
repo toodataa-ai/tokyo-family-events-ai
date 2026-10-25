@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 54,
-    "published": 55,
+    "candidates": 63,
+    "published": 64,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 55,
+    "verified": 64,
     "announced": 0,
     "corrected": 1,
-    "thumbnail_count": 44,
-    "thumbnail_coverage": 0.9166666666666666,
+    "thumbnail_count": 51,
+    "thumbnail_coverage": 0.796875,
     "decision_audit_complete": true,
     "hard_excluded": 2,
     "soft_excluded": 2,
@@ -187,6 +187,36 @@
       ],
       "not_full_run": true,
       "note": "One verified organizer-posted event added; keep existing published events and Nerima shard untouched."
+    },
+    {
+      "checked_at": "2026-10-26",
+      "scope": "11/3単独祝日・個別の公式主催ページ9件のみ追記。23区検索212リンク全件の審査終了を意味しない。",
+      "candidate_ids": [
+        "official-20261103-nerima-nerioto",
+        "official-20261103-nerima-nerisupo",
+        "official-20261103-nerima-cinemaday-red",
+        "official-20261103-toshima-dance-stage",
+        "official-20261103-nerima-mori-fair",
+        "official-20261103-nerima-mori-leaves",
+        "official-20261103-shinagawa-ebara",
+        "official-20261103-koto-bumb",
+        "official-20261103-arakawa-obake-author"
+      ],
+      "official_sources": [
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/neriotofes/neriotofes2026.html",
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/sports/oshirase/nerisupo2022.html",
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/oshirase/cinemaday.html",
+        "https://www.city.toshima.lg.jp/125/bunka/bunka/2607020838.html",
+        "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+        "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+        "https://www.city.shinagawa.tokyo.jp/kusei/kohokocho/1005753/1005894/1005895/1011240/1011247.html",
+        "https://www.ys-tokyobay.co.jp/news/20261103_bumbfestival.html",
+        "https://www.library.city.arakawa.tokyo.jp/eventview?5=&eid=3209"
+      ],
+      "holiday_date": "2026-11-03",
+      "attached_week": "2026-10-31",
+      "not_full_run": true,
+      "other_weeks_unchanged": true
     }
   ],
   "carryover_organizer_rechecks": [

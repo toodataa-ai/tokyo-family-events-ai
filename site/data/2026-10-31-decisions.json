@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 61,
-    "published": 55,
+    "candidate_total": 70,
+    "published": 64,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -4723,6 +4723,618 @@
         }
       ],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "review-official-20261103-nerima-nerioto",
+      "name": "ねりおと♪フェスティバル2026",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料が明記されている。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加または申込不要と明記されている。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/neriotofes/neriotofes2026.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/neriotofes/neriotofes2026.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-nerima-nerisupo",
+      "name": "ねりすぽフェスティバル2026",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料が明記されている。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加または申込不要と明記されている。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/sports/oshirase/nerisupo2022.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/sports/oshirase/nerisupo2022.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-nerima-cinemaday-red",
+      "name": "ねりぶんシネマday『ONE PIECE FILM RED』",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "B",
+        "grade": "B",
+        "reason": "子連れ参加は可能だが年齢・鑑賞条件に注意。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "公式に誰でも鑑賞できると明記されている。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞中心で体験行動は少ない。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "作品・鑑賞時間による年齢適性に配慮が必要。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "上映・開演時間に合わせた行動が必要。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "約115分の上映は小さな子どもには長い。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "有料企画や料金条件は本文で説明している。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "予約・チケットが必要で参加枠に限りがある。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "興味のある家族には楽しいが条件に注意。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子連れ参加は可能だが年齢・鑑賞条件に注意。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/oshirase/cinemaday.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/oshirase/cinemaday.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-toshima-dance-stage",
+      "name": "みんなのステージ2026 ダンスの部",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "B",
+        "grade": "B",
+        "reason": "子連れ参加は可能だが年齢・鑑賞条件に注意。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "公式に誰でも鑑賞できると明記されている。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞中心で体験行動は少ない。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "作品・鑑賞時間による年齢適性に配慮が必要。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "上映・開演時間に合わせた行動が必要。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料が明記されている。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加または申込不要と明記されている。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "興味のある家族には楽しいが条件に注意。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子連れ参加は可能だが年齢・鑑賞条件に注意。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/125/bunka/bunka/2607020838.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.toshima.lg.jp/125/bunka/bunka/2607020838.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-nerima-mori-fair",
+      "name": "ねりまの森こどもフェスタ 秋のフェア（大関山）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は未確定。公式案内を再確認する。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "一部要申込・条件未確定のため公式で確認する必要がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-nerima-mori-leaves",
+      "name": "ねりまの森こどもフェスタ 落ち葉あそび（竹の子）",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は未確定。公式案内を再確認する。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "一部要申込・条件未確定のため公式で確認する必要がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-shinagawa-ebara",
+      "name": "まちぐるみ文化イベント2026『あつまれ！えばら』",
+      "ward": "品川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "有料企画や料金条件は本文で説明している。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "一部要申込・条件未確定のため公式で確認する必要がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shinagawa.tokyo.jp/kusei/kohokocho/1005753/1005894/1005895/1011240/1011247.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.city.shinagawa.tokyo.jp/kusei/kohokocho/1005753/1005894/1005895/1011240/1011247.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-koto-bumb",
+      "name": "BumB『ぶんぶフェス』2026",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "有料企画や料金条件は本文で説明している。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "一部要申込・条件未確定のため公式で確認する必要がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ys-tokyobay.co.jp/news/20261103_bumbfestival.html",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.ys-tokyobay.co.jp/news/20261103_bumbfestival.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "review-official-20261103-arakawa-obake-author",
+      "name": "『おばけずかん』絵本作家・宮本えつよし先生の講演とワークショップ",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "公式で確認した子連れ向け内容と参加条件を総合評価。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内に子ども・親子向け要素が明記されている。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験・工作など参加型要素がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども連れの参加を想定した企画がある。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "参加内容・滞在時間を選べる。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "通常の親子外出として参加しやすい。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料が明記されている。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "予約・チケットが必要で参加枠に限りがある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で体験・鑑賞する価値がある。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式で確認した子連れ向け内容と参加条件を総合評価。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/eventview?5=&eid=3209",
+          "basis": "主催自治体・公式会場による文化の日2026年11月3日の日時・場所・体験内容・条件の個別根拠。"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "kind": "official_ai_search",
+          "url": "https://www.library.city.arakawa.tokyo.jp/eventview?5=&eid=3209"
+        }
+      ]
     }
   ]
 }

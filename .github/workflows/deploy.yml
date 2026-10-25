@@ -243,6 +243,11 @@ jobs:
           else
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data
           fi
+      - name: Refuse holiday-after refresh if official weekday holidays are missing from six-week manifest
+        if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}
+        run: |
+          python3 -m unittest discover -s staging-policy-src/tests -p 'test_weekday_holiday_coverage.py'
+          python3 staging-policy-src/tools/audit_weekday_holiday_coverage.py --manifest site/data/manifest.json --strict
       - name: Validate holiday-after data publication history
         if: ${{ needs.gate.outputs.operation == 'holiday-after-update' }}
         run: node staging-policy-src/tools/holiday_update_history.mjs --check --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data

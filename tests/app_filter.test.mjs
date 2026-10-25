@@ -232,7 +232,7 @@ assert.match(sharedUI,/type="checkbox"/);
 assert.match(sharedUI,/initialState/);
 assert.match(sharedUI,/state\.dates\.add/);
 assert.match(sharedUI,/function choosePeriod\(value\)/);
-assert.match(sharedUI,/state\.dates\.clear\(\);\s*if\(value!=='all'\)state\.dates\.add\(value\)/);
+assert.match(sharedUI,/state\.dates\.clear\(\);\s*customRange=null;\s*if\(value!=='all'\)state\.dates\.add\(value\)/);
 assert.match(sharedUI,/const validDate=params\.getAll\('d'\)\.find/);
 assert.match(sharedUI,/weekTabs'\)\.addEventListener\('click',handleWeek\)/);
 assert.doesNotMatch(sharedUI,/input type="checkbox" data-date/);

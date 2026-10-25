@@ -15,7 +15,7 @@
     </div>
     <div class="hero-eyebrow">EVENT SEARCH</div>
     <h1>イベント検索</h1>
-    <p class="hero-copy">「全期間」は今週末から掲載最終日までです。終了した週末・祝日のショートカットは非表示ですが、過去の日程は「日付指定」で検索できます。区・取得元・オススメ度・料金・屋内外・申込条件は複数選択できます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
+    <p class="hero-copy">「全期間」は今週末から掲載最終日までです。「日付指定」から開始日〜終了日を自由に指定できます（1日だけも可）。区・取得元・オススメ度・料金・屋内外・申込条件は複数選択できます。</p><a class="hero-photo-credit" id="heroPhotoCredit" href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-christmas-tree-bxPS1gNKJso" target="_blank" rel="noopener">背景写真: 冬・クリスマス / Unsplash</a>
   </div>
 </section>
 <section class="search-quick" aria-label="検索と絞り込み">
@@ -39,8 +39,12 @@
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
       <div class="date-refine-panel">
-        <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この期間を表示</button>
+        <label for="dateInput">開始日</label>
+        <input type="date" id="dateInput" aria-label="開始日">
+        <label for="dateEndInput">終了日</label>
+        <input type="date" id="dateEndInput" aria-label="終了日">
+        <p class="date-refine-help">片方だけなら、その1日を検索します。</p>
+        <button id="updateBtn">指定期間で検索</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
@@ -65,7 +69,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
 import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;

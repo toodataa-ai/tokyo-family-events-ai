@@ -237,6 +237,86 @@ def rss_items(body, audit=None, ward=None):
     return out[:MAX_LINKS]
 
 
+HOLIDAY_CALENDAR_ENGINES = (
+    ("toshima_daily", "豊島区", "https://www.city.toshima.lg.jp/cgi-bin/event_cal/calendar.cgi?day={D}&month={M}&type=3&year={Y}", "daily"),
+    ("arakawa_daily", "荒川区", "https://www.city.arakawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day={D}&month={M}&type=3&year={Y}", "daily"),
+    ("nerima_monthly", "練馬区", "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar{Y}{MM}.html", "monthly"),
+)
+
+def holiday_calendar_jobs(holiday):
+    """Day-scoped official sources, separate from weekend or generic RSS."""
+    day = dt.date.fromisoformat(holiday["date"])
+    if day.weekday() > 4 or not holiday.get("requires_independent_23_ward_search"):
+        return []
+    tokens = {"Y": str(day.year), "M": str(day.month), "MM": f"{day.month:02d}", "D": str(day.day)}
+    return [{"kind": "holiday_calendar", "source_id": sid, "ward": ward,
+             "holiday": holiday["date"], "calendar_mode": mode, "required": False,
+             "url": re.sub(r"\{(Y|M|MM|D)\}", lambda m: tokens[m[1]], template)}
+            for sid, ward, template, mode in HOLIDAY_CALENDAR_ENGINES]
+
+class CalendarRowLinks(HTMLParser):
+    """Retain date and linked event titles from each monthly calendar table row."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.rows, self.row, self.cell, self.link = [], None, None, None
+    def handle_starttag(self, tag, attrs):
+        if tag == "tr":
+            self.row = []
+        elif tag in ("td", "th") and self.row is not None:
+            self.cell = {"text": [], "links": []}
+        elif tag == "a" and self.cell is not None:
+            self.link = {"name": [], "href": dict(attrs).get("href", "")}
+    def handle_data(self, data):
+        if self.cell is not None:
+            self.cell["text"].append(data)
+        if self.link is not None:
+            self.link["name"].append(data)
+    def handle_endtag(self, tag):
+        if tag == "a" and self.link is not None:
+            self.link["name"] = " ".join("".join(self.link["name"]).split())
+            self.cell["links"].append(self.link)
+            self.link = None
+        elif tag in ("td", "th") and self.cell is not None:
+            self.cell["text"] = " ".join("".join(self.cell["text"]).split())
+            self.row.append(self.cell)
+            self.cell = None
+        elif tag == "tr" and self.row is not None:
+            self.rows.append(self.row)
+            self.row = None
+
+def holiday_calendar_candidates(body, source_url, day_text, mode):
+    """Official listing gives date *candidates*, not publishable event facts."""
+    day = dt.date.fromisoformat(day_text)
+    host = urlsplit(source_url).hostname
+    if mode == "daily":
+        parser = VisibleLinks()
+        parser.feed(body)
+        marks = (f"{day.year}年{day.month}月{day.day}日",
+                 f"{day.year}年{day.month:02d}月{day.day:02d}日")
+        raw = [link for link in parser.links
+               if any(mark in link["name"].replace(" ", "") for mark in marks)]
+    elif mode == "monthly":
+        parser = CalendarRowLinks()
+        parser.feed(body)
+        raw = [link for row in parser.rows if len(row) >= 3
+               and re.match(r"^" + str(day.day) + r"日(?:\s|$)", row[0]["text"])
+               for link in row[-1]["links"]]
+    else:
+        raise ValueError("unsupported holiday calendar mode")
+    out = {}
+    for link in raw:
+        event_url = urljoin(source_url, link["href"])
+        if urlsplit(event_url).hostname != host or len(link["name"]) < 4:
+            continue
+        uid = digest(link["name"] + "|" + event_url)
+        out[uid] = {"candidate_id": "holiday-official-" + uid,
+                    "name": link["name"], "discovery_url": event_url,
+                    "official_url": event_url, "matched_dates": [day_text],
+                    "date_unverified": True, "calendar_date_hint": day_text,
+                    "source_kind": "official_calendar_candidate_only"}
+    return list(out.values())
+
+
 def build_jobs(plan):
     """Each ward has independent cross-search, official entry, and holiday queries."""
     jobs = []
@@ -255,6 +335,8 @@ def build_jobs(plan):
                 jobs.append({"kind": "holiday_ai_cross", "ward": ward,
                              "holiday": holiday["date"], "query": query,
                              "url": "https://www.bing.com/search?format=rss&q=" + quote(query)})
+    for holiday in plan.get("holiday_targets", []):
+        jobs.extend(holiday_calendar_jobs(holiday))
     for source in plan["explicit_source_checks"]:
         for url in source["urls"]:
             jobs.append({"kind": "explicit", "source_id": source["id"],
@@ -273,6 +355,10 @@ def inspect(job, fetcher=None):
     try:
         if job["kind"] in ("ai_cross", "holiday_ai_cross"):
             result["candidates"] = rss_items(evidence["body"], result, ward=job.get("ward"))
+        elif job["kind"] == "holiday_calendar":
+            result["candidates"] = holiday_calendar_candidates(
+                evidence["body"], job["url"], job["holiday"], job["calendar_mode"])
+            result["calendar_day_candidate_links"] = len(result["candidates"])
         elif job.get("source_id") == "suginami_calendar_all":
             result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
             result["page_title"] = "杉並区公式イベントカレンダー"
@@ -381,6 +467,12 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
     ward_failures = [{"ward": ward, **stat} for ward, stat in wards.items()
                      if stat["errors"]]
     annual_failures = [row for row in annual if row["status"] != "checked"]
+    holiday_calendar_checks = [
+        {"source_id": r["source_id"], "ward": r["ward"], "date": r["holiday"],
+         "status": r["status"], "url": r["url"],
+         "candidate_count": len(r["candidates"]), "error": r.get("error", "")}
+        for r in rows if r["kind"] == "holiday_calendar"
+    ]
     raw_candidates = []
     for row in rows:
         for candidate in row["candidates"]:
@@ -431,6 +523,7 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
                     ] if deferred_issues else [],
                     "wards": wards, "ward_failures": ward_failures,
                     "annual_schedule": [{k: v for k, v in r.items() if k != "candidates"} for r in annual],
+                    "holiday_calendar_checks": holiday_calendar_checks,
                     "candidate_links_unverified": len(unique),
                     "supplemental_checked": (supplemental or {}).get("supplemental_success", 0),
                     "supplemental_failures": [

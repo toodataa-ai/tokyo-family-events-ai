@@ -38,6 +38,16 @@ export function uniqueEventIds(ids,max=CANVA_FORMAT.maxEvents){
   }
   return [...seen];
 }
+// Direct positional move, preserving relative order of all other event cards.
+export function moveCanvaSelection(ids,fromIndex,toIndex){
+  const next=uniqueEventIds(ids);
+  const from=Number(fromIndex),to=Number(toIndex);
+  if(!Number.isInteger(from)||!Number.isInteger(to)||
+     from<0||to<0||from>=next.length||to>=next.length)return next;
+  const [item]=next.splice(from,1);
+  next.splice(to,0,item);
+  return next;
+}
 export function readCanvaSelection(storage){
   try{
     const raw=storage?.getItem(CANVA_FORMAT.selectionStorageKey);

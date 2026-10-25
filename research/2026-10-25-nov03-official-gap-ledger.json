@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-25",
+  "date": "2026-11-03",
+  "report_kind": "official_event_leads_unpublished_pending_complete_23_ward_review",
+  "publication_permitted": false,
+  "note": "Individual organiser/ward pages and primary calendars identify Nov 3-only candidate events. These leads require per-event field, family-fit, image, dedupe, strict validation, and released-production-validator checks before publication. Not evidence of a completed 23-ward crawl.",
+  "entries": [
+    {
+      "day": "2026-11-03",
+      "ward": "練馬区",
+      "name": "ねりおと♪フェスティバル2026",
+      "time": "10:30〜16:30",
+      "venue": "練馬総合運動場公園",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/neriotofes/neriotofes2026.html",
+      "status": "official_details_confirmed_editorial_record_pending"
+    },
+    {
+      "day": "2026-11-03",
+      "ward": "練馬区",
+      "name": "ねりすぽフェスティバル",
+      "time": "10:00〜15:00",
+      "venue": "光が丘体育館・光が丘公園けやき広場",
+      "price": "無料",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/sports/oshirase/nerisupo2022.html",
+      "status": "official_details_confirmed_editorial_record_pending"
+    },
+    {
+      "day": "2026-11-03",
+      "ward": "練馬区",
+      "name": "映画上映会 ねりぶんシネマday「ONE PIECE FILM RED」",
+      "time": "10:30開演（10:00開場）",
+      "venue": "練馬文化センター小ホール",
+      "price": "全席指定500円（条件により割引・3歳未満ひざ上無料）",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/oshirase/cinemaday.html",
+      "status": "official_details_confirmed_editorial_record_pending"
+    },
+    {
+      "day": "2026-11-03",
+      "ward": "豊島区",
+      "name": "みんなのステージ2026 ダンスの部",
+      "time": "14:30開演予定",
+      "venue": "あうるすぽっと",
+      "price": "無料",
+      "reservation": "申込不要",
+      "official_url": "https://www.city.toshima.lg.jp/125/bunka/bunka/2607020838.html",
+      "status": "official_details_confirmed_editorial_record_pending"
+    }
+  ],
+  "historical_unresolved_pool": "research/2026-10-13-nov03-holiday-candidate-audit.json",
+  "required_next": "Apply production approval to independent-holiday validation contract, reconcile 23-ward date-specific search, create complete verified event and decision records, validate against immutable data-production snapshot; do not count or publish pending candidates.",
+  "source_calendar_urls": [
+    "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html",
+    "https://www.city.toshima.lg.jp/cgi-bin/event_cal/calendar.cgi?day=3&month=11&type=3&year=2026"
+  ]
+}

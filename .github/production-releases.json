@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-24-r2",
+  "current_public_release": "release/2026-10-25-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -176,7 +176,16 @@
       "workflow_run_id": 40068006770,
       "note": "ユーザー明示承認の本番アプリv1.18。サムネイル取り違え再発防止（共有記事の画像誤流用防止、汎用OG/ロゴ除外、イベント固有画像の衝突監査、回帰10テスト）の3ファイルのみをproduction v1.17の直接子孫候補からPR #38で昇格。隔離候補監査40067934832・Pages公開40068006770はsuccess。イベント6週間分のID/件数監査合格。既存画像訂正はdata-production SHA 312436898933372993ee866293fcd4c1c9069d1cをそのまま使用し、イベントデータ・検索UI・Canva・他のmain変更は今回のアプリリリースに含めない。",
       "public_version": "1.18"
+    },
+    {
+      "release_id": "release/2026-10-25-r1",
+      "branch": "release/2026-10-25-r1",
+      "commit_sha": "29c74668e7f46b9a6d6ff8f9369bcf410dd753cf",
+      "deployed_at": "2026-10-25T05:36:44Z",
+      "workflow_run_id": 40166110933,
+      "note": "ユーザー明示承認の本番アプリv1.19。CanvaのiPhone向け指追従ドラッグ、前後行の滑らかな移動、自動スクロール、タイトルのみ一覧、全画面並び替え、操作ハンドル44px／スマホ行高46px／タイトル13.5px。production v1.18を直接親とする隔離候補57ed538からPR #39にて7ファイルのみリリース。読み取り専用監査40166016944・本番Pages40166110933成功。選択36件上限、Canva指示書、原デザインは維持。イベントデータdata-production 312436898933372993ee866293fcd4c1c9069d1c、および検索画面・日付指定・固定取得元・ほかの開発中機能は不変。",
+      "public_version": "1.19"
     }
   ],
-  "current_public_version": "1.18"
+  "current_public_version": "1.19"
 }

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-10-25",
+  "date": "2026-11-03",
+  "purpose": "weekday_holiday_only_omission_followup",
+  "site_status": "unpublished_candidates_only",
+  "source_record": "research/2026-10-13-nov03-holiday-candidate-audit.json",
+  "diagnosed_root_causes": [
+    "The weekly strict validator required each event to overlap weekend Saturday/Sunday even though the app renders a standalone Nov 3 holiday tab.",
+    "Existing official holiday research was only a partially verified pool, not final vetted event records with complete per-event decision/verification evidence."
+  ],
+  "verified_organizer_entries": [
+    {
+      "ward": "練馬区",
+      "name": "ねりおと♪フェスティバル2026",
+      "date_start": "2026-11-03",
+      "date_end": "2026-11-03",
+      "time": "10:30〜16:30",
+      "venue": "練馬総合運動場公園",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/bunka/neriotofes/neriotofes2026.html",
+      "evidence_scope": "event title, date, time, venue and activities are supported; still requires complete site schema/editorial verification"
+    },
+    {
+      "ward": "練馬区",
+      "name": "ねりすぽフェスティバル",
+      "date_start": "2026-11-03",
+      "date_end": "2026-11-03",
+      "time": "10:00〜15:00",
+      "venue": "光が丘体育館・光が丘公園けやき広場",
+      "price": "無料",
+      "official_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/sports/oshirase/nerisupo2022.html",
+      "evidence_scope": "organizer confirms date, venue, time, fee and family eligibility; site schema/editorial verification pending"
+    },
+    {
+      "ward": "荒川区",
+      "name": "にっぽり青空こどもまつり",
+      "date_start": "2026-11-03",
+      "date_end": "2026-11-03",
+      "official_url": "https://www.city.arakawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?month=11&type=2&year=2026",
+      "evidence_scope": "calendar lists date; detail page/venue/time and participation criteria not yet verified"
+    }
+  ],
+  "mandatory_before_data_publish": [
+    "Complete individual official-page confirmation of all candidate data, including dates, location, cost, eligible ages and booking requirements.",
+    "Perform independent 23-ward weekday-holiday searches and deduplicate against all six weekends and already published IDs.",
+    "Append/add only: preserve published weekly event IDs and previous version data.",
+    "Produce valid candidate decisions, verified evidence, published counts, run manifest, strict validation and data-production release checks.",
+    "Production's published app validator must first include the registered independent-holiday exception through user-approved application release."
+  ],
+  "production_modified": false
+}

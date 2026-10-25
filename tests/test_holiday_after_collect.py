@@ -64,7 +64,9 @@ class HolidayAfterCollectTests(unittest.TestCase):
         q = [r for r in jobs if r["kind"] == "ai_cross"]
         h = [r for r in jobs if r["kind"] == "holiday_ai_cross"]
         self.assertEqual(len(q), 23 * 6 * 3)
-        self.assertEqual(len(h), 23 * 2)
+        self.assertEqual(len(h), 23 * 2 * 3)
+        self.assertEqual(len({x["query"] for x in h}), len(h))
+        self.assertTrue(all("2026-11-03" in x["query"] or "2026-11-23" in x["query"] for x in h))
         self.assertTrue(any("2026年11月28日" in x["query"] for x in q))
         self.assertEqual({x["ward"] for x in q}, {x["ward"] for x in h})
         self.assertEqual(len([x for x in jobs if x["kind"] == "explicit"]), 2)

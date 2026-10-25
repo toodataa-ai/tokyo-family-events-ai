@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFileSync} from 'node:fs';
+import {orderedCanvaIds,insertionIndexForPointer} from '../site/canva-fluid-sort.js';
 import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,moveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
@@ -61,7 +62,27 @@ test('one-step Canva move to any position preserves all items and exported order
   assert.equal(draft.events[2].id,'evt20');
   assert.equal(draft.autofill_fields.EVENT_03_TITLE.text,event('evt20').name);
   assert.match(canvaPage,/data-position="1"/);
-  assert.match(canvaPage,/draggable="true"/);
+  assert.doesNotMatch(canvaPage,/draggable="true"/,'native drag is not touch-friendly');
+  assert.match(canvaPage,/id="canvaListViewport"/);
+  assert.match(canvaPage,/id="canvaFocusToggle"/);
+  assert.match(canvaPage,/id="canvaAssistToggle"/);
+});
+test('compact fluid sorter retains source order and supports all 36 drop positions',()=>{
+  const source=readFileSync(new URL('../site/canva-fluid-sort.js',import.meta.url),'utf8');
+  const style=readFileSync(new URL('../site/canva-draft.css',import.meta.url),'utf8');
+  assert.deepEqual([0,9,20,100].map(y=>insertionIndexForPointer([10,20,30],y)),[0,0,2,3]);
+  const example={children:[{dataset:{id:'a'},matches:()=>true},{dataset:{id:'b'},matches:()=>true}]};
+  assert.deepEqual(orderedCanvaIds(example),['a','b']);
+  for(const marker of ['pointerdown','pointermove','pointerup','pointercancel','requestAnimationFrame','scrollTop','setPointerCapture','onCommit','translate3d']){
+    assert.ok(source.includes(marker),'fluid gesture must use '+marker);
+  }
+  assert.ok(style.includes('touch-action:none'),'iPhone gesture must disable browser pan on the handle');
+  assert.ok(style.includes('min-height:32px'),'mobile rows must stay dense');
+  assert.ok(style.includes('canva-sort-focus'),'fullscreen sorting style is available');
+  assert.ok(style.includes('.canva-item-title'),'title-only compact layout exists');
+  assert.doesNotMatch(canvaPage,/<small>\$\{escapeHtml\(ev\.ward\)\}/);
+  assert.match(canvaPage,/span class="canva-item-title"/);
+  assert.match(canvaPage,/createFluidCanvaSorter/);
 });
 test('selected events preserve chosen order, without altering source data',()=>{
   const all=[event('a'),event('b')];

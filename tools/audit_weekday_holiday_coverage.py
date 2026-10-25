@@ -28,10 +28,10 @@ def coverage(manifest, official, today=None):
             if value:
                 registered.add(dt.date.fromisoformat(value))
     missing = sorted(
-        {"date": day.isoformat(), "name": name}
-        for day, name in official.items()
-        if start <= day <= end and day.weekday() < 5 and day not in registered
-    , key=lambda x: x["date"])
+        [{"date": day.isoformat(), "name": name}
+         for day, name in official.items()
+         if start <= day <= end and day.weekday() < 5 and day not in registered],
+        key=lambda x: x["date"])
     upcoming = [row for row in missing
                 if today is None or row["date"] >= today.isoformat()]
     return {

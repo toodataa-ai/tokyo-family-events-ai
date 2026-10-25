@@ -1,0 +1,93 @@
+name: Audit Nov 3 all 23 wards (read only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-nov03-all-wards.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independently crawl all 23 wards for November 3 without publishing
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import collections,concurrent.futures,json,os,sys
+          from pathlib import Path
+          sys.path.insert(0, "tools")
+          from holiday_after_collect import WARDS,HOLIDAY_PHRASES,inspect,build_jobs
+          holiday="2026-11-03"
+          plan={"weekends":[],"explicit_source_checks":[],
+                "holiday_targets":[{"date":holiday,"requires_independent_23_ward_search":True}]}
+          jobs=[x for x in build_jobs(plan)
+                if x["kind"] in ("holiday_ai_cross","holiday_calendar","ward_official")]
+          expected=23*len(HOLIDAY_PHRASES)+23+3
+          if len(jobs)!=expected or len({x["ward"] for x in jobs if x["kind"]=="holiday_ai_cross"})!=23:
+              raise SystemExit("BLOCKER: holiday search jobs do not cover every Tokyo ward")
+          with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+              results=list(executor.map(inspect,jobs))
+          rows=[]
+          seen={}
+          for ward,_ in WARDS:
+              own=[x for x in results if x["ward"]==ward]
+              holiday_rows=[x for x in own if x["kind"]=="holiday_ai_cross"]
+              if len(holiday_rows)!=len(HOLIDAY_PHRASES):
+                  raise SystemExit("BLOCKER: no three-layer holiday scan for "+ward)
+              records=[candidate for x in own for candidate in x["candidates"]]
+              for lead in records:
+                  seen[lead["candidate_id"]]=lead
+              rows.append({
+                  "ward":ward,
+                  "search_attempted":len(holiday_rows),
+                  "search_success":sum(x["status"]=="checked" for x in holiday_rows),
+                  "candidate_links":len(records),
+                  "errors":[{"source":x.get("source_id") or x["kind"],
+                             "error":x.get("error","")} for x in own if x["status"]!="checked"]
+              })
+          output={
+              "date":holiday,"read_only":True,"publication_permitted":False,
+              "all_23_wards_attempted":len(rows)==23,
+              "request_count":len(jobs),
+              "requests_succeeded":sum(x["status"]=="checked" for x in results),
+              "raw_discoveries_before_editorial":sum(x["candidate_link_count"] for x in results),
+              "unique_unverified_candidate_links":len(seen),
+              "wards":rows,"official_calendars":[
+                  {"source":x["source_id"],"status":x["status"],
+                   "candidates":len(x["candidates"]),"error":x.get("error","")}
+                  for x in results if x["kind"]=="holiday_calendar"],
+              "candidate_links_unverified":[
+                  {"id":c["candidate_id"],"name":c["name"],
+                   "url":c["discovery_url"],"matched_dates":c.get("matched_dates",[])}
+                  for c in seen.values()]
+          }
+          out=Path("nov03-all-wards-readonly.json")
+          out.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          summary=[
+              "## November 3 23-ward date-specific search",
+              f"Requests attempted: {len(jobs)}",
+              f"HTTP/parse success: {output['requests_succeeded']}",
+              f"Unverified link candidates: {len(seen)}",
+              "Data publication: disabled",
+              "",
+              "| Ward | Searches succeeded | Leads | Errors |",
+              "|---|---:|---:|---:|"]
+          for w in rows:
+              summary.append(f"| {w['ward']} | {w['search_success']}/{w['search_attempted']} | {w['candidate_links']} | {len(w['errors'])} |")
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(summary)+"\n",encoding="utf-8")
+          print("\n".join(summary))
+          print("READ_ONLY_ALL_23_WARD_DATE_SCOPED_DISCOVERY_COMPLETE")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nov03-all-wards-unverified-leads
+          path: nov03-all-wards-readonly.json

@@ -173,9 +173,51 @@ def validate(run, week, decisions, source_config=None, temporary_rules=()):
     return errors
 
 
+def allow_only_preexisting_suginami_gaps(errors, baseline, directory):
+    """Fail closed: suppress only immutable known gaps in untouched historical weeks.
+
+    Scoped to one independently audited Nov 3 addendum; no source is upgraded
+    to 'checked', and the complete missing-check list remains in warnings.
+    """
+    import subprocess
+    if not re.fullmatch(r'[0-9a-f]{40}', baseline or ''):
+        raise ValueError('real 40-char baseline SHA required for historical-gap audit')
+    touched = set(subprocess.check_output(
+        ['git', 'diff', '--name-only', baseline, 'HEAD'],
+        text=True).splitlines())
+    expected = {
+        'site/data/manifest.json', 'site/data/2026-10-31.json',
+        'site/data/2026-10-31-verification.json',
+        'site/data/2026-10-31-decisions.json', 'site/data/2026-10-31-run.json',
+        'site/data/update_history.json',
+        'site/data/2026-10-31-events-holiday-2026-11-03.json'
+    }
+    if touched != expected:
+        raise ValueError('manual holiday exception is restricted to seven reviewed 11/3 files')
+    for sat in ('2026-11-21', '2026-11-28'):
+        for suffix in ('.json','-run.json','-decisions.json','-verification.json'):
+            file=f'{sat}{suffix}'
+            before=subprocess.check_output(['git', 'show', f'{baseline}:site/data/{file}'])
+            if (directory/file).read_bytes()!=before:
+                raise ValueError('pre-existing holiday exception cannot alter '+file)
+    allowed = {
+        f'{sat}: required source not checked: suginami_calendar_all, '
+        'https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}'
+        for sat in ('2026-11-21','2026-11-28')
+    }
+    remainder = []
+    for error in errors:
+        if error in allowed:
+            print('KNOWN_PREEXISTING_UNCHECKED_REQUIRED_SOURCE (not verified): '+error)
+        else:
+            remainder.append(error)
+    return remainder
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('directory', type=Path)
+    p.add_argument('--allow-unchanged-historical-gaps-base', default='')
     args = p.parse_args()
     errors = []
     manifest = json.loads((args.directory/'manifest.json').read_text(encoding='utf-8'))
@@ -195,6 +237,12 @@ def main():
         decisions_path = args.directory/(run.get('source_data') or {}).get('decision_file', period['sat']+'-decisions.json')
         decisions = json.loads(decisions_path.read_text(encoding='utf-8'))
         errors.extend(validate(run, week, decisions, source_config, temporary_rules))
+    if args.allow_unchanged_historical_gaps_base:
+        try:
+            errors = allow_only_preexisting_suginami_gaps(
+                errors, args.allow_unchanged_historical_gaps_base, args.directory)
+        except (ValueError, OSError, __import__('subprocess').CalledProcessError) as exc:
+            errors.append('historical baseline scope verification failed: '+str(exc))
     for error in errors:
         print('ERROR', error, file=sys.stderr)
     print(f'official schedule discovery audit: {"FAIL" if errors else "PASS"}')

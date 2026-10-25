@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Canva投稿ドラフト｜東京23区子連れイベントAI収集</title>
 <link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
-<link rel="stylesheet" href="canva-draft.css?v=1">
+<link rel="stylesheet" href="canva-draft.css?v=20261025-direct-sort-v1">
 </head>
 <body class="canva-draft-page">
 <header class="canva-draft-header">
@@ -17,7 +17,7 @@
 </header>
 <main class="canva-main">
   <section class="canva-panel">
-    <div class="canva-step"><span>1</span><div><h2>イベントを選択・並べ替え</h2><p>最大36件／並び順がCanvaの1〜36番に対応します。承認済みの7ページ構成を基準に、11件以上なら紹介ページを追加し、最後に締めページを配置します（最大20ページ）。</p></div></div>
+    <div class="canva-step"><span>1</span><div><h2>イベントを選択・並べ替え</h2><p>最大36件。各イベントの「移動先」で好きな番号へ一気に移動できます。PCではつかんでドラッグしても並び替えできます。並び順はCanva作成指示・CSV・JSONに反映されます（最大20ページ）。</p></div></div>
     <p id="canvaCount" class="canva-count" aria-live="polite">選択イベントを読み込み中…</p>
     <p id="canvaStatus" class="canva-notice" role="status" hidden></p>
     <ol id="canvaChosen" class="canva-chosen"></ol>
@@ -50,7 +50,7 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
+import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,moveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261025-direct-sort-v1';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false;
 const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-fixed-cover-36-v1';
@@ -79,10 +79,14 @@ function render(){
     const status=ev.verification?.status==='verified'?'公式確認済み':ev.verification?.status==='announced'?'開催発表':'確認要';
     const img=imageStates.get(ev.id)||'missing';
     const imageNote=({event_image_candidate:'画像候補あり・許諾確認要',generic_site_image:'共通ロゴ・画像要確認',shared_or_duplicate:'画像重複・要確認',external_image_requires_review:'外部画像・要確認',missing:'画像未登録'})[img];
-    return `<li class="canva-item" data-id="${escapeHtml(ev.id)}">
+    return `<li class="canva-item" data-id="${escapeHtml(ev.id)}" draggable="true">
+      <span class="canva-drag-handle" aria-hidden="true" title="ドラッグして並び替え">⠿</span>
       <span class="canva-slot">${i+1}</span>
       <div class="canva-item-main"><strong>${escapeHtml(ev.name)}</strong><small>${escapeHtml(ev.ward)} ／ ${escapeHtml(ev.period||'日付要確認')} ／ ${escapeHtml(status)} ／ 子連れ${escapeHtml(grade)} ／ ${escapeHtml(imageNote)}</small></div>
       <div class="canva-order">
+        <label class="canva-position-label">移動先 <select data-position="1" aria-label="${escapeHtml(ev.name)}の移動先番号">
+          ${found.map((_,pos)=>`<option value="${pos+1}" ${pos===i?'selected':''}>${pos+1}番</option>`).join('')}
+        </select></label>
         <button type="button" data-move="-1" aria-label="${i+1}番を上へ" ${i===0?'disabled':''}>↑</button>
         <button type="button" data-move="1" aria-label="${i+1}番を下へ" ${i===found.length-1?'disabled':''}>↓</button>
         <button type="button" data-remove="1" aria-label="${escapeHtml(ev.name)}を除外">×</button>
@@ -105,7 +109,42 @@ $('canvaChosen').addEventListener('click',e=>{
   const id=item.dataset.id,i=selectedIds.indexOf(id);if(i<0)return;
   if(btn.hasAttribute('data-remove')){useSelection(selectedIds.filter(x=>x!==id));return;}
   const move=Number(btn.dataset.move||0),to=i+move;if(to<0||to>=selectedIds.length)return;
-  const next=[...selectedIds];[next[i],next[to]]=[next[to],next[i]];useSelection(next);
+  useSelection(moveCanvaSelection(selectedIds,i,to));
+});
+$('canvaChosen').addEventListener('change',e=>{
+  const select=e.target.closest('select[data-position]'),item=select?.closest('[data-id]');
+  if(!select||!item)return;
+  const from=selectedIds.indexOf(item.dataset.id),to=Number(select.value)-1;
+  if(from<0)return;
+  useSelection(moveCanvaSelection(selectedIds,from,to));
+  alertStatus((from+1)+'番のイベントを'+(to+1)+'番へ移動しました。');
+});
+let draggingId='';
+$('canvaChosen').addEventListener('dragstart',e=>{
+  const item=e.target.closest('.canva-item');
+  if(!item)return;
+  draggingId=item.dataset.id;
+  e.dataTransfer?.setData('text/plain',draggingId);
+  if(e.dataTransfer)e.dataTransfer.effectAllowed='move';
+  item.classList.add('is-dragging');
+});
+$('canvaChosen').addEventListener('dragover',e=>{
+  const item=e.target.closest('.canva-item');
+  if(!draggingId||!item||item.dataset.id===draggingId)return;
+  e.preventDefault();
+  if(e.dataTransfer)e.dataTransfer.dropEffect='move';
+});
+$('canvaChosen').addEventListener('drop',e=>{
+  const item=e.target.closest('.canva-item'),from=selectedIds.indexOf(draggingId),to=selectedIds.indexOf(item?.dataset.id);
+  e.preventDefault();
+  draggingId='';
+  if(from<0||to<0||from===to)return;
+  useSelection(moveCanvaSelection(selectedIds,from,to));
+  alertStatus((from+1)+'番のイベントを'+(to+1)+'番へ移動しました。');
+});
+$('canvaChosen').addEventListener('dragend',()=>{
+  draggingId='';
+  $('canvaChosen').querySelectorAll('.is-dragging').forEach(x=>x.classList.remove('is-dragging'));
 });
 async function clipboard(text){
   if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);

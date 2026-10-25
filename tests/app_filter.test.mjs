@@ -1,6 +1,11 @@
 import assert from 'node:assert/strict';
 import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,eventDiscoveryProvenance,findDecisionForEvent,buildCopyUrl,serializeEventFilters,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
 
+const rangeBookmark=serializeEventFilters({range:{start:'2026-10-31',end:'2026-11-03'},dates:[],wards:['練馬区']});
+assert.equal(new URLSearchParams(rangeBookmark).get('from'),'2026-10-31');
+assert.equal(new URLSearchParams(rangeBookmark).get('to'),'2026-11-03');
+assert.equal(new URLSearchParams(rangeBookmark).get('w'),'練馬区');
+assert.equal(new URLSearchParams(rangeBookmark).has('d'),false);
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
   interactivity:{grade:'A',reason:'体験あり'},

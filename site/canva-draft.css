@@ -85,19 +85,19 @@
 }
 .canva-chosen{display:flex;flex-direction:column;gap:2px;padding:5px;margin:0;list-style:none}
 .canva-item{
-  display:grid;grid-template-columns:29px 22px minmax(0,1fr) auto;
-  gap:5px;align-items:center;
-  box-sizing:border-box;min-width:0;min-height:34px;
+  display:grid;grid-template-columns:42px 25px minmax(0,1fr) auto;
+  gap:6px;align-items:center;
+  box-sizing:border-box;min-width:0;min-height:44px;
   padding:2px 5px;border:1px solid #e2e9e3;border-radius:5px;
   background:#fff;cursor:default
 }
 .canva-item:nth-child(even){background:#fafcfb}
-.canva-slot{font:700 11px "Meiryo UI",Meiryo,sans-serif;min-width:0;flex:auto;color:#457057;text-align:center}
-.canva-item-title{font:500 12.5px/1.25 "Meiryo UI",Meiryo,sans-serif;display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.canva-slot{font:700 12px "Meiryo UI",Meiryo,sans-serif;min-width:0;flex:auto;color:#457057;text-align:center}
+.canva-item-title{font:600 13.5px/1.25 "Meiryo UI",Meiryo,sans-serif;display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .canva-drag-handle{
-  display:grid;place-items:center;min-width:29px;width:29px;height:29px;
+  display:grid;place-items:center;min-width:42px;width:42px;height:42px;
   border:0;border-radius:5px;background:#f0f5f1;color:#47745b;
-  font:700 19px/1 sans-serif;cursor:grab;touch-action:none;
+  font:700 26px/1 sans-serif;cursor:grab;touch-action:none;
   user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;
 }
 .canva-drag-handle:active{cursor:grabbing;background:#dceee2}
@@ -144,10 +144,10 @@
   .canva-sort-tool-btn{font-size:10.5px;flex:1;text-align:center;min-height:30px}
   .canva-list-viewport{max-height:73dvh;scrollbar-gutter:auto}
   .canva-chosen{gap:2px;padding:3px}
-  .canva-item{grid-template-columns:30px 19px minmax(0,1fr) auto;min-height:32px;gap:4px;padding:1px 3px}
-  .canva-item-title{font-size:11.5px}
-  .canva-drag-handle{display:grid;width:30px;height:30px}
-  .canva-slot{font-size:10px}
+  .canva-item{grid-template-columns:44px 24px minmax(0,1fr) auto;min-height:46px;gap:5px;padding:1px 4px}
+  .canva-item-title{font-size:13.5px}
+  .canva-drag-handle{display:grid;min-width:44px;width:44px;height:44px;font-size:27px}
+  .canva-slot{font-size:11.5px}
   .canva-order{width:auto;margin-left:0}
   .canva-position-label select{min-width:55px;min-height:30px;font-size:12px}
   .canva-sort-focus .canva-sort-help{display:none}

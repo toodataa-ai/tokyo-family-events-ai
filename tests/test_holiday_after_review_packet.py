@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from holiday_after_review_packet import build_packet, event_identity, is_overlapping
+from holiday_after_review_packet import build_packet, event_identity, is_overlapping, attached_weekday_holidays
 
 
 def plan():
@@ -59,6 +59,43 @@ class HolidayAfterReviewPacketTests(unittest.TestCase):
             self.assertEqual(packet["weeks"][4]["carryover_review_count"], 1)
             self.assertTrue(packet["weeks"][4]["carryover_needs_daily_confirmation"])
             self.assertEqual(packet["weeks"][4]["suggested_discoveries_count"], 1)
+
+    def test_tuesday_november_third_is_never_lost_or_assigned_to_next_week(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "manifest.json").write_text(json.dumps({"weekends": []}))
+            revised = plan()
+            revised["holiday_targets"].append({"date": "2026-11-03", "name": "文化の日"})
+            self.assertEqual(
+                attached_weekday_holidays(revised["weekends"][1], revised["holiday_targets"],
+                                          revised["weekends"][2]["sat"]), ["2026-11-03"])
+            self.assertEqual(
+                attached_weekday_holidays(revised["weekends"][2], revised["holiday_targets"],
+                                          revised["weekends"][3]["sat"]), [])
+            candidate = {"candidate_id": "nov3-official", "name": "ねりおと♪フェスティバル2026",
+                         "matched_dates": ["2026-11-03"], "status": "unverified",
+                         "discovered_via": {
+                             "ward": "練馬区", "source_id": "nerima",
+                             "search_url": "https://www.city.nerima.tokyo.jp/"}}
+            candidate_query = {"candidate_id": "nov3-ai", "name": "ねりすぽ",
+                               "status": "unverified",
+                               "discovered_via": {
+                                   "ward": "練馬区", "query": "練馬区 2026-11-03 子ども",
+                                   "search_url": "https://www.bing.com/search?format=rss"}}
+            evidence = {"summary": {"publishable": False,
+                                    "base_data_production_sha": "a" * 40, "wards": {}},
+                        "candidate_pool": [candidate, candidate_query]}
+            packet = build_packet(revised, root, evidence)
+            october = packet["weeks"][1]
+            november = packet["weeks"][2]
+            self.assertEqual(october["attached_weekday_holidays"], ["2026-11-03"])
+            self.assertEqual(october["suggested_discoveries_count"], 2)
+            self.assertEqual(october["holiday_leads_by_date"]["2026-11-03"]["candidate_count"], 2)
+            self.assertEqual(november["suggested_discoveries_count"], 0)
+            holiday = next(h for h in packet["independent_holiday_reviews"] if h["date"] == "2026-11-03")
+            self.assertEqual(holiday["assigned_week_sat"], "2026-10-31")
+            self.assertTrue(holiday["candidate_handoff_complete"])
+            self.assertFalse(packet["publication_permitted"])
 
     def test_forged_publishable_source_is_rejected(self):
         with tempfile.TemporaryDirectory() as d:

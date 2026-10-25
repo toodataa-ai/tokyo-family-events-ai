@@ -152,6 +152,80 @@ export function checkStagingOfficialAddition(oldManifest,newManifest,oldWeeks,ne
   return {added,changed,removed,retained:oldWeeks.reduce((n,w)=>n+w.events.length,0)};
 }
 
+// Independently verified, strictly additive weekday-holiday supplement.
+// Unlike rolling holiday-after refresh, it NEVER rotates/removes a week.
+export function checkIndependentHolidayAddition(oldManifest,newManifest,oldWeeks,newWeeks,row,baseSha){
+  if(!shaPattern.test(baseSha)||row?.base_data_production_sha!==baseSha)
+    throw Error('independent holiday supplement base SHA mismatch');
+  if(row?.run_type!=='manual_independent_holiday_addition'||row?.status!=='official_verified_addition')
+    throw Error('invalid independent holiday addition history status');
+  if(!isoDay.test(row.target_holiday)||!isoDay.test(row.as_of_jst)||
+     row.run_id!=='manual-independent-holiday-'+row.target_holiday+'-'+baseSha.slice(0,12))
+    throw Error('invalid independent holiday date/run identifier');
+  if(!row.executed_at||!Number.isFinite(Date.parse(row.executed_at)))
+    throw Error('independent holiday audit executed_at required');
+  const day=row.target_holiday, dt=new Date(day+'T00:00:00Z');
+  if(Number.isNaN(dt.getTime())||dt.getUTCDay()===0||dt.getUTCDay()===6)
+    throw Error('independent holiday must be a valid weekday date');
+  if(!(newManifest.holidays||[]).some(h=>h.date===day)||
+     !(oldManifest.holidays||[]).some(h=>h.date===day))
+    throw Error('independent holiday not registered in both official manifests');
+  if(!newManifest.generated||newManifest.generated===oldManifest.generated||
+     Date.parse(newManifest.generated)<=Date.parse(oldManifest.generated))
+    throw Error('holiday supplement manifest timestamp not advanced');
+  if(oldManifest.default!==newManifest.default||oldManifest.rolling_horizon_weeks!==6||
+     newManifest.rolling_horizon_weeks!==6||oldWeeks.length!==6||newWeeks.length!==6)
+    throw Error('holiday supplement must preserve six-week window');
+  const previous=oldManifest.weekends||[],next=newManifest.weekends||[];
+  if(previous.length!==6||next.length!==6) throw Error('six weekly entries required');
+  let assigned=-1;
+  for(let i=0;i<previous.length;i++){
+    const w=previous[i],following=previous[i+1]?.sat||datePlus(w.sat,7);
+    if(w.sun<day&&day<following) assigned=i;
+  }
+  if(assigned<0) throw Error('independent holiday not associated with a published weekend');
+  let added=0;const found=[];
+  for(let i=0;i<6;i++){
+    const before=previous[i],after=next[i];
+    if(before.sat!==after.sat||before.sun!==after.sun||before.file!==after.file||
+       before.horizon_index!==after.horizon_index||
+       before.publication_tier!==after.publication_tier||
+       oldWeeks[i].sat!==before.sat||newWeeks[i].sat!==after.sat)
+      throw Error('holiday supplement altered weekend routing');
+    const oldIds=new Map(),newIds=new Map();
+    for(const e of oldWeeks[i].events){
+      if(!e.id||oldIds.has(e.id)) throw Error('invalid protected old event identity');
+      oldIds.set(e.id,e);
+    }
+    for(const e of newWeeks[i].events){
+      if(!e.id||newIds.has(e.id)) throw Error('invalid new event identity');
+      newIds.set(e.id,e);
+    }
+    for(const [id,ev] of oldIds){
+      if(!newIds.has(id)||!same(stableFacts(newIds.get(id)),stableFacts(ev)))
+        throw Error('existing published event changed or removed: '+id);
+    }
+    for(const [id,ev] of newIds){
+      if(oldIds.has(id))continue;
+      if(i!==assigned||ev.date_start!==day||ev.date_end!==day)
+        throw Error('new event outside assigned independent holiday: '+id);
+      const official=String(ev.official_url||'');
+      if(!/^https:\/\//.test(official)||!ev.name||!ev.venue||!ev.ward)
+        throw Error('new holiday event lacks official evidence or facts: '+id);
+      found.push(id);added++;
+    }
+    if(after.count!==before.count+newIds.size-oldIds.size)
+      throw Error('weekly manifest count mismatch');
+  }
+  if(added<1||added>40||found.length!==new Set(found).size||
+     row.added_weekly_records!==added||
+     !Array.isArray(row.new_event_ids)||
+     !same([...found].sort(),[...row.new_event_ids].sort())||
+     row.changed_existing_records!==0||row.removed_weekly_records!==0)
+    throw Error('holiday supplement count, identity, or nonregression mismatch');
+  return {added,changed:0,removed:0,assigned_week:previous[assigned].sat,holiday:day};
+}
+
 function parseJson(raw,label){
   try{return JSON.parse(raw);}catch(e){throw Error('invalid JSON '+label+': '+e.message);}
 }
@@ -215,6 +289,15 @@ function execute(argv){
   }
   const asOf=args.mode==='write'?args['as-of']:newHistory.history.at(-1)?.as_of_jst;
   if(!asOf) throw Error('missing actual as-of date');
+  if(args.mode==='check' && newHistory.history.at(-1)?.run_type==='manual_independent_holiday_addition'){
+    const result=checkIndependentHolidayAddition(oldManifest,newManifest,
+      loadWeeks(oldManifest,fromBase),loadWeeks(newManifest,fromCurrent),
+      newHistory.history.at(-1),baseRef);
+    process.stdout.write('Independent holiday additive-only verified: '+
+      result.holiday+' week='+result.assigned_week+' added='+result.added+
+      ' prior records preserved; no other weeks altered.\n');
+    return;
+  }
   if(args.mode==='check' && newHistory.history.at(-1)?.run_type==='staging_manual_official_addition'){
     const rows=checkStagingOfficialAddition(oldManifest,newManifest,
       loadWeeks(oldManifest,fromBase),loadWeeks(newManifest,fromCurrent),

@@ -798,3 +798,7 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
   .multi-filter-body{padding:8px 12px}
   .multi-filter-actions{padding:10px 12px}
 }
+
+/* Date range selection; shared by search and copy-list pages. */
+.date-refine-panel label{display:block;margin:4px 0 3px;font-size:12px;font-weight:700;color:var(--navy)}
+.date-refine-panel .date-refine-help{font-size:11px;color:var(--sub);margin:1px 0 9px}

@@ -29,7 +29,7 @@ test('touch drag reorders on drop, cancels without storage changes, and autoscro
       matches(selector){return selector==='.canva-item';},
       get nextElementSibling(){return rows[rows.indexOf(this)+1]||null;},
       getBoundingClientRect(){const top=70+rows.indexOf(this)*34-scrollArea.scrollTop;return {left:5,top,width:250,height:32};},
-      cloneNode(){return {classList:cl(),style:{},remove(){}};},
+      cloneNode(){return {classList:cl(),style:{},removeAttribute(){},remove(){}};},
       animate(){animations++;return {cancel(){}};}
     };
     const handle={

@@ -2,7 +2,10 @@ name: Audit Nov 3 holiday publication gap (read only)
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/audit-nov03-publication-gap.yml']
+    paths:
+      - '.github/workflows/audit-nov03-publication-gap.yml'
+      - 'tools/audit_independent_holiday.py'
+      - 'research/2026-10-25-nov03-official-gap-ledger.json'
   workflow_dispatch: {}
 permissions:
   contents: read

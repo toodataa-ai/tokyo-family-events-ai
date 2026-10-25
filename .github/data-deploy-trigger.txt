@@ -9,3 +9,4 @@ production_app_version=1.20
 pending_stage_backup=work-preserve/2026-10-26-suginami-staging-before-nov3
 old_event_ids_removed=0
 old_event_records_changed=0
+retry_after_policy=explicit_immutable_historical_suginami_audit_scope_2026-10-26

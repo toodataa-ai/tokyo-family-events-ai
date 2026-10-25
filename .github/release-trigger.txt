@@ -1,15 +1,15 @@
-# User-approved app-only release v1.18: official-event thumbnail identity safeguards.
+# User-approved app-only release v1.19: touch-first fluid Canva sorting with large 44px grab handles.
 operation=release
 production_ref=production
-production_sha=9e758a4c8452f53fd63a9a4b2287e55d56db8bdb
-previous_production_sha=8cf76f2ef47125511e38ec0c67f60438e3c147f8
-approved_staging_sha=80908084b528cf5d5aa5e3a9dae8558d05a56e5f
-candidate_sha=d1ef83fe54826c54b5e72bbef16940a68f6ee219
-pr=38
-target_public_version=1.18
-release_date_jst=2026-10-24
-isolated_release_audit_run=40067934832
-prior_staging_validation_run=40043910128
+production_sha=29c74668e7f46b9a6d6ff8f9369bcf410dd753cf
+previous_production_sha=9e758a4c8452f53fd63a9a4b2287e55d56db8bdb
+approved_staging_sha=28009a23786cd774fbcb0fc30e8dc0b4c9c1e180
+candidate_sha=57ed538e399b11f9f870cb9a7cfad8a3ce91a68d
+pr=39
+target_public_version=1.19
+release_date_jst=2026-10-25
+isolated_release_audit_run=40166016944
+prior_staging_validation_run=40165543777
 expected_data_production_sha=312436898933372993ee866293fcd4c1c9069d1c
-approved_scope=tools/enrich_images.py;tools/audit_event_image_identity.py;tests/test_event_image_identity.py
-note=Isolated only three approved image-identity safeguards from production v1.17. Proven official flyer correction already in data-production. No event-data, UI, Canva, prompts or unrelated changes.
+approved_scope=package.json;site/canva-draft-contract.js;site/canva-draft.css;site/canva-fluid-sort.js;site/canva.html;tests/canva_draft_contract.test.mjs;tests/canva_fluid_sort.test.mjs
+note=Approved iPhone fluid Canva sorting and larger grab handles only. No event records, search/date range UI, discovery rules, shared CSS, Canva prompt, original Canva templates, or other staging features.

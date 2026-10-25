@@ -4,24 +4,33 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Canva投稿ドラフト｜東京23区子連れイベントAI収集</title>
 <link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
-<link rel="stylesheet" href="canva-draft.css?v=1">
+<link rel="stylesheet" href="canva-draft.css?v=20261025-large-touch-v3">
 </head>
 <body class="canva-draft-page">
 <header class="canva-draft-header">
-  <a href="search.html" class="canva-back">← イベント検索に戻る</a>
-  <div class="canva-draft-heading">
-    <div><div class="canva-eyebrow">CANVA POST DRAFT</div><h1>Canva投稿ドラフト</h1>
-      <p>検索画面で選んだイベントを、承認済みの紹介ページ配置を使って最大36件・20ページのCanvaドラフトに引き継ぎます。表紙の新しい固定書式を適用し、ラストは別の指定Canvaテンプレートの7ページ目だけをそのまま使用します。作業用コピー以外の元デザインは変更しません。ここからSNSへの公開は行いません。</p></div>
-    <a class="canva-template-link" target="_blank" rel="noopener" href="https://www.canva.com/d/Yr0CiLUWgATkd1R">固定レイアウトの完成版を見る ↗</a>
-  </div>
+  <a href="search.html" class="canva-back">← イベント検索</a>
+  <h1>Canva投稿ドラフト</h1>
+  <a class="canva-template-link" target="_blank" rel="noopener" href="https://www.canva.com/d/Yr0CiLUWgATkd1R">完成見本</a>
 </header>
 <main class="canva-main">
-  <section class="canva-panel">
-    <div class="canva-step"><span>1</span><div><h2>イベントを選択・並べ替え</h2><p>最大36件／並び順がCanvaの1〜36番に対応します。承認済みの7ページ構成を基準に、11件以上なら紹介ページを追加し、最後に締めページを配置します（最大20ページ）。</p></div></div>
-    <p id="canvaCount" class="canva-count" aria-live="polite">選択イベントを読み込み中…</p>
-    <p id="canvaStatus" class="canva-notice" role="status" hidden></p>
-    <ol id="canvaChosen" class="canva-chosen"></ol>
-    <p id="canvaEmpty" class="canva-empty" hidden>まだイベントが選ばれていません。<a href="search.html">イベント検索画面</a>で「Canvaに追加」にチェックしてください。</p>
+  <section class="canva-panel canva-panel--sorting" id="canvaSortPanel" aria-label="Canva投稿イベントの順序">
+    <div class="canva-sort-heading">
+      <h2>イベントの並び替え</h2>
+      <span id="canvaCount" class="canva-count" aria-live="polite">読み込み中…</span>
+    </div>
+    <div class="canva-sort-toolbar">
+      <span class="canva-sort-help">左のハンドル ⠿ を指でつかんで移動</span>
+      <button type="button" id="canvaAssistToggle" class="canva-sort-tool-btn" aria-pressed="false">番号指定・削除</button>
+      <button type="button" id="canvaFocusToggle" class="canva-sort-tool-btn" aria-pressed="false">全画面で並び替え</button>
+    </div>
+    <p id="canvaStatus" class="canva-sort-status" role="status" hidden></p>
+    <div id="canvaListViewport" class="canva-list-viewport" tabindex="0" aria-label="選択イベントの並び順">
+      <ol id="canvaChosen" class="canva-chosen"></ol>
+      <p id="canvaEmpty" class="canva-empty" hidden>まだイベントが選ばれていません。<a href="search.html">イベント検索画面</a>で「Canvaに追加」にチェックしてください。</p>
+    </div>
+    <details class="canva-audit-notices"><summary>ドラフト作成上の注意事項を確認</summary>
+      <div id="canvaWarnings" class="canva-warnings" aria-live="polite"></div>
+    </details>
   </section>
   <section class="canva-panel">
     <div class="canva-step"><span>2</span><div><h2>投稿タイトル・内容の確認</h2><p>掲載データから日時・会場・料金を転記します。公式確認が必要な項目は推測せず、編集時の確認対象とします。</p></div></div>
@@ -30,7 +39,6 @@
     <label class="canva-form-label" for="canvaCoverDate">表紙に記載する対象週末（日付は毎回更新）</label>
     <input id="canvaCoverDate" class="canva-title-input" maxlength="100" placeholder="例：10/31(土)〜11/1(日)　空欄の場合は要確認">
     <p class="canva-notice">元の完成版にある「10/24〜25」は次回へ流用しません。対象週末の日時を入力してください。</p>
-    <div id="canvaWarnings" class="canva-warnings" aria-live="polite"></div>
   </section>
   <section class="canva-panel">
     <div class="canva-step"><span>3</span><div><h2>Canvaドラフトへ引き継ぐ</h2><p>この画面は外部アカウントの認証情報を持たないため、現在はChatGPTのCanva連携に選択データを安全に引き継ぎます。</p></div></div>
@@ -50,7 +58,8 @@
 </main>
 <script type="module">
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
-import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
+import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,moveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261025-direct-sort-v1';
+import {createFluidCanvaSorter} from './canva-fluid-sort.js?v=20261025-fluid-compact-v2';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false;
 const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-fixed-cover-36-v1';
@@ -66,25 +75,29 @@ async function getCanvaTemplate(){
 }
 function alertStatus(message){$('canvaStatus').textContent=message;$('canvaStatus').hidden=!message;}
 function currentDraft(){return buildCanvaDraft(allEvents,selectedIds,{coverTitle:$('canvaCoverTitle').value,coverDate:$('canvaCoverDate').value});}
-function useSelection(ids){selectedIds=saveCanvaSelection(ids,window.localStorage);render();}
+function useSelection(ids,focusId=''){
+  selectedIds=saveCanvaSelection(ids,window.localStorage);
+  render();
+  if(focusId){
+    const row=Array.from($('canvaChosen').children).find(el=>el.dataset.id===focusId);
+    row?.querySelector('.canva-drag-handle')?.focus({preventScroll:true});
+  }
+}
 function render(){
   if(!loaded)return;
   const found=selectedEvents(allEvents,selectedIds),set=new Set(found.map(x=>x.id)),missing=selectedIds.filter(id=>!set.has(id));
-  const imageStates=new Map(buildCanvaDraft(allEvents,selectedIds).events.map(row=>[row.id,row.image_candidate_status]));
   $('canvaCoverTitle').value=`東京 週末イベント${found.length}選`;
-  $('canvaCount').textContent=`選択 ${found.length}/${CANVA_FORMAT.maxEvents}件 ／ Canva全${canvaPageCount(found.length)}ページ`+(found.length===CANVA_FORMAT.maxEvents?' ／ 36件そろいました':'');
+  $('canvaCount').textContent=`${found.length}/${CANVA_FORMAT.maxEvents}件・${canvaPageCount(found.length)}ページ`;
   $('canvaEmpty').hidden=found.length>0;
   $('canvaChosen').innerHTML=found.map((ev,i)=>{
-    const grade=ev.family_fit?.overall||ev.family_fit?.grade||'-';
-    const status=ev.verification?.status==='verified'?'公式確認済み':ev.verification?.status==='announced'?'開催発表':'確認要';
-    const img=imageStates.get(ev.id)||'missing';
-    const imageNote=({event_image_candidate:'画像候補あり・許諾確認要',generic_site_image:'共通ロゴ・画像要確認',shared_or_duplicate:'画像重複・要確認',external_image_requires_review:'外部画像・要確認',missing:'画像未登録'})[img];
-    return `<li class="canva-item" data-id="${escapeHtml(ev.id)}">
+    return `<li class="canva-item" data-id="${escapeHtml(ev.id)}" title="${escapeHtml(ev.name)}">
+      <button type="button" class="canva-drag-handle" aria-label="${i+1}番：${escapeHtml(ev.name)}をドラッグして並び替え（矢印キーでも移動）">⠿</button>
       <span class="canva-slot">${i+1}</span>
-      <div class="canva-item-main"><strong>${escapeHtml(ev.name)}</strong><small>${escapeHtml(ev.ward)} ／ ${escapeHtml(ev.period||'日付要確認')} ／ ${escapeHtml(status)} ／ 子連れ${escapeHtml(grade)} ／ ${escapeHtml(imageNote)}</small></div>
+      <span class="canva-item-title">${escapeHtml(ev.name)}</span>
       <div class="canva-order">
-        <button type="button" data-move="-1" aria-label="${i+1}番を上へ" ${i===0?'disabled':''}>↑</button>
-        <button type="button" data-move="1" aria-label="${i+1}番を下へ" ${i===found.length-1?'disabled':''}>↓</button>
+        <label class="canva-position-label">移動先 <select data-position="1" aria-label="${escapeHtml(ev.name)}の移動先番号">
+          ${found.map((_,pos)=>`<option value="${pos+1}" ${pos===i?'selected':''}>${pos+1}番</option>`).join('')}
+        </select></label>
         <button type="button" data-remove="1" aria-label="${escapeHtml(ev.name)}を除外">×</button>
       </div></li>`;
   }).join('');
@@ -105,7 +118,43 @@ $('canvaChosen').addEventListener('click',e=>{
   const id=item.dataset.id,i=selectedIds.indexOf(id);if(i<0)return;
   if(btn.hasAttribute('data-remove')){useSelection(selectedIds.filter(x=>x!==id));return;}
   const move=Number(btn.dataset.move||0),to=i+move;if(to<0||to>=selectedIds.length)return;
-  const next=[...selectedIds];[next[i],next[to]]=[next[to],next[i]];useSelection(next);
+  useSelection(moveCanvaSelection(selectedIds,i,to));
+});
+$('canvaChosen').addEventListener('change',e=>{
+  const select=e.target.closest('select[data-position]'),item=select?.closest('[data-id]');
+  if(!select||!item)return;
+  const from=selectedIds.indexOf(item.dataset.id),to=Number(select.value)-1;
+  if(from<0)return;
+  useSelection(moveCanvaSelection(selectedIds,from,to));
+  alertStatus((from+1)+'番のイベントを'+(to+1)+'番へ移動しました。');
+});
+createFluidCanvaSorter({
+  list:$('canvaChosen'),
+  scrollArea:$('canvaListViewport'),
+  onCommit:(ids,move)=>{
+    // Save only on drop (or keyboard move); intermediate animations never rewrite source data.
+    useSelection(ids,move.focusId||'');
+    alertStatus(move.from+'番 → '+move.to+'番へ移動しました。');
+  },
+  onCancel:()=>render()
+});
+$('canvaAssistToggle').addEventListener('click',()=>{
+  const enabled=$('canvaSortPanel').classList.toggle('canva-assist-visible');
+  $('canvaAssistToggle').setAttribute('aria-pressed',String(enabled));
+});
+function setFocusMode(enabled){
+  document.body.classList.toggle('canva-sort-focus',enabled);
+  $('canvaFocusToggle').setAttribute('aria-pressed',String(enabled));
+  $('canvaFocusToggle').textContent=enabled?'全画面を終了':'全画面で並び替え';
+}
+$('canvaFocusToggle').addEventListener('click',()=>{
+  setFocusMode(!document.body.classList.contains('canva-sort-focus'));
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && document.body.classList.contains('canva-sort-focus')){
+    setFocusMode(false);
+    $('canvaFocusToggle').focus();
+  }
 });
 async function clipboard(text){
   if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);

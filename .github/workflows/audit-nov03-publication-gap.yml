@@ -1,0 +1,52 @@
+name: Audit Nov 3 holiday publication gap (read only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-nov03-publication-gap.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout staging audit code and known official leads
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Checkout untouched published event records
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-data
+      - name: Read-only reconciliation of official Nov 3 events and published week shards
+        run: |
+          set -euo pipefail
+          python3 tools/audit_independent_holiday.py \
+            --published-dir published-data/site/data \
+            --leads research/2026-10-25-nov03-official-gap-ledger.json \
+            --holiday 2026-11-03 \
+            --output /tmp/nov03-gap.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("/tmp/nov03-gap.json").read_text(encoding="utf-8"))
+          lines=[
+            "## 2026-11-03 official-event publication gap",
+            "Week assigned: " + str(d["assigned_week_sat"]),
+            "Single-day records: " + str(d["published_holiday_only_count"]),
+            "Broad date overlaps (not necessarily a Nov 3 program): " + str(d["published_broad_overlap_count"]),
+            "Known verified official leads: " + str(d["known_leads_checked"]),
+            "Not yet in published dataset: " + str(d["unpublished_known_leads"]),
+            "",
+            "| Official candidate | Publication status |",
+            "|---|---|"
+          ]
+          lines += [f"| {x['name']} | {x['status']} |" for x in d["leads"]]
+          with Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).open("a",encoding="utf-8") as f:
+              f.write("\n".join(lines)+"\n")
+          print("\n".join(lines))
+          assert d["publication_permitted"] is False
+          PY
+          echo "READ_ONLY_HOLIDAY_GAP_AUDIT_PASS"

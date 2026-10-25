@@ -77,7 +77,9 @@ test('compact fluid sorter retains source order and supports all 36 drop positio
     assert.ok(source.includes(marker),'fluid gesture must use '+marker);
   }
   assert.ok(style.includes('touch-action:none'),'iPhone gesture must disable browser pan on the handle');
-  assert.ok(style.includes('min-height:32px'),'mobile rows must stay dense');
+  assert.match(style,/\.canva-item\{grid-template-columns:44px 24px minmax\(0,1fr\) auto;min-height:46px/,'iPhone rows are tall enough for a large drag target');
+  assert.match(style,/\.canva-drag-handle\{display:grid;min-width:44px;width:44px;height:44px;font-size:27px\}/,'iPhone drag handle has a minimum 44px touch target');
+  assert.match(style,/\.canva-item-title\{font-size:13\.5px\}/,'title readability improves without adding a second row');
   assert.ok(style.includes('canva-sort-focus'),'fullscreen sorting style is available');
   assert.ok(style.includes('.canva-item-title'),'title-only compact layout exists');
   assert.doesNotMatch(canvaPage,/<small>\$\{escapeHtml\(ev\.ward\)\}/);

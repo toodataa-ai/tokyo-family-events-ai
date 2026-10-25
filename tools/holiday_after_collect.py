@@ -247,6 +247,8 @@ HOLIDAY_CALENDAR_ENGINES = (
     ("toshima_daily", "豊島区", "https://www.city.toshima.lg.jp/cgi-bin/event_cal/calendar.cgi?day={D}&month={M}&type=3&year={Y}", "daily"),
     ("arakawa_daily", "荒川区", "https://www.city.arakawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day={D}&month={M}&type=3&year={Y}", "daily"),
     ("nerima_monthly", "練馬区", "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar{Y}{MM}.html", "monthly"),
+    ("nerima_kids_monthly", "練馬区", "https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar{Y}{MM}.html", "monthly"),
+    ("edogawa_daily", "江戸川区", "https://www.city.edogawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day={D}&month={M}&siteid=6&type=3&year={Y}", "daily"),
 )
 
 def holiday_calendar_jobs(holiday):

@@ -29,7 +29,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "57ed538e399b11f9f870cb9a7cfad8a3ce91a68d"
           test "$(git rev-parse HEAD^)" = "9e758a4c8452f53fd63a9a4b2287e55d56db8bdb"
           git diff --name-only HEAD^ HEAD | sort > /tmp/actual.txt
-          printf '%s\\n' 'package.json' 'site/canva-draft-contract.js' 'site/canva-draft.css' 'site/canva-fluid-sort.js' 'site/canva.html' 'tests/canva_draft_contract.test.mjs' 'tests/canva_fluid_sort.test.mjs' | sort > /tmp/expected.txt
+          printf '%s\n' 'package.json' 'site/canva-draft-contract.js' 'site/canva-draft.css' 'site/canva-fluid-sort.js' 'site/canva.html' 'tests/canva_draft_contract.test.mjs' 'tests/canva_fluid_sort.test.mjs' | sort > /tmp/expected.txt
           diff -u /tmp/expected.txt /tmp/actual.txt
           ! grep -E '^(site/data/|site/search.html|site/copy.html|site/app.js|site/multi-filter-ui.js|site/styles.css|prompts/)' /tmp/actual.txt
           echo "CANVA_ONLY_DIFF_PASS"

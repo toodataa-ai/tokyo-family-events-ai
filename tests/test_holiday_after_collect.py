@@ -70,7 +70,7 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertTrue(any("2026年11月28日" in x["query"] for x in q))
         self.assertEqual({x["ward"] for x in q}, {x["ward"] for x in h})
         self.assertEqual(len([x for x in jobs if x["kind"] == "explicit"]), 2)
-        self.assertEqual(len([x for x in jobs if x["kind"] == "holiday_calendar"]), 6)
+        self.assertEqual(len([x for x in jobs if x["kind"] == "holiday_calendar"]), 10)
         self.assertTrue(any("list_calendar202611.html" in x["url"] for x in jobs))
 
     def test_official_calendar_daily_links_are_scoped_to_holiday_only(self):
@@ -103,7 +103,7 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertTrue(all(x["matched_dates"] == ["2026-11-03"] for x in found))
         self.assertFalse(any("別日" in x["name"] for x in found))
         self.assertEqual(len(holiday_calendar_jobs(
-            {"date": "2026-11-03", "requires_independent_23_ward_search": True})), 3)
+            {"date": "2026-11-03", "requires_independent_23_ward_search": True})), 5)
 
     def test_failed_fetch_never_checked(self):
         def down(url):

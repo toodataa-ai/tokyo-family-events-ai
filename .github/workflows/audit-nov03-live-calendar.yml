@@ -2,7 +2,10 @@ name: Verify Nov 3 official calendar extraction (read only)
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/audit-nov03-live-calendar.yml']
+    paths:
+      - '.github/workflows/audit-nov03-live-calendar.yml'
+      - 'tools/holiday_after_collect.py'
+      - 'tests/test_holiday_after_collect.py'
   workflow_dispatch: {}
 permissions:
   contents: read

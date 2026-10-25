@@ -54,3 +54,105 @@
 .canva-position-label{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#265b40;white-space:nowrap}
 .canva-position-label select{min-width:67px;min-height:35px;padding:5px;border:1px solid #82ad94;border-radius:7px;background:white;color:#154c31;font:inherit}
 @media(max-width:600px){.canva-drag-handle{display:none}.canva-order{width:100%;justify-content:flex-end}.canva-position-label select{min-height:42px;font-size:15px}}
+
+
+/* 2026-10-25: high-density, touch-first Canva ordering; source layouts remain untouched. */
+.canva-draft-page{background:#f8faf9;color:#26332c}
+.canva-draft-header{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:7px max(12px,calc((100vw - 1160px)/2));
+  background:#fff;border-bottom:1px solid #dde5e0;min-height:41px
+}
+.canva-draft-header h1{font-size:16px;font-weight:750;line-height:1.25;margin:0}
+.canva-draft-header .canva-back{font-size:11px;margin:0;flex:0 0 auto;text-decoration:none}
+.canva-draft-header .canva-template-link{font-size:11px;padding:4px 6px;border:0;background:transparent;white-space:nowrap}
+.canva-main{max-width:1160px;gap:10px;margin:8px auto;padding:0 10px 35px}
+.canva-panel{padding:14px 16px;border-radius:9px}
+.canva-panel--sorting{position:relative;padding:9px 12px 7px;min-width:0}
+.canva-sort-heading{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:0 1px}
+.canva-sort-heading h2{font-size:15px;line-height:1.2;margin:0}
+.canva-sort-heading .canva-count{margin:0;white-space:nowrap;font-size:11px;font-weight:700;color:#52675a}
+.canva-sort-toolbar{display:flex;align-items:center;gap:5px 9px;flex-wrap:wrap;margin:6px 0 5px;min-height:26px}
+.canva-sort-help{color:#687e6e;font-size:11px;flex:1;min-width:125px;white-space:nowrap}
+.canva-sort-tool-btn{background:#fff;border:1px solid #cddad1;border-radius:6px;padding:5px 8px;color:#235d43;font:700 11px "Meiryo UI",Meiryo,sans-serif;cursor:pointer}
+.canva-sort-tool-btn[aria-pressed="true"]{border-color:#548b70;background:#e9f4ed}
+.canva-list-viewport{
+  overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  max-height:min(69dvh,730px);min-height:110px;
+  border:1px solid #e3e9e4;border-radius:7px;background:#fff;
+  scrollbar-gutter:stable;
+  -webkit-overflow-scrolling:touch
+}
+.canva-chosen{display:flex;flex-direction:column;gap:2px;padding:5px;margin:0;list-style:none}
+.canva-item{
+  display:grid;grid-template-columns:29px 22px minmax(0,1fr) auto;
+  gap:5px;align-items:center;
+  box-sizing:border-box;min-width:0;min-height:34px;
+  padding:2px 5px;border:1px solid #e2e9e3;border-radius:5px;
+  background:#fff;cursor:default
+}
+.canva-item:nth-child(even){background:#fafcfb}
+.canva-slot{font:700 11px "Meiryo UI",Meiryo,sans-serif;min-width:0;flex:auto;color:#457057;text-align:center}
+.canva-item-title{font:500 12.5px/1.25 "Meiryo UI",Meiryo,sans-serif;display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.canva-drag-handle{
+  display:grid;place-items:center;min-width:29px;width:29px;height:29px;
+  border:0;border-radius:5px;background:#f0f5f1;color:#47745b;
+  font:700 19px/1 sans-serif;cursor:grab;touch-action:none;
+  user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;
+}
+.canva-drag-handle:active{cursor:grabbing;background:#dceee2}
+.canva-drag-handle:focus-visible{outline:2px solid #1f8656;outline-offset:1px}
+.canva-order{display:none;flex-wrap:nowrap;align-items:center;gap:4px}
+.canva-assist-visible .canva-order{display:flex}
+.canva-position-label{font-size:10px;gap:3px}
+.canva-position-label select{min-width:57px;min-height:27px;height:27px;font-size:12px;padding:2px 3px}
+.canva-order button{font-size:13px;padding:3px 7px;min-width:27px;height:28px}
+.canva-is-placeholder{visibility:hidden}
+.canva-drag-ghost{
+  position:fixed;pointer-events:none;z-index:9999;box-sizing:border-box;
+  margin:0;background:#ecf8ef!important;border:1px solid #2f9362;
+  box-shadow:0 9px 22px rgba(23,54,39,.23);border-radius:7px;
+  will-change:transform;transition:none!important
+}
+.canva-drag-ghost .canva-order{display:none!important}
+.canva-is-sorting{user-select:none;-webkit-user-select:none}
+.canva-sort-status{position:absolute;bottom:25px;right:15px;z-index:5;max-width:75%;margin:0;padding:5px 9px;background:#235f44;color:#fff;border-radius:7px;font-size:11px;pointer-events:none}
+.canva-sort-status[hidden]{display:none}
+.canva-audit-notices{margin-top:5px!important;font-size:11px;color:#657466}
+.canva-audit-notices summary{cursor:pointer;font-size:11px}
+.canva-audit-notices .canva-warnings{font-size:11px}
+.canva-sort-focus{overflow:hidden}
+.canva-sort-focus .canva-panel--sorting{
+  position:fixed;inset:0;z-index:5000;display:flex;flex-direction:column;
+  width:auto;height:100vh;height:100dvh;max-height:100dvh;box-sizing:border-box;
+  border:0;border-radius:0;background:#fff;padding:env(safe-area-inset-top, 0px) 9px env(safe-area-inset-bottom, 0px)
+}
+.canva-sort-focus .canva-list-viewport{flex:1;min-height:0;max-height:none;overflow-y:auto}
+.canva-sort-focus .canva-audit-notices{display:none}
+.canva-sort-focus .canva-sort-heading{padding:8px 2px 2px}
+.canva-sort-focus .canva-sort-toolbar{padding:2px 2px 4px}
+@media(max-width:600px){
+  .canva-draft-header{padding:7px 9px;gap:6px}
+  .canva-draft-header h1{font-size:13px}
+  .canva-draft-header .canva-back,.canva-draft-header .canva-template-link{font-size:10px}
+  .canva-main{padding:0 5px 28px;margin:4px auto;gap:7px}
+  .canva-panel{padding:10px}
+  .canva-panel--sorting{padding:7px 6px 5px}
+  .canva-sort-heading h2{font-size:14px}
+  .canva-sort-toolbar{gap:4px;margin:5px 0}
+  .canva-sort-help{font-size:10px;flex:1 0 100%;min-width:0}
+  .canva-sort-tool-btn{font-size:10.5px;flex:1;text-align:center;min-height:30px}
+  .canva-list-viewport{max-height:73dvh;scrollbar-gutter:auto}
+  .canva-chosen{gap:2px;padding:3px}
+  .canva-item{grid-template-columns:30px 19px minmax(0,1fr) auto;min-height:32px;gap:4px;padding:1px 3px}
+  .canva-item-title{font-size:11.5px}
+  .canva-drag-handle{display:grid;width:30px;height:30px}
+  .canva-slot{font-size:10px}
+  .canva-order{width:auto;margin-left:0}
+  .canva-position-label select{min-width:55px;min-height:30px;font-size:12px}
+  .canva-sort-focus .canva-sort-help{display:none}
+  .canva-sort-focus .canva-list-viewport{max-height:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .canva-drag-ghost{box-shadow:none}
+}

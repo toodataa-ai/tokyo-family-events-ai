@@ -1,0 +1,46 @@
+name: Audit v1.20 isolated weekday holiday validator
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v120-holiday-validator.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3e083daeb94d211c828bfe149d74a388347594d5
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert exact three-file patch direct from v1.19
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "3e083daeb94d211c828bfe149d74a388347594d5"
+          test "$(git rev-parse HEAD^)" = "29c74668e7f46b9a6d6ff8f9369bcf410dd753cf"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/actual
+          printf '%s\n' package.json tests/test_independent_holiday.py tools/validate_data.py | sort > /tmp/expected
+          diff -u /tmp/expected /tmp/actual
+      - name: Check existing production data pointer unchanged
+        run: |
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "312436898933372993ee866293fcd4c1c9069d1c"
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: actual-published-data
+      - name: Test existing published dataset with production-based code
+        run: |
+          python3 tools/validate_data.py --strict --min-image-coverage 0.70 actual-published-data/site/data
+          python3 tools/validate_decisions.py --strict actual-published-data/site/data
+          npm test
+      - name: Validate calendar Monday/Tuesday only, refuse unregistered weekdays
+        run: |
+          python3 -m unittest discover -s tests -p 'test_independent_holiday.py' -v
+          echo "V120_WEEKDAY_HOLIDAY_VALIDATOR_STRICT_PASS"

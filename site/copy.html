@@ -38,8 +38,12 @@
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
       <div class="date-refine-panel">
-        <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この期間を表示</button>
+        <label for="dateInput">開始日</label>
+        <input type="date" id="dateInput" aria-label="開始日">
+        <label for="dateEndInput">終了日</label>
+        <input type="date" id="dateEndInput" aria-label="終了日">
+        <p class="date-refine-help">片方だけなら、その1日を検索します。</p>
+        <button id="updateBtn">指定期間で検索</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
@@ -58,7 +62,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,filterUI=null;
@@ -107,7 +111,7 @@ function render(){
   const prompt=currentData.run?.prompt?.version||'-';
   const filterBits=[filterUI.summary()];
   const periodCount=filterEvents(currentData.events,{periods:filterUI.filters().periods}).length;
-  $('rangeText').textContent=`${filterUI.filters().dates.length?'日付指定':'今週末以降'} ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;
+  $('rangeText').textContent=`${(filterUI.filters().dates.length||filterUI.filters().range)?'日付指定':'今週末以降'} ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;
   $('countText').textContent=`期間内 ${periodCount} 件 ／ コピー対象 ${visible.length} 件`;
   const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
   grid.innerHTML=visible.map((ev,index)=>{

@@ -107,7 +107,7 @@
 .canva-position-label{font-size:10px;gap:3px}
 .canva-position-label select{min-width:57px;min-height:27px;height:27px;font-size:12px;padding:2px 3px}
 .canva-order button{font-size:13px;padding:3px 7px;min-width:27px;height:28px}
-.canva-is-placeholder{visibility:hidden}
+.canva-is-placeholder{opacity:.22;border:1px dashed #7da58c!important}
 .canva-drag-ghost{
   position:fixed;pointer-events:none;z-index:9999;box-sizing:border-box;
   margin:0;background:#ecf8ef!important;border:1px solid #2f9362;

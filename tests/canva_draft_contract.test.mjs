@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFileSync} from 'node:fs';
-import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
+import {CANVA_FORMAT,canvaPageCount,canvaPageAssignments,uniqueEventIds,readCanvaSelection,saveCanvaSelection,moveCanvaSelection,selectedEvents,eventDraftRow,classifyCanvaImageCandidates,buildCanvaDraft,buildCanvaPrompt,renderCanvaPromptTemplate,assertCanvaTypographyTemplate,draftAsCsv} from '../site/canva-draft-contract.js';
 
 const event=(id,overrides={})=>({
   id,name:'親子ワークショップ '+id,ward:'中野区',period:'10/24(土)〜10/25(日)',time:'10:00〜15:00',
@@ -45,6 +45,23 @@ test('selection is deterministic, deduplicated and capped at thirty-six',()=>{
   assert.deepEqual(readCanvaSelection(store),['e0','e1']);
   store.setItem(CANVA_FORMAT.selectionStorageKey,'not-json');
   assert.deepEqual(readCanvaSelection(store),[]);
+});
+test('one-step Canva move to any position preserves all items and exported order',()=>{
+  const ids=Array.from({length:36},(_,i)=>'evt'+(i+1));
+  const moved=moveCanvaSelection(ids,19,2);
+  assert.equal(moved[2],'evt20');
+  assert.equal(moved[3],'evt3');
+  assert.equal(moved.length,36);
+  assert.deepEqual(new Set(moved),new Set(ids));
+  assert.equal(ids[19],'evt20','source selection is not mutated');
+  assert.deepEqual(moveCanvaSelection(moved,2,35).slice(-1),['evt20']);
+  assert.deepEqual(moveCanvaSelection(ids,-1,7),ids);
+  const all=ids.map(id=>event(id));
+  const draft=buildCanvaDraft(all,moved);
+  assert.equal(draft.events[2].id,'evt20');
+  assert.equal(draft.autofill_fields.EVENT_03_TITLE.text,event('evt20').name);
+  assert.match(canvaPage,/data-position="1"/);
+  assert.match(canvaPage,/draggable="true"/);
 });
 test('selected events preserve chosen order, without altering source data',()=>{
   const all=[event('a'),event('b')];

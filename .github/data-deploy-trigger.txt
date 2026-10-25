@@ -1,8 +1,11 @@
-# Authorized isolated data-only thumbnail correction: unrelated staged events are preserved in backup/data-staging-before-thumbnail-fix-20261024.
-operation=thumbnail-correction
-candidate_sha=312436898933372993ee866293fcd4c1c9069d1c
-base_data_production_sha=59266b5587c3cd868b8d5637b2a363f1e3f52cd9
-approved_by=user_2026-10-24
-approved_scope=one_official_image_for_v15-16abce941248_no_other_changes
-pending_stage_backup=backup/data-staging-before-thumbnail-fix-20261024
-retry_after_policy=explicit_exact_event_image_guard_2026-10-24
+# User-requested verified 2026-11-03 holiday family-event additive publication.
+operation=manual-independent-holiday-addition
+candidate_sha=605f7144b99944201663055105e076e3b1237ebd
+base_data_production_sha=312436898933372993ee866293fcd4c1c9069d1c
+approved_by=user_2026-10-26
+approved_scope=2026-11-03_9_individually_verified_official_family_events_append_only_to_week_2026-10-31
+isolated_candidate_audit_run=40238557889
+production_app_version=1.20
+pending_stage_backup=work-preserve/2026-10-26-suginami-staging-before-nov3
+old_event_ids_removed=0
+old_event_records_changed=0

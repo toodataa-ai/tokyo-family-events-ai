@@ -1,0 +1,58 @@
+name: Verify Nov 3 official calendar extraction (read only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-nov03-live-calendar.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch three actual Nov 3 official calendar pages and audit discovery
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0, "tools")
+          from holiday_after_collect import holiday_calendar_jobs, inspect
+          holiday={"date":"2026-11-03","requires_independent_23_ward_search":True}
+          rows=[]
+          for job in holiday_calendar_jobs(holiday):
+              result=inspect(job)
+              rows.append({
+                  "source_id":job["source_id"],
+                  "url":job["url"],
+                  "status":result["status"],
+                  "error":result.get("error", ""),
+                  "candidate_count":len(result["candidates"]),
+                  "candidates":result["candidates"][:45]
+              })
+          out={"date":"2026-11-03", "publication_permitted":False,
+               "source_checks":rows,"official_calendar_sources_attempted":len(rows)}
+          Path("nov03-official-calendar-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          for row in rows:
+              print(row["source_id"],row["status"],row["candidate_count"],row["error"])
+              print("  "+", ".join(x["name"] for x in row["candidates"][:12]))
+          summary=Path(__import__("os").environ["GITHUB_STEP_SUMMARY"])
+          summary.write_text("\n".join([
+              "## Nov 3 official-calendar read-only smoke",
+              *[f"- {row['source_id']}: {row['status']} / {row['candidate_count']} candidates / {row['error']}" for row in rows],
+              "No event records or production branches were changed."])+"\n",encoding="utf-8")
+          if not any(r["status"]=="checked" and r["candidate_count"]>0 for r in rows):
+              raise SystemExit("BLOCKER: no live official Nov 3 calendar candidates verified")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nov03-official-calendar-smoke
+          path: nov03-official-calendar-smoke.json

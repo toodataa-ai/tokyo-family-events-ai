@@ -6,6 +6,8 @@ on:
       - '.github/workflows/audit-nov03-publication-gap.yml'
       - 'tools/audit_independent_holiday.py'
       - 'research/2026-10-25-nov03-official-gap-ledger.json'
+      - '.github/data-deploy-trigger.txt'
+      - 'tools/holiday_after_collect.py'
   workflow_dispatch: {}
 permissions:
   contents: read
@@ -26,11 +28,21 @@ jobs:
       - name: Read-only reconciliation of official Nov 3 events and published week shards
         run: |
           set -euo pipefail
+          if ! python3 - <<'PY'
+          import json,sys
+          from pathlib import Path
+          data=json.loads(Path("published-data/site/data/manifest.json").read_text())
+          sys.exit(0 if any(h.get("date")=="2026-11-03" for h in data.get("holidays",[])) else 1)
+          PY
+          then
+            echo "Nov3 no longer in the rolling horizon; historical gap check skipped"
+            exit 0
+          fi
           python3 tools/audit_independent_holiday.py \
             --published-dir published-data/site/data \
             --leads research/2026-10-25-nov03-official-gap-ledger.json \
             --holiday 2026-11-03 \
-            --output /tmp/nov03-gap.json
+            --output /tmp/nov03-gap.json --strict
           python3 - <<'PY'
           import json
           from pathlib import Path

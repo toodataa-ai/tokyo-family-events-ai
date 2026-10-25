@@ -1,0 +1,47 @@
+name: Audit upcoming official weekday holidays (read only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-weekday-holiday-coverage.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Read staging audit implementation
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Read production published manifest without editing
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify missing holidays using Cabinet Office official CSV
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests -p 'test_weekday_holiday_coverage.py'
+          python3 tools/audit_weekday_holiday_coverage.py \
+            --manifest published-data/site/data/manifest.json --as-of 2026-10-26 \
+            > /tmp/holiday-coverage.json
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          report=json.loads(Path("/tmp/holiday-coverage.json").read_text())
+          missing=report["upcoming_missing_holidays"]
+          lines=["## Official holiday-date coverage before next update",
+                 f"Published date horizon: {report['start']} to {report['end']}",
+                 f"Registered holiday omission count: {len(missing)}",
+                 "Missing dates: "+(", ".join(f"{r['date']} {r['name']}" for r in missing) or "none"),
+                 "Read-only: no events invented or published.",
+                 "Next holiday-after refresh strict gate will reject missing dates."]
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(lines)+"\n",encoding="utf-8")
+          print("\n".join(lines))
+          PY

@@ -18,7 +18,7 @@ test('touch drag reorders on drop, cancels without storage changes, and autoscro
     contains(node){return rows.includes(node);},
     insertBefore(node,before){
       rows.splice(rows.indexOf(node),1);
-      rows.splice(rows.indexOf(before),0,node);
+      rows.splice(before?rows.indexOf(before):rows.length,0,node);
     },
     appendChild(node){rows.splice(rows.indexOf(node),1);rows.push(node);},
     get lastElementChild(){return rows.at(-1);}

@@ -19,13 +19,15 @@ export function createFluidCanvaSorter({list,scrollArea,onCommit,onCancel}){
     }),y);
     const before=peers[index]||null;
     if(before===item.nextElementSibling || (!before && item===list.lastElementChild))return;
+    // Snapshot the currently animated on-screen position first, then cancel
+    // stale animations BEFORE measuring the new layout: prevents FLIP jitter.
     const oldY=new Map(peers.map(row=>[row,row.getBoundingClientRect().top]));
+    for(const row of peers)row._canvaFlip?.cancel();
     list.insertBefore(item,before);
     if(reduceMotion())return;
     for(const row of peers){
       const delta=oldY.get(row)-row.getBoundingClientRect().top;
       if(Math.abs(delta)<0.5)continue;
-      row._canvaFlip?.cancel();
       row._canvaFlip=row.animate(
         [{transform:'translate3d(0,'+delta+'px,0)'},{transform:'translate3d(0,0,0)'}],
         {duration:145,easing:'cubic-bezier(.2,.75,.3,1)'}

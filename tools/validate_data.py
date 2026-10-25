@@ -257,7 +257,40 @@ def load_and_apply_verification(path, data, events, tier='full', strict=False):
     return corrected, audit, errors, warnings
 
 
-def validate_week(path, entry=None, strict=False, min_image_coverage=0.0):
+def independent_holidays_by_week(manifest):
+    """Attach a non-weekend holiday to the immediately preceding published weekend.
+
+    This mirrors app.js holidayPeriodSlots. No ordinary weekday is admitted,
+    and historical weekend records retain their Sat/Sun constraints.
+    """
+    weekends = sorted(
+        (w for w in (manifest.get('weekends') or []) if iso_date(w.get('sat')) and iso_date(w.get('sun'))),
+        key=lambda w: w['sat']
+    )
+    result = {w['sat']: [] for w in weekends}
+    for entry in manifest.get('holidays') or []:
+        day = iso_date(entry.get('date')) if isinstance(entry, dict) else None
+        if not day or day.weekday() >= 5:
+            continue
+        if any(iso_date(w['sat']) <= day <= iso_date(w['sun']) for w in weekends):
+            continue
+        previous = [w for w in weekends if iso_date(w['sun']) < day]
+        next_week = next((w for w in weekends if iso_date(w['sat']) > day), None)
+        if not previous or not next_week:
+            continue  # outside the published rolling span
+        parent = previous[-1]
+        if day < iso_date(next_week['sat']):
+            result[parent['sat']].append(day)
+    return result
+
+
+def overlaps_weekend_or_attached_holiday(start, end, sat, sun, holiday_dates=()):
+    if start <= sun and end >= sat:
+        return True
+    return any(start <= holiday <= end for holiday in holiday_dates)
+
+
+def validate_week(path, entry=None, strict=False, min_image_coverage=0.0, holiday_dates=()):
     errors, warnings = [], []
     data, events, load_errors = load_week(path)
     errors.extend(load_errors)
@@ -384,8 +417,9 @@ def validate_week(path, entry=None, strict=False, min_image_coverage=0.0):
         elif start and end:
             if start > end:
                 errors.append(f'{prefix}: date_start is after date_end')
-            if sat and sun and (end < sat or start > sun):
-                errors.append(f'{prefix}: event does not overlap target weekend {sat}..{sun}')
+            if sat and sun and not overlaps_weekend_or_attached_holiday(
+                    start, end, sat, sun, holiday_dates):
+                errors.append(f'{prefix}: event does not overlap weekend {sat}..{sun} or its registered independent holiday')
 
         fit = ev.get('family_fit') or {}
         if fit.get('grade') not in ('A','B','C'):
@@ -456,6 +490,8 @@ def main():
         warnings.append(f'manifest: rolling horizon configured for 6 weeks but only {len(weekends)} week(s) currently published')
 
     listed_files, listed_sats, listed_horizons = set(), set(), set()
+    independent_holidays = independent_holidays_by_week(manifest)
+
     for entry in weekends:
         filename = str(entry.get('file',''))
         sat = entry.get('sat')
@@ -485,7 +521,9 @@ def main():
         if not p.exists():
             errors.append(f'manifest: missing data file {p}')
             continue
-        e, w, event_count = validate_week(p, entry, args.strict, args.min_image_coverage)
+        e, w, event_count = validate_week(
+            p, entry, args.strict, args.min_image_coverage,
+            holiday_dates=independent_holidays.get(sat, ()))
         errors.extend(e)
         warnings.extend(w)
         if entry.get('count') != event_count:

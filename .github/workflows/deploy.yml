@@ -335,8 +335,13 @@ jobs:
               echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
             else
               if [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
+                if [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+                  audit_base="${{ needs.gate.outputs.base_data_production_sha }}"
+                else
+                  audit_base="$base"
+                fi
                 python3 ../staging-src/tools/validate_official_schedule_audit.py site/data \
-                  --allow-unchanged-historical-gaps-base "$base"
+                  --allow-unchanged-historical-gaps-base "$audit_base"
               else
                 python3 ../staging-src/tools/validate_official_schedule_audit.py site/data
               fi

@@ -248,7 +248,8 @@ for(const page of ['search.html','copy.html']){
   assert.match(markup,/filterUI\.serialize/);
   assert.doesNotMatch(markup,/id="sourceSelect"/);
   assert.match(markup,/aria-label="全期間または1つの週末・祝日を選択"/);
-  assert.match(markup,/この期間を表示/);
+  assert.match(markup,/指定期間で検索/);
+  assert.match(markup,/id="dateEndInput"/);
   assert.match(markup,/id="filterCloseBtn"/);
   assert.match(markup,/id="filterApplyBtn"/);
   assert.match(markup,/class="multi-filter-backdrop"/);

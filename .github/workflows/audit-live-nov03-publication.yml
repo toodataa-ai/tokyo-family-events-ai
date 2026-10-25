@@ -1,0 +1,57 @@
+name: Verify live public November 3 events and regression
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-live-nov03-publication.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-records
+      - name: Verify live GitHub Pages agrees with published immutable records
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request
+          from pathlib import Path
+          base='https://toodataa-ai.github.io/tokyo-family-events-ai/'
+          local=json.loads(Path('published-records/site/data/2026-10-31-events-holiday-2026-11-03.json').read_text())
+          expected={x['id'] for x in local}
+          assert len(expected)==len(local)==9
+          def get(path):
+              request=urllib.request.Request(base+path,headers={'User-Agent':'TokyoFamilyEventsLiveAudit/1.0','Cache-Control':'no-cache'})
+              with urllib.request.urlopen(request,timeout=30) as response:
+                  assert response.status==200
+                  return response.read()
+          failed=''
+          for attempt in range(5):
+              try:
+                  manifest=json.loads(get('data/manifest.json?audit=nov03-20261026'))
+                  week=next(x for x in manifest['weekends'] if x['sat']=='2026-10-31')
+                  assert week['count']==64,week
+                  events=json.loads(get('data/2026-10-31-events-holiday-2026-11-03.json?audit=20261026'))
+                  assert {x['id'] for x in events}==expected
+                  assert all(x['date_start']==x['date_end']=='2026-11-03' for x in events)
+                  page=get('search.html?audit=20261026').decode()
+                  assert 'multi-filter-ui.js' in page and 'app.js' in page
+                  print('LIVE_NOV03_PASS: all 9 event IDs, manifest count 64, and search page served')
+                  print('Data-production original six-week events unchanged; authoritatively checked by release gate')
+                  break
+              except Exception as e:
+                  failed=str(e)
+                  print(f'live attempt {attempt+1} incomplete:',failed)
+                  if attempt==4:raise
+                  time.sleep(5)
+          PY
+      - name: Confirm current live data-production SHA
+        run: |
+          cd published-records
+          git rev-parse HEAD
+          test "$(git rev-parse HEAD)" = "605f7144b99944201663055105e076e3b1237ebd"

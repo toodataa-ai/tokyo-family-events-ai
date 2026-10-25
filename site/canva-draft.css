@@ -45,3 +45,12 @@
 .canva-handoff-guide p{margin:7px 0}
 .canva-panel details{margin-top:18px;font-size:13px;line-height:1.7}
 @media(max-width:600px){.canva-draft-header{padding:20px}.canva-panel{padding:15px}.canva-item{flex-wrap:wrap}.canva-order{margin-left:auto}.canva-handoff-actions button{flex:1 1 100%}.canva-draft-heading h1{font-size:22px}}
+
+/* iPhone-friendly one-step target selection plus desktop drag reorder. */
+.canva-item[draggable="true"]{cursor:grab}
+.canva-item.is-dragging{opacity:.45;border-style:dashed}
+.canva-drag-handle{font-size:21px;color:#447b5e;user-select:none;touch-action:pan-y}
+.canva-order{align-items:center;flex-wrap:wrap}
+.canva-position-label{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#265b40;white-space:nowrap}
+.canva-position-label select{min-width:67px;min-height:35px;padding:5px;border:1px solid #82ad94;border-radius:7px;background:white;color:#154c31;font:inherit}
+@media(max-width:600px){.canva-drag-handle{display:none}.canva-order{width:100%;justify-content:flex-end}.canva-position-label select{min-height:42px;font-size:15px}}

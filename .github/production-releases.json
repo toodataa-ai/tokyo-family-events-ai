@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-25-r1",
+  "current_public_release": "release/2026-10-26-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -185,7 +185,16 @@
       "workflow_run_id": 40166110933,
       "note": "ユーザー明示承認の本番アプリv1.19。CanvaのiPhone向け指追従ドラッグ、前後行の滑らかな移動、自動スクロール、タイトルのみ一覧、全画面並び替え、操作ハンドル44px／スマホ行高46px／タイトル13.5px。production v1.18を直接親とする隔離候補57ed538からPR #39にて7ファイルのみリリース。読み取り専用監査40166016944・本番Pages40166110933成功。選択36件上限、Canva指示書、原デザインは維持。イベントデータdata-production 312436898933372993ee866293fcd4c1c9069d1c、および検索画面・日付指定・固定取得元・ほかの開発中機能は不変。",
       "public_version": "1.19"
+    },
+    {
+      "release_id": "release/2026-10-26-r1",
+      "branch": "release/2026-10-26-r1",
+      "commit_sha": "8e8064277b77010d13e2b21c212ebc396faeb71b",
+      "deployed_at": "2026-10-26T00:00:00Z",
+      "workflow_run_id": 40237814843,
+      "note": "ユーザー明示承認による文化の日（火曜日）単独開催掲載に向けた本番アプリv1.20。production v1.19を直接親とする候補PR #40で厳格検証器・単体テスト・npmテスト構成のみ反映。既存6週間データの監査40237720268、本番Pages40237814843成功。未登録平日を拒否するルール維持。イベントデータはまだ変更なし。",
+      "public_version": "1.20"
     }
   ],
-  "current_public_version": "1.19"
+  "current_public_version": "1.20"
 }

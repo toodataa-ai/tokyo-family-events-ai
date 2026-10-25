@@ -7,7 +7,7 @@ from urllib.parse import unquote
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from holiday_after_collect import (fetch_url, inspect, rss_items, html_links, build_jobs,
-                                   annual_report, collect)
+                                   annual_report, collect, holiday_calendar_candidates, holiday_calendar_jobs)
 
 INDEX = """<html><title>地区祭</title><a href="20260616103208700.html">
 令和8年度 地区祭開催日程</a></html>"""
@@ -68,6 +68,40 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertTrue(any("2026年11月28日" in x["query"] for x in q))
         self.assertEqual({x["ward"] for x in q}, {x["ward"] for x in h})
         self.assertEqual(len([x for x in jobs if x["kind"] == "explicit"]), 2)
+        self.assertEqual(len([x for x in jobs if x["kind"] == "holiday_calendar"]), 6)
+        self.assertTrue(any("list_calendar202611.html" in x["url"] for x in jobs))
+
+    def test_official_calendar_daily_links_are_scoped_to_holiday_only(self):
+        url = "https://www.city.toshima.lg.jp/cgi-bin/event_cal/calendar.cgi?day=3&month=11&type=3&year=2026"
+        html = """<html><title>イベントカレンダー</title>
+        <a href="/site/home.html">11月の予定</a>
+        <a href="/125/bunka/bunka/2607020838.html">みんなのステージ2026 ダンスの部
+        2026年11月3日（火曜日） ～ 2026年11月3日（火曜日）</a>
+        <a href="/not-nov3">親子祭り 2026年11月4日（水曜日）</a>
+        <a href="https://www.evil.example.com">イベント 2026年11月3日（火曜日）</a>
+        </html>"""
+        found = holiday_calendar_candidates(html, url, "2026-11-03", "daily")
+        self.assertEqual(len(found), 1)
+        self.assertIn("みんなのステージ", found[0]["name"])
+        self.assertEqual(found[0]["matched_dates"], ["2026-11-03"])
+        self.assertTrue(found[0]["date_unverified"])
+        self.assertEqual(found[0]["source_kind"], "official_calendar_candidate_only")
+
+    def test_nerima_monthly_calendar_only_picks_november_third_row(self):
+        url = "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html"
+        html = """<html><table>
+        <tr><th>日</th><th>曜日</th><th>イベント</th></tr>
+        <tr><td>2日</td><td>月曜日</td><td><a href="/not-this-day">別日親子イベント</a></td></tr>
+        <tr><td>3日</td><td>火曜日</td><td><a href="/kankomoyoshi/bunka/neriotofes/neriotofes2026.html">ねりおと♪フェスティバル2026</a>
+        <a href="/kankomoyoshi/sports/oshirase/nerisupo2022.html">ねりすぽフェスティバル</a></td></tr>
+        <tr><td>4日</td><td>水曜日</td><td><a href="/not-this-day-either">別の親子イベント</a></td></tr>
+        </table></html>"""
+        found = holiday_calendar_candidates(html, url, "2026-11-03", "monthly")
+        self.assertEqual(len(found), 2)
+        self.assertTrue(all(x["matched_dates"] == ["2026-11-03"] for x in found))
+        self.assertFalse(any("別日" in x["name"] for x in found))
+        self.assertEqual(len(holiday_calendar_jobs(
+            {"date": "2026-11-03", "requires_independent_23_ward_search": True})), 3)
 
     def test_failed_fetch_never_checked(self):
         def down(url):

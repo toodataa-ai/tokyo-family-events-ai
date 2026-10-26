@@ -104,6 +104,24 @@
       "source_failures_remain_unverified": true,
       "executed_at": "2026-10-27T00:22:00+09:00",
       "note": "11/29個別公式確認済みイベント5件。旧データ削除・情報変更なし。"
+    },
+    {
+      "run_id": "verified-horizon-subset-2026-10-26-a7446aca567c",
+      "run_type": "verified_horizon_subset",
+      "as_of_jst": "2026-10-26",
+      "base_data_production_sha": "a7446aca567ca74c936c2039867fcf5fd3b07e34",
+      "previous_manifest_generated": "2026-10-27T00:22:00+09:00",
+      "new_manifest_generated": "2026-10-27T01:11:37+09:00",
+      "target_start": "2026-10-26",
+      "target_end": "2026-12-06",
+      "added_weekly_records": 28,
+      "new_official_independent_records": 14,
+      "preserved_carryover_records": 14,
+      "old_event_ids_removed": 0,
+      "old_event_records_changed": 0,
+      "unverified_required_source_failures": 5,
+      "executed_at": "2026-10-27T01:11:37+09:00",
+      "note": "Six-week partial verified-subset rollover; all old week files and records preserved; five required source HTTP errors still unresolved."
     }
   ]
 }

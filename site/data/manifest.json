@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated": "2026-10-27T00:22:00+09:00",
-  "default": "2026-10-24",
+  "generated": "2026-10-27T01:11:37+09:00",
+  "default": "2026-10-31",
   "rolling_horizon_weeks": 6,
   "publication_tiers": {
     "full": "今週〜2週間先。全掲載イベントを公式確認済みにする",
@@ -10,21 +10,12 @@
   },
   "weekends": [
     {
-      "sat": "2026-10-24",
-      "sun": "2026-10-25",
-      "label": "10/24(土)〜10/25(日)",
-      "file": "2026-10-24.json",
-      "count": 78,
-      "horizon_index": 1,
-      "publication_tier": "full"
-    },
-    {
       "sat": "2026-10-31",
       "sun": "2026-11-01",
       "label": "10/31(土)〜11/1(日)",
       "file": "2026-10-31.json",
       "count": 64,
-      "horizon_index": 2,
+      "horizon_index": 1,
       "publication_tier": "full"
     },
     {
@@ -33,8 +24,8 @@
       "label": "11/7(土)〜11/8(日)",
       "file": "2026-11-07.json",
       "count": 51,
-      "horizon_index": 3,
-      "publication_tier": "preview"
+      "horizon_index": 2,
+      "publication_tier": "full"
     },
     {
       "sat": "2026-11-14",
@@ -42,7 +33,7 @@
       "label": "11/14(土)〜11/15(日)",
       "file": "2026-11-14.json",
       "count": 41,
-      "horizon_index": 4,
+      "horizon_index": 3,
       "publication_tier": "preview"
     },
     {
@@ -51,8 +42,8 @@
       "label": "11/21(土)〜11/22(日)",
       "file": "2026-11-21.json",
       "count": 29,
-      "horizon_index": 5,
-      "publication_tier": "announcement"
+      "horizon_index": 4,
+      "publication_tier": "preview"
     },
     {
       "sat": "2026-11-28",
@@ -60,6 +51,15 @@
       "label": "11/28(土)〜11/29(日)",
       "file": "2026-11-28.json",
       "count": 24,
+      "horizon_index": 5,
+      "publication_tier": "announcement"
+    },
+    {
+      "sat": "2026-12-05",
+      "sun": "2026-12-06",
+      "label": "12/5(土)〜12/6(日)",
+      "file": "2026-12-05.json",
+      "count": 28,
       "horizon_index": 6,
       "publication_tier": "announcement"
     }

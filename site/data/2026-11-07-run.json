@@ -4,8 +4,8 @@
     "sat": "2026-11-07",
     "sun": "2026-11-08"
   },
-  "horizon_index": 3,
-  "publication_tier": "preview",
+  "horizon_index": 2,
+  "publication_tier": "full",
   "mode": "v1.5-native-full-research",
   "prompt": {
     "version": "v1.5",
@@ -97,8 +97,8 @@
     "published": 51,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 40,
-    "announced": 11,
+    "verified": 51,
+    "announced": 0,
     "corrected": 2,
     "thumbnail_count": 35,
     "thumbnail_coverage": 0.8333333333333334,
@@ -206,5 +206,34 @@
       ],
       "multi_program_parents_automatically_rolled": false
     }
-  ]
+  ],
+  "full_tier_recheck": {
+    "reviewed_on": "2026-10-27",
+    "upgraded_ids": [
+      "v15-237c930495e3",
+      "v15-0c99233f00d9",
+      "v15-d18ca8b4095f",
+      "v15-066e0211371b",
+      "v15-41134e91ddc0",
+      "v15-3e409ca87678",
+      "official-2026-suginami-festa",
+      "official-2026-yayoi-fukusaku",
+      "official-2026-shirasagi-stamp",
+      "official-2026-nihonbashi-komichi",
+      "official-2026-haneda-museum"
+    ],
+    "official_pages": {
+      "v15-237c930495e3": "https://www.city.minato.tokyo.jp/bungeishinkou/minakore/home.html",
+      "v15-0c99233f00d9": "https://inclusion-art.jp/archive/event/2026/20261107-422.html",
+      "v15-d18ca8b4095f": "https://www.neribun.or.jp/event/detail_m.cgi?id=202606301782802063",
+      "v15-066e0211371b": "https://sumida-artfest.jp/",
+      "v15-41134e91ddc0": "https://www.city.tokyo-nakano.lg.jp/event/kanko/shotengai_nigiwaifesta2026.html",
+      "v15-3e409ca87678": "https://www.city.meguro.tokyo.jp/sangyoukeizai/bunkasports/kankou/riverside.html",
+      "official-2026-suginami-festa": "https://www.sugifes.com/event/",
+      "official-2026-yayoi-fukusaku": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14590",
+      "official-2026-shirasagi-stamp": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+      "official-2026-nihonbashi-komichi": "https://www.keepallsmiles.com/komichi2026",
+      "official-2026-haneda-museum": "https://www.o-2.jp/event/hasmhicity2026/"
+    }
+  }
 }

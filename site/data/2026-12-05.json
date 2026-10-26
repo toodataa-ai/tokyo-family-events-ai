@@ -1,0 +1,232 @@
+{
+  "sample": false,
+  "sat": "2026-12-05",
+  "sun": "2026-12-06",
+  "label": "12/5(土)〜12/6(日)",
+  "generated": "2026-10-27T01:11:37+09:00",
+  "horizon_index": 6,
+  "publication_tier": "announcement",
+  "verification_file": "2026-12-05-verification.json",
+  "run_file": "2026-12-05-run.json",
+  "coverage": {
+    "sources_checked": 23,
+    "candidate_count": 28,
+    "duplicate_removed": 0,
+    "excluded_count": 0,
+    "published_count": 28,
+    "wards": [
+      {
+        "ward": "千代田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "中央区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "港区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "新宿区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "文京区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "台東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "墨田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "江東区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "品川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "目黒区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "大田区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "世田谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "渋谷区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "中野区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 9,
+        "published_count": 9,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "杉並区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "豊島区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "北区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "荒川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "板橋区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "練馬区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 8,
+        "published_count": 8,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "足立区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "葛飾区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      },
+      {
+        "ward": "江戸川区",
+        "status": "checked",
+        "queries": 3,
+        "sources_checked": 1,
+        "candidate_count": 0,
+        "published_count": 0,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+      }
+    ]
+  },
+  "event_files": [
+    "2026-12-05-events-official-verified.json",
+    "2026-12-05-events-preserved-carryover.json"
+  ],
+  "events": []
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-27-r1",
+  "current_public_release": "release/2026-10-27-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -203,6 +203,15 @@
       "workflow_run_id": 40415108275,
       "note": "ユーザー明示承認の本番アプリv1.21。production v1.20を直接親とする隔離候補8072b8からPR #42にて画面関連10ファイルのみ昇格。検索/コピー期間指定、今週の追加・更新、週単位の日本語更新履歴、星の配置、開催日別のフェス親子表示（中野12/5・練馬11/3・12/5、元イベントID保持）、Canva選択を維持。ステージングmain 47f4d470 CI run 40397471727成功、本番Pages 40415108275成功。data-production SHA ad0be634dc89e7d5f07dabcc34d0249e3dc3565c は不変。練馬11/8・11/21・11/29公式企画欠落の原因調査は別issue #43、今回データは変更なし。",
       "public_version": "1.21"
+    },
+    {
+      "release_id": "release/2026-10-27-r2",
+      "branch": "release/2026-10-27-r2",
+      "commit_sha": "110da720f2587b7384c2171ee4561e437d44967d",
+      "deployed_at": "2026-10-27T00:00:00+09:00",
+      "workflow_run_id": 40419143572,
+      "note": "正式アプリv1.22。v1.21の既存期間指定UIに対する本番旧回帰テスト2ファイルのみPR #44/#46で最新契約へ整合。アプリ画面・動作・イベント個票には変更なし。staging検証と本番Pages run40419143572 success。データのみの練馬区3件追加は独立 data-release/2026-10-27-r532、data-production SHA 6591c7c7a4429b11cf1f5572e0d52b7153180f30。",
+      "public_version": "1.22"
     }
   ],
   "current_public_version": "1.20"

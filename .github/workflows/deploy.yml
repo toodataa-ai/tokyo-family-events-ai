@@ -237,7 +237,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
+            python staging-policy-src/tools/validate_verified_subset.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data \
               --allow-unchanged-historical-gaps-base "${{ needs.gate.outputs.base_data_production_sha }}"
           else
@@ -336,7 +339,9 @@ jobs:
             cd data-staging-src
             python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
             python3 ../production-src/tools/validate_decisions.py --strict site/data
-            if [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            if [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview inherits immutable verified-subset proof and scoped source audit from validate_data on candidate SHA"
+            elif [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
             else
               if [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
@@ -359,7 +364,11 @@ jobs:
             fi
             python3 ../production-src/tools/validate_rereview.py site/data --strict
             if [ "$stage" != "$base" ]; then
-              node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data
+              if [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
+                python3 ../staging-src/tools/validate_verified_subset.py --base-ref "$base"
+              else
+                node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data
+              fi
             fi
           )
           echo "STAGING_PREVIEW_DATA_STRICT_PASS stage=$stage production=$base"

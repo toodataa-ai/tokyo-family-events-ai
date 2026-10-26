@@ -3,8 +3,15 @@ name: Audit official Nerima forest schedule vs published date rows (read-only)
 on:
   workflow_dispatch: {}
   push:
-    branches: [data-production]
-    paths: ['site/data/**']
+    branches: [main, data-production]
+    paths:
+      - 'site/data/**'
+      - 'tools/audit_nerima_forest_publication.py'
+      - 'tools/nerima_forest_schedule.py'
+      - 'tests/test_nerima_forest_publication.py'
+      - 'tests/test_nerima_forest_schedule.py'
+      - '.github/data-deploy-trigger.txt'
+      - '.github/workflows/audit-nerima-forest-publication.yml'
   pull_request:
     branches: [main]
     paths:

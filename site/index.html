@@ -25,7 +25,7 @@
       <div><div class="eyebrow">DATA STATUS</div><h2 id="statusTitle">いまのデータ状況</h2><p id="statusScope">6週間分の監査データを読み込み中です。</p></div>
     </div>
     <div class="summary-grid">
-      <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間・重複統合後</small></div>
+      <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small id="publishedCountScope">6週間・同一フェスの企画を統合後</small></div>
     </div>
     <div class="home-changes-summary" id="homeChangesSummary" aria-live="polite">今週の掲載変更を集計中です。</div>
     <details class="update-history-details" id="updateHistoryDetails">
@@ -108,6 +108,7 @@
 import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261021-arts-venue-chain';
 import {summarizeUpdateHistory,formatJapaneseUpdateDate} from './update-history-display.js?v=20261027-weekly-ja-1';
 import {loadChangeData,currentChangeCounts} from './recent-event-changes.js?v=20261027-1';
+import {groupFestivalDisplayEvents,groupedEventChangeCounts} from './festival-display-grouping.js?v=20261027-fest-parent';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -211,12 +212,16 @@ loadFixedSourcesSection();
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const dataRows=rows.map(x=>x.data).filter(Boolean);
     const allEvents=mergeEventsAcrossWeeks(dataRows);
-    const published=allEvents.length;
+    const published=groupFestivalDisplayEvents(allEvents).length;
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
+    const underlying=allEvents.length;
+    $('publishedCountScope').textContent=underlying===published
+      ? '6週間・重複統合後'
+      : `6週間・フェス内の企画をまとめて表示（原本${underlying}企画）`;
     const changeBox=$('homeChangesSummary');
     try{
       const changes=await loadChangeData({manifest,history:updateHistory});
-      const counts=currentChangeCounts(allEvents,changes);
+      const counts=groupedEventChangeCounts(allEvents,changes);
       changeBox.innerHTML='<b>今週の掲載変更</b>'+
         '<a href="search.html?changes=added" class="home-change-link">追加 <strong>'+counts.added+'件</strong> を見る</a>'+
         '<a href="search.html?changes=updated" class="home-change-link">情報更新 <strong>'+counts.updated+'件</strong> を見る</a>';

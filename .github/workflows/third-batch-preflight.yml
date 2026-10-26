@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/third-batch-preflight.yml'
+      - 'tools/build_verified_horizon_subset.py'
+      - 'research/third_batch_20261205_verified_shard.json'
+      - 'research/third_batch_20261205_carryover_preservation.json'
   workflow_dispatch: {}
 permissions:
   contents: read
@@ -15,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           path: main-src
       - uses: actions/checkout@v4
         with:

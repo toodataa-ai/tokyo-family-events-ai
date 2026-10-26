@@ -1,7 +1,10 @@
-// Presentation-only festival hierarchy. Never delete/merge the immutable event
-// records, validation proof, date intervals or previously saved Canva IDs.
+// Presentation-only parent/child hierarchy. Published individual-event rows,
+// official evidence, immutable identifiers, URLs, periods and saved Canva selections
+// are never rewritten. Only a trusted allowlist can be grouped.
 export const NAKANO_FESTIVAL_SOURCE='https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.html';
+export const NERIMA_FOREST_SOURCE='https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html';
 export const NAKANO_FESTIVAL_GROUP_ID='display-festival-nakano-20261205';
+export const NERIMA_FOREST_GROUP_ID='display-festival-nerima-forest-20261205';
 export const NAKANO_FESTIVAL_CHILD_IDS=Object.freeze([
   'v15-20261205-nakano-oshiri',
   'v15-20261205-nakano-precure-show',
@@ -12,51 +15,86 @@ export const NAKANO_FESTIVAL_CHILD_IDS=Object.freeze([
   'v15-20261205-nakano-student-art',
   'v15-20261205-nakano-vanguard'
 ]);
-const CHILDREN=new Set(NAKANO_FESTIVAL_CHILD_IDS);
-const festivalTitle='中野×杉並×豊島アニメ・マンガフェス2026（中野会場）';
-
-export function isNakanoFestivalChild(ev){
-  return Boolean(ev && CHILDREN.has(ev.id) && ev.ward==='中野区'
-    && ev.date_start==='2026-12-05' && ev.date_end==='2026-12-05'
-    && ev.official_url===NAKANO_FESTIVAL_SOURCE);
-}
-export function buildNakanoFestivalGroup(members){
-  if(!Array.isArray(members)||!members.length||!members.every(isNakanoFestivalChild))return null;
-  const best=members.find(ev=>ev.family_fit?.overall==='A')||members[0];
-  // Detailed programs live in _festival_members, so the Canva description stays readable.
-  return {
-    ...best,
-    id:NAKANO_FESTIVAL_GROUP_ID,
-    name:festivalTitle,
-    date_start:'2026-12-05',date_end:'2026-12-05',period:'12/5(土)',
+export const NERIMA_FOREST_CHILD_IDS=Object.freeze([
+  'v15-20261205-nerima-mori-leaf',
+  'v15-20261205-nerima-mori-otaka',
+  'v15-20261205-nerima-mori-takamatsu'
+]);
+const SPECS=Object.freeze([
+  {
+    id:NAKANO_FESTIVAL_GROUP_ID,source:NAKANO_FESTIVAL_SOURCE,ward:'中野区',
+    ids:NAKANO_FESTIVAL_CHILD_IDS,
+    name:'中野×杉並×豊島アニメ・マンガフェス2026（中野会場）',
     venue:'なかのZERO（小ホール・西館・本館）',
     time:'10:00〜18:00（企画により異なる）',
     price:'無料の企画あり／一部の企画は料金要確認',
-    reservation:{required:false,note:'抽選制・当日整理券・申込不要など、企画ごとに異なります。'},
-    description:'12月5日に中野会場で開催。プリキュアショー・おしりたんてい工作・特別上映会4枠・アート展示・カードゲームなど8企画をまとめて紹介します。申込方法は企画ごとに異なります。',
+    reservation:'抽選制・当日整理券・申込不要など、企画ごとに異なります。',
+    description:'12月5日に中野会場で開催。プリキュアショー・おしりたんてい工作・特別上映会4枠・アート展示・カードゲームなどの企画をまとめて紹介します。申込方法は企画ごとに異なります。',
     categories:['フェスティバル','アニメ','マンガ','親子','映画','上映会','工作','カードゲーム'],
-    official_url:NAKANO_FESTIVAL_SOURCE,url:NAKANO_FESTIVAL_SOURCE,source:NAKANO_FESTIVAL_SOURCE,
+    type:'nakano'
+  },
+  {
+    id:NERIMA_FOREST_GROUP_ID,source:NERIMA_FOREST_SOURCE,ward:'練馬区',
+    ids:NERIMA_FOREST_CHILD_IDS,
+    name:'ねりまの森こどもフェスタ2026（12月5日開催）',
+    venue:'練馬区内3会場（石庭の森・大関山の森・南高松の森）',
+    time:'9:30〜14:30（3会場で異なる時間に開催）',
+    price:'無料',
+    reservation:'予約不要・当日会場へ。雨天中止（一部除く）。各会場に駐車場なし。',
+    description:'練馬区内の森で、落ち葉祭り（石庭の森）と森のおしごと体験（大関山・南高松の森）を開催。会場・時間が異なるため、詳細で参加先を確認してください。',
+    categories:['フェスティバル','自然体験','落ち葉','子ども','親子','森'],
+    type:'nerima'
+  }
+]);
+const SPEC_BY_ID=new Map(SPECS.flatMap(spec=>spec.ids.map(id=>[id,spec])));
+function groupFor(ev){
+  if(!ev)return null;
+  const spec=SPEC_BY_ID.get(ev.id);
+  return spec&&ev.ward===spec.ward&&ev.date_start==='2026-12-05'&&ev.date_end==='2026-12-05'
+    &&ev.official_url===spec.source?spec:null;
+}
+export function isNakanoFestivalChild(ev){return groupFor(ev)?.id===NAKANO_FESTIVAL_GROUP_ID;}
+export function isNerimaForestChild(ev){return groupFor(ev)?.id===NERIMA_FOREST_GROUP_ID;}
+
+function makeGroup(members,spec){
+  if(!members.length||!members.every(ev=>groupFor(ev)===spec))return null;
+  const best=members.find(ev=>ev.family_fit?.overall==='A')||members[0];
+  return {
+    ...best,id:spec.id,name:spec.name,
+    date_start:'2026-12-05',date_end:'2026-12-05',period:'12/5(土)',
+    venue:spec.venue,time:spec.time,price:spec.price,
+    reservation:{required:false,note:spec.reservation},
+    description:spec.description,categories:spec.categories,
+    official_url:spec.source,url:spec.source,source:spec.source,
     image:members.find(ev=>ev.image)?.image||'',
-    _festival_group:true,
-    _festival_members:[...members],
-    _festival_total_programs:NAKANO_FESTIVAL_CHILD_IDS.length
+    // All original child facts remain available without modifying source files.
+    _festival_group:true,_festival_type:spec.type,
+    _festival_members:[...members],_festival_total_programs:spec.ids.length
   };
 }
-// Called AFTER normal individual event filtering: date, age, availability,
-// keyword and source filters keep their exact pre-existing semantics.
+export function buildNakanoFestivalGroup(members){return makeGroup(members,SPECS[0]);}
+export function buildNerimaForestGroup(members){return makeGroup(members,SPECS[1]);}
+// Group only AFTER regular event filtering so a search for one specific
+// workshop still yields the parent card with only that relevant activity.
+// Non-group events preserve their original order and identities.
 export function groupFestivalDisplayEvents(events){
   if(!Array.isArray(events))return [];
-  const members=events.filter(isNakanoFestivalChild);
-  if(!members.length)return [...events];
-  const group=buildNakanoFestivalGroup(members);
-  const out=[];
-  let inserted=false;
+  const bySpec=new Map();
   for(const ev of events){
-    if(isNakanoFestivalChild(ev)){
-      if(!inserted){out.push(group);inserted=true;}
-    }else out.push(ev);
+    const spec=groupFor(ev);
+    if(spec){if(!bySpec.has(spec))bySpec.set(spec,[]);bySpec.get(spec).push(ev);}
   }
-  return out;
+  if(!bySpec.size)return [...events];
+  const displayed=[],inserted=new Set();
+  for(const ev of events){
+    const spec=groupFor(ev);
+    if(!spec){displayed.push(ev);continue;}
+    if(!inserted.has(spec.id)){
+      displayed.push(makeGroup(bySpec.get(spec),spec));
+      inserted.add(spec.id);
+    }
+  }
+  return displayed;
 }
 export function festivalDisplayChangeKind(group,changes){
   if(!group?._festival_group)return '';
@@ -70,7 +108,6 @@ export function festivalMemberSummary(group){
   return n===group._festival_total_programs ? '内訳'+n+'企画'
     : '条件に一致'+n+'企画（全'+group._festival_total_programs+'企画）';
 }
-
 export function groupedEventChangeCounts(events,changes){
   const counts={added:0,updated:0};
   for(const ev of groupFestivalDisplayEvents(events)){

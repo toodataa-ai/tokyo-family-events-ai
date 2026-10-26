@@ -129,7 +129,7 @@ def main(data,evidence,mainrepo,base):
   if e['id'] in verified:
    sat=next(z['source_week'] for z in carry['items'] if z['id']==e['id'])
    rows=load(data/(sat+'-decisions.json'))['decisions']
-   found=next((x for x in rows if x.get('candidate_id')==e['id']),None)
+   found=next((x for x in rows if x.get('candidate_id') in (e['id'],'preserved-'+e['id']) or (x.get('name')==e['name'] and x.get('ward')==e['ward'] and x.get('decision')=='published')),None)
   if found is not None:
    decisions.append(copy.deepcopy(found));continue
   fit=e.get('family_fit') or {}

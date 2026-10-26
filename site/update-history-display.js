@@ -5,9 +5,13 @@ const jstDate = value => {
   const date = new Date(value);
   return Number.isNaN(date.valueOf()) ? null : date;
 };
-const jstDay = date => new Intl.DateTimeFormat('en-CA', {
-  timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'
-}).format(date).replace(/\//g,'-');
+const jstDay = date => {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'
+  }).formatToParts(date);
+  const get=type=>parts.find(x=>x.type===type)?.value||'';
+  return [get('year'),get('month'),get('day')].join('-');
+};
 
 function startOfWeek(day) {
   const parts = String(day||'').split('-').map(Number);
@@ -72,12 +76,12 @@ export function summarizeUpdateHistory(history) {
   return [...groups.values()].sort((a,b)=>b.week.localeCompare(a.week)).map(group=>{
     const short=group.week.slice(5).replace('-','/');
     const parts=[];
-    if(group.rollover)parts.push('6週間の掲載期間を更新');
-    if(group.added>0)parts.push('新規'+group.added+'件');
+    if(group.rollover)parts.push('6週間更新');
+    if(group.added>0)parts.push('追加'+group.added+'件');
     if(group.changed>0)parts.push('情報修正'+group.changed+'件');
     if(group.removed>0)parts.push('掲載終了'+group.removed+'件');
     if(group.correction&&!group.rollover)parts.push('掲載情報を再点検');
-    if(group.pendingSources>0)parts.push('取得確認中'+group.pendingSources+'件');
+    if(group.pendingSources>0)parts.push('参照元未取得'+group.pendingSources+'件');
     return {week:group.week,label:short+'週',summary:parts.join('・')||'掲載情報を更新',
       entries:group.entries,latestTime:group.latestTime,added:group.added};
   });

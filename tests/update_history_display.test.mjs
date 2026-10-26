@@ -19,7 +19,7 @@ assert.match(groups[0].summary,/参照元未取得5件/);
 assert.doesNotMatch(groups[0].summary,/partial|verified-subset|[A-Za-z]{5}/);
 assert.equal(groups[1].label,'10/19週');
 assert.match(groups[1].summary,/追加21件/);
-assert.match(groups[2].label,'10/12週');
+assert.equal(groups[2].label,'10/12週');
 assert.match(groups[2].summary,/再点検/);
 assert.equal(formatJapaneseUpdateDate('2026-10-26T16:11:37Z'),'2026/10/27 01:11');
 assert.equal(summarizeUpdateHistory([]).length,0);

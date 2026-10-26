@@ -65,7 +65,7 @@
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
 import {loadChangeData,changeBadge,currentChangeCounts,changeKind} from './recent-event-changes.js?v=20261027-1';
-import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary} from './festival-display-grouping.js?v=20261027-fest-parent';
+import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary,groupedEventChangeCounts} from './festival-display-grouping.js?v=20261027-fest-parent';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
 let manifest=null,registry=null,currentData=null,filterUI=null,changes=null;
@@ -110,9 +110,9 @@ function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';
 
 function renderChangeControls(){
   const bar=$('changeFilterBar');if(!bar||!currentData)return;
-  const counts=currentChangeCounts(currentData.events,changes);
+  const counts=groupedEventChangeCounts(currentData.events,changes);
   bar.innerHTML='<span class="change-filter-label">今週の掲載変更</span>'+
-    [['','すべて',currentData.events.length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
+    [['','すべて',groupFestivalDisplayEvents(currentData.events).length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
     .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
       '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
 }

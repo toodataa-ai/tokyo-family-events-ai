@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 25,
-    "verified": 17,
+    "published": 29,
+    "verified": 21,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2072,5 +2072,27 @@
       ],
       "multi_program_parents_automatically_rolled": false
     }
-  ]
+  ],
+  "verified_subset_addendum": {
+    "run_type": "manual_verified_subset_addition",
+    "as_of_jst": "2026-10-26",
+    "target_holiday": "2026-11-23",
+    "base_data_production_sha": "605f7144b99944201663055105e076e3b1237ebd",
+    "new_event_ids": [
+      "partial-20261123-edogawa-planaria",
+      "partial-20261123-edogawa-keyholder",
+      "partial-20261123-edogawa-magic",
+      "partial-20261123-toshima-kumanoko"
+    ],
+    "failed_required_source_urls": 5,
+    "source_failures_remain_unverified": true,
+    "evidence": [
+      "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/40239302863",
+      "https://www.city.edogawa.tokyo.jp/event/2611puranaria.html",
+      "https://www.city.edogawa.tokyo.jp/event/2611keyholder.html",
+      "https://www.city.edogawa.tokyo.jp/event/2611kosaku.html",
+      "https://www.city.toshima.lg.jp/129/bunka/bunka/shiryokan/2602150927.html"
+    ],
+    "note": "従来の探索計測には加算せず個別公式ページで確認した4件のみ掲載候補化。5つの参照元エラーは解消済みとしない。"
+  }
 }

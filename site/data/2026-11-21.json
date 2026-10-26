@@ -3,17 +3,17 @@
   "sat": "2026-11-21",
   "sun": "2026-11-22",
   "label": "11/21(土)〜11/22(日)",
-  "generated": "2026-10-19T17:36:28+00:00",
+  "generated": "2026-10-26T23:16:00+09:00",
   "horizon_index": 5,
   "publication_tier": "announcement",
   "verification_file": "2026-11-21-verification.json",
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 41,
+    "candidate_count": 45,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 25,
+    "published_count": 29,
     "wards": [
       {
         "ward": "千代田区",
@@ -155,9 +155,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規1件を別資料で加算。旧run探索カウンタは変更なし。"
       },
       {
         "ward": "北区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。"
       }
     ]
   },
@@ -229,7 +229,8 @@
     "2026-11-21-events-carryover.json",
     "2026-11-21-events-manual-primary.json",
     "2026-11-21-events-verified-continuity.json",
-    "2026-11-21-events-manual-festival-subprograms.json"
+    "2026-11-21-events-manual-festival-subprograms.json",
+    "2026-11-21-events-holiday-2026-11-23.json"
   ],
   "events": []
 }

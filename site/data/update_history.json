@@ -61,6 +61,27 @@
       ],
       "executed_at": "2026-10-26T07:02:00+09:00",
       "note": "文化の日専用公式9件を土日週データに追記。元の6週間と既存掲載IDを不変保持。未確認情報は明示。"
+    },
+    {
+      "run_id": "manual-verified-subset-2026-11-23-605f7144b999",
+      "run_type": "manual_verified_subset_addition",
+      "status": "official_verified_addition",
+      "as_of_jst": "2026-10-26",
+      "target_holiday": "2026-11-23",
+      "base_data_production_sha": "605f7144b99944201663055105e076e3b1237ebd",
+      "added_weekly_records": 4,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "new_event_ids": [
+        "partial-20261123-edogawa-planaria",
+        "partial-20261123-edogawa-keyholder",
+        "partial-20261123-edogawa-magic",
+        "partial-20261123-toshima-kumanoko"
+      ],
+      "failed_required_source_urls": 5,
+      "source_failures_remain_unverified": true,
+      "executed_at": "2026-10-26T23:16:00+09:00",
+      "note": "5件の必須参照元取得失敗を保持したまま、個別公式根拠4件を独立祝日分として安全なデータ専用追加候補とした。"
     }
   ]
 }

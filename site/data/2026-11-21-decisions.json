@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 41,
-    "published": 25,
+    "candidate_total": 45,
+    "published": 29,
     "excluded": 16,
     "duplicate": 0
   },
@@ -2743,6 +2743,290 @@
       ],
       "negative_signals": [],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "partial-20261123-edogawa-planaria",
+      "name": "謎の生物プラナリア大研究",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "明確な児童対象・無料の体験学習企画で、参加学年と事前申込が条件。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生・親子を対象にした企画として主催者が募集。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "実験・制作・実演に参加する体験型企画。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "公式募集には対象学年が限定されているため、該当学年向けと明記。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "講座は開始時間と終了時間が固定されている。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と定刻集合が必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式案内で参加費無料と確認。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "抽選制。10月16日～11月10日に事前申込が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "理科・工作・表現活動を通じた学びと親子で楽しむ機会がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_venue_published",
+        "child_friendly"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "対象学年・抽選制を明記し、公式個別ページで体験内容を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2611puranaria.html",
+          "basis": "2026年11月23日の日時・会場・参加条件・子ども向け内容の自治体公式告知"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-10-26の独立祝日追加候補。全検証・GitHub Actions承認後に公開可能。"
+    },
+    {
+      "candidate_id": "partial-20261123-edogawa-keyholder",
+      "name": "光るキーホルダーをつくろう",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "明確な児童対象・無料の体験学習企画で、参加学年と事前申込が条件。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生・親子を対象にした企画として主催者が募集。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "実験・制作・実演に参加する体験型企画。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "公式募集には対象学年が限定されているため、該当学年向けと明記。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "講座は開始時間と終了時間が固定されている。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と定刻集合が必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式案内で参加費無料と確認。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "抽選制。10月16日～11月10日に事前申込が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "理科・工作・表現活動を通じた学びと親子で楽しむ機会がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_venue_published",
+        "child_friendly"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "対象学年・抽選制を明記し、公式個別ページで体験内容を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2611keyholder.html",
+          "basis": "2026年11月23日の日時・会場・参加条件・子ども向け内容の自治体公式告知"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-10-26の独立祝日追加候補。全検証・GitHub Actions承認後に公開可能。"
+    },
+    {
+      "candidate_id": "partial-20261123-edogawa-magic",
+      "name": "工作とマジックに挑戦",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "明確な児童対象・無料の体験学習企画で、参加学年と事前申込が条件。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生・親子を対象にした企画として主催者が募集。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "実験・制作・実演に参加する体験型企画。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "公式募集には対象学年が限定されているため、該当学年向けと明記。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "講座は開始時間と終了時間が固定されている。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と定刻集合が必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式案内で参加費無料と確認。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "抽選制。10月16日～11月10日に事前申込が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "理科・工作・表現活動を通じた学びと親子で楽しむ機会がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_venue_published",
+        "child_friendly"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "対象学年・抽選制を明記し、公式個別ページで体験内容を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2611kosaku.html",
+          "basis": "2026年11月23日の日時・会場・参加条件・子ども向け内容の自治体公式告知"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-10-26の独立祝日追加候補。全検証・GitHub Actions承認後に公開可能。"
+    },
+    {
+      "candidate_id": "partial-20261123-toshima-kumanoko",
+      "name": "熊谷守一美術館 特別開館 くまのこDAY",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "B",
+        "grade": "B",
+        "reason": "子ども連れに配慮した特別開館だが鑑賞中心。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "親子で鑑賞しやすい特別開館日を公式案内で確認。"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "作品の鑑賞中心で、制作体験の明示なし。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "未就学児も来館でき、家族の会話や子どもの声に配慮された特別日。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開館時間内に家族の都合に合わせて鑑賞可能。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "美術館までの移動と子どもの鑑賞時間の調整が必要。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "小中学生100円・未就学児無料。一般入館料500円。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "公式案内で申込不要と確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子連れ鑑賞を歓迎する特別開館で家族の文化体験に適する。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_venue_published",
+        "child_friendly"
+      ],
+      "negative_signals": [
+        "passive_only"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "子連れ歓迎の特別開館日として公式に明示。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/129/bunka/bunka/shiryokan/2602150927.html",
+          "basis": "2026年11月23日の日時・会場・参加条件・子ども向け内容の自治体公式告知"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-10-26の独立祝日追加候補。全検証・GitHub Actions承認後に公開可能。"
     }
   ]
 }

@@ -105,6 +105,7 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261021-arts-venue-chain';
+import {summarizeUpdateHistory,formatJapaneseUpdateDate} from './update-history-display.js?v=20261027-weekly-ja-1';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -182,27 +183,21 @@ async function loadFixedSourcesSection(){
 }
 
 function renderUpdateHistory(data){
-  const rows=Array.isArray(data?.history)?[...data.history].reverse():[];
+  const weeks=summarizeUpdateHistory(data?.history);
   const list=$('updateHistoryList'),summary=$('updateHistorySummary');
-  if(!rows.length){
+  if(!weeks.length){
     summary.textContent='更新実績なし';
-    list.innerHTML='<p>休日明けの6週間データ更新はまだ完了していません。アプリの公開Version更新は下の「公開バージョン履歴」に表示します。</p>';
+    list.innerHTML='<p>掲載データの更新履歴はまだありません。</p>';
     return;
   }
-  const latest=rows[0];
-  summary.textContent=`最新: ${formatUpdateDate(latest.executed_at)}${Number.isFinite(Number(latest.published_unique_after))?`・${Number(latest.published_unique_after).toLocaleString('ja-JP')}件`:''}`;
-  list.innerHTML=rows.map(row=>{
-    const parts=[];
-    if(row.target_start&&row.target_end) parts.push(`対象 ${escapeHtml(row.target_start)}〜${escapeHtml(row.target_end)}`);
-    if(Number.isFinite(Number(row.published_unique_after))) parts.push(`掲載 ${Number(row.published_unique_after).toLocaleString('ja-JP')}件`);
-    if(Number.isFinite(Number(row.added_unique))) parts.push(`追加 ${Number(row.added_unique).toLocaleString('ja-JP')}件`);
-    if(Number.isFinite(Number(row.changed_unique))) parts.push(`変更 ${Number(row.changed_unique).toLocaleString('ja-JP')}件`);
-    if(Number.isFinite(Number(row.removed_unique))) parts.push(`掲載終了 ${Number(row.removed_unique).toLocaleString('ja-JP')}件`);
-    if(Number.isFinite(Number(row.rolled_out_unique))&&Number(row.rolled_out_unique)>0) parts.push(`期間外へ移動 ${Number(row.rolled_out_unique).toLocaleString('ja-JP')}件`);
-    return `<div class="update-history-item"><b>${escapeHtml(formatUpdateDate(row.executed_at))}</b><span>${parts.join(' ／ ')}</span>${row.note?`<small>${escapeHtml(row.note)}</small>`:''}</div>`;
-  }).join('');
+  // User-facing history is one compact Japanese line PER WEEK.
+  // Source logs and each immutable update record remain in JSON for auditing.
+  const latest=weeks[0];
+  summary.textContent=`最新: ${latest.label}（${latest.entries}回分を集約）`;
+  list.innerHTML=weeks.map(item=>
+    `<div class="update-history-item update-history-item-weekly"><b>${escapeHtml(item.label)}</b><span>${escapeHtml(item.summary)}</span></div>`
+  ).join('');
 }
-
 loadFixedSourcesSection();
 
 (async()=>{
@@ -215,7 +210,7 @@ loadFixedSourcesSection();
     const dataRows=rows.map(x=>x.data).filter(Boolean);
     const published=mergeEventsAcrossWeeks(dataRows).length;
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
-    $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${manifest.generated||'-'}`;
+    $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${formatJapaneseUpdateDate(manifest.generated)}`;
   }catch(e){
     console.error(e);
     $('statusScope').textContent='データ状況の読み込みに失敗しました。';

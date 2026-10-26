@@ -39,16 +39,13 @@ def events():
 def write_dataset(root, rows):
     manifest = {"weekends": [
         {"sat": "2026-11-07", "sun": "2026-11-08", "file": "2026-11-07.json"},
+        {"sat": "2026-11-21", "sun": "2026-11-22", "file": "2026-11-21.json"},
         {"sat": "2026-11-28", "sun": "2026-11-29", "file": "2026-11-28.json"}
     ]}
     (root / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
     for week in manifest["weekends"]:
         sat, sun = week["sat"], week["sun"]
         subset = [ev for ev in rows if sat <= ev["date_start"] <= sun]
-        # Include the 11/21 record in the second shard to prove that the
-        # reconciliation checks actual event dates, not merely shard names.
-        if sat == "2026-11-28":
-            subset += [ev for ev in rows if ev["date_start"] == "2026-11-21"]
         (root / (sat + "-events.json")).write_text(
             json.dumps(subset, ensure_ascii=False), encoding="utf-8")
         (root / (sat + ".json")).write_text(

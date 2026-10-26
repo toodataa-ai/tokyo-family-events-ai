@@ -246,7 +246,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
+            python3 staging-policy-src/tools/validate_nerima_forest_addition.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
             python3 staging-policy-src/tools/validate_verified_horizon_rollover.py \
               --data-dir site/data \
               --main-dir staging-policy-src \
@@ -371,6 +374,8 @@ jobs:
               echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits immutable verified-subset proof and scoped source audit from validate_data on candidate SHA"
+            elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview inherits strict three-week Nerima official schedule additive audit from validate_data job"
             elif [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
             else
@@ -394,7 +399,9 @@ jobs:
             fi
             python3 ../production-src/tools/validate_rereview.py site/data --strict
             if [ "$stage" != "$base" ]; then
-              if [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
+              if [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
+                python3 ../staging-src/tools/validate_nerima_forest_addition.py --base-ref "$base"
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
                 echo "Immutable source+history already audited by validate_data on candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
                 subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"

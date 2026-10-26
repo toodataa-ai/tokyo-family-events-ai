@@ -101,5 +101,52 @@ class PublishedNerimaForestTests(unittest.TestCase):
         self.assertEqual(result["unreconciled_rows"], 1)
 
 
+    def test_tuesday_public_holiday_belongs_to_previous_weekend_shard(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_dataset(root, events())
+            m = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+            m["weekends"].insert(0, {"sat": "2026-10-31", "sun": "2026-11-01",
+                                      "file": "2026-10-31.json"})
+            m["holidays"] = [{"date": "2026-11-03", "name": "文化の日"}]
+            (root / "manifest.json").write_text(json.dumps(m), encoding="utf-8")
+            special = {"id": "nov3-forest", "name": "ねりまの森こどもフェスタ 秋のフェア",
+                       "venue": "大関山の森緑地（練馬区）",
+                       "date_start": "2026-11-03", "date_end": "2026-11-03",
+                       "official_url": SOURCE_URL}
+            (root / "2026-10-31-events.json").write_text(
+                json.dumps([special], ensure_ascii=False), encoding="utf-8")
+            (root / "2026-10-31.json").write_text(
+                json.dumps({"event_files": ["2026-10-31-events.json"],
+                            "coverage": {"published_count": 1}}), encoding="utf-8")
+            row = ("<tr><td>令和8年11月3日（火曜・祝日）午前9時から</td>"
+                   "<td>秋のフェア（公式体験）</td><td>大関山の森緑地（関町北）</td>"
+                   "<td>区民団体</td></tr>")
+            html = schedule_html().replace("</table>", row + "</table>", 1)
+            report = reconcile(html, root)
+            self.assertEqual(report["in_horizon_official_rows"], 4)
+            self.assertEqual(report["published_rows"], 4)
+            self.assertEqual(report["unreconciled_rows"], 0)
+
+    def test_official_event_in_wrong_week_shard_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_dataset(root, events())
+            middle = root / "2026-11-21-events.json"
+            late = root / "2026-11-28-events.json"
+            missing = json.loads(middle.read_text(encoding="utf-8"))[0]
+            middle.write_text("[]", encoding="utf-8")
+            original = json.loads(late.read_text(encoding="utf-8"))
+            late.write_text(json.dumps(original + [missing], ensure_ascii=False),
+                            encoding="utf-8")
+            for week, count in (("2026-11-21", 0), ("2026-11-28", 2)):
+                p = root / (week + ".json")
+                document = json.loads(p.read_text(encoding="utf-8"))
+                document["coverage"]["published_count"] = count
+                p.write_text(json.dumps(document), encoding="utf-8")
+            report = reconcile(schedule_html(), root)
+            self.assertEqual(report["rows"][1]["status"], "missing")
+
+
 if __name__ == "__main__":
     unittest.main()

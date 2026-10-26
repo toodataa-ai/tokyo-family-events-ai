@@ -1,14 +1,13 @@
-# App-only v1.22: repair two stale production regression tests from previously approved v1.21 date-range UI.
+# User-approved release v1.23: Nerima official multi-date festival complete extraction and row parity.
 operation=release
 production_ref=production
-production_sha=110da720f2587b7384c2171ee4561e437d44967d
-previous_production_sha=02e515f1beb2010dc1b6d7bd44c70961732da4c5
-candidate_sha=110da720f2587b7384c2171ee4561e437d44967d
-pr=44;46
-target_public_version=1.22
+production_sha=dc800ae047dbe75ae9d3aa11e3f284583ddd8345
+previous_production_sha=110da720f2587b7384c2171ee4561e437d44967d
+candidate_sha=f50dd8d987af9b5ed61cdb4cdfd849e65ec405e8
+pr=47
+target_public_version=1.23
 release_date_jst=2026-10-27
 expected_data_production_sha=6591c7c7a4429b11cf1f5572e0d52b7153180f30
-approved_scope=tests/hidden_past_period_shortcuts.test.mjs;tests/app_filter.test.mjs
-no_runtime_site_changes=true
-no_event_data_changes=true
-note=Two test-only fixes, production runtime stays identical v1.21; release data remains independently preserved by snapshot data-release/2026-10-27-r532.
+approved_scope=site/data/discovery_sources.json;tools/nerima_forest_schedule.py;tools/holiday_after_collect.py;tests/fixed_source_directory.test.mjs;tests/test_nerima_forest_schedule.py;package.json
+event_record_mutation=none
+note=Official full schedule table row extraction; recorded date-specific candidate IDs and counts, fail-closed duplicate/invalid row detection. Previously published 3 event records maintained by data-only release snapshot data-release/2026-10-27-r532. Previously failing required sources not marked checked.

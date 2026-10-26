@@ -1,13 +1,13 @@
-# User-approved app-only release v1.20: weekday holiday records validated safely.
+# User-approved app-only release v1.21: per-date festival grouping, recent changes, weekly history, date range, star layout.
 operation=release
 production_ref=production
-production_sha=8e8064277b77010d13e2b21c212ebc396faeb71b
-previous_production_sha=29c74668e7f46b9a6d6ff8f9369bcf410dd753cf
-candidate_sha=3e083daeb94d211c828bfe149d74a388347594d5
-pr=40
-target_public_version=1.20
-release_date_jst=2026-10-26
-isolated_release_audit_run=40237720268
-expected_data_production_sha=312436898933372993ee866293fcd4c1c9069d1c
-approved_scope=tools/validate_data.py;tests/test_independent_holiday.py;package.json
-note=Strict weekday holiday date acceptance only if explicitly in manifest and attached to previous published weekend; original data, weekend records, all unapproved staging UI and collection changes unchanged.
+production_sha=02e515f1beb2010dc1b6d7bd44c70961732da4c5
+previous_production_sha=8e8064277b77010d13e2b21c212ebc396faeb71b
+candidate_sha=8072b8affca170dd1d057ac3459d26bc23e6f2f2
+pr=42
+target_public_version=1.21
+release_date_jst=2026-10-27
+staging_validation_run=40397471727
+expected_data_production_sha=ad0be634dc89e7d5f07dabcc34d0249e3dc3565c
+approved_scope=site/app.js;site/canva.html;site/copy.html;site/festival-display-grouping.js;site/index.html;site/multi-filter-ui.js;site/recent-event-changes.js;site/search.html;site/styles.css;site/update-history-display.js
+note=Production-only approved UI changes. No data edits. Nerima 11/8, 11/21, 11/29 official programmes remain an independent ingestion gap for data-only remediation.

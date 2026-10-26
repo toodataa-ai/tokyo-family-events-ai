@@ -7,3 +7,6 @@ source_evidence=https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/n
 expected_new_event_ids=nerima-forest-20261108-nakanomiya;nerima-forest-20261121-minamitakamatsu;nerima-forest-20261129-kitappara
 approved_scope=three-new-source-verified-event-shards;3-week-audits;append-only-history;manifest-counts
 expected_existing_event_removed=0
+
+retry=2
+reason=production_v1_22_date_range_regression_test_aligned

@@ -238,8 +238,16 @@ jobs:
         shell: bash
         run: |
           if [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
-            python staging-policy-src/tools/validate_verified_subset.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+            subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
+            if [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
+              python staging-policy-src/tools/validate_verified_weekend_subset.py \
+                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+            elif [ "$subset_kind" = "manual_verified_subset_addition" ]; then
+              python staging-policy-src/tools/validate_verified_subset.py \
+                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+            else
+              echo "Unknown subset operation: $subset_kind" >&2; exit 1
+            fi
           elif [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data \
               --allow-unchanged-historical-gaps-base "${{ needs.gate.outputs.base_data_production_sha }}"
@@ -365,7 +373,14 @@ jobs:
             python3 ../production-src/tools/validate_rereview.py site/data --strict
             if [ "$stage" != "$base" ]; then
               if [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
-                python3 ../staging-src/tools/validate_verified_subset.py --base-ref "$base"
+                subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
+                if [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
+                  python3 ../staging-src/tools/validate_verified_weekend_subset.py --base-ref "$base"
+                elif [ "$subset_kind" = "manual_verified_subset_addition" ]; then
+                  python3 ../staging-src/tools/validate_verified_subset.py --base-ref "$base"
+                else
+                  echo "Unknown subset operation: $subset_kind" >&2; exit 1
+                fi
               else
                 node ../staging-src/tools/holiday_update_history.mjs --check --base-ref "$base" --data-dir site/data
               fi

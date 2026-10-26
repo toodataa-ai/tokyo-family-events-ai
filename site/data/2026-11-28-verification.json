@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-20",
+  "verified_on": "2026-10-27",
   "events": [
     {
       "id": "v15-ad2f72f74ab7",
@@ -402,11 +402,96 @@
       },
       "corrections": {},
       "note": "2026-10-20公式照合: 主催者公式11/28(土)9〜21時と11/29(日)9〜15時、すみだユートリヤギャラリー、無料。。無料展示、一般観覧の予約条件は公式掲載に記載なし。"
+    },
+    {
+      "id": "partial-20261129-nakano-precure-rally",
+      "status": "verified",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026/10/27自治体/主催者の一次案内で日時・会場・体験内容・申込条件を確認。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "partial-20261129-edogawa-origami",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/2611origami.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026/10/27自治体/主催者の一次案内で日時・会場・体験内容・申込条件を確認。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "partial-20261129-taito-bookstand",
+      "status": "verified",
+      "source": "https://www.city.taito.lg.jp/library/kodomo/event/event11/ishi-workshop-kodomo.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026/10/27自治体/主催者の一次案内で日時・会場・体験内容・申込条件を確認。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "partial-20261129-setagaya-languages",
+      "status": "verified",
+      "source": "https://celulas.or.jp/?p=8175",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026/10/27自治体/主催者の一次案内で日時・会場・体験内容・申込条件を確認。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "partial-20261129-setagaya-workfes",
+      "status": "verified",
+      "source": "https://setagaya.event-hub.jp/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026/10/27自治体/主催者の一次案内で日時・会場・体験内容・申込条件を確認。画像は誤割当防止のため未設定。"
     }
   ],
   "summary": {
-    "total": 19,
-    "verified": 13,
+    "total": 24,
+    "verified": 18,
     "announced": 6
   }
 }

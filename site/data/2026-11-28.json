@@ -3,17 +3,17 @@
   "sat": "2026-11-28",
   "sun": "2026-11-29",
   "label": "11/28(土)〜11/29(日)",
-  "generated": "2026-10-19T17:36:28+00:00",
+  "generated": "2026-10-27T00:22:00+09:00",
   "horizon_index": 6,
   "publication_tier": "announcement",
   "verification_file": "2026-11-28-verification.json",
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 35,
+    "candidate_count": 40,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 19,
+    "published_count": 24,
     "wards": [
       {
         "ward": "千代田区",
@@ -65,9 +65,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
         "ward": "墨田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規2件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
         "ward": "渋谷区",
@@ -137,9 +137,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-29中野区検定（家族共同参加イベントではない個人受験）の公式ページを確認し、候補として審査・掲載見送り。"
+        "candidate_count": 3,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-29中野区検定（家族共同参加イベントではない個人受験）の公式ページを確認し、候補として審査・掲載見送り。 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
         "ward": "杉並区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       }
     ]
   },
@@ -228,7 +228,8 @@
     "2026-11-28-events-01.json",
     "2026-11-28-events-manual-primary.json",
     "2026-11-28-events-verified-continuity.json",
-    "2026-11-28-events-manual-festival-subprograms.json"
+    "2026-11-28-events-manual-festival-subprograms.json",
+    "2026-11-28-events-verified-subset-2026-11-29.json"
   ],
   "events": []
 }

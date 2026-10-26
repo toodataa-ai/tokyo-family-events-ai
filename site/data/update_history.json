@@ -82,6 +82,28 @@
       "source_failures_remain_unverified": true,
       "executed_at": "2026-10-26T23:16:00+09:00",
       "note": "5件の必須参照元取得失敗を保持したまま、個別公式根拠4件を独立祝日分として安全なデータ専用追加候補とした。"
+    },
+    {
+      "run_id": "manual-verified-weekend-2026-11-29-87a5ed01e685",
+      "run_type": "manual_verified_weekend_subset_addition",
+      "status": "official_verified_addition",
+      "as_of_jst": "2026-10-27",
+      "target_weekend": "2026-11-28",
+      "base_data_production_sha": "87a5ed01e6851416335731ba3b079f6fe0c00c86",
+      "added_weekly_records": 5,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "new_event_ids": [
+        "partial-20261129-nakano-precure-rally",
+        "partial-20261129-edogawa-origami",
+        "partial-20261129-taito-bookstand",
+        "partial-20261129-setagaya-languages",
+        "partial-20261129-setagaya-workfes"
+      ],
+      "failed_required_source_urls": 5,
+      "source_failures_remain_unverified": true,
+      "executed_at": "2026-10-27T00:22:00+09:00",
+      "note": "11/29個別公式確認済みイベント5件。旧データ削除・情報変更なし。"
     }
   ]
 }

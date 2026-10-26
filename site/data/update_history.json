@@ -144,6 +144,34 @@
       "unverified_required_source_failures": 5,
       "executed_at": "2026-10-27T05:02:00+09:00",
       "note": "公式個別イベント6件追加（10/31・11/1・11/3）。過去データ・更新履歴・ソース未取得の記録は不変。"
+    },
+    {
+      "run_id": "nerima-forest-festa-three-2026-10-27",
+      "run_type": "manual_verified_forest_schedule_addition",
+      "status": "official_verified_addition",
+      "as_of_jst": "2026-10-27",
+      "base_data_production_sha": "ad0be634dc89e7d5f07dabcc34d0249e3dc3565c",
+      "source_id": "nerima_forest_festa_2026",
+      "source_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "target_weeks": [
+        "2026-11-07",
+        "2026-11-21",
+        "2026-11-28"
+      ],
+      "added_weekly_records": 3,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "old_event_ids_removed": 0,
+      "old_event_records_changed": 0,
+      "new_event_ids": [
+        "nerima-forest-20261108-nakanomiya",
+        "nerima-forest-20261121-minamitakamatsu",
+        "nerima-forest-20261129-kitappara"
+      ],
+      "unverified_required_source_failures": 5,
+      "source_failures_remain_unverified": true,
+      "executed_at": "2026-10-27T07:41:00+09:00",
+      "note": "練馬区公式の複数日程イベント表から11/8・11/21・11/29の3企画を補完。既存掲載の削除・変更ゼロ。"
     }
   ]
 }

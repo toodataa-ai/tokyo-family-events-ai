@@ -15,7 +15,7 @@ SOURCE_URLS={
  'weekly-20261027-koto-toyosu':'https://www.city.koto.lg.jp/281053/kodomo/hokago/jidokan/asobiba.html',
  'weekly-20261027-adachi-clay':'https://www.galaxcity.jp/future-creation-hall/event/20261103-009189.html',
  'weekly-20261027-katsushika-museum':'https://www.museum.city.katsushika.lg.jp/event/2026/10/113-4.php',
- 'weekly-20261027-edogawa-sports':'https://www.edogawa-spocen.com/event/43839/',
+ 'weekly-20261027-edogawa-sports':'https://www.edogawa-spocen.com/event/43860/',
  'weekly-20261027-nakano-oshiri':'https://oshiri-tantei.com/events/2026071801b.html'
 }
 WARDS={'江東区':2,'中野区':1,'江戸川区':1,'葛飾区':1,'足立区':1}

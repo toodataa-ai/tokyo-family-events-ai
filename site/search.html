@@ -72,6 +72,7 @@
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
 import {loadChangeData,changeBadge,currentChangeCounts,changeKind} from './recent-event-changes.js?v=20261027-1';
+import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary,NAKANO_FESTIVAL_GROUP_ID} from './festival-display-grouping.js?v=20261027-fest-parent';
 import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
 
 let manifest=null,registry=null,currentData=null,filterUI=null,changes=null;
@@ -119,20 +120,44 @@ function renderChangeControls(){
     .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
       '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
 }
+function festivalProgramDetails(group){
+  if(!group?._festival_group)return '';
+  const items=group._festival_members.map(child=>
+    `<li class="festival-program"><b>${escapeHtml(child.name)}</b>
+       <span>🕒 ${escapeHtml(child.time||'時間要確認')}</span>
+       <span>📍 ${escapeHtml(child.venue||'会場要確認')}</span>
+       <span>申込：${escapeHtml(child.reservation?.note||'公式案内要確認')}</span>
+       <span>料金：${escapeHtml(child.price||'公式案内要確認')}</span>
+       </li>`).join('');
+  return `<section class="festival-programs" aria-label="フェス内の企画"><strong>フェス内の企画（${group._festival_members.length}件）</strong>
+   <p>同じフェスの中の企画です。日時・申込条件はそれぞれ異なります。</p><ol>${items}</ol></section>`;
+}
 function render(){
   if(!currentData)return;renderWeekTabs();renderChips(currentData);updateCanvaPickbar();
   renderChangeControls();
   let filtered=filterEvents(currentData.events,{...currentFilters(),registry,decisionAudit:currentData.decision_audit});
-  if(changeFilter)filtered=filtered.filter(ev=>changeKind(ev,changes)===changeFilter);$('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'今週末以降';$('countText').textContent=`${filtered.length}件`;const grid=$('grid');if(!filtered.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
-  grid.innerHTML=filtered.map(ev=>{
+  if(changeFilter)filtered=filtered.filter(ev=>changeKind(ev,changes)===changeFilter);
+  const displayed=groupFestivalDisplayEvents(filtered);
+  $('rangeText').textContent=filterUI.filters().dates.length?`${filterUI.filters().dates.length}期間を指定`:'今週末以降';
+  $('countText').textContent=`${displayed.length}件`;
+  const grid=$('grid');if(!displayed.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  grid.innerHTML=displayed.map(ev=>{
     const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),grade=ev.family_fit?.overall||ev.family_fit?.grade||'C',state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
     const verifyText=`<div class="source"><b>${verificationSourceHeading(ev.verification)}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=eventProvenance(ev),provBadge=provenanceBadge(prov);
+    const festival=Boolean(ev._festival_group);
+    const groupLabel=festival?`<span class="festival-parent-tag">${escapeHtml(festivalMemberSummary(ev))}</span>`:'';
+    const changeMark=festival
+      ? (festivalDisplayChangeKind(ev,changes)==='added'?'<span class="event-change-badge added">今週追加</span>':
+         festivalDisplayChangeKind(ev,changes)==='updated'?'<span class="event-change-badge updated">今週更新</span>':'')
+      : changeBadge(ev,changes);
+    const selectionHtml=`<label class="canva-select-label"><input type="checkbox" class="canva-select-check" data-id="${escapeHtml(ev.id)}" ${canvaSelectedIds.includes(ev.id)?'checked':''}>Canvaに追加</label>`;
     const detailMeta=`<div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge price-badge price-${priceClass}">${escapeHtml(priceText)}</span><span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div><div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}${ev.family_fit?.reason?`<div class="desc"><b>AI判定:</b> ${escapeHtml(ev.family_fit.reason)}</div>`:''}${renderAxes(ev.family_fit)}${verifyText}${ev.source?`<div class="source">情報元: ${escapeHtml(ev.source)}</div>`:''}`;
-    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}${changeBadge(ev,changes)}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="canva-card-actions"><label class="canva-select-label"><input type="checkbox" class="canva-select-check" data-id="${escapeHtml(ev.id)}" ${canvaSelectedIds.includes(ev.id)?'checked':''}>Canvaに追加</label></div><div class="event-list-detail" hidden>${detailMeta}</div></article>`;
+    const festivalDetail=festival?festivalProgramDetails(ev):'';
+    return `<article class="card event-list-card"><div class="event-list-overview">${thumb}<div class="event-list-main"><div class="event-title">${title}${groupLabel}${changeMark}</div><div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${familyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div></div><button class="event-expand-btn" type="button" aria-expanded="false" aria-label="詳細を開く">＋</button></div><div class="canva-card-actions">${selectionHtml}</div><div class="event-list-detail" hidden>${festivalDetail}${festival?'':detailMeta}</div></article>`;
   }).join('');
   syncUrl();
 }
@@ -147,6 +172,7 @@ async function loadSelected(){
     currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,
       publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
     const knownIds=new Set(currentData.events.map(ev=>ev.id));
+    if(groupFestivalDisplayEvents(currentData.events).some(ev=>ev._festival_group))knownIds.add(NAKANO_FESTIVAL_GROUP_ID);
     canvaSelectedIds=saveCanvaSelection(canvaSelectedIds.filter(id=>knownIds.has(id)),window.localStorage);
     render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}

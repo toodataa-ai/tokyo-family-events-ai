@@ -38,7 +38,8 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/data-staging | cut -f1)"
-          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "605f7144b99944201663055105e076e3b1237ebd"
+          base="$(python3 -c 'import json;print(json.load(open("site/data/update_history.json"))["history"][-1]["base_data_production_sha"])')"
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "$base"
       - name: Overlay released static policy (never runtime data)
         run: |
           python3 - <<'PY'
@@ -56,9 +57,17 @@ jobs:
           python3 released/tools/validate_rereview.py --strict site/data
       - name: Non-regression, identity, historical source error invariance, scoped history
         run: |
-          python3 staging-policy/tools/validate_verified_subset.py --base-ref 605f7144b99944201663055105e076e3b1237ebd
-          python3 staging-policy/tools/validate_non_regression.py --base-ref 605f7144b99944201663055105e076e3b1237ebd site/data
-          python3 staging-policy/tools/validate_protected_events.py --base-ref 605f7144b99944201663055105e076e3b1237ebd site/data
+          base="$(python3 -c 'import json;print(json.load(open("site/data/update_history.json"))["history"][-1]["base_data_production_sha"])')"
+          kind="$(python3 -c 'import json;print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
+          if [ "$kind" = "manual_verified_weekend_subset_addition" ]; then
+            python3 staging-policy/tools/validate_verified_weekend_subset.py --base-ref "$base"
+          elif [ "$kind" = "manual_verified_subset_addition" ]; then
+            python3 staging-policy/tools/validate_verified_subset.py --base-ref "$base"
+          else
+            echo "Unapproved subset kind $kind" >&2; exit 1
+          fi
+          python3 staging-policy/tools/validate_non_regression.py --base-ref "$base" site/data
+          python3 staging-policy/tools/validate_protected_events.py --base-ref "$base" site/data
           python3 staging-policy/tools/audit_event_image_identity.py site/data --strict
           python3 -m unittest discover -s staging-policy/tests -p 'test_event_image_identity.py'
           python3 -m unittest discover -s staging-policy/tests -p 'test_weekday_holiday_coverage.py'

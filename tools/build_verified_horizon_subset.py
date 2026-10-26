@@ -131,7 +131,18 @@ def main(data,evidence,mainrepo,base):
    rows=load(data/(sat+'-decisions.json'))['decisions']
    found=next((x for x in rows if x.get('candidate_id') in (e['id'],'preserved-'+e['id']) or (x.get('name')==e['name'] and x.get('ward')==e['ward'] and x.get('decision')=='published')),None)
   if found is not None:
-   decisions.append(copy.deepcopy(found));continue
+   found=copy.deepcopy(found)
+   # A published earlier week can still carry a legacy v1 decision.
+   # Reuse a genuine v2 evaluation of that same participation unit, never
+   # auto-convert v1 grades and reasons into a fake v2 rubric.
+   if (found.get('family_fit') or {}).get('rubric_version')!='family-fit-v2':
+    aliases=load(data/'2026-11-07-decisions.json')['decisions']
+    alt=next((x for x in aliases if x.get('name')==e['name'] and x.get('ward')==e['ward'] and x.get('decision')=='published' and (x.get('family_fit') or {}).get('rubric_version')=='family-fit-v2'),None)
+    if alt is None:raise ValueError('no independently reviewed v2 decision for carryover '+e['id'])
+    found=copy.deepcopy(alt)
+   found['candidate_id']=e['id']
+   found['name']=e['name'];found['ward']=e['ward']
+   decisions.append(found);continue
   fit=e.get('family_fit') or {}
   if fit.get('rubric_version')!='family-fit-v2':raise ValueError('no v2 evaluation '+e['id'])
   decisions.append({'candidate_id':e['id'],'name':e['name'],'ward':e['ward'],'decision':'published','family_fit':fit,

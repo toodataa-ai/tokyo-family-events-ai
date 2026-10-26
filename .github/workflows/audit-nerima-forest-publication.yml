@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Checkout staging audit code (never modify production)
+      - name: Checkout audit code (PR head for regression tests, staging for live checks)
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
       - name: Checkout published dataset
         uses: actions/checkout@v4
         with:

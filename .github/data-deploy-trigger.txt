@@ -10,3 +10,6 @@ expected_existing_event_removed=0
 
 retry=2
 reason=production_v1_22_date_range_regression_test_aligned
+
+retry=3
+reason=production_app_filter_regression_updated

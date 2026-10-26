@@ -3,17 +3,17 @@
   "sat": "2026-10-31",
   "sun": "2026-11-01",
   "label": "10/31(土)〜11/1(日)",
-  "generated": "2026-10-07T08:37:32+09:00",
+  "generated": "2026-10-27T05:02:00+09:00",
   "horizon_index": 1,
   "publication_tier": "full",
   "verification_file": "2026-10-31-verification.json",
   "run_file": "2026-10-31-run.json",
   "coverage": {
     "sources_checked": 77,
-    "candidate_count": 70,
+    "candidate_count": 76,
     "duplicate_removed": 2,
     "excluded_count": 4,
-    "published_count": 64,
+    "published_count": 70,
     "wards": [
       {
         "ward": "千代田区",
@@ -83,9 +83,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 4,
-        "candidate_count": 4,
-        "published_count": 3,
-        "note": "v1.5完全再探索。候補3件、掲載2件。 v1.6除外再審査反映。 11/3単独祝日公式イベント追記1件。"
+        "candidate_count": 6,
+        "published_count": 5,
+        "note": "v1.5完全再探索。候補3件、掲載2件。 v1.6除外再審査反映。 11/3単独祝日公式イベント追記1件。 2026/10/27自治体/主催者個別一次情報2件を独立に追加。元HTTP実測回数は不変。"
       },
       {
         "ward": "品川区",
@@ -137,9 +137,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "v1.5完全再探索。候補2件、掲載2件。 2026-10-17にためまっぷで主催者投稿1件を発見・追加。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "v1.5完全再探索。候補2件、掲載2件。 2026-10-17にためまっぷで主催者投稿1件を発見・追加。 2026/10/27自治体/主催者個別一次情報1件を独立に追加。元HTTP実測回数は不変。"
       },
       {
         "ward": "杉並区",
@@ -200,27 +200,27 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "v1.5完全再探索。候補0件、掲載0件。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補0件、掲載0件。 2026/10/27自治体/主催者個別一次情報1件を独立に追加。元HTTP実測回数は不変。"
       },
       {
         "ward": "葛飾区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "v1.5完全再探索。候補1件、掲載1件。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補1件、掲載1件。 2026/10/27自治体/主催者個別一次情報1件を独立に追加。元HTTP実測回数は不変。"
       },
       {
         "ward": "江戸川区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "v1.5完全再探索。候補0件、掲載0件。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "v1.5完全再探索。候補0件、掲載0件。 2026/10/27自治体/主催者個別一次情報1件を独立に追加。元HTTP実測回数は不変。"
       }
     ]
   },
@@ -230,7 +230,8 @@
     "2026-10-31-events-carryover.json",
     "2026-10-31-events-manual-primary.json",
     "2026-10-31-events-verified-continuity.json",
-    "2026-10-31-events-holiday-2026-11-03.json"
+    "2026-10-31-events-holiday-2026-11-03.json",
+    "2026-10-31-events-verified-subset-2026-10-27.json"
   ],
   "events": []
 }

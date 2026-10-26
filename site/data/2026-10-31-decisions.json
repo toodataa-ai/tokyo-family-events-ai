@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 70,
-    "published": 64,
+    "candidate_total": 76,
+    "published": 70,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -5335,6 +5335,428 @@
           "url": "https://www.library.city.arakawa.tokyo.jp/eventview?5=&eid=3209"
         }
       ]
+    },
+    {
+      "candidate_id": "weekly-20261027-koto-ecocle",
+      "name": "秋のえこっくるまつり",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子連れに向いた企画。制限がある場合は案内に記載。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "来場時間をある程度調節できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "無料を基本とするが一部有料などの注意書きがある。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要または当日先着の条件がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/2026akinoekokkurumatsuri.html",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "weekly-20261027-koto-toyosu",
+      "name": "豊洲フェスタ2026 豊洲児童館「わりばしでっぽうづくり」",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3歳からの制限を明示。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "来場時間をある程度調節できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式ページの料金記載がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要または当日先着の条件がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.koto.lg.jp/281053/kodomo/hokago/jidokan/asobiba.html",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "weekly-20261027-adachi-clay",
+      "name": "ギャラクシティ 小麦粉粘土をつくってあそぼう",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3歳からの制限を明示。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "開始時間・終了時間と事前予約の制約がある。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料を基本とするが一部有料などの注意書きがある。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "事前申込や定員の制約あり。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261103-009189.html",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "weekly-20261027-katsushika-museum",
+      "name": "文化の日・博物館まつり（秋まつり）",
+      "ward": "葛飾区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子連れに向いた企画。制限がある場合は案内に記載。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "来場時間をある程度調節できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "無料を基本とするが一部有料などの注意書きがある。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要または当日先着の条件がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.museum.city.katsushika.lg.jp/event/2026/10/113-4.php",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "weekly-20261027-edogawa-sports",
+      "name": "第45回スポーツセンターまつり「ウルトラクイズ」",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子連れに向いた企画。制限がある場合は案内に記載。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "来場時間をある程度調節できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料を基本とするが一部有料などの注意書きがある。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要または当日先着の条件がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edogawa-spocen.com/event/43860/",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "weekly-20261027-nakano-oshiri",
+      "name": "おしりたんていバースデーパーティー2026",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "A",
+        "grade": "A",
+        "reason": "一次公式ページで子連れの参加内容・開催日・会場・申込条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式案内で親子・子ども向け内容が確認できる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "工作・クイズ・観察・昔遊び・体験などに参加できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子連れに向いた企画。制限がある場合は案内に記載。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "来場時間をある程度調節できる。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場までの移動と混雑・当日受付などに配慮する必要がある。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "無料を基本とするが一部有料などの注意書きがある。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要または当日先着の条件がある。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもと家族が一緒に参加できるイベント体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_target_explicit",
+        "official_source_confirmed",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "主催者・自治体の独立した一次情報で、開催日時・施設・内容・参加条件を確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://oshiri-tantei.com/events/2026071801b.html",
+          "basis": "個別公式開催概要と参加方法を確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
     }
   ]
 }

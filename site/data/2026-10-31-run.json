@@ -93,11 +93,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 63,
-    "published": 64,
+    "candidates": 69,
+    "published": 70,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 64,
+    "verified": 70,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 51,
@@ -261,5 +261,30 @@
       ],
       "multi_program_parents_automatically_rolled": false
     }
-  ]
+  ],
+  "verified_subset_addendum": {
+    "run_type": "manual_verified_week_holiday_addition",
+    "as_of_jst": "2026-10-27",
+    "target_weekend": "2026-10-31",
+    "base_data_production_sha": "7524cff3343faecbcf9b5668b83967d25c6f68b0",
+    "new_event_ids": [
+      "weekly-20261027-koto-ecocle",
+      "weekly-20261027-koto-toyosu",
+      "weekly-20261027-adachi-clay",
+      "weekly-20261027-katsushika-museum",
+      "weekly-20261027-edogawa-sports",
+      "weekly-20261027-nakano-oshiri"
+    ],
+    "failed_required_source_urls": 5,
+    "source_failures_remain_unverified": true,
+    "evidence": [
+      "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/2026akinoekokkurumatsuri.html",
+      "https://www.city.koto.lg.jp/281053/kodomo/hokago/jidokan/asobiba.html",
+      "https://www.galaxcity.jp/future-creation-hall/event/20261103-009189.html",
+      "https://www.museum.city.katsushika.lg.jp/event/2026/10/113-4.php",
+      "https://www.edogawa-spocen.com/event/43860/",
+      "https://oshiri-tantei.com/events/2026071801b.html"
+    ],
+    "note": "10/31・11/1・11/3の別の参加企画6件。旧ソース障害や過去ログの実測を変えない。"
+  }
 }

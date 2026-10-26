@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-26",
+  "verified_on": "2026-10-27",
   "events": [
     {
       "id": "v15-6d359a847bb0",
@@ -1324,11 +1324,113 @@
       },
       "corrections": {},
       "note": "11月3日（祝日）開催の個別公式ページを確認。予約・料金の不確定事項は本文に明示。"
+    },
+    {
+      "id": "weekly-20261027-koto-ecocle",
+      "status": "verified",
+      "source": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/2026akinoekokkurumatsuri.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "weekly-20261027-koto-toyosu",
+      "status": "verified",
+      "source": "https://www.city.koto.lg.jp/281053/kodomo/hokago/jidokan/asobiba.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "weekly-20261027-adachi-clay",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261103-009189.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "weekly-20261027-katsushika-museum",
+      "status": "verified",
+      "source": "https://www.museum.city.katsushika.lg.jp/event/2026/10/113-4.php",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "weekly-20261027-edogawa-sports",
+      "status": "verified",
+      "source": "https://www.edogawa-spocen.com/event/43860/",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
+    },
+    {
+      "id": "weekly-20261027-nakano-oshiri",
+      "status": "verified",
+      "source": "https://oshiri-tantei.com/events/2026071801b.html",
+      "source_kind": "organizer_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の自治体・施設・作品公式告知を再読取。日時、会場、子ども参加条件と料金の明示範囲を照合。画像は誤割当防止のため未設定。"
     }
   ],
   "summary": {
-    "total": 64,
-    "verified": 64,
+    "total": 70,
+    "verified": 70,
     "announced": 0,
     "corrected": 0
   }

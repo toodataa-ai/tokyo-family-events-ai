@@ -823,3 +823,20 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .event-change-badge.added{background:#e4f6eb;color:#12683b;border:1px solid #bbddc9}
 .event-change-badge.updated{background:#e9f2ff;color:#174b91;border:1px solid #bfd5f5}
 @media(max-width:680px){.home-changes-summary{gap:5px}.home-change-link{padding:5px 7px}.change-filter-bar{gap:4px}.change-filter-label{width:100%}.change-filter-btn{padding:5px 8px}.event-change-badge{font-size:9px;margin-left:4px}}
+
+
+/* Event family hierarchy: one dated festival card, full activity details inside. */
+.festival-parent-tag{display:inline-flex;align-items:center;margin-left:6px;padding:2px 7px;
+  border:1px solid #b7cddc;border-radius:6px;background:#edf5fa;color:#20465d;
+  font-size:10px;font-weight:800;white-space:nowrap;vertical-align:middle}
+.festival-programs{border:1px solid #cfdae6;border-radius:10px;background:#f7f9fc;
+  margin:8px 0 10px;padding:12px;color:#25374b}
+.festival-programs>strong{display:block;font-size:13px;line-height:1.45;margin-bottom:6px}
+.festival-programs>p{font-size:11px;line-height:1.5;margin:0 0 9px;color:#53627a}
+.festival-programs ol{padding:0;margin:0;list-style:none;display:grid;gap:7px}
+.festival-program{background:#fff;border:1px solid #dce5ee;border-radius:8px;padding:9px 10px;
+  display:flex;flex-direction:column;gap:3px;font-size:11px;line-height:1.45}
+.festival-program b{font-size:12px;line-height:1.45}
+.festival-program span{overflow-wrap:anywhere}
+@media(max-width:680px){.festival-parent-tag{font-size:9px;margin-left:4px;padding:2px 5px}
+  .festival-programs{padding:9px}.festival-program{padding:8px;font-size:10.5px}}

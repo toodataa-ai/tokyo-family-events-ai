@@ -1,0 +1,75 @@
+name: Audit official Nerima forest schedule vs published date rows (read-only)
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [data-production]
+    paths: ['site/data/**']
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/nerima_forest_schedule.py'
+      - 'tools/audit_nerima_forest_publication.py'
+      - 'tests/test_nerima_forest_schedule.py'
+      - 'tests/test_nerima_forest_publication.py'
+      - '.github/workflows/audit-nerima-forest-publication.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout staging audit code (never modify production)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Checkout published dataset
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline missing-date, venue, source and duplicate regression tests
+        run: |
+          python3 -m unittest discover -s tests -p 'test_nerima_forest_schedule.py'
+          python3 -m unittest discover -s tests -p 'test_nerima_forest_publication.py'
+      - name: Reconcile official current rows against live publication
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set +e
+          python3 tools/audit_nerima_forest_publication.py \
+            --published-dir published-data/site/data \
+            --output /tmp/forest-publication-audit.json --strict
+          code=$?
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path('/tmp/forest-publication-audit.json')
+          report = ["## 練馬区・森こどもフェスタの掲載漏れ監査"]
+          if path.exists():
+              result = json.loads(path.read_text(encoding="utf-8"))
+              report += [
+                  f"- 公式イベント一覧: {result['official_row_count']} 行",
+                  f"- 掲載対象期間: {result['horizon_start']} 〜 {result['horizon_end']}",
+                  f"- 期間内の公式企画: {result['in_horizon_official_rows']} 件",
+                  f"- 掲載確認: {result['published_rows']} 件",
+                  f"- 未掲載・曖昧: {result['unreconciled_rows']} 件",
+                  "",
+                  "| 日付 | 企画 | 判定 |",
+                  "|---|---|---|",
+              ]
+              report += [f"| {row['date']} | {row['official_programme']} | {row['status']} |"
+                         for row in result['rows']]
+          else:
+              report.append("- BLOCKER: 公式サイト取得またはデータ読取に失敗")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+              f.write("\n".join(report) + "\n")
+          print("\n".join(report))
+          PY
+          exit "$code"

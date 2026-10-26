@@ -1,0 +1,25 @@
+name: Verify rolling Arts preservation before final Pages deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/third-batch-identity-preflight.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  rolling_identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          path: candidate
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify archived 3-source record protection and in-window grouping
+        run: |
+          node tests/staging_real_arts_identity.test.mjs candidate/site/data

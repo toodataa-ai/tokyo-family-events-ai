@@ -362,7 +362,9 @@ jobs:
             cd data-staging-src
             python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
             python3 ../production-src/tools/validate_decisions.py --strict site/data
-            if [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            if [ "$stage" = "$base" ]; then
+              echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits immutable verified-subset proof and scoped source audit from validate_data on candidate SHA"

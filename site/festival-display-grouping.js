@@ -23,7 +23,7 @@ export function isNakanoFestivalChild(ev){
 export function buildNakanoFestivalGroup(members){
   if(!Array.isArray(members)||!members.length||!members.every(isNakanoFestivalChild))return null;
   const best=members.find(ev=>ev.family_fit?.overall==='A')||members[0];
-  const programmes=members.map(ev=>ev.name+'（'+(ev.time||'時間要確認')+'／'+(ev.reservation?.note||'申込条件要確認')+'）');
+  // Detailed programs live in _festival_members, so the Canva description stays readable.
   return {
     ...best,
     id:NAKANO_FESTIVAL_GROUP_ID,
@@ -33,8 +33,7 @@ export function buildNakanoFestivalGroup(members){
     time:'10:00〜18:00（企画により異なる）',
     price:'無料の企画あり／一部の企画は料金要確認',
     reservation:{required:false,note:'抽選制・当日整理券・申込不要など、企画ごとに異なります。'},
-    description:'12月5日に中野会場で開催されるアニメ・マンガのフェス。ショー・上映会・工作・展示・カードゲームなど、会場内の企画をまとめて掲載。'+
-      '［当日企画］'+programmes.join('／')+'。事前抽選・当日整理券などの条件は企画ごとに確認してください。',
+    description:'12月5日に中野会場で開催。プリキュアショー・おしりたんてい工作・特別上映会4枠・アート展示・カードゲームなど8企画をまとめて紹介します。申込方法は企画ごとに異なります。',
     categories:['フェスティバル','アニメ','マンガ','親子','映画','上映会','工作','カードゲーム'],
     official_url:NAKANO_FESTIVAL_SOURCE,url:NAKANO_FESTIVAL_SOURCE,source:NAKANO_FESTIVAL_SOURCE,
     image:members.find(ev=>ev.image)?.image||'',
@@ -70,4 +69,14 @@ export function festivalMemberSummary(group){
   const n=group._festival_members.length;
   return n===group._festival_total_programs ? '内訳'+n+'企画'
     : '条件に一致'+n+'企画（全'+group._festival_total_programs+'企画）';
+}
+
+export function groupedEventChangeCounts(events,changes){
+  const counts={added:0,updated:0};
+  for(const ev of groupFestivalDisplayEvents(events)){
+    const kind=ev._festival_group?festivalDisplayChangeKind(ev,changes):
+      changes?.added?.has(ev.id)?'added':changes?.updated?.has(ev.id)?'updated':'';
+    if(kind)counts[kind]++;
+  }
+  return counts;
 }

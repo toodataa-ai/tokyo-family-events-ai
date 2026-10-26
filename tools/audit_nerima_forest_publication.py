@@ -51,9 +51,11 @@ def published_events(directory):
             key = str(event.get("id", ""))
             if not key:
                 raise ValueError("Missing published event ID")
-            if key in all_events and event != all_events[key]:
+            if key in all_events and event != all_events[key]["event"]:
                 raise ValueError("Same published ID has conflicting contents: " + key)
-            all_events[key] = event
+            if key not in all_events:
+                all_events[key] = {"event": event, "week_windows": []}
+            all_events[key]["week_windows"].append((entry["sat"], entry["sun"]))
     start = dt.date.fromisoformat(entries[0]["sat"])
     end = dt.date.fromisoformat(entries[-1]["sun"])
     return start, end, all_events
@@ -71,7 +73,10 @@ def reconcile(source_html, published_directory):
         # while still requiring the venue, not merely a shared festival title.
         target_venue = compact(re.split(r"[（(]", row["venue"], maxsplit=1)[0])
         matches = []
-        for event_id, event in records.items():
+        for event_id, entry in records.items():
+            event = entry["event"]
+            if not any(sat <= date <= sun for sat, sun in entry["week_windows"]):
+                continue
             if not (event.get("date_start", "") <= date <= event.get("date_end", "")):
                 continue
             if target_name not in compact(event.get("name")):

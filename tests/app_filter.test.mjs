@@ -1,6 +1,11 @@
 import assert from 'node:assert/strict';
 import {filterEvents,normalizeText,countsByWard,applyVerification,rollingWeekSlots,publicationTierMeta,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,recommendationStarCount,eventPriceCategory,eventPriceLabel,classifyDiscoveryProvenance,eventDiscoveryProvenance,findDecisionForEvent,buildCopyUrl,serializeEventFilters,indoorOutdoorCategory,indoorOutdoorLabel,reservationCategory,reservationLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,mergeEventsAcrossWeeks} from '../site/app.js';
 
+const rangeBookmark=serializeEventFilters({range:{start:'2026-10-31',end:'2026-11-03'},dates:[],wards:['練馬区']});
+assert.equal(new URLSearchParams(rangeBookmark).get('from'),'2026-10-31');
+assert.equal(new URLSearchParams(rangeBookmark).get('to'),'2026-11-03');
+assert.equal(new URLSearchParams(rangeBookmark).get('w'),'練馬区');
+assert.equal(new URLSearchParams(rangeBookmark).has('d'),false);
 const axes={
   child_target:{grade:'A',reason:'親子対象'},
   interactivity:{grade:'A',reason:'体験あり'},
@@ -227,7 +232,7 @@ assert.match(sharedUI,/type="checkbox"/);
 assert.match(sharedUI,/initialState/);
 assert.match(sharedUI,/state\.dates\.add/);
 assert.match(sharedUI,/function choosePeriod\(value\)/);
-assert.match(sharedUI,/state\.dates\.clear\(\);\s*if\(value!=='all'\)state\.dates\.add\(value\)/);
+assert.match(sharedUI,/state\.dates\.clear\(\);\s*customRange=null;\s*if\(value!=='all'\)state\.dates\.add\(value\)/);
 assert.match(sharedUI,/const validDate=params\.getAll\('d'\)\.find/);
 assert.match(sharedUI,/weekTabs'\)\.addEventListener\('click',handleWeek\)/);
 assert.doesNotMatch(sharedUI,/input type="checkbox" data-date/);
@@ -243,7 +248,8 @@ for(const page of ['search.html','copy.html']){
   assert.match(markup,/filterUI\.serialize/);
   assert.doesNotMatch(markup,/id="sourceSelect"/);
   assert.match(markup,/aria-label="全期間または1つの週末・祝日を選択"/);
-  assert.match(markup,/この期間を表示/);
+  assert.match(markup,/指定期間で検索/);
+  assert.match(markup,/id="dateEndInput"/);
   assert.match(markup,/id="filterCloseBtn"/);
   assert.match(markup,/id="filterApplyBtn"/);
   assert.match(markup,/class="multi-filter-backdrop"/);

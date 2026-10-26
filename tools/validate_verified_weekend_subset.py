@@ -155,7 +155,7 @@ def verify(base):
     if any([record.get("run_type")!="manual_verified_weekend_subset_addition",
             record.get("status")!="official_verified_addition",
             record.get("target_weekend")!=WEEK,
-            record.get("as_of_jst")!="2026-10-26",
+            record.get("as_of_jst")!="2026-10-27",
             record.get("added_weekly_records")!=5,
             record.get("removed_weekly_records")!=0,
             record.get("changed_existing_records")!=0,

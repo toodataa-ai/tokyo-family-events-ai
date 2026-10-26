@@ -100,7 +100,7 @@ function copyFestivalText(ev){
   ].join('\n'));
   return base+'\n\n【フェス内の企画】\n'+rows.join('\n\n');
 }
-window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(copyFestivalText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(ev?._festival_group?copyFestivalText(ev):copyAllText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
 function renderWeekTabs(){filterUI.renderWeekTabs();}
 function renderChips(data){filterUI.renderWardChips(data);}

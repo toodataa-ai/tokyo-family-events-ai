@@ -254,7 +254,10 @@ jobs:
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
             subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
-            if [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
+            if [ "$subset_kind" = "manual_verified_week_holiday_addition" ]; then
+              python staging-policy-src/tools/validate_this_week_verified_addition.py \
+                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+            elif [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
               python staging-policy-src/tools/validate_verified_weekend_subset.py \
                 --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
             elif [ "$subset_kind" = "manual_verified_subset_addition" ]; then
@@ -395,7 +398,9 @@ jobs:
                 echo "Immutable source+history already audited by validate_data on candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
                 subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
-                if [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
+                if [ "$subset_kind" = "manual_verified_week_holiday_addition" ]; then
+                  python3 ../staging-src/tools/validate_this_week_verified_addition.py --base-ref "$base"
+                elif [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
                   python3 ../staging-src/tools/validate_verified_weekend_subset.py --base-ref "$base"
                 elif [ "$subset_kind" = "manual_verified_subset_addition" ]; then
                   python3 ../staging-src/tools/validate_verified_subset.py --base-ref "$base"

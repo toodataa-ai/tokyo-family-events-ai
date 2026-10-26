@@ -173,6 +173,12 @@ def verify(base):
         raise ValueError("new or changed source audit failures: "+str(new_errors))
     # Restrict waiver to two specific historical source checks, not unknown failures.
     known={f"{w}: required source not checked: suginami_calendar_all, https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={{YYYY}}&month={{MM}}" for w in ("2026-11-21","2026-11-28")}
+    # Historical Cloudflare 403 and its row-parity debt must remain errors.
+    # Both occur twice in each old week (monthly calendar URLs); exact
+    # old/new audit error sequence and source log objects are unchanged above.
+    for week in ("2026-11-21","2026-11-28"):
+        known.add(week+": required source failed: tamemap_nakano")
+        known.add(week+": official event row parity mismatch: tamemap_nakano")
     if set(new_errors)-known:
         raise ValueError("unapproved historical source debt: "+repr(new_errors))
     print("SOURCE_DEBT_RETAINED_UNCHANGED",len(new_errors),*new_errors,sep="\n")

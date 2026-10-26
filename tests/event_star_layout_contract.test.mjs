@@ -10,7 +10,7 @@ for (const file of ['site/search.html','site/copy.html']) {
   assert.ok(template,file+': grouped stars must precede date in a valid flex container');
   assert.doesNotMatch(html,/class="event-summary-meta"\s*<span/,file+': missing close angle bracket');
   assert.doesNotMatch(html,/<div class="event-summary-meta"(?=[^>]*<)/,file+': corrupt flex wrapper');
-  assert.match(html,/\$\{changeBadge\(ev,changes\)\}<\/div>/,file+': new/updated badge stays in title, not star wrapper');
+  assert.match(html,/\$\{(?:changeBadge\(ev,changes\)|changeMark)\}<\/div>/,file+': new/updated badge stays in title, not star wrapper');
 }
 const css=readFileSync('site/styles.css','utf8');
 assert.match(css,/\.event-summary-meta\{justify-content:space-between;width:100%;flex-wrap:nowrap\}/);

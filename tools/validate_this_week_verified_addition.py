@@ -64,7 +64,7 @@ def check(base):
   require(e.get('name') and e.get('ward') and e.get('venue') and e.get('time') and e.get('source')==e['official_url'],'incomplete event facts')
   require(e.get('image','')=='','image not independently verified; do not assign a thumbnail')
   require(e.get('reservation',{}).get('required') in (True,False),'unknown reservation boolean')
-  require(e.get('family_fit',{}).get('rubric_version')=='family-fit-v1','source week's family-fit v1 contract mismatch')
+  require(e.get('family_fit',{}).get('rubric_version')=='family-fit-v1','source week rubric contract mismatch')
  for shard in oldweek['event_files']:
   require(current(shard)==previous(base,shard),'existing event shard mutated '+shard)
  require(oldweek.get('events',[])==newweek.get('events',[]),'old inline event mutated')

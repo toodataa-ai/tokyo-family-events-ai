@@ -1,0 +1,72 @@
+name: Preflight independently verified subset (read only)
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verified-subset-preflight.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout immutable candidate (no publication)
+        uses: actions/checkout@v4
+        with:
+          ref: data-staging
+          fetch-depth: 0
+      - name: Checkout released validation policy
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released
+      - name: Checkout data-only staging audit scripts
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: staging-policy
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm frozen old and new Git heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/data-staging | cut -f1)"
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "605f7144b99944201663055105e076e3b1237ebd"
+      - name: Overlay released static policy (never runtime data)
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from shutil import copy2
+          import re
+          for p in Path('released/site/data').iterdir():
+              if p.is_file() and not re.match(r'^20\d{2}-\d{2}-\d{2}.*\.json$',p.name) and p.name not in {'manifest.json','update_history.json'}:
+                  copy2(p,Path('site/data')/p.name)
+          PY
+      - name: Released strict data and decision audits
+        run: |
+          python3 released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 released/tools/validate_decisions.py --strict site/data
+          python3 released/tools/validate_rereview.py --strict site/data
+      - name: Non-regression, identity, historical source error invariance, scoped history
+        run: |
+          python3 staging-policy/tools/validate_verified_subset.py --base-ref 605f7144b99944201663055105e076e3b1237ebd
+          python3 staging-policy/tools/validate_non_regression.py --base-ref 605f7144b99944201663055105e076e3b1237ebd site/data
+          python3 staging-policy/tools/validate_protected_events.py --base-ref 605f7144b99944201663055105e076e3b1237ebd site/data
+          python3 staging-policy/tools/audit_event_image_identity.py site/data --strict
+          python3 -m unittest discover -s staging-policy/tests -p 'test_event_image_identity.py'
+          python3 -m unittest discover -s staging-policy/tests -p 'test_weekday_holiday_coverage.py'
+          python3 staging-policy/tools/audit_weekday_holiday_coverage.py --manifest site/data/manifest.json --strict
+      - name: Test released application and no promotion
+        working-directory: released
+        run: npm test
+      - name: Report read-only preflight
+        run: |
+          echo 'VALIDATED_CANDIDATE_ONLY; NOT PROMOTED'
+          echo "Candidate SHA $(git rev-parse HEAD)"

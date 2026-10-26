@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 29,
-    "verified": 21,
+    "published": 30,
+    "verified": 22,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2094,5 +2094,18 @@
       "https://www.city.toshima.lg.jp/129/bunka/bunka/shiryokan/2602150927.html"
     ],
     "note": "従来の探索計測には加算せず個別公式ページで確認した4件のみ掲載候補化。5つの参照元エラーは解消済みとしない。"
+  },
+  "forest_schedule_addendum": {
+    "source_id": "nerima_forest_festa_2026",
+    "as_of_jst": "2026-10-27",
+    "source_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+    "base_data_production_sha": "ad0be634dc89e7d5f07dabcc34d0249e3dc3565c",
+    "added_event_ids": [
+      "nerima-forest-20261121-minamitakamatsu"
+    ],
+    "official_schedule_row_checked": true,
+    "source_failures_remain_unverified": true,
+    "unverified_required_source_failures": 5,
+    "old_event_ids_removed": 0
   }
 }

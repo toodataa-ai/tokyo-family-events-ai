@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 45,
-    "published": 29,
+    "candidate_total": 46,
+    "published": 30,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3027,6 +3027,76 @@
       ],
       "override_reason": "",
       "review_note": "2026-10-26の独立祝日追加候補。全検証・GitHub Actions承認後に公開可能。"
+    },
+    {
+      "candidate_id": "nerima-forest-20261121-minamitakamatsu",
+      "name": "ねりまの森こどもフェスタ「落ち葉と森の素材あそび」",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "A",
+        "overall": "A",
+        "reason": "練馬区公式の複数日程表に日時・会場・体験内容を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "公式の子どもフェスタ内企画。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "落ち葉プール、自然素材のおもちゃ遊び。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子・子ども向け体験。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "予約不要の時間内参加。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外開催、雨天中止の可能性、駐車場なし。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "原則無料、一部の企画は有料。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前予約不要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "秋の自然素材で遊び学べる。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式で日時・会場・参加方法・体験内容を日付単位で確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "練馬区公式2026年森フェスタの11月21日行"
+        }
+      ],
+      "override_reason": "",
+      "positive_signals": [
+        "child_target_explicit",
+        "official_venue_published",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "review_note": "旧探索・他掲載は不変。"
     }
   ]
 }

@@ -73,4 +73,5 @@ jobs:
           path: candidate-src/site/data/
           retention-days: 14
       - name: No production effect
-        run: echo 'READ_ONLY_CANDIDATE_VALIDATED: no Git branches or Pages changed.'
+        run: |
+          echo 'READ_ONLY_CANDIDATE_VALIDATED: no Git branches or Pages changed.'

@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 57,
-    "published": 51,
+    "candidate_total": 58,
+    "published": 52,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -4260,6 +4260,70 @@
         }
       ],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "nerima-forest-20261108-nakanomiya",
+      "name": "ねりまの森こどもフェスタ「中ノ宮竹林こどもまつり」",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "grade": "A",
+        "overall": "A",
+        "reason": "練馬区公式イベント一覧で日時・会場・内容を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区公式の子ども向けフェスタ。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "輪投げ・宝探しの体験。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子どもや親子で参加可能。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "自由参加の開催時間帯あり。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外開催・雨天中止の可能性、駐車場なし。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "原則無料、一部有料企画あり。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "公式案内で事前予約不要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "身近な森で遊ぶ季節体験。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式の複数日程表を日付・会場別に確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "日付・会場・体験・参加方法の練馬区公式情報"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "既存掲載は変更なし。"
     }
   ]
 }

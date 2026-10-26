@@ -128,9 +128,10 @@ function festivalProgramDetails(group){
        <span>📍 ${escapeHtml(child.venue||'会場要確認')}</span>
        <span>申込：${escapeHtml(child.reservation?.note||'公式案内要確認')}</span>
        <span>料金：${escapeHtml(child.price||'公式案内要確認')}</span>
+        <span>内容：${escapeHtml(child.description||'公式案内要確認')}</span>
        </li>`).join('');
   return `<section class="festival-programs" aria-label="フェス内の企画"><strong>フェス内の企画（${group._festival_members.length}件）</strong>
-   <p>同じフェスの中の企画です。日時・申込条件はそれぞれ異なります。</p><ol>${items}</ol></section>`;
+   <p>${escapeHtml(group.description||'')} 各会場の日時・参加条件は企画ごとに異なります。</p><p>参加費：${escapeHtml(group.price||'要確認')} ／ ${escapeHtml(group.reservation?.note||'申込方法要確認')}</p><ol>${items}</ol></section>`;
 }
 function render(){
   if(!currentData)return;renderWeekTabs();renderChips(currentData);updateCanvaPickbar();

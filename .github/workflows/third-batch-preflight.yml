@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/third-batch-preflight.yml'
       - 'tools/build_verified_horizon_subset.py'
+      - 'tools/validate_verified_horizon_rollover.py'
       - 'research/third_batch_20261205_verified_shard.json'
       - 'research/third_batch_20261205_carryover_preservation.json'
   workflow_dispatch: {}
@@ -70,6 +71,14 @@ jobs:
         run: |
           python3 ../main-src/tools/validate_non_regression.py --base-ref a7446aca567ca74c936c2039867fcf5fd3b07e34 site/data
           python3 ../main-src/tools/validate_protected_events.py --base-ref a7446aca567ca74c936c2039867fcf5fd3b07e34 site/data
+      - name: Verify exact immutable source logs, protected 28 identities, 11 full-tier upgrades, and history
+        working-directory: candidate-src
+        run: |
+          python3 ../main-src/tools/validate_verified_horizon_rollover.py \
+            --data-dir site/data \
+            --main-dir ../main-src \
+            --evidence-dir ../source-evidence/holiday-after-source-evidence \
+            --base-ref a7446aca567ca74c936c2039867fcf5fd3b07e34
       - name: Archive candidate for audit only, no branch updates
         uses: actions/upload-artifact@v4
         with:

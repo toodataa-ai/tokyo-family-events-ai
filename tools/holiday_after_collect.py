@@ -22,6 +22,7 @@ import xml.etree.ElementTree as ET
 
 from nerima_annual_resolver import resolve_annual_schedule_urls
 from official_schedule_discovery import extract_candidates
+from nerima_forest_schedule import parse_schedule as parse_nerima_forest_schedule
 
 JST = dt.timezone(dt.timedelta(hours=9))
 WARDS = [
@@ -350,6 +351,8 @@ def build_jobs(plan):
         for url in source["urls"]:
             jobs.append({"kind": "explicit", "source_id": source["id"],
                          "required": source["required"], "url": url,
+                         "target_start": plan["target_start"],
+                         "target_end": plan["target_end"],
                          "annual_listing_url": source.get("annual_listing_url")})
     return jobs
 
@@ -372,6 +375,18 @@ def inspect(job, fetcher=None):
             result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
             result["page_title"] = "杉並区公式イベントカレンダー"
             result["official_event_link_count"] = len(result["candidates"])
+        elif job.get("source_id") == "nerima_forest_festa_2026":
+            # Parse ALL dated rows; a successful fetch is not complete discovery.
+            forest = parse_nerima_forest_schedule(
+                evidence["body"], dt.date.fromisoformat(job["target_start"]),
+                dt.date.fromisoformat(job["target_end"]), job["url"])
+            result["candidates"] = forest["candidates"]
+            result["candidate_ids"] = forest["candidate_ids"]
+            result["candidate_count"] = forest["candidate_count"]
+            result["official_row_count"] = forest["official_row_count"]
+            result["outside_target_count"] = forest["outside_target_count"]
+            result["page_title"] = "ねりまの森こどもフェスタ2026（公式日程表）"
+            result["decision_reconciliation"] = "pending"
         else:
             title, links = html_links(evidence["body"], job["url"])
             if not title and not links:

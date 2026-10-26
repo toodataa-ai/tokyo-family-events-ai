@@ -27,6 +27,7 @@
     <div class="summary-grid">
       <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small>6週間・重複統合後</small></div>
     </div>
+    <div class="home-changes-summary" id="homeChangesSummary" aria-live="polite">今週の掲載変更を集計中です。</div>
     <details class="update-history-details" id="updateHistoryDetails">
       <summary><span>休日明けの更新履歴</span><small id="updateHistorySummary">更新実績なし</small></summary>
       <div class="update-history-list" id="updateHistoryList"><p>休日明けの6週間データ更新はまだ完了していません。アプリの公開Version更新とは別の履歴です。</p></div>
@@ -106,6 +107,7 @@
 <script type="module">
 import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261021-arts-venue-chain';
 import {summarizeUpdateHistory,formatJapaneseUpdateDate} from './update-history-display.js?v=20261027-weekly-ja-1';
+import {loadChangeData,currentChangeCounts} from './recent-event-changes.js?v=20261027-1';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(dateStr){
   const season=heroSeasonForDate(dateStr);
@@ -208,8 +210,17 @@ loadFixedSourcesSection();
     renderPublicReleases(publicReleases);
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const dataRows=rows.map(x=>x.data).filter(Boolean);
-    const published=mergeEventsAcrossWeeks(dataRows).length;
+    const allEvents=mergeEventsAcrossWeeks(dataRows);
+    const published=allEvents.length;
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
+    const changeBox=$('homeChangesSummary');
+    try{
+      const changes=await loadChangeData({manifest,history:updateHistory});
+      const counts=currentChangeCounts(allEvents,changes);
+      changeBox.innerHTML='<b>今週の掲載変更</b>'+
+        '<a href="search.html?changes=added" class="home-change-link">追加 <strong>'+counts.added+'件</strong> を見る</a>'+
+        '<a href="search.html?changes=updated" class="home-change-link">情報更新 <strong>'+counts.updated+'件</strong> を見る</a>';
+    }catch(error){console.warn('今週の掲載変更一覧の取得に失敗',error);changeBox.textContent='今週の掲載変更は確認中です。';}
     $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${formatJapaneseUpdateDate(manifest.generated)}`;
   }catch(e){
     console.error(e);

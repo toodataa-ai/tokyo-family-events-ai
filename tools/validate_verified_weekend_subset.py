@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict additive, source-independent batch gate. Only one 2026-11-23 holiday.
+"""Strict additive, source-independent batch gate for 2026-11-29 weekend.
 Existing failed required source fetches remain recorded as debt; never mark checked.
 """
 import argparse
@@ -85,7 +85,7 @@ def verify(base):
                     continue
                 unchanged(v,new_coverage.get(k),"unchanged coverage field "+k)
             for k in ("published_count","candidate_count"):
-                if new_coverage.get(k) != old_coverage.get(k)+4:
+                if new_coverage.get(k) != old_coverage.get(k)+5:
                     raise ValueError("wrong coverage count "+k)
             for ward,addition in (("中野区",1),("江戸川区",1),("台東区",1),("世田谷区",2)):
                 o=next(r for r in old_coverage["wards"] if r["ward"]==ward)
@@ -101,7 +101,7 @@ def verify(base):
             if len(new_events)!=len(old_events)+5 or new_events[:len(old_events)]!=old_events:
                 raise ValueError("prior event order or facts changed")
             extra=new_events[len(old_events):]
-            if len({e.get("id") for e in extra})!=4 or any(e.get("id") in {x["id"] for x in old_events} for e in extra):
+            if len({e.get("id") for e in extra})!=5 or any(e.get("id") in {x["id"] for x in old_events} for e in extra):
                 raise ValueError("duplicate new event ID")
             for ev in extra:
                 if not (ev.get("date_start","")<=DAY<=ev.get("date_end","")) or not all(ev.get(k) for k in FIELDS):

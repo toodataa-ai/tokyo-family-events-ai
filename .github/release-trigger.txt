@@ -1,13 +1,14 @@
-# User-approved app-only release v1.21: per-date festival grouping, recent changes, weekly history, date range, star layout.
+# App-only v1.22: repair two stale production regression tests from previously approved v1.21 date-range UI.
 operation=release
 production_ref=production
-production_sha=02e515f1beb2010dc1b6d7bd44c70961732da4c5
-previous_production_sha=8e8064277b77010d13e2b21c212ebc396faeb71b
-candidate_sha=8072b8affca170dd1d057ac3459d26bc23e6f2f2
-pr=42
-target_public_version=1.21
+production_sha=110da720f2587b7384c2171ee4561e437d44967d
+previous_production_sha=02e515f1beb2010dc1b6d7bd44c70961732da4c5
+candidate_sha=110da720f2587b7384c2171ee4561e437d44967d
+pr=44;46
+target_public_version=1.22
 release_date_jst=2026-10-27
-staging_validation_run=40397471727
-expected_data_production_sha=ad0be634dc89e7d5f07dabcc34d0249e3dc3565c
-approved_scope=site/app.js;site/canva.html;site/copy.html;site/festival-display-grouping.js;site/index.html;site/multi-filter-ui.js;site/recent-event-changes.js;site/search.html;site/styles.css;site/update-history-display.js
-note=Production-only approved UI changes. No data edits. Nerima 11/8, 11/21, 11/29 official programmes remain an independent ingestion gap for data-only remediation.
+expected_data_production_sha=6591c7c7a4429b11cf1f5572e0d52b7153180f30
+approved_scope=tests/hidden_past_period_shortcuts.test.mjs;tests/app_filter.test.mjs
+no_runtime_site_changes=true
+no_event_data_changes=true
+note=Two test-only fixes, production runtime stays identical v1.21; release data remains independently preserved by snapshot data-release/2026-10-27-r532.

@@ -138,8 +138,32 @@ def main(data,evidence,mainrepo,base):
    if (found.get('family_fit') or {}).get('rubric_version')!='family-fit-v2':
     aliases=load(data/'2026-11-07-decisions.json')['decisions']
     alt=next((x for x in aliases if x.get('name')==e['name'] and x.get('ward')==e['ward'] and x.get('decision')=='published' and (x.get('family_fit') or {}).get('rubric_version')=='family-fit-v2'),None)
-    if alt is None:raise ValueError('no independently reviewed v2 decision for carryover '+e['id'])
-    found=copy.deepcopy(alt)
+    if alt is None:
+     if e['id']!='v15-974166027816' or e.get('name')!='すみだ五彩の芸術祭':raise ValueError('no reviewed v2 carryover '+e['id'])
+     # Explicit individual 2026-10-27 v2 re-review of the city-wide
+     # multi-program arts festival, not a mechanical upgrade of v1.
+     axes={
+      'child_target':('B','一般向け芸術祭だが親子で楽しめる企画が部分的に開催。'),
+      'interactivity':('B','参加型プログラム・ワークショップは会場と日により異なる。'),
+      'age_fit':('B','家族鑑賞可。ただし参加企画ごとの年齢条件を確認する必要がある。'),
+      'stay_flexibility':('A','各会場の開催時間に合わせて回遊できる。'),
+      'burden':('B','墨田区内の会場が分散しているため移動を考慮。'),
+      'cost':('unknown','無料と有料の催しがあり一律料金は不明。'),
+      'reservation':('unknown','企画ごとに参加条件が異なり一律には推測できない。'),
+      'family_value':('B','地域文化や表現に触れる家族のお出かけ価値がある。')}
+     fit={'rubric_version':'family-fit-v2','overall':'B','grade':'B',
+       'reason':'2026年12月5日に重なる開催期間と公式プログラムを再照合。個別参加条件を明示する。',
+       'axes':{k:{'grade':v[0],'reason':v[1]} for k,v in axes.items()}}
+     e['family_fit']=fit
+     found={'candidate_id':e['id'],'name':e['name'],'ward':e['ward'],'decision':'published',
+       'family_fit':fit,'positive_signals':['official_venue_published','family_compatible'],
+       'negative_signals':['passive_only'],'hard_exclusion':None,'exclusion_type':None,
+       'primary_reason_code':'family_value_high','reason_codes':['family_value_high'],
+       'reasons':['自治体主催芸術祭に家族で参加できる企画があり、料金や会場差を留保。'],
+       'evidence':[{'url':'https://sumida-artfest.jp/events/','basis':'2026年公式プログラム一覧と開催期間・複数会場'}],
+       'override_reason':''}
+    else:
+     found=copy.deepcopy(alt)
    found['candidate_id']=e['id']
    found['name']=e['name'];found['ward']=e['ward']
    decisions.append(found);continue

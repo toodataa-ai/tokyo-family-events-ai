@@ -4,8 +4,8 @@
   "generated": "2026-10-19T17:36:28+00:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 40,
-    "published": 24,
+    "candidate_total": 41,
+    "published": 25,
     "excluded": 16,
     "duplicate": 0
   },
@@ -2694,6 +2694,76 @@
       ],
       "override_reason": "",
       "review_note": "第2弾独立公式確認バッチ。CI合格後の公開対象。"
+    },
+    {
+      "candidate_id": "nerima-forest-20261129-kitappara",
+      "name": "ねりまの森こどもフェスタ「モルックであそぼう」",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "grade": "A",
+        "overall": "A",
+        "reason": "練馬区公式の複数日程表に日時・会場・参加内容を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区公式のこどもフェスタ企画。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "モルック大会や四輪自転車体験。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子・子どもが楽しめる遊び。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "予約不要で当日来場。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外開催、雨天中止の場合あり、駐車場なし。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "原則無料だが一部有料企画あり。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前予約不要と公式に明記。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で身体を動かして季節の森を楽しめる。"
+          }
+        }
+      },
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "練馬区公式で日時・会場・内容・申込条件を日付別に確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "練馬区公式2026年森フェスタ11月29日の行"
+        }
+      ],
+      "override_reason": "",
+      "positive_signals": [
+        "child_target_explicit",
+        "official_venue_published",
+        "participation_value"
+      ],
+      "negative_signals": [],
+      "review_note": "既存イベントや過去証跡に変更なし。"
     }
   ]
 }

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "nerima-forest-20261129-kitappara",
+    "ward": "練馬区",
+    "name": "ねりまの森こどもフェスタ「モルックであそぼう」",
+    "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+    "official_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+    "source": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+    "image": "",
+    "period": "11/29(日)",
+    "date_start": "2026-11-29",
+    "date_end": "2026-11-29",
+    "time": "10:00〜15:00",
+    "venue": "きたっぱら憩いの森（練馬区谷原3丁目9番）",
+    "price": "原則無料（一部有料企画あり）",
+    "description": "モルック大会・四輪自転車体験。明治大学校友会練馬区地域支部が運営。雨天中止（一部除く）、駐車場なし。",
+    "categories": [
+      "自然体験",
+      "親子",
+      "こども",
+      "森"
+    ],
+    "family_fit": {
+      "rubric_version": "family-fit-v2",
+      "grade": "A",
+      "overall": "A",
+      "reason": "練馬区公式の複数日程表に日時・会場・参加内容を確認。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "区公式のこどもフェスタ企画。"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "モルック大会や四輪自転車体験。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "親子・子どもが楽しめる遊び。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "予約不要で当日来場。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "屋外開催、雨天中止の場合あり、駐車場なし。"
+        },
+        "cost": {
+          "grade": "B",
+          "reason": "原則無料だが一部有料企画あり。"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "事前予約不要と公式に明記。"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "親子で身体を動かして季節の森を楽しめる。"
+        }
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "事前予約不要、当日会場へ。雨天中止（一部除く）。"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-10-27",
+      "confidence": "high",
+      "discovery_query": "練馬区公式ねりまの森こどもフェスタの日程別表"
+    }
+  }
+]

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-21",
+  "updated_at": "2026-10-27",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -437,6 +437,22 @@
       "calendar_daily_unfiltered": true,
       "event_row_audit_required": true,
       "note": "従来のおまつり限定を保持したまま追加。月別一覧は最大5件程度で省略されるため、6週間内の42日の日別無条件一覧(type=3)を必ず全走査し、/s数字/event/数字.htmlの全候補をID別に監査する。掲載確定は別の公式詳細確認・採否監査後。"
+    },
+    {
+      "id": "nerima_forest_festa_2026",
+      "label": "練馬区公式 ねりまの森こどもフェスタ（日別行）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "search_urls": [
+        "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html"
+      ],
+      "note": "年度別の同一ページに複数日程・会場がある。テーブルの行を日付・体験名・会場で個別候補化。全行数と対象日程の候補IDを照合する。取得失敗は失敗・未処理として保持し、既存掲載を削除しない。次回以降の公開は独立公式確認を経て判定。",
+      "candidate_extraction": "official_multi_date_schedule_rows",
+      "effective_from": "2026-10-27"
     }
   ],
   "protected_source_ids": [
@@ -464,6 +480,7 @@
     "itabashi_tourism_festival",
     "tamemap_nakano",
     "itabashi_times_event",
-    "suginami_calendar_all"
+    "suginami_calendar_all",
+    "nerima_forest_festa_2026"
   ]
 }

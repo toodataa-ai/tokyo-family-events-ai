@@ -42,15 +42,15 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git -C candidate-src rev-parse HEAD)" = a7446aca567ca74c936c2039867fcf5fd3b07e34
-          test -s source-evidence/requests.json
-          test -s source-evidence/review_packet.json
-          test -s source-evidence/plan.json
+          test -s source-evidence/holiday-after-source-evidence/requests.json
+          test -s source-evidence/holiday-after-source-evidence/review_packet.json
+          test -s source-evidence/holiday-after-source-evidence/plan.json
       - name: Build nonpublishing six-week source-provenanced candidate
         run: |
           python3 main-src/tools/build_verified_horizon_subset.py \
             --data-dir candidate-src/site/data \
             --main-dir main-src \
-            --evidence-dir source-evidence \
+            --evidence-dir source-evidence/holiday-after-source-evidence \
             --baseline a7446aca567ca74c936c2039867fcf5fd3b07e34
       - name: Run released strict data and decisions, no deployment
         run: |

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {todayJst,visibleQuickPeriods,currentAndFutureWindow,createMultiFilterUI} from '../site/multi-filter-ui.js';
+import {todayJst,visibleQuickPeriods,currentAndFutureWindow,validatedDateRange,createMultiFilterUI} from '../site/multi-filter-ui.js';
 import {saturdayOf,filterEvents} from '../site/app.js';
 
 // Japan-local midnight, not browser timezone or UTC, decides when shortcuts vanish.
@@ -47,10 +47,12 @@ assert.equal(el('dateInput').value,oldSat,'historical URL shows date in picker')
 // Past dates can still be applied manually and are preserved for review.
 el('dateInput').value=oldSat;
 for(const fn of el('updateBtn').listeners.click)fn();
-assert.deepEqual(ui.filters().dates,[oldSat]);
+assert.deepEqual(ui.filters().dates,[],'manual single-day filter is not the whole weekend');
+assert.deepEqual(ui.filters().range,{start:oldSat,end:oldSat});
 assert.equal(el('dateInput').value,oldSat);
+assert.equal(el('dateEndInput').value,oldSat);
 assert.equal(ui.filters().periods[0].start,oldSat);
-assert.match(el('selectedHint').textContent,/日付指定/);
+assert.match(el('selectedHint').textContent,/指定期間/);
 console.log('Past period shortcut hidden while URL/date filtering and all-period search remain available');
 
 
@@ -67,9 +69,10 @@ assert.deepEqual(currentAndFutureWindow(periods,'2026-10-18'),{start:'2026-10-17
 assert.deepEqual(currentAndFutureWindow(periods,'2026-10-19'),{start:'2026-10-24',end:'2026-11-08'});
 assert.deepEqual(currentAndFutureWindow(periods,'2026-12-01'),{start:'9999-12-31',end:'9999-12-31'});
 assert.deepEqual(currentAndFutureWindow([],'2026-10-14'),{start:'9999-12-31',end:'9999-12-31'});
-// Explicit previous-week filter has precedence over the default cutoff.
-assert.deepEqual(ui.filters().periods,[{start:oldSat,end:weekShift(-6)}]);
-assert.deepEqual(ui.filters().dates,[oldSat]);
+// Explicit single-day filter has precedence over the default cutoff.
+assert.deepEqual(ui.filters().periods,[{start:oldSat,end:oldSat}]);
+assert.deepEqual(ui.filters().dates,[]);
+assert.deepEqual(ui.filters().range,{start:oldSat,end:oldSat});
 // Clicking the all-period shortcut removes the historical selection, but not records.
 const mockClick=date=>({target:{closest(){return {dataset:{date}}}}});
 for(const fn of el('weekTabs').listeners.click)fn(mockClick('all'));
@@ -90,10 +93,24 @@ const allWindow=ui.filters().periods;
 assert.equal(filterEvents(mockEvents,{periods:allWindow,wards:['杉並区']}).length,0);
 el('dateInput').value=oldSat;
 for(const fn of el('updateBtn').listeners.click)fn();
-assert.deepEqual(ui.filters().dates,[oldSat]);
+assert.deepEqual(ui.filters().dates,[]);
+assert.deepEqual(ui.filters().range,{start:oldSat,end:oldSat});
 assert.equal(filterEvents(mockEvents,ui.filters())[0].name,'終了済みイベント');
 assert.equal(filterEvents(mockEvents,ui.filters()).length,2);
 for(const fn of el('weekTabs').listeners.click)fn(mockClick('all'));
 assert.deepEqual(ui.filters().dates,[]);
 assert.equal(el('dateInput').value,'');
 console.log('All period starts this weekend; historical filters and long-running events preserved');
+
+// Custom range includes both ends and the independent 11/3 holiday.
+const futureStart=weekShift(14),futureEnd=weekShift(22);
+assert.deepEqual(validatedDateRange(futureStart,futureEnd,[{start:oldSat,end:weekShift(29)}]),{start:futureStart,end:futureEnd});
+assert.match(validatedDateRange(futureEnd,futureStart,[{start:oldSat,end:weekShift(29)}]).error,/開始日/);
+assert.match(validatedDateRange(weekShift(-14),weekShift(4),[{start:oldSat,end:weekShift(29)}]).error,/掲載対象/);
+const holidayRows=[
+ {name:'11/3限定',date_start:'2026-11-03',date_end:'2026-11-03'},
+ {name:'期間跨ぎ',date_start:'2026-10-31',date_end:'2026-11-04'},
+ {name:'翌日だけ',date_start:'2026-11-04',date_end:'2026-11-04'}
+];
+assert.deepEqual(filterEvents(holidayRows,{periods:[{start:'2026-11-03',end:'2026-11-03'}]}).map(x=>x.name),['11/3限定','期間跨ぎ']);
+console.log('Date-range overlap / inclusive holiday checks: OK');

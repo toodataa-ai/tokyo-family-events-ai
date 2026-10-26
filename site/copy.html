@@ -38,8 +38,12 @@
     <details class="date-refine" id="dateRefine">
       <summary>日付指定</summary>
       <div class="date-refine-panel">
-        <input type="date" id="dateInput" aria-label="対象日">
-        <button id="updateBtn">この期間を表示</button>
+        <label for="dateInput">開始日</label>
+        <input type="date" id="dateInput" aria-label="開始日">
+        <label for="dateEndInput">終了日</label>
+        <input type="date" id="dateEndInput" aria-label="終了日">
+        <p class="date-refine-help">片方だけなら、その1日を検索します。</p>
+        <button id="updateBtn">指定期間で検索</button>
         <div class="meta" id="rangeText"></div>
         <div class="msg" id="msgBox"></div>
       </div>
@@ -51,6 +55,7 @@
 <nav class="chips compact-ward-chips" id="chips"></nav>
 <main>
   <div class="result-head result-head-simple copy-result-head"><span id="countText">-</span></div>
+  <div id="changeFilterBar" class="change-filter-bar" aria-label="今週の掲載変更で絞り込む"></div>
   <p class="tip">各カード上部に検索結果と同じイベント情報を表示します。下部の「コピー用項目」から1項目ずつ、またはまとめてコピーできます。公式確認・取得経路・AI判定は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
@@ -58,16 +63,19 @@
 <script src="usage-metrics.js?v=20261009-2" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
-import {createMultiFilterUI} from './multi-filter-ui.js?v=20261014-all-from-this-weekend';
+import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
+import {loadChangeData,changeBadge,currentChangeCounts,changeKind} from './recent-event-changes.js?v=20261027-1';
+import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary,groupedEventChangeCounts} from './festival-display-grouping.js?v=20261027-fest-parent';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
-let manifest=null,registry=null,currentData=null,filterUI=null;
+let manifest=null,registry=null,currentData=null,filterUI=null,changes=null;
+let changeFilter=['added','updated'].includes(new URLSearchParams(location.search).get('changes'))?new URLSearchParams(location.search).get('changes'):'';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(){document.body.dataset.season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());}
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function filters(){return {...filterUI.filters(),q:$('searchInput').value.trim()};}
 function syncUrl(){
-  const qs=filterUI.serialize($('searchInput').value.trim());
+  const params=new URLSearchParams(filterUI.serialize($('searchInput').value.trim()));if(changeFilter)params.set('changes',changeFilter);const qs=params.toString();
   history.replaceState(null,'',qs?'?'+qs:location.pathname);
   $('backLink').href='search.html'+(qs?'?'+qs:'');
 }
@@ -80,7 +88,19 @@ async function writeClipboard(text){
 function flash(btn,label){const old=btn.textContent;btn.textContent=label;btn.classList.add('done');setTimeout(()=>{btn.textContent=old;btn.classList.remove('done');},1500);}
 function recordMetric(event){try{window.SiteMetrics?.track(event);}catch{ /* metrics must never block the clipboard */ }}
 window.copyOne=async(id,btn)=>{recordMetric('copy_field_click');try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');recordMetric('copy_field');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
-window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+function copyFestivalText(ev){
+  const base=copyAllText(ev);
+  if(!ev?._festival_group)return base;
+  const rows=ev._festival_members.map(child=>[
+    child.name,'日時：'+(child.time||'時間要確認'),
+    '会場：'+(child.venue||'会場要確認'),
+    '料金：'+(child.price||'料金要確認'),
+    '申込：'+(child.reservation?.note||'申込要確認'),
+    '内容：'+(child.description||'詳細は公式案内をご確認ください')
+  ].join('\n'));
+  return base+'\n\n【フェス内の企画】\n'+rows.join('\n\n');
+}
+window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(ev?._festival_group?copyFestivalText(ev):copyAllText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
 function renderWeekTabs(){filterUI.renderWeekTabs();}
 function renderChips(data){filterUI.renderWardChips(data);}
@@ -100,21 +120,47 @@ function copyProvenanceBadge(prov){
 }
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
+function renderChangeControls(){
+  const bar=$('changeFilterBar');if(!bar||!currentData)return;
+  const counts=groupedEventChangeCounts(currentData.events,changes);
+  bar.innerHTML='<span class="change-filter-label">今週の掲載変更</span>'+
+    [['','すべて',groupFestivalDisplayEvents(currentData.events).length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
+    .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
+      '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
+}
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});window.__visibleEvents=visible;
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);
+  renderChangeControls();
+  let visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});
+  if(changeFilter)visible=visible.filter(ev=>changeKind(ev,changes)===changeFilter);
+  const displayed=groupFestivalDisplayEvents(visible);
+  window.__visibleEvents=displayed;
   const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
   const prompt=currentData.run?.prompt?.version||'-';
   const filterBits=[filterUI.summary()];
   const periodCount=filterEvents(currentData.events,{periods:filterUI.filters().periods}).length;
-  $('rangeText').textContent=`${filterUI.filters().dates.length?'日付指定':'今週末以降'} ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;
-  $('countText').textContent=`期間内 ${periodCount} 件 ／ コピー対象 ${visible.length} 件`;
-  const grid=$('grid');if(!visible.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
-  grid.innerHTML=visible.map((ev,index)=>{
+  $('rangeText').textContent=`${(filterUI.filters().dates.length||filterUI.filters().range)?'日付指定':'今週末以降'} ／ 同一イベントは重複統合 ／ コピペ契約 v${COPY_CONTRACT_VERSION} ／ ${filterUI.summary()}`;
+  $('countText').textContent=`期間内 ${periodCount} 企画 ／ コピー対象 ${displayed.length} 件`;
+  const grid=$('grid');if(!displayed.length){grid.innerHTML='<p class="empty">条件に合うイベントはありません。</p>';syncUrl();return;}
+  grid.innerHTML=displayed.map((ev,index)=>{
     const fields=copyFieldList(ev);
     const grade=ev.family_fit?.overall||ev.family_fit?.grade||'C';
     const state=verificationStateMeta(ev.verification?.status,ev.verification?.source_kind),verifyUrl=safeHttpUrl(ev.verification?.source);
-    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=reservationLabel(ev),reservationClass=reservationCategory(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
+    const href=safeHttpUrl(ev.official_url||ev.url),img=safeHttpUrl(ev.image),environmentLabel=indoorOutdoorLabel(ev),priceText=eventPriceLabel(ev),priceClass=eventPriceCategory(ev),reservationText=ev._festival_group?'企画ごとに異なる':reservationLabel(ev),reservationClass=reservationCategory(ev),prov=copyEventProvenance(ev),provBadge=copyProvenanceBadge(prov);
+    const groupLabel=ev._festival_group?`<span class="festival-parent-tag">${escapeHtml(festivalMemberSummary(ev))}</span>`:'';
+    const changeMark=ev._festival_group
+      ? (festivalDisplayChangeKind(ev,changes)==='added'?'<span class="event-change-badge added">今週追加</span>':
+         festivalDisplayChangeKind(ev,changes)==='updated'?'<span class="event-change-badge updated">今週更新</span>':'')
+      : changeBadge(ev,changes);
+    const programmeRows=ev._festival_group?`<section class="festival-programs">
+      <strong>フェス内の企画（${ev._festival_members.length}件）</strong>
+      <ol>${ev._festival_members.map(child=>`<li class="festival-program"><b>${escapeHtml(child.name)}</b>
+      <span>🕒 ${escapeHtml(child.time||'時間要確認')}</span>
+      <span>📍 ${escapeHtml(child.venue||'会場要確認')}</span>
+       <span>料金：${escapeHtml(child.price||'料金要確認')}</span>
+       ${child.description?`<span>内容：${escapeHtml(child.description)}</span>`:''}
+       <span>申込：${escapeHtml(child.reservation?.note||'要確認')}</span></li>`).join('')}</ol></section>`:'';
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
@@ -125,11 +171,12 @@ function render(){
         <div class="event-list-overview copy-event-overview">
           ${thumb}
           <div class="event-list-main">
-            <div class="event-title">${title}</div>
+            <div class="event-title">${title}${groupLabel}${changeMark}</div>
             <div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${copyFamilyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div>
           </div>
         </div>
         <div class="copy-event-detail">
+           ${programmeRows}
           <div class="badges user-meta-badges"><span class="badge">${escapeHtml(ev.ward)}</span>${verifyBadge}${environmentLabel?`<span class="badge">${escapeHtml(environmentLabel)}</span>`:''}<span class="badge price-badge price-${priceClass}">${escapeHtml(priceText)}</span><span class="badge reservation-badge reservation-${reservationClass}" title="${escapeHtml(ev.reservation?.note||'')}">${escapeHtml(reservationText)}</span>${provBadge}</div>
           <div class="event-meta">${ev.venue?`📍 ${escapeHtml(ev.venue)}`:''}${ev.time?`<br>🕒 ${escapeHtml(ev.time)}`:''}${ev.price?`<br>💰 ${escapeHtml(ev.price)}`:''}</div>
           ${ev.description?`<div class="desc">${escapeHtml(ev.description)}</div>`:''}
@@ -152,12 +199,18 @@ async function loadSelected(){
     showMsg('');applyHeroSeason();
     const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const rows=loaded.map(x=>x.data).filter(Boolean);
+    try{changes=await loadChangeData({manifest,history:await (await fetch('data/update_history.json',{cache:'no-store'})).json()});}
+    catch(error){console.warn('掲載変更バッジの取得に失敗しました',error);changes=null;}
     currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,
       publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
     render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 
+$('changeFilterBar').addEventListener('click',e=>{
+  const btn=e.target.closest('button[data-change-filter]');if(!btn)return;
+  changeFilter=btn.dataset.changeFilter||'';render();
+});
 $('searchInput').addEventListener('input',render);
 (async()=>{try{
   [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);

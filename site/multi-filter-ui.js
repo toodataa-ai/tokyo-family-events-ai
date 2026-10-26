@@ -30,6 +30,18 @@ export function currentAndFutureWindow(periods,today=todayJst()){
   if(!last || first>last) return {start:'9999-12-31',end:'9999-12-31'};
   return {start:first,end:last};
 }
+
+export function validatedDateRange(from,to,periods){
+  if(!from && !to)return {error:'開始日または終了日を指定してください。'};
+  const start=from||to,end=to||from;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(start)||!/^\d{4}-\d{2}-\d{2}$/.test(end))
+    return {error:'正しい日付を指定してください。'};
+  if(start>end)return {error:'開始日は終了日以前にしてください。'};
+  const first=periods?.[0]?.start,last=periods?.at(-1)?.end;
+  if(!first||!last||start<first||end>last)
+    return {error:'掲載対象の期間内で開始日と終了日を指定してください。'};
+  return {start,end};
+}
 function initialState(params,periods){
   const validDate=params.getAll('d').find(date=>periods.some(period=>period.start===date));
   const dates=new Set(validDate?[validDate]:[]);
@@ -61,19 +73,24 @@ function initialState(params,periods){
 export function createMultiFilterUI({manifest,registry,onChange,getData}){
   const $=id=>document.getElementById(id);
   const periods=holidayPeriodSlots(manifest,manifest.default);
-  const state=initialState(new URLSearchParams(location.search),periods);
+  const params=new URLSearchParams(location.search);
+  const state=initialState(params,periods);
+  const initialCustom=(params.has('from')||params.has('to'))
+    ?validatedDateRange(params.get('from')||'',params.get('to')||'',periods):null;
+  let customRange=initialCustom&&!initialCustom.error?initialCustom:null;
+  if(customRange)state.dates.clear();
   const filters=()=>({
-    dates:[...state.dates],wards:[...state.wards],
+    dates:[...state.dates],range:customRange,wards:[...state.wards],
     ratings:[...state.ratings],prices:[...state.prices],
     environments:[...state.environments],reservations:[...state.reservations],
     sourceModes:[...state.sourceModes],
-    periods:state.dates.size
+    periods:customRange?[customRange]:state.dates.size
       ?periods.filter(x=>state.dates.has(x.start)).map(x=>({start:x.start,end:x.end}))
       :[currentAndFutureWindow(periods)]
   });
   function notify(){updateSummary();onChange();}
   function renderWeekTabs(){
-    const all=!state.dates.size;
+    const all=!state.dates.size&&!customRange;
     $('weekTabs').innerHTML=`<button type="button" class="week-tab all-week-tab ${all?'active':''}" data-date="all" aria-pressed="${all}"><b>全期間</b><span>今週末から</span></button>`+
       visibleQuickPeriods(periods).map(period=>{
         const meta=holidayTabMeta(period,manifest),checked=state.dates.has(period.start);
@@ -99,16 +116,19 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
   }
   function updateSummary(){
     const parts=[];
-    if(state.dates.size)parts.push('期間指定');
+    if(customRange)parts.push(customRange.start+'〜'+customRange.end);
+    else if(state.dates.size)parts.push('期間指定');
     if(state.wards.size)parts.push('区'+state.wards.size);
     for(const group of GROUPS){if(state[group.key].size)parts.push(group.title+state[group.key].size);}
     $('filterSummary').textContent=parts.length?`（${parts.join('・')}）`:'（条件なし）';
     // Reset is available even if only the keyword search is active.
     const selectedPeriod=periods.find(p=>state.dates.has(p.start));
     const pastSelection=selectedPeriod && selectedPeriod.end<todayJst();
-    $('selectedHint').textContent=pastSelection
+    $('selectedHint').textContent=customRange
+      ?'指定期間：'+customRange.start+' 〜 '+customRange.end+'（両端の日付を含む）。週末ボタンまたは「全期間」で解除できます。'
+      :pastSelection
       ?'過去の期間を検索中です。ほかの過去の日程は「日付指定」から検索できます。「全期間」で解除できます。'
-      :'期間は単一選択、区は複数選択できます。過去の日程は「日付指定」で検索できます。';
+      :'日付を1日または開始日〜終了日で指定できます。区や詳細条件は複数選択できます。';
   }
   function toggleSet(bucket,value,checked){
     if(checked) bucket.add(value);else bucket.delete(value);
@@ -116,8 +136,10 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
   }
   function choosePeriod(value){
     state.dates.clear();
+    customRange=null;
     if(value!=='all')state.dates.add(value);
     $('dateInput').value='';
+    $('dateEndInput').value='';
     notify();
   }
   function handleWeek(e){
@@ -129,23 +151,30 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     toggleSet(state.wards,input.dataset.ward,input.checked);
   }
   function handleDate(){
-    const date=$('dateInput').value;
-    if(!date){choosePeriod('all');return;}
-    const period=periods.find(p=>date>=p.start&&date<=p.end);
-    if(!period){
-      const el=$('msgBox');el.textContent='選択した日付は現在の6週間検索対象外です。';el.style.display='block';return;
-    }
-    const el=$('msgBox');el.textContent='';el.style.display='none';
-    choosePeriod(period.start);
-    // Keep the explicitly selected historical day visible in the date picker.
-    $('dateInput').value=date;
+    const start=$('dateInput').value,end=$('dateEndInput').value;
+    if(!start&&!end){choosePeriod('all');$('dateRefine').open=false;return;}
+    const range=validatedDateRange(start,end,periods);
+    const el=$('msgBox');
+    if(range.error){el.textContent=range.error;el.style.display='block';return;}
+    el.textContent='';el.style.display='none';
+    state.dates.clear();
+    customRange=range;
+    $('dateInput').value=range.start;
+    $('dateEndInput').value=range.end;
     $('dateRefine').open=false;
+    notify();
   }
   function reset(){
     for(const value of Object.values(state))value.clear();
+    customRange=null;
     $('dateInput').value='';
+    $('dateEndInput').value='';
     $('searchInput').value='';
     renderGroups();notify();
+  }
+  if(customRange){
+    $('dateInput').value=customRange.start;
+    $('dateEndInput').value=customRange.end;
   }
   // Restore past selections shared by URL even when the shortcut is hidden.
   const selectedPeriod=periods.find(p=>state.dates.has(p.start));

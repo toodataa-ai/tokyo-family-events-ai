@@ -72,7 +72,7 @@
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
 import {loadChangeData,changeBadge,currentChangeCounts,changeKind} from './recent-event-changes.js?v=20261027-1';
-import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary,NAKANO_FESTIVAL_GROUP_ID} from './festival-display-grouping.js?v=20261027-fest-parent';
+import {groupFestivalDisplayEvents,festivalDisplayChangeKind,festivalMemberSummary,groupedEventChangeCounts,NAKANO_FESTIVAL_GROUP_ID} from './festival-display-grouping.js?v=20261027-fest-parent';
 import {CANVA_FORMAT,readCanvaSelection,saveCanvaSelection} from './canva-draft-contract.js?v=20261024-fixed-cover-36-v1';
 
 let manifest=null,registry=null,currentData=null,filterUI=null,changes=null;
@@ -114,9 +114,9 @@ function provenanceBadge(prov){
 }
 function renderChangeControls(){
   const bar=$('changeFilterBar');if(!bar||!currentData)return;
-  const counts=currentChangeCounts(currentData.events,changes);
+  const counts=groupedEventChangeCounts(currentData.events,changes);
   bar.innerHTML='<span class="change-filter-label">今週の掲載変更</span>'+
-    [['','すべて',currentData.events.length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
+    [['','すべて',groupFestivalDisplayEvents(currentData.events).length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
     .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
       '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
 }

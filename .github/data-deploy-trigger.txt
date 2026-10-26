@@ -1,13 +1,9 @@
-# User-approved source-verified fourth successive family-event batch.
-operation=verified-subset-addition
-candidate_sha=ad0be634dc89e7d5f07dabcc34d0249e3dc3565c
-base_data_production_sha=7524cff3343faecbcf9b5668b83967d25c6f68b0
-approved_by=user_2026-10-27_fourth_batch
-approved_scope=six_independently_verified_2026-10-31_2026-11-01_2026-11-03_child_events_only
-preflight_actions_run=40391793227
-preflight_attempt=3
-preflight_result=success
-required_source_fetch_errors=5_unresolved_unchanged
-previous_event_ids_removed=0
-previous_event_records_changed=0
-app_ui_and_version_unchanged=true
+# Official verified Nerima forest schedule: 3 missing dated events, zero prior data modifications.
+operation=verified-forest-table-addition
+base_data_production_sha=ad0be634dc89e7d5f07dabcc34d0249e3dc3565c
+candidate_sha=6591c7c7a4429b11cf1f5572e0d52b7153180f30
+source_id=nerima_forest_festa_2026
+source_evidence=https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html
+expected_new_event_ids=nerima-forest-20261108-nakanomiya;nerima-forest-20261121-minamitakamatsu;nerima-forest-20261129-kitappara
+approved_scope=three-new-source-verified-event-shards;3-week-audits;append-only-history;manifest-counts
+expected_existing_event_removed=0

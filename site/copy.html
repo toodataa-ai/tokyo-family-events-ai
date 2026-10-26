@@ -88,7 +88,19 @@ async function writeClipboard(text){
 function flash(btn,label){const old=btn.textContent;btn.textContent=label;btn.classList.add('done');setTimeout(()=>{btn.textContent=old;btn.classList.remove('done');},1500);}
 function recordMetric(event){try{window.SiteMetrics?.track(event);}catch{ /* metrics must never block the clipboard */ }}
 window.copyOne=async(id,btn)=>{recordMetric('copy_field_click');try{await writeClipboard($(id).textContent);flash(btn,'✓コピー済');recordMetric('copy_field');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
-window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(copyAllText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
+function copyFestivalText(ev){
+  const base=copyAllText(ev);
+  if(!ev?._festival_group)return base;
+  const rows=ev._festival_members.map(child=>[
+    child.name,'日時：'+(child.time||'時間要確認'),
+    '会場：'+(child.venue||'会場要確認'),
+    '料金：'+(child.price||'料金要確認'),
+    '申込：'+(child.reservation?.note||'申込要確認'),
+    '内容：'+(child.description||'詳細は公式案内をご確認ください')
+  ].join('\n'));
+  return base+'\n\n【フェス内の企画】\n'+rows.join('\n\n');
+}
+window.copyAllCard=async(index,btn)=>{recordMetric('copy_all_click');try{const ev=window.__visibleEvents[index];await writeClipboard(copyFestivalText(ev));flash(btn,'✓コピーしました');recordMetric('copy_all');}catch{showMsg('コピーに失敗しました。ブラウザのクリップボード権限をご確認ください。');}};
 
 function renderWeekTabs(){filterUI.renderWeekTabs();}
 function renderChips(data){filterUI.renderWardChips(data);}
@@ -145,7 +157,10 @@ function render(){
       <strong>フェス内の企画（${ev._festival_members.length}件）</strong>
       <ol>${ev._festival_members.map(child=>`<li class="festival-program"><b>${escapeHtml(child.name)}</b>
       <span>🕒 ${escapeHtml(child.time||'時間要確認')}</span>
-      <span>申込：${escapeHtml(child.reservation?.note||'要確認')}</span></li>`).join('')}</ol></section>`:'';
+      <span>📍 ${escapeHtml(child.venue||'会場要確認')}</span>
+       <span>料金：${escapeHtml(child.price||'料金要確認')}</span>
+       ${child.description?`<span>内容：${escapeHtml(child.description)}</span>`:''}
+       <span>申込：${escapeHtml(child.reservation?.note||'要確認')}</span></li>`).join('')}</ol></section>`:'';
     const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;

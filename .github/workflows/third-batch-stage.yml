@@ -92,7 +92,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data
-          test "$(git diff --cached --name-only | wc -l)" -eq 18
+          test "$(git diff --cached --name-only | wc -l)" -eq 19
           git commit -m "data-staging: verified Dec 05 14 new plus 14 protected carryovers"
           git push origin "HEAD:refs/heads/data-staging" --force-with-lease="refs/heads/data-staging:$base"
           echo "VERIFIED_CANDIDATE_STAGE_SHA=$(git rev-parse HEAD)"

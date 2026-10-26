@@ -185,7 +185,7 @@ async function loadFixedSourcesSection(){
   }
 }
 
-function renderUpdateHistory(data){
+function renderUpdateHistory(data,visibleChanges=null){
   const weeks=summarizeUpdateHistory(data?.history);
   const list=$('updateHistoryList'),summary=$('updateHistorySummary');
   if(!weeks.length){
@@ -197,9 +197,13 @@ function renderUpdateHistory(data){
   // Source logs and each immutable update record remain in JSON for auditing.
   const latest=weeks[0];
   summary.textContent=`最新: ${latest.label}（${latest.entries}回分を集約）`;
-  list.innerHTML=weeks.map(item=>
-    `<div class="update-history-item update-history-item-weekly"><b>${escapeHtml(item.label)}</b><span>${escapeHtml(item.summary)}</span></div>`
-  ).join('');
+  list.innerHTML=weeks.map(item=>{
+    const grouped=visibleChanges && item.week===visibleChanges.week && item.added>visibleChanges.added;
+    const summaryText=grouped
+      ? item.summary.replace('追加'+item.added+'件','追加'+item.added+'企画（表示'+visibleChanges.added+'件）')
+      : item.summary;
+    return `<div class="update-history-item update-history-item-weekly"><b>${escapeHtml(item.label)}</b><span>${escapeHtml(summaryText)}</span></div>`;
+  }).join('');
 }
 loadFixedSourcesSection();
 
@@ -222,8 +226,12 @@ loadFixedSourcesSection();
     try{
       const changes=await loadChangeData({manifest,history:updateHistory});
       const counts=groupedEventChangeCounts(allEvents,changes);
+      const latest=summarizeUpdateHistory(updateHistory?.history)[0];
+      const originalAdded=latest?.week===changes.week ? latest.added : counts.added;
+      const groupedNote=originalAdded>counts.added ? `（元の${originalAdded}企画をまとめて表示）` : '';
+      renderUpdateHistory(updateHistory,{week:changes.week,added:counts.added});
       changeBox.innerHTML='<b>今週の掲載変更</b>'+
-        '<a href="search.html?changes=added" class="home-change-link">追加 <strong>'+counts.added+'件</strong> を見る</a>'+
+        '<a href="search.html?changes=added" class="home-change-link">追加 <strong>'+counts.added+'件</strong>'+groupedNote+' を見る</a>'+
         '<a href="search.html?changes=updated" class="home-change-link">情報更新 <strong>'+counts.updated+'件</strong> を見る</a>';
     }catch(error){console.warn('今週の掲載変更一覧の取得に失敗',error);changeBox.textContent='今週の掲載変更は確認中です。';}
     $('statusScope').textContent=`対象: 東京23区・${manifest.rolling_horizon_weeks||6}週間 ／ 更新 ${formatJapaneseUpdateDate(manifest.generated)}`;

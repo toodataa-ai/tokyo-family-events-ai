@@ -60,6 +60,7 @@
 import {loadManifest,loadWeekend,mergeEventsAcrossWeeks,escapeHtml} from './app.js?v=20261021-arts-venue-chain';
 import {CANVA_FORMAT,canvaPageCount,readCanvaSelection,saveCanvaSelection,moveCanvaSelection,selectedEvents,buildCanvaDraft,buildCanvaPrompt,draftAsCsv} from './canva-draft-contract.js?v=20261025-direct-sort-v1';
 import {createFluidCanvaSorter} from './canva-fluid-sort.js?v=20261025-fluid-compact-v2';
+import {groupFestivalDisplayEvents} from './festival-display-grouping.js?v=20261027-fest-parent';
 const $=id=>document.getElementById(id);
 let allEvents=[],selectedIds=[],loaded=false;
 const PROMPT_TEMPLATE_URL='./canva-prompt-template-v2.txt?v=20261024-fixed-cover-36-v1';
@@ -181,6 +182,9 @@ $('copyCanvaLink').addEventListener('click',async()=>{
   const manifest=await loadManifest();
   const loadedRows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
   allEvents=mergeEventsAcrossWeeks(loadedRows.map(x=>x.data).filter(Boolean));
+  // Keep old child IDs for saved drafts. Add the festival as ONE opt-in Canva
+  // item, using the same virtual parent as search/copy; never delete originals.
+  allEvents.push(...groupFestivalDisplayEvents(allEvents).filter(ev=>ev._festival_group));
   const qs=new URLSearchParams(location.search);
   const linkIds=qs.getAll('id');
   selectedIds=linkIds.length?saveCanvaSelection(linkIds,window.localStorage):readCanvaSelection(window.localStorage);

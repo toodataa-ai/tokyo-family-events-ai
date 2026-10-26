@@ -42,6 +42,13 @@ def validate(root,main,evidence,base=BASE):
  changed=set(subprocess.check_output(['git','diff','--name-only',base],text=True).splitlines())
  untracked=set(subprocess.check_output(['git','ls-files','--others','--exclude-standard'],text=True).splitlines())
  changed |= untracked
+ # GitHub Actions also checks out released app/audit code and overlays immutable
+ # released static policy files. Compare only runtime data: dated JSON plus
+ # manifest/history. Those tool-only directories are not publication changes.
+ import re
+ changed={p for p in changed if p.startswith('site/data/') and
+          (pathlib.Path(p).name in {'manifest.json','update_history.json'} or
+           re.fullmatch(r'20\\d{2}-\\d{2}-\\d{2}.*\\.json',pathlib.Path(p).name))}
  expected={'site/data/manifest.json','site/data/update_history.json','site/data/2026-11-07-verification.json'}
  expected|={f'site/data/{sat}{suffix}' for sat in SATS[:5] for suffix in ('.json','-run.json')}
  expected|={'site/data/2026-12-05'+suffix for suffix in ('.json','-verification.json','-decisions.json','-run.json','-events-official-verified.json','-events-preserved-carryover.json')}

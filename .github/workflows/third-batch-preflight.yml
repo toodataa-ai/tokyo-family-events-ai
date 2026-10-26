@@ -1,0 +1,76 @@
+name: Verify Dec 05 rolling subset (read only)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/third-batch-preflight.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  candidate_preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: main-src
+      - uses: actions/checkout@v4
+        with:
+          ref: a7446aca567ca74c936c2039867fcf5fd3b07e34
+          path: candidate-src
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          ref: production
+          path: released-src
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: 12621285469
+          run-id: 40239302863
+          github-token: ${{ github.token }}
+          path: source-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify original branch and artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C candidate-src rev-parse HEAD)" = a7446aca567ca74c936c2039867fcf5fd3b07e34
+          test -s source-evidence/requests.json
+          test -s source-evidence/review_packet.json
+          test -s source-evidence/plan.json
+      - name: Build nonpublishing six-week source-provenanced candidate
+        run: |
+          python3 main-src/tools/build_verified_horizon_subset.py \
+            --data-dir candidate-src/site/data \
+            --main-dir main-src \
+            --evidence-dir source-evidence \
+            --baseline a7446aca567ca74c936c2039867fcf5fd3b07e34
+      - name: Run released strict data and decisions, no deployment
+        run: |
+          python3 released-src/tools/validate_data.py --strict --min-image-coverage 0.70 candidate-src/site/data
+          python3 released-src/tools/validate_decisions.py --strict candidate-src/site/data
+          python3 released-src/tools/validate_rereview.py --strict candidate-src/site/data
+          python3 main-src/tools/audit_event_image_identity.py candidate-src/site/data --strict
+          python3 -m unittest discover -s main-src/tests -p 'test_event_image_identity.py'
+          python3 -m unittest discover -s main-src/tests -p 'test_weekday_holiday_coverage.py'
+          python3 main-src/tools/audit_weekday_holiday_coverage.py --manifest candidate-src/site/data/manifest.json --strict
+      - name: Verify all previous published data and logs remain, no removals
+        working-directory: candidate-src
+        run: |
+          python3 ../main-src/tools/validate_non_regression.py --base-ref a7446aca567ca74c936c2039867fcf5fd3b07e34 site/data
+          python3 ../main-src/tools/validate_protected_events.py --base-ref a7446aca567ca74c936c2039867fcf5fd3b07e34 site/data
+      - name: Archive candidate for audit only, no branch updates
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-dec05-rolling-candidate-draft
+          path: candidate-src/site/data/
+          retention-days: 14
+      - name: No production effect
+        run: echo 'READ_ONLY_CANDIDATE_VALIDATED: no Git branches or Pages changed.'

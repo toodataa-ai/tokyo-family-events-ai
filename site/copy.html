@@ -55,6 +55,7 @@
 <nav class="chips compact-ward-chips" id="chips"></nav>
 <main>
   <div class="result-head result-head-simple copy-result-head"><span id="countText">-</span></div>
+  <div id="changeFilterBar" class="change-filter-bar" aria-label="今週の掲載変更で絞り込む"></div>
   <p class="tip">各カード上部に検索結果と同じイベント情報を表示します。下部の「コピー用項目」から1項目ずつ、またはまとめてコピーできます。公式確認・取得経路・AI判定は画面表示のみで、コピー本文には混ぜません。</p>
   <div class="grid" id="grid"></div>
 </main>
@@ -63,15 +64,17 @@
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,mergeEventsAcrossWeeks,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,familyFitAxisRows,heroSeasonForDate} from './app.js?v=20261010-multifilter';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';
+import {loadChangeData,changeBadge,currentChangeCounts,changeKind} from './recent-event-changes.js?v=20261027-1';
 import {COPY_CONTRACT_VERSION,copyFieldList,copyAllText} from './copy-contract.js';
 
-let manifest=null,registry=null,currentData=null,filterUI=null;
+let manifest=null,registry=null,currentData=null,filterUI=null,changes=null;
+let changeFilter=['added','updated'].includes(new URLSearchParams(location.search).get('changes'))?new URLSearchParams(location.search).get('changes'):'';
 const $=id=>document.getElementById(id);
 function applyHeroSeason(){document.body.dataset.season=heroSeasonForDate($('dateInput').value||manifest?.default||defaultDate());}
 function showMsg(text){$('msgBox').textContent=text||'';$('msgBox').style.display=text?'block':'none';}
 function filters(){return {...filterUI.filters(),q:$('searchInput').value.trim()};}
 function syncUrl(){
-  const qs=filterUI.serialize($('searchInput').value.trim());
+  const params=new URLSearchParams(filterUI.serialize($('searchInput').value.trim()));if(changeFilter)params.set('changes',changeFilter);const qs=params.toString();
   history.replaceState(null,'',qs?'?'+qs:location.pathname);
   $('backLink').href='search.html'+(qs?'?'+qs:'');
 }
@@ -104,8 +107,20 @@ function copyProvenanceBadge(prov){
 }
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
+function renderChangeControls(){
+  const bar=$('changeFilterBar');if(!bar||!currentData)return;
+  const counts=currentChangeCounts(currentData.events,changes);
+  bar.innerHTML='<span class="change-filter-label">今週の掲載変更</span>'+
+    [['','すべて',currentData.events.length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
+    .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
+      '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
+}
 function render(){
-  if(!currentData)return;renderWeekTabs();renderChips(currentData);const visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});window.__visibleEvents=visible;
+  if(!currentData)return;renderWeekTabs();renderChips(currentData);
+  renderChangeControls();
+  let visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});
+  if(changeFilter)visible=visible.filter(ev=>changeKind(ev,changes)===changeFilter);
+  window.__visibleEvents=visible;
   const verified=currentData.events.filter(x=>x.verification?.status==='verified').length;
   const announced=currentData.events.filter(x=>x.verification?.status==='announced').length;
   const prompt=currentData.run?.prompt?.version||'-';
@@ -129,7 +144,7 @@ function render(){
         <div class="event-list-overview copy-event-overview">
           ${thumb}
           <div class="event-list-main">
-            <div class="event-title">${title}</div>
+            <div class="event-title">${title}${changeBadge(ev,changes)}</div>
             <div class="event-summary-meta"><span class="family-stars ${fitClass(grade)}" aria-label="子連れオススメ度">${copyFamilyStars(grade)}</span><span class="event-date">🗓 ${escapeHtml(ev.period||'')}</span></div>
           </div>
         </div>
@@ -156,12 +171,18 @@ async function loadSelected(){
     showMsg('');applyHeroSeason();
     const loaded=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const rows=loaded.map(x=>x.data).filter(Boolean);
+    try{changes=await loadChangeData({manifest,history:await (await fetch('data/update_history.json',{cache:'no-store'})).json()});}
+    catch(error){console.warn('掲載変更バッジの取得に失敗しました',error);changes=null;}
     currentData={sat:manifest.weekends?.[0]?.sat||manifest.default,sun:manifest.weekends?.at(-1)?.sun||manifest.default,
       publication_tier:'all',events:mergeEventsAcrossWeeks(rows),decision_audit:null,run:null};
     render();
   }catch(e){console.error(e);showMsg('データの読み込みに失敗しました。');}
 }
 
+$('changeFilterBar').addEventListener('click',e=>{
+  const btn=e.target.closest('button[data-change-filter]');if(!btn)return;
+  changeFilter=btn.dataset.changeFilter||'';render();
+});
 $('searchInput').addEventListener('input',render);
 (async()=>{try{
   [manifest,registry]=await Promise.all([loadManifest(),loadDiscoverySources()]);

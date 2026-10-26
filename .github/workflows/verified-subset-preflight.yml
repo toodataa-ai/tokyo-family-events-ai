@@ -59,7 +59,9 @@ jobs:
         run: |
           base="$(python3 -c 'import json;print(json.load(open("site/data/update_history.json"))["history"][-1]["base_data_production_sha"])')"
           kind="$(python3 -c 'import json;print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
-          if [ "$kind" = "manual_verified_weekend_subset_addition" ]; then
+          if [ "$kind" = "manual_verified_week_holiday_addition" ]; then
+            python3 staging-policy/tools/validate_this_week_verified_addition.py --base-ref "$base"
+          elif [ "$kind" = "manual_verified_weekend_subset_addition" ]; then
             python3 staging-policy/tools/validate_verified_weekend_subset.py --base-ref "$base"
           elif [ "$kind" = "manual_verified_subset_addition" ]; then
             python3 staging-policy/tools/validate_verified_subset.py --base-ref "$base"

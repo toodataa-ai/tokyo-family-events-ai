@@ -14,7 +14,10 @@ import sys
 import unicodedata
 from urllib.request import Request, urlopen
 
-from nerima_forest_schedule import parse_schedule, SOURCE_URL
+try:
+    from .nerima_forest_schedule import parse_schedule, SOURCE_URL
+except ImportError:  # CLI invocation from tools/
+    from nerima_forest_schedule import parse_schedule, SOURCE_URL
 
 
 def compact(value):

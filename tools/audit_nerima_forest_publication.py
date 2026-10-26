@@ -58,6 +58,22 @@ def published_events(directory):
             all_events[key]["week_windows"].append((entry["sat"], entry["sun"]))
     start = dt.date.fromisoformat(entries[0]["sat"])
     end = dt.date.fromisoformat(entries[-1]["sun"])
+    # A Tuesday/Monday public holiday is published inside its preceding
+    # weekend shard. Preserve that date as another valid publication window.
+    holidays = [str(day.get("date", "")) for day in manifest.get("holidays", [])]
+    for entry in entries:
+        sat = dt.date.fromisoformat(entry["sat"])
+        sun = dt.date.fromisoformat(entry["sun"])
+        for holiday in holidays:
+            try:
+                day = dt.date.fromisoformat(holiday)
+            except ValueError:
+                continue
+            if not (sun < day <= sat + dt.timedelta(days=6)):
+                continue
+            for item in all_events.values():
+                if (entry["sat"], entry["sun"]) in item["week_windows"]:
+                    item["week_windows"].append((holiday, holiday))
     return start, end, all_events
 
 

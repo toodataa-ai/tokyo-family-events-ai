@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "scope": "2026-11-07 full-tier promotion recheck",
+  "reviewed_on_jst": "2026-10-27",
+  "current_full_tier_promoted": false,
+  "baseline_data_production_sha": "a7446aca567ca74c936c2039867fcf5fd3b07e34",
+  "source_kind": "municipality_or_primary_organizer",
+  "ready_for_automatic_status_upgrade": false,
+  "reason": "Reading official source confirms identity and dates, but future full-tier candidate still requires immutable source proof, individual verification ledger, CI audit, and strict non-regression.",
+  "rechecked": [
+    {
+      "id": "v15-237c930495e3",
+      "name": "2026ミナコレ",
+      "official_url": "https://www.city.minato.tokyo.jp/bungeishinkou/minakore/home.html",
+      "confirmed_facts": "2026-10-15〜12-20; 美術館施設ごとに開館時間・入館料が異なる",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "v15-0c99233f00d9",
+      "name": "Kids meet 大きなマリンバの木のしたで",
+      "official_url": "https://inclusion-art.jp/archive/event/2026/20261107-422.html",
+      "confirmed_facts": "11/7〜8, 11:00〜16:00, 渋谷公園通りギャラリー, 無料, 申込不要",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "v15-d18ca8b4095f",
+      "name": "アーツ中村橋 2026",
+      "official_url": "https://www.neribun.or.jp/event/detail_m.cgi?id=202606301782802063",
+      "confirmed_facts": "9/12〜11/8; 美術館内展示は10/18終了、会場ごとに開館時間を確認",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "v15-066e0211371b",
+      "name": "すみだ五彩の芸術祭",
+      "official_url": "https://sumida-artfest.jp/",
+      "confirmed_facts": "9/4〜12/20、プログラムごとに開催日と会場が異なる",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "v15-41134e91ddc0",
+      "name": "中野にぎわいフェスタ2026秋",
+      "official_url": "https://www.city.tokyo-nakano.lg.jp/event/kanko/shotengai_nigiwaifesta2026.html",
+      "confirmed_facts": "11/7〜8、中野駅周辺の複数会場; 全体11/7 11〜18、11/8 10〜17、個々の催しは別",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "v15-3e409ca87678",
+      "name": "目黒リバーサイドフェスティバル2026",
+      "official_url": "https://www.city.meguro.tokyo.jp/sangyoukeizai/bunkasports/kankou/riverside.html",
+      "confirmed_facts": "11/7〜8 10〜16、目黒区民センター",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "official-2026-suginami-festa",
+      "name": "すぎなみフェスタ2026",
+      "official_url": "https://www.sugifes.com/event/",
+      "confirmed_facts": "11/7 10〜15:30、11/8 10〜15、桃井原っぱ公園/杉並会館、体験別条件あり",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "official-2026-yayoi-fukusaku",
+      "name": "第4回やよいふくさく祭り",
+      "official_url": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14590",
+      "confirmed_facts": "11/7 10:30〜14、無料入場・一部有料、申込不要",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "official-2026-shirasagi-stamp",
+      "name": "親子も！シニアも！まちあるきスタンプラリー",
+      "official_url": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+      "confirmed_facts": "11/7 14〜16、無料、事前申込締切11/3",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "official-2026-nihonbashi-komichi",
+      "name": "みちみちこみち2026",
+      "official_url": "https://www.keepallsmiles.com/komichi2026",
+      "confirmed_facts": "10/1〜11/30、無料、予約不要、日本橋案内所受付",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    },
+    {
+      "id": "official-2026-haneda-museum",
+      "name": "第10回羽田航空博物館展",
+      "official_url": "https://www.o-2.jp/event/hasmhicity2026/",
+      "confirmed_facts": "9/5〜11/29 9〜18、羽田イノベーションシティ",
+      "review_state": "official_identity_dates_confirmed; full-tier CI-pending"
+    }
+  ]
+}

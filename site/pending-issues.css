@@ -1,0 +1,46 @@
+/* Scoped dashboard styling. Does not affect event cards, filters or Canva. */
+.pending-issues-page {font-family:"Meiryo UI",Meiryo,-apple-system,BlinkMacSystemFont,sans-serif;}
+.pending-issues-stats {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:12px 0;}
+.pending-issues-stats>div {padding:14px 12px;border:1px solid #d3dfe9;border-radius:10px;background:#f8fbfd;display:flex;flex-direction:column;gap:5px;}
+.pending-issues-stats strong {font-size:24px;color:#1b3952;font-weight:750;font-variant-numeric:tabular-nums;}
+.pending-issues-stats span {font-size:11px;color:#506477;line-height:1.6;}
+.pending-issues-note {border-left:3px solid #8da6be;border-radius:0 6px 6px 0;background:#f2f7fb;padding:10px 12px;font-size:12px;color:#34526a;line-height:1.8;margin:14px 0;}
+.pending-issues-checked {font-size:11px;color:#596e80;line-height:1.7;}
+.pending-issues-filters {display:flex;align-items:center;gap:9px;margin:10px 0;}
+.pending-issues-filters label {font-size:12px;color:#365269;font-weight:700;}
+.pending-issues-filters select {font:inherit;font-size:12px;color:#23445b;border:1px solid #bed0dc;border-radius:9px;background:#fff;min-height:36px;padding:6px 9px;}
+.pending-issues-list-count {font-size:11px;color:#536b7c;margin:10px 0 13px;}
+.pending-issue-list {display:grid;gap:12px;}
+.pending-issue-card {border:1px solid #d3dfe8;background:#fff;border-radius:12px;padding:15px 17px;}
+.pending-issue-card-top {display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+.pending-issue-kind {font-size:11px;color:#42627b;font-weight:750;}
+.pending-issue-status {font-size:11px;color:#675528;border:1px solid #dbcfb0;border-radius:999px;padding:3px 8px;background:#faf8f1;line-height:1.5;}
+.pending-issue-card h3 {font-size:15px;color:#173b55;line-height:1.6;margin:7px 0 11px;}
+.pending-issue-parts {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px;row-gap:11px;}
+.pending-issue-part {font-size:12px;line-height:1.8;min-width:0;}
+.pending-issue-part strong {display:block;color:#334b60;font-size:11px;margin-bottom:2px;}
+.pending-issue-part p {margin:0;color:#3c5265;overflow-wrap:anywhere;}
+.pending-issue-progress {margin:11px 0 0;padding:9px 11px;background:#f6f9fc;border:1px solid #e2e9ef;border-radius:8px;font-size:11px;color:#435c72;line-height:1.7;}
+.pending-issue-progress strong {font-weight:750;color:#38536a;}
+.pending-issue-card-footer {margin:12px 0 0;padding-top:10px;border-top:1px solid #e5ebef;}
+.pending-issue-card-footer a,.pending-issues-related a {font-size:12px;color:#245b7d;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+.pending-issues-explainer {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}
+.pending-issues-explainer p {margin:0;color:#435d73;font-size:12px;line-height:1.85;border:1px solid #d9e4ed;border-radius:9px;padding:12px;background:#fbfdff;}
+.pending-issues-related {font-size:12px;line-height:1.9;margin:13px 0 0;}
+.pending-issues-home {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;}
+.pending-issues-home h2 {margin-top:4px;}
+.pending-issues-home p {font-size:12px;line-height:1.8;color:#425d72;max-width:620px;}
+.pending-issues-home a {display:inline-flex;align-items:center;justify-content:center;min-height:40px;border:1px solid #abc2d4;border-radius:9px;padding:9px 13px;text-decoration:none;font-size:12px;font-weight:750;color:#1d4c6a;background:#f5f9fc;white-space:normal;}
+.pending-issues-home a:hover,.pending-issues-home a:focus-visible {background:#e8f3fc;text-decoration:underline;}
+@media(max-width:720px) {
+ .pending-issues-stats {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+ .pending-issues-stats>div:first-child {grid-column:1/-1;}
+ .pending-issues-stats strong {font-size:21px;}
+ .pending-issue-parts,.pending-issues-explainer {grid-template-columns:1fr;}
+ .pending-issue-card {padding:13px 14px;}
+ .pending-issues-filters {flex-wrap:wrap;}
+ .pending-issues-filters label {width:100%;}
+ .pending-issues-filters select {width:100%;}
+ .pending-issues-home {display:block;}
+ .pending-issues-home a {margin-top:9px;}
+}

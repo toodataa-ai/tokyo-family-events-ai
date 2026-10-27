@@ -104,7 +104,7 @@ jobs:
             echo "BLOCKER: attempted to change anything other than independent source status"
             exit 1
           fi
-          git commit -m "audit: refresh 26 registered source retrieval statuses [skip ci]"
+          git commit -m "audit: refresh registered source retrieval statuses"
           git push origin HEAD:refs/heads/main
       - name: Fail closed for required-source errors, keeping visible statuses
         if: always()

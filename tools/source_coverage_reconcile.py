@@ -27,7 +27,7 @@ def canonical_url(value):
 
 def compact(value):
     value = unicodedata.normalize("NFKC", str(value or ""))
-    return re.sub(r"[\\s()（）「」『』・、,.，。-]", "", value).lower()
+    return re.sub(r"[\s()（）「」『』・、,.，。-]", "", value).lower()
 
 
 def venue_matches(a, b):
@@ -38,7 +38,7 @@ def venue_matches(a, b):
         return False
     address_a, address_b = (compact(v).replace("東京都", "").replace("練馬区", "")
                            .replace("杉並区", "") for v in (a, b))
-    nums_a, nums_b = (re.findall(r"\\d+", x) for x in (address_a, address_b))
+    nums_a, nums_b = (re.findall(r"\d+", x) for x in (address_a, address_b))
     # Both sides have an address: inconsistent numbered addresses must fail.
     if nums_a and nums_b and nums_a[-3:] != nums_b[-3:]:
         return False

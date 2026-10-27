@@ -129,7 +129,7 @@ class FixedSourcePhase3Tests(unittest.TestCase):
                 body = ("<h1>イベントの新着一覧</h1>"
                         "<h3>絵本の読み聞かせの会</h3><p>投稿者 : ポプラ文庫</p>")
                 return 200,body.encode(),url,"text/html"
-            return 200,b'<title>OK</title><a href="/events">地域イベント</a>',url,"text/html"
+            return 200,'<title>OK</title><a href="/events">地域イベント</a>'.encode(),url,"text/html"
         report = build_report(registry,self.start,self.end,fetcher=fake)
         self.assertTrue(validate(report,registry))
         found = {x["source_id"]:x for x in report["sources"]}

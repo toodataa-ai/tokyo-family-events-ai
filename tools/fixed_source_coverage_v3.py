@@ -13,10 +13,10 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 try:
-    from .holiday_after_collect import fetch_url, html_links, public_row
+    from .holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads
     from .source_coverage_reconcile import load_published, canonical_url
 except ImportError:
-    from holiday_after_collect import fetch_url, html_links, public_row
+    from holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads
     from source_coverage_reconcile import load_published, canonical_url
 
 JST = dt.timezone(dt.timedelta(hours=9))
@@ -82,6 +82,18 @@ def probe(url, fetcher=None):
             entry.update(status="error", error="unsupported content type; no HTML event discovery proof")
             return entry, []
         try:
+            if (urlsplit(url).hostname == "pc.tamemap.net" and
+                    urlsplit(url).path == "/1311401/new_arrival"):
+                discovered = tamemap_new_arrival_leads(response["body"], url)
+                entry["page_title"] = "ためまっぷなかの・新着投稿一覧（日時未確認）"
+                entry["observed_new_arrival_title_leads"] = len(discovered)
+                entry["new_arrival_title_samples"] = [
+                    {"candidate_id": c["candidate_id"], "name": c["name"],
+                     "poster": c.get("poster", ""), "date_verified": False}
+                    for c in discovered[:20]]
+                entry["event_date_verified"] = False
+                entry["not_a_calendar_replacement"] = True
+                return entry, []
             page_title, leads = html_links(response["body"], url)
             entry["page_title"] = page_title
             entry["observed_event_link_leads"] = len(leads)
@@ -124,6 +136,11 @@ def source_audit(source, start, end, fetcher=None, max_workers=8):
         "status_label": status, "pages_expected": len(checks), "pages_checked": ok,
         "pages_failed": len(failures), "observed_distinct_link_leads": len(seen),
         "example_leads": list(seen.values())[:MAX_STORED_LEADS],
+        "new_arrival_post_leads_observed": sum(c.get("observed_new_arrival_title_leads", 0)
+                                               for c in checks),
+        "new_arrival_post_leads_are_unverified": True,
+        "new_arrival_samples": [item for c in checks
+                                 for item in c.get("new_arrival_title_samples", [])][:MAX_STORED_LEADS],
         "event_candidates_total": None, "candidate_publication_parity": "未検証",
         "published_count_from_source": None, "excluded_count_from_source": None,
         "duplicate_count_from_source": None, "unreviewed_count_from_source": None,
@@ -169,6 +186,25 @@ def build_report(registry, start, end, *, fetcher=None, workers=8, checked_at=No
                     "audit_method": "registered URL fetch error",
                     "caveat": "取得失敗は0件を意味しません。",
                 }
+    # Never conceal the tourism source 503 merely because the separate
+    # municipal official festival source is accessible. Only connect evidence.
+    known = {x["source_id"]: x for x in output}
+    for src, state in zip(sources, output):
+        fallback_ids = src.get("fallback_source_ids") or []
+        if not fallback_ids:
+            continue
+        if not isinstance(fallback_ids, list) or any(
+                x not in known or x == src["id"] for x in fallback_ids):
+            raise ValueError("invalid registered fallback source mapping")
+        state["official_alternatives"] = [
+            {"source_id": sid,
+             "retrieval_status": known[sid]["retrieval_status"],
+             "base_url": known[sid]["base_url"],
+             "source_coverage_not_transferred": True}
+            for sid in fallback_ids]
+        state["official_alternative_can_be_used_for_event_verification"] = any(
+            known[sid]["retrieval_status"] == "checked" for sid in fallback_ids)
+        state["failed_primary_source_stays_failed"] = True
     statuses = [s["retrieval_status"] for s in output]
     generated = checked_at or dt.datetime.now(JST).isoformat(timespec="seconds")
     return {

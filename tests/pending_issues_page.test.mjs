@@ -59,7 +59,7 @@ assert.match(page,/取得できなかったために既存情報を消すこと�
 assert.match(js,/replaceChildren/);
 assert.match(js,/textContent/);
 assert.doesNotMatch(js,/\.innerHTML\s*=/);
-assert.match(js,/role/); // no user-submitted HTML rendering
+assert.match(page,/aria-live/); // polite updates without untrusted HTML rendering
 assert.match(css,/"Meiryo UI"/);
 assert.ok(!read("site/data/discovery_sources.json").includes("pending_issues_catalog"));
 console.log("Pending issues catalog, live audits, unknown/failure safety and home link: OK");

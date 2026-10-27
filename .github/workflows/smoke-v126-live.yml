@@ -48,7 +48,7 @@ jobs:
           const chart=await fs.readFile('site/usage-history.js','utf8');
           assert.match(html,/id="usageHistoryOwnLegend" hidden/);
           assert.match(html,/usage-history\.js\?v=20261028-3/);
-          assert.match(own,/if\(!production\|\|!enabled\(\)\)return/);
+          assert.match(own,/if\(!production\|\|!enabled\(\)\|\|!EVENTS\.has\(event\)\)return/);
           assert.match(chart,/const ownDays=optedIn\?api\.get\(\):\{\}/);
           assert.match(chart,/usageHistoryOwnLegend/);
           console.log('PASS: opt-in display, no new telemetry endpoint, private local overlay');

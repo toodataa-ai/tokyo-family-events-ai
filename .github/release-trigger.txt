@@ -1,13 +1,15 @@
-# User-approved release v1.23: Nerima official multi-date festival complete extraction and row parity.
+# User-approved application-only production release v1.24 (2026-10-28 JST).
 operation=release
 production_ref=production
-production_sha=dc800ae047dbe75ae9d3aa11e3f284583ddd8345
-previous_production_sha=110da720f2587b7384c2171ee4561e437d44967d
-candidate_sha=f50dd8d987af9b5ed61cdb4cdfd849e65ec405e8
-pr=47
-target_public_version=1.23
-release_date_jst=2026-10-27
-expected_data_production_sha=6591c7c7a4429b11cf1f5572e0d52b7153180f30
-approved_scope=site/data/discovery_sources.json;tools/nerima_forest_schedule.py;tools/holiday_after_collect.py;tests/fixed_source_directory.test.mjs;tests/test_nerima_forest_schedule.py;package.json
+production_sha=237eff8e70919971bcfb58dead440dab5d8280df
+previous_production_sha=dc800ae047dbe75ae9d3aa11e3f284583ddd8345
+candidate_sha=517790ee491b8b0120fe19eb71148afbfb9345c6
+pr=70
+target_public_version=1.24
+previous_public_release=release/2026-10-27-r3
+release_date_jst=2026-10-28
+expected_data_production_sha=1d1687321f82279d6e46899f1fc453169bba5b1d
+approved_scope=package.json;site/audit/pending_issues_catalog.json;site/index.html;site/pending-issues-model.mjs;site/pending-issues.css;site/pending-issues.html;site/pending-issues.js;tests/pending_issues_release.test.mjs
 event_record_mutation=none
-note=Official full schedule table row extraction; recorded date-specific candidate IDs and counts, fail-closed duplicate/invalid row detection. Previously published 3 event records maintained by data-only release snapshot data-release/2026-10-27-r532. Previously failing required sources not marked checked.
+source_registry_mutation=none
+note=User-approved plain-language remaining-issues page and homepage link only. Isolated production-derived 8-file PR #70; read-only audit Actions run 40536547066 PASS. Keeps existing published event records, decisions, Canva, search, thumbs and source registry unchanged. Public site reads safe current audit statuses from staging audit snapshot and does not assert that HTTP success resolves event verification.

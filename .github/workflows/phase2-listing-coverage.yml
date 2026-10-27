@@ -1,0 +1,120 @@
+name: Phase 2 paginated listing and article-to-publication audit (read-only)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/listing_source_evidence_v2.py'
+      - 'tools/audit_phase2_listing_parity.py'
+      - 'tests/test_listing_source_evidence_v2.py'
+      - 'package.json'
+      - '.github/workflows/phase2-listing-coverage.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/listing_source_evidence_v2.py'
+      - 'tools/audit_phase2_listing_parity.py'
+      - 'tests/test_listing_source_evidence_v2.py'
+      - '.github/workflows/phase2-listing-coverage.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Phase 2 pagination, article and omission regression
+        run: |
+          python3 -m unittest discover -s tests -p 'test_listing_source_evidence_v2.py'
+          python3 -m unittest discover -s tests -p 'test_source_coverage_reconcile.py'
+          python3 -m unittest discover -s tests -p 'test_holiday_after_collect.py'
+
+  live-readonly:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 26
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: inspector
+      - uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect real source listing, pagination and article evidence
+        id: collection
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/phase2"
+          python3 inspector/tools/listing_source_evidence_v2.py \
+            --published-dir published/site/data \
+            --source all \
+            --output "$RUNNER_TEMP/phase2/discovery.json"
+      - name: Compare observed articles and candidates with real published shards
+        id: reconciliation
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 inspector/tools/audit_phase2_listing_parity.py \
+            --published-dir published/site/data \
+            --input "$RUNNER_TEMP/phase2/discovery.json" \
+            --output "$RUNNER_TEMP/phase2/reconciliation.json" \
+            --strict
+      - name: Japanese evidence summary and blockers
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ["RUNNER_TEMP"])/"phase2"
+          lines=["## 第二弾：一覧・記事・ページ送りの掲載候補監査（読取専用）",
+                 "", "公式候補を発見しても自動掲載せず、以前のレコードを変えません。"]
+          for filename in ("discovery.json","reconciliation.json"):
+              p=root/filename
+              if not p.exists():
+                  lines.append("BLOCKER: 検証ファイル欠損 "+filename)
+                  continue
+              r=json.loads(p.read_text(encoding="utf-8"))
+              if r.get("error"):
+                  lines.append("BLOCKER: "+r["error"])
+              for src in r.get("sources",[]):
+                  lines.extend(["", "### "+src["source_id"],
+                                "- 状態: "+src["status"],
+                                "- 発見候補: "+str(src.get("observed_candidate_count",src.get("candidate_count"))),
+                                "- 未照合: "+str(src.get("unresolved_count", "未判定")),
+                                "- 内訳: "+str(src.get("breakdown",{}))])
+                  for e in src.get("source_errors",src.get("failures",[]))[:8]:
+                      lines.append("- 取得失敗: "+str(e.get("url"))+" "+str(e.get("error")))
+                  unresolved=[x for x in src.get("rows",[]) if x["status"] not in ("existing_publication","index_only")]
+                  lines.append("- 要確認候補例: "+str([(x["name"],x["status"]) for x in unresolved[:12]]))
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as f:
+              f.write("\n".join(lines)+"\n")
+          print("\n".join(lines[:110]))
+          PY
+      - name: Preserve source and candidate evidence for 30 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase2-source-parity-${{ github.run_id }}
+          path: ${{ runner.temp }}/phase2/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Fail closed on source or unresolved candidate gaps, never gate other data updates
+        if: always()
+        run: |
+          if [ "${{ steps.collection.outcome }}" != "success" ] || [ "${{ steps.reconciliation.outcome }}" != "success" ]; then
+            echo "BLOCKER: source retrieval or candidate audit incomplete"
+            exit 1
+          fi

@@ -166,5 +166,30 @@ class CommonParityTests(unittest.TestCase):
             self.assertIn("daily", notes["blocker"])
 
 
+    def test_ordinary_weekday_is_out_of_scope_not_a_missing_event(self):
+        r = self.with_data(lambda s: reconcile(
+            "suginami_calendar_all",
+            [{"candidate_id": "suginami-official-11111",
+              "name": "平日だけの講座", "dates": ["2026-11-04"],
+              "official_url": "https://www.city.suginami.tokyo.jp/s033/event/11111.html"}],
+            s, source_status="checked"))
+        self.assertEqual(r["status"], "complete")
+        self.assertEqual(r["breakdown"]["out_of_scope"], 1)
+        self.assertEqual(r["unreconciled_count"], 0)
+        self.assertEqual(r["in_scope_candidate_count"], 0)
+
+    def test_multiday_event_only_checks_saturday_sunday_and_public_holiday(self):
+        r = self.with_data(lambda s: reconcile(
+            "suginami_calendar_all",
+            [sugi_candidate(["2026-11-02", "2026-11-03",
+                             "2026-11-04", "2026-11-07"])],
+            s, source_status="checked"))
+        self.assertEqual(r["date_scoped_rows"], 2)
+        self.assertEqual({tuple(r["dates"]) for r in r["rows"]},
+                         {("2026-11-03",), ("2026-11-07",)})
+        self.assertEqual(r["breakdown"]["published"], 1)
+        self.assertEqual(r["breakdown"]["unreviewed"], 1)
+
+
 if __name__ == "__main__":
     unittest.main()

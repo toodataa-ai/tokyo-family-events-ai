@@ -140,8 +140,14 @@ def source_targets(config, start, end):
                          f"calendar.cgi?day={d.day}&month={d.month}&type=3&year={d.year}")
                 if daily not in urls:
                     urls.append(daily)
+        fallback_ids = entry.get("fallback_source_ids", [])
+        if (not isinstance(fallback_ids, list) or
+                any(not isinstance(x, str) or x not in existing or x == entry["id"]
+                    for x in fallback_ids)):
+            raise PlanError("invalid supplementary source mapping: " + entry["id"])
         targets.append({"id": entry["id"], "required": entry.get("required") is True,
-                        "urls": urls, "status": "pending", "checked_count": 0})
+                        "urls": urls, "fallback_source_ids": fallback_ids,
+                        "status": "pending", "checked_count": 0})
     if not targets:
         raise PlanError("no enabled explicit sources")
     return targets

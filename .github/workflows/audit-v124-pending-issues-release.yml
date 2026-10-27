@@ -1,0 +1,81 @@
+name: Audit isolated approved pending-issues public release v1.24 (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-v124-pending-issues-release.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout frozen v1.24 production-derived release candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 517790ee491b8b0120fe19eb71148afbfb9345c6
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exact parent, eight approved paths, protected event data
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="dc800ae047dbe75ae9d3aa11e3f284583ddd8345"
+          CANDIDATE="517790ee491b8b0120fe19eb71148afbfb9345c6"
+          test "$(git rev-parse HEAD)" = "$CANDIDATE"
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | sort > /tmp/changed.txt
+          printf '%s\n' \
+            package.json \
+            site/audit/pending_issues_catalog.json \
+            site/index.html \
+            site/pending-issues-model.mjs \
+            site/pending-issues.css \
+            site/pending-issues.html \
+            site/pending-issues.js \
+            tests/pending_issues_release.test.mjs | sort > /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          git diff --quiet "$BASE" HEAD -- site/data site/search.html site/copy.html site/omitted.html site/styles.css site/app.js site/usage-metrics.js
+          if git diff --name-only "$BASE" HEAD | grep -E '^(prompts/|policy/|tools/|site/data/)'; then
+            echo 'BLOCKER: unapproved content or source policy changed'
+            exit 1
+          fi
+          echo 'PASS: isolated, additive UI only. All historical event files unchanged.'
+      - name: Production data-production remote pointer immutable
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "1d1687321f82279d6e46899f1fc453169bba5b1d"
+          echo "PASS: released event corpus unchanged: $actual"
+      - name: Existing production application full regression and new v1.24 checks
+        run: npm test
+      - name: No accidental links to unapproved staging-only pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check site/pending-issues.js
+          node --check site/pending-issues-model.mjs
+          python3 - <<'PY'
+          from pathlib import Path
+          home=Path('site/index.html').read_text()
+          page=Path('site/pending-issues.html').read_text()
+          js=Path('site/pending-issues.js').read_text()
+          assert home.count('href="pending-issues.html"') == 1
+          assert 'href="source-audit.html"' not in page
+          assert 'staging/audit/fixed_sources.json' in js
+          for p in ('site/pending-issues.css','site/pending-issues.js',
+                    'site/pending-issues-model.mjs','site/audit/pending_issues_catalog.json'):
+              assert Path(p).is_file(),p
+          print('PASS: approved public-page graph complete, staging-only page not promoted')
+          PY

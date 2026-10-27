@@ -66,7 +66,8 @@ jobs:
               'name = "tokyo-family-events-metrics"\n'
               'main = "worker.mjs"\n'
               'compatibility_date = "2026-10-01"\n'
-              'workers_dev = true\n\n'
+              'workers_dev = true\n'
+              'preview_urls = false\n\n'
               '[[d1_databases]]\n'
               'binding = "DB"\n'
               'database_name = "tokyo-family-events-metrics"\n'
@@ -139,5 +140,23 @@ jobs:
                   if any(key in row for key in ("visitor_id","user_id","ip")):
                       sys.exit("BLOCKER: unexpected identifying data")
               print("PASS: live daily history",days,"days; recorded",len(seen),"days")
+          # The existing Worker had previews_enabled=false before this
+          # rollout; ensure the deployment never widens its public URLs.
+          import urllib.error
+          api=("https://api.cloudflare.com/client/v4/accounts/"+
+               os.environ["CLOUDFLARE_ACCOUNT_ID"]+
+               "/workers/scripts/tokyo-family-events-metrics/subdomain")
+          req=urllib.request.Request(api,headers={
+              "Authorization":"Bearer "+os.environ["CLOUDFLARE_API_TOKEN"],
+              "Accept":"application/json"})
+          try:
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  routing=json.load(r)
+          except Exception as exc:
+              sys.exit("BLOCKER: could not verify restored preview-URL settings ("+type(exc).__name__+")")
+          cfg=routing.get("result") or {}
+          if not routing.get("success") or cfg.get("enabled") is not True or cfg.get("previews_enabled") is not False:
+              sys.exit("BLOCKER: public subdomain/preview URL settings differ from original")
+          print("PASS: original workers.dev enabled, preview URLs disabled")
           print("PASS: original totals preserved; existing D1 intact")
           PY

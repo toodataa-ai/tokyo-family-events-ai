@@ -8,6 +8,8 @@ import datetime as dt
 import json
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+import re
+import unicodedata
 
 
 def read_json(path):
@@ -21,6 +23,46 @@ def canonical_url(value):
     if p.scheme != "https" or not p.hostname:
         return ""
     return urlunsplit((p.scheme, p.netloc.lower(), p.path.rstrip("/"), "", ""))
+
+
+def compact(value):
+    value = unicodedata.normalize("NFKC", str(value or ""))
+    return re.sub(r"[\\s()（）「」『』・、,.，。-]", "", value).lower()
+
+
+def venue_matches(a, b):
+    """Exact named venue, permitting ward-prefix changes in postal addresses."""
+    a, b = str(a or ""), str(b or "")
+    venue_a, venue_b = (compact(re.split(r"[（(]", v, 1)[0]) for v in (a, b))
+    if not venue_a or venue_a != venue_b:
+        return False
+    address_a, address_b = (compact(v).replace("東京都", "").replace("練馬区", "")
+                           .replace("杉並区", "") for v in (a, b))
+    nums_a, nums_b = (re.findall(r"\\d+", x) for x in (address_a, address_b))
+    # Both sides have an address: inconsistent numbered addresses must fail.
+    if nums_a and nums_b and nums_a[-3:] != nums_b[-3:]:
+        return False
+    return True
+
+
+def suginami_verified_alias(candidate, event):
+    """Only one independently cross-verified municipal->organizer page alias.
+
+    Confirmed by the municipal detail page linking directly to the festival
+    organizer, and identical Nov 7-8 dates and Momoi Harappa Park location.
+    It must not turn individual programs into separate parent cards.
+    """
+    return (
+        candidate.get("candidate_id") == "suginami-official-22661"
+        and canonical_url(candidate.get("official_url")) ==
+            "https://www.city.suginami.tokyo.jp/s019/event/22661.html"
+        and event.get("id") == "official-2026-suginami-festa"
+        and canonical_url(event.get("official_url")) ==
+            "https://www.sugifes.com/event"
+        and compact(candidate.get("name", "")).startswith(compact("すぎなみフェスタ2026"))
+        and compact(event.get("name", "")).startswith(compact("すぎなみフェスタ2026"))
+        and "桃井原っぱ公園" in str(event.get("venue", ""))
+    )
 
 
 def load_published(root):
@@ -95,22 +137,15 @@ def publication_match(candidate, event, source_id, date):
     cid = str(candidate["candidate_id"])
     eid = str(value.get("id", ""))
     if cid.startswith("nerima-district-") and source_id == "nerima_district_festivals_2026":
-        # The annual schedule parser generates the same stable ID as published.
-        # Identity must also preserve official evidence, date and venue.
-        if eid != cid:
+        # Exact event ID is preferred; a *legacy* ID is accepted only if
+        # official URL, individually named festival, date and venue all agree.
+        if eid != cid and compact(value.get("name")) != compact(candidate.get("name")):
             return False
         expected = candidate.get("official_url")
-        if expected and canonical_url(expected) not in {
+        if not expected or canonical_url(expected) not in {
                 canonical_url(value.get("official_url")), canonical_url(value.get("url"))}:
             return False
-        from unicodedata import normalize
-        import re
-        def compact(s):
-            return re.sub(r"[\s()（）・「」『』]", "", normalize("NFKC", str(s or "")))
-        venue = compact(candidate.get("venue"))
-        published_venue = compact(value.get("venue"))
-        # Addresses may be appended only on one side.
-        if venue and not (venue in published_venue or published_venue in venue):
+        if not venue_matches(candidate.get("venue"), value.get("venue")):
             return False
         return True
     if source_id == "suginami_calendar_all":
@@ -119,8 +154,9 @@ def publication_match(candidate, event, source_id, date):
         source = canonical_url(candidate.get("official_url"))
         if not source:
             return False
-        return source in {canonical_url(value.get("official_url")),
-                          canonical_url(value.get("url"))}
+        return (source in {canonical_url(value.get("official_url")),
+                           canonical_url(value.get("url"))} or
+                suginami_verified_alias(candidate, value))
     return False
 
 
@@ -153,9 +189,28 @@ def reconcile(source_id, candidates, snapshot, *, source_status, expected_count=
         for date in dates:
             hits = {e["event"]["id"] for e in snapshot["events"]
                     if publication_match(c, e, source_id, date)}
-            decisions = [p["decision"] for p in snapshot["decisions"]
-                         if p["decision"].get("candidate_id") == c["candidate_id"]
-                         and date in p["owned_dates"]]
+            # A published row may use a stable *historical* ID rather than
+            # an official crawler ID. Recognize its existing decision only
+            # when the target event is unique and the decision matches the
+            # individual event title plus the primary-source proof URL.
+            matched_event = next((e["event"] for e in snapshot["events"]
+                                  if e["event"]["id"] in hits and
+                                  publication_match(c, e, source_id, date)), None) if len(hits) == 1 else None
+            decisions = []
+            for p in snapshot["decisions"]:
+                d = p["decision"]
+                if date not in p["owned_dates"]:
+                    continue
+                if d.get("candidate_id") == c["candidate_id"]:
+                    decisions.append(d)
+                    continue
+                if (matched_event and d.get("decision") == "published" and
+                        compact(d.get("name")) == compact(matched_event.get("name")) and
+                        any(canonical_url(proof.get("url")) in
+                            {canonical_url(matched_event.get("official_url")),
+                             canonical_url(c.get("official_url"))}
+                            for proof in d.get("evidence", []) if isinstance(proof, dict))):
+                    decisions.append(d)
             decision_types = set(d.get("decision") for d in decisions)
             if len(hits) > 1:
                 status, reason = "ambiguous", "multiple published event IDs"

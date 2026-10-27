@@ -105,6 +105,50 @@ class FixedSourcePhase3Tests(unittest.TestCase):
         build_report(self.registry,self.start,self.end,fetcher=fake_response)
         self.assertEqual(json.dumps(self.registry,sort_keys=True),before)
 
+    def test_tamemap_partial_fallback_and_itabashi_official_separate_from_503(self):
+        registry = json.loads(json.dumps(self.registry))
+        official, tourism, tama = registry["explicit_sources"][19:22]
+        official.update(id="itabashi_official_festival",
+                        base_url="https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+                        search_urls=["https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"])
+        tourism.update(id="itabashi_tourism_festival",
+                       base_url="https://itabashi-kanko.jp/pickup/detail?id=1799",
+                       search_urls=["https://itabashi-kanko.jp/pickup/detail?id=1799"],
+                       fallback_source_ids=["itabashi_official_festival"])
+        tama.update(id="tamemap_nakano",
+                    base_url="https://pc.tamemap.net/1311401",
+                    search_urls=[
+                      "https://pc.tamemap.net/1311401/calendar/{YYYY-MM}",
+                      "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745"])
+        def fake(url):
+            if "itabashi-kanko.jp" in url:
+                return 503, b"unavailable", url, "text/html"
+            if "/calendar/" in url:
+                return 403, b"forbidden", url, "text/html"
+            if "/new_arrival" in url:
+                body = ("<h1>イベントの新着一覧</h1>"
+                        "<h3>絵本の読み聞かせの会</h3><p>投稿者 : ポプラ文庫</p>")
+                return 200,body.encode(),url,"text/html"
+            return 200,'<title>OK</title><a href="/events">地域イベント</a>'.encode(),url,"text/html"
+        report = build_report(registry,self.start,self.end,fetcher=fake)
+        self.assertTrue(validate(report,registry))
+        found = {x["source_id"]:x for x in report["sources"]}
+        tama_row = found["tamemap_nakano"]
+        self.assertEqual(tama_row["retrieval_status"],"partial_error")
+        self.assertEqual(tama_row["pages_expected"],4)
+        self.assertEqual(tama_row["pages_checked"],1)
+        self.assertEqual(tama_row["new_arrival_post_leads_observed"],1)
+        self.assertTrue(tama_row["new_arrival_samples"][0]["date_verified"] is False)
+        self.assertIsNone(tama_row["event_candidates_total"])
+        tourism_row = found["itabashi_tourism_festival"]
+        self.assertEqual(tourism_row["retrieval_status"],"source_error")
+        self.assertEqual(tourism_row["official_alternatives"][0]["source_id"],
+                         "itabashi_official_festival")
+        self.assertEqual(tourism_row["official_alternatives"][0]["retrieval_status"],"checked")
+        self.assertTrue(tourism_row["failed_primary_source_stays_failed"])
+        self.assertTrue(tourism_row["official_alternative_can_be_used_for_event_verification"])
+        self.assertIsNone(tourism_row["published_count_from_source"])
+
     def test_incorrect_coverage_claim_rejected(self):
         r=build_report(self.registry,self.start,self.end,fetcher=fake_response)
         r["sources"][0]["candidate_publication_parity"]="完全照合"

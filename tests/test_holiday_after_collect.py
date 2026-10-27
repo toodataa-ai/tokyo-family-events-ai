@@ -105,6 +105,55 @@ class HolidayAfterCollectTests(unittest.TestCase):
         self.assertEqual(len(holiday_calendar_jobs(
             {"date": "2026-11-03", "requires_independent_23_ward_search": True})), 5)
 
+    def test_tamemap_new_arrival_collects_unverified_titles_without_dates(self):
+        from holiday_after_collect import tamemap_new_arrival_leads
+        url = ("https://pc.tamemap.net/1311401/new_arrival?"
+               "lat=35.7089745&lng=139.6630981&level=5000&locale=ja")
+        html = """<html><h1>イベントの新着一覧</h1>
+        <section><h3>絵本の読み聞かせの会</h3>
+        <p>投稿者 : ポプラ文庫絵本の会</p><span>2時間前</span></section>
+        <section><h3>杜の文化祭</h3><p>投稿者 : ZEROキッズ</p>
+        <span>1日前</span></section></html>"""
+        found = tamemap_new_arrival_leads(html, url)
+        self.assertEqual(len(found), 2)
+        self.assertEqual(found[0]["name"], "絵本の読み聞かせの会")
+        self.assertEqual(found[0]["poster"], "ポプラ文庫絵本の会")
+        self.assertEqual(found[1]["name"], "杜の文化祭")
+        self.assertEqual(found[1]["matched_dates"], [])
+        self.assertTrue(all(x["date_unverified"] and not x["publication_approved"]
+                            and not x["primary_source_verified"] for x in found))
+        row = inspect({"kind": "explicit", "source_id": "tamemap_nakano",
+                       "url": url}, lambda u: (200, html.encode(), u, "text/html"))
+        self.assertEqual(row["status"], "checked")
+        self.assertEqual(row["candidate_link_count"], 2)
+        self.assertEqual(row["candidate_status"], "unverified_title_leads")
+
+    def test_tamemap_calendar_forbidden_stays_error_while_new_arrival_succeeds(self):
+        new_url = ("https://pc.tamemap.net/1311401/new_arrival?"
+                   "lat=35.7089745&lng=139.6630981&level=5000&locale=ja")
+        cal = "https://pc.tamemap.net/1311401/calendar/2026-11"
+        html = "<h1>イベントの新着一覧</h1><h3>こども工作体験</h3>"
+        def fetch(url):
+            if "/calendar/" in url:
+                return 403, b"forbidden", url, "text/html"
+            return 200, html.encode(), url, "text/html"
+        a = inspect({"kind": "explicit", "source_id": "tamemap_nakano",
+                     "url": cal}, fetch)
+        b = inspect({"kind": "explicit", "source_id": "tamemap_nakano",
+                     "url": new_url}, fetch)
+        self.assertEqual(a["status"], "error")
+        self.assertEqual(b["status"], "checked")
+        self.assertEqual(len(b["candidates"]), 1)
+        self.assertNotIn("matched_dates", a.get("candidates", [{}])[0] if a["candidates"] else {})
+
+    def test_tamemap_new_arrival_missing_titles_is_not_zero_event_success(self):
+        from holiday_after_collect import tamemap_new_arrival_leads
+        u = "https://pc.tamemap.net/1311401/new_arrival"
+        with self.assertRaisesRegex(ValueError, "no visible event"):
+            tamemap_new_arrival_leads("<h1>イベントの新着一覧</h1>", u)
+        with self.assertRaisesRegex(ValueError, "not a Tamemap"):
+            tamemap_new_arrival_leads("<h3>こども祭り</h3>", u)
+
     def test_failed_fetch_never_checked(self):
         def down(url):
             raise OSError("official origin unavailable")

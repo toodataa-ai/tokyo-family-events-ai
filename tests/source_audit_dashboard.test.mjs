@@ -33,4 +33,7 @@ assert.match(ci,/gh workflow run deploy\.yml --ref main/);
 assert.match(ci,/actions: write/);
 assert.match(ci,/git add -- site\/audit\/fixed_sources\.json/);
 assert.doesNotMatch(ci,/refs\/heads\/production/);
+assert.match(js,/new_arrival_post_leads_observed/);
+assert.match(js,/official_alternatives/);
+assert.match(js,/元の障害は未解消/);
 console.log('Phase3 fixed-source dashboard fail-closed contract: OK');

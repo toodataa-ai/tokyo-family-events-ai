@@ -68,6 +68,25 @@ class RollingHorizonTests(unittest.TestCase):
         self.assertIn("2026-11", t["nerima"]["urls"][1])
         self.assertIn("month=11", t["suginami"]["urls"][1])
         self.assertEqual(t["nerima"]["status"], "pending")
+    def test_itabashi_official_alternative_keeps_tourism_required(self):
+        registered = {**SOURCES, "explicit_sources": [
+            {**SOURCES["explicit_sources"][0],
+             "search_urls": ["https://itabashi-kanko.jp/pickup/detail?id=1799"],
+             "fallback_source_ids": ["suginami"]},
+            {**SOURCES["explicit_sources"][1],
+             "search_urls": ["https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"]}
+        ]}
+        targets = {x["id"]:x for x in self.plan("2026-10-13", sources=registered)["explicit_source_checks"]}
+        self.assertTrue(targets["nerima"]["required"])
+        self.assertEqual(targets["nerima"]["fallback_source_ids"], ["suginami"])
+        self.assertIn("itabashi-kanko.jp", targets["nerima"]["urls"][0])
+        broken = {**registered, "explicit_sources": [
+            {**registered["explicit_sources"][0], "fallback_source_ids": ["unknown_source"]},
+            registered["explicit_sources"][1]
+        ]}
+        with self.assertRaisesRegex(planner.PlanError, "invalid supplementary"):
+            self.plan("2026-10-13", sources=broken)
+
     def test_fail_closed_future_holidays(self):
         old = {k: v for k, v in HOLIDAYS.items() if k.year == 2026}
         with self.assertRaisesRegex(planner.PlanError, "2027"):

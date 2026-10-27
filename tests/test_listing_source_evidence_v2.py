@@ -96,6 +96,31 @@ class Phase2Tests(unittest.TestCase):
         self.assertTrue(any("/page/2" in x["url"] for x in out["failures"]))
         self.assertFalse(out["retrieval_complete"])
 
+    def test_itabashi_rss_is_partial_recovery_never_a_false_success(self):
+        root = "https://itabashi-times.com/category/event/feed/"
+        pages = {
+            ITABASHI: anchor("/category/event", "イベント情報"),
+            ITABASHI + "/page/2": anchor("/category/event", "イベント情報"),
+            root: """<?xml version="1.0"?><rss version="2.0"><channel>
+            <item><title>板橋の子どもイベント2026年11月8日</title>
+            <link>https://itabashi-times.com/archives/kids202611.html</link></item>
+            </channel></rss>""",
+            root + "?paged=2": """<?xml version="1.0"?><rss version="2.0"><channel>
+            <item><title>2026年10月31日・地域のお祭り</title>
+            <link>https://itabashi-times.com/archives/festival202610.html</link></item>
+            </channel></rss>""",
+            "https://itabashi-times.com/archives/kids202611.html": "<h1>子どもイベント</h1>",
+            "https://itabashi-times.com/archives/festival202610.html": "<h1>地域のお祭り</h1>",
+        }
+        result = crawl_source(
+            "itabashi_times_event", dt.date(2026, 10, 31), dt.date(2026, 12, 6),
+            fetcher=lambda url: (200, pages[url]))
+        self.assertEqual(result["status"], "source_error")
+        self.assertEqual(result["candidate_count"], 2)
+        self.assertFalse(result["retrieval_complete"])
+        self.assertTrue(any("partial" in x["error"] for x in result["failures"]))
+        self.assertTrue(all(not x["publication_approved"] for x in result["candidates"]))
+
     def test_nerima_month_pages_and_repeated_rows_are_deduplicated(self):
         detail = "https://www.nerimakanko.jp/event/detail.php?event_id=e000002998"
         listing = '<h3>江古田ハロウィンパーティー2026</h3>' + anchor(

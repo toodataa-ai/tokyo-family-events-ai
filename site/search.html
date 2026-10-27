@@ -67,7 +67,8 @@
   <div class="grid" id="grid"></div>
 </main>
 <footer>トップ画面で抽出ロジック・候補件数・掲載件数・除外理由を確認できます。検索画面では今週末以降の掲載イベントを表示し、過去の分も「日付指定」で検索できます。区・取得元・キーワード・オススメ度・料金・屋内外・予約要否で絞り込めます。</footer>
-<script src="usage-metrics.js?v=20261009-2" defer></script>
+<script src="self-usage.js?v=20261028-1" defer></script>
+<script src="usage-metrics.js?v=20261028-today" defer></script>
 <script type="module">
 import {WARDS,defaultDate,saturdayOf,fmtRange,filterEvents,countsByWard,loadManifest,loadWeekend,loadDiscoverySources,escapeHtml,safeHttpUrl,buildCopyUrl,rollingWeekSlots,shortWeekendLabel,holidayPeriodSlots,holidayTabMeta,holidayRangeLabel,eventsOverlappingPeriod,verificationStateMeta,verificationSourceHeading,familyFitAxisRows,heroSeasonForDate,heroSeasonMeta,indoorOutdoorLabel,eventPriceCategory,eventPriceLabel,reservationLabel,reservationCategory,eventDiscoveryProvenance,mergeEventsAcrossWeeks} from './app.js?v=20261021-arts-venue-chain';
 import {createMultiFilterUI} from './multi-filter-ui.js?v=20261025-date-range-v1';

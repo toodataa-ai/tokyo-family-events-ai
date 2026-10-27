@@ -76,7 +76,12 @@ def normalize(value):
 
 def dates_in(text, fiscal_start_year=FISCAL_START_YEAR):
     # Date cells can contain several days, with the month stated only once.
-    cleaned = re.sub(r"（[^）]*雨[^）]*）", "", text)
+    # The official table appends commentary after 「（注釈）」 such as
+    # 「雨天時、翌8日（日）に順延」 or 「花火は11/7に延期」.
+    # Those are not additional confirmed festival dates. Genuine two-day
+    # festivals list both dates BEFORE the annotation marker.
+    primary = re.split(r"[（(]\s*注釈\s*[）)]", text, maxsplit=1)[0]
+    cleaned = re.sub(r"（[^）]*雨[^）]*）", "", primary)
     matches = re.findall(r"(?:(\d{1,2})月\s*)?(\d{1,2})日", cleaned)
     out, month = [], None
     for mm, dd in matches:

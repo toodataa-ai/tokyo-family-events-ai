@@ -1,15 +1,15 @@
-# User-approved application-only production release v1.25 (2026-10-28 JST).
+# User-approved application-only production release v1.26 (2026-10-28 JST).
 operation=release
 production_ref=production
-production_sha=933291588f3ea1ebcd5c311a0376a415037a02a9
-previous_production_sha=237eff8e70919971bcfb58dead440dab5d8280df
-candidate_sha=c71a9e0b261df33b2a5bbffb72441485d0358cd2
-pr=74
-target_public_version=1.25
-previous_public_release=release/2026-10-28-r1
+production_sha=9efccbcfa31facd7b78ffbdddcdec4ab6d347752
+previous_production_sha=933291588f3ea1ebcd5c311a0376a415037a02a9
+candidate_sha=912ae8e0c7b91f58c878b25c692b00477d6e946c
+pr=75
+target_public_version=1.26
+previous_public_release=release/2026-10-28-r2
 release_date_jst=2026-10-28
 expected_data_production_sha=1d1687321f82279d6e46899f1fc453169bba5b1d
-approved_scope=analytics/worker.mjs;package.json;site/copy.html;site/index.html;site/search.html;site/self-usage.js;site/usage-history.css;site/usage-history.html;site/usage-history.js;site/usage-metrics.js;tests/usage_history_release.test.mjs;tests/usage_metrics.test.mjs
+approved_scope=site/self-usage.js;site/usage-history.css;site/usage-history.html;site/usage-history.js;tests/usage_metrics.test.mjs
 event_record_mutation=none
 source_registry_mutation=none
-note=User-approved today and daily usage history site UI and optional own-browser counts only. Frozen isolated 12-file production-derived PR #74, read-only full regression and live Worker evidence run 40594987986 success. Existing Cloudflare Worker /history deployed in run 40593614787 with original D1 and cumulative totals unchanged, original preview URLs disabled. No event content, admissions, event search, Canva, thumbnail, source registry, D1 schema modifications. Production v1.24 rollback maintained.
+note=User-approved opt-in browser-only own usage overlay on existing anonymous full-site daily usage chart. Independent isolated five-path audit run 40599255425 success; staging run 40598698148 success. PR #75 merges isolated production-based candidate. No search, Canva, event data, personal IDs, Cloudflare Worker, stats endpoint or D1 schema changes. Previous version v1.25 rollback maintained.

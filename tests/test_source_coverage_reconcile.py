@@ -147,6 +147,7 @@ class CommonParityTests(unittest.TestCase):
             for d in s["decisions"]:
                 if d["decision"].get("candidate_id") == "nerima-district-123":
                     d["decision"]["candidate_id"] = "v15-20261205-toyotama-district"
+                    d["decision"]["name"] = "第四地区祭"
             return reconcile("nerima_district_festivals_2026",
                              [district_candidate()], s, source_status="checked")
         r = self.with_data(check)

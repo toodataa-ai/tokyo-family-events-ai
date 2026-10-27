@@ -86,8 +86,13 @@
     }
     const on=api.enabled();
     const writable=api.canWrite?.()??true;
-    set('usageSelfStatus',(on?'この端末だけの利用メモ：オン':'この端末だけの利用メモ：オフ')+
+    set('usageSelfStatus',(on
+      ?'この端末だけの利用メモ：オン（設定保存済み・次回も自動で記録）'
+      :'この端末だけの利用メモ：オフ（記録していません）')+
       (writable?'':'（ステージングは読み取り専用。本番サイトで切り替えできます）'));
+    // An already-on setting must not keep offering another enable action.
+    $('usageSelfEnable').hidden=on||!writable;
+    $('usageSelfDisable').hidden=!on||!writable;
     $('usageSelfEnable').disabled=!writable||on;
     $('usageSelfDisable').disabled=!writable||!on;
     $('usageSelfClear').disabled=!writable;

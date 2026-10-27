@@ -27,6 +27,7 @@
 .usage-history-visual-own-bar{position:absolute;left:0;bottom:0;height:5px;background:#d46c35;border-radius:0 4px 4px 0;pointer-events:none}
 .usage-self-usage{border:1px solid #cddde8;background:#fbfdff;border-radius:10px;padding:13px}
 .usage-self-usage button{font:inherit;font-size:12px;padding:8px 13px;border-radius:8px;background:white;border:1px solid #aabfce;color:#284f6d;cursor:pointer}
+.usage-self-usage button[hidden]{display:none!important}
 .usage-self-usage button:focus-visible{outline:3px solid #8cc0ea}
 .usage-self-controls{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
 .usage-self-status{font-size:12px;color:#324f64}

@@ -239,8 +239,17 @@ test('opt-in browser usage appears only in local chart overlay and toggling off 
   assert.equal(rail.children[1].style.width,'50.0%');
   assert.equal(get('usageHistoryOwnLegend').hidden,false);
   assert.equal(get('usageHistoryOwnNote').hidden,false);
+  assert.equal(get('usageSelfEnable').hidden,true,'already enabled button should not invite re-click');
+  assert.equal(get('usageSelfDisable').hidden,false);
+  assert.match(get('usageSelfStatus').textContent,/設定保存済み/);
   assert.equal(chart.children[0].children[2].textContent,'10');
   assert.equal(get('usageHistoryRows').children[0].children[1].textContent,'10');
+  get('usageSelfDisable').onclick();
+  assert.equal(get('usageSelfEnable').hidden,false);
+  assert.equal(get('usageSelfDisable').hidden,true);
+  get('usageSelfEnable').onclick();
+  assert.equal(get('usageSelfEnable').hidden,true);
+  assert.equal(get('usageSelfDisable').hidden,false);
   get('usageSelfDisable').onclick();
   assert.equal(get('usageHistoryOwnLegend').hidden,true);
   assert.equal(get('usageHistoryOwnNote').hidden,true);

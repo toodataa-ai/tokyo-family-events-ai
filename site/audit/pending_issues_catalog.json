@@ -55,6 +55,16 @@
       "workaround": "それ以前から掲載されているイベントは、取得失敗だけを理由に削除しないルールです。",
       "next": "必要な参照元と候補の確認を再点検し、検証が済んだ部分から安全に更新します。",
       "issue_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/issues/41"
+    },
+    {
+      "id": "metrics-daily-history",
+      "category": "verification",
+      "title": "過去のサイト利用状況を日別で見るための集計API更新",
+      "impact": "今日と累計の数字は表示できますが、過去の日別推移は集計APIの更新が終わるまで見られません。",
+      "now": "日別履歴の画面と集計処理はステージングで検証済みです。既存のCloudflare側への公開がまだ必要です。",
+      "workaround": "現在の累計と今日の利用状況は既存の集計APIで確認できます。",
+      "next": "Cloudflareの集計APIを更新して実際の利用履歴を照合し、確認後に本番リリースを判断します。",
+      "issue_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/issues/72"
     }
   ]
 }

@@ -251,6 +251,8 @@ def main(argv=None):
     p.add_argument("--workers", type=int, default=8)
     a = p.parse_args(argv)
     registry = json.loads(Path(a.registry).read_text(encoding="utf-8"))
+    from source_fallback_policy import apply_fallback_overlay
+    registry = apply_fallback_overlay(registry)
     manifest = json.loads(Path(a.manifest).read_text(encoding="utf-8"))
     weeks = manifest["weekends"]
     start, end = dt.date.fromisoformat(weeks[0]["sat"]), dt.date.fromisoformat(weeks[-1]["sun"])

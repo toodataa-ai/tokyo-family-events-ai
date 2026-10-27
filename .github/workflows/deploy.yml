@@ -269,6 +269,9 @@ jobs:
             else
               echo "Unknown subset operation: $subset_kind" >&2; exit 1
             fi
+          elif [ "${{ needs.gate.outputs.operation }}" = "manual-verified-suginami-phase1-addition" ]; then
+            python3 staging-policy-src/tools/validate_suginami_phase1_addition.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data \
               --allow-unchanged-historical-gaps-base "${{ needs.gate.outputs.base_data_production_sha }}"

@@ -23,6 +23,7 @@ IDS = {
         "time": "14:00〜16:00（雨天中止）",
         "source_tokens": ["2026年11月1日", "郷土博物館", "午後2時", "観覧料100円"],
         "reservation": False,
+        "rubric": "family-fit-v1",
     },
     "2026-12-05": {
         "id": "suginami-official-23878",
@@ -32,6 +33,7 @@ IDS = {
         "time": "10:00〜12:00",
         "source_tokens": ["2026年12月6日", "郷土博物館", "小学生", "8組", "11月5日"],
         "reservation": True,
+        "rubric": "family-fit-v2",
     },
 }
 ALLOWED = {ROOT + k for k in ("manifest.json", "update_history.json")}
@@ -102,7 +104,7 @@ def validate(base, *, check_live=True):
             same(expected, ev.get(k), f"new {cfg['id']} {k}")
         if ev.get("reservation",{}).get("required") is not cfg["reservation"]:
             raise ValueError("official reservation state mismatch " + cfg["id"])
-        if ev.get("family_fit",{}).get("rubric_version") != "family-fit-v2":
+        if ev.get("family_fit",{}).get("rubric_version") != cfg["rubric"]:
             raise ValueError("new activity has wrong family-fit rubric")
         if len((ev.get("family_fit") or {}).get("axes", {})) != 8:
             raise ValueError("must justify all eight family-fit axes")

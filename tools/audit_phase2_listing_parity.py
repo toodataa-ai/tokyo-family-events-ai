@@ -44,20 +44,30 @@ def reconcile_source(source, snapshot):
                     continue
                 hits.append(e)
             matches = sorted({e["id"] for e in hits})
-            if len(matches) > 1:
-                state, reason = "ambiguous_existing_links", "source URL appears on multiple published events"
-            elif len(matches) == 1:
+            signatures = {(compact(e.get("name")), compact(e.get("venue")),
+                           canonical_url(e.get("official_url"))) for e in hits}
+            multiweek = len(matches) > 1 and len(signatures) == 1
+            if len(matches) > 1 and not multiweek:
+                state, reason = "ambiguous_existing_links", "source URL maps to different logical events"
+            elif matches:
                 # Detect already-published links, but a scraped news title/date
                 # is not proof that the event was verified against its organizer.
-                d_matches = [p["decision"] for p in snapshot["decisions"]
-                             if p["decision"].get("candidate_id") == matches[0]
-                             and p["decision"].get("decision") == "published"]
-                event = hits[0]
-                has_official_url = bool(canonical_url(event.get("official_url")))
-                verified_decision = bool(d_matches and has_official_url and
-                                         any(same_link(q.get("url"), event.get("official_url"))
-                                             for d in d_matches for q in d.get("evidence", [])))
-                state = "existing_publication" if verified_decision else "existing_link_needs_proof"
+                # The same long-running exhibition may have a distinct event
+                # ID in each weekly shard. It is still ONE logical programme.
+                # Every unique published row needs its own existing decision.
+                proof_ids = set()
+                for e in hits:
+                    for p in snapshot["decisions"]:
+                        d = p["decision"]
+                        if (d.get("candidate_id") == e["id"] and
+                                d.get("decision") == "published" and
+                                canonical_url(e.get("official_url")) and
+                                any(same_link(q.get("url"), e.get("official_url"))
+                                    for q in d.get("evidence", []))):
+                            proof_ids.add(e["id"])
+                verified_decision = bool(proof_ids and proof_ids == set(matches))
+                state = "existing_multiweek_publication" if (multiweek and verified_decision) else (
+                    "existing_publication" if verified_decision else "existing_link_needs_proof")
                 reason = "" if verified_decision else "published link exists but decision/primary proof not established"
             elif not c.get("date_hints"):
                 state, reason = "needs_date_review", "article date not independently established"
@@ -66,18 +76,18 @@ def reconcile_source(source, snapshot):
             if kind == "roundup_child_lead":
                 # Children discovered only through a roundup require their own
                 # date and primary source confirmation before any card.
-                if state not in ("existing_publication", "existing_link_needs_proof"):
+                if state not in ("existing_publication", "existing_multiweek_publication", "existing_link_needs_proof"):
                     state = "roundup_child_unverified"
                     reason = "child link from summary; needs individual and organizer verification"
         rows.append({"candidate_id": cid, "name": c.get("name"), "discovery_url": c.get("discovery_url"),
                      "candidate_type": kind, "date_hints": c.get("date_hints", []),
                      "status": state, "matched_event_ids": matches, "reason": reason})
     stats = {s: sum(row["status"] == s for row in rows)
-             for s in ("existing_publication", "existing_link_needs_proof",
+             for s in ("existing_publication", "existing_multiweek_publication", "existing_link_needs_proof",
                        "index_only", "unreviewed_candidate", "needs_date_review",
                        "ambiguous_existing_links", "roundup_child_unverified")}
     err = source.get("status") != "checked" or bool(source.get("failures"))
-    unresolved = sum(v for k, v in stats.items() if k not in ("existing_publication", "index_only"))
+    unresolved = sum(v for k, v in stats.items() if k not in ("existing_publication", "existing_multiweek_publication", "index_only"))
     return {
         "source_id": sid,
         "status": "source_error" if err else ("complete" if not unresolved else "incomplete"),

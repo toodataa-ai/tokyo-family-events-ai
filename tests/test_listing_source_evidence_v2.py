@@ -141,6 +141,31 @@ class Phase2Tests(unittest.TestCase):
         r = reconcile_source(evidence, data)
         self.assertEqual(r["breakdown"]["existing_link_needs_proof"], 1)
 
+    def test_same_logical_programme_across_week_shards_is_not_an_ambiguity(self):
+        base = snapshot()
+        source = base["events"][0]["event"]["source"]
+        another = copy.deepcopy(base["events"][0]["event"])
+        another["id"] = "other-week-copy"
+        another["date_start"] = "2026-11-15"
+        another["date_end"] = "2026-11-15"
+        base["events"].append({"event": another, "owned_dates": {"2026-11-15"}, "week": "2026-11-14"})
+        base["decisions"].append({"decision": {
+            "candidate_id": "other-week-copy", "decision": "published",
+            "evidence": [{"url": another["official_url"]}]},
+            "owned_dates": {"2026-11-15"}, "week": "2026-11-14"})
+        candidate = {"source_id": "itabashi_times_event", "status": "checked", "failures": [],
+            "candidates": [{"candidate_id": "same-story", "name": "キッズ体験",
+                            "candidate_type": "event_lead",
+                            "discovery_url": source, "date_hints": []}]}
+        report = reconcile_source(candidate, base)
+        self.assertEqual(report["breakdown"]["existing_multiweek_publication"], 1)
+        self.assertEqual(report["unresolved_count"], 0)
+
+        # A different event sharing the article link cannot be hidden by this exemption.
+        base["events"][-1]["event"]["venue"] = "全然違う会場"
+        report = reconcile_source(candidate, base)
+        self.assertEqual(report["breakdown"]["ambiguous_existing_links"], 1)
+
     def test_roundup_parent_never_counts_as_missing_individual_event(self):
         evidence = {"source_id": "itabashi_times_event", "status": "checked", "failures": [],
                     "candidates": [{"candidate_id": "parent-1", "name": "11月まとめ",

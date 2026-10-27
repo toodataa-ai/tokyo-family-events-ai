@@ -6,10 +6,10 @@ const read = path => fs.readFileSync(path,"utf-8");
 const catalog = JSON.parse(read("site/audit/pending_issues_catalog.json"));
 const audit = JSON.parse(read("site/audit/fixed_sources.json"));
 const model = prepareIssues(catalog,audit);
-assert.equal(model.counts.total,5);
+assert.equal(model.counts.total,6);
 assert.equal(model.counts.connection,2);
-assert.equal(model.counts.verification,3);
-assert.equal(new Set(model.entries.map(x=>x.id)).size,5);
+assert.equal(model.counts.verification,4);
+assert.equal(new Set(model.entries.map(x=>x.id)).size,6);
 assert.equal(validateCatalog(catalog),true);
 assert.equal(validateAudit(audit),true);
 for(const entry of model.entries){

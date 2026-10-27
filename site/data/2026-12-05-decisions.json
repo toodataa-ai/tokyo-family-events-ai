@@ -4,8 +4,8 @@
   "generated": "2026-10-27T01:11:37+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 28,
-    "published": 28,
+    "candidate_total": 29,
+    "published": 29,
     "excluded": 0,
     "duplicate": 0
   },
@@ -1935,6 +1935,79 @@
         }
       ],
       "override_reason": ""
+    },
+    {
+      "candidate_id": "suginami-official-23878",
+      "name": "稲わらでお正月飾りをつくろう（郷土博物館）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v2",
+        "overall": "B",
+        "grade": "B",
+        "reason": "子どもと保護者向けの制作体験だが、区内在住・小学生対象、抽選8組、申込期限あり。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "杉並区内在住の小学生と保護者向け。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "稲わらでお正月飾りを制作する参加型イベント。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生のみが児童対象。未就学児は対象外。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "開催2時間の固定プログラム。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "抽選8組・2026年11月5日申込期限。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1組500円、保護者の博物館観覧料100円は別途。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "メール申込必須、11月5日締切、定員8組の抽選。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "伝統的な正月飾り作りと稲わらの文化学習。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_source_confirmed",
+        "family_participation"
+      ],
+      "negative_signals": [
+        "restricted_to_primary_school",
+        "lottery_capacity",
+        "application_deadline"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "区公式に小学生対象・参加抽選8組・11/5までの申込・料金が明記された親子制作体験。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s113/event/23878.html",
+          "basis": "2026-10-27杉並区公式個別イベントページ。開催日・会場・主催者・対象・参加制約・料金確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "掲載済み同一イベントとの個別照合後、新規候補として読取専用監査・非破壊検証ゲートへ追加。"
     }
   ]
 }

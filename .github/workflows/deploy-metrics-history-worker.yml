@@ -1,0 +1,134 @@
+name: Deploy verified Cloudflare metrics history API without D1 migration
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy-metrics-history-worker.yml'
+
+permissions:
+  contents: read
+concurrency:
+  group: cloudflare-metrics-history-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      WORKER_ENDPOINT: https://tokyo-family-events-metrics.tooda-t-aa.workers.dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test existing telemetry contract before deployment
+        run: |
+          node --check analytics/worker.mjs
+          node --test tests/usage_metrics.test.mjs
+          test -f analytics/schema.sql
+      - name: Validate access and existing D1 binding; never create or change database
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,os,re,sys,urllib.request
+          from pathlib import Path
+          token=os.environ.get("CLOUDFLARE_API_TOKEN","").strip()
+          account=os.environ.get("CLOUDFLARE_ACCOUNT_ID","").strip()
+          missing=[n for n,v in (("CLOUDFLARE_API_TOKEN",token),("CLOUDFLARE_ACCOUNT_ID",account)) if not v]
+          if missing:
+              sys.exit("BLOCKER: GitHub Actions secrets not configured: "+", ".join(missing))
+          if not re.fullmatch("[a-fA-F0-9]{32}",account):
+              sys.exit("BLOCKER: invalid Cloudflare account ID")
+          uri="https://api.cloudflare.com/client/v4/accounts/"+account+"/workers/scripts/tokyo-family-events-metrics/settings"
+          try:
+              req=urllib.request.Request(uri,headers={"Authorization":"Bearer "+token,
+                                                       "Accept":"application/json"})
+              with urllib.request.urlopen(req,timeout=20) as res:
+                  response=json.load(res)
+          except Exception as e:
+              sys.exit("BLOCKER: cannot read deployed Worker settings ("+type(e).__name__+")")
+          if not response.get("success"):
+              sys.exit("BLOCKER: cannot verify existing Worker binding")
+          bindings=response.get("result",{}).get("bindings",[])
+          if len(bindings)!=1 or bindings[0].get("name")!="DB" or bindings[0].get("type")!="d1":
+              sys.exit("BLOCKER: unexpected binding; refusing to overwrite production Worker")
+          db=bindings[0].get("database_id") or bindings[0].get("id")
+          if not isinstance(db,str) or not re.fullmatch("[a-fA-F0-9-]{36}",db):
+              sys.exit("BLOCKER: D1 binding identifier invalid")
+          # Write ignored local Wrangler config using existing bound database ID.
+          Path("analytics/wrangler.toml").write_text(
+              'name = "tokyo-family-events-metrics"\n'
+              'main = "worker.mjs"\n'
+              'compatibility_date = "2026-10-01"\n'
+              'workers_dev = true\n\n'
+              '[[d1_databases]]\n'
+              'binding = "DB"\n'
+              'database_name = "tokyo-family-events-metrics"\n'
+              'database_id = "'+db+'"\n',encoding="utf8")
+          print("PASS: account access and unchanged live D1 binding verified")
+          PY
+      - name: Capture current live totals; refuse blind deployment
+        run: |
+          python3 - <<'PY'
+          import json,os,sys,urllib.request
+          from pathlib import Path
+          try:
+              with urllib.request.urlopen(os.environ["WORKER_ENDPOINT"]+"/stats",timeout=20) as response:
+                  data=json.load(response)
+          except Exception as e:
+              sys.exit("BLOCKER: current /stats unavailable ("+type(e).__name__+")")
+          if data.get("schema_version")!=1 or not isinstance(data.get("totals"),dict):
+              sys.exit("BLOCKER: existing /stats contract changed")
+          Path("/tmp/live-totals.json").write_text(json.dumps(data))
+          print("PASS: current summary responds; baseline privately saved for comparison")
+          PY
+      - name: Update only the existing Cloudflare Worker code; no schema migrations
+        working-directory: analytics
+        run: npx --yes wrangler@4 deploy --config wrangler.toml
+      - name: Confirm day ranges and preexisting cumulative totals
+        run: |
+          python3 - <<'PY'
+          import json,os,sys,time,urllib.request
+          from pathlib import Path
+          endpoint=os.environ["WORKER_ENDPOINT"]
+          old=json.loads(Path("/tmp/live-totals.json").read_text())
+          def fetch(path):
+              with urllib.request.urlopen(endpoint+path,timeout=20) as r:
+                  if r.status!=200: raise ValueError("non-200")
+                  return json.load(r)
+          for attempt in range(8):
+              try:
+                  stats=fetch("/stats")
+                  report=fetch("/history?days=7")
+                  if report.get("schema_version")==1:break
+              except Exception:
+                  pass
+              time.sleep(3)
+          else:sys.exit("BLOCKER: deployed /history not verified")
+          for event,n in old["totals"].items():
+              after=stats.get("totals",{}).get(event)
+              if not isinstance(after,int) or after<n:
+                  sys.exit("BLOCKER: historic count missing or reduced: "+event)
+          for days in (7,30,90,365):
+              h=report if days==7 else fetch("/history?days="+str(days))
+              if h.get("schema_version")!=1 or h.get("days")!=days or not isinstance(h.get("rows"),list):
+                  sys.exit("BLOCKER: invalid day-range response")
+              seen=set()
+              for row in h["rows"]:
+                  day=row.get("day")
+                  if day in seen or not isinstance(day,str) or not isinstance(row.get("counts"),dict):
+                      sys.exit("BLOCKER: invalid or repeated day")
+                  seen.add(day)
+                  if any(not isinstance(n,int) or n<0 for n in row["counts"].values()):
+                      sys.exit("BLOCKER: negative or invalid count")
+                  if any(key in row for key in ("visitor_id","user_id","ip")):
+                      sys.exit("BLOCKER: unexpected identifying data")
+              print("PASS: live daily history",days,"days; recorded",len(seen),"days")
+          print("PASS: original totals preserved; existing D1 intact")
+          PY

@@ -28,4 +28,9 @@ for(const id of ['sourceAuditRows','sourceAuditSearch','sourceAuditFilter',
                  'sourceAuditTime','sourceAuditScope']) {
   assert.match(html, new RegExp('id="'+id+'"'));
 }
+const ci=readFileSync('.github/workflows/phase3-fixed-source-dashboard.yml','utf8');
+assert.match(ci,/gh workflow run deploy\.yml --ref main/);
+assert.match(ci,/actions: write/);
+assert.match(ci,/git add -- site\/audit\/fixed_sources\.json/);
+assert.doesNotMatch(ci,/refs\/heads\/production/);
 console.log('Phase3 fixed-source dashboard fail-closed contract: OK');

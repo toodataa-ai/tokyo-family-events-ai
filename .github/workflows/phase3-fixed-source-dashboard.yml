@@ -48,6 +48,7 @@ jobs:
     timeout-minutes: 18
     permissions:
       contents: write
+      actions: write
     steps:
       - name: Checkout staging application audit code
         uses: actions/checkout@v4
@@ -106,6 +107,10 @@ jobs:
           fi
           git commit -m "audit: refresh registered source retrieval statuses"
           git push origin HEAD:refs/heads/main
+      - name: Rebuild staging preview after bot-only status update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
       - name: Fail closed for required-source errors, keeping visible statuses
         if: always()
         run: |

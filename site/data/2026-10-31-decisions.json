@@ -4,8 +4,8 @@
   "generated": "2026-10-07T06:00:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 76,
-    "published": 70,
+    "candidate_total": 77,
+    "published": 71,
     "excluded": 4,
     "duplicate": 2,
     "hard_excluded": 2,
@@ -5757,6 +5757,75 @@
       ],
       "override_reason": "",
       "review_note": "2026/10/27の新規公式確認候補。strict CI合格後だけ掲載可能。"
+    },
+    {
+      "candidate_id": "suginami-official-22586",
+      "name": "昔の農家の暮らし体験（郷土博物館）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "rubric_version": "family-fit-v1",
+        "overall": "A",
+        "grade": "A",
+        "reason": "杉並区の公式開催詳細に日付・会場・参加方法・料金・体験内容の明記がある。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "全年齢対象。古民家での稲の脱穀は家族で学べる。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "本物の農具を使って稲の脱穀体験ができる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "対象者は「どなたでも」。中学生以下は観覧無料。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "2時間の開催時間内に参加。混雑時は待機あり。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "古民家の庭で実施。雨天時は中止。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "観覧料は大人100円、中学生以下無料。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日直接会場へ。事前申込不要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "昔の暮らしと農業の体験学習。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_source_confirmed",
+        "family_participation"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "official_verified",
+        "family_value_high"
+      ],
+      "reasons": [
+        "区公式に体験内容・当日参加方法・料金・開催日が明記された家族向け体験。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s113/event/22586.html",
+          "basis": "2026-10-27杉並区公式個別イベントページ。開催日・会場・主催者・対象・参加制約・料金確認"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "掲載済み同一イベントとの個別照合後、新規候補として読取専用監査・非破壊検証ゲートへ追加。"
     }
   ]
 }

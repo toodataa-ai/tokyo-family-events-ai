@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-10-27T07:41:00+09:00",
+  "generated": "2026-10-27T18:59:43+09:00",
   "default": "2026-10-31",
   "rolling_horizon_weeks": 6,
   "publication_tiers": {
@@ -14,7 +14,7 @@
       "sun": "2026-11-01",
       "label": "10/31(土)〜11/1(日)",
       "file": "2026-10-31.json",
-      "count": 70,
+      "count": 71,
       "horizon_index": 1,
       "publication_tier": "full"
     },
@@ -59,7 +59,7 @@
       "sun": "2026-12-06",
       "label": "12/5(土)〜12/6(日)",
       "file": "2026-12-05.json",
-      "count": 28,
+      "count": 29,
       "horizon_index": 6,
       "publication_tier": "announcement"
     }

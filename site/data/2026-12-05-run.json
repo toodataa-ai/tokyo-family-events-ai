@@ -1621,12 +1621,26 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 28,
-    "verified": 24,
+    "published": 29,
+    "verified": 25,
     "announced": 4,
-    "candidates": 28,
+    "candidates": 29,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
+  },
+  "suginami_official_phase1_addendum": {
+    "run_type": "manual_verified_suginami_phase1_addition",
+    "as_of_jst": "2026-10-27",
+    "checked_at": "2026-10-27T18:59:43+09:00",
+    "target_weekend": "2026-12-05",
+    "base_data_production_sha": "6591c7c7a4429b11cf1f5572e0d52b7153180f30",
+    "new_event_ids": [
+      "suginami-official-23878"
+    ],
+    "new_shard": "2026-12-05-events-suginami-official-20261027.json",
+    "official_detail": "https://www.city.suginami.tokyo.jp/s113/event/23878.html",
+    "source_failures_remain_unverified": true,
+    "note": "既存イベント/旧回顧/固定サイト調査結果の書換え・削除なし。杉並区公式1件のみ追加。"
   }
 }

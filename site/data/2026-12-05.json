@@ -3,17 +3,17 @@
   "sat": "2026-12-05",
   "sun": "2026-12-06",
   "label": "12/5(土)〜12/6(日)",
-  "generated": "2026-10-27T01:11:37+09:00",
+  "generated": "2026-10-27T18:59:43+09:00",
   "horizon_index": 6,
   "publication_tier": "announcement",
   "verification_file": "2026-12-05-verification.json",
   "run_file": "2026-12-05-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 28,
+    "candidate_count": 29,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 28,
+    "published_count": 29,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage."
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026/10/27杉並区公式の個別活動1件を別根拠で追加。過去ソース監査ログの実測は不変。"
       },
       {
         "ward": "豊島区",
@@ -226,7 +226,8 @@
   },
   "event_files": [
     "2026-12-05-events-official-verified.json",
-    "2026-12-05-events-preserved-carryover.json"
+    "2026-12-05-events-preserved-carryover.json",
+    "2026-12-05-events-suginami-official-20261027.json"
   ],
   "events": []
 }

@@ -1,0 +1,134 @@
+name: Phase 3 all fixed-source audit and site-status snapshot
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/fixed_source_coverage_v3.py'
+      - 'tests/test_fixed_source_coverage_v3.py'
+      - 'tests/source_audit_dashboard.test.mjs'
+      - 'site/source-audit.*'
+      - '.github/workflows/phase3-fixed-source-dashboard.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/fixed_source_coverage_v3.py'
+      - 'tests/test_fixed_source_coverage_v3.py'
+      - 'site/source-audit.*'
+      - '.github/workflows/phase3-fixed-source-dashboard.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Registry, state and old-event preservation regressions
+        run: |
+          python3 -m unittest discover -s tests -p 'test_fixed_source_coverage_v3.py'
+          node --check site/source-audit.js
+          node tests/source_audit_dashboard.test.mjs
+          python3 -m unittest discover -s tests -p 'test_source_coverage_reconcile.py'
+          python3 -m unittest discover -s tests -p 'test_listing_source_evidence_v2.py'
+
+  snapshot:
+    if: github.event_name != 'pull_request'
+    needs: [regression]
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout staging application audit code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+      - name: Checkout read-only production event manifest (never write data)
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe all 26 registered sources without changing event records
+        run: |
+          mkdir -p site/audit
+          python3 tools/fixed_source_coverage_v3.py \
+            --registry site/data/discovery_sources.json \
+            --manifest published/site/data/manifest.json \
+            --output site/audit/fixed_sources.json \
+            --workers 8
+      - name: Check snapshot stays within independent audit-only path
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          path=Path('site/audit/fixed_sources.json')
+          result=json.loads(path.read_text(encoding='utf-8'))
+          assert result['read_only'] is True
+          assert result['summary']['registered']==26
+          assert result['summary']['full_event_row_parity_verified_by_this_report']==0
+          assert result['summary']['event_candidates_count'] is None
+          assert result['summary']['publication_gaps_confirmed'] is None
+          assert len(result['sources'])==26
+          assert all(x['event_candidates_total'] is None for x in result['sources'])
+          PY
+      - name: Persist readable evidence for manual audit regardless of source errors
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase3-fixed-sources-${{ github.run_id }}
+          path: site/audit/fixed_sources.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Update ONLY public audit-status snapshot; never publish or delete events
+        shell: bash
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- site/audit/fixed_sources.json
+          changed="$(git diff --cached --name-only)"
+          if [ "$changed" != "site/audit/fixed_sources.json" ]; then
+            echo "BLOCKER: attempted to change anything other than independent source status"
+            exit 1
+          fi
+          git commit -m "audit: refresh registered source retrieval statuses"
+          git push origin HEAD:refs/heads/main
+      - name: Fail closed for required-source errors, keeping visible statuses
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,sys,os
+          f=Path('site/audit/fixed_sources.json')
+          if not f.exists():
+              sys.exit("BLOCKER: source status missing")
+          report=json.loads(f.read_text(encoding='utf-8'))
+          summary=report['summary']
+          lines=["## 第三弾 固定サイト取得監査（26サイト・読取専用）",
+                 "- 取得確認: "+str(summary['reachable_all_registered_urls']),
+                 "- 一部エラー: "+str(summary['partial_errors']),
+                 "- 取得不能: "+str(summary['source_errors']),
+                 "- 詳細候補全件照合: このURL監査だけでは未検証",
+                 "- 既存イベント・採否・回顧: 変更なし"]
+          bad=[s for s in report['sources'] if s['required'] and s['retrieval_status']!='checked']
+          for s in bad:
+              lines.append("- BLOCKER: "+s['source_id']+" / "+s['retrieval_status'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as stream:
+              stream.write("\n".join(lines)+"\n")
+          print("\n".join(lines))
+          if bad:
+              sys.exit(1)
+          PY

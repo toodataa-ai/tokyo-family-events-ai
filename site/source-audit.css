@@ -1,0 +1,39 @@
+/* Inherits site palette and Meiryo UI; never alters event-card styles. */
+.source-audit-page{font-family:"Meiryo UI",Meiryo,-apple-system,BlinkMacSystemFont,sans-serif}
+.source-audit-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 16px}
+.source-audit-stats>div{border:1px solid #d6e1eb;background:#f7faff;border-radius:10px;padding:13px 10px;display:flex;flex-direction:column;gap:4px}
+.source-audit-stats b{font-size:25px;font-weight:800;color:#183752;font-variant-numeric:tabular-nums}
+.source-audit-stats span{font-size:11px;line-height:1.5;color:#43566a}
+.source-audit-note{font-size:12px;line-height:1.7;border-left:3px solid #7594ae;padding:10px 13px;background:#f3f7fa;color:#263d52;border-radius:0 7px 7px 0;margin:12px 0}
+.source-audit-scope{font-size:11px;color:#506278;line-height:1.6}
+.source-audit-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:12px 0 7px}
+.source-audit-controls label{font-size:11px;font-weight:750;color:#2c4762}
+.source-audit-controls input,.source-audit-controls select{border:1px solid #b8cada;border-radius:9px;background:#fff;color:#223c54;min-height:37px;font:inherit;font-size:12px;padding:7px 10px}
+.source-audit-controls input{flex:1 1 190px;min-width:0}
+.source-audit-count{font-size:11px;color:#637386;margin:7px 0 12px}
+.source-audit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.source-audit-item{border:1px solid #d2dce5;border-radius:10px;padding:13px 14px;background:#fff;min-width:0}
+.source-audit-item-head{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.source-audit-item h3{font-size:13px;line-height:1.5;color:#1d3a54;margin:0}
+.source-audit-item h3 a{color:inherit;text-decoration:underline;text-decoration-color:#acbecf;overflow-wrap:anywhere}
+.source-audit-state{display:inline-block;border-radius:999px;border:1px solid #b6c8d8;padding:3px 9px;white-space:nowrap;color:#244660;font-size:10px;background:#edf3f8;font-weight:750}
+.source-audit-state.partial_error,.source-audit-state.source_error{border-color:#e1c9ac;background:#fff7e9;color:#795019}
+.source-audit-state.unavailable{background:#f5f5f5;border-color:#d5d5d5;color:#595959}
+.source-audit-meta{font-size:11px;color:#52647a;line-height:1.7;margin:8px 0 0}
+.source-audit-meta strong{color:#2a455d}
+.source-audit-details{margin:7px 0 0;border-top:1px solid #e4eaf0;padding-top:8px}
+.source-audit-details summary{font-size:11px;font-weight:700;cursor:pointer;color:#264b68}
+.source-audit-details ul{margin:7px 0 0;padding:0 0 0 18px;font-size:11px;color:#496075;line-height:1.65;overflow-wrap:anywhere}
+.source-audit-details a{color:#1c5780;overflow-wrap:anywhere}
+.source-audit-explain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.source-audit-explain>div{padding:12px;border:1px solid #d6e2eb;border-radius:9px;background:#fbfdff}
+.source-audit-explain b{color:#223e58;font-size:12px}
+.source-audit-explain p{font-size:11px;color:#526779;line-height:1.7;margin:6px 0 0}
+@media(max-width:760px){
+.source-audit-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.source-audit-stats b{font-size:21px}
+.source-audit-list,.source-audit-explain{grid-template-columns:1fr}
+.source-audit-item{padding:12px}
+.source-audit-controls label{width:100%}
+.source-audit-controls input,.source-audit-controls select{width:100%}
+}

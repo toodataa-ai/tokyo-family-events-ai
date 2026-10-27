@@ -13,6 +13,7 @@ import re
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qs
 from urllib.request import urlopen, Request
+import xml.etree.ElementTree as ET
 
 SOURCES = {
     "nakano_official_tourism": {
@@ -235,6 +236,41 @@ def extract_articles(page, base, cfg):
     return results
 
 
+def rss_article_fallback(source_id, *, fetcher=None):
+    """Supplemental candidate discovery when Itabashi HTML has no usable article links.
+
+    RSS is incomplete historical coverage. Never upgrades a broken listing
+    into an audited success; the original failure must remain visible.
+    """
+    if source_id != "itabashi_times_event":
+        return [], []
+    root = "https://itabashi-times.com/category/event/feed/"
+    records, failures, seen = [], [], set()
+    for url in (root, root + "?paged=2"):
+        r = fetch(url, fetcher=fetcher)
+        if r["status"] != "checked":
+            failures.append({"url": url, "error": "supplemental RSS unavailable: " + r["error"]})
+            continue
+        try:
+            tree = ET.fromstring(r["body"])
+            items = tree.findall("./channel/item")
+            if not items:
+                raise ValueError("RSS channel has no event entries")
+            for item in items:
+                link = (item.findtext("link") or "").strip()
+                title = " ".join((item.findtext("title") or "").split())
+                link = same_host_link(url, link, SOURCES[source_id])
+                if not link or not re.fullmatch(SOURCES[source_id]["article_pattern"], urlsplit(link).path):
+                    continue
+                if not title or link in seen:
+                    continue
+                records.append((link, title, title))
+                seen.add(link)
+        except (ET.ParseError, ValueError) as e:
+            failures.append({"url": url, "error": "invalid or empty RSS: " + str(e)})
+    return records, failures
+
+
 def crawl_source(source_id, start, end, *, fetcher=None):
     cfg = SOURCES[source_id]
     queue = [(u, True) for u in cfg["start"] + month_urls(cfg, start, end)]
@@ -274,6 +310,18 @@ def crawl_source(source_id, start, end, *, fetcher=None):
         for nxt in next_pages(p, url, cfg):
             if nxt not in seen_pages and nxt not in [x[0] for x in queue]:
                 queue.append((nxt, True))
+    # A valid HTML listing with no recognized article links is not zero
+    # events. Use RSS as *additional discovery evidence* while keeping
+    # HTML selector/pagination failures and non-exhaustive scope explicit.
+    if source_id == "itabashi_times_event" and not links:
+        extras, rss_failures = rss_article_fallback(source_id, fetcher=fetcher)
+        failures.extend(rss_failures)
+        for article_url, name, nearby in extras:
+            links[article_url] = {"name": name, "snippet": nearby,
+                                  "listed_on": ["https://itabashi-times.com/category/event/feed/"]}
+        if extras:
+            failures.append({"url": cfg["start"][0],
+                             "error": "RSS recovery is partial evidence, not complete HTML listing coverage"})
     if len(links) > cfg["max_articles"]:
         failures.append({"url": cfg["start"][0], "error": "article quota exceeded (unreviewed pages)"})
     articles, candidates, child_urls, detail_errors = [], [], {}, []

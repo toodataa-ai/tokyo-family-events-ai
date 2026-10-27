@@ -1,0 +1,59 @@
+name: Audit isolated v1.26 browser-private history overlay (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v126-browser-overlay-release.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  release-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 912ae8e0c7b91f58c878b25c692b00477d6e946c
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify immutable production-derived candidate and approved five-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "912ae8e0c7b91f58c878b25c692b00477d6e946c"
+          test "$(git rev-parse HEAD^)" = "933291588f3ea1ebcd5c311a0376a415037a02a9"
+          git diff --name-only HEAD^ HEAD | sort > /tmp/changed
+          printf '%s\n' site/usage-history.js site/usage-history.css site/usage-history.html site/self-usage.js tests/usage_metrics.test.mjs | sort > /tmp/expected
+          diff -u /tmp/expected /tmp/changed
+          git diff --quiet HEAD^ HEAD -- site/data site/search.html site/index.html site/copy.html site/app.js site/canva.html analytics prompts policy
+      - name: Confirm event data branch remains unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "1d1687321f82279d6e46899f1fc453169bba5b1d"
+      - name: Run production regression suite including new privacy and graph assertions
+        run: npm test
+      - name: Validate zero PII export and only consented local overlay
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          js=Path('site/self-usage.js').read_text()
+          chart=Path('site/usage-history.js').read_text()
+          html=Path('site/usage-history.html').read_text()
+          assert 'localStorage' in js
+          assert 'window.SiteSelfUsage' in js
+          assert "if(!production||!enabled()" in js
+          assert "if(!production||!available())return false;" in js
+          assert "if(!production||!available())return;" in js
+          assert all(token not in js for token in ('sendBeacon','XMLHttpRequest','document.cookie','fetch('))
+          assert 'const ownDays=optedIn?api.get():{}' in chart
+          assert "const optedIn=Boolean(api?.available()&&api.enabled())" in chart
+          assert 'usageHistoryOwnLegend' in html
+          print('PASS: browser consent, privacy, and overlay properties')
+          PY

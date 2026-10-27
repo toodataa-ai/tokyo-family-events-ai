@@ -68,6 +68,23 @@ class Phase2Tests(unittest.TestCase):
         self.assertEqual(child["date_hints"], ["2026-11-08"])
         self.assertEqual(len(out["listing_pages_checked"]), 2)
 
+    def test_itabashi_www_absolute_article_link(self):
+        p = Page()
+        p.feed(anchor(
+            "https://www.itabashi-times.com/archives/ryokuchi202610.html",
+            "高島平緑地で子どもイベント 2026年10月31日"))
+        links = extract_articles(p, ITABASHI, SOURCES["itabashi_times_event"])
+        self.assertEqual(len(links), 1)
+        self.assertIn("ryokuchi202610.html", links[0][0])
+
+    def test_nerima_generic_past_events_heading_does_not_become_event_name(self):
+        p = Page()
+        p.feed("<h3>過去のイベント</h3>" +
+               anchor("/event/detail.php?event_id=e12345", "もっと見る arrow_right"))
+        links = extract_articles(p, NERIMA, SOURCES["nerimakanko"])
+        self.assertEqual(len(links), 1)
+        self.assertEqual(links[0][1], "記事名未確定（要確認）")
+
     def test_missing_page_two_fail_closed_not_zero(self):
         idx = ITABASHI
         out = crawl_source("itabashi_times_event", dt.date(2026, 10, 31), dt.date(2026, 12, 6),

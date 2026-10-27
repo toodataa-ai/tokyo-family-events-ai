@@ -93,11 +93,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 69,
-    "published": 70,
+    "candidates": 70,
+    "published": 71,
     "excluded": 4,
     "duplicate_removed": 2,
-    "verified": 70,
+    "verified": 71,
     "announced": 0,
     "corrected": 1,
     "thumbnail_count": 51,
@@ -286,5 +286,19 @@
       "https://oshiri-tantei.com/events/2026071801b.html"
     ],
     "note": "10/31・11/1・11/3の別の参加企画6件。旧ソース障害や過去ログの実測を変えない。"
+  },
+  "suginami_official_phase1_addendum": {
+    "run_type": "manual_verified_suginami_phase1_addition",
+    "as_of_jst": "2026-10-27",
+    "checked_at": "2026-10-27T18:59:43+09:00",
+    "target_weekend": "2026-10-31",
+    "base_data_production_sha": "6591c7c7a4429b11cf1f5572e0d52b7153180f30",
+    "new_event_ids": [
+      "suginami-official-22586"
+    ],
+    "new_shard": "2026-10-31-events-suginami-official-20261027.json",
+    "official_detail": "https://www.city.suginami.tokyo.jp/s113/event/22586.html",
+    "source_failures_remain_unverified": true,
+    "note": "既存イベント/旧回顧/固定サイト調査結果の書換え・削除なし。杉並区公式1件のみ追加。"
   }
 }

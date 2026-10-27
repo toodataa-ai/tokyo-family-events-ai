@@ -94,8 +94,12 @@ def verify(base_ref):
         if new.get("generated") <= old.get("generated", ""):
             raise ValueError(week + " generated timestamp")
         oc, nc = old["coverage"], new["coverage"]
-        change_count(nc, oc, ("published_count", "candidate_count"),
-                     week + " source/coverage counters")
+        for key in ("published_count", "candidate_count"):
+            if nc.get(key) != oc.get(key, 0) + 1:
+                raise ValueError(week + " coverage." + key + " must add exactly one")
+        assert_equal({k: v for k, v in oc.items() if k not in ("published_count", "candidate_count", "wards")},
+                     {k: v for k, v in nc.items() if k not in ("published_count", "candidate_count", "wards")},
+                     week + " source/coverage historical values")
         original_wards = oc["wards"]
         current_wards = nc["wards"]
         if len(original_wards) != 23 or len(current_wards) != 23:
@@ -104,8 +108,12 @@ def verify(base_ref):
             if a["ward"] != b["ward"]:
                 raise ValueError(week + " ward list reordered")
             if a["ward"] == "杉並区":
-                change_count(b, a, ("published_count", "candidate_count"),
-                             week + " 杉並区 metrics")
+                for key in ("published_count", "candidate_count"):
+                    if b.get(key) != a.get(key, 0) + 1:
+                        raise ValueError(week + " 杉並区 " + key + " counter")
+                assert_equal({k: v for k, v in a.items() if k not in ("published_count", "candidate_count", "note")},
+                             {k: v for k, v in b.items() if k not in ("published_count", "candidate_count", "note")},
+                             week + " 杉並区 historical source evidence")
                 if not str(b.get("note", "")).startswith(str(a.get("note", ""))):
                     raise ValueError(week + " original 杉並区 note mutated")
             else:

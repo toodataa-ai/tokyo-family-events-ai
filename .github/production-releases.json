@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-27-r3",
+  "current_public_release": "release/2026-10-28-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -221,6 +221,15 @@
       "workflow_run_id": 40419778883,
       "note": "本番アプリv1.23。ユーザー指摘の練馬区ねりまの森こどもフェスタ11/8・11/21・11/29の抽出漏れ再発防止として、PR #47により現行production v1.22を親とする6ファイルだけ反映。2026年公式の複数日程表から開催日・企画名・会場別に全行を候補化し、公式総行数と期間内候補IDを記録。取得成功と全件網羅を区別し、重複/不正日付をフェイルクローズ。既存25参照元の維持・6件目の公式固定参照元登録、Python回帰テスト追加。ステージング検証およびPages run 40419778883 success。本番イベント3件追加のdata-production SHA 6591c7c7a4429b11cf1f5572e0d52b7153180f30を不変。旧必須参照元取得失敗5件は引き続き未解決と記録。",
       "public_version": "1.23"
+    },
+    {
+      "release_id": "release/2026-10-28-r1",
+      "branch": "release/2026-10-28-r1",
+      "commit_sha": "237eff8e70919971bcfb58dead440dab5d8280df",
+      "deployed_at": "2026-10-27T16:03:40Z",
+      "workflow_run_id": 40536897311,
+      "note": "ユーザー明示承認の本番アプリv1.24。トップページから開く『現在の残課題・対応状況』を独立ページとして追加。サイト取得の問題2件・イベント候補照合/データ更新の確認作業3件について、利用者への影響・代替対応・次の対応・対応記録リンクを表示。実HTTP監査結果が利用できない場合は未知と表示し、URL取得成功をイベント網羅解消と誤認しない。production v1.23から分岐した隔離8ファイルのみ PR #70経由で反映。読み取り専用本番候補監査 run 40536547066 と Pages本番デプロイ run 40536897311 はともにsuccess。イベント/採否/検索/Canva/収集元は不変。data-production SHA 1d1687321f82279d6e46899f1fc453169bba5b1d保持。",
+      "public_version": "1.24"
     }
   ],
   "current_public_version": "1.20"

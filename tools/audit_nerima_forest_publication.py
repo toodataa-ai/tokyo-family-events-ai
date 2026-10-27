@@ -36,7 +36,9 @@ def published_events(directory):
     if not entries:
         raise ValueError("No published weekend entries")
     all_events = {}
+    target_dates = set()
     for entry in entries:
+        target_dates.update((entry["sat"], entry["sun"]))
         week = read_json(root / entry["file"])
         shards = list(week.get("event_files", []))
         rows = list(week.get("events", []) or [])
@@ -71,19 +73,28 @@ def published_events(directory):
                 continue
             if not (sun < day <= sat + dt.timedelta(days=6)):
                 continue
+            target_dates.add(holiday)
             for item in all_events.values():
                 if (entry["sat"], entry["sun"]) in item["week_windows"]:
                     item["week_windows"].append((holiday, holiday))
-    return start, end, all_events
+    return start, end, all_events, target_dates
 
 
 def reconcile(source_html, published_directory):
-    start, end, records = published_events(published_directory)
+    start, end, records, target_dates = published_events(published_directory)
     official = parse_schedule(source_html, start, end)
     candidates = official["candidates"]
     details = []
     for row in candidates:
         date = row["date_start"]
+        # Source schedules may include ordinary weekdays; only weekends and
+        # holidays listed in the six-week manifest are publication targets.
+        # Keep out-of-scope rows visible in the report, never mark missing.
+        if date not in target_dates:
+            details.append({"date": date, "official_programme": row["name"],
+                            "official_venue": row["venue"],
+                            "status": "out_of_scope", "published_event_ids": []})
+            continue
         target_name = compact(row["name"])
         # Official venue may append location in parentheses; compare base name
         # while still requiring the venue, not merely a shared festival title.
@@ -107,17 +118,20 @@ def reconcile(source_html, published_directory):
         details.append({"date": date, "official_programme": row["name"],
                         "official_venue": row["venue"],
                         "status": state, "published_event_ids": matches})
-    missing = [item for item in details if item["status"] != "published"]
+    missing = [item for item in details if item["status"] not in ("published", "out_of_scope")]
+    published = [item for item in details if item["status"] == "published"]
+    target_rows = [item for item in details if item["status"] != "out_of_scope"]
     return {
         "source_url": SOURCE_URL, "official_row_count": official["official_row_count"],
-        "in_horizon_official_rows": len(candidates),
+        "in_horizon_official_rows": len(target_rows),
+        "ordinary_weekday_official_rows": len(details) - len(target_rows),
         "outside_horizon_official_rows": official["outside_target_count"],
-        "published_rows": len(details) - len(missing),
+        "published_rows": len(published),
         "unreconciled_rows": len(missing),
         "horizon_start": str(start), "horizon_end": str(end),
         "status": "complete" if not missing else "incomplete",
         "rows": details,
-        "note": "Individual date/name/venue and primary-source URL required; no publication side effects.",
+        "note": "Individual date/name/venue and primary-source URL required; ordinary weekdays are out of publication scope; no publication side effects.",
     }
 
 

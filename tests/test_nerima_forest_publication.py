@@ -128,6 +128,35 @@ class PublishedNerimaForestTests(unittest.TestCase):
             self.assertEqual(report["published_rows"], 4)
             self.assertEqual(report["unreconciled_rows"], 0)
 
+    def test_new_thursday_programme_is_discovered_but_not_a_weekend_omission(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_dataset(root, events())
+            manifest_path = root / "manifest.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["weekends"].insert(0, {
+                "sat": "2026-10-31", "sun": "2026-11-01", "file": "2026-10-31.json"
+            })
+            manifest["holidays"] = [{"date": "2026-11-03", "name": "文化の日"}]
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            (root / "2026-10-31-events.json").write_text("[]", encoding="utf-8")
+            (root / "2026-10-31.json").write_text(
+                json.dumps({"event_files": ["2026-10-31-events.json"],
+                            "coverage": {"published_count": 0}}), encoding="utf-8")
+            row = ("<tr><td>令和8年11月5日（木曜）午前10時から</td>"
+                   "<td>どんぐりあそび（公式）</td><td>中ノ宮竹林公園（練馬区）</td>"
+                   "<td>区民団体</td></tr>")
+            html = schedule_html().replace("</table>", row + "</table>", 1)
+            before = {p.name: p.read_bytes() for p in root.iterdir()}
+            report = reconcile(html, root)
+            self.assertEqual(report["status"], "complete")
+            self.assertEqual(report["in_horizon_official_rows"], 3)
+            self.assertEqual(report["ordinary_weekday_official_rows"], 1)
+            self.assertEqual(report["published_rows"], 3)
+            self.assertEqual(report["unreconciled_rows"], 0)
+            self.assertEqual(report["rows"][-1]["status"], "out_of_scope")
+            self.assertEqual(before, {p.name: p.read_bytes() for p in root.iterdir()})
+
     def test_official_event_in_wrong_week_shard_is_missing(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

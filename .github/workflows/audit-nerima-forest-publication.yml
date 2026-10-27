@@ -64,7 +64,8 @@ jobs:
               report += [
                   f"- 公式イベント一覧: {result['official_row_count']} 行",
                   f"- 掲載対象期間: {result['horizon_start']} 〜 {result['horizon_end']}",
-                  f"- 期間内の公式企画: {result['in_horizon_official_rows']} 件",
+                  f"- 掲載対象（土日祝日）の公式企画: {result['in_horizon_official_rows']} 件",
+                  f"- 掲載対象外（平日）の公式企画: {result['ordinary_weekday_official_rows']} 件",
                   f"- 掲載確認: {result['published_rows']} 件",
                   f"- 未掲載・曖昧: {result['unreconciled_rows']} 件",
                   "",

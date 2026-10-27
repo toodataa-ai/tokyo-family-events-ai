@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>固定サイトの収集・掲載照合状況 | 東京23区子連れイベントAI収集</title>
+<meta name="description" content="固定登録26サイトの取得状態、候補照合の可否、失敗・未確認を区別した監査状況を公開します。">
+<link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
+<link rel="stylesheet" href="source-audit.css?v=20261027-phase3">
+</head>
+<body class="source-audit-page">
+<section class="site-hero">
+  <div class="hero-inner">
+    <div class="site-topbar">
+      <a class="site-brand" href="index.html">東京23区子連れイベントAI収集</a>
+      <nav class="site-nav" aria-label="メインナビゲーション"><a href="index.html">トップ</a><a href="search.html">イベント検索</a><a href="omitted.html">掲載判断一覧</a></nav>
+    </div>
+    <div class="hero-eyebrow">SOURCE COVERAGE / 読取専用</div>
+    <h1>固定サイトの取得・掲載照合状況</h1>
+    <p class="hero-copy">登録した26サイトについて、実際にページを取得できたか、候補の掲載・除外まで照合できているかを分けて表示します。未確認と取得失敗はゼロ件に置き換えません。</p>
+  </div>
+</section>
+<main class="home-main">
+ <section class="home-section panel" aria-labelledby="sourceAuditSummaryTitle">
+  <div class="section-head">
+    <div><div class="eyebrow">LATEST AUDIT</div><h2 id="sourceAuditSummaryTitle">26サイトの監査状況</h2>
+    <p id="sourceAuditTime">収集状況を読み込み中です。</p></div>
+  </div>
+  <div class="source-audit-stats" aria-live="polite">
+   <div><b id="sourceRegistered">26</b><span>登録固定サイト</span></div>
+   <div><b id="sourceChecked">—</b><span>登録URLをすべて取得</span></div>
+   <div><b id="sourcePartial">—</b><span>一部URL取得失敗</span></div>
+   <div><b id="sourceError">—</b><span>全URL取得失敗</span></div>
+  </div>
+  <p class="source-audit-note"><strong>重要：</strong>「URLを取得」は「全イベントを収集・掲載できた」とは異なります。下のリンク候補数はWebページ上で見つかった参考数で、開催イベントの母数でも掲載漏れの確定数でもありません。</p>
+  <div class="source-audit-scope" id="sourceAuditScope" role="status">監査対象期間を確認中です。</div>
+ </section>
+ <section class="home-section panel" aria-labelledby="sourceAuditListTitle">
+  <div class="section-head"><div><div class="eyebrow">PER-SOURCE STATUS</div>
+  <h2 id="sourceAuditListTitle">情報源ごとの確認状況</h2>
+  <p>取得できたものから確認できるようにしています。必要な個別の公式情報が不足する場合は「候補照合：未検証」を維持します。</p></div></div>
+  <div class="source-audit-controls">
+    <label for="sourceAuditSearch">サイト名・種別で絞り込み</label>
+    <input id="sourceAuditSearch" type="search" placeholder="例：中野、板橋、カレンダー" autocomplete="off">
+    <label for="sourceAuditFilter">取得状態</label>
+    <select id="sourceAuditFilter">
+      <option value="all">すべて</option>
+      <option value="checked">登録URLをすべて取得</option>
+      <option value="partial_error">一部取得失敗</option>
+      <option value="source_error">取得失敗</option>
+      <option value="unavailable">監査結果なし</option>
+    </select>
+  </div>
+  <p class="source-audit-count" id="sourceAuditResultCount" aria-live="polite"></p>
+  <div class="source-audit-list" id="sourceAuditRows"><p>固定サイトの監査データを読み込み中です。</p></div>
+ </section>
+ <section class="home-section panel">
+  <div class="section-head"><div><div class="eyebrow">AUDIT CONTRACT</div><h2>監査の判断基準</h2></div></div>
+  <div class="source-audit-explain">
+   <div><b>① URL取得</b><p>登録済みの一覧・月別ページへアクセスできたか。1ページでも取得できなければ一部取得失敗として残します。</p></div>
+   <div><b>② 候補の発見</b><p>HTML中のイベント関連リンクの参考値を残します。ナビゲーションや親記事も含み得るため、候補総数には換算しません。</p></div>
+   <div><b>③ 掲載・除外照合</b><p>公式の開催日・会場・主催者、採否台帳、公開済みイベントのすべてを一致確認したときだけ判定します。この一覧のURL監査単独では未検証です。</p></div>
+  </div>
+  <p class="source-audit-note">第一弾・第二弾の専用監査は引き続き別のGitHub Actionsで実行します。検出候補を自動掲載したり、既存イベントを削除したりすることはありません。</p>
+  <p><a href="https://github.com/toodataa-ai/tokyo-family-events-ai/actions" target="_blank" rel="noopener noreferrer">監査ジョブと実行履歴（GitHub）</a></p>
+ </section>
+</main>
+<footer class="site-footer"><a href="index.html">トップへ戻る</a> · <a href="search.html">イベント検索</a></footer>
+<script src="source-audit.js?v=20261027-phase3" defer></script>
+</body>
+</html>

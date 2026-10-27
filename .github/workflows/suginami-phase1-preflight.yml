@@ -1,0 +1,45 @@
+name: Suginami phase1 official activity staged-data preflight (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/validate_suginami_phase1_addition.py'
+      - '.github/workflows/deploy.yml'
+      - '.github/workflows/suginami-phase1-preflight.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/validate_suginami_phase1_addition.py'
+      - '.github/workflows/suginami-phase1-preflight.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  stage-and-live-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: inspector
+      - uses: actions/checkout@v4
+        with:
+          ref: data-candidate/2026-10-27-suginami-two-official-activities
+          fetch-depth: 0
+          path: candidate
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Strict non-destructive comparison to published data and live official detail check
+        working-directory: candidate
+        run: |
+          python3 ../inspector/tools/validate_suginami_phase1_addition.py --base-ref 6591c7c7a4429b11cf1f5572e0d52b7153180f30
+      - name: All records, detailed family-fit and image-coverage checks
+        working-directory: candidate
+        run: |
+          python3 ../inspector/tools/validate_non_regression.py --base-ref 6591c7c7a4429b11cf1f5572e0d52b7153180f30 site/data
+          python3 ../inspector/tools/validate_protected_events.py --base-ref 6591c7c7a4429b11cf1f5572e0d52b7153180f30 site/data
+          python3 ../inspector/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../inspector/tools/validate_decisions.py --strict site/data

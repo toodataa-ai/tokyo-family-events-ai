@@ -1,0 +1,57 @@
+name: Suginami phase1 two-event add-only data preflight (no publication)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/validate_suginami_phase1_addition.py'
+      - '.github/workflows/preflight-suginami-phase1.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  strict-candidate-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout candidate as full git worktree
+        uses: actions/checkout@v4
+        with:
+          ref: data-candidate/2026-10-27-suginami-two-official-activities
+          fetch-depth: 0
+          path: candidate
+      - name: Checkout staging verification policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: verifier
+      - name: Checkout released application validation policy
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          path: release
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prove original data-production base SHA and append-only approved deltas
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          base="$(git ls-remote origin refs/heads/data-production | awk '{print $1}')"
+          git fetch origin data-production
+          python3 ../verifier/tools/validate_suginami_phase1_addition.py --base-ref "$base"
+      - name: Verify existing protected events cannot be removed or changed
+        working-directory: candidate
+        run: |
+          base="$(git ls-remote origin refs/heads/data-production | awk '{print $1}')"
+          python3 ../verifier/tools/validate_non_regression.py --base-ref "$base" site/data
+          python3 ../verifier/tools/validate_protected_events.py --base-ref "$base" site/data
+      - name: Verify source-evidence and family-fit schemas with released validators
+        working-directory: candidate
+        run: |
+          python3 ../release/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
+          python3 ../release/tools/validate_decisions.py --strict site/data
+          python3 ../release/tools/validate_rereview.py --strict site/data
+          python3 ../verifier/tools/audit_event_image_identity.py site/data --strict
+      - name: Declare only two new child events, none removed or rewritten
+        run: |
+          echo 'SUGINAMI_PHASE1_PREFLIGHT PASS: immutable source and original published events preserved'

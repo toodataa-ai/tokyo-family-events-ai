@@ -252,3 +252,33 @@ test('opt-in browser usage appears only in local chart overlay and toggling off 
   assert.match(css,/\.usage-history-visual-own-bar/);
   assert.doesNotMatch(js,/innerHTML\s*=/);
 });
+
+test('staging preview can read only this browser data without recording or changing consent',()=>{
+  const src=fs.readFileSync('site/self-usage.js','utf8');
+  const store=new Map([
+    ['family_events_self_usage_optin_v1','yes'],
+    ['family_events_self_usage_daily_v1',JSON.stringify({'2026-10-28':{page_home:3}})]
+  ]);
+  const localStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v),
+    removeItem:k=>store.delete(k)};
+  const preview={location:{origin:'https://toodataa-ai.github.io',
+    pathname:'/tokyo-family-events-ai/staging/usage-history.html'},
+    localStorage,window:{},Intl,Date};
+  vm.runInNewContext(src,preview);
+  const api=preview.window.SiteSelfUsage;
+  assert.equal(api.available(),true);
+  assert.equal(api.enabled(),true);
+  assert.equal(api.canWrite(),false);
+  assert.equal(api.get()['2026-10-28'].page_home,3);
+  const before=JSON.stringify([...store]);
+  api.record('page_home');
+  assert.equal(api.setEnabled(false),false);
+  api.clear();
+  assert.equal(JSON.stringify([...store]),before,'staging must never write to browser records');
+  const prod={location:{origin:'https://toodataa-ai.github.io',
+    pathname:'/tokyo-family-events-ai/usage-history.html'},
+    localStorage,window:{},Intl,Date};
+  vm.runInNewContext(src,prod);
+  assert.equal(prod.window.SiteSelfUsage.canWrite(),true);
+  assert.equal(prod.window.SiteSelfUsage.enabled(),true);
+});

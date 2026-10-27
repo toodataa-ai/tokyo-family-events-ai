@@ -8,13 +8,16 @@
     'copy_field_click','copy_all_click','copy_field','copy_all','session_start']);
   const production = location.origin === 'https://toodataa-ai.github.io' &&
     location.pathname.startsWith(ROOT) && !location.pathname.startsWith(ROOT+'staging/');
+  // Preview reads this browser's existing localStorage only; staging never writes.
+  const staging = location.origin === 'https://toodataa-ai.github.io' &&
+    location.pathname.startsWith(ROOT+'staging/');
   function dayJst() {
     const parts = new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',
       year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
     const part = key => parts.find(x=>x.type===key)?.value;
     return [part('year'),part('month'),part('day')].join('-');
   }
-  function available(){try {return production && !!localStorage;}catch(_){return false;}}
+  function available(){try {return (production||staging) && !!localStorage;}catch(_){return false;}}
   function enabled(){try {return available() && localStorage.getItem(ACTIVE_KEY)==='yes';}catch(_){return false;}}
   function get() {
     if(!available())return {};
@@ -34,7 +37,7 @@
     } catch(_){return {};}
   }
   function record(event) {
-    if(!enabled()||!EVENTS.has(event))return;
+    if(!production||!enabled()||!EVENTS.has(event))return;
     try {
       const data=get(),today=dayJst();
       data[today] ??= {};
@@ -45,7 +48,7 @@
     } catch(_){/* privacy mode/storage full; ignore; never interrupt site */}
   }
   function setEnabled(yes) {
-    if(!available())return false;
+    if(!production||!available())return false;
     try{
       if(yes)localStorage.setItem(ACTIVE_KEY,'yes');
       else localStorage.removeItem(ACTIVE_KEY);
@@ -53,8 +56,8 @@
     }catch(_){return false;}
   }
   function clear(){
-    if(!available())return;
+    if(!production||!available())return;
     try{localStorage.removeItem(COUNTS_KEY);}catch(_){}
   }
-  window.SiteSelfUsage=Object.freeze({enabled,get,record,setEnabled,clear,available,dayJst});
+  window.SiteSelfUsage=Object.freeze({enabled,get,record,setEnabled,clear,available,dayJst,canWrite:()=>production});
 })();

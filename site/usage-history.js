@@ -85,8 +85,12 @@
       return;
     }
     const on=api.enabled();
-    set('usageSelfStatus',on?'この端末だけの利用メモ：オン':'この端末だけの利用メモ：オフ');
-    $('usageSelfEnable').disabled=on;$('usageSelfDisable').disabled=!on;
+    const writable=api.canWrite?.()??true;
+    set('usageSelfStatus',(on?'この端末だけの利用メモ：オン':'この端末だけの利用メモ：オフ')+
+      (writable?'':'（ステージングは読み取り専用。本番サイトで切り替えできます）'));
+    $('usageSelfEnable').disabled=!writable||on;
+    $('usageSelfDisable').disabled=!writable||!on;
+    $('usageSelfClear').disabled=!writable;
     const all=api.get(),today=all[api.dayJst()]||{},days=Object.values(all);
     const total=k=>days.reduce((n,row)=>n+safe(row[k]),0);
     set('usageSelfToday','今日のこの端末：表示 '+fmt(sum(today,pv))+

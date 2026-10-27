@@ -252,7 +252,10 @@ def rss_article_fallback(source_id, *, fetcher=None):
             failures.append({"url": url, "error": "supplemental RSS unavailable: " + r["error"]})
             continue
         try:
-            tree = ET.fromstring(r["body"])
+            # Some WordPress RSS endpoints prepend a BOM or blank line to
+            # the XML declaration. Ignore only leading whitespace, never
+            # repair malformed XML or waive missing feed items.
+            tree = ET.fromstring(r["body"].lstrip("\ufeff \t\r\n"))
             items = tree.findall("./channel/item")
             if not items:
                 raise ValueError("RSS channel has no event entries")

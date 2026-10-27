@@ -101,7 +101,7 @@ class Phase2Tests(unittest.TestCase):
         pages = {
             ITABASHI: anchor("/category/event", "イベント情報"),
             ITABASHI + "/page/2": anchor("/category/event", "イベント情報"),
-            root: """<?xml version="1.0"?><rss version="2.0"><channel>
+            root: """ \n\ufeff<?xml version="1.0"?><rss version="2.0"><channel>
             <item><title>板橋の子どもイベント2026年11月8日</title>
             <link>https://itabashi-times.com/archives/kids202611.html</link></item>
             </channel></rss>""",

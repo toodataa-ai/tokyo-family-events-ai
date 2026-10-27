@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'tools/fixed_source_coverage_v3.py'
+      - 'tools/source_fallback_policy.py'
+      - 'policy/source_fallbacks_v1.json'
+      - 'tests/test_source_fallback_policy.py'
       - 'tests/test_fixed_source_coverage_v3.py'
       - 'tests/source_audit_dashboard.test.mjs'
       - 'site/source-audit.*'
@@ -13,6 +16,9 @@ on:
     branches: [main]
     paths:
       - 'tools/fixed_source_coverage_v3.py'
+      - 'tools/source_fallback_policy.py'
+      - 'policy/source_fallbacks_v1.json'
+      - 'tests/test_source_fallback_policy.py'
       - 'tests/test_fixed_source_coverage_v3.py'
       - 'site/source-audit.*'
       - '.github/workflows/phase3-fixed-source-dashboard.yml'
@@ -36,6 +42,7 @@ jobs:
       - name: Registry, state and old-event preservation regressions
         run: |
           python3 -m unittest discover -s tests -p 'test_fixed_source_coverage_v3.py'
+          python3 -m unittest discover -s tests -p 'test_source_fallback_policy.py'
           node --check site/source-audit.js
           node tests/source_audit_dashboard.test.mjs
           python3 -m unittest discover -s tests -p 'test_source_coverage_reconcile.py'

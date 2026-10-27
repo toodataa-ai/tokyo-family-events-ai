@@ -89,12 +89,20 @@ assert.ok(suginamiAll?.enabled && suginamiAll?.required && suginamiAll?.calendar
 assert.equal(suginamiAll.event_row_audit_required,true);
 assert.ok(data.protected_source_ids.includes(suginamiAll.id));
 const tamemapNow = sources.find(x => x.id === 'tamemap_nakano');
-assert.ok(tamemapNow.search_urls.includes('https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'),
-  'new arrival supplemental source must be captured alongside original calendar');
-assert.ok(tamemapNow.search_urls.some(x => x.includes('/calendar/{YYYY-MM}')),
-  'original mandatory monthly calendar must not be dropped');
+assert.deepEqual(tamemapNow.search_urls, [
+  'https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'
+], 'registered Tamemap URL must remain byte-for-byte preserved');
+const policy=JSON.parse(fs.readFileSync('policy/source_fallbacks_v1.json','utf8'));
+assert.equal(policy.schema_version,1);
+assert.equal(policy.sources.length,2);
+const tamemapOverlay=policy.sources.find(x=>x.id==='tamemap_nakano');
+assert.ok(tamemapOverlay.supplemental_search_urls.some(x=>x.includes('/1311401/new_arrival?')));
+assert.equal(tamemapOverlay.publication_approved,false);
+const tourismOverlay=policy.sources.find(x=>x.id==='itabashi_tourism_festival');
+assert.deepEqual(tourismOverlay.fallback_source_ids,['itabashi_official_festival']);
+assert.equal(tourismOverlay.publication_approved,false);
 const itabashiNow = sources.find(x => x.id === 'itabashi_tourism_festival');
-assert.deepEqual(itabashiNow.fallback_source_ids, ['itabashi_official_festival']);
+assert.equal(itabashiNow.fallback_source_ids,undefined,'registered source must not be changed');
 assert.equal(itabashiNow.required,true);
 assert.ok(sources.find(x => x.id === 'itabashi_official_festival')?.search_urls.some(x => x.includes('/1006858.html')));
 console.log('Suginami official all-category daily source: OK');

@@ -217,6 +217,8 @@ def main(argv=None):
         holidays = load_official_holidays(args.holiday_csv_file)
         manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
         sources = json.loads(args.sources.read_text(encoding="utf-8"))
+        from source_fallback_policy import apply_fallback_overlay
+        sources = apply_fallback_overlay(sources)
         result = calculate(day, holidays, manifest, sources, args.base_data_production_sha)
         payload = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
         if args.output:

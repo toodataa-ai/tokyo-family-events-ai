@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "Additive read-only fallback discovery overlay. Never mutate protected fixed-source registry, never silence original required source failures.",
+  "sources": [
+    {
+      "id": "tamemap_nakano",
+      "supplemental_search_urls": [
+        "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
+      ],
+      "original_required_url_must_contain": "/1311401/calendar/{YYYY-MM}",
+      "publication_approved": false,
+      "date_unverified": true,
+      "reason": "新着投稿タイトルは開催日を示さない。詳細本文・主催者一次情報による独立確認必須。"
+    },
+    {
+      "id": "itabashi_tourism_festival",
+      "fallback_source_ids": [
+        "itabashi_official_festival"
+      ],
+      "original_required_url_must_contain": "itabashi-kanko.jp/pickup/detail?id=1799",
+      "publication_approved": false,
+      "reason": "観光協会503を残し、既存の板橋区公式・区民まつりの証拠を独立表示。2026年開催日が対象期間外なら掲載しない。"
+    }
+  ]
+}

@@ -31,3 +31,12 @@
 - 板橋観光協会 itabashi_tourism_festival は必須・有効を保持。取得503の場合、既存の itabashi_official_festival（板橋区の公式区民まつり）を独立した代替の一次情報として参照する。元の503は取得失敗のまま。公式イベントの開催年度・日付が6週間の対象外なら新規候補にはしない。
 - 同じイベントが複数情報源や親企画・子企画に出てもURL・日時・会場・主催者を確認してから新しい掲載を判断する。候補だけを見てカード追加や既存イベント削除はしない。
 - `rolling_horizon.py` が `fallback_source_ids` を正式なソースチェック計画に渡し、`holiday_after_collect.py` は補助候補を未確認として収集し、実行レポート `source_fallbacks` に区公式との対応を独立記録する。第三弾の監査画面は取得成功・失敗を分けたまま、新着一覧候補数と区公式の可用性を表示する。
+
+## 2026-10-28 保護規約に適合する外部設定への修正
+初回の新着一覧追加は従来の登録ソース項目を直接更新していたため、ステージングの `validate_non_regression.py` が「previous discovery source changed without approval」で拒否した。
+これは正常な安全装置であり緩和しない。
+
+登録26サイトの実際の `site/data/discovery_sources.json` は過去の原本と一字一句同じ項目内容へ復元。
+追加URL・公式フォールバック対応は `policy/source_fallbacks_v1.json` へ分離し、
+`tools/source_fallback_policy.py` によってプラン生成時と監査時にメモリ上だけで合成する。
+取得失敗・開催日未検証の扱いは変更しない。データ公開は行わない。

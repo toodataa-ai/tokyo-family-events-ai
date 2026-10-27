@@ -58,6 +58,34 @@ class AnnualDiscoveryTests(unittest.TestCase):
             extract_candidates(SCHEDULE_2027, dt.date(2026, 10, 1), dt.date(2026, 10, 31),
                                fiscal_start_year=2026)
 
+    def test_rain_postponement_is_not_an_extra_independent_festival_day(self):
+        from tools.official_schedule_discovery import dates_in
+        self.assertEqual(
+            dates_in("11月7日（土） （注釈）雨天時、翌8日（日）に順延", 2026),
+            [dt.date(2026, 11, 7)])
+        self.assertEqual(
+            dates_in("10月24日（土） （注釈）花火は11/7（土）に延期", 2026),
+            [dt.date(2026, 10, 24)])
+        self.assertEqual(
+            dates_in("10月24日（土） （注釈）花火は11月7日（土）に延期", 2026),
+            [dt.date(2026, 10, 24)])
+        # Genuinely multi-day festival dates appear before the commentary.
+        self.assertEqual(
+            dates_in("7月18日（土） 7月19日（日） （注釈）雨天決行", 2026),
+            [dt.date(2026, 7, 18), dt.date(2026, 7, 19)])
+
+    def test_rain_contingency_does_not_change_stable_official_id(self):
+        before = """<html>令和8年度<table>
+<tr><th>開催月</th><th>地区祭名</th><th>開催日</th><th>時間</th><th>会場</th><th>内容</th><th>連絡先</th></tr>
+<tr><td>11月</td><td>石神井地区祭</td><td>11月7日（土）</td><td>10時～15時</td><td>石神井公園</td><td>催事</td><td></td></tr>
+</table></html>"""
+        after = before.replace("11月7日（土）", "11月7日（土） （注釈）雨天時、翌8日（日）に順延")
+        a = extract_candidates(before, dt.date(2026, 11, 7), dt.date(2026, 11, 8))
+        b = extract_candidates(after, dt.date(2026, 11, 7), dt.date(2026, 11, 8))
+        self.assertEqual(a[0]["candidate_id"], b[0]["candidate_id"])
+        self.assertEqual(a[0]["dates"], b[0]["dates"])
+        self.assertEqual(b[0]["dates"], ["2026-11-07"])
+
     def test_offline_run_and_row_evidence(self):
         with tempfile.TemporaryDirectory() as work:
             base = pathlib.Path(work)

@@ -172,6 +172,34 @@
       "source_failures_remain_unverified": true,
       "executed_at": "2026-10-27T07:41:00+09:00",
       "note": "練馬区公式の複数日程イベント表から11/8・11/21・11/29の3企画を補完。既存掲載の削除・変更ゼロ。"
+    },
+    {
+      "run_id": "suginami-official-phase1-two-2026-10-27",
+      "run_type": "manual_verified_suginami_phase1_addition",
+      "status": "official_verified_addition",
+      "as_of_jst": "2026-10-27",
+      "executed_at": "2026-10-27T18:59:43+09:00",
+      "base_data_production_sha": "6591c7c7a4429b11cf1f5572e0d52b7153180f30",
+      "target_weeks": [
+        "2026-10-31",
+        "2026-12-05"
+      ],
+      "added_weekly_records": 2,
+      "changed_existing_records": 0,
+      "removed_weekly_records": 0,
+      "old_event_ids_removed": 0,
+      "old_event_records_changed": 0,
+      "new_event_ids": [
+        "suginami-official-22586",
+        "suginami-official-23878"
+      ],
+      "official_details": [
+        "https://www.city.suginami.tokyo.jp/s113/event/22586.html",
+        "https://www.city.suginami.tokyo.jp/s113/event/23878.html"
+      ],
+      "source_failures_remain_unverified": true,
+      "unverified_required_source_failures": 5,
+      "note": "杉並区公式カレンダーの体験型個別企画2件を公式詳細検証後に非破壊追加。旧イベント・判断・探索の取得失敗記録は変更なし。"
     }
   ]
 }

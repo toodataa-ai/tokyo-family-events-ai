@@ -1,0 +1,30 @@
+name: Audit staged usage history changes (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-usage-history-candidate.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 15f47c16520f57347ae0d8cfdeea86741a096589
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Ensure event data and protected registry unchanged
+        shell: bash
+        run: |
+          git diff --quiet 1d4edbfbb9085271361d86cd5c90aa13d8b012f6 HEAD -- site/data site/search-data.json policy prompts
+          git diff --name-only 1d4edbfbb9085271361d86cd5c90aa13d8b012f6 HEAD
+      - name: Full application and privacy/metrics regression
+        run: npm test

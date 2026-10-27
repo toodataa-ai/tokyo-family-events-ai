@@ -1,0 +1,55 @@
+name: Smoke test public v1.26 own-browser chart (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/smoke-v126-live.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  live-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 9efccbcfa31facd7b78ffbdddcdec4ab6d347752
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify actual GitHub Pages production files and privacy contract
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import assert from 'node:assert/strict';
+          import crypto from 'node:crypto';
+          const base='https://toodataa-ai.github.io/tokyo-family-events-ai/';
+          const paths=[
+            'usage-history.html','usage-history.js','usage-history.css','self-usage.js'
+          ];
+          for(const path of paths){
+            let body;
+            for(let attempt=0;attempt<8;attempt++){
+              const url=base+path+'?v=v126-live-verification';
+              const res=await fetch(url,{headers:{'Cache-Control':'no-cache'}});
+              if(!res.ok)throw Error(path+' HTTP '+res.status);
+              body=await res.text();
+              const expected=await fs.readFile('site/'+path,'utf8');
+              if(crypto.createHash('sha256').update(body).digest('hex')===
+                 crypto.createHash('sha256').update(expected).digest('hex'))break;
+              if(attempt===7)throw Error('Live deployed bytes do not match production: '+path);
+              await new Promise(resolve=>setTimeout(resolve,5000));
+            }
+            console.log('PASS actual live deployment matches production: '+path+' bytes='+body.length);
+          }
+          const html=await fs.readFile('site/usage-history.html','utf8');
+          const own=await fs.readFile('site/self-usage.js','utf8');
+          const chart=await fs.readFile('site/usage-history.js','utf8');
+          assert.match(html,/id="usageHistoryOwnLegend" hidden/);
+          assert.match(html,/usage-history\.js\?v=20261028-3/);
+          assert.match(own,/if\(!production\|\|!enabled\(\)\)return/);
+          assert.match(chart,/const ownDays=optedIn\?api\.get\(\):\{\}/);
+          assert.match(chart,/usageHistoryOwnLegend/);
+          console.log('PASS: opt-in display, no new telemetry endpoint, private local overlay');
+          JS

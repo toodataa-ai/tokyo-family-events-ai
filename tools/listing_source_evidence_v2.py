@@ -141,7 +141,9 @@ def article_title(a):
     if label.startswith("もっと見る"):
         label = a.get("heading", "")
     if label in ("過去のイベント", "イベント", "イベント検索", "詳細", "イベント一覧"):
-        label = ""
+        # Preserve actual event detail URL as an *unverified* lead, rather
+        # than using a menu heading as if it were the event name.
+        label = "記事名未確定（要確認）"
 
     return " ".join(label.split())[:240]
 
@@ -286,7 +288,7 @@ def crawl_source(source_id, start, end, *, fetcher=None):
             article.feed(document["body"])
             evidence["title"] = item["name"]
             evidence["links_checked"] = len(article.links)
-            if not item["name"] or item["name"] in ("過去のイベント", "イベント検索"):
+            if not item["name"] or item["name"] in ("過去のイベント", "イベント検索", "記事名未確定（要確認）"):
                 item["name"] = next((h for h in article.headings if len(h) >= 5 and
                                      h not in ("イベント", "過去のイベント", "イベント検索")),
                                     "記事名未確定（要確認）")

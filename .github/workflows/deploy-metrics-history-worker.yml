@@ -76,11 +76,15 @@ jobs:
       - name: Capture current live totals; refuse blind deployment
         run: |
           python3 - <<'PY'
-          import json,os,sys,urllib.request
+          import json,os,sys,urllib.error,urllib.request
           from pathlib import Path
           try:
               with urllib.request.urlopen(os.environ["WORKER_ENDPOINT"]+"/stats",timeout=20) as response:
                   data=json.load(response)
+          except urllib.error.HTTPError as e:
+              print("DIAGNOSTIC: existing Worker /stats HTTP status: "+str(e.code))
+              print("DIAGNOSTIC: content type: "+str(e.headers.get("Content-Type","unknown"))[:90])
+              sys.exit("BLOCKER: existing /stats HTTP error; no Worker changes attempted")
           except Exception as e:
               sys.exit("BLOCKER: current /stats unavailable ("+type(e).__name__+")")
           if data.get("schema_version")!=1 or not isinstance(data.get("totals"),dict):

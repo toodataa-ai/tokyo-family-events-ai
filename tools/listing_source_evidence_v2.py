@@ -63,7 +63,7 @@ class Page(HTMLParser):
             self.skip += 1
         if self.skip:
             return
-        if tag in ("h2", "h3", "h4"):
+        if tag in ("h1", "h2", "h3", "h4"):
             self.heading = []
         if tag == "a":
             self.anchor = {"href": attrs.get("href", ""), "text": [],
@@ -90,7 +90,7 @@ class Page(HTMLParser):
             return
         if self.skip:
             return
-        if tag in ("h2", "h3", "h4") and self.heading is not None:
+        if tag in ("h1", "h2", "h3", "h4") and self.heading is not None:
             title = " ".join(self.heading)
             if title:
                 self.headings.append(title)
@@ -129,7 +129,7 @@ def fetch(url, fetcher=None):
 def same_host_link(base, href, cfg):
     url = canonical(urljoin(base, href))
     p = urlsplit(url)
-    if p.scheme != "https" or p.hostname != cfg["hostname"]:
+    if p.scheme != "https" or not p.hostname or p.hostname.removeprefix("www.") != cfg["hostname"].removeprefix("www."):
         return None
     return url
 
@@ -140,6 +140,9 @@ def article_title(a):
         label = a.get("heading", "")
     if label.startswith("もっと見る"):
         label = a.get("heading", "")
+    if label in ("過去のイベント", "イベント", "イベント検索", "詳細", "イベント一覧"):
+        label = ""
+
     return " ".join(label.split())[:240]
 
 
@@ -251,9 +254,16 @@ def crawl_source(source_id, start, end, *, fetcher=None):
         p = Page()
         p.feed(result["body"])
         entries = extract_articles(p, url, cfg)
-        # A source template silently returning a 200 search page is not zero events.
+        # A 200 response with navigation but zero articles can be bot blocking,
+        # wrong-domain absolute links or a changed template, never an empty success.
+        pages[-1]["links_seen"] = len(p.links)
+        pages[-1]["article_links_seen"] = len(entries)
+        pages[-1]["event_like_href_examples"] = [a.get("href", "")[:190] for a in p.links
+                              if "archive" in a.get("href", "") or "event" in a.get("href", "")][:6]
         if not entries:
-            failures.append({"url": url, "error": "no event article links: template or selector changed"})
+            failures.append({"url": url, "error": "no event article links: template or selector changed",
+                             "links_seen": len(p.links),
+                             "event_like_href_examples": pages[-1]["event_like_href_examples"]})
         for article_url, name, nearby in entries:
             if article_url not in links:
                 links[article_url] = {"name": name, "snippet": nearby, "listed_on": [url]}
@@ -276,6 +286,11 @@ def crawl_source(source_id, start, end, *, fetcher=None):
             article.feed(document["body"])
             evidence["title"] = item["name"]
             evidence["links_checked"] = len(article.links)
+            if not item["name"] or item["name"] in ("過去のイベント", "イベント検索"):
+                item["name"] = next((h for h in article.headings if len(h) >= 5 and
+                                     h not in ("イベント", "過去のイベント", "イベント検索")),
+                                    "記事名未確定（要確認）")
+            evidence["title"] = item["name"]
         articles.append(evidence)
         is_index = bool(cfg.get("roundups") and ROUNDUP.search(item["name"]))
         # Use only event heading/listing title for date leads; article dates can

@@ -125,6 +125,68 @@ class CommonParityTests(unittest.TestCase):
                 "nerima_district_festivals_2026",
                 [district_candidate(), district_candidate()], s, source_status="checked"))
 
+    def test_district_address_allows_explicit_ward_prefix_but_not_wrong_school(self):
+        r = self.with_data(lambda s: reconcile(
+            "nerima_district_festivals_2026",
+            [district_candidate(venue="高松小学校（高松3-16-1）")],
+            s, source_status="checked"),
+            venue="高松小学校（練馬区高松3-16-1）")
+        self.assertEqual(r["breakdown"]["published"], 1)
+        r = self.with_data(lambda s: reconcile(
+            "nerima_district_festivals_2026",
+            [district_candidate(venue="高松小学校（高松3-16-1）")],
+            s, source_status="checked"),
+            venue="高松小学校（練馬区高松3-16-9）")
+        self.assertEqual(r["breakdown"]["inconsistent"], 1)
+
+    def test_district_legacy_id_proven_by_official_name_venue_date_decision(self):
+        def check(s):
+            for e in s["events"]:
+                if e["event"]["id"] == "nerima-district-123":
+                    e["event"]["id"] = "v15-20261205-toyotama-district"
+            for d in s["decisions"]:
+                if d["decision"].get("candidate_id") == "nerima-district-123":
+                    d["decision"]["candidate_id"] = "v15-20261205-toyotama-district"
+            return reconcile("nerima_district_festivals_2026",
+                             [district_candidate()], s, source_status="checked")
+        r = self.with_data(check)
+        self.assertEqual(r["breakdown"]["published"], 1)
+
+    def test_legacy_id_collision_must_keep_distinct_festival_names(self):
+        def check(s):
+            for e in s["events"]:
+                if e["event"]["id"] == "nerima-district-123":
+                    e["event"]["id"] = "old-id"
+                    e["event"]["name"] = "第一地区祭（別の小学校）"
+            return reconcile("nerima_district_festivals_2026",
+                             [district_candidate()], s, source_status="checked")
+        r = self.with_data(check)
+        self.assertEqual(r["breakdown"]["inconsistent"], 1)
+
+    def test_suginami_organizer_alias_needs_proven_event_and_decision(self):
+        candidate = {"candidate_id": "suginami-official-22661",
+                     "name": "すぎなみフェスタ2026（桃井原っぱ公園ほか）",
+                     "dates": ["2026-11-07"],
+                     "official_url": "https://www.city.suginami.tokyo.jp/s019/event/22661.html"}
+        def check(s):
+            for e in s["events"]:
+                if e["event"]["id"] == "nerima-district-123":
+                    e["event"].update(id="official-2026-suginami-festa",
+                                      name="すぎなみフェスタ2026（キッズタウン・スポーツ体験）",
+                                      venue="桃井原っぱ公園（杉並区桃井3-8-1）",
+                                      official_url="https://www.sugifes.com/event/",
+                                      url="https://www.sugifes.com/event/")
+                    e["event"]["date_start"] = "2026-11-07"
+                    e["event"]["date_end"] = "2026-11-08"
+            for d in s["decisions"]:
+                if d["decision"].get("candidate_id") == "nerima-district-123":
+                    d["decision"].update(candidate_id="manual-primary-official-2026-suginami-festa-2026-11-07",
+                                         name="すぎなみフェスタ2026（キッズタウン・スポーツ体験）",
+                                         evidence=[{"url": "https://www.sugifes.com/event/"}])
+            return reconcile("suginami_calendar_all", [candidate], s, source_status="checked")
+        r = self.with_data(check)
+        self.assertEqual(r["breakdown"]["published"], 1)
+
     def test_source_error_never_becomes_zero_found_events(self):
         r = self.with_data(lambda s: reconcile(
             "suginami_calendar_all", [], s, source_status="error"))

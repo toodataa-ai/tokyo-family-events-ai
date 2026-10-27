@@ -88,4 +88,13 @@ const suginamiAll=sources.find(x=>x.id==='suginami_calendar_all');
 assert.ok(suginamiAll?.enabled && suginamiAll?.required && suginamiAll?.calendar_daily_unfiltered);
 assert.equal(suginamiAll.event_row_audit_required,true);
 assert.ok(data.protected_source_ids.includes(suginamiAll.id));
+const tamemapNow = sources.find(x => x.id === 'tamemap_nakano');
+assert.ok(tamemapNow.search_urls.includes('https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja'),
+  'new arrival supplemental source must be captured alongside original calendar');
+assert.ok(tamemapNow.search_urls.some(x => x.includes('/calendar/{YYYY-MM}')),
+  'original mandatory monthly calendar must not be dropped');
+const itabashiNow = sources.find(x => x.id === 'itabashi_tourism_festival');
+assert.deepEqual(itabashiNow.fallback_source_ids, ['itabashi_official_festival']);
+assert.equal(itabashiNow.required,true);
+assert.ok(sources.find(x => x.id === 'itabashi_official_festival')?.search_urls.some(x => x.includes('/1006858.html')));
 console.log('Suginami official all-category daily source: OK');

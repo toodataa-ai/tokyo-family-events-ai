@@ -1,0 +1,134 @@
+name: Phase 1 official candidate-to-publication parity (read-only)
+# Test on PR. Actual official-source HTTP crawl is opt-in/manual, never silently
+# publishes events or changes historical decisions.
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/source_coverage_reconcile.py'
+      - 'tools/audit_phase1_source_coverage.py'
+      - 'tests/test_source_coverage_reconcile.py'
+      - '.github/workflows/phase1-source-parity.yml'
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/phase1-source-parity.yml'
+      - 'tools/source_coverage_reconcile.py'
+      - 'tools/audit_phase1_source_coverage.py'
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Common Nerima and Suginami parity regression tests
+        run: |
+          python3 -m unittest discover -s tests -p 'test_source_coverage_reconcile.py'
+          python3 -m unittest discover -s tests -p 'test_suginami_calendar.py'
+          python3 -m unittest discover -s tests -p 'test_official_schedule_annual.py'
+          python3 -m unittest discover -s tests -p 'test_nerima_forest_publication.py'
+
+  live-readonly:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout current audit code only
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: inspector
+      - name: Checkout published records only
+        uses: actions/checkout@v4
+        with:
+          ref: data-production
+          path: published-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Set exact six-week published horizon
+        id: horizon
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          m=json.loads(Path('published-data/site/data/manifest.json').read_text(encoding='utf-8'))
+          w=m['weekends']
+          assert len(w)==6
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('start='+w[0]['sat']+'\n')
+              f.write('end='+w[-1]['sun']+'\n')
+          PY
+      - name: Actually crawl the official fiscal-year district festival schedule
+        id: nerima
+        continue-on-error: true
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/phase1"
+          python3 inspector/tools/official_schedule_discovery.py \
+            --start "${{ steps.horizon.outputs.start }}" \
+            --end "${{ steps.horizon.outputs.end }}" \
+            --output "$RUNNER_TEMP/phase1/nerima.json"
+      - name: Actually crawl all Suginami daily pages, monthly indexes and detail pages
+        id: suginami
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 inspector/tools/suginami_full_calendar_evidence.py \
+            --stage-data published-data/site/data \
+            --output "$RUNNER_TEMP/phase1/suginami" \
+            --start "${{ steps.horizon.outputs.start }}" \
+            --end "${{ steps.horizon.outputs.end }}"
+      - name: Strict read-only candidate vs decisions vs published shards
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          python3 inspector/tools/audit_phase1_source_coverage.py \
+            --published-dir published-data/site/data \
+            --nerima-report "$RUNNER_TEMP/phase1/nerima.json" \
+            --suginami-evidence-dir "$RUNNER_TEMP/phase1/suginami" \
+            --output "$RUNNER_TEMP/phase1/report.json" \
+            --strict
+          code=$?
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          target=Path(os.environ["RUNNER_TEMP"])/"phase1"/"report.json"
+          summary=["## 第一弾・公式候補と掲載結果の全件監査", "", "既存データの変更・自動公開なし"]
+          if target.exists():
+              r=json.loads(target.read_text(encoding="utf-8"))
+              for src in r.get("sources", []):
+                  summary += ["", "### "+src["source_id"],
+                              "- 監査状態: "+src["status"],
+                              "- 公式候補: "+str(src.get("candidate_count")),
+                              "- 未照合: "+str(src.get("unreconciled_count")),
+                              "- 内訳: "+str(src.get("breakdown"))]
+                  if src.get("source_notes",{}).get("blocker"):
+                      summary.append("- 阻害要因: "+src["source_notes"]["blocker"])
+                  details=[row for row in src.get("rows",[]) if row["status"] not in ("published","excluded","duplicate")]
+                  summary += ["- 要対応例: "+str([(x["candidate_id"], x["status"], x.get("dates")) for x in details[:20]])]
+          else:
+              summary.append("BLOCKER: audit output missing")
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as f:
+              f.write("\n".join(summary)+"\n")
+          print("\n".join(summary))
+          PY
+          exit "$code"
+      - name: Retain full source evidence and machine-readable audit for manual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase1-source-parity-readonly-${{ github.run_id }}
+          path: ${{ runner.temp }}/phase1/
+          retention-days: 30
+          if-no-files-found: warn

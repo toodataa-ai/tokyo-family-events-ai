@@ -35,6 +35,7 @@ def load_published(root):
         holidays.add(date.isoformat())
     all_events = []
     all_decisions = []
+    target_dates = set()
     for w in weeks:
         sat, sun = (dt.date.fromisoformat(w[k]) for k in ("sat", "sun"))
         if sun < sat:
@@ -42,6 +43,7 @@ def load_published(root):
         ownership = {str(sat), str(sun)}
         # An independent weekday holiday lives in the preceding weekend shard.
         ownership.update(h for h in holidays if sun < dt.date.fromisoformat(h) <= sat + dt.timedelta(days=6))
+        target_dates.update(ownership)
         doc = read_json(root / w["file"])
         rows = list(doc.get("events", []) or [])
         if len(set(doc.get("event_files", []))) != len(doc.get("event_files", [])):
@@ -66,7 +68,7 @@ def load_published(root):
             all_decisions.append({"week": w["sat"], "owned_dates": ownership, "decision": decision})
     return {"manifest": manifest, "events": all_events, "decisions": all_decisions,
             "start": weeks[0]["sat"], "end": weeks[-1]["sun"],
-            "holidays": holidays}
+            "target_dates": target_dates, "holidays": holidays}
 
 
 def candidate_days(candidate, snapshot):
@@ -79,7 +81,7 @@ def candidate_days(candidate, snapshot):
     out = []
     for raw in provided:
         day = str(dt.date.fromisoformat(str(raw)))
-        if start <= day <= end and day not in out:
+        if start <= day <= end and day in snapshot["target_dates"] and day not in out:
             out.append(day)
     return out
 
@@ -139,9 +141,14 @@ def reconcile(source_id, candidates, snapshot, *, source_status, expected_count=
     for c in candidates:
         dates = candidate_days(c, snapshot)
         if not dates:
+            raw = c.get("matched_dates") or c.get("dates")
+            if raw is None and c.get("date_start") == c.get("date_end"):
+                raw = [c["date_start"]]
+            state = "out_of_scope" if isinstance(raw, list) and len(raw) else "needs_date_review"
+            reason = ("Official event occurs on an ordinary weekday outside the published weekends/holidays"
+                      if state == "out_of_scope" else "Monthly-only discovery or no trustworthy event date")
             rows.append({"candidate_id": c["candidate_id"], "name": c.get("name"),
-                         "dates": [], "status": "needs_date_review", "matched_ids": [],
-                         "reason": "Monthly-only discovery or no trustworthy event date"})
+                         "dates": [], "status": state, "matched_ids": [], "reason": reason})
             continue
         for date in dates:
             hits = {e["event"]["id"] for e in snapshot["events"]
@@ -176,10 +183,12 @@ def reconcile(source_id, candidates, snapshot, *, source_status, expected_count=
                          "dates": [date], "status": status, "matched_ids": sorted(hits),
                          "reason": reason})
     breakdown = {status: sum(r["status"] == status for r in rows)
-                 for status in ("published", "excluded", "duplicate", "unreviewed",
-                                "ambiguous", "inconsistent", "needs_date_review")}
-    unresolved = sum(v for k, v in breakdown.items() if k not in ("published", "excluded", "duplicate"))
+                 for status in ("published", "excluded", "duplicate", "out_of_scope",
+                                "unreviewed", "ambiguous", "inconsistent", "needs_date_review")}
+    unresolved = sum(v for k, v in breakdown.items() if k not in ("published", "excluded", "duplicate", "out_of_scope"))
     return {"source_id": source_id, "status": "complete" if not unresolved else "incomplete",
-            "candidate_count": len(candidates), "date_scoped_rows": len(rows),
+            "candidate_count": len(candidates),
+            "in_scope_candidate_count": len({r["candidate_id"] for r in rows if r["status"] != "out_of_scope"}),
+            "date_scoped_rows": len([r for r in rows if r["status"] != "out_of_scope"]),
             "breakdown": breakdown, "unreconciled_count": unresolved, "source_notes": source_notes or {},
             "rows": rows, "read_only": True}

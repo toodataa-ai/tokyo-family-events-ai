@@ -110,12 +110,13 @@ jobs:
               for src in r.get("sources", []):
                   summary += ["", "### "+src["source_id"],
                               "- 監査状態: "+src["status"],
-                              "- 公式候補: "+str(src.get("candidate_count")),
+                              "- 公式全件候補: "+str(src.get("candidate_count")),
+                              "- 土日祝日の対象候補: "+str(src.get("in_scope_candidate_count")),
                               "- 未照合: "+str(src.get("unreconciled_count")),
                               "- 内訳: "+str(src.get("breakdown"))]
                   if src.get("source_notes",{}).get("blocker"):
                       summary.append("- 阻害要因: "+src["source_notes"]["blocker"])
-                  details=[row for row in src.get("rows",[]) if row["status"] not in ("published","excluded","duplicate")]
+                  details=[row for row in src.get("rows",[]) if row["status"] not in ("published","excluded","duplicate","out_of_scope")]
                   summary += ["- 要対応例: "+str([(x["candidate_id"], x["status"], x.get("dates")) for x in details[:20]])]
           else:
               summary.append("BLOCKER: audit output missing")

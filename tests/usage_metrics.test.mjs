@@ -200,3 +200,85 @@ test('clipboard still works when the telemetry callback throws',async () => {
   assert.deepEqual(calls,['copy me','✓コピー済','all fields','✓コピーしました']);
   assert.deepEqual(errors,[]);
 });
+
+test('opt-in browser usage appears only in local chart overlay and toggling off hides it',async()=>{
+  const js=fs.readFileSync('site/usage-history.js','utf8');
+  const html=fs.readFileSync('site/usage-history.html','utf8');
+  const css=fs.readFileSync('site/usage-history.css','utf8');
+  const counts=Object.fromEntries([...EVENTS].map(k=>[k,0]));
+  const today={...counts,page_home:10},totals={...counts,page_home:40};
+  const nodes=new Map();
+  function node(tag='div'){
+    return {tag,children:[],style:{},hidden:false,disabled:false,textContent:'',
+      replaceChildren(...items){this.children=items;},
+      appendChild(item){this.children.push(item);},
+      append(...items){this.children.push(...items);},
+      addEventListener(name,fn){this['on'+name]=fn;}};
+  }
+  const get=id=>{if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);};
+  get('usageHistoryRange').value='30';
+  let on=true;
+  const own={'2026-10-28':{page_home:3,page_search:2}},calls=[];
+  const fakeFetch=async url=>{
+    calls.push(url);
+    if(url==='metrics-config.json')return {ok:true,json:async()=>({enabled:true,endpoint:'https://metrics.example.test'})};
+    if(url.endsWith('/stats'))return {ok:true,json:async()=>({schema_version:1,day_jst:'2026-10-28',today,totals})};
+    if(url.endsWith('/history?days=30'))return {ok:true,json:async()=>({schema_version:1,day_jst:'2026-10-28',days:30,rows:[{day:'2026-10-28',counts:today}]})};
+    throw Error('unexpected URL: '+url);
+  };
+  const self={available:()=>true,enabled:()=>on,get:()=>own,dayJst:()=> '2026-10-28',
+    setEnabled:yes=>(on=yes),clear:()=>{delete own['2026-10-28'];}};
+  vm.runInNewContext(js,{document:{getElementById:get,createElement:node},
+    window:{SiteSelfUsage:self,confirm:()=>true},fetch:fakeFetch,URL,console});
+  for(let n=0;n<5;n++)await new Promise(resolve=>setImmediate(resolve));
+  const chart=get('usageHistoryChart'),rail=chart.children[0].children[1];
+  assert.equal(chart.children.length,1);
+  assert.deepEqual(Array.from(rail.children,x=>x.className),
+    ['usage-history-visual-bar','usage-history-visual-own-bar']);
+  assert.equal(rail.children[0].style.width,'100.0%');
+  assert.equal(rail.children[1].style.width,'50.0%');
+  assert.equal(get('usageHistoryOwnLegend').hidden,false);
+  assert.equal(get('usageHistoryOwnNote').hidden,false);
+  assert.equal(chart.children[0].children[2].textContent,'10');
+  assert.equal(get('usageHistoryRows').children[0].children[1].textContent,'10');
+  get('usageSelfDisable').onclick();
+  assert.equal(get('usageHistoryOwnLegend').hidden,true);
+  assert.equal(get('usageHistoryOwnNote').hidden,true);
+  assert.equal(chart.children[0].children[1].children.length,1);
+  assert.equal(get('usageHistoryRows').children[0].children[1].textContent,'10');
+  assert.equal(calls.length,3);
+  assert.ok(calls.every(url=>!url.includes('page_home')&&!url.includes('browser')));
+  assert.match(html,/id="usageHistoryOwnLegend" hidden/);
+  assert.match(css,/\.usage-history-visual-own-bar/);
+  assert.doesNotMatch(js,/innerHTML\s*=/);
+});
+
+test('staging preview can read only this browser data without recording or changing consent',()=>{
+  const src=fs.readFileSync('site/self-usage.js','utf8');
+  const store=new Map([
+    ['family_events_self_usage_optin_v1','yes'],
+    ['family_events_self_usage_daily_v1',JSON.stringify({'2026-10-28':{page_home:3}})]
+  ]);
+  const localStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v),
+    removeItem:k=>store.delete(k)};
+  const preview={location:{origin:'https://toodataa-ai.github.io',
+    pathname:'/tokyo-family-events-ai/staging/usage-history.html'},
+    localStorage,window:{},Intl,Date};
+  vm.runInNewContext(src,preview);
+  const api=preview.window.SiteSelfUsage;
+  assert.equal(api.available(),true);
+  assert.equal(api.enabled(),true);
+  assert.equal(api.canWrite(),false);
+  assert.equal(api.get()['2026-10-28'].page_home,3);
+  const before=JSON.stringify([...store]);
+  api.record('page_home');
+  assert.equal(api.setEnabled(false),false);
+  api.clear();
+  assert.equal(JSON.stringify([...store]),before,'staging must never write to browser records');
+  const prod={location:{origin:'https://toodataa-ai.github.io',
+    pathname:'/tokyo-family-events-ai/usage-history.html'},
+    localStorage,window:{},Intl,Date};
+  vm.runInNewContext(src,prod);
+  assert.equal(prod.window.SiteSelfUsage.canWrite(),true);
+  assert.equal(prod.window.SiteSelfUsage.enabled(),true);
+});

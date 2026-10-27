@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-28-r2",
+  "current_public_release": "release/2026-10-28-r3",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -239,7 +239,16 @@
       "workflow_run_id": 40595182400,
       "public_version": "1.25",
       "note": "2026-10-28 JST明示承認の本番アプリv1.25。累計表示維持・今日の利用状況・7/30/90/365日の日別履歴・希望者だけの端末内(localStorage)利用メモを追加。既存production v1.24を起点とする隔離12ファイルだけのPR #74。ステージング検証成功(run 40593755025)、独立本番候補監査(run 40594987986)で元ページの差分は集計UIのみ・検索/コピーの元動作一致・data-production不変、GitHub Pages本番公開(run 40595182400)成功。Cloudflare Workerは元のDBを保持したままrun 40593614787で日別履歴API公開、既存累計非減少・preview URLs無効を実測確認。本番イベント、採否、コピー本文、検索/Canva、画像、固定参照元、D1スキーマは変更なし。イベント本番データSHA 1d1687321f82279d6e46899f1fc453169bba5b1d。前版v1.24のrelease/2026-10-28-r1ロールバックを保持。"
+    },
+    {
+      "release_id": "release/2026-10-28-r3",
+      "branch": "release/2026-10-28-r3",
+      "commit_sha": "9efccbcfa31facd7b78ffbdddcdec4ab6d347752",
+      "deployed_at": "2026-10-27T23:04:03Z",
+      "workflow_run_id": 40599359550,
+      "public_version": "1.26",
+      "note": "2026-10-28 JST ユーザー明示承認の本番アプリv1.26。日別利用棒グラフに希望者がこのブラウザで記録した利用回数をオレンジ色で重ね表示。オフ時非表示、他の利用者には端末内の記録を表示せず、ステージングはブラウザローカル記録の読み取り専用。現行production v1.25直系の隔離候補PR #75で5ファイルのみを反映。ステージングrun 40598698148と独立候補監査run 40599255425、Pages公開run 40599359550いずれもsuccess。既存匿名PV・セッション・コピー集計、検索/Canva/イベント個票/収集元/Cloudflare Worker/D1スキーマは不変。data-production SHA 1d1687321f82279d6e46899f1fc453169bba5b1d。以前のv1.25 release/2026-10-28-r2をロールバック候補として保持。"
     }
   ],
-  "current_public_version": "1.20"
+  "current_public_version": "1.26"
 }

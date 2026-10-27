@@ -13,6 +13,7 @@
   const pageEvent = PAGES[location.pathname] || null;
   const production = location.origin === 'https://toodataa-ai.github.io' && !!pageEvent;
   const summary = document.getElementById('siteUsageValues');
+  const todaySummary = document.getElementById('siteUsageToday');
   const pending = [];
   let endpoint = '';
   let configured = false;
@@ -24,6 +25,7 @@
 
   function dispatch(event) {
     if (!configured || !production) return;
+    try { window.SiteSelfUsage?.record(event); } catch (_) { /* optional */ }
     const body = JSON.stringify({event});
     try {
       if (navigator.sendBeacon && navigator.sendBeacon(endpoint + '/collect', new Blob([body], {type:'text/plain'}))) return;
@@ -57,7 +59,10 @@
       const response = await fetch(endpoint + '/stats', {cache:'no-store', mode:'cors', credentials:'omit'});
       if (!response.ok) throw new Error('stats unavailable');
       const data = await response.json();
-      if (data.schema_version !== 1 || !data.totals) throw new Error('invalid metrics schema');
+      if (data.schema_version !== 1 || !data.totals || !data.today ||
+          !/^\d{4}-\d{2}-\d{2}$/.test(data.day_jst || '')) {
+        throw new Error('invalid metrics schema');
+      }
       const n = name => {
         const value = data.totals[name] === undefined ? 0 : data.totals[name];
         if (!Number.isSafeInteger(value) || value < 0) throw new Error('invalid count');
@@ -74,8 +79,23 @@
         ' ／ 成功 ' + formatCount(copy) +
         '（個別 ' + formatCount(n('copy_field')) + '・一括 ' + formatCount(n('copy_all')) + '）' +
         ' ／ セッション目安 ' + formatCount(n('session_start'));
+      if (todaySummary) {
+        const t = name => {
+          const value = data.today[name];
+          if (!Number.isSafeInteger(value) || value < 0) throw new Error('invalid today count');
+          return value;
+        };
+        const pv = t('page_home') + t('page_search') + t('page_copy');
+        const copies = t('copy_field') + t('copy_all');
+        todaySummary.textContent = '表示 ' + formatCount(pv) +
+          ' ／ イベントへ ' + formatCount(t('nav_search')) +
+          ' ／ コピペへ ' + formatCount(t('nav_copy')) +
+          ' ／ コピー成功 ' + formatCount(copies) +
+          ' ／ セッション目安 ' + formatCount(t('session_start'));
+      }
     } catch (_) {
       setStatus('集計データを取得できません');
+      if (todaySummary) todaySummary.textContent = '本日の集計を確認できません';
     }
   }
 

@@ -5,6 +5,7 @@
 <title>東京23区子連れイベントAI収集</title>
 <link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
 <link rel="stylesheet" href="pending-issues.css?v=20261028-1">
+<style>.site-usage-history-link{font-size:12px;color:#275f81;text-decoration:underline;text-underline-offset:3px;font-family:"Meiryo UI",Meiryo,sans-serif}</style>
 </head>
 <body class="home-page" data-season="winter">
 <section class="site-hero">
@@ -109,12 +110,16 @@
 <section class="site-usage" aria-label="サイト利用状況">
   <span class="site-usage-label">サイト利用状況（累計）</span>
   <span class="site-usage-values" id="siteUsageValues" aria-live="polite">計測準備中</span>
+  <span class="site-usage-label">今日の利用状況（日本時間）</span>
+  <span class="site-usage-values" id="siteUsageToday" aria-live="polite">確認中です</span>
+  <a class="site-usage-history-link" href="usage-history.html">過去の利用状況・日別推移を見る</a>
   <details class="site-usage-help"><summary>集計方法</summary>
-    <p>表示＝トップ・イベント検索・コピペ画面のページ表示数。イベントへ／コピペへ＝該当画面へのリンク操作数。コピー押下＝個別・一括のボタンを押した回数。コピー成功＝クリップボードへ正常にコピーできた操作数。セッション目安＝同じタブで同じ日に最初に閲覧した回数であり、人数ではありません。自動アクセス等により概算となります。ステージングは除外し、個人情報・検索内容は記録しません。</p>
+    <p>表示＝トップ・イベント検索・コピペ画面のページ表示数。イベントへ／コピペへ＝該当画面へのリンク操作数。コピー押下＝個別・一括のボタンを押した回数。コピー成功＝クリップボードへ正常にコピーできた操作数。セッション目安＝同じタブで同じ日に最初に閲覧した回数であり、人数ではありません。自動アクセス等により概算となります。ステージングは除外し、個人情報・検索内容は記録しません。 過去の日別履歴は別ページで確認できます。自分の記録は希望者がブラウザ内だけで有効にできます。</p>
   </details>
 </section>
 <footer>GitHubの最新版完全版プロンプトを解決して探索し、候補・掲載・除外・重複を監査可能な形で保存します。</footer>
-<script src="usage-metrics.js?v=20261009-2" defer></script>
+<script src="self-usage.js?v=20261028-1" defer></script>
+<script src="usage-metrics.js?v=20261028-today" defer></script>
 <script type="module">
 import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261021-arts-venue-chain';
 import {summarizeUpdateHistory,formatJapaneseUpdateDate} from './update-history-display.js?v=20261027-weekly-ja-1';

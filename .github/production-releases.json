@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-28-r1",
+  "current_public_release": "release/2026-10-28-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -230,6 +230,15 @@
       "workflow_run_id": 40536897311,
       "note": "ユーザー明示承認の本番アプリv1.24。トップページから開く『現在の残課題・対応状況』を独立ページとして追加。サイト取得の問題2件・イベント候補照合/データ更新の確認作業3件について、利用者への影響・代替対応・次の対応・対応記録リンクを表示。実HTTP監査結果が利用できない場合は未知と表示し、URL取得成功をイベント網羅解消と誤認しない。production v1.23から分岐した隔離8ファイルのみ PR #70経由で反映。読み取り専用本番候補監査 run 40536547066 と Pages本番デプロイ run 40536897311 はともにsuccess。イベント/採否/検索/Canva/収集元は不変。data-production SHA 1d1687321f82279d6e46899f1fc453169bba5b1d保持。",
       "public_version": "1.24"
+    },
+    {
+      "release_id": "release/2026-10-28-r2",
+      "branch": "release/2026-10-28-r2",
+      "commit_sha": "933291588f3ea1ebcd5c311a0376a415037a02a9",
+      "deployed_at": "2026-10-27T22:30:08Z",
+      "workflow_run_id": 40595182400,
+      "public_version": "1.25",
+      "note": "2026-10-28 JST明示承認の本番アプリv1.25。累計表示維持・今日の利用状況・7/30/90/365日の日別履歴・希望者だけの端末内(localStorage)利用メモを追加。既存production v1.24を起点とする隔離12ファイルだけのPR #74。ステージング検証成功(run 40593755025)、独立本番候補監査(run 40594987986)で元ページの差分は集計UIのみ・検索/コピーの元動作一致・data-production不変、GitHub Pages本番公開(run 40595182400)成功。Cloudflare Workerは元のDBを保持したままrun 40593614787で日別履歴API公開、既存累計非減少・preview URLs無効を実測確認。本番イベント、採否、コピー本文、検索/Canva、画像、固定参照元、D1スキーマは変更なし。イベント本番データSHA 1d1687321f82279d6e46899f1fc453169bba5b1d。前版v1.24のrelease/2026-10-28-r1ロールバックを保持。"
     }
   ],
   "current_public_version": "1.20"

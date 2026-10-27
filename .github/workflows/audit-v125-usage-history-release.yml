@@ -1,0 +1,100 @@
+name: Audit isolated production v1.25 anonymous metrics release (read-only)
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/audit-v125-usage-history-release.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  release-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c71a9e0b261df33b2a5bbffb72441485d0358cd2
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exactly 12 approved telemetry-only files against production v1.24
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="237eff8e70919971bcfb58dead440dab5d8280df"
+          HEAD="c71a9e0b261df33b2a5bbffb72441485d0358cd2"
+          test "$(git rev-parse HEAD)" = "$HEAD"
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | sort > /tmp/changed.txt
+          printf '%s\n' \
+            analytics/worker.mjs \
+            package.json \
+            site/copy.html \
+            site/index.html \
+            site/search.html \
+            site/self-usage.js \
+            site/usage-history.css \
+            site/usage-history.html \
+            site/usage-history.js \
+            site/usage-metrics.js \
+            tests/usage_history_release.test.mjs \
+            tests/usage_metrics.test.mjs | sort > /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          git diff --quiet "$BASE" HEAD -- site/data site/app.js site/multi-filter-ui.js site/styles.css site/canva-draft.js analytics/schema.sql site/metrics-config.json
+          if git diff --name-only "$BASE" HEAD | grep -Eq '^(prompts/|policy/|tools/|site/data/|site/audit/)'; then
+            echo "BLOCKER: protected event, source or review files modified"
+            exit 1
+          fi
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          base="237eff8e70919971bcfb58dead440dab5d8280df"
+          old='<script src="usage-metrics.js?v=20261009-2" defer></script>'
+          new='<script src="self-usage.js?v=20261028-1" defer></script>\n<script src="usage-metrics.js?v=20261028-today" defer></script>'
+          for page in ('search','copy'):
+              actual=Path('site/'+page+'.html').read_text()
+              baseline=subprocess.check_output(['git','show',base+':site/'+page+'.html'],text=True)
+              assert actual.replace(new,old)==baseline,'search/copy behavior modified: '+page
+          actual=Path('site/index.html').read_text()
+          baseline=subprocess.check_output(['git','show',base+':site/index.html'],text=True)
+          actual=actual.replace(new,old)
+          actual=actual.replace('<style>.site-usage-history-link{font-size:12px;color:#275f81;text-decoration:underline;text-underline-offset:3px;font-family:"Meiryo UI",Meiryo,sans-serif}</style>\n','')
+          actual=actual.replace('  <span class="site-usage-label">今日の利用状況（日本時間）</span>\n  <span class="site-usage-values" id="siteUsageToday" aria-live="polite">確認中です</span>\n  <a class="site-usage-history-link" href="usage-history.html">過去の利用状況・日別推移を見る</a>\n','')
+          actual=actual.replace(' 過去の日別履歴は別ページで確認できます。自分の記録は希望者がブラウザ内だけで有効にできます。','')
+          assert actual==baseline,'homepage changes outside approved metrics block'
+          print('PASS: original home/search/copy markup and nontelemetry behavior exact')
+          PY
+      - name: Verify unchanged released production event data pointer
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git ls-remote origin refs/heads/data-production | cut -f1)"
+          test "$actual" = "1d1687321f82279d6e46899f1fc453169bba5b1d"
+          echo "PASS: protected production event corpus unchanged"
+      - name: Full historical production regressions and new usage-page tests
+        run: npm test
+      - name: Verify existing Cloudflare API provides nonidentifying day history
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request
+          endpoint='https://tokyo-family-events-metrics.tooda-t-aa.workers.dev'
+          for path in ('/stats','/history?days=7','/history?days=30','/history?days=90','/history?days=365'):
+              req=urllib.request.Request(endpoint+path,headers={
+                  'Origin':'https://toodataa-ai.github.io','User-Agent':'Mozilla/5.0'})
+              with urllib.request.urlopen(req,timeout=25) as res:
+                  assert res.status==200
+                  data=json.load(res)
+              assert data.get('schema_version')==1,path
+              if path.startswith('/history'):
+                  assert isinstance(data.get('rows'),list)
+                  for row in data['rows']:
+                      assert 'visitor_id' not in row and 'ip' not in row
+              else:
+                  assert isinstance(data.get('today'),dict) and isinstance(data.get('totals'),dict)
+          print('PASS: actual read-only Worker stats and all history windows working')
+          PY

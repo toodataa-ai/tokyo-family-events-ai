@@ -82,6 +82,48 @@ export default {
       }
     }
 
+    if (path === '/history' && request.method === 'GET') {
+      const url = new URL(request.url);
+      const rawDays = url.searchParams.get('days') || '30';
+      // Strictly bounded public aggregate read; no visitor identity.
+      if (url.searchParams.size > (url.searchParams.has('days') ? 1 : 0) ||
+          !['7','30','90','365'].includes(rawDays)) {
+        return json({error:'invalid_history_range'},400,origin);
+      }
+      try {
+        const end = todayJst(new Date());
+        const startDate = new Date(end + 'T00:00:00Z');
+        startDate.setUTCDate(startDate.getUTCDate() - Number(rawDays) + 1);
+        const start = startDate.toISOString().slice(0,10);
+        const result = await env.DB.prepare(
+          'SELECT day, event, count FROM event_counts ' +
+          'WHERE day >= ?1 AND day <= ?2 ORDER BY day DESC, event'
+        ).bind(start,end).all();
+        // Only dates with actual recorded rows are returned. Never invent
+        // prior history or imply that missing days have verified zero usage.
+        const byDay = new Map();
+        for (const row of result.results || []) {
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(row.day) ||
+              row.day < start || row.day > end || !EVENT_SET.has(row.event) ||
+              !Number.isSafeInteger(Number(row.count)) || Number(row.count) < 0) {
+            continue;
+          }
+          if (!byDay.has(row.day)) {
+            byDay.set(row.day,Object.fromEntries(EVENTS.map(event => [event,0])));
+          }
+          byDay.get(row.day)[row.event] += Number(row.count);
+        }
+        const rows = [...byDay.entries()].sort((a,b) => b[0].localeCompare(a[0]))
+          .map(([day,counts]) => ({day,counts}));
+        return json({schema_version:1,day_jst:end,days:Number(rawDays),
+          start_day_jst:start,end_day_jst:end,recorded_days:rows.length,
+          rows,notes:'記録がある日だけ表示。過去の未計測日は0件とみなさない。個人識別なし。'},
+          200,origin);
+      } catch (_) {
+        return json({error:'history_unavailable'},503,origin);
+      }
+    }
+
     if (path === '/stats' && request.method === 'GET') {
       try {
         const date = todayJst(new Date());

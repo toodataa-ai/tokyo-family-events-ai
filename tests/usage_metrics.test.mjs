@@ -19,6 +19,13 @@ function memoryDb() {
               return {success:true};
             },
             async all() {
+              if (sql.includes('SELECT day, event, count FROM event_counts')) {
+                const [start,end] = params;
+                return {results:[...counts.entries()]
+                  .map(([key,count])=>({day:key.slice(0,10),event:key.slice(11),count}))
+                  .filter(row=>row.day>=start&&row.day<=end)
+                  .sort((a,b)=>b.day.localeCompare(a.day)||a.event.localeCompare(b.event))};
+              }
               const [today] = params;
               const results = EVENTS.map(event => {
                 const rows = [...counts.entries()].filter(([key]) => key.endsWith('/' + event));
@@ -76,6 +83,63 @@ test('collector is strictly allowlisted and aggregates only anonymous event name
   assert.match(payload.day_jst,/^\d{4}-\d\d-\d\d$/);
   assert.equal(payload.clipboard,undefined);
   assert.equal(stats.headers.get('Access-Control-Allow-Origin'),origin);
+});
+
+test('history returns bounded real daily aggregates, never visitor identities or fake missing dates',async () => {
+  const env={DB:memoryDb()};
+  const create=async event=>{
+    const res=await worker.fetch(request('/collect','POST',{event}),env);
+    assert.equal(res.status,200);
+  };
+  await create('page_home');await create('copy_all');await create('page_home');
+  const response=await worker.fetch(request('/history?days=30','GET'),env);
+  assert.equal(response.status,200);
+  const result=await response.json();
+  assert.equal(result.schema_version,1);
+  assert.equal(result.days,30);
+  assert.equal(result.rows.length,1);
+  assert.equal(result.rows[0].day,result.day_jst);
+  assert.equal(result.rows[0].counts.page_home,2);
+  assert.equal(result.rows[0].counts.copy_all,1);
+  assert.equal(result.rows[0].counts.nav_search,0);
+  assert.equal(result.visitor_id,undefined);
+  assert.equal(result.rows[0].ip_address,undefined);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'),origin);
+  for (const q of ['?days=999','?days=0','?days=30&visitor=abc','?days=30&days=7']){
+    const bad=await worker.fetch(request('/history'+q,'GET'),env);
+    assert.equal(bad.status,400);
+  }
+  const blocked=await worker.fetch(request('/history?days=7','GET',undefined,'https://evil.invalid'),env);
+  assert.equal(blocked.headers.get('Access-Control-Allow-Origin'),null);
+});
+
+test('site history and own-device controls are staged safely and do not change anonymous database schema',()=>{
+  const index=fs.readFileSync('site/index.html','utf8');
+  const history=fs.readFileSync('site/usage-history.html','utf8');
+  const js=fs.readFileSync('site/usage-history.js','utf8');
+  const local=fs.readFileSync('site/self-usage.js','utf8');
+  assert.match(index,/id="siteUsageToday"/);
+  assert.match(index,/href="usage-history\.html"/);
+  for(const p of ['index','search','copy']){
+    const html=fs.readFileSync('site/'+p+'.html','utf8');
+    assert.match(html,/self-usage\.js/);
+    assert.match(html,/usage-metrics\.js/);
+    assert.ok(html.indexOf('self-usage.js')<html.indexOf('usage-metrics.js'));
+  }
+  for(const id of ['usageHistoryRange','usageHistoryRows','usageSelfEnable','usageSelfDisable',
+                   'usageSelfClear','usageHistoryTodayViews','usageHistoryAllViews']){
+    assert.match(history,new RegExp('id="'+id+'"'));
+  }
+  assert.match(js,/\/history\?days=/);
+  assert.match(js,/history API unavailable|history endpoint|history API|history API unavailable|history API/);
+  assert.doesNotMatch(js,/\.innerHTML\s*=/);
+  assert.match(local,/localStorage/);
+  assert.match(local,/SiteSelfUsage/);
+  assert.match(local,/setEnabled/);
+  assert.match(local,/https:\/\/toodataa-ai\.github\.io/);
+  assert.doesNotMatch(local,/fetch\(|sendBeacon|XMLHttpRequest|visitor_id|document\.cookie/);
+  const schema=fs.readFileSync('analytics/schema.sql','utf8');
+  assert.doesNotMatch(schema,/visitor_id|user_id|ip_address/);
 });
 
 test('browser instrumentation is attached only to three visible pages and copy success paths',() => {

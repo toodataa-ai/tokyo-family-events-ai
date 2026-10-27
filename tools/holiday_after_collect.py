@@ -122,6 +122,84 @@ def html_links(body, source_url):
     return " ".join(p.title).strip()[:180], out
 
 
+class TamemapNewArrivalHTML(HTMLParser):
+    """Visible new-arrival headings with optional uploader label.
+
+    The event cards may be clickable via JavaScript without usable anchor URLs.
+    A new posting is only a lead; its relative posting age is NOT an event date.
+    """
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.entries = []
+        self.in_heading = False
+        self.heading_parts = []
+        self.skip = 0
+        self.awaiting_poster = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.skip += 1
+        if tag == "h3" and not self.skip:
+            self.heading_parts = []
+            self.in_heading = True
+
+    def handle_data(self, data):
+        if self.skip:
+            return
+        text = " ".join(data.split())
+        if not text:
+            return
+        if self.in_heading:
+            self.heading_parts.append(text)
+        elif self.awaiting_poster and self.entries:
+            found = re.search(r"(?:投稿者|投稿団体)\s*[:：]\s*(.+)", text)
+            if found:
+                self.entries[-1]["poster"] = found.group(1).strip()[:110]
+                self.awaiting_poster = False
+
+    def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.skip = max(0, self.skip - 1)
+        if tag == "h3" and self.in_heading:
+            name = " ".join(self.heading_parts).strip()
+            if name and name not in ("イベントの新着一覧", "イベント情報", "地域イベント情報"):
+                self.entries.append({"name": name[:240]})
+                self.awaiting_poster = True
+            self.in_heading = False
+            self.heading_parts = []
+
+
+def tamemap_new_arrival_leads(body, url):
+    """Discover unverified *title* leads; publication requires primary detail."""
+    parsed = urlsplit(url)
+    if (parsed.scheme != "https" or parsed.hostname != "pc.tamemap.net" or
+            parsed.path != "/1311401/new_arrival"):
+        raise ValueError("Tamemap newest-post feed URL not allowed")
+    if not re.search(r"イベントの新着一覧|イベント新着一覧", body):
+        raise ValueError("not a Tamemap new-arrival event listing")
+    html = TamemapNewArrivalHTML()
+    html.feed(body)
+    if not html.entries:
+        raise ValueError("Tamemap new-arrival page has no visible event titles")
+    # Do not conflate different cards with identical titles but different
+    # uploaders; if no uploader is known, distinguish repeated positions.
+    counts, candidates = {}, []
+    for item in html.entries[:100]:
+        name, poster = item["name"], item.get("poster", "")
+        identity = name + "|" + poster
+        counts[identity] = counts.get(identity, 0) + 1
+        suffix = "|" + str(counts[identity]) if counts[identity] > 1 else ""
+        candidates.append({
+            "candidate_id": "tamemap-newarrival-" + digest(identity + suffix),
+            "name": name, "poster": poster, "discovery_url": url,
+            "source_id": "tamemap_nakano", "candidate_type": "new_arrival_title_lead",
+            "date_unverified": True, "matched_dates": [],
+            "primary_source_verified": False, "publication_approved": False,
+            "review_required": "投稿本文の詳細・開催日・会場・主催者一次情報を個別に要確認。新着日時を開催日に使用しない。"
+        })
+    return candidates
+
+
 def suginami_official_event_links(body, source_url):
     """Extract every official event ID, not just keyword-matched titles.
 
@@ -371,6 +449,13 @@ def inspect(job, fetcher=None):
             result["candidates"] = holiday_calendar_candidates(
                 evidence["body"], job["url"], job["holiday"], job["calendar_mode"])
             result["calendar_day_candidate_links"] = len(result["candidates"])
+        elif (job.get("source_id") == "tamemap_nakano" and
+              urlsplit(job["url"]).path == "/1311401/new_arrival"):
+            result["candidates"] = tamemap_new_arrival_leads(evidence["body"], job["url"])
+            result["page_title"] = "ためまっぷなかの・新着一覧（投稿候補のみ）"
+            result["individually_verified_event_count"] = None
+            result["candidate_status"] = "unverified_title_leads"
+            result["new_arrival_is_partial_not_calendar_replacement"] = True
         elif job.get("source_id") == "suginami_calendar_all":
             result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
             result["page_title"] = "杉並区公式イベントカレンダー"
@@ -488,6 +573,27 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
                                     "challenge_detected": True})
         else:
             outstanding_failures.append(failure)
+    source_fallbacks = []
+    configured = {row["id"]: row for row in plan.get("explicit_source_checks", [])}
+    for source_id, cfg in configured.items():
+        ids = cfg.get("fallback_source_ids") or []
+        if not ids:
+            continue
+        primary = [x for x in rows if x.get("kind") == "explicit"
+                   and x.get("source_id") == source_id]
+        alternatives = [x for x in rows if x.get("kind") == "explicit"
+                        and x.get("source_id") in ids]
+        primary_failed = bool(primary and any(x["status"] != "checked" for x in primary))
+        available = sorted({x["source_id"] for x in alternatives if x["status"] == "checked"})
+        source_fallbacks.append({
+            "source_id": source_id, "primary_failed": primary_failed,
+            "primary_source_errors_preserved": True,
+            "alternative_source_ids": ids, "verified_accessible_alternatives": available,
+            "status": ("official_alternative_checked_not_primary" if primary_failed and available
+                       else "no_fallback_needed" if not primary_failed else "no_alternative_verified"),
+            "candidate_publication_approved": False,
+            "note": "板橋観光協会の障害を成功扱いせず、区公式の独立した証拠で必要なイベントを別途検証する。"
+        })
     ward_failures = [{"ward": ward, **stat} for ward, stat in wards.items()
                      if stat["errors"]]
     annual_failures = [row for row in annual if row["status"] != "checked"]
@@ -556,6 +662,7 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
                     ],
                     "tamemap_source_still_required": True,
                     "blockers": blockers},
+        "source_fallbacks": source_fallbacks,
         "supplemental_sources": (supplemental or {}).get("source_checks", []),
         "requests": [{k: v for k, v in r.items() if k != "candidates"} for r in rows],
         "candidate_pool": list(unique.values())

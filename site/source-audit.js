@@ -69,6 +69,15 @@
                                    String(r.observed_distinct_link_leads)+'件':'未計測')));
    const proof=txt('div','候補の掲載・除外・重複：未照合（件数不明）');proof.style.fontWeight='700';
    meta.appendChild(proof);
+   if(Number.isInteger(r?.new_arrival_post_leads_observed)&&r.new_arrival_post_leads_observed>0) {
+     meta.appendChild(txt('div','新着一覧の投稿候補：'+r.new_arrival_post_leads_observed+
+       '件（開催日・主催者未確認。元カレンダーの失敗はそのまま表示）'));
+   }
+   for(const alternate of r?.official_alternatives||[]) {
+     meta.appendChild(txt('div','別サイトの公式補完：'+alternate.source_id+
+       ' / '+(alternate.retrieval_status==='checked'?'URL取得済み（元の障害は未解消）':
+              '取得未確認')));
+   }
    meta.appendChild(txt('div',r?.detail_adapter?'専用監査：'+r.detail_adapter+'（結果は別ジョブ）':
      '個別イベント照合：追加検証が必要'));
    e.appendChild(meta);

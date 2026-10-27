@@ -50,3 +50,18 @@
 - 他人の利用人数や個々の利用者は現在の匿名集計では判別不能。サイト全体と自分のブラウザの数の差を正確な他者人数として表示しない。
 - 従来の匿名計測イベント名・POST契約・セッション重複抑止は維持する。
 - 本番公開に必要な作業：GitHub Pagesの改修とは独立して Cloudflare 側で analytics/worker.mjs をデプロイし、実際の /history?days=7 が返ることを検証する。Workerをデプロイせずに日別履歴が利用可能だと主張しない。
+
+## 2026-10-28 日別履歴Workerの安全な公開
+
+GitHub Pagesのステージング公開とCloudflare Workerの更新は別です。日別履歴は /history?days=7 の実取得成功後に完成となります。
+
+Cloudflareの権限がGitHub Actionsに設定されていれば、専用workflowがD1データを守りながら更新できます。GitHub Settings → Secrets and variables → Actions に以下2件のrepository secretsを登録します（値はこのチャットやGitのコードに書かない）。
+
+- CLOUDFLARE_API_TOKEN：対象Worker更新に必要な最低限の権限を持つCloudflare APIトークン
+- CLOUDFLARE_ACCOUNT_ID：そのWorkerがあるCloudflareアカウントのID（32桁）
+
+GitHub Actions → Deploy verified Cloudflare metrics history API without D1 migration → Run workflow を実行します。PCでのWranglerログインは不要です。
+
+本workflowは既存Workerの設定APIからD1 DBというバインディングを照合し、予期しないバインディングがある場合は停止。稼働中の /stats の累計を保存し、同じD1へ接続したコードのみ公開。公開後は /stats の累計非減少、/history?days=7,30,90,365 の応答と匿名日別数値を検証します。データベース生成・削除・移行はしません。必要な2件のSecretsがなければ本番Workerへ書き込みません。
+
+Cloudflare側の正常な実デプロイと、サイトアプリのユーザー承認による本番公開は別工程です。個人識別や自分/他人を自動識別する仕組みは導入しません。

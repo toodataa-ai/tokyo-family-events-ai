@@ -79,7 +79,10 @@ jobs:
           import json,os,sys,urllib.error,urllib.request
           from pathlib import Path
           try:
-              with urllib.request.urlopen(os.environ["WORKER_ENDPOINT"]+"/stats",timeout=20) as response:
+              with urllib.request.urlopen(urllib.request.Request(
+                  os.environ["WORKER_ENDPOINT"]+"/stats",
+                  headers={"Origin":"https://toodataa-ai.github.io",
+                           "User-Agent":"Mozilla/5.0"}),timeout=20) as response:
                   data=json.load(response)
           except urllib.error.HTTPError as e:
               print("DIAGNOSTIC: existing Worker /stats HTTP status: "+str(e.code))
@@ -103,7 +106,9 @@ jobs:
           endpoint=os.environ["WORKER_ENDPOINT"]
           old=json.loads(Path("/tmp/live-totals.json").read_text())
           def fetch(path):
-              with urllib.request.urlopen(endpoint+path,timeout=20) as r:
+              with urllib.request.urlopen(urllib.request.Request(
+                  endpoint+path,headers={"Origin":"https://toodataa-ai.github.io",
+                                         "User-Agent":"Mozilla/5.0"}),timeout=20) as r:
                   if r.status!=200: raise ValueError("non-200")
                   return json.load(r)
           for attempt in range(8):

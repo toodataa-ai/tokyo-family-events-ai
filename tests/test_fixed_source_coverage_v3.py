@@ -82,7 +82,7 @@ class FixedSourcePhase3Tests(unittest.TestCase):
 
     def test_zero_event_links_cannot_be_counted_as_zero_event_candidates(self):
         def bare(url):
-            return 200,b"<title>公式サイト</title><main>記事一覧</main>",url,"text/html"
+            return 200,"<title>公式サイト</title><main>記事一覧</main>".encode("utf-8"),url,"text/html"
         x=source_audit(self.registry["explicit_sources"][0],self.start,self.end,
                        fetcher=bare)
         self.assertEqual(x["retrieval_status"],"checked")

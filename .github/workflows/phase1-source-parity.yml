@@ -7,6 +7,8 @@ on:
     paths:
       - 'tools/source_coverage_reconcile.py'
       - 'tools/audit_phase1_source_coverage.py'
+      - 'tools/official_schedule_discovery.py'
+      - 'tests/test_official_schedule_annual.py'
       - 'tests/test_source_coverage_reconcile.py'
       - '.github/workflows/phase1-source-parity.yml'
   workflow_dispatch: {}
@@ -16,6 +18,8 @@ on:
       - '.github/workflows/phase1-source-parity.yml'
       - 'tools/source_coverage_reconcile.py'
       - 'tools/audit_phase1_source_coverage.py'
+      - 'tools/official_schedule_discovery.py'
+      - 'tests/test_official_schedule_annual.py'
 
 permissions:
   contents: read

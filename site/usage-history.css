@@ -14,10 +14,17 @@
 .usage-history-table th:first-child,.usage-history-table td:first-child{text-align:left}
 .usage-history-table th{position:sticky;top:0;background:#edf4f8;color:#27445c;font-size:11px}
 .usage-history-table tbody tr:hover{background:#f7fbff}
+.usage-history-legend{display:flex;gap:15px;flex-wrap:wrap;font-size:11px;color:#405e73;margin:11px 0 4px}
+.usage-history-legend span{display:inline-flex;align-items:center;gap:5px}
+.usage-history-legend [hidden],.usage-history-page #usageHistoryOwnNote[hidden]{display:none!important}
+.usage-history-legend i{display:inline-block;width:13px;height:8px;border-radius:2px}
+.usage-history-key-all{background:#6b95b5}
+.usage-history-key-own{background:#d46c35}
 .usage-history-visual{display:grid;gap:7px;margin:12px 0 18px}
 .usage-history-visual-row{display:grid;grid-template-columns:100px 1fr 48px;gap:9px;align-items:center;font-size:11px;color:#52687a}
-.usage-history-visual-rail{background:#e9f0f6;border-radius:5px;height:10px;overflow:hidden}
+.usage-history-visual-rail{position:relative;background:#e9f0f6;border-radius:5px;height:14px;overflow:hidden}
 .usage-history-visual-bar{height:100%;background:#6b95b5;border-radius:5px}
+.usage-history-visual-own-bar{position:absolute;left:0;bottom:0;height:5px;background:#d46c35;border-radius:0 4px 4px 0;pointer-events:none}
 .usage-self-usage{border:1px solid #cddde8;background:#fbfdff;border-radius:10px;padding:13px}
 .usage-self-usage button{font:inherit;font-size:12px;padding:8px 13px;border-radius:8px;background:white;border:1px solid #aabfce;color:#284f6d;cursor:pointer}
 .usage-self-usage button:focus-visible{outline:3px solid #8cc0ea}

@@ -5,7 +5,7 @@
 <title>サイト利用状況（日別履歴） | 東京23区子連れイベントAI収集</title>
 <meta name="description" content="サイト利用の今日・累計・過去の日別推移を表示。希望した場合のみ、このブラウザの利用回数を別に保存します。">
 <link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
-<link rel="stylesheet" href="usage-history.css?v=20261028-1">
+<link rel="stylesheet" href="usage-history.css?v=20261028-2">
 </head>
 <body class="usage-history-page">
 <section class="site-hero"><div class="hero-inner">
@@ -36,7 +36,12 @@
   <select id="usageHistoryRange"><option value="7">過去7日間</option><option value="30" selected>過去30日間</option><option value="90">過去90日間</option><option value="365">過去365日間</option></select>
  </div>
  <p class="usage-history-status" id="usageHistoryStatus" aria-live="polite">日別履歴を読み込み中です。</p>
- <div class="usage-history-visual" id="usageHistoryChart" aria-label="日別のページ表示数"></div>
+ <div class="usage-history-legend" aria-label="棒グラフの凡例">
+  <span><i class="usage-history-key-all" aria-hidden="true"></i>サイト全体</span>
+  <span id="usageHistoryOwnLegend" hidden><i class="usage-history-key-own" aria-hidden="true"></i>このブラウザの記録</span>
+ </div>
+ <div class="usage-history-visual" id="usageHistoryChart" aria-label="日別のページ表示数。端末内記録が有効な場合は同じ軸に重ねて表示"></div>
+ <p class="usage-history-status" id="usageHistoryOwnNote" hidden>オレンジ色は、このブラウザで記録をオンにした後の利用分です。ほかの端末や過去の利用は含みません。自分の記録はサーバーへ送られず、このブラウザでだけ表示されます。全体との差は「他人の人数」ではありません。</p>
  <div class="usage-history-table-container">
   <table class="usage-history-table"><thead><tr>
    <th scope="col">日本時間の日付</th><th scope="col">表示</th><th scope="col">ページ移動</th>
@@ -64,5 +69,5 @@
 </main>
 <footer class="site-footer"><a href="index.html">トップページへ戻る</a> ／ <a href="pending-issues.html">残課題一覧</a></footer>
 <script src="self-usage.js?v=20261028-1" defer></script>
-<script src="usage-history.js?v=20261028-1" defer></script>
+<script src="usage-history.js?v=20261028-2" defer></script>
 </body></html>

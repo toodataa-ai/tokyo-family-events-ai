@@ -64,10 +64,13 @@ jobs:
               except urllib.error.HTTPError as e:
                   if allow404 and e.code==404:return None
                   raise RuntimeError('Cloudflare API status '+str(e.code)) from None
-          account_settings=get(base+'/workers/subdomain')
-          subdomain=(account_settings or {}).get('subdomain','')
-          if not re.fullmatch('[a-z0-9-]{2,64}',subdomain):
-              sys.exit('BLOCKER: Cloudflare workers.dev subdomain cannot be verified')
+          # The token can inspect the existing Worker but lacks permission
+          # for account-wide subdomain reads (403). Keep its known public URL.
+          event=get(base+'/workers/scripts/tokyo-family-events-metrics/settings')
+          event_bindings=(event or {}).get('bindings',[])
+          if len(event_bindings)!=1 or event_bindings[0].get('name')!='DB' or event_bindings[0].get('type')!='d1':
+              sys.exit('BLOCKER: existing family-events Worker binding cannot be verified; refuse provisioning')
+          subdomain='tooda-t-aa'  # public workers.dev suffix from event metrics-config.json
           existing=get(base+'/workers/scripts/keiba-notes-metrics/settings',True)
           binding=None
           if existing:

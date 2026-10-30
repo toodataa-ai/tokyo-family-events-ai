@@ -1,0 +1,78 @@
+name: Guarded keiba namespace deployment to existing metrics Worker (no event UI change)
+on:
+  push:
+    branches: [infra/keiba-anon-metrics-20261030]
+    paths:
+      - '.github/workflows/deploy-keiba-shared-worker-guarded.yml'
+permissions: {contents: read}
+concurrency: {group: cloudflare-metrics-history-deploy, cancel-in-progress: false}
+jobs:
+  guarded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate original event site API source is entirely unmodified
+        run: |
+          set -euo pipefail
+          python3 -m py_compile analytics/keiba_shared_validate.py
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          original=subprocess.check_output(['git','show','e24039d31add8de2854478c2180943b7dce54abc:analytics/worker.mjs'],text=True)
+          live=subprocess.check_output(['git','show','origin/main:analytics/worker.mjs'],text=True)
+          assert original==live, 'BLOCKER: main event Worker source changed; need to rebase before deploy'
+          source=Path('analytics/worker.mjs').read_text()
+          start=source.index('// Keiba-only namespace.')
+          end=source.index('export default {',start)
+          new=source[:start]+source[end:]
+          insert="    // Separate /keiba namespace. All original event-site routes remain untouched.\n    if (path.startsWith('/keiba/')) return keibaApi(request,env,origin,new URL(request.url));"
+          assert new.count(insert)==1
+          new=new.replace(insert,'')
+          assert new==original, 'BLOCKER: event Worker existing source differs from original'
+          assert 'CREATE TABLE IF NOT EXISTS keiba_site_event_counts' in source
+          assert 'UPDATE event_counts' not in source
+          print('PASS_EVENT_WORKER_ORIGINAL_SOURCE_BYTE_EXACT')
+          PY
+      - name: Run original and keiba isolated regression tests
+        run: |
+          set -euo pipefail
+          node --check analytics/worker.mjs
+          node --test tests/usage_metrics.test.mjs tests/keiba_metrics_shared_worker.test.mjs
+      - name: Capture original live counters and exact D1 binding before deployment
+        run: |
+          set -euo pipefail
+          python3 analytics/keiba_shared_validate.py preflight
+      - name: Deploy new keiba-prefixed API and verify preserved event data; restore original on failure
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd analytics
+          npx --yes wrangler@4 deploy --config wrangler.toml
+          cd ..
+          if python3 analytics/keiba_shared_validate.py verify; then
+            echo 'PASS_SHARED_METRICS_WORKER_DEPLOYED_AND_VERIFIED'
+            exit 0
+          fi
+          echo '::error::Shared Worker verification failed; immediately restore original event-site Worker'
+          git show e24039d31add8de2854478c2180943b7dce54abc:analytics/worker.mjs > analytics/worker.mjs
+          (cd analytics && npx --yes wrangler@4 deploy --config wrangler.toml) || echo '::error::ROLLBACK_FAILED_ACTION_REQUIRED'
+          python3 - <<'PY'
+          from analytics.keiba_shared_validate import family
+          from pathlib import Path
+          import json
+          old=json.loads(Path('/tmp/keiba-shared-baseline.json').read_text())
+          new=family()
+          for kind in ('totals','today'):
+              for event,count in old['stats'][kind].items():
+                  assert new['stats'][kind][event]>=count, 'original metric reduced on rollback'
+          print('PASS_EVENT_WORKER_ORIGINAL_COUNTS_AFTER_ROLLBACK')
+          PY
+          exit 1

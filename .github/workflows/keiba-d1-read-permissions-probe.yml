@@ -1,0 +1,58 @@
+name: Read-only proof of existing family-events D1 access for keiba table
+on:
+  push:
+    branches: [infra/keiba-anon-metrics-20261030]
+    paths:
+      - '.github/workflows/keiba-d1-read-permissions-probe.yml'
+permissions: {contents: read}
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - name: Inspect existing Worker binding and READ-ONLY D1 schema metadata
+        run: |
+          python3 - <<'PY'
+          import json,os,sys,re,urllib.request,urllib.error
+          t=os.environ.get('CLOUDFLARE_API_TOKEN','')
+          acc=os.environ.get('CLOUDFLARE_ACCOUNT_ID','')
+          if not t or not re.fullmatch('[a-fA-F0-9]{32}',acc):
+              sys.exit('BLOCKER: event-site Cloudflare credentials unavailable')
+          base=f'https://api.cloudflare.com/client/v4/accounts/{acc}'
+          headers={'Authorization':'Bearer '+t,'Accept':'application/json','Content-Type':'application/json'}
+          def req(path,method='GET',body=None):
+              data=json.dumps(body).encode() if body is not None else None
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(base+path,headers=headers,method=method,data=data),timeout=20) as r:
+                      return r.status,json.load(r)
+              except urllib.error.HTTPError as e:
+                  return e.code,None
+          status,worker=req('/workers/scripts/tokyo-family-events-metrics/settings')
+          if status!=200 or not worker or not worker.get('success'):
+              sys.exit('BLOCKER: existing Worker read access HTTP '+str(status))
+          bindings=(worker.get('result') or {}).get('bindings',[])
+          if len(bindings)!=1 or bindings[0].get('name')!='DB' or bindings[0].get('type')!='d1':
+              sys.exit('BLOCKER: unexpected event-site Worker DB binding')
+          db=bindings[0].get('database_id') or bindings[0].get('id')
+          if not isinstance(db,str) or not re.fullmatch(r'[a-fA-F0-9-]{36}',db):
+              sys.exit('BLOCKER: cannot identify bound D1')
+          print('PASS existing event Worker DB binding and token read')
+          status,info=req('/d1/database/'+db)
+          print('READ_ONLY D1 database metadata HTTP',status)
+          status,result=req('/d1/database/'+db+'/query','POST',{
+              'sql':"SELECT name FROM sqlite_master WHERE type='table' AND name IN ('event_counts','keiba_site_event_counts') ORDER BY name",
+              'params':[]
+          })
+          print('READ_ONLY D1 schema metadata query HTTP',status)
+          if status==200 and result and result.get('success'):
+              rows=(result.get('result') or [{}])[0].get('results') or []
+              names={r.get('name') for r in rows}
+              print('D1_EVENT_TABLE_PRESENT', 'event_counts' in names)
+              print('D1_KEIBA_TABLE_PRESENT', 'keiba_site_event_counts' in names)
+          else:
+              print('BLOCKER: existing token cannot read dedicated D1 schema; a separate table cannot yet be validated or created safely')
+          PY

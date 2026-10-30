@@ -35,7 +35,7 @@ jobs:
           new=source[:start]+source[end:]
           insert="    // Separate /keiba namespace. All original event-site routes remain untouched.\n    if (path.startsWith('/keiba/')) return keibaApi(request,env,origin,new URL(request.url));"
           assert new.count(insert)==1
-          new=new.replace(insert,'')
+          new=new.replace('\n'+insert,'')
           assert new==original, 'BLOCKER: event Worker existing source differs from original'
           assert 'CREATE TABLE IF NOT EXISTS keiba_site_event_counts' in source
           assert 'UPDATE event_counts' not in source

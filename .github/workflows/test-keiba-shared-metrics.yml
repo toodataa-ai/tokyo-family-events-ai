@@ -1,0 +1,35 @@
+name: Validate keiba isolated shared Worker branch (no deployment)
+on:
+  push:
+    branches: [infra/keiba-anon-metrics-20261030]
+    paths:
+      - '.github/workflows/test-keiba-shared-metrics.yml'
+      - 'analytics/worker.mjs'
+      - 'tests/keiba_metrics_shared_worker.test.mjs'
+permissions: {contents: read}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Lint and run BOTH existing events and keiba isolation tests
+        run: |
+          node --check analytics/worker.mjs
+          node --test tests/usage_metrics.test.mjs tests/keiba_metrics_shared_worker.test.mjs
+      - name: Assert protected legacy worker code remains byte-equivalent
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('analytics/worker.mjs').read_text()
+          assert s.count('if (path.startsWith(\'/keiba/\'))')==1
+          assert 'CREATE TABLE IF NOT EXISTS keiba_site_event_counts' in s
+          assert 'INSERT INTO keiba_site_event_counts' in s
+          assert 'INSERT INTO event_counts (day, event, count)' in s
+          assert 'UPDATE event_counts' not in s
+          assert 'DROP TABLE' not in s and 'DELETE FROM event_counts' not in s
+          assert 'tokyo-family-events-metrics' not in s
+          print('PASS: no mutations to event_counts beyond its original collector')
+          PY

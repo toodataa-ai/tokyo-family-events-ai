@@ -1,0 +1,194 @@
+name: One-time isolated keiba metrics Cloudflare provisioning (no event site changes)
+on:
+  push:
+    branches: [infra/keiba-anon-metrics-20261030]
+    paths:
+      - '.github/workflows/keiba-anon-metrics-runner.yml'
+permissions:
+  contents: read
+concurrency:
+  group: keiba-metrics-cloudflare-provision
+  cancel-in-progress: false
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      WORKER_NAME: keiba-notes-metrics
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: toodataa-ai/keiba-notes
+          ref: e0caafd2a384ab585d70f2d6f60d82e77c0d9b80
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test isolated worker and forbid production analytics edits
+        run: |
+          set -euo pipefail
+          node --check docs/lab/analytics/worker.mjs
+          node --test docs/lab/analytics/worker.test.mjs
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cfg=json.loads(Path('docs/lab/usage-analytics-config.json').read_text())
+          assert cfg['site']=='keiba-notes'
+          assert not Path('docs/data/site-usage-config.json').exists()
+          assert 'tokyo-family-events-metrics' not in Path('docs/lab/analytics/worker.mjs').read_text()
+          print('PASS: immutable racing data and event-site metrics remain isolated')
+          PY
+      - name: Verify Cloudflare secrets and inspect only the named worker
+        run: |
+          python3 - <<'PY'
+          import json,os,re,sys,urllib.request,urllib.error
+          from pathlib import Path
+          token=os.environ.get('CLOUDFLARE_API_TOKEN','').strip()
+          account=os.environ.get('CLOUDFLARE_ACCOUNT_ID','').strip()
+          missing=[k for k,v in [('CLOUDFLARE_API_TOKEN',token),('CLOUDFLARE_ACCOUNT_ID',account)] if not v]
+          if missing:
+              sys.exit('BLOCKER: Set keiba-notes repository Actions secrets: '+', '.join(missing))
+          if not re.fullmatch('[0-9a-fA-F]{32}',account):
+              sys.exit('BLOCKER: Cloudflare account ID must be 32 hexadecimal chars')
+          headers={'Authorization':'Bearer '+token,'Accept':'application/json'}
+          base='https://api.cloudflare.com/client/v4/accounts/'+account
+          def get(url,allow404=False):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=20) as r:
+                      data=json.load(r)
+                  if data.get('success') is not True:raise ValueError('Cloudflare API did not succeed')
+                  return data.get('result')
+              except urllib.error.HTTPError as e:
+                  if allow404 and e.code==404:return None
+                  raise RuntimeError('Cloudflare API status '+str(e.code)) from None
+          account_settings=get(base+'/workers/subdomain')
+          subdomain=(account_settings or {}).get('subdomain','')
+          if not re.fullmatch('[a-z0-9-]{2,64}',subdomain):
+              sys.exit('BLOCKER: Cloudflare workers.dev subdomain cannot be verified')
+          existing=get(base+'/workers/scripts/keiba-notes-metrics/settings',True)
+          binding=None
+          if existing:
+              bindings=existing.get('bindings',[])
+              if len(bindings)!=1 or bindings[0].get('name')!='DB' or bindings[0].get('type')!='d1':
+                  sys.exit('BLOCKER: existing keiba Worker has unexpected bindings; refusing overwrite')
+              binding=bindings[0].get('database_id') or bindings[0].get('id')
+              if not isinstance(binding,str) or not re.fullmatch('[0-9a-fA-F-]{36}',binding):
+                  sys.exit('BLOCKER: existing Worker DB binding cannot be verified')
+          Path('/tmp/keiba-cloudflare-preflight.json').write_text(json.dumps(
+            {'subdomain':subdomain,'existing_worker':bool(existing),'bound_db':binding}))
+          print('PASS: Cloudflare credentials and dedicated workers.dev subdomain verified; existing worker:',bool(existing))
+          PY
+      - name: Discover or create ONLY keiba-notes-metrics D1
+        working-directory: docs/lab/analytics
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4 d1 list --json > /tmp/keiba-d1-before.json
+          python3 - <<'PY'
+          import json,sys
+          from pathlib import Path
+          items=json.loads(Path('/tmp/keiba-d1-before.json').read_text())
+          if isinstance(items,dict):items=items.get('result') or items.get('databases') or []
+          if not isinstance(items,list):sys.exit('BLOCKER: cannot verify D1 list')
+          matches=[x for x in items if x.get('name')=='keiba-notes-metrics']
+          if len(matches)>1:sys.exit('BLOCKER: multiple D1 databases with same name')
+          existing=json.loads(Path('/tmp/keiba-cloudflare-preflight.json').read_text())
+          if not matches and existing['existing_worker']:
+              sys.exit('BLOCKER: existing Worker missing dedicated D1 database')
+          if matches and not existing['existing_worker']:
+              sys.exit('BLOCKER: reserved D1 name already exists without verified Worker; manual recovery needed')
+          if matches:
+              dbid=matches[0].get('uuid') or matches[0].get('id') or matches[0].get('database_id')
+              if existing['bound_db']!=dbid:
+                  sys.exit('BLOCKER: Worker binds a different D1; refusing to overwrite or migrate')
+          Path('/tmp/keiba-d1-preexisting').write_text('yes' if matches else 'no')
+          print('PASS: isolated D1 name is available or matches existing verified Worker')
+          PY
+          if [[ $(cat /tmp/keiba-d1-preexisting) == no ]]; then
+            npx --yes wrangler@4 d1 create keiba-notes-metrics --location=apac > /tmp/keiba-d1-created.log
+          fi
+          npx --yes wrangler@4 d1 list --json > /tmp/keiba-d1-after.json
+          python3 - <<'PY'
+          import json,re,sys
+          from pathlib import Path
+          items=json.loads(Path('/tmp/keiba-d1-after.json').read_text())
+          if isinstance(items,dict):items=items.get('result') or items.get('databases') or []
+          matches=[x for x in items if x.get('name')=='keiba-notes-metrics']
+          if len(matches)!=1:sys.exit('BLOCKER: dedicated D1 not uniquely located')
+          uuid=matches[0].get('uuid') or matches[0].get('id') or matches[0].get('database_id')
+          if not isinstance(uuid,str) or not re.fullmatch('[0-9a-fA-F-]{36}',uuid):
+              sys.exit('BLOCKER: malformed dedicated D1 UUID')
+          Path('wrangler.toml').write_text(
+              'name = "keiba-notes-metrics"\n'
+              'main = "worker.mjs"\n'
+              'compatibility_date = "2026-10-30"\n'
+              'workers_dev = true\n'
+              'preview_urls = false\n\n'
+              '[[d1_databases]]\n'
+              'binding = "DB"\n'
+              'database_name = "keiba-notes-metrics"\n'
+              'database_id = "'+uuid+'"\n')
+          print('PASS: Wrangler config references only keiba-notes-metrics')
+          PY
+      - name: Initialize ONLY new dedicated D1; leave existing DB data unchanged
+        working-directory: docs/lab/analytics
+        run: |
+          set -euo pipefail
+          if [[ $(cat /tmp/keiba-d1-preexisting) == no ]]; then
+            npx --yes wrangler@4 d1 execute keiba-notes-metrics --remote --file=schema.sql --yes --config wrangler.toml
+          else
+            echo 'PASS: Existing bound D1 preserved (no schema migration)'
+          fi
+      - name: Deploy ONLY keiba-named worker
+        working-directory: docs/lab/analytics
+        run: npx --yes wrangler@4 deploy --config wrangler.toml
+      - name: Read-only verify live stats/history, identity and event isolation
+        run: |
+          python3 - <<'PY'
+          import json,time,urllib.request,urllib.error,sys
+          from pathlib import Path
+          pre=json.loads(Path('/tmp/keiba-cloudflare-preflight.json').read_text())
+          base='https://keiba-notes-metrics.'+pre['subdomain']+'.workers.dev'
+          headers={'Origin':'https://toodataa-ai.github.io','User-Agent':'Mozilla/5.0'}
+          def get(path):
+              with urllib.request.urlopen(urllib.request.Request(base+path,headers=headers),timeout=18) as r:
+                  return json.load(r)
+          for attempt in range(10):
+              try:
+                  stats=get('/stats')
+                  hist=get('/history?days=7')
+                  if stats.get('site')=='keiba-notes' and hist.get('site')=='keiba-notes':break
+              except Exception:pass
+              if attempt==9:sys.exit('BLOCKER: deployed dedicated Worker not ready')
+              time.sleep(4)
+          events=('page_home','page_this_week','page_results','page_schedule',
+              'page_methodology','page_research','page_other','session_start')
+          for counts in (stats['today'],stats['totals']):
+              if set(counts)!=set(events) or any(not isinstance(v,int) or v<0 for v in counts.values()):
+                  sys.exit('BLOCKER: stats schema or nonnegative counts invalid')
+          if stats.get('schema_version')!=1 or hist.get('schema_version')!=1:
+              sys.exit('BLOCKER: unexpected API version')
+          for days in (7,30,90,365):
+              h=hist if days==7 else get('/history?days='+str(days))
+              if h.get('days')!=days or h.get('site')!='keiba-notes' or not isinstance(h.get('rows'),list):
+                  sys.exit('BLOCKER: daily history contract invalid')
+              observed=set()
+              for row in h['rows']:
+                  if row.get('day') in observed or not isinstance(row.get('counts'),dict):
+                      sys.exit('BLOCKER: duplicate/invalid date row')
+                  observed.add(row['day'])
+                  if set(row['counts'])!=set(events) or any(not isinstance(x,int) or x<0 for x in row['counts'].values()):
+                      sys.exit('BLOCKER: history count invalid')
+          print('PASS: isolated keiba metrics API and daily history validated')
+          Path('/tmp/keiba-metrics-endpoint.txt').write_text(base)
+          PY
+      - name: Report deployed LAB backend endpoint (not yet tracking production)
+        run: |
+          set -euo pipefail
+          base=$(cat /tmp/keiba-metrics-endpoint.txt)
+          [[ "$base" == https://keiba-notes-metrics.*.workers.dev ]]
+          echo "PASS: KEIBA_METRICS_LAB_ENDPOINT=$base"
+          echo 'PASS: Event site main/production/data-production and original D1 remain unchanged'

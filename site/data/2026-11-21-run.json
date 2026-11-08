@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 37,
-    "verified": 29,
+    "published": 38,
+    "verified": 30,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2155,5 +2155,21 @@
     "source_failures_remain_unverified": true,
     "unreviewed_candidate_links_at_current_audit": 859,
     "read_only_evidence_run_id": 42475157453
+  },
+  "verified_somei_autumn_20261109": {
+    "new_event_ids": [
+      "verified-20261123-toshima-somei-autumn-festival"
+    ],
+    "official_urls": [
+      "https://www.city.toshima.lg.jp/132/2609161020.html"
+    ],
+    "as_of_jst": "2026-11-09",
+    "prior_event_ids_changed": 0,
+    "prior_event_ids_removed": 0,
+    "source_failures_remain_unverified": true,
+    "candidate_pool_initial_links": 859,
+    "individual_review_pending": 750,
+    "read_only_detail_artifact_id": 13635440202,
+    "notes": "2026-11-23 official city page fetch succeeded. Official date overrides contradictory nonprimary aggregator."
   }
 }

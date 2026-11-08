@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated": "2026-10-27T18:59:43+09:00",
-  "default": "2026-10-31",
+  "generated": "2026-11-08T16:10:00+09:00",
+  "default": "2026-11-07",
   "rolling_horizon_weeks": 6,
   "publication_tiers": {
     "full": "今週〜2週間先。全掲載イベントを公式確認済みにする",
@@ -10,21 +10,12 @@
   },
   "weekends": [
     {
-      "sat": "2026-10-31",
-      "sun": "2026-11-01",
-      "label": "10/31(土)〜11/1(日)",
-      "file": "2026-10-31.json",
-      "count": 71,
-      "horizon_index": 1,
-      "publication_tier": "full"
-    },
-    {
       "sat": "2026-11-07",
       "sun": "2026-11-08",
       "label": "11/7(土)〜11/8(日)",
       "file": "2026-11-07.json",
       "count": 52,
-      "horizon_index": 2,
+      "horizon_index": 1,
       "publication_tier": "full"
     },
     {
@@ -33,8 +24,8 @@
       "label": "11/14(土)〜11/15(日)",
       "file": "2026-11-14.json",
       "count": 41,
-      "horizon_index": 3,
-      "publication_tier": "preview"
+      "horizon_index": 2,
+      "publication_tier": "full"
     },
     {
       "sat": "2026-11-21",
@@ -42,7 +33,7 @@
       "label": "11/21(土)〜11/22(日)",
       "file": "2026-11-21.json",
       "count": 30,
-      "horizon_index": 4,
+      "horizon_index": 3,
       "publication_tier": "preview"
     },
     {
@@ -51,8 +42,8 @@
       "label": "11/28(土)〜11/29(日)",
       "file": "2026-11-28.json",
       "count": 25,
-      "horizon_index": 5,
-      "publication_tier": "announcement"
+      "horizon_index": 4,
+      "publication_tier": "preview"
     },
     {
       "sat": "2026-12-05",
@@ -60,6 +51,15 @@
       "label": "12/5(土)〜12/6(日)",
       "file": "2026-12-05.json",
       "count": 29,
+      "horizon_index": 5,
+      "publication_tier": "announcement"
+    },
+    {
+      "sat": "2026-12-12",
+      "sun": "2026-12-13",
+      "label": "12/12(土)〜12/13(日)",
+      "file": "2026-12-12.json",
+      "count": 18,
       "horizon_index": 6,
       "publication_tier": "announcement"
     }
@@ -71,16 +71,20 @@
   },
   "holidays": [
     {
-      "date": "2026-10-12",
-      "name": "スポーツの日"
-    },
-    {
-      "date": "2026-11-03",
-      "name": "文化の日"
-    },
-    {
       "date": "2026-11-23",
-      "name": "勤労感謝の日"
+      "name": "勤労感謝の日",
+      "weekend_sat": "2026-11-21"
     }
-  ]
+  ],
+  "current_rollover": {
+    "as_of_jst": "2026-11-08",
+    "mode": "verified-current-horizon-subset",
+    "base_data_production_sha": "1d1687321f82279d6e46899f1fc453169bba5b1d",
+    "evidence_workflow_run_id": 42456012607,
+    "evidence_artifact_id": 13607681119,
+    "retired_week_start": "2026-10-31",
+    "new_week_start": "2026-12-12",
+    "unresolved_required_source_failures": 3,
+    "unverified_candidate_links": 844
+  }
 }

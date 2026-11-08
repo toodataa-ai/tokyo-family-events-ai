@@ -20,6 +20,7 @@ from urllib.parse import quote, urljoin, urlsplit
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
+from http_source_diagnostics import diagnostic_for_http_error
 from nerima_annual_resolver import resolve_annual_schedule_urls
 from official_schedule_discovery import extract_candidates
 from nerima_forest_schedule import parse_schedule as parse_nerima_forest_schedule
@@ -255,20 +256,19 @@ def fetch_url(url, fetcher=None, attempts=2):
                 body = raw.decode(charset)
             except UnicodeDecodeError:
                 body = raw.decode("cp932")
-            return {**evidence, "status": "checked", "http_status": status,
-                    "final_url": final_url, "content_type": content_type,
+            # Never carry error headers from a previously failed retry into a
+            # successful 200. Only the final successful body is authoritative.
+            return {"url": url, "checked_at": now(), "status": "checked",
+                    "http_status": status, "final_url": final_url,
+                    "content_type": content_type,
                     "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(),
                     "body": body}
         except (HTTPError, URLError, OSError, ValueError, UnicodeError, TimeoutError) as error:
             evidence["error"] = str(error)[:350]
             if isinstance(error, HTTPError):
-                evidence["http_status"] = error.code
-                evidence["response_server"] = error.headers.get("Server", "")
-                evidence["challenge_detected"] = (
-                    error.code == 403
-                    and evidence["response_server"].casefold() == "cloudflare"
-                    and b"Just a moment" in error.read(2048)
-                )
+                # Capture at most 4 KiB of *response metadata/signature*;
+                # do not retain the untrusted raw error HTML or discard 404s.
+                evidence.update(diagnostic_for_http_error(error))
             if attempt + 1 < attempts:
                 time.sleep(0.4 * (attempt + 1))
     return evidence

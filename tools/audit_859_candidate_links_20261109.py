@@ -93,7 +93,8 @@ def triage(pool,published,decisions,days):
             classification,reason="dated_out_of_calendar_scope","Verified structured date range does not intersect published weekend/weekday-holiday target"
         else:
             strong=[m for m in matches if near_name(label,m.get("name")) and
-                    (not explicit or bool(explicit&actual_dates(m) or explicit&days and not actual_dates(m)))]
+                    (not explicit or bool(explicit&actual_dates(m))) and
+                    (not calendar or bool(calendar&actual_dates(m)))]
             if strong:
                 classification,reason="published_individual_identity_match","Same official URL and compatible event name; source/date needs no new record for this identity"
                 ref=[m.get("id") for m in strong[:5]]

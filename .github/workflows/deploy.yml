@@ -259,7 +259,11 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "history-provenance-only-20261108" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-two-official-omissions-20261108" ]; then
+            python3 staging-policy-src/tools/validate_two_official_omissions_20261108.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+            echo 'No old source failure was changed, and the 859 remaining candidate links are not marked audited.'
+          elif [ "${{ needs.gate.outputs.operation }}" = "history-provenance-only-20261108" ]; then
             node staging-policy-src/tools/validate_history_metadata_provenance.mjs \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
             echo 'Historical source audit debt unchanged; no candidate-level verification claimed.'

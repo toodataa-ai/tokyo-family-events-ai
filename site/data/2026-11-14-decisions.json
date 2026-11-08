@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 49,
-    "published": 44,
+    "candidate_total": 50,
+    "published": 45,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -3784,6 +3784,79 @@
       ],
       "override_reason": "",
       "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-20261114-nakano-nogata-editing",
+      "name": "小学生のための編集教室「ぬりえで学ぶ色の基本」",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v1",
+        "reason": "東京都こどもスマイルムーブメント（2026-11-04更新）と主催NPOの告知で11/14の対象・日時・図書館会場・無料・事前申込を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "対象は小学生と明記された色彩ワークショップ。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "ぬりえを使って色を学ぶ体験型編集講座。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生対象、先着20人。はさみ・のり・色鉛筆を持参。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "10時から12時までの定員制講座で途中参加に制約。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "事前予約が必要、野方図書館へ各自来場。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "東京都公式掲載の参加費は無料。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "原則事前予約制、先着20名。空きがあれば当日受付。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "色の性質を実際の表現に使う教育的な工作体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "public_organizer_date_venue_verified",
+        "elementary_education_workshop",
+        "free_booking_verified"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_target_activity",
+      "reason_codes": [
+        "child_target_activity"
+      ],
+      "reasons": [
+        "東京都公式の個別参加イベント。11/14の学校児童対象工作、定員・場所・無料・申込を確認。既存44件とは別企画。"
+      ],
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4231",
+          "basis": "東京都こどもスマイル2026-11-04掲載：日時・会場・対象・申込・主催者"
+        },
+        {
+          "url": "https://www.kokuchpro.com/event/877cecc8413810ccd217f10bd71f7ac8/",
+          "basis": "主催NPOのイベント申込案内：2026-11-14 10-12時・無料・先着20人"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08独立公式資料で追加、旧データと既存候補・判断は不変"
     }
   ]
 }

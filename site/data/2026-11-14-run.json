@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 49,
-    "published": 44,
+    "candidates": 50,
+    "published": 45,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 44,
+    "verified": 45,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
-    "thumbnail_coverage": 0.75,
+    "thumbnail_coverage": 0.733,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 4,
@@ -237,5 +237,19 @@
     "required_source_errors_remaining": 3,
     "unverified_candidate_links_remaining": 844,
     "note": "2026-11-08の公式個別ページ再確認で追加。既存の23区探索証跡や未検証候補件数を成功扱いにしない。"
+  },
+  "verified_individual_omission_20261108": {
+    "as_of_jst": "2026-11-08",
+    "new_event_ids": [
+      "verified-20261114-nakano-nogata-editing"
+    ],
+    "official_urls": [
+      "https://kodomo-smile.metro.tokyo.lg.jp/events/4231"
+    ],
+    "prior_events_changed": 0,
+    "prior_events_removed": 0,
+    "source_failures_remain_unverified": true,
+    "unreviewed_candidate_links_at_current_audit": 859,
+    "read_only_evidence_run_id": 42475157453
   }
 }

@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 52,
-    "published": 36,
+    "candidate_total": 53,
+    "published": 37,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3507,6 +3507,78 @@
       ],
       "override_reason": "",
       "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-20261121-meguro-shinobu-playpark",
+      "name": "志のぶわいわいパーク28（創立115周年記念コンサート）",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "学校法人久光学園・志のぶ幼稚園公式11/21年度別日程と園の告知で地域開放のプレーパーク、工作、コンサートの実開催を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子どもから大人まで地域に開かれた園庭あそび場。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "プレイパーク、工作、絵本、体操の参加企画あり。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼稚園の地域向け行事で子どもと家族が主対象。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "午前9:30〜11:30の地域開放で立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "園庭開催につき雨天時には屋内一部開放に変更の可能性。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "主催者公式の該当日案内から入場料金の明示を確認できない。販売物は別料金の可能性。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式個別ページの最新の来場条件を確認すること。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で工作・遊び・音楽を楽しみ地域交流できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "organizer_date_venue_verified",
+        "playpark_craft_family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_target_activity",
+      "reason_codes": [
+        "child_target_activity"
+      ],
+      "reasons": [
+        "2026年11月21日の地域向けプレイパーク、工作、コンサート開催を幼稚園公式で確認。既存イベントと独立。"
+      ],
+      "evidence": [
+        {
+          "url": "https://shinobu-kg.com/park/",
+          "basis": "幼稚園公式の年間スケジュール・11/21園庭プログラム"
+        },
+        {
+          "url": "https://shinobu-kg.com/",
+          "basis": "主催幼稚園の11/21開催告知"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08主催者公式で個別確認、価格・予約は不明のまま保持、既存レコード不変"
     }
   ]
 }

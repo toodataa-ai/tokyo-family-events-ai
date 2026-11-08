@@ -34,7 +34,7 @@ jobs:
           path: evidence
       - name: Cross-check current live branch and immutable source evidence
         run: |
-          test "$(git -C published rev-parse HEAD)" = "45c2688a84a0e045ece7d756d7df028b784526d6"
+          test "$(git -C published rev-parse HEAD)" = "0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8"
           python3 - <<'PY'
           import json
           from pathlib import Path

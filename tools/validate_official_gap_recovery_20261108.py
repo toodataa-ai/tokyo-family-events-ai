@@ -84,7 +84,10 @@ def main():
     args = parser.parse_args()
     base = args.base_ref
     check(re.fullmatch(r"[a-f0-9]{40}", base) is not None, "real 40-character baseline SHA required")
-    # CI fetches data-staging --depth=1 before running this check, which can\n    # mark HEAD shallow despite its GitHub-verified parent. Compare immutable\n    # baseline trees and records directly; do not rely on ancestry flags.\n    subprocess.run(["git", "cat-file", "-e", f"{base}^{{commit}}"], check=True)
+    # CI fetches data-staging --depth=1 before running this check, which can
+    # mark HEAD shallow despite its GitHub-verified parent. Compare immutable
+    # baseline trees and records directly; do not rely on ancestry flags.
+    subprocess.run(["git", "cat-file", "-e", f"{base}^{{commit}}"], check=True)
     data_dir = args.data_dir
     baseline_manifest = baseline_file(base, "site/data/manifest.json")
     current_manifest = read_json(data_dir / "manifest.json")

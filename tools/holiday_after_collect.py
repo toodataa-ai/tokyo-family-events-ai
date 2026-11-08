@@ -435,12 +435,78 @@ def build_jobs(plan):
     return jobs
 
 
+
+# Two month-suffixed Nerima calendar routes returned HTTP 404 on 2026-11-09.
+# The official monthless pages are observed as HTTP 200 and show Nov 2026
+# calendar rows. For a DIFFERENT month, reject the monthless page unless its
+# own heading matches the requested year/month; do not fabricate date matches.
+NERIMA_HOLIDAY_INDEX_FALLBACKS = {
+    "nerima_monthly":
+        "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar.html",
+    "nerima_kids_monthly":
+        "https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar.html",
+}
+
+
+def nerima_holiday_calendar_fallback(job, previous, fetcher=None):
+    """Return unverified calendar leads, preserving original 404 as an error."""
+    fallback = NERIMA_HOLIDAY_INDEX_FALLBACKS.get(job.get("source_id"))
+    if (job.get("kind") != "holiday_calendar"
+            or previous.get("http_status") != 404
+            or not fallback):
+        return [], None
+    observed = fetch_url(fallback, fetcher)
+    proof = {
+        "fallback_url": fallback,
+        "fallback_status": observed["status"],
+        "fallback_http_status": observed.get("http_status"),
+        "original_source_status_remains": "error",
+        "original_http_status": 404,
+        "original_source_url": job["url"],
+        "calendar_month_matches_target": False,
+        "candidate_count": 0,
+        "event_details_verified": False,
+        "publication_permitted": False,
+        "decision_reconciliation": "pending",
+    }
+    if observed["status"] != "checked":
+        proof["fallback_error"] = observed.get("error", "official index unreachable")
+        return [], proof
+    day = dt.date.fromisoformat(job["holiday"])
+    # The monthless index changes with the current month. Reject any page
+    # whose heading does not identify the month containing this target holiday.
+    month_label = re.compile(
+        rf"{day.year}\s*年\s*0?{day.month}\s*月\s*カレンダー")
+    if not month_label.search(observed["body"]):
+        proof["fallback_error"] = "official index month mismatch; no candidate may be inferred"
+        return [], proof
+    proof["calendar_month_matches_target"] = True
+    proof["fallback_sha256"] = observed["sha256"]
+    try:
+        candidates = holiday_calendar_candidates(
+            observed["body"], fallback, job["holiday"], job["calendar_mode"])
+    except (ValueError, ET.ParseError) as error:
+        proof["fallback_error"] = "official calendar parse error: " + str(error)
+        return [], proof
+    proof["candidate_count"] = len(candidates)
+    return candidates, proof
+
+
 def inspect(job, fetcher=None):
     result = {**job, "checked_at": now(), "status": "error",
               "candidates": []}
     evidence = fetch_url(job["url"], fetcher)
     result.update(public_row(evidence))
     if evidence["status"] != "checked":
+        leads, fallback_proof = nerima_holiday_calendar_fallback(job, evidence, fetcher)
+        if fallback_proof is not None:
+            result["official_calendar_index_fallback"] = fallback_proof
+            result["candidates"] = leads
+            result["calendar_day_candidate_links"] = len(leads)
+            result["candidate_link_count"] = len(leads)
+            # The original 404 remains error even when an official index was
+            # accessible; candidate links require independent event facts.
+            result["status"] = "error"
         return result
     try:
         if job["kind"] in ("ai_cross", "holiday_ai_cross"):
@@ -600,7 +666,9 @@ def collect(plan, fetcher=None, max_workers=12, supplemental_config=None,
     holiday_calendar_checks = [
         {"source_id": r["source_id"], "ward": r["ward"], "date": r["holiday"],
          "status": r["status"], "url": r["url"],
-         "candidate_count": len(r["candidates"]), "error": r.get("error", "")}
+         "candidate_count": len(r["candidates"]), "error": r.get("error", ""),
+         "official_index_fallback": r.get("official_calendar_index_fallback"),
+         "original_status_not_masked": r["status"] != "checked"}
         for r in rows if r["kind"] == "holiday_calendar"
     ]
     raw_candidates = []

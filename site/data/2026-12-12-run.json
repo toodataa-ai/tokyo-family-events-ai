@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "target": {
+    "sat": "2026-12-12",
+    "sun": "2026-12-13"
+  },
+  "horizon_index": 6,
+  "publication_tier": "announcement",
+  "mode": "verified-current-horizon-subset",
+  "prompt": {
+    "version": "v1.15",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+    "pointer": "site/data/latest_prompt.json",
+    "resolved": true
+  },
+  "source_data": {
+    "week_file": "2026-12-12.json",
+    "verification_file": "2026-12-12-verification.json",
+    "decision_file": "2026-12-12-decisions.json"
+  },
+  "read_only_evidence": {
+    "workflow_run_id": 42456012607,
+    "artifact_id": 13607681119,
+    "digest": "sha256:5aeb50a04d58344b10a3abcb80ba95160f7141a3f0dfd093b6f92d534b7de36b",
+    "request_count": 588,
+    "requests_success": 583,
+    "candidate_links_unverified": 844,
+    "required_source_failures": [
+      {
+        "id": "tamemap_nakano",
+        "url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "tamemap_nakano",
+        "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "tamemap_nakano",
+        "url": "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "holiday_calendar_failures": [
+      {
+        "id": "nerima_monthly",
+        "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "id": "nerima_kids_monthly",
+        "url": "https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar202611.html",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  "discovery_evidence": {
+    "artifact_reference": "manual-latest-20261108-evidence",
+    "ward_count": 23,
+    "query_count_per_ward": 3,
+    "ward_official_check_count": 23
+  },
+  "official_schedule_checks": [
+    {
+      "source_id": "nerima_district_festivals_2026",
+      "status": "checked",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "checked_at": "2026-11-08T15:45:30+09:00",
+      "official_row_count": 0,
+      "matched_candidate_count": 0,
+      "candidate_ids": [],
+      "unmatched_official_rows": [],
+      "resolved_pages": [
+        {
+          "fiscal_year": 2026,
+          "resolved_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+          "row_count": 5,
+          "checked_at": "2026-11-08T15:45:30+09:00",
+          "sha256": "73e055089fb70037b029801d80480b64a79b875082dce9f48adaa10ea70dd4af"
+        }
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "name": "resolve_prompt",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "discover_23_wards",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "normalize_and_dedupe",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "family_fit_decision_audit",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "freeze_candidates",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "official_verification",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "apply_corrections",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "strict_validation",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "decision_validation",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "copy_contract_test",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "shared_filter_test",
+      "status": "passed",
+      "evidence": "2026-11-08 immutable read-only audit + individually verified subset"
+    },
+    {
+      "name": "deploy",
+      "status": "pending",
+      "evidence": "awaiting data promotion"
+    }
+  ],
+  "summary": {
+    "wards_checked": 23,
+    "candidates": 20,
+    "published": 18,
+    "excluded": 2,
+    "duplicate_removed": 0,
+    "verified": 15,
+    "announced": 3,
+    "corrected": 0,
+    "thumbnail_count": 12,
+    "thumbnail_coverage": 0.667,
+    "decision_audit_complete": true,
+    "hard_excluded": 0,
+    "soft_excluded": 2,
+    "protected_carryover": 13,
+    "new_official_published": 5
+  }
+}

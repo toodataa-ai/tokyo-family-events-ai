@@ -390,6 +390,12 @@ jobs:
             python3 ../production-src/tools/validate_decisions.py --strict site/data
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
+              # Immutable events/source checks are unchanged. Re-audit only the
+              # five new IDs in this exact historical provenance-only correction.
+              # The preexisting source backlog is neither erased nor marked checked.
+              node ../staging-src/tools/validate_history_metadata_provenance.mjs \
+                --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
@@ -421,7 +427,10 @@ jobs:
             fi
             python3 ../production-src/tools/validate_rereview.py site/data --strict
             if [ "$stage" != "$base" ]; then
-              if [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
+              if [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
+                node ../staging-src/tools/validate_history_metadata_provenance.mjs \
+                  --base-ref "$base" --data-dir site/data
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
                 python3 ../staging-src/tools/validate_nerima_forest_addition.py --base-ref "$base"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
                 echo "Immutable source+history already audited by validate_data on candidate before promotion; data-staging unchanged."

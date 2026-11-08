@@ -3,17 +3,17 @@
   "sat": "2026-11-28",
   "sun": "2026-11-29",
   "label": "11/28(土)〜11/29(日)",
-  "generated": "2026-10-27T07:41:00+09:00",
+  "generated": "2026-11-08T08:44:28.608Z",
   "horizon_index": 4,
   "publication_tier": "preview",
   "verification_file": "2026-11-28-verification.json",
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 41,
+    "candidate_count": 43,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 25,
+    "published_count": 27,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,9 +47,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
       },
       {
         "ward": "文京区",
@@ -230,7 +230,8 @@
     "2026-11-28-events-verified-continuity.json",
     "2026-11-28-events-manual-festival-subprograms.json",
     "2026-11-28-events-verified-subset-2026-11-29.json",
-    "2026-11-28-events-nerima-forest-20261027.json"
+    "2026-11-28-events-nerima-forest-20261027.json",
+    "2026-11-28-events-gap-recovery-20261108.json"
   ],
   "events": []
 }

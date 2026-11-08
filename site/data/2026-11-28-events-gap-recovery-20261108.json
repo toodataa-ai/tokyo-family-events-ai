@@ -1,0 +1,142 @@
+[
+  {
+    "id": "gap-20261129-shinjuku-kashiwa",
+    "ward": "新宿区",
+    "name": "第32回 新宿かしわまつり",
+    "url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "official_url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "source": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "period": "11/29(日)",
+    "date_start": "2026-11-29",
+    "date_end": "2026-11-29",
+    "time": "10:30〜14:30",
+    "venue": "柏木地域センター",
+    "price": null,
+    "description": "柏木地域センターの地域まつり。地域団体の活動を楽しめる催しで、詳細は主催施設の案内を確認。",
+    "categories": [
+      "地域",
+      "祭り",
+      "文化"
+    ],
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "一般向けも含むが家族で楽しめる内容がある。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "料金・予約要否は施設の案内を確認。"
+        },
+        "stay_flexibility": {
+          "grade": "A",
+          "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+        },
+        "reservation": {
+          "grade": "unknown",
+          "reason": "料金・予約要否は施設の案内を確認。"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": null,
+      "note": "料金・予約要否は施設の案内を確認。"
+    },
+    "indoor_outdoor": "屋内",
+    "ai": {
+      "checked_at": "2026-11-08",
+      "confidence": "high",
+      "discovery_query": "2026-11-08 individual official gap-recovery review; preexisting 23-ward crawl evidence"
+    }
+  },
+  {
+    "id": "gap-20261129-shinjuku-goalball",
+    "ward": "新宿区",
+    "name": "ゴールボール体験会",
+    "url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "official_url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "source": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+    "period": "11/29(日)",
+    "date_start": "2026-11-29",
+    "date_end": "2026-11-29",
+    "time": "13:30〜16:00",
+    "venue": "新宿スポーツセンター 大体育室",
+    "price": null,
+    "description": "ゴールボール選手による体験イベント。定員約30名、11/20（金）17時までに申込み。参加対象の詳細は主催者へ確認。",
+    "categories": [
+      "スポーツ",
+      "体験",
+      "パラスポーツ"
+    ],
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "一般向けも含むが家族で楽しめる内容がある。"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "11/20 17時までに電話またはオンラインで申込、約30名。"
+        },
+        "stay_flexibility": {
+          "grade": "B",
+          "reason": "事前申込みや定員があり時間調整は限定的。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "11/20 17時までに電話またはオンラインで申込、約30名。"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+        }
+      }
+    },
+    "reservation": {
+      "required": true,
+      "note": "11/20 17時までに電話またはオンラインで申込、約30名。"
+    },
+    "indoor_outdoor": "屋内",
+    "ai": {
+      "checked_at": "2026-11-08",
+      "confidence": "high",
+      "discovery_query": "2026-11-08 individual official gap-recovery review; preexisting 23-ward crawl evidence"
+    }
+  }
+]

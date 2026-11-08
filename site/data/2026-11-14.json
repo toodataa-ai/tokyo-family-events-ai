@@ -3,17 +3,17 @@
   "sat": "2026-11-14",
   "sun": "2026-11-15",
   "label": "11/14(土)〜11/15(日)",
-  "generated": "2026-11-08T16:05:00+09:00",
+  "generated": "2026-11-08T08:44:28.608Z",
   "horizon_index": 2,
   "publication_tier": "full",
   "verification_file": "2026-11-14-verification.json",
   "run_file": "2026-11-14-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 46,
+    "candidate_count": 49,
     "duplicate_removed": 0,
     "excluded_count": 5,
-    "published_count": 41,
+    "published_count": 44,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,9 +47,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "v1.5完全再探索。候補0件、掲載0件。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "v1.5完全再探索。候補0件、掲載0件。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
       },
       {
         "ward": "文京区",
@@ -137,9 +137,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 2,
-        "published_count": 2,
-        "note": "v1.5完全再探索。候補0件、掲載0件。 2026-10-17固定サイトと主催者公式照合で2件を差分追加。"
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "v1.5完全再探索。候補0件、掲載0件。 2026-10-17固定サイトと主催者公式照合で2件を差分追加。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
       },
       {
         "ward": "杉並区",
@@ -228,7 +228,8 @@
     "2026-11-14-events-01.json",
     "2026-11-14-events-carryover.json",
     "2026-11-14-events-manual-primary.json",
-    "2026-11-14-events-verified-continuity.json"
+    "2026-11-14-events-verified-continuity.json",
+    "2026-11-14-events-gap-recovery-20261108.json"
   ],
   "events": []
 }

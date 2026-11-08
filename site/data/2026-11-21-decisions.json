@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "rubric_version": "family-fit-v2",
-  "generated": "2026-10-19T17:36:28+00:00",
+  "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 46,
-    "published": 30,
+    "candidate_total": 52,
+    "published": 36,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3097,6 +3097,416 @@
       ],
       "negative_signals": [],
       "review_note": "旧探索・他掲載は不変。"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-nakano-higashi-bosai",
+      "name": "なかのひがし防災フェア",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しめる内容を公式案内で確認。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "事前申し込み不要、どなたでも参加可能。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申し込み不要、どなたでも参加可能。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=695",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-nakano-egota-craft",
+      "name": "江古田図書館 乳幼児向け工作会",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しめる内容を公式案内で確認。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "11/7より江古田図書館窓口・電話で受付。各回5組、空きは施設へ確認。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "事前申込みや定員があり時間調整は限定的。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/7より江古田図書館窓口・電話で受付。各回5組、空きは施設へ確認。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=726",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-edogawa-kasai-super-fes",
+      "name": "KASAI Super Fes（共育プラザ葛西館まつり）",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しめる内容を公式案内で確認。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "申し込み不要。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申し込み不要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/super_fes.html",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-edogawa-walking",
+      "name": "ウオーキングフェスタえどがわ2026",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "一般向けも含むが家族で楽しめる内容がある。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "申し込み不要。5km・10kmは家族の体力を考慮。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "5km以上の歩行で子の体力を考慮する必要がある。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式に無料と明示。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申し込み不要。5km・10kmは家族の体力を考慮。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [
+        "long_walk_burden"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-toshima-ikebiz-festa",
+      "name": "イケビズフェスタ2026",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・親子が楽しめる内容を公式案内で確認。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "プログラムによって事前予約や当日整理券が必要。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "プログラムによって事前予約や当日整理券が必要。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.toshima-plaza.jp/news/2026/09/2026.html",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
+    },
+    {
+      "candidate_id": "verified-gap-20261123-shinjuku-mochitsuki",
+      "name": "上落合東部町会 餅つき大会",
+      "ward": "新宿区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "2026-11-08に自治体・主催施設の公式ページで開催日と会場を個別確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "一般向けも含むが家族で楽しめる内容がある。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "公式案内に参加・体験・見学の具体的な機会がある。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象・参加条件・料金は公式掲載に記載がないため要確認。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内で家族の都合に合わせて立ち寄りやすい。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "天候、混雑や移動の負担は家族の状況で変わる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "企画ごとに異なるか、公式に料金の明示がないため推測しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "対象・参加条件・料金は公式掲載に記載がないため要確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "文化・体験・運動・地域交流などの家族での参加価値がある。"
+          }
+        }
+      },
+      "positive_signals": [
+        "official_date_venue_verified",
+        "family_compatible"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "公式開催日・会場・プログラムを個別確認。既存掲載と異なる独立イベントとして追加。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+          "basis": "主催者または自治体公式：開催日・会場・企画内容"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "2026-11-08 個別公式確認、従来データ不変・追加のみ"
     }
   ]
 }

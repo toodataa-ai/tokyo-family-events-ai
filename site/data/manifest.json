@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-11-08T16:10:00+09:00",
+  "generated": "2026-11-08T08:44:28.608Z",
   "default": "2026-11-07",
   "rolling_horizon_weeks": 6,
   "publication_tiers": {
@@ -23,7 +23,7 @@
       "sun": "2026-11-15",
       "label": "11/14(土)〜11/15(日)",
       "file": "2026-11-14.json",
-      "count": 41,
+      "count": 44,
       "horizon_index": 2,
       "publication_tier": "full"
     },
@@ -32,7 +32,7 @@
       "sun": "2026-11-22",
       "label": "11/21(土)〜11/22(日)",
       "file": "2026-11-21.json",
-      "count": 30,
+      "count": 36,
       "horizon_index": 3,
       "publication_tier": "preview"
     },
@@ -41,7 +41,7 @@
       "sun": "2026-11-29",
       "label": "11/28(土)〜11/29(日)",
       "file": "2026-11-28.json",
-      "count": 25,
+      "count": 27,
       "horizon_index": 4,
       "publication_tier": "preview"
     },
@@ -86,5 +86,13 @@
     "new_week_start": "2026-12-12",
     "unresolved_required_source_failures": 3,
     "unverified_candidate_links": 844
+  },
+  "verified_gap_recovery_20261108": {
+    "mode": "manual_official_subset",
+    "added_event_records": 11,
+    "prior_records_removed": 0,
+    "remaining_unverified_candidate_links": 844,
+    "unresolved_required_source_failures": 3,
+    "coverage_backlog_remaining": true
   }
 }

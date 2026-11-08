@@ -251,6 +251,63 @@
       ],
       "source_failures_remain_unverified": true,
       "note": "2026-11-08現在の6週表示へロール。既存5週のイベント本文は保持し、11/14のみ現行公式で10件をfull-tier再確認。12/12週は既存長期13件と個別公式確認済み5件を追加。取得不能・未検証候補は掲載せず監査証跡を保持。"
+    },
+    {
+      "run_id": "manual-official-gap-recovery-2026-11-08",
+      "run_type": "manual_official_add_only",
+      "status": "official_verified_subset",
+      "as_of_jst": "2026-11-08",
+      "executed_at": "2026-11-08T08:44:28.608Z",
+      "base_data_production_sha": "38c30f9fddd97421047a95736100619bfab4e59d",
+      "per_week": [
+        {
+          "sat": "2026-11-14",
+          "previous": 41,
+          "after": 44,
+          "added": 3
+        },
+        {
+          "sat": "2026-11-21",
+          "previous": 30,
+          "after": 36,
+          "added": 6
+        },
+        {
+          "sat": "2026-11-28",
+          "previous": 25,
+          "after": 27,
+          "added": 2
+        }
+      ],
+      "added_weekly_records": 11,
+      "new_event_ids": [
+        "gap-20261114-nakano-new-face-market",
+        "gap-20261114-shinjuku-hokusan-kids",
+        "gap-20261114-shinjuku-okubo-center",
+        "gap-20261123-nakano-higashi-bosai",
+        "gap-20261123-nakano-egota-craft",
+        "gap-20261123-edogawa-kasai-super-fes",
+        "gap-20261123-edogawa-walking",
+        "gap-20261123-toshima-ikebiz-festa",
+        "gap-20261123-shinjuku-mochitsuki",
+        "gap-20261129-shinjuku-kashiwa",
+        "gap-20261129-shinjuku-goalball"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "unverified_candidate_links_remaining": 844,
+      "unresolved_required_source_failures": 3,
+      "source_failures_remain_unverified": true,
+      "official_evidence_urls": [
+        "https://www.city.tokyo-nakano.lg.jp/event/kosodate/sogyokyoiku.html",
+        "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+        "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=695",
+        "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=726",
+        "https://www.city.edogawa.tokyo.jp/event/super_fes.html",
+        "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+        "https://www.toshima-plaza.jp/news/2026/09/2026.html"
+      ],
+      "note": "23区・6週間の最新探索証跡からの個別公式再審査。11/14,11/21(11/23祝日含む),11/28週の独立企画のみ追加。全844候補は未審査のまま監査バックログに保持し、未解決Tamemap 403を成功扱いにしない。"
     }
   ]
 }

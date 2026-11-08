@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-20",
+  "verified_on": "2026-11-08",
   "events": [
     {
       "id": "v15-ad2f72f74ab7",
@@ -588,11 +588,113 @@
       },
       "corrections": {},
       "note": "2026-09-30更新の練馬区公式日程で参加内容・日時・会場を照合。個別画像未確認のため空欄。"
+    },
+    {
+      "id": "gap-20261123-nakano-higashi-bosai",
+      "status": "verified",
+      "source": "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=695",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
+    },
+    {
+      "id": "gap-20261123-nakano-egota-craft",
+      "status": "verified",
+      "source": "https://library.city.tokyo-nakano.lg.jp/kids/event/?id=726",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
+    },
+    {
+      "id": "gap-20261123-edogawa-kasai-super-fes",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/super_fes.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
+    },
+    {
+      "id": "gap-20261123-edogawa-walking",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
+    },
+    {
+      "id": "gap-20261123-toshima-ikebiz-festa",
+      "status": "verified",
+      "source": "https://www.toshima-plaza.jp/news/2026/09/2026.html",
+      "source_kind": "venue_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
+    },
+    {
+      "id": "gap-20261123-shinjuku-mochitsuki",
+      "status": "verified",
+      "source": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-08主催・自治体の公式公開情報により日程と開催会場を確認。"
     }
   ],
   "summary": {
-    "total": 30,
-    "verified": 22,
+    "total": 36,
+    "verified": 28,
     "announced": 8
   }
 }

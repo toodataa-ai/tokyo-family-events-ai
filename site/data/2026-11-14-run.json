@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 41,
-    "published": 41,
+    "candidates": 49,
+    "published": 44,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 41,
+    "verified": 44,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
-    "thumbnail_coverage": 0.9166666666666666,
+    "thumbnail_coverage": 0.75,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 4,
@@ -216,5 +216,26 @@
       "official-2026-nihonbashi-komichi",
       "official-2026-haneda-museum"
     ]
+  },
+  "manual_gap_recovery_20261108": {
+    "as_of_jst": "2026-11-08",
+    "mode": "non_destructive_official_verified_additions",
+    "added_count": 3,
+    "event_ids": [
+      "gap-20261114-nakano-new-face-market",
+      "gap-20261114-shinjuku-hokusan-kids",
+      "gap-20261114-shinjuku-okubo-center"
+    ],
+    "official_urls": [
+      "https://www.city.tokyo-nakano.lg.jp/event/kosodate/sogyokyoiku.html",
+      "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+      "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html"
+    ],
+    "evidence_artifact_id": 13607681119,
+    "prior_event_changes": 0,
+    "prior_event_removals": 0,
+    "required_source_errors_remaining": 3,
+    "unverified_candidate_links_remaining": 844,
+    "note": "2026-11-08の公式個別ページ再確認で追加。既存の23区探索証跡や未検証候補件数を成功扱いにしない。"
   }
 }

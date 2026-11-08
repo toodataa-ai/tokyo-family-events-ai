@@ -399,6 +399,12 @@ jobs:
             python3 ../production-src/tools/validate_decisions.py --strict site/data
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "$base" = "890cef441ec2dfcc6393989634eb080225d6d9c9" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+              # Strictly limited to one known two-event diff. The audit compares
+              # the complete old/new required-source error multiset, and rejects
+              # every other modified file, old event, decision or source field.
+              python3 ../staging-src/tools/validate_two_official_omissions_20261108.py \
+                --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
               # Immutable events/source checks are unchanged. Re-audit only the
               # five new IDs in this exact historical provenance-only correction.
@@ -446,6 +452,9 @@ jobs:
             if [ "$stage" != "$base" ]; then
               if [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
                 node ../staging-src/tools/validate_history_metadata_provenance.mjs \
+                  --base-ref "$base" --data-dir site/data
+              elif [ "$base" = "890cef441ec2dfcc6393989634eb080225d6d9c9" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+                python3 ../staging-src/tools/validate_two_official_omissions_20261108.py \
                   --base-ref "$base" --data-dir site/data
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
                 python3 ../staging-src/tools/validate_nerima_forest_addition.py --base-ref "$base"

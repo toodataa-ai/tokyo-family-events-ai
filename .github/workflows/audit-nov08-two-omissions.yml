@@ -17,7 +17,7 @@ jobs:
       - name: Checkout fixed candidate and all history
         uses: actions/checkout@v4
         with:
-          ref: 55b56734bbda54c611bab860cc10ced8fe465e6f
+          ref: d3b4e7215739f1fb6db8ed5969b61ba044edd415
           fetch-depth: 0
       - name: Checkout immutable audit policy
         uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
       - name: Require baseline production SHA and exact candidate
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "55b56734bbda54c611bab860cc10ced8fe465e6f"
+          test "$(git rev-parse HEAD)" = "d3b4e7215739f1fb6db8ed5969b61ba044edd415"
           test "$(git ls-remote origin refs/heads/data-production | cut -f1)" = "890cef441ec2dfcc6393989634eb080225d6d9c9"
       - name: Strictly verify only two independently sourced records and unchanged audit debt
         run: |

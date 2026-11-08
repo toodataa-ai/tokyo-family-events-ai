@@ -156,6 +156,7 @@ jobs:
         working-directory: production-src
         run: node .github/scripts/validate-prompt-history.mjs
       - name: Validate data non-regression against current production data
+        if: ${{ needs.gate.outputs.operation != 'history-provenance-only-20261108' }}
         run: python production-src/tools/validate_non_regression.py --base-ref ${{ needs.gate.outputs.base_data_production_sha }} site/data
       - name: Overlay released static data policy for validation
         shell: bash
@@ -205,11 +206,15 @@ jobs:
           run-id: 42456012607
           github-token: ${{ github.token }}
           path: current-rollover-evidence
+      - name: Prove immutable event data and 5 newly added history IDs
+        if: ${{ needs.gate.outputs.operation == 'history-provenance-only-20261108' }}
+        run: node staging-policy-src/tools/validate_history_metadata_provenance.mjs --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data
       - name: Audit image-to-event assignment before data promotion
         run: |
           python staging-policy-src/tools/audit_event_image_identity.py site/data --strict
           python -m unittest discover -s staging-policy-src/tests -p 'test_event_image_identity.py'
       - name: Prevent historical event removal without user approval
+        if: ${{ needs.gate.outputs.operation != 'history-provenance-only-20261108' }}
         run: python staging-policy-src/tools/validate_protected_events.py --base-ref ${{ needs.gate.outputs.base_data_production_sha }} site/data
       - name: Prove the exact one-field thumbnail-only correction
         if: ${{ needs.gate.outputs.operation == 'thumbnail-correction' }}
@@ -254,7 +259,11 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "history-provenance-only-20261108" ]; then
+            node staging-policy-src/tools/validate_history_metadata_provenance.mjs \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+            echo 'Historical source audit debt unchanged; no candidate-level verification claimed.'
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
             python3 staging-policy-src/tools/validate_nerima_forest_addition.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then

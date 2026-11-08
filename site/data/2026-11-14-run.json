@@ -93,15 +93,15 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 50,
-    "published": 45,
+    "candidates": 51,
+    "published": 46,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 45,
+    "verified": 46,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
-    "thumbnail_coverage": 0.733,
+    "thumbnail_coverage": 0.717,
     "decision_audit_complete": true,
     "hard_excluded": 1,
     "soft_excluded": 4,
@@ -251,5 +251,20 @@
     "source_failures_remain_unverified": true,
     "unreviewed_candidate_links_at_current_audit": 859,
     "read_only_evidence_run_id": 42475157453
+  },
+  "verified_zoo_park_festa_20261108": {
+    "new_event_ids": [
+      "verified-20261115-itabashi-zoo-park-festa"
+    ],
+    "official_urls": [
+      "https://itabashi-park-zoo.com/cat_main/%EF%BC%92%EF%BC%90%EF%BC%92%EF%BC%96%E5%B9%B4%E3%80%80zoo%E3%83%91%E3%83%BC%E3%82%AF%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    ],
+    "as_of_jst": "2026-11-08",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "unreviewed_candidate_links": 859,
+    "read_only_evidence_run_id": 42475275546,
+    "official_date_known_but_time_unknown": true
   }
 }

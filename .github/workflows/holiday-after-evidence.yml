@@ -11,6 +11,7 @@ on:
     paths:
       - "tools/holiday_after_collect.py"
       - "tests/test_holiday_after_collect.py"
+      - "tests/test_nerima_holiday_fallback.py"
       - "tests/test_holiday_after_review_packet.py"
       - "tools/holiday_after_review_packet.py"
       - ".github/workflows/holiday-after-evidence.yml"
@@ -25,6 +26,7 @@ on:
     paths:
       - "tools/holiday_after_collect.py"
       - "tests/test_holiday_after_collect.py"
+      - "tests/test_nerima_holiday_fallback.py"
       - ".github/workflows/holiday-after-evidence.yml"
       - "policy/nakano_supplemental_sources.json"
       - "tools/nakano_supplemental_discovery.py"
@@ -67,6 +69,7 @@ jobs:
       - name: Verify evidence extractor regression tests
         run: |
           python3 -m unittest discover -s scanner/tests -p 'test_holiday_after_*.py' -v
+          python3 -m unittest discover -s scanner/tests -p 'test_nerima_holiday_fallback.py' -v
           python3 -m unittest discover -s scanner/tests -p 'test_nakano_supplemental_discovery.py' -v
           PYTHONPATH=scanner python3 -m unittest discover -s scanner/tests -p 'test_official_schedule_audit.py' -v
       - name: Verify released prompt policy

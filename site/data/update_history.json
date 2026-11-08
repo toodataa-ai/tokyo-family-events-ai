@@ -383,6 +383,29 @@
         "https://itabashi-park-zoo.com/cat_main/%EF%BC%92%EF%BC%90%EF%BC%92%EF%BC%96%E5%B9%B4%E3%80%80zoo%E3%83%91%E3%83%BC%E3%82%AF%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
       ],
       "note": "板橋タイムズの候補記事を板橋こども動物園主催者公式で照合して11/15動物ふれあい祭を追加。農業まつりは既存掲載のため追加しない。詳細時刻料金予約は不明のまま。"
+    },
+    {
+      "run_id": "official-toshima-somei-20261109",
+      "run_type": "manual_official_add_only",
+      "status": "official_verified_subset",
+      "as_of_jst": "2026-11-09",
+      "executed_at": "2026-11-09T06:44:00+09:00",
+      "base_data_production_sha": "4d3352bee7bd9b6318fbc3febc6ac9ffa3a1bfe2",
+      "target_weekend": "2026-11-21",
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261123-toshima-somei-autumn-festival"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "original_candidate_pool": 859,
+      "unresolved_candidate_links_pending_individual_review": 750,
+      "unresolved_required_source_failures": 3,
+      "official_evidence_urls": [
+        "https://www.city.toshima.lg.jp/132/2609161020.html"
+      ],
+      "note": "豊島区10月29日更新の公式原文から11月23日（月祝）地域祭りの会場/10-15時を確認。旧イベント削除/変更0、HTTP403と未検証候補残存。外部サイトの11/22は公式に反するため採用しない。"
     }
   ]
 }

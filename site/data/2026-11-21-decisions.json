@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 53,
-    "published": 37,
+    "candidate_total": 54,
+    "published": 38,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3579,6 +3579,74 @@
       ],
       "override_reason": "",
       "review_note": "2026-11-08主催者公式で個別確認、価格・予約は不明のまま保持、既存レコード不変"
+    },
+    {
+      "candidate_id": "verified-20261123-toshima-somei-autumn-festival",
+      "name": "染井よしの桜の里秋祭り2026",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "豊島区公式ページ（2026-10-29更新）で11月23日勤労感謝の日、10時から15時、駒込2丁目の桜記念公園で地域物産展とステージ企画を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "地域住民向けの秋祭りで子どもを含む家族来場に適する。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "物産展とステージイベントを鑑賞・巡回できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども専用企画ではなく幅広い年代が対象。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "開催時間内に自由に立ち寄る地域祭り。"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "駒込駅直近の公園会場、屋外開催につき天候に注意。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式ページに入場料が明記されていないため不明。物販は有料の場合あり。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "事前予約の必要性は公式情報に明示されていない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節行事・地域文化・物産・屋外交流を楽しめる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "ward_official_date_time_venue_verified",
+        "family_friendly_local_festival"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "local_family_festival",
+      "reason_codes": [
+        "local_family_festival"
+      ],
+      "reasons": [
+        "2026-11-23の地域物産・ステージ祭りを豊島区公式で個別確認。既存掲載と名前、URL、日時を照合済みで独立イベント。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/132/2609161020.html",
+          "basis": "豊島区公式（2026-10-29更新）日時・公園名・物産展とステージ"
+        }
+      ],
+      "override_reason": "",
+      "review_note": "一部外部集約サイトの11/22は公式11/23と不一致。自治体一次ページを採用し、料金/予約は不明のまま維持。"
     }
   ]
 }

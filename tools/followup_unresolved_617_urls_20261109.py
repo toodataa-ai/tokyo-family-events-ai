@@ -73,6 +73,19 @@ def fetch(url,host_guard):
         except (URLError,TimeoutError,OSError,ValueError,UnicodeError) as e:
             return {"url":url,"status":"error","error":str(e)[:220]}
 
+def safe_public_url(value):
+    from ipaddress import ip_address
+    try:
+        p=urlsplit(value)
+        host=p.hostname or ""
+        if p.scheme!="https" or not host or p.port not in (None,443) or p.username or p.password:
+            return False
+        if "." not in host or host.endswith((".local",".internal",".test",".invalid")):
+            return False
+        try: ip_address(host); return False
+        except ValueError: return True
+    except ValueError:return False
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--queue",type=Path,required=True)
@@ -84,7 +97,7 @@ def main():
     by_url=defaultdict(list)
     for item in queue:
         value=item.get("url") or ""
-        if urlsplit(value).scheme=="https":by_url[value].append(item)
+        if safe_public_url(value):by_url[value].append(item)
     requests=list(by_url)
     guards=defaultdict(lambda:threading.BoundedSemaphore(2))
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(16,max(1,a.workers))) as ex:

@@ -141,13 +141,17 @@ def run():
                 addon.get("unreviewed_candidate_links_at_current_audit") == 859,
                 sat+": requires preservation and explicit source backlog")
         old_rcopy = json.loads(json.dumps(old_run))
-        old_rcopy["summary"]["candidates"] += 1
+        # v1.5 full-tier runs include candidate and image summaries, while
+        # older v1.15 preview runs deliberately omit those keys. Never invent them.
+        if "candidates" in old_rcopy["summary"]:
+            old_rcopy["summary"]["candidates"] += 1
         old_rcopy["summary"]["published"] += 1
         old_rcopy["summary"]["verified"] += 1
-        old_rcopy["summary"]["thumbnail_coverage"] = new_run["summary"]["thumbnail_coverage"]
-        require(round(old_rcopy["summary"]["thumbnail_count"] / old_rcopy["summary"]["published"],3)
-                    == new_run["summary"]["thumbnail_coverage"],
-                sat+": thumbnail coverage falsely reported")
+        if "thumbnail_count" in old_rcopy["summary"]:
+            old_rcopy["summary"]["thumbnail_coverage"] = new_run["summary"].get("thumbnail_coverage")
+            require(round(old_rcopy["summary"]["thumbnail_count"] / old_rcopy["summary"]["published"],3)
+                        == new_run["summary"].get("thumbnail_coverage"),
+                    sat+": thumbnail coverage falsely reported")
         old_rcopy[add_key] = addon
         require(new_run == old_rcopy,
                 sat+": prior run source evidence/stage history changed")

@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from urllib.request import Request,urlopen
 from urllib.error import HTTPError,URLError
+from http_source_diagnostics import (diagnostic_for_http_error, suggested_official_index, official_index_fallback_proof)
 
 MAX_BYTES=750000
 DATE_PAT=re.compile(r"(?:20[0-3]\d|令和[0-9０-９]{1,3})\s*[年./-]\s*(?:1[012]|[1-9])\s*[月./-]\s*(?:[0-3]?\d)\s*日?|(?:11|12)\s*月\s*(?:[0-3]?\d)\s*日|(?:11|12)\s*[/.-]\s*(?:[0-3]?\d)")
@@ -69,7 +70,11 @@ def fetch(url,host_guard):
                  "has_target_day_text_hint":bool(TARGET_PAT.search(text)),
                  "has_family_text_hint":bool(CHILD_PAT.search(text)),
                  "visible_text_length":len(text)}
-        except HTTPError as e:return {"url":url,"status":"http_error","http_status":e.code,"error":str(e)[:220]}
+        except HTTPError as e:
+            # HTTP 404, 403 and bot/security challenge pages must retain the
+            # original *failed* status. Persist only bounded response metadata.
+            return {"url":url,"status":"http_error","error":str(e)[:220],
+                    **diagnostic_for_http_error(e)}
         except (URLError,TimeoutError,OSError,ValueError,UnicodeError) as e:
             return {"url":url,"status":"error","error":str(e)[:220]}
 
@@ -102,6 +107,24 @@ def main():
     guards=defaultdict(lambda:threading.BoundedSemaphore(2))
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(16,max(1,a.workers))) as ex:
         pages=list(ex.map(lambda u:fetch(u,guards),requests))
+    # Re-check the KNOWN official city index once per host (after the
+    # failed detail request has released its per-host semaphore). The index
+    # is only a discovery fallback, never an event-detail verification.
+    fallback_urls = sorted({u for r in pages
+                            if r.get("status")=="http_error"
+                            for u in [suggested_official_index(
+                                r["url"],r.get("http_status"))] if u})
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(3,max(1,a.workers))) as ex:
+        fallback_pages=list(ex.map(lambda u:fetch(u,guards),fallback_urls))
+    fallback_results={r["url"]:r for r in fallback_pages}
+    for record in pages:
+        if record.get("status")!="http_error":
+            continue
+        proof=official_index_fallback_proof(
+            record["url"],record.get("http_status"),
+            lambda u:fallback_results.get(u,{"status":"error"}))
+        if proof is not None:
+            record["official_index_fallback"]=proof
     reviewed={r["url"]:r for r in pages}
     linked=[]
     for item in queue:
@@ -117,8 +140,23 @@ def main():
         "http_checked_pages":totals["checked_body_not_individually_verified"],
         "pages_with_target_day_text_hint":sum(bool(r.get("has_target_day_text_hint")) for r in pages),
         "pages_with_family_text_hint":sum(bool(r.get("has_family_text_hint")) for r in pages),
-        "source_url_failures":[{"url":r["url"],"status":r["status"],"http_status":r.get("http_status"),"error":r.get("error")}
+        "source_url_failures":[{
+            "url":r["url"],"status":r["status"],
+            "http_status":r.get("http_status"),"error":r.get("error"),
+            "error_kind":r.get("error_kind"),
+            "final_url":r.get("final_url"),
+            "response_server":r.get("response_server"),
+            "response_title":r.get("response_title"),
+            "error_body_sha256":r.get("error_body_sha256"),
+            "cloudflare_challenge_detected":r.get("cloudflare_challenge_detected"),
+            "official_index_fallback":r.get("official_index_fallback")}
             for r in pages if r["status"]!="checked_body_not_individually_verified"],
+        "failed_detail_urls_remain_unverified":True,
+        "http_error_signatures_recorded":True,
+        "official_index_fallbacks_probed":len(fallback_urls),
+        "official_index_fallbacks_reachable":sum(
+            r.get("status")=="checked_body_not_individually_verified"
+            for r in fallback_pages),
         "events_verified_by_this_scan":0,"final_decisions_by_this_scan":0,"publication_permitted":False,
         "note":"Target date and child-language snippets are only candidate hints. Each independently named event still needs individual official date, venue, family-fit, duplicate and reservation/fee checks. Original 3 Tamemap 403 remain open."}
     a.output_dir.mkdir(parents=True,exist_ok=True)

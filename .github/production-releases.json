@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-10-28-r3",
+  "current_public_release": "release/2026-11-08-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -248,7 +248,16 @@
       "workflow_run_id": 40599359550,
       "public_version": "1.26",
       "note": "2026-10-28 JST ユーザー明示承認の本番アプリv1.26。日別利用棒グラフに希望者がこのブラウザで記録した利用回数をオレンジ色で重ね表示。オフ時非表示、他の利用者には端末内の記録を表示せず、ステージングはブラウザローカル記録の読み取り専用。現行production v1.25直系の隔離候補PR #75で5ファイルのみを反映。ステージングrun 40598698148と独立候補監査run 40599255425、Pages公開run 40599359550いずれもsuccess。既存匿名PV・セッション・コピー集計、検索/Canva/イベント個票/収集元/Cloudflare Worker/D1スキーマは不変。data-production SHA 1d1687321f82279d6e46899f1fc453169bba5b1d。以前のv1.25 release/2026-10-28-r2をロールバック候補として保持。"
+    },
+    {
+      "release_id": "release/2026-11-08-r1",
+      "branch": "release/2026-11-08-r1",
+      "commit_sha": "c1862e535c067b74149d9674efd54d08d0f66c02",
+      "deployed_at": "2026-11-08T10:18:02Z",
+      "workflow_run_id": 42470773391,
+      "public_version": "1.27",
+      "note": "2026-11-08 JST ユーザー承認の本番アプリv1.27。11月8日週の新規イベントを13件の継続掲載を除く実質16件（12/12週独立5件＋個別補完11件）として表示する、週次追加集計と検索/コピーの今週追加フィルタ修正。現行production v1.26からの隔離8ファイル差分をPR #83で反映。候補固定監査run 42470694934 success、ステージングrun 42470151716 success、メタデータのみのデータ本番公開run 42470399682 success、本番Pages run 42470773391 success。データ本体/採否/画像/コピー本文/Canva/既存イベントID変更0。登録必須参照元TamemapのHTTP403（3件）と候補リンク844件の全件審査未完了は引き続き未解決。data-production SHA 890cef441ec2dfcc6393989634eb080225d6d9c9。前版v1.26 release/2026-10-28-r3をロールバック保持。"
     }
   ],
-  "current_public_version": "1.26"
+  "current_public_version": "1.27"
 }

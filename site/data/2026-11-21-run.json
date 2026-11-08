@@ -1992,9 +1992,11 @@
   ],
   "stages": [],
   "summary": {
-    "published": 36,
-    "verified": 28,
-    "announced": 8
+    "published": 37,
+    "verified": 29,
+    "announced": 8,
+    "candidates": null,
+    "thumbnail_coverage": null
   },
   "carryover_organizer_rechecks": [
     {
@@ -2141,5 +2143,19 @@
     "required_source_errors_remaining": 3,
     "unverified_candidate_links_remaining": 844,
     "note": "2026-11-08の公式個別ページ再確認で追加。既存の23区探索証跡や未検証候補件数を成功扱いにしない。"
+  },
+  "verified_individual_omission_20261108": {
+    "as_of_jst": "2026-11-08",
+    "new_event_ids": [
+      "verified-20261121-meguro-shinobu-playpark"
+    ],
+    "official_urls": [
+      "https://shinobu-kg.com/park/"
+    ],
+    "prior_events_changed": 0,
+    "prior_events_removed": 0,
+    "source_failures_remain_unverified": true,
+    "unreviewed_candidate_links_at_current_audit": 859,
+    "read_only_evidence_run_id": 42475157453
   }
 }

@@ -3,17 +3,17 @@
   "sat": "2026-11-21",
   "sun": "2026-11-22",
   "label": "11/21(土)〜11/22(日)",
-  "generated": "2026-11-08T08:44:28.608Z",
+  "generated": "2026-11-08T20:26:00+09:00",
   "horizon_index": 3,
   "publication_tier": "preview",
   "verification_file": "2026-11-21-verification.json",
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 52,
+    "candidate_count": 53,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 36,
+    "published_count": 37,
     "wards": [
       {
         "ward": "千代田区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。"
       },
       {
         "ward": "大田区",
@@ -232,7 +232,8 @@
     "2026-11-21-events-manual-festival-subprograms.json",
     "2026-11-21-events-holiday-2026-11-23.json",
     "2026-11-21-events-nerima-forest-20261027.json",
-    "2026-11-21-events-gap-recovery-20261108.json"
+    "2026-11-21-events-gap-recovery-20261108.json",
+    "2026-11-21-events-verified-omissions-20261108.json"
   ],
   "events": []
 }

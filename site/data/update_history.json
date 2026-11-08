@@ -338,6 +338,29 @@
         "https://www.kokuchpro.com/event/877cecc8413810ccd217f10bd71f7ac8/"
       ],
       "note": "個別の東京都公式・主催者ページ検証で未掲載だった小学生工作講座を非破壊追加。新規収集全件監査は未完了、Tamemap HTTP403は未解決。"
+    },
+    {
+      "run_id": "manual-verified-omission-20261108-shinobu",
+      "run_type": "manual_official_add_only",
+      "status": "official_verified_subset",
+      "as_of_jst": "2026-11-08",
+      "executed_at": "2026-11-08T20:26:00+09:00",
+      "base_data_production_sha": "890cef441ec2dfcc6393989634eb080225d6d9c9",
+      "target_weekend": "2026-11-21",
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261121-meguro-shinobu-playpark"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "unverified_candidate_links_remaining": 859,
+      "unresolved_required_source_failures": 3,
+      "official_evidence_urls": [
+        "https://shinobu-kg.com/park/",
+        "https://shinobu-kg.com/"
+      ],
+      "note": "幼稚園の公式年間スケジュールと11/21告知に基づき未掲載の親子園庭行事を非破壊追加。料金・予約は未確認とし、対象サイト全件網羅・Tamemap取得障害は引き続き未完了。"
     }
   ]
 }

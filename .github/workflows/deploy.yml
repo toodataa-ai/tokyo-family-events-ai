@@ -259,7 +259,11 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-zoo-20261108" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-somei-20261109" ]; then
+            python3 staging-policy-src/tools/validate_somei_add_20261109.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+            echo 'Individual ward official verified, old crawl failures remain recorded.'
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-zoo-20261108" ]; then
             python3 staging-policy-src/tools/validate_zoo_add_20261108.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
             echo 'Zero old event records changed; original audit debt left open.'
@@ -407,6 +411,9 @@ jobs:
             python3 ../production-src/tools/validate_decisions.py --strict site/data
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "$base" = "4d3352bee7bd9b6318fbc3febc6ac9ffa3a1bfe2" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+              python3 ../staging-src/tools/validate_somei_add_20261109.py \
+                --base-ref "$base" --data-dir site/data
             elif [ "$base" = "45c2688a84a0e045ece7d756d7df028b784526d6" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
               python3 ../staging-src/tools/validate_zoo_add_20261108.py \
                 --base-ref "$base" --data-dir site/data
@@ -463,6 +470,9 @@ jobs:
             if [ "$stage" != "$base" ]; then
               if [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
                 node ../staging-src/tools/validate_history_metadata_provenance.mjs \
+                  --base-ref "$base" --data-dir site/data
+              elif [ "$base" = "4d3352bee7bd9b6318fbc3febc6ac9ffa3a1bfe2" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+                python3 ../staging-src/tools/validate_somei_add_20261109.py \
                   --base-ref "$base" --data-dir site/data
               elif [ "$base" = "45c2688a84a0e045ece7d756d7df028b784526d6" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
                 python3 ../staging-src/tools/validate_zoo_add_20261108.py \

@@ -11,8 +11,8 @@
     "duplicate_of": 4,
     "blocked_registration_unavailable": 3,
     "not_event_recruitment": 2,
-    "verified_and_publishable": 6,
-    "outside_priority_window": 7
+    "outside_priority_window": 7,
+    "published": 6
   },
   "full_pool_review_complete": false,
   "github_actions_tamemap_403_resolved": false,
@@ -1425,7 +1425,7 @@
       "matched_dates": [
         "2026-11-14"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -1453,7 +1453,7 @@
       "matched_dates": [
         "2026-11-14"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -1752,7 +1752,7 @@
       "matched_dates": [
         "2026-11-15"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -3007,7 +3007,7 @@
       "matched_dates": [
         "2026-11-22"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -3116,7 +3116,7 @@
       "matched_dates": [
         "2026-11-22"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -3225,7 +3225,7 @@
       "matched_dates": [
         "2026-11-22"
       ],
-      "status": "verified_and_publishable",
+      "status": "published",
       "publication_approved": true,
       "detail_body_checked": true,
       "evidence": [
@@ -5673,5 +5673,14 @@
     "success": 5,
     "http_429": 425,
     "note": "最初の一括取得はレート制限。取得成功と扱わず、その後の直近分だけ単一接続・間隔付きで再取得し61ページ成功。優先対象外350候補を確認済みにしない。"
+  },
+  "publication": {
+    "data_production_sha": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
+    "workflow_run_id": 43325412594,
+    "release_branch": "data-release/2026-11-13-r633",
+    "old_event_records_changed": 0,
+    "old_event_ids_removed": 0,
+    "published_count_before": 210,
+    "published_count_after": 216
   }
 }

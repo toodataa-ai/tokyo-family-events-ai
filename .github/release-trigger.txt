@@ -1,17 +1,17 @@
-# User-approved source recovery and source-status publication (2026-11-13 JST).
+# Individual review progress after verified six-event data-only publication.
 operation=release
 production_ref=production
-production_sha=01f04fe95ebe24e47a14ca53fea9536b1dc68f63
-previous_production_sha=c1862e535c067b74149d9674efd54d08d0f66c02
-candidate_sha=2867d524eeee4207c12e03fb47601bcf410fa0f3
-pr=102
-source_recovery_pr=101
-target_public_version=1.28
-previous_public_release=release/2026-11-08-r1
+production_sha=4f219260e0f315cb5789ac421cff94b9c190dbbf
+previous_production_sha=01f04fe95ebe24e47a14ca53fea9536b1dc68f63
+candidate_sha=e7585d1189d3ca71b9c7f8b025bb7fbcb9068b78
+pr=104
+target_public_version=1.29
+previous_public_release=release/2026-11-13-r1
 release_date_jst=2026-11-13
-expected_data_production_sha=0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8
+expected_data_production_sha=bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d
 approved_scope=site/audit/pending_issues_catalog.json
 event_record_mutation=none
 source_registry_mutation=none
-verified_pages_run=43315121324
-note=Catalog-only production update plus approved main source-recovery tools and validated audit JSON composition. Tamemap GitHub403 remains unresolved; cloud recovery candidates stay unverified and unpublished.
+verified_pages_run=43326190478
+data_publication_run=43325412594
+note=Catalog-only progress wording. Six additions were published independently via validated data-only path. Remaining content review and GitHub Tamemap403 stay open.

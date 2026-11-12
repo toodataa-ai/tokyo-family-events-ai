@@ -2,12 +2,12 @@
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
   "audited_at_jst": "2026-11-13",
-  "baseline_app_release": "release/2026-11-13-r1",
-  "baseline_production_commit": "01f04fe95ebe24e47a14ca53fea9536b1dc68f63",
+  "baseline_app_release": "release/2026-11-13-r2",
+  "baseline_production_commit": "4f219260e0f315cb5789ac421cff94b9c190dbbf",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8",
+  "baseline_data_production_commit": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 183,
+  "expected_total_differences_after_governance": 190,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -600,9 +600,17 @@
       "reason": "区・図書館一次情報のHTTP取得日時と本文SHAの読み取り証跡。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nakano_content_review_20261113/future_observations.json",
+      "kind": "staging_only",
+      "category": "read_only_content_observation",
+      "reason": "先の週末の30詳細本文の取得証跡。申込日付不整合・参加区分等の最終照合は未完了、追加公開なし。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
-  "latest_verified_staging_baseline_commit": "5e19e75794bff0124a264a179cbcf45cd5bd0708",
+  "latest_verified_staging_baseline_commit": "920ecbbcbcab140c0bb4349f75cc5e0ac1318a47",
   "remaining_unclassified_paths": [
     ".github/workflows/audit-750-lead-detail-fetch.yml",
     ".github/workflows/audit-859-candidate-triage.yml",

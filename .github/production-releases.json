@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-13-r1",
+  "current_public_release": "release/2026-11-13-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -266,7 +266,16 @@
       "workflow_run_id": 43315121324,
       "public_version": "1.28",
       "note": "ユーザー明示承認の取得状況修正。productionはPR #102のカタログJSON1ファイルのみ更新。main PR #101で取得状況JSONの限定配信、Tamemap日付付きリンクと新着詳細URL抽出、再試行証跡・HTTP200チャレンジ判定、通常取得可能な作業環境からの代替収集を反映。回帰CI成功、Pages run43315121324成功、公開URLで板橋checked・Tamemap source_errorを確認。TamemapのGitHub403は未解消として保持し、手動環境の未検証候補430件は公開しない。data-production 0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8、現在6週間210件と全runtime blobは不変。mainの他のアプリ差分は昇格しない。"
+    },
+    {
+      "release_id": "release/2026-11-13-r2",
+      "branch": "release/2026-11-13-r2",
+      "commit_sha": "4f219260e0f315cb5789ac421cff94b9c190dbbf",
+      "deployed_at": "2026-11-12T23:08:46Z",
+      "workflow_run_id": 43326190478,
+      "public_version": "1.29",
+      "note": "ユーザー依頼の個別照合を実行。優先80候補行/61詳細本文を確認し、4既存重複・受付終了3行等を区別。独立確認した中野区6件をdata-only run43325412594で公開、data-production bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d/data-release2026-11-13-r633、旧210個票不変、総216件。productionはPR104の残課題カタログ1ファイル2文だけ変更し、Pages43326190478成功。保留58行・優先外350行の全件照合およびTamemap GitHub403は未解消。mainPR103の厳格な追加専用ガードは旧個票/採否/履歴/ソース失敗の改変を拒否。"
     }
   ],
-  "current_public_version": "1.28"
+  "current_public_version": "1.29"
 }

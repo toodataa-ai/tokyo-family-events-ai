@@ -406,6 +406,43 @@
         "https://www.city.toshima.lg.jp/132/2609161020.html"
       ],
       "note": "豊島区10月29日更新の公式原文から11月23日（月祝）地域祭りの会場/10-15時を確認。旧イベント削除/変更0、HTTP403と未検証候補残存。外部サイトの11/22は公式に反するため採用しない。"
+    },
+    {
+      "run_id": "reviewed-nakano-20261113",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-13",
+      "executed_at": "2026-11-12T22:50:48+00:00",
+      "base_data_production_sha": "0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8",
+      "target_weekends": [
+        "2026-11-14",
+        "2026-11-21"
+      ],
+      "added_weekly_records": 6,
+      "new_event_ids": [
+        "reviewed-20261114-nakano-162208",
+        "reviewed-20261114-nakano-163281",
+        "reviewed-20261115-nakano-161805",
+        "reviewed-20261122-nakano-162568",
+        "reviewed-20261122-nakano-163368",
+        "reviewed-20261122-nakano-161794"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "recovery_pool_total": 430,
+      "priority_candidate_rows_read": 80,
+      "distinct_priority_detail_pages_read": 61,
+      "official_evidence_urls": [
+        "https://pc.tamemap.net/1311401/event/162208/2026-11-14?locale=ja",
+        "https://pc.tamemap.net/1311401/event/163281/2026-11-14?locale=ja",
+        "https://www.city.tokyo-nakano.lg.jp/machizukuri/machizukuri/oshirase/TetsudoJobu.html",
+        "https://www.city.tokyo-nakano.lg.jp/kosodate/wakamonoshien/magokoromarche.html",
+        "https://pc.tamemap.net/1311401/event/163368/2026-11-22?locale=ja",
+        "https://pc.tamemap.net/1311401/event/161794/2026-11-22?locale=ja"
+      ],
+      "note": "区公式または主催者名を明記した提供投稿で個別確認した6件のみ追加。申込終了・満席・募集記事は追加しない。未記載の時刻は空欄。旧ソース取得失敗と未検証候補は残す。"
     }
   ]
 }

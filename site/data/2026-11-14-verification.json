@@ -851,11 +851,83 @@
       },
       "corrections": {},
       "note": "2026-11-01主催者の開催告知で11/15開催、悪天候延期、動物園本園と体験内容を確認。開始終了時刻・料金・予約要否は未発表として保持。"
+    },
+    {
+      "id": "reviewed-20261114-nakano-162208",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/162208/2026-11-14?locale=ja",
+      "source_kind": "organizer_provided_partner",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-13に本文の開催日・会場・主催/投稿者を個別確認。画像は内容の事実確認に使わず、未記載の時刻は空欄のまま。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/162208/2026-11-14?locale=ja",
+          "checked_at": "2026-11-13T07:43:14+09:00",
+          "sha256": "458f2f2168bf38df76bd830a4d46ce3d81b2980fb98f1b6a5bff19c0b6684a6d"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-20261114-nakano-163281",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/163281/2026-11-14?locale=ja",
+      "source_kind": "organizer_provided_partner",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-13に本文の開催日・会場・主催/投稿者を個別確認。画像は内容の事実確認に使わず、未記載の時刻は空欄のまま。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163281/2026-11-14?locale=ja",
+          "checked_at": "2026-11-13T07:43:16+09:00",
+          "sha256": "6ed0bbed2401c2c3ab51fd7eafbea7b9703ab2dc7ac105c59953d5e05da8c37c"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-20261115-nakano-161805",
+      "status": "verified",
+      "source": "https://www.city.tokyo-nakano.lg.jp/machizukuri/machizukuri/oshirase/TetsudoJobu.html",
+      "source_kind": "public_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026-11-13に本文の開催日・会場・主催/投稿者を個別確認。画像は内容の事実確認に使わず、未記載の時刻は空欄のまま。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161805/2026-11-15?locale=ja",
+          "checked_at": "2026-11-13T07:43:40+09:00",
+          "sha256": "4fc8a0ec34236f0a4d28c525d9b6a3a9729c95b85fa68f613e6d336587ac099f"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 46,
-    "verified": 46,
+    "total": 49,
+    "verified": 49,
     "announced": 0,
     "corrected": 0
   }

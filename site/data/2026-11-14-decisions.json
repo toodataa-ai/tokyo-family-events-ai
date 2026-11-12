@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 51,
-    "published": 46,
+    "candidate_total": 54,
+    "published": 49,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -3929,6 +3929,348 @@
       ],
       "override_reason": "",
       "review_note": "開催時刻/料金/予約条件は公式詳細未公表につき不明維持。"
+    },
+    {
+      "candidate_id": "reviewed-20261114-nakano-162208",
+      "name": "芋煮会、今年もやります！",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "主催町会が家族・友人と来場する芋煮会として案内。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "大鍋の芋煮を囲んで地域の人と交流する。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "地域の家族を対象にした食の集まり。年齢別条件は明示なし。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の食と地域交流を家族で共有できる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/162208/2026-11-14?locale=ja",
+          "basis": "主催団体/担当課名が明記された提供投稿の本文で、日付・会場・参加条件を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "主催町会が家族・友人と来場する芋煮会として案内。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "大鍋の芋煮を囲んで地域の人と交流する。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "地域の家族を対象にした食の集まり。年齢別条件は明示なし。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の食と地域交流を家族で共有できる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 audit envelope only; canonical_family_fit_v2 and public event retain actual family-fit-v2 assessment."
+    },
+    {
+      "candidate_id": "reviewed-20261114-nakano-163281",
+      "name": "ぶらんけっとの多文化共生ひろば",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "主催者が家族来場を案内し、絵本・工作・ショーを明示。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "絵本の読み聞かせ・工作・レンジャーショーに参加できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "絵本や工作は子どもが参加しやすい。写真展の内容は保護者が事前確認する。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "絵本・工作のほかガザの写真展示があるため、保護者が内容を事前に確認する。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で絵本・工作・多文化交流を楽しめる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [
+        "content_intensity"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163281/2026-11-14?locale=ja",
+          "basis": "主催団体/担当課名が明記された提供投稿の本文で、日付・会場・参加条件を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "主催者が家族来場を案内し、絵本・工作・ショーを明示。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "絵本の読み聞かせ・工作・レンジャーショーに参加できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "絵本や工作は子どもが参加しやすい。写真展の内容は保護者が事前確認する。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "絵本・工作のほかガザの写真展示があるため、保護者が内容を事前に確認する。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で絵本・工作・多文化交流を楽しめる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 audit envelope only; canonical_family_fit_v2 and public event retain actual family-fit-v2 assessment."
+    },
+    {
+      "candidate_id": "reviewed-20261115-nakano-161805",
+      "name": "鉄道上部空間活用オープンハウス（こども向け体験・展示）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区公式がこども向け体験ブース、お子さまから大人まで参加可能と明記。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "生成AIによる未来のまち画像作成、模型・パネル展示、シール投票。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "こども向け体験の記載があり、親子でまちづくりに触れられる。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "予約不要・当日参加可能。短時間参加の扱いは各主催者案内に従う。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "鉄道とまちの未来を考える親子の体験・学び。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/machizukuri/machizukuri/oshirase/TetsudoJobu.html",
+          "basis": "自治体公式本文で開催日・会場・参加条件を照合。"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161805/2026-11-15?locale=ja",
+          "basis": "同じ日時・会場の主催担当課による投稿。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区公式がこども向け体験ブース、お子さまから大人まで参加可能と明記。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "生成AIによる未来のまち画像作成、模型・パネル展示、シール投票。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "こども向け体験の記載があり、親子でまちづくりに触れられる。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "予約不要・当日参加可能。短時間参加の扱いは各主催者案内に従う。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "鉄道とまちの未来を考える親子の体験・学び。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 audit envelope only; canonical_family_fit_v2 and public event retain actual family-fit-v2 assessment."
     }
   ]
 }

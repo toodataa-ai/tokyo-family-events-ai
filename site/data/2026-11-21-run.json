@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 38,
-    "verified": 30,
+    "published": 41,
+    "verified": 33,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2171,5 +2171,23 @@
     "individual_review_pending": 750,
     "read_only_detail_artifact_id": 13635440202,
     "notes": "2026-11-23 official city page fetch succeeded. Official date overrides contradictory nonprimary aggregator."
+  },
+  "verified_nakano_recovery_20261113": {
+    "new_event_ids": [
+      "reviewed-20261122-nakano-162568",
+      "reviewed-20261122-nakano-163368",
+      "reviewed-20261122-nakano-161794"
+    ],
+    "base_data_production_sha": "0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-13",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
   }
 }

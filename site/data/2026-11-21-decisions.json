@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 54,
-    "published": 38,
+    "candidate_total": 57,
+    "published": 41,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3647,6 +3647,220 @@
       ],
       "override_reason": "",
       "review_note": "一部外部集約サイトの11/22は公式11/23と不一致。自治体一次ページを採用し、料金/予約は不明のまま維持。"
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-162568",
+      "name": "まごころマルシェ",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "区公式が普段の施設対象に限らずどなたでも来場可能と明記。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "プラバン・ZINE・ゲーム・似顔絵などの参加内容が公式に掲載。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "工作・ゲームなど家族で楽しめる内容。個別企画の年齢条件は当日確認。"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "予約不要・当日参加可能。短時間参加の扱いは各主催者案内に従う。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で工作や遊び、地域の若者との交流を共有できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kosodate/wakamonoshien/magokoromarche.html",
+          "basis": "自治体公式本文で開催日・会場・参加条件を照合。"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/162568/2026-11-22?locale=ja",
+          "basis": "同じ日時・会場の主催担当課による投稿。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-163368",
+      "name": "南中野フェスティバル",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "主催する区民活動センター運営委員会の投稿でファミリー・キッズを明記。"
+          },
+          "interactivity": {
+            "grade": "unknown",
+            "reason": "具体的なプログラムは本文未記載で推測しない。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "ファミリー・キッズ対象の記載あり。個別企画の年齢条件は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "主催者が家族向けとして案内する地域フェスティバル。"
+          }
+        }
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163368/2026-11-22?locale=ja",
+          "basis": "主催団体/担当課名が明記された提供投稿の本文で、日付・会場・参加条件を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-161794",
+      "name": "CCC（Cleanup & Coffee Club）@沼袋",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "区担当課の投稿が参加条件なし、どなたでも参加可能と明記。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ごみ拾いとコーヒーを通じた地域交流活動。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "親子で地域の環境に触れられる。子どもの作業は保護者が安全を確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日参加可能だが、途中入退場や滞在時間の明示はない。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "区または主催者投稿に無料・入場無料の記載あり。飲食や販売品等は別途確認。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "対象として掲載する催しは当日参加可能または申込不要。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で地域の清掃・交流に参加する体験。"
+          }
+        }
+      },
+      "positive_signals": [
+        "daytime",
+        "free_or_low_cost",
+        "family_venue",
+        "all_ages"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_community_activity",
+      "reason_codes": [
+        "family_community_activity"
+      ],
+      "reasons": [
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161794/2026-11-22?locale=ja",
+          "basis": "主催団体/担当課名が明記された提供投稿の本文で、日付・会場・参加条件を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
     }
   ]
 }

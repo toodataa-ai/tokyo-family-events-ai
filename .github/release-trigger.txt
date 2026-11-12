@@ -1,15 +1,17 @@
-# User-approved isolated v1.27 weekly change count fix (2026-11-08 JST).
+# User-approved source recovery and source-status publication (2026-11-13 JST).
 operation=release
 production_ref=production
-production_sha=c1862e535c067b74149d9674efd54d08d0f66c02
-previous_production_sha=9efccbcfa31facd7b78ffbdddcdec4ab6d347752
-candidate_sha=b4fbf70bc79aed1069825ff76db4d7488eb5e3ce
-pr=83
-target_public_version=1.27
-previous_public_release=release/2026-10-28-r3
-release_date_jst=2026-11-08
-expected_data_production_sha=890cef441ec2dfcc6393989634eb080225d6d9c9
-approved_scope=package.json;site/index.html;site/search.html;site/copy.html;site/recent-event-changes.js;site/update-history-display.js;tests/recent_event_changes.test.mjs;tests/update_history_display.test.mjs
+production_sha=01f04fe95ebe24e47a14ca53fea9536b1dc68f63
+previous_production_sha=c1862e535c067b74149d9674efd54d08d0f66c02
+candidate_sha=2867d524eeee4207c12e03fb47601bcf410fa0f3
+pr=102
+source_recovery_pr=101
+target_public_version=1.28
+previous_public_release=release/2026-11-08-r1
+release_date_jst=2026-11-13
+expected_data_production_sha=0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8
+approved_scope=site/audit/pending_issues_catalog.json
 event_record_mutation=none
 source_registry_mutation=none
-note=Isolated app v1.27: homepage new count 16, underlying 5+11; 13 carryovers excluded; all three pages cache-busted. Frozen candidate read-only audit run 42470694934 success and staging data preview run 42470151716 success. Production data metadata-only run 42470399682 success. Remaining 844 unreviewed links and Tamemap 403 tracked separately; no full-source parity claimed.
+verified_pages_run=43315121324
+note=Catalog-only production update plus approved main source-recovery tools and validated audit JSON composition. Tamemap GitHub403 remains unresolved; cloud recovery candidates stay unverified and unpublished.

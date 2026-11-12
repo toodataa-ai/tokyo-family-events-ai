@@ -65,3 +65,13 @@ TamemapのGitHub Actionsからのアクセス制限そのものは未解消。�
 GitHub Actions実HTTP監査は25成功・Tamemap失敗を検出して意図どおり失敗終了する。
 収集・HTTP診断の回帰CIは成功。別の杉並phase1 CIは以前の固定データ候補の公式URL404で
 停止しており、今回のイベントデータは変更していない。CI全体成功・全面復旧とは報告しない。
+
+## 承認済み限定公開の確認
+
+ユーザーが本番反映を明示承認。PR #102はproductionのカタログJSON1ファイルだけを更新し、
+PR #101はmainの収集処理・監査JSON限定配信を反映した。
+Pages run43315121324は2026-11-12T21:57:30Zに成功し、公開URLでカタログ更新、
+板橋checked・Tamemap source_errorを確認。正式版release/2026-11-13-r1は
+production 01f04fe95ebe24e47a14ca53fea9536b1dc68f63の不変スナップショット。
+data-production 0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8と現在6週間210件を維持。
+回収候補430件は未検証のまま公開していない。既存のmain未分類差分は今回の承認対象に含めない。

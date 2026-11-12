@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
   "kind": "registered_fixed_source_retrieval_and_link_leads",
-  "generated_at_jst": "2026-11-13T06:38:01+09:00",
+  "generated_at_jst": "2026-11-13T06:56:44+09:00",
   "horizon": [
     "2026-11-07",
     "2026-12-13"
   ],
+  "execution_environment": "github_actions",
   "registered_source_count": 26,
   "protected_legacy_source_count": 18,
   "source_registry_digest": "140c394bb0fc734b8118dfa10bce69c41b101050d031d6dbcf312574c24c93c5",
@@ -188,7 +189,7 @@
       "source_checks": [
         {
           "url": "https://www.sumidaevent.com/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.sumidaevent.com/",
@@ -372,7 +373,7 @@
       "source_checks": [
         {
           "url": "https://www.asakusaevent.com/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:39+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.asakusaevent.com/",
@@ -556,7 +557,7 @@
       "source_checks": [
         {
           "url": "https://www.uenopark.info/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.uenopark.info/",
@@ -740,7 +741,7 @@
       "source_checks": [
         {
           "url": "https://www.akihabaraevent.com/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:39+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.akihabaraevent.com/",
@@ -924,7 +925,7 @@
       "source_checks": [
         {
           "url": "https://www.hibiyapark.info/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:39+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.hibiyapark.info/",
@@ -1108,13 +1109,13 @@
       "source_checks": [
         {
           "url": "https://www.ikebukuropark.info/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:39+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.ikebukuropark.info/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 158094,
-          "sha256": "8531b814c0e21dbd4478529db3c7a1864af889a4febdeed58f5406394a34a3c5",
+          "sha256": "95238c30ae9ef69d332dfe58a756a1ce589c92cb6b2aa56c7611fa45dc9395d0",
           "page_title": "池袋イベント情報｜西口公園やサンシャインシティの催し",
           "observed_event_link_leads": 100
         }
@@ -1292,13 +1293,13 @@
       "source_checks": [
         {
           "url": "https://www.shinjukuevent.com/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:39+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.shinjukuevent.com/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 119516,
-          "sha256": "ac1d351b719cc5f6b0c05b5b20b9db7e122bd481d63d2ebb7603533e9a1a976c",
+          "sha256": "dfcefdfc98ce34f7bd38d3b2f6f812aa1afb646d8f668d78bffe46aa56f83517",
           "page_title": "新宿イベント情報｜大久保公園や新宿駅周辺の催し",
           "observed_event_link_leads": 100
         }
@@ -1476,7 +1477,7 @@
       "source_checks": [
         {
           "url": "https://www.nakanoevent.com/",
-          "checked_at": "2026-11-13T06:37:57+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nakanoevent.com/",
@@ -1660,13 +1661,13 @@
       "source_checks": [
         {
           "url": "https://www.yoyogikoen.info/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.yoyogikoen.info/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 269118,
-          "sha256": "1dfe30d8dd0956dd40c5cf8357865e3d86bc633205cd1aa0df7697d498632211",
+          "sha256": "e946334f420bb5a20796d30b06304c4367d8018dbc6bbe9fd1d1715973dd4ffe",
           "page_title": "代々木公園イベント＆フェス情報",
           "observed_event_link_leads": 100
         }
@@ -1844,7 +1845,7 @@
       "source_checks": [
         {
           "url": "https://www.miyashitapark.info/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.miyashitapark.info/",
@@ -2028,13 +2029,13 @@
       "source_checks": [
         {
           "url": "https://www.roppongievents.com/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.roppongievents.com/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 154982,
-          "sha256": "31c7b2423a9926424fb78f204ed0eea9eb9c397ef6565b74b81cc104c0de1f39",
+          "sha256": "98f53393ec88ce8c4362abe02dfa2202e040449859ffa0e7dc5f9cdc9122516e",
           "page_title": "六本木イベント情報｜六本木ヒルズ・麻布台ヒルズの催し",
           "observed_event_link_leads": 100
         }
@@ -2212,7 +2213,7 @@
       "source_checks": [
         {
           "url": "https://www.toyosuevent.com/",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.toyosuevent.com/",
@@ -2396,7 +2397,7 @@
       "source_checks": [
         {
           "url": "https://www.odaibapark.com/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.odaibapark.com/",
@@ -2580,7 +2581,7 @@
       "source_checks": [
         {
           "url": "https://www.shinagawaevent.com/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.shinagawaevent.com/",
@@ -2764,7 +2765,7 @@
       "source_checks": [
         {
           "url": "https://www.tachikawaevent.com/",
-          "checked_at": "2026-11-13T06:37:58+09:00",
+          "checked_at": "2026-11-13T06:56:40+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.tachikawaevent.com/",
@@ -2822,7 +2823,7 @@
       "source_checks": [
         {
           "url": "https://www.iterrace.jp/",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.iterrace.jp/",
@@ -2925,7 +2926,7 @@
       "source_checks": [
         {
           "url": "https://www.nerimakanko.jp/event/",
-          "checked_at": "2026-11-13T06:38:01+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/",
@@ -2937,7 +2938,7 @@
         },
         {
           "url": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
-          "checked_at": "2026-11-13T06:38:01+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
@@ -2949,7 +2950,7 @@
         },
         {
           "url": "https://www.nerimakanko.jp/event/search.php?month=2026-12",
-          "checked_at": "2026-11-13T06:38:01+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/search.php?month=2026-12",
@@ -3024,7 +3025,7 @@
       "source_checks": [
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
@@ -3036,7 +3037,7 @@
         },
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12&event_category=5&siteid=1",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12&event_category=5&siteid=1",
@@ -3122,7 +3123,7 @@
       "source_checks": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:42+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
@@ -3236,13 +3237,13 @@
       "source_checks": [
         {
           "url": "https://www.nakano-kanko.com/event/",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nakano-kanko.com/event/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 84466,
-          "sha256": "fe02c8dc6439d415a8f606a312b482f345358dd6632e4e8dac3186ca5a444f1c",
+          "sha256": "26f478dae2239cb8b9e96083b9f40a1fce1c2b720b64cf242c3746719f180809",
           "page_title": "イベント | 中野区観光協会",
           "observed_event_link_leads": 10
         }
@@ -3302,7 +3303,7 @@
       "source_checks": [
         {
           "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
@@ -3314,7 +3315,7 @@
         },
         {
           "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
@@ -3379,7 +3380,7 @@
       "source_checks": [
         {
           "url": "https://itabashi-kanko.jp/pickup/detail?id=1799",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-kanko.jp/pickup/detail?id=1799",
@@ -3432,7 +3433,7 @@
       "source_checks": [
         {
           "url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "http_status": 403,
@@ -3440,7 +3441,7 @@
           "response_server": "cloudflare",
           "response_content_type": "text/html; charset=UTF-8",
           "response_title": "Just a moment...",
-          "error_body_sha256": "830c51f4dcfc6b7c49520a43045dd570e295dcdd7c1a1d0838dd4927565dc824",
+          "error_body_sha256": "3f37cfc682bd3f66e75d3790a4faba6c02f5fe0c865aaaf1ee542f34034dd4f9",
           "error_body_truncated": true,
           "cloudflare_challenge_detected": true,
           "challenge_detected": true,
@@ -3450,7 +3451,7 @@
         },
         {
           "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "http_status": 403,
@@ -3458,7 +3459,7 @@
           "response_server": "cloudflare",
           "response_content_type": "text/html; charset=UTF-8",
           "response_title": "Just a moment...",
-          "error_body_sha256": "1e6241c7741e3594258c4f6d4766d42b34a9e58dd1b9aeeaa26fbb87a5fbfda8",
+          "error_body_sha256": "25c63c97b43f234bd66433679e4079ca0bee08ee12382a893a89e4870367e6c5",
           "error_body_truncated": true,
           "cloudflare_challenge_detected": true,
           "challenge_detected": true,
@@ -3468,7 +3469,7 @@
         },
         {
           "url": "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:37:59+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "http_status": 403,
@@ -3476,7 +3477,7 @@
           "response_server": "cloudflare",
           "response_content_type": "text/html; charset=UTF-8",
           "response_title": "Just a moment...",
-          "error_body_sha256": "10765dfa7095e2f7a6f23487c973bc39a8fcc98811bdefe45e581f0b4c704052",
+          "error_body_sha256": "5230bd32001b9f06c2cb20cb7713ed4a6032a77902efc895cb2d6c23603f3647",
           "error_body_truncated": true,
           "cloudflare_challenge_detected": true,
           "challenge_detected": true,
@@ -3539,25 +3540,25 @@
       "source_checks": [
         {
           "url": "https://itabashi-times.com/category/event",
-          "checked_at": "2026-11-13T06:38:01+09:00",
+          "checked_at": "2026-11-13T06:56:42+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-times.com/category/event",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 155362,
-          "sha256": "8f99a6a3c301d5433c7da3f1d1db249026feff272294451ebf2674e8566b3bbd",
+          "sha256": "68aa0af61a94df901d2f52eb6b958cf004a5e1cf7af18cbf751d717845562156",
           "page_title": "イベント情報 – いたばしTIMES Search First prev prev Last Search close",
           "observed_event_link_leads": 1
         },
         {
           "url": "https://itabashi-times.com/category/event/page/2",
-          "checked_at": "2026-11-13T06:38:01+09:00",
+          "checked_at": "2026-11-13T06:56:42+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-times.com/category/event/page/2",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 153409,
-          "sha256": "145b5b94ad60519aa1ba0c6c7d84efd4f39c58290b31ba32748404efeba1476c",
+          "sha256": "a96ffcae59498bd87bf0ee278e174f36a1e211a7c9cda4ed443e9273ae9b1e3e",
           "page_title": "イベント情報 – ページ 2 – いたばしTIMES Search First prev prev Last Search close",
           "observed_event_link_leads": 1
         }
@@ -3661,7 +3662,7 @@
       "source_checks": [
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:43+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
@@ -3673,7 +3674,7 @@
         },
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:44+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12",
@@ -3808,7 +3809,7 @@
       "source_checks": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "checked_at": "2026-11-13T06:38:00+09:00",
+          "checked_at": "2026-11-13T06:56:41+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
@@ -3825,8 +3826,5 @@
     }
   ],
   "read_only": true,
-  "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。",
-  "execution_environment": "github_actions",
-  "workflow_run_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/43312113358",
-  "scanner_commit": "8d08b9e5f0b06879cf4f64c10a88b8b73b4e3480"
+  "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。"
 }

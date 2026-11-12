@@ -16,6 +16,33 @@ ALLOWED_OFFICIAL_INDEX = {
     "www.city.nerima.tokyo.jp": ("https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar.html",),
 }
 
+def diagnostic_for_html_challenge(raw, final_url, http_status=200, content_type=""):
+    """Recognize a known challenge interstitial even when it returns HTTP 200.
+
+    Require both its characteristic document title and challenge script marker;
+    ordinary pages mentioning Cloudflare or using its analytics remain usable.
+    Only the bounded signature is retained, never the challenge page body.
+    """
+    bounded = raw[:MAX_ERROR_BYTES]
+    body = bounded.decode("utf-8", errors="replace")
+    found = TITLE.search(body)
+    title = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", found.group(1)))).strip()[:160] if found else ""
+    if (not re.fullmatch(r"just a moment[.!…\s]*", title, re.I)
+            or not any(marker in body.lower() for marker in ("cf-chl", "challenge-platform"))):
+        return None
+    return {
+        "http_status": http_status,
+        "final_url": str(final_url or "")[:1200],
+        "response_content_type": str(content_type or "")[:180],
+        "response_title": title,
+        "error_body_sha256": hashlib.sha256(bounded).hexdigest(),
+        "error_body_truncated": len(raw) > MAX_ERROR_BYTES,
+        "cloudflare_challenge_detected": True,
+        "challenge_detected": True,
+        "error_kind": "security_challenge",
+        "retryable_http_error": False,
+    }
+
 def diagnostic_for_http_error(error):
     """Record a bounded response signature without storing arbitrary page HTML."""
     headers = error.headers

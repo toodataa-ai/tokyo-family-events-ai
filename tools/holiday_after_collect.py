@@ -20,10 +20,11 @@ from urllib.parse import quote, urljoin, urlsplit
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
-from http_source_diagnostics import diagnostic_for_http_error
+from http_source_diagnostics import diagnostic_for_http_error, diagnostic_for_html_challenge
 from nerima_annual_resolver import resolve_annual_schedule_urls
 from official_schedule_discovery import extract_candidates
 from nerima_forest_schedule import parse_schedule as parse_nerima_forest_schedule
+from tamemap_calendar import calendar_leads as tamemap_calendar_leads
 
 JST = dt.timezone(dt.timedelta(hours=9))
 WARDS = [
@@ -136,10 +137,19 @@ class TamemapNewArrivalHTML(HTMLParser):
         self.heading_parts = []
         self.skip = 0
         self.awaiting_poster = False
+        self.detail_path = None
 
     def handle_starttag(self, tag, attrs):
         if tag in ("script", "style"):
             self.skip += 1
+        if tag == "a" and not self.skip:
+            attrs = dict(attrs)
+            # Read only the site's literal navigation target; never execute JS.
+            clicked = re.fullmatch(r"\s*addCommunityUrlClicked\(['\"](/1311401/event/\d+)['\"]\)\s*;?\s*",
+                                   attrs.get("onclick", ""))
+            href = attrs.get("href", "")
+            self.detail_path = (clicked[1] if clicked else
+                                href if re.fullmatch(r"/1311401/event/\d+", href) else None)
         if tag == "h3" and not self.skip:
             self.heading_parts = []
             self.in_heading = True
@@ -161,10 +171,12 @@ class TamemapNewArrivalHTML(HTMLParser):
     def handle_endtag(self, tag):
         if tag in ("script", "style"):
             self.skip = max(0, self.skip - 1)
+        if tag == "a":
+            self.detail_path = None
         if tag == "h3" and self.in_heading:
             name = " ".join(self.heading_parts).strip()
             if name and name not in ("イベントの新着一覧", "イベント情報", "地域イベント情報"):
-                self.entries.append({"name": name[:240]})
+                self.entries.append({"name": name[:240], "detail_path": self.detail_path})
                 self.awaiting_poster = True
             self.in_heading = False
             self.heading_parts = []
@@ -190,9 +202,11 @@ def tamemap_new_arrival_leads(body, url):
         identity = name + "|" + poster
         counts[identity] = counts.get(identity, 0) + 1
         suffix = "|" + str(counts[identity]) if counts[identity] > 1 else ""
+        detail = "https://pc.tamemap.net" + item["detail_path"] if item.get("detail_path") else None
         candidates.append({
-            "candidate_id": "tamemap-newarrival-" + digest(identity + suffix),
-            "name": name, "poster": poster, "discovery_url": url,
+            "candidate_id": "tamemap-newarrival-" + (item["detail_path"].rsplit("/", 1)[1] if detail else digest(identity + suffix)),
+            "name": name, "poster": poster, "discovery_url": detail or url,
+            "source_page": url, "detail_link_observed": bool(detail),
             "source_id": "tamemap_nakano", "candidate_type": "new_arrival_title_lead",
             "date_unverified": True, "matched_dates": [],
             "primary_source_verified": False, "publication_approved": False,
@@ -251,6 +265,11 @@ def fetch_url(url, fetcher=None, attempts=2):
                 raise ValueError("empty, truncated or non-200 response")
             if urlsplit(final_url).scheme != "https":
                 raise ValueError("redirected to non-HTTPS")
+            challenge = diagnostic_for_html_challenge(raw, final_url, status, content_type)
+            if challenge is not None:
+                return {"url": url, "checked_at": now(), "status": "error",
+                        "error": "security challenge response is not source content",
+                        **challenge}
             charset = "cp932" if "shift_jis" in content_type.lower() else "utf-8"
             try:
                 body = raw.decode(charset)
@@ -264,7 +283,10 @@ def fetch_url(url, fetcher=None, attempts=2):
                     "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(),
                     "body": body}
         except (HTTPError, URLError, OSError, ValueError, UnicodeError, TimeoutError) as error:
-            evidence["error"] = str(error)[:350]
+            # Each attempt owns its own status. A final transport/parse failure
+            # must not inherit an earlier 404/403 or trigger its fallback path.
+            evidence = {"url": url, "checked_at": now(), "status": "error",
+                        "error": str(error)[:350]}
             if isinstance(error, HTTPError):
                 # Capture at most 4 KiB of *response metadata/signature*;
                 # do not retain the untrusted raw error HTML or discard 404s.
@@ -522,6 +544,15 @@ def inspect(job, fetcher=None):
             result["individually_verified_event_count"] = None
             result["candidate_status"] = "unverified_title_leads"
             result["new_arrival_is_partial_not_calendar_replacement"] = True
+        elif (job.get("source_id") == "tamemap_nakano" and
+              urlsplit(job["url"]).path.startswith("/1311401/calendar/")):
+            result["candidates"] = tamemap_calendar_leads(
+                evidence["body"], job["url"],
+                dt.date.fromisoformat(job["target_start"]) if job.get("target_start") else None,
+                dt.date.fromisoformat(job["target_end"]) if job.get("target_end") else None)
+            result["page_title"] = "ためまっぷなかの・月別カレンダー"
+            result["candidate_status"] = "unverified_calendar_links"
+            result["decision_reconciliation"] = "pending"
         elif job.get("source_id") == "suginami_calendar_all":
             result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
             result["page_title"] = "杉並区公式イベントカレンダー"

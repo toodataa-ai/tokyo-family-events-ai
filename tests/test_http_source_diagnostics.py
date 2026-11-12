@@ -7,7 +7,7 @@ import sys
 import threading
 import unittest
 from unittest.mock import patch
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from http_source_diagnostics import (
@@ -66,6 +66,48 @@ class HTTPErrorEvidenceTests(unittest.TestCase):
         self.assertNotIn("error_kind",evidence)
         self.assertNotIn("error_body_sha256",evidence)
         self.assertNotIn("error",evidence)
+
+    def test_final_transport_failure_does_not_reuse_prior_http_error(self):
+        url="https://www.city.nerima.tokyo.jp/kankomoyoshi/event/example.html"
+        for previous_code in (403, 404):
+            with self.subTest(previous_code=previous_code):
+                attempts=iter([
+                    http_error(url,previous_code,"cloudflare",b"<title>Just a moment...</title>cf-chl"),
+                    URLError("final transport timeout"),
+                ])
+                def transport(_):
+                    raise next(attempts)
+                with patch("holiday_after_collect.time.sleep"):
+                    evidence=fetch_url(url,fetcher=transport,attempts=2)
+                self.assertEqual(evidence["status"],"error")
+                self.assertIn("final transport timeout",evidence["error"])
+                for key in ("http_status", "final_url", "error_kind", "error_body_sha256",
+                            "challenge_detected", "response_server"):
+                    self.assertNotIn(key,evidence)
+
+    def test_http_200_challenge_is_a_failed_source_without_page_body(self):
+        url="https://pc.tamemap.net/1311401/calendar/2026-11"
+        body=b"<html><title>Just a moment...</title><script src='/cdn-cgi/challenge-platform/test'></script></html>"+b"x"*5000
+        evidence=fetch_url(url,fetcher=lambda _:(200,body,url,"text/html"))
+        self.assertEqual(evidence["status"],"error")
+        self.assertEqual(evidence["http_status"],200)
+        self.assertEqual(evidence["error_kind"],"security_challenge")
+        self.assertTrue(evidence["challenge_detected"])
+        self.assertTrue(evidence["error_body_truncated"])
+        self.assertEqual(len(evidence["error_body_sha256"]),64)
+        self.assertNotIn("body",evidence)
+
+    def test_ordinary_page_with_cloudflare_script_remains_accessible(self):
+        url="https://example.org/events/"
+        for body in (
+            b"<title>Family events</title><script src='https://cloudflare.com/analytics.js'></script>",
+            b"<title>Family events</title><p>Documentation for challenge-platform</p>",
+            b"<title>Just a moment...</title><p>A theatrical event</p>",
+        ):
+            with self.subTest(body=body):
+                evidence=fetch_url(url,fetcher=lambda _:(200,body,url,"text/html"))
+                self.assertEqual(evidence["status"],"checked")
+                self.assertNotIn("challenge_detected",evidence)
 
     def test_ambiguous_cross_city_404_keeps_uncertainty(self):
         url="https://www.city.tokyo-nakano.lg.jp/event/page.html"

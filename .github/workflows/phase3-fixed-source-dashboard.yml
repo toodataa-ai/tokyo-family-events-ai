@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'tools/fixed_source_coverage_v3.py'
+      - 'tools/tamemap_calendar.py'
+      - 'tools/collect_tamemap_recovery.py'
+      - 'tests/test_collect_tamemap_recovery.py'
+      - 'tools/holiday_after_collect.py'
+      - 'tools/http_source_diagnostics.py'
+      - 'tests/test_tamemap_discovery.py'
+      - 'tests/test_http_source_diagnostics.py'
       - 'tools/source_fallback_policy.py'
       - 'policy/source_fallbacks_v1.json'
       - 'tests/test_source_fallback_policy.py'
@@ -16,6 +23,13 @@ on:
     branches: [main]
     paths:
       - 'tools/fixed_source_coverage_v3.py'
+      - 'tools/tamemap_calendar.py'
+      - 'tools/collect_tamemap_recovery.py'
+      - 'tests/test_collect_tamemap_recovery.py'
+      - 'tools/holiday_after_collect.py'
+      - 'tools/http_source_diagnostics.py'
+      - 'tests/test_tamemap_discovery.py'
+      - 'tests/test_http_source_diagnostics.py'
       - 'tools/source_fallback_policy.py'
       - 'policy/source_fallbacks_v1.json'
       - 'tests/test_source_fallback_policy.py'
@@ -41,6 +55,9 @@ jobs:
           node-version: '22'
       - name: Registry, state and old-event preservation regressions
         run: |
+          npm test
+          python3 -m unittest discover -s tests -p 'test_tamemap_discovery.py'
+          python3 -m unittest discover -s tests -p 'test_http_source_diagnostics.py'
           python3 -m unittest discover -s tests -p 'test_fixed_source_coverage_v3.py'
           python3 -m unittest discover -s tests -p 'test_source_fallback_policy.py'
           node --check site/source-audit.js
@@ -49,7 +66,6 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_listing_source_evidence_v2.py'
 
   snapshot:
-    if: github.event_name != 'pull_request'
     needs: [regression]
     runs-on: ubuntu-latest
     timeout-minutes: 18
@@ -60,7 +76,7 @@ jobs:
       - name: Checkout staging application audit code
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
           fetch-depth: 2
       - name: Checkout read-only production event manifest (never write data)
         uses: actions/checkout@v4
@@ -101,6 +117,7 @@ jobs:
           retention-days: 30
           if-no-files-found: error
       - name: Update ONLY public audit-status snapshot; never publish or delete events
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           set -eu
@@ -115,6 +132,7 @@ jobs:
           git commit -m "audit: refresh registered source retrieval statuses"
           git push origin HEAD:refs/heads/main
       - name: Rebuild staging preview after bot-only status update
+        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml --ref main

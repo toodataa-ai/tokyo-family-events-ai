@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "registered_fixed_source_retrieval_and_link_leads",
-  "generated_at_jst": "2026-11-13T06:33:03+09:00",
+  "generated_at_jst": "2026-11-13T06:38:01+09:00",
   "horizon": [
     "2026-11-07",
     "2026-12-13"
@@ -11,9 +11,9 @@
   "source_registry_digest": "140c394bb0fc734b8118dfa10bce69c41b101050d031d6dbcf312574c24c93c5",
   "summary": {
     "registered": 26,
-    "reachable_all_registered_urls": 26,
+    "reachable_all_registered_urls": 25,
     "partial_errors": 0,
-    "source_errors": 0,
+    "source_errors": 1,
     "full_event_row_parity_verified_by_this_report": 0,
     "event_candidates_count": null,
     "publication_gaps_confirmed": null
@@ -188,7 +188,7 @@
       "source_checks": [
         {
           "url": "https://www.sumidaevent.com/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.sumidaevent.com/",
@@ -372,7 +372,7 @@
       "source_checks": [
         {
           "url": "https://www.asakusaevent.com/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.asakusaevent.com/",
@@ -556,7 +556,7 @@
       "source_checks": [
         {
           "url": "https://www.uenopark.info/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.uenopark.info/",
@@ -740,13 +740,13 @@
       "source_checks": [
         {
           "url": "https://www.akihabaraevent.com/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.akihabaraevent.com/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 110031,
-          "sha256": "17d11fb091f0f44830d5e779b6f97d807d8927695d48fef4146025a8cf1f1e83",
+          "sha256": "c475e1436864d91e62146a1fdb38788d74eb89cc9063692742c43421bb44e4b1",
           "page_title": "秋葉原イベント情報｜ベルサール秋葉原・UDXの催し",
           "observed_event_link_leads": 100
         }
@@ -924,7 +924,7 @@
       "source_checks": [
         {
           "url": "https://www.hibiyapark.info/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.hibiyapark.info/",
@@ -1108,7 +1108,7 @@
       "source_checks": [
         {
           "url": "https://www.ikebukuropark.info/",
-          "checked_at": "2026-11-13T06:32:55+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.ikebukuropark.info/",
@@ -1292,7 +1292,7 @@
       "source_checks": [
         {
           "url": "https://www.shinjukuevent.com/",
-          "checked_at": "2026-11-13T06:32:56+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.shinjukuevent.com/",
@@ -1476,7 +1476,7 @@
       "source_checks": [
         {
           "url": "https://www.nakanoevent.com/",
-          "checked_at": "2026-11-13T06:32:57+09:00",
+          "checked_at": "2026-11-13T06:37:57+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nakanoevent.com/",
@@ -1660,7 +1660,7 @@
       "source_checks": [
         {
           "url": "https://www.yoyogikoen.info/",
-          "checked_at": "2026-11-13T06:32:56+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.yoyogikoen.info/",
@@ -1844,13 +1844,13 @@
       "source_checks": [
         {
           "url": "https://www.miyashitapark.info/",
-          "checked_at": "2026-11-13T06:32:56+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.miyashitapark.info/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 125523,
-          "sha256": "d88b4596432af8f1c047a94486600d0fb72ad30a29c969d7c07a2cb429ae8080",
+          "sha256": "5590781565a2bf9b2567254b2de44a3b4625ef002162fbf95497feb584a7885f",
           "page_title": "渋谷イベント情報｜宮下パーク・渋谷駅周辺の催し",
           "observed_event_link_leads": 100
         }
@@ -2028,7 +2028,7 @@
       "source_checks": [
         {
           "url": "https://www.roppongievents.com/",
-          "checked_at": "2026-11-13T06:32:56+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.roppongievents.com/",
@@ -2212,7 +2212,7 @@
       "source_checks": [
         {
           "url": "https://www.toyosuevent.com/",
-          "checked_at": "2026-11-13T06:32:56+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.toyosuevent.com/",
@@ -2396,7 +2396,7 @@
       "source_checks": [
         {
           "url": "https://www.odaibapark.com/",
-          "checked_at": "2026-11-13T06:32:58+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.odaibapark.com/",
@@ -2580,7 +2580,7 @@
       "source_checks": [
         {
           "url": "https://www.shinagawaevent.com/",
-          "checked_at": "2026-11-13T06:33:00+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.shinagawaevent.com/",
@@ -2764,7 +2764,7 @@
       "source_checks": [
         {
           "url": "https://www.tachikawaevent.com/",
-          "checked_at": "2026-11-13T06:32:59+09:00",
+          "checked_at": "2026-11-13T06:37:58+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.tachikawaevent.com/",
@@ -2822,7 +2822,7 @@
       "source_checks": [
         {
           "url": "https://www.iterrace.jp/",
-          "checked_at": "2026-11-13T06:32:58+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.iterrace.jp/",
@@ -2925,7 +2925,7 @@
       "source_checks": [
         {
           "url": "https://www.nerimakanko.jp/event/",
-          "checked_at": "2026-11-13T06:32:59+09:00",
+          "checked_at": "2026-11-13T06:38:01+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/",
@@ -2937,7 +2937,7 @@
         },
         {
           "url": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
-          "checked_at": "2026-11-13T06:32:58+09:00",
+          "checked_at": "2026-11-13T06:38:01+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
@@ -2949,7 +2949,7 @@
         },
         {
           "url": "https://www.nerimakanko.jp/event/search.php?month=2026-12",
-          "checked_at": "2026-11-13T06:33:00+09:00",
+          "checked_at": "2026-11-13T06:38:01+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nerimakanko.jp/event/search.php?month=2026-12",
@@ -3024,25 +3024,25 @@
       "source_checks": [
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
-          "checked_at": "2026-11-13T06:32:59+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
           "content_type": "text/html; charset=utf-8",
           "bytes": 27350,
-          "sha256": "165c8f62706fc19433a429fa073755abb7d3c0d70546156b0f8cd6e147e800e8",
+          "sha256": "3974de970d8c24775e3195c5913e6380afe67ec990afbe4ce035dc6610f76967",
           "page_title": "イベントカレンダー｜杉並区公式ホームページ",
           "observed_event_link_leads": 3
         },
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12&event_category=5&siteid=1",
-          "checked_at": "2026-11-13T06:33:02+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12&event_category=5&siteid=1",
           "content_type": "text/html; charset=utf-8",
           "bytes": 26726,
-          "sha256": "6f9622223469be0832aaabe17bd81401501c01550e99354c6ffe85cac1311201",
+          "sha256": "f30a72ece0986a9312b29173d74bb9e71b8a0d70b511c16899769832d617ee60",
           "page_title": "イベントカレンダー｜杉並区公式ホームページ",
           "observed_event_link_leads": 4
         }
@@ -3122,7 +3122,7 @@
       "source_checks": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
-          "checked_at": "2026-11-13T06:32:59+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
@@ -3236,13 +3236,13 @@
       "source_checks": [
         {
           "url": "https://www.nakano-kanko.com/event/",
-          "checked_at": "2026-11-13T06:33:00+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.nakano-kanko.com/event/",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 84466,
-          "sha256": "f498b1c4b878ec9032453eea1818a3b79b1df405fa79f40d695c0a53c7446cdc",
+          "sha256": "fe02c8dc6439d415a8f606a312b482f345358dd6632e4e8dac3186ca5a444f1c",
           "page_title": "イベント | 中野区観光協会",
           "observed_event_link_leads": 10
         }
@@ -3302,7 +3302,7 @@
       "source_checks": [
         {
           "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
-          "checked_at": "2026-11-13T06:32:59+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
@@ -3314,7 +3314,7 @@
         },
         {
           "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
-          "checked_at": "2026-11-13T06:33:00+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
@@ -3379,7 +3379,7 @@
       "source_checks": [
         {
           "url": "https://itabashi-kanko.jp/pickup/detail?id=1799",
-          "checked_at": "2026-11-13T06:33:01+09:00",
+          "checked_at": "2026-11-13T06:37:59+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-kanko.jp/pickup/detail?id=1799",
@@ -3412,350 +3412,93 @@
       "group": "地域カレンダー",
       "detail_adapter": null,
       "base_url": "https://pc.tamemap.net/1311401?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-      "retrieval_status": "checked",
-      "status_label": "要個別照合",
+      "retrieval_status": "source_error",
+      "status_label": "取得失敗",
       "pages_expected": 3,
-      "pages_checked": 3,
-      "pages_failed": 0,
-      "observed_distinct_link_leads": 572,
-      "example_leads": [
-        {
-          "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-01",
-          "name": "森のファミリー合唱団",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/156305/2026-11-01",
-          "name": "第八回なかのボッチャ大会",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/161733/2026-11-01",
-          "name": "合気道江原教室（合気会） 会員募集中 見学・体験歓迎",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/161749/2026-11-01",
-          "name": "地域子ども祭り",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/161771/2026-11-01",
-          "name": "令和8年度 養育家庭（里親）体験発表会",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162253/2026-11-01",
-          "name": "令和８年度中野区総合防災訓練(東部地域)",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162802/2026-11-01",
-          "name": "杜の文化祭～小さな森の音楽会",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162803/2026-11-01",
-          "name": "杜の文化祭",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/161631/2026-11-01",
-          "name": "子どもの権利の日フォーラムなかの２０２６",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162701/2026-11-01",
-          "name": "IROTORIYOUTHみんなの居場所",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162888/2026-11-01",
-          "name": "にこにこボールフェスタ",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162731/2026-11-01",
-          "name": "合気道本町教室 会員募集＆１1月予定",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/160837/2026-11-01",
-          "name": "秋の児童カードポイントキャンペーン",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/161115/2026-11-01",
-          "name": "山﨑家庭園・茶室の公開",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162738/2026-11-01",
-          "name": "地域展「野方・沼袋」",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/102229/2026-11-02",
-          "name": "あかちゃんおはなし会",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162251/2026-11-02",
-          "name": "新生第４回伊望会書画展",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/162803/2026-11-02",
-          "name": "杜の文化祭",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/151553/2026-11-02",
-          "name": "なべよこわいわい体操",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        },
-        {
-          "url": "https://pc.tamemap.net/1311401/event/155074/2026-11-02",
-          "name": "健康体操カトレア 「みんなでワイワイ/ボッチャ」",
-          "observed_in": [
-            "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
-          ]
-        }
-      ],
-      "new_arrival_post_leads_observed": 10,
+      "pages_checked": 0,
+      "pages_failed": 3,
+      "observed_distinct_link_leads": 0,
+      "example_leads": [],
+      "new_arrival_post_leads_observed": 0,
       "new_arrival_post_leads_are_unverified": true,
-      "new_arrival_samples": [
-        {
-          "candidate_id": "tamemap-newarrival-163526",
-          "name": "マリポサ・ハウス食堂",
-          "poster": "マリポサ・ハウス食堂",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163526"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163525",
-          "name": "マリポサハウス食堂",
-          "poster": "マリポサ・ハウス食堂",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163525"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163523",
-          "name": "健康茶房",
-          "poster": "なかのヘルスケアコミュニティ",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163523"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163509",
-          "name": "西郷孝彦先生お話会＆グループトーク",
-          "poster": "ito-いと-",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163509"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163486",
-          "name": "クリスマスピザトースト作り🍕",
-          "poster": "SOP（スーパーお笑いペアレンツ）",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163486"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163468",
-          "name": "ファミコンあつまる＠ゲーム大会",
-          "poster": "ミニ寄合「ファミコンあつまる」",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163468"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163417",
-          "name": "おさんぽかふぇドーナッツ@新井薬師児童館",
-          "poster": "おさんぽかふぇドーナッツ",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163417"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163409",
-          "name": "さくらサロン年末ゲーム大会",
-          "poster": "なかのさくらぐみ",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163409"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163408",
-          "name": "第１８回あらい暮らしの保健室",
-          "poster": "なかのさくらぐみ",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163408"
-        },
-        {
-          "candidate_id": "tamemap-newarrival-163359",
-          "name": "伝統文化体験講座「将棋の世界」",
-          "poster": "中野区立歴史民俗資料館",
-          "date_verified": false,
-          "detail_url": "https://pc.tamemap.net/1311401/event/163359"
-        }
-      ],
+      "new_arrival_samples": [],
       "event_candidates_total": null,
       "candidate_publication_parity": "未検証",
       "published_count_from_source": null,
       "excluded_count_from_source": null,
       "duplicate_count_from_source": null,
       "unreviewed_count_from_source": null,
-      "unverified_due_to_source_error": false,
+      "unverified_due_to_source_error": true,
       "source_checks": [
         {
           "url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:33:01+09:00",
-          "status": "checked",
-          "http_status": 200,
+          "checked_at": "2026-11-13T06:37:59+09:00",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "http_status": 403,
           "final_url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "content_type": "text/html; charset=utf-8",
-          "bytes": 412472,
-          "sha256": "f1f482338a5a9c6bdb392012eaa7c62e4190cd90d5af67f03092d887fdedb522",
-          "page_title": "ためまっぷなかの・月別カレンダー",
-          "observed_event_link_leads": 386,
-          "event_date_verified": false
+          "response_server": "cloudflare",
+          "response_content_type": "text/html; charset=UTF-8",
+          "response_title": "Just a moment...",
+          "error_body_sha256": "830c51f4dcfc6b7c49520a43045dd570e295dcdd7c1a1d0838dd4927565dc824",
+          "error_body_truncated": true,
+          "cloudflare_challenge_detected": true,
+          "challenge_detected": true,
+          "response_cf_ray_present": true,
+          "error_kind": "security_challenge",
+          "retryable_http_error": false
         },
         {
           "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:33:01+09:00",
-          "status": "checked",
-          "http_status": 200,
+          "checked_at": "2026-11-13T06:37:59+09:00",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "http_status": 403,
           "final_url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "content_type": "text/html; charset=utf-8",
-          "bytes": 252245,
-          "sha256": "907b3c9dd15ae5770c1cea3659bf97e39e23e72dd8ba538334ebd84e1abebb58",
-          "page_title": "ためまっぷなかの・月別カレンダー",
-          "observed_event_link_leads": 186,
-          "event_date_verified": false
+          "response_server": "cloudflare",
+          "response_content_type": "text/html; charset=UTF-8",
+          "response_title": "Just a moment...",
+          "error_body_sha256": "1e6241c7741e3594258c4f6d4766d42b34a9e58dd1b9aeeaa26fbb87a5fbfda8",
+          "error_body_truncated": true,
+          "cloudflare_challenge_detected": true,
+          "challenge_detected": true,
+          "response_cf_ray_present": true,
+          "error_kind": "security_challenge",
+          "retryable_http_error": false
         },
         {
           "url": "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "checked_at": "2026-11-13T06:33:01+09:00",
-          "status": "checked",
-          "http_status": 200,
+          "checked_at": "2026-11-13T06:37:59+09:00",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "http_status": 403,
           "final_url": "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
-          "content_type": "text/html; charset=utf-8",
-          "bytes": 104052,
-          "sha256": "0ee5a63e370a1be43ebe76447302bfb2948292c9fd2cc58d03674a9bab462b03",
-          "page_title": "ためまっぷなかの・新着投稿一覧（日時未確認）",
-          "observed_new_arrival_title_leads": 10,
-          "new_arrival_title_samples": [
-            {
-              "candidate_id": "tamemap-newarrival-163526",
-              "name": "マリポサ・ハウス食堂",
-              "poster": "マリポサ・ハウス食堂",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163526"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163525",
-              "name": "マリポサハウス食堂",
-              "poster": "マリポサ・ハウス食堂",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163525"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163523",
-              "name": "健康茶房",
-              "poster": "なかのヘルスケアコミュニティ",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163523"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163509",
-              "name": "西郷孝彦先生お話会＆グループトーク",
-              "poster": "ito-いと-",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163509"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163486",
-              "name": "クリスマスピザトースト作り🍕",
-              "poster": "SOP（スーパーお笑いペアレンツ）",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163486"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163468",
-              "name": "ファミコンあつまる＠ゲーム大会",
-              "poster": "ミニ寄合「ファミコンあつまる」",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163468"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163417",
-              "name": "おさんぽかふぇドーナッツ@新井薬師児童館",
-              "poster": "おさんぽかふぇドーナッツ",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163417"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163409",
-              "name": "さくらサロン年末ゲーム大会",
-              "poster": "なかのさくらぐみ",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163409"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163408",
-              "name": "第１８回あらい暮らしの保健室",
-              "poster": "なかのさくらぐみ",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163408"
-            },
-            {
-              "candidate_id": "tamemap-newarrival-163359",
-              "name": "伝統文化体験講座「将棋の世界」",
-              "poster": "中野区立歴史民俗資料館",
-              "date_verified": false,
-              "detail_url": "https://pc.tamemap.net/1311401/event/163359"
-            }
-          ],
-          "event_date_verified": false,
-          "not_a_calendar_replacement": true
+          "response_server": "cloudflare",
+          "response_content_type": "text/html; charset=UTF-8",
+          "response_title": "Just a moment...",
+          "error_body_sha256": "10765dfa7095e2f7a6f23487c973bc39a8fcc98811bdefe45e581f0b4c704052",
+          "error_body_truncated": true,
+          "cloudflare_challenge_detected": true,
+          "challenge_detected": true,
+          "response_cf_ray_present": true,
+          "error_kind": "security_challenge",
+          "retryable_http_error": false
         }
       ],
-      "errors": [],
+      "errors": [
+        {
+          "url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/new_arrival?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
       "audit_method": "registered URLs; HTML link lead observation; no inferred event dates",
       "caveat": "接続成功は候補・掲載の全件照合完了を意味しません。"
     },
@@ -3796,25 +3539,25 @@
       "source_checks": [
         {
           "url": "https://itabashi-times.com/category/event",
-          "checked_at": "2026-11-13T06:33:02+09:00",
+          "checked_at": "2026-11-13T06:38:01+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-times.com/category/event",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 155362,
-          "sha256": "c42c22b33f36aa7037b69da3de820e2a9af322bbc8b07f8416a95a7d5cfd922b",
+          "sha256": "8f99a6a3c301d5433c7da3f1d1db249026feff272294451ebf2674e8566b3bbd",
           "page_title": "イベント情報 – いたばしTIMES Search First prev prev Last Search close",
           "observed_event_link_leads": 1
         },
         {
           "url": "https://itabashi-times.com/category/event/page/2",
-          "checked_at": "2026-11-13T06:33:02+09:00",
+          "checked_at": "2026-11-13T06:38:01+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://itabashi-times.com/category/event/page/2",
           "content_type": "text/html; charset=UTF-8",
           "bytes": 153409,
-          "sha256": "d73be82c95274b850b54e4258e6b51d4da237091252ee901f0f6bdfd8ff6e3fa",
+          "sha256": "145b5b94ad60519aa1ba0c6c7d84efd4f39c58290b31ba32748404efeba1476c",
           "page_title": "イベント情報 – ページ 2 – いたばしTIMES Search First prev prev Last Search close",
           "observed_event_link_leads": 1
         }
@@ -3918,7 +3661,7 @@
       "source_checks": [
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
-          "checked_at": "2026-11-13T06:33:02+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
@@ -3930,7 +3673,7 @@
         },
         {
           "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12",
-          "checked_at": "2026-11-13T06:33:03+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12",
@@ -4065,7 +3808,7 @@
       "source_checks": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "checked_at": "2026-11-13T06:33:02+09:00",
+          "checked_at": "2026-11-13T06:38:00+09:00",
           "status": "checked",
           "http_status": 200,
           "final_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
@@ -4082,5 +3825,8 @@
     }
   ],
   "read_only": true,
-  "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。"
+  "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。",
+  "execution_environment": "github_actions",
+  "workflow_run_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/actions/runs/43312113358",
+  "scanner_commit": "8d08b9e5f0b06879cf4f64c10a88b8b73b4e3480"
 }

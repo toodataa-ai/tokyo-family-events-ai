@@ -9,6 +9,7 @@ import concurrent.futures
 import datetime as dt
 import hashlib
 import json
+import os
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -218,6 +219,7 @@ def build_report(registry, start, end, *, fetcher=None, workers=8, checked_at=No
     return {
         "schema_version": 1, "kind": "registered_fixed_source_retrieval_and_link_leads",
         "generated_at_jst": generated, "horizon": [str(start), str(end)],
+        "execution_environment": "github_actions" if os.environ.get("GITHUB_ACTIONS") == "true" else "current_execution_environment",
         "registered_source_count": len(output), "protected_legacy_source_count": len(protected),
         "source_registry_digest": hashlib.sha256(json.dumps(
             registry["explicit_sources"], sort_keys=True, ensure_ascii=False).encode()).hexdigest(),

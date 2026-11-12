@@ -6,6 +6,8 @@ on:
     paths:
       - 'tools/fixed_source_coverage_v3.py'
       - 'tools/tamemap_calendar.py'
+      - 'tools/collect_tamemap_recovery.py'
+      - 'tests/test_collect_tamemap_recovery.py'
       - 'tools/holiday_after_collect.py'
       - 'tools/http_source_diagnostics.py'
       - 'tests/test_tamemap_discovery.py'
@@ -22,6 +24,8 @@ on:
     paths:
       - 'tools/fixed_source_coverage_v3.py'
       - 'tools/tamemap_calendar.py'
+      - 'tools/collect_tamemap_recovery.py'
+      - 'tests/test_collect_tamemap_recovery.py'
       - 'tools/holiday_after_collect.py'
       - 'tools/http_source_diagnostics.py'
       - 'tests/test_tamemap_discovery.py'
@@ -51,6 +55,7 @@ jobs:
           node-version: '22'
       - name: Registry, state and old-event preservation regressions
         run: |
+          npm test
           python3 -m unittest discover -s tests -p 'test_tamemap_discovery.py'
           python3 -m unittest discover -s tests -p 'test_http_source_diagnostics.py'
           python3 -m unittest discover -s tests -p 'test_fixed_source_coverage_v3.py'
@@ -71,7 +76,7 @@ jobs:
       - name: Checkout staging application audit code
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
           fetch-depth: 2
       - name: Checkout read-only production event manifest (never write data)
         uses: actions/checkout@v4

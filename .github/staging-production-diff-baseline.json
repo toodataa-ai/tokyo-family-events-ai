@@ -557,7 +557,7 @@
       "path": "site/audit/fixed_sources.json",
       "kind": "staging_only",
       "category": "source_retrieval_recovery",
-      "reason": "2026-11-13全26サイト実HTTP監査。mainが保持する独立した取得状況で、イベント全件照合完了は主張しない。",
+      "reason": "2026-11-13 GitHub Actionsで25サイト成功・Tamemap403の実測監査。取得可能な手動環境と混ぜず、未確認候補・GitHub失敗を残す。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -574,6 +574,38 @@
       "kind": "staging_only",
       "category": "source_retrieval_recovery",
       "reason": "mainの登録26サイト定期/手動監査。収集依存変更時の回帰検証・実測結果更新。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/collect_tamemap_recovery.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "通常HTTPS取得が可能な作業環境でのみ実行するTamemap手動代替収集。GitHubの必須チェックを代替しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_collect_tamemap_recovery.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "代替環境の成功・403・不正月/空ページを検証し、公開許可・GitHub成功の捏造を防止。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/tamemap_recovery_20261113/source_checks.json",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "手動代替環境で3ページのHTTP200取得日時・本文SHAを保存した実測証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/tamemap_recovery_20261113/candidate_pool.json",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "対象期間の未検証候補430件。公開イベント・採否とは独立したレビューバックログ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

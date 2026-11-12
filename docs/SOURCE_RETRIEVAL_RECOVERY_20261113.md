@@ -5,17 +5,22 @@
 `TokyoFamilyEventsEvidence/1.0` の既存User-Agent・通常のHTTPS取得で実測。
 認証、CAPTCHA回避、ブラウザー偽装、登録URLの差し替えは行っていない。
 
-- Tamemapの登録済み11月・12月カレンダーと新着一覧がHTTP 200。
+- この作業環境ではTamemapの登録済み11月・12月カレンダーと新着一覧がHTTP 200。
+  **GitHub Actionsでは同じ標準User-Agent・同じURLでも403 Cloudflare challengeが継続**。
+  ネットワーク環境による差があり、自動収集の取得制限が解消したとは判定しない。
 - 板橋観光協会の元URL `https://itabashi-kanko.jp/pickup/detail?id=1799` もHTTP 200。
   第55回・令和8年10月17日/18日の案内であり、将来の週末イベントとして再掲載する根拠にはしない。
 - 公開データ正本の現行manifest（2026-11-07～2026-12-13）を基準に
-  全26登録サイトを再取得。26サイト全登録URL成功、一部失敗0、取得失敗0。
-- 全件の取得URL・日時・本文バイト数・SHA256を `site/audit/fixed_sources.json` に保存。
+  全26登録サイトを再取得。この作業環境では26サイト成功。
+  Actions実測は25サイト成功、Tamemapの3URLは403。
+- 本番に表示する `site/audit/fixed_sources.json` は**GitHub Actionsの結果**を保存し、
+  Tamemapを失敗のまま保持。実行環境・Actions URL・取得URL・日時・SHA256を記録。
   イベント候補総数・採否・掲載漏れは未検証のまま保持した。
 
 ## 修正した原因
 
-1. 監査スナップショットは10月28日の失敗結果のままだった。
+1. 監査スナップショットは10月28日の失敗結果のままだった。板橋は復旧を反映し、
+   TamemapのActionsでの403は残す。作業環境での正常取得で自動収集の失敗を上書きしない。
 2. productionには残課題ページがあるが、取得状況の監査JSONが存在せず、
    mainのJSON更新も本番Pages合成の対象外だった。独立した読取専用監査JSONだけを
    登録情報・証跡と照合して上書きする。アプリ、イベントデータ、採否、履歴は上書きしない。
@@ -43,5 +48,20 @@
 ## 検証
 
 `npm test`（既存回帰と今回の専用収集6件・HTTP診断9件・限定合成3件）、
-canonical prompt検証、既存イベント保護検証、実際のproduction登録情報を使った
+代替収集3件、canonical prompt検証、既存イベント保護検証、実際のproduction登録情報を使った
 監査JSON合成検証を実行。既存公開イベントの無承認削除なし。
+
+## 未解消の制約と取得可能な経路
+
+TamemapのGitHub Actionsからのアクセス制限そのものは未解消。元サイト側の制御を
+コード修正だけで解除できるとは主張しない。取得できる通常の作業環境から
+`tools/collect_tamemap_recovery.py --manifest <data-productionのmanifest> --output-dir <証拠の出力先>`
+で再現可能な候補収集を行う。既存User-Agent・元URLを使用し、CAPTCHA回避やアクセス制限の
+無効化は行わない。取得証跡と候補だけを保存し、全候補の開催日・会場・適性確認と
+公開ゲートを免除しない。GitHub実行分の未取得判定も変更しない。
+
+再実行結果は `research/tamemap_recovery_20261113/` に保存。3ページとも正常取得し、
+公開manifestの対象期間内のカレンダー候補と新着投稿を合わせて430件を未検証として保存した。
+GitHub Actions実HTTP監査は25成功・Tamemap失敗を検出して意図どおり失敗終了する。
+収集・HTTP診断の回帰CIは成功。別の杉並phase1 CIは以前の固定データ候補の公式URL404で
+停止しており、今回のイベントデータは変更していない。CI全体成功・全面復旧とは報告しない。

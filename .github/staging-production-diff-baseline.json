@@ -552,6 +552,54 @@
       "reason": "対象期間の未検証候補430件。公開イベント・採否とは独立したレビューバックログ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/nakano-content-review.yml",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "固定した6件・12ファイルのデータ候補だけを読み取り検証する監査CI。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_nakano_review_addition.py",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "既存210件・採否・検索証跡・失敗一覧を保護し、本文で個別確認した6件のみを追加する不変基準のデータ公開ガード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_nakano_review_gate.py",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "価格改ざん・旧イベント削除・過去失敗の成功偽装・履歴削除・登録情報改変を拒否する回帰検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nakano_content_review_20261113/publishable.json",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "主催者/自治体の本文に拘束した6件の正本評価・掲載個票・個別検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nakano_content_review_20261113/review_ledger.json",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "430候補のうち直近80行/61詳細を確認した採否・保留台帳。残る350行は未確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nakano_content_review_20261113/official_checks.json",
+      "kind": "staging_only",
+      "category": "content_review_additive_gate",
+      "reason": "区・図書館一次情報のHTTP取得日時と本文SHAの読み取り証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "5e19e75794bff0124a264a179cbcf45cd5bd0708",

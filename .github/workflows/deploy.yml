@@ -513,6 +513,12 @@ jobs:
           mkdir -p pages/staging
           cp -a staging-src/site/. pages/staging/
 
+          # Source connectivity is independent read-only evidence, not app or event data.
+          python3 staging-src/tools/compose_source_audit.py \
+            --snapshot staging-src/site/audit/fixed_sources.json \
+            --registry production-src/site/data/discovery_sources.json \
+            --pages-dir pages
+
           python - <<'PY'
           from pathlib import Path
           import shutil

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at_jst": "2026-10-28",
+  "reviewed_at_jst": "2026-11-13",
   "overview": "イベント情報の取得や照合で、まだ確認・修正が必要なことをまとめています。表示中のイベントがすべて誤っているという意味ではありません。",
   "issue_status_source": "source_audit_for_connection; issue_tracking_for_review",
   "issues": [
@@ -8,22 +8,22 @@
       "id": "tamemap-nakano",
       "category": "connection",
       "source_id": "tamemap_nakano",
-      "title": "ためまっぷなかのを自動で確認できない",
+      "title": "ためまっぷなかのの取得状況とイベント照合",
       "impact": "中野区の地域イベントを一部見つけられない可能性があります。",
-      "now": "月別カレンダーに加え、新着一覧も収集候補に登録しました。ただし自動取得はアクセス制限で止まっています。",
+      "now": "登録済みの月別カレンダーと新着一覧を取得し、日付付きのイベント詳細リンクも収集します。現在の接続状況は監査結果を参照してください。",
       "workaround": "中野区公式カレンダーなど、別の情報源からも探しています。",
-      "next": "取得できる正規の方法を確認し、取得後は開催日や会場も個別に照合します。",
+      "next": "取得した詳細ページの開催日・会場・対象・主催者情報を個別に照合します。接続が再び失敗した場合は、その結果も残します。",
       "issue_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/issues/65"
     },
     {
       "id": "itabashi-tourism",
       "category": "connection",
       "source_id": "itabashi_tourism_festival",
-      "title": "板橋観光協会の案内ページにつながらない",
+      "title": "板橋観光協会の取得状況と掲載内容の照合",
       "impact": "観光協会独自の案内を確認できず、板橋区内のイベントを一部見逃す可能性があります。",
-      "now": "観光協会のページは取得できていません。別に登録した板橋区公式ページは確認できています。",
+      "now": "登録済みの観光協会ページと、別に登録した板橋区公式ページを確認します。現在の接続状況は監査結果を参照してください。",
       "workaround": "板橋区の公式情報と、ほかの地域情報サイトを参照します。",
-      "next": "観光協会の復旧または正式な移転先を確認し、掲載内容を照合します。",
+      "next": "観光協会と区公式の開催日・会場を個別に照合します。過去の開催案内を新しい年度のイベントとみなさないよう確認します。",
       "issue_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/issues/65"
     },
     {

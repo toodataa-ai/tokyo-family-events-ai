@@ -13,10 +13,10 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 try:
-    from .holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads
+    from .holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads, tamemap_calendar_leads
     from .source_coverage_reconcile import load_published, canonical_url
 except ImportError:
-    from holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads
+    from holiday_after_collect import fetch_url, html_links, public_row, tamemap_new_arrival_leads, tamemap_calendar_leads
     from source_coverage_reconcile import load_published, canonical_url
 
 JST = dt.timezone(dt.timedelta(hours=9))
@@ -89,11 +89,19 @@ def probe(url, fetcher=None):
                 entry["observed_new_arrival_title_leads"] = len(discovered)
                 entry["new_arrival_title_samples"] = [
                     {"candidate_id": c["candidate_id"], "name": c["name"],
-                     "poster": c.get("poster", ""), "date_verified": False}
+                     "poster": c.get("poster", ""), "date_verified": False,
+                     "detail_url": c["discovery_url"] if c.get("detail_link_observed") else None}
                     for c in discovered[:20]]
                 entry["event_date_verified"] = False
                 entry["not_a_calendar_replacement"] = True
                 return entry, []
+            if (urlsplit(url).hostname == "pc.tamemap.net" and
+                    urlsplit(url).path.startswith("/1311401/calendar/")):
+                leads = tamemap_calendar_leads(response["body"], url)
+                entry["page_title"] = "ためまっぷなかの・月別カレンダー"
+                entry["observed_event_link_leads"] = len(leads)
+                entry["event_date_verified"] = False
+                return entry, leads
             page_title, leads = html_links(response["body"], url)
             entry["page_title"] = page_title
             entry["observed_event_link_leads"] = len(leads)

@@ -17,24 +17,38 @@ for(const entry of model.entries){
   assert.ok(entry.impact && entry.now && entry.workaround && entry.next);
   assert.ok(entry.status.label);
 }
-const tama = model.entries.find(x=>x.id==="tamemap-nakano");
-const itabashi = model.entries.find(x=>x.id==="itabashi-tourism");
-assert.equal(tama.status.label,"自動取得できません");
-assert.equal(itabashi.status.label,"自動取得できません");
-assert.match(itabashi.status.detail,/自治体公式サイト/);
+// Real connectivity changes over time. Stable failure behavior belongs to fixtures.
+const failed = structuredClone(audit);
+for (const id of ["tamemap_nakano","itabashi_tourism_festival"]) {
+ const row=failed.sources.find(x=>x.source_id===id);
+ row.retrieval_status="source_error";
+ row.pages_checked=0;
+ row.pages_failed=row.pages_expected;
+}
+failed.sources.find(x=>x.source_id==="itabashi_tourism_festival").official_alternatives=[{
+ source_id:"itabashi_official_festival",retrieval_status:"checked"
+}];
+const failedModel=prepareIssues(catalog,failed);
+assert.equal(failedModel.entries.find(x=>x.id==="tamemap-nakano").status.label,"自動取得できません");
+const failedItabashi=failedModel.entries.find(x=>x.id==="itabashi-tourism");
+assert.equal(failedItabashi.status.label,"自動取得できません");
+assert.match(failedItabashi.status.detail,/自治体公式サイト/);
 assert.ok(model.entries.filter(x=>x.category==="verification")
              .every(x=>x.status.label==="内容を確認中"));
 
 const unavailable = issueStatus(catalog.issues[0],null);
 assert.equal(unavailable.label,"取得状況を確認できません");
 assert.doesNotMatch(unavailable.label,/解決/);
-const healed = structuredClone(audit);
-const fixed = healed.sources.find(x=>x.source_id==="tamemap_nakano");
-fixed.retrieval_status="checked";
-fixed.pages_checked=fixed.pages_expected;
-const status = issueStatus(catalog.issues[0],healed);
-assert.equal(status.label,"接続を確認・内容の照合待ち");
-assert.doesNotMatch(status.label,/解決済み/);
+const healed = structuredClone(failed);
+for (const entry of catalog.issues.filter(x=>x.category==="connection")) {
+ const fixed=healed.sources.find(x=>x.source_id===entry.source_id);
+ fixed.retrieval_status="checked";
+ fixed.pages_checked=fixed.pages_expected;
+ fixed.pages_failed=0;
+ const status=issueStatus(entry,healed);
+ assert.equal(status.label,"接続を確認・内容の照合待ち");
+ assert.doesNotMatch(status.label,/解決済み/);
+}
 const partially = structuredClone(audit);
 partially.sources.find(x=>x.source_id==="tamemap_nakano").retrieval_status="partial_error";
 assert.equal(issueStatus(catalog.issues[0],partially).label,"一部のページが取得できません");

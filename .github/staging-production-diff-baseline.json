@@ -480,6 +480,102 @@
       "reason": "2026-10-21 アーツ中村橋の実ステージング3週分の連鎖重複を解消し、JSキャッシュ刷新・実データ必須回帰検証を追加。本番承認には当たらない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/tamemap_calendar.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "Tamemap月別HTMLの全日付付きリンクを読み取る収集専用アダプター。イベント公開は許可しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_tamemap_discovery.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "キーワード・100件制限による取りこぼし、年月不一致、同名別ID・別日、詳細リンク抽出の収集回帰検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/compose_source_audit.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "Pages合成時に登録情報と照合した読取専用監査JSONだけを配信するmain公開オーケストレータ補助。本番アプリ・イベント正本は更新しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_compose_source_audit.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "取得状況JSON以外のアプリ・イベント・カタログ・ステージングが不変で、不正監査は配信しない検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/SOURCE_RETRIEVAL_RECOVERY_20261113.md",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "2026-11-13の実測復旧結果、取得処理修正と限定反映の根拠。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/http_source_diagnostics.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "HTTPエラーとHTTP200チャレンジ画面の診断。実行証跡専用。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_http_source_diagnostics.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "取得再試行後の証跡混在とチャレンジ画面誤成功を防ぐ収集回帰検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/fixed_source_coverage_v3.py",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "登録26サイトの読取専用疎通・詳細リンク監査。イベント採否は変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/pending_issues_page.test.mjs",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "実測結果の回復を許容し、取得失敗/一部失敗/復旧を固定fixtureで検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/fixed_sources.json",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "2026-11-13全26サイト実HTTP監査。mainが保持する独立した取得状況で、イベント全件照合完了は主張しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/pending_issues_catalog.json",
+      "kind": "different",
+      "category": "source_retrieval_recovery",
+      "reason": "取得状況が回復しても過去の失敗説明を断定しない中立文言。今回の本番候補はこのファイルだけ。本番反映は明示承認待ち。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/phase3-fixed-source-dashboard.yml",
+      "kind": "staging_only",
+      "category": "source_retrieval_recovery",
+      "reason": "mainの登録26サイト定期/手動監査。収集依存変更時の回帰検証・実測結果更新。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "c5de42b4e8e1b3400458a837488c88145b9d42ac"

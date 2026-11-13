@@ -989,11 +989,59 @@
           "sha256": "e6291aa1a1d858b4de92471585419e4a6c6acb329329dfc192abe6b0f6082a41"
         }
       ]
+    },
+    {
+      "id": "reviewed-20261114-nakano-159581",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/159581/2026-11-14?locale=ja",
+      "source_kind": "organizer_provided_partner",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の開催日・会場を主催者投稿の本文/機械可読日付で確認。本文にない時刻や費用・申込要否は推測せず空欄/要確認。問合せ受付時間・別月/別事業の時刻は流用しない。画像は同じイベント投稿で観測した表示素材で、事実判断には使用しない。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/159581/2026-11-14?locale=ja",
+          "checked_at": "2026-11-13T21:40:20+09:00",
+          "sha256": "7e92329326a149eb007acb98a79b6f6acd8436419d0dceab9146f9f2d2764830"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-20261115-nakano-160408",
+      "status": "verified",
+      "source": "https://pc.tamemap.net/1311401/event/160408/2026-11-15?locale=ja",
+      "source_kind": "organizer_provided_partner",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の開催日・会場を主催者投稿の本文/機械可読日付で確認。本文にない時刻や費用・申込要否は推測せず空欄/要確認。問合せ受付時間・別月/別事業の時刻は流用しない。画像は同じイベント投稿で観測した表示素材で、事実判断には使用しない。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160408/2026-11-15?locale=ja",
+          "checked_at": "2026-11-13T21:40:22+09:00",
+          "sha256": "1c03d73798b29faca9c442d1880ed8f531b1e31074d850fb08fdf30bb5888b92"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 51,
-    "verified": 51,
+    "total": 53,
+    "verified": 53,
     "announced": 0,
     "corrected": 0
   }

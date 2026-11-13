@@ -476,6 +476,45 @@
         "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751"
       ],
       "note": "前回保留の4件を公園公式予約詳細で再確認して追加。年齢別リトミック2クラスは1件。申込期限・料金・キャンセル条件を表示。既存216件と旧取得失敗・未確認候補は保持。"
+    },
+    {
+      "run_id": "reviewed-community-20261113",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-13",
+      "executed_at": "2026-11-13T12:50:00.144975+00:00",
+      "base_data_production_sha": "16fce3b01284cc8dad338feba9a0fa7fb2970792",
+      "target_weekends": [
+        "2026-11-14",
+        "2026-11-21"
+      ],
+      "added_weekly_records": 7,
+      "new_event_ids": [
+        "reviewed-20261114-nakano-159581",
+        "reviewed-20261115-nakano-160408",
+        "reviewed-20261122-nakano-163150",
+        "reviewed-20261122-nakano-163358",
+        "reviewed-20261122-nakano-153058",
+        "reviewed-20261122-nakano-146912",
+        "reviewed-20261123-nakano-102229"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "recovery_pool_total": 430,
+      "priority_candidate_rows_read": 80,
+      "distinct_priority_detail_pages_read": 61,
+      "official_evidence_urls": [
+        "https://pc.tamemap.net/1311401/event/159581/2026-11-14?locale=ja",
+        "https://pc.tamemap.net/1311401/event/160408/2026-11-15?locale=ja",
+        "https://forms.gle/qhQnvcyVQ2sNRknY7",
+        "https://pc.tamemap.net/1311401/event/163358/2026-11-22?locale=ja",
+        "https://pc.tamemap.net/1311401/event/153058/2026-11-22?locale=ja",
+        "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
+        "https://pc.tamemap.net/1311401/event/102229/2026-11-23?locale=ja"
+      ],
+      "note": "主催者の提供本文/申込案内で開催日・会場を確認した7件のみ追加。時刻未記載6件は空欄。月会費・別枠のパントリー申込を明示し、問合せ受付時間を開催時刻に流用しない。既存220件・履歴・ソース取得失敗は保持。"
     }
   ]
 }

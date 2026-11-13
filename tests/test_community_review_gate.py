@@ -82,6 +82,22 @@ class ReviewGateTests(unittest.TestCase):
         self.assertFalse(pantry["reservation"]["required"])
         self.assertIn("11/17", pantry["reservation"]["note"])
 
+    def test_public_labels_keep_unknown_booking_and_membership_cost(self):
+        import subprocess
+        source = Path(__file__).resolve().parents[1]
+        result = subprocess.run(["node", "--input-type=module", "-e", """
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          import {reservationCategory, eventPriceCategory} from './site/app.js';
+          const rows = JSON.parse(fs.readFileSync('./research/community_review_20261113/publishable.json')).records;
+          const by = id => rows.find(r => r.tamemap_event_id === id).event;
+          assert.equal(reservationCategory(by('102229')), 'unknown');
+          assert.equal(reservationCategory(by('153058')), 'unknown');
+          assert.notEqual(eventPriceCategory(by('102229')), 'free');
+          assert.equal(eventPriceCategory(by('159581')), 'unknown');
+        """], cwd=source, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

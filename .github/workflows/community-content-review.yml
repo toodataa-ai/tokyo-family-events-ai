@@ -20,7 +20,7 @@ jobs:
           path: scanner
       - uses: actions/checkout@v4
         with:
-          ref: 4c0f0a2b8f87bfdc0f79c308dbd49a2a9125d5b9
+          ref: 81dd7269a6f0683c635db8491d137b12b50f3707
           path: candidate
           fetch-depth: 0
       - uses: actions/setup-python@v5

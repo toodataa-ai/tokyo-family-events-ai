@@ -608,6 +608,54 @@
       "reason": "先の週末の30詳細本文の取得証跡。申込日付不整合・参加区分等の最終照合は未完了、追加公開なし。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_hiromachi_review_addition.py",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "本番216件を基準に主催者予約詳細で確認した4講座のみ追加する凍結ゲート。旧個票・履歴・取得失敗を完全保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_hiromachi_review_gate.py",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "4講座限定ゲートの既存履歴・取得失敗・個票変更拒否を回帰検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/hiromachi-content-review.yml",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "不変の4講座データ候補をStrict監査する読み取り専用CI。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/hiromachi_review_20261113/publishable.json",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "主催者の予約本文を照合した4講座の凍結追加仕様。全候補の確認済みを意味しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/hiromachi_review_20261113/official_evidence.json",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "通常Cookieを維持した公園公式予約詳細5画面の時刻・料金・対象・受付状況本文と取得SHA。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/hiromachi_review_20261113/review_addendum.json",
+      "kind": "staging_only",
+      "category": "verified_class_addition_control",
+      "reason": "旧430候補台帳を保持し、前回保留4候補の確認経過と未解決54候補を記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "920ecbbcbcab140c0bb4349f75cc5e0ac1318a47",

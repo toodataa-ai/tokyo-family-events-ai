@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-13-r3",
+  "current_public_release": "release/2026-11-13-r4",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -284,7 +284,16 @@
       "workflow_run_id": 43424123417,
       "public_version": "1.30",
       "note": "継続依頼に基づき前回保留4講座を公園公式予約詳細5画面で照合。data-only run43423712415で公開、data-production 16fce3b01284cc8dad338feba9a0fa7fb2970792 / data-release/2026-11-13-r637。旧216個票を完全保持して計220件。productionはPR106の残課題カタログ1ファイル2文のみ更新し、Pages43424123417成功。主催者公式で日時・年齢・料金・受付中を確認し、リトミック年齢別2クラスは1件。優先保留54行・優先外350行・Tamemap GitHub403は未解決。mainPR105の凍結ガードとStrict・回帰CI43423216345成功。アプリのその他差分は昇格しない。"
+    },
+    {
+      "release_id": "release/2026-11-13-r4",
+      "branch": "release/2026-11-13-r4",
+      "commit_sha": "ce64f0578f6df5a700fcc631350ec8669e323ed0",
+      "deployed_at": "2026-11-13T12:59:26Z",
+      "workflow_run_id": 43429674472,
+      "public_version": "1.31",
+      "note": "継続依頼に基づき前回保留7件（親子フラ・児童館開放・花植え・食堂2件・合唱・あかちゃん会）の開催日・会場を主催者本文/申込案内で照合し、data-only run43429130812で公開。data-production 81dd7269a6f0683c635db8491d137b12b50f3707 / data-release/2026-11-13-r642。旧220個票を保持して計227件。時刻未記載6件は要確認、施設月会費300円・別枠パントリー予約を明示。表示判定の誤解釈を注記文言で修正し回帰CI43428793526成功、実ブラウザでも申込不明2件と料金を検証。productionはPR108の残課題カタログ1ファイル2文だけ変更しPages43429674472成功。累計17件追加・優先保留47行・優先外350行を表示し、Tamemap GitHub403や全候補の照合は未解決のまま。main全体の未承認アプリ差分は昇格しない。"
     }
   ],
-  "current_public_version": "1.30"
+  "current_public_version": "1.31"
 }

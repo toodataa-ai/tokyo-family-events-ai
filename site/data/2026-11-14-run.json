@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 51,
-    "published": 51,
+    "published": 53,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 51,
+    "verified": 53,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -291,6 +291,23 @@
       "reviewed-20261115-nakano-160164"
     ],
     "base_data_production_sha": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-13",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "verified_community_followup_20261113": {
+    "new_event_ids": [
+      "reviewed-20261114-nakano-159581",
+      "reviewed-20261115-nakano-160408"
+    ],
+    "base_data_production_sha": "16fce3b01284cc8dad338feba9a0fa7fb2970792",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

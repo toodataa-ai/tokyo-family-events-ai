@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 59,
-    "published": 43,
+    "candidate_total": 64,
+    "published": 48,
     "excluded": 16,
     "duplicate": 0
   },
@@ -4001,6 +4001,359 @@
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "主催者予約詳細keyid=7409と公園担当部署の提供投稿を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-163150",
+      "name": "ほんごcafe Bloom 秋の花植え会",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者名のある提供投稿と、取得できた一次資料で日付・会場・参加条件を照合。不明な時刻・金額・申込要否は推測しない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "申込フォームに子ども連れの年齢記入欄があり、どなたでも参加可能と明記。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "プランターへの花の植え付けを行う。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "申込フォームに子ども連れの年齢記入欄があり、どなたでも参加可能と明記。"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "見学は自由、作業は約60分の事前申込制。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外の花植え。汚れてもよい服装・軍手を案内し、雨天中止。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "主催者申込フォームに参加費無料と明記。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "作業参加は11/20までに主催者のフォームから事前申込。15名程度、応募多数は抽選。見学自由。雨天中止。記録・広報用写真への掲載に支障がある場合は当日伝える。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "プランターへの花の植え付けを行う。子どもや家族の参加が主催者から案内されている。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_venue",
+        "hands_on",
+        "free_or_low_cost",
+        "learning_value",
+        "daytime"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "verified_family_community_event",
+      "reason_codes": [
+        "verified_family_community_event"
+      ],
+      "reasons": [
+        "主催者名のある提供本文または申込案内で開催日・会場・家族の参加価値を確認。既存220件と同じ参加単位なし。時刻等の未記載事項は明示して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163150/2026-11-22?locale=ja",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
+        },
+        {
+          "url": "https://forms.gle/qhQnvcyVQ2sNRknY7",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-163358",
+      "name": "多文化共生こども食堂 たぬどん食堂",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者名のある提供投稿と、取得できた一次資料で日付・会場・参加条件を照合。不明な時刻・金額・申込要否は推測しない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "主催者が多文化共生こども食堂・ファミリー向けとして案内。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "食事と食後の落語を家族で楽しむ。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "主催者が多文化共生こども食堂・ファミリー向けとして案内。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日の参加方法は確認したが、途中入退場や滞在時間の自由度は未記載。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑・設備・当日の所要時間の詳細は記載がないため、必要な条件は主催者へ確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "参加費区分は1,000円未満。年齢別の金額は未記載で無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "食堂は当日参加可能。ミニフードパントリーは別途11/17までに予約が必要。開始時刻と年齢別の料金は主催者へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "食事と食後の落語を家族で楽しむ。子どもや家族の参加が主催者から案内されている。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_venue"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "verified_family_community_event",
+      "reason_codes": [
+        "verified_family_community_event"
+      ],
+      "reasons": [
+        "主催者名のある提供本文または申込案内で開催日・会場・家族の参加価値を確認。既存220件と同じ参加単位なし。時刻等の未記載事項は明示して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163358/2026-11-22?locale=ja",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-153058",
+      "name": "ママほっとキッチン",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者名のある提供投稿と、取得できた一次資料で日付・会場・参加条件を照合。不明な時刻・金額・申込要否は推測しない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "18歳以下・高校生までの子ども無料と明記。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子どもと家族が地域の食を共有する場。献立や追加企画は未記載。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "18歳以下・高校生までの子ども無料と明記。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日の参加方法は確認したが、途中入退場や滞在時間の自由度は未記載。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑・設備・当日の所要時間の詳細は記載がないため、必要な条件は主催者へ確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "子ども無料（18歳以下・高校生まで）、大人300円と本文に明記。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "先着順。事前申込の要否・定員・開催時刻は投稿に明示されていないため、桃園区民活動センター（03-3382-5411、問合せ受付9〜17時）へ確認。受付時間を開催時刻には流用しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子どもと家族が地域の食を共有する場。献立や追加企画は未記載。子どもや家族の参加が主催者から案内されている。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_venue",
+        "free_or_low_cost"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "verified_family_community_event",
+      "reason_codes": [
+        "verified_family_community_event"
+      ],
+      "reasons": [
+        "主催者名のある提供本文または申込案内で開催日・会場・家族の参加価値を確認。既存220件と同じ参加単位なし。時刻等の未記載事項は明示して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/153058/2026-11-22?locale=ja",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-146912",
+      "name": "森のファミリー合唱団",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者名のある提供投稿と、取得できた一次資料で日付・会場・参加条件を照合。不明な時刻・金額・申込要否は推測しない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・パパ・ママ・祖父母を歓迎と明記。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "みんなで一緒に歌う参加型の合唱。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども・パパ・ママ・祖父母を歓迎と明記。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日の参加方法は確認したが、途中入退場や滞在時間の自由度は未記載。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑・設備・当日の所要時間の詳細は記載がないため、必要な条件は主催者へ確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "参加費区分は1,000円未満。正確な料金・施設登録費の有無は確認が必要。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加可能。会の時刻・正確な費用・施設利用登録の要否は事前確認（もりのいえ03-3385-5111）。施設の問合せ時間10〜17時を合唱団の開催時刻には流用しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "みんなで一緒に歌う参加型の合唱。子どもや家族の参加が主催者から案内されている。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_venue",
+        "hands_on"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "verified_family_community_event",
+      "reason_codes": [
+        "verified_family_community_event"
+      ],
+      "reasons": [
+        "主催者名のある提供本文または申込案内で開催日・会場・家族の参加価値を確認。既存220件と同じ参加単位なし。時刻等の未記載事項は明示して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261123-nakano-102229",
+      "name": "あかちゃんおはなし会",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者名のある提供投稿と、取得できた一次資料で日付・会場・参加条件を照合。不明な時刻・金額・申込要否は推測しない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "あかちゃんのおはなし会として主催者が案内。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "赤ちゃんと保護者がおはなしを一緒に楽しむ場。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "あかちゃんのおはなし会として主催者が案内。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "当日の参加方法は確認したが、途中入退場や滞在時間の自由度は未記載。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑・設備・当日の所要時間の詳細は記載がないため、必要な条件は主催者へ確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "会は無料だが施設の登録が必要で、1家族月会費300円を負担。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "もりのいえ利用登録が必要（月会費300円／1家族）。定員8組のため事前に電話等で空き確認（03-3385-5111）。投稿には当日参加可能・先着順の案内もあるが、申込要否は明確でないため主催者へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "赤ちゃんと保護者がおはなしを一緒に楽しむ場。子どもや家族の参加が主催者から案内されている。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_venue",
+        "free_or_low_cost"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "verified_family_community_event",
+      "reason_codes": [
+        "verified_family_community_event"
+      ],
+      "reasons": [
+        "主催者名のある提供本文または申込案内で開催日・会場・家族の参加価値を確認。既存220件と同じ参加単位なし。時刻等の未記載事項は明示して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/102229/2026-11-23?locale=ja",
+          "basis": "主催者提供本文または主催者申込案内の2026年の日付・会場・参加条件。"
         }
       ],
       "override_reason": "",

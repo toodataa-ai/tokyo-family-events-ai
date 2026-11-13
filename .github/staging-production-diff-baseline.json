@@ -2,12 +2,12 @@
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
   "audited_at_jst": "2026-11-13",
-  "baseline_app_release": "release/2026-11-13-r2",
-  "baseline_production_commit": "4f219260e0f315cb5789ac421cff94b9c190dbbf",
+  "baseline_app_release": "release/2026-11-13-r3",
+  "baseline_production_commit": "aa22afcc2715ae2948139891c91c0393fb84299b",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
+  "baseline_data_production_commit": "16fce3b01284cc8dad338feba9a0fa7fb2970792",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 190,
+  "expected_total_differences_after_governance": 196,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -658,7 +658,7 @@
       "requires_user_approval_to_release": true
     }
   ],
-  "latest_verified_staging_baseline_commit": "920ecbbcbcab140c0bb4349f75cc5e0ac1318a47",
+  "latest_verified_staging_baseline_commit": "0bfb2f51da13966ef9a1b11e92cdb4a1070804a5",
   "remaining_unclassified_paths": [
     ".github/workflows/audit-750-lead-detail-fetch.yml",
     ".github/workflows/audit-859-candidate-triage.yml",
@@ -776,5 +776,5 @@
     "tools/validate_verified_weekend_subset.py",
     "tools/validate_zoo_add_20261108.py"
   ],
-  "release_scope_note": "今回の承認反映はproductionカタログ1ファイルとmainの取得復旧・監査配信のみ。残る未分類差分は承認せず要調査のまま保持。"
+  "release_scope_note": "今回の本番アプリ反映はPR106の残課題カタログ1ファイル2文のみ。データはdata-onlyで4件追加し旧216個票と履歴・取得失敗を保持。mainの新規6パスは個別登録の照合証跡/限定ゲートのみ。未分類115パスと既存tools/holiday_after_collect.pyの種別不一致1件は未承認・要調査として保持。"
 }

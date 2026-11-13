@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-13-r2",
+  "current_public_release": "release/2026-11-13-r3",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -275,7 +275,16 @@
       "workflow_run_id": 43326190478,
       "public_version": "1.29",
       "note": "ユーザー依頼の個別照合を実行。優先80候補行/61詳細本文を確認し、4既存重複・受付終了3行等を区別。独立確認した中野区6件をdata-only run43325412594で公開、data-production bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d/data-release2026-11-13-r633、旧210個票不変、総216件。productionはPR104の残課題カタログ1ファイル2文だけ変更し、Pages43326190478成功。保留58行・優先外350行の全件照合およびTamemap GitHub403は未解消。mainPR103の厳格な追加専用ガードは旧個票/採否/履歴/ソース失敗の改変を拒否。"
+    },
+    {
+      "release_id": "release/2026-11-13-r3",
+      "branch": "release/2026-11-13-r3",
+      "commit_sha": "aa22afcc2715ae2948139891c91c0393fb84299b",
+      "deployed_at": "2026-11-13T12:19:58Z",
+      "workflow_run_id": 43424123417,
+      "public_version": "1.30",
+      "note": "継続依頼に基づき前回保留4講座を公園公式予約詳細5画面で照合。data-only run43423712415で公開、data-production 16fce3b01284cc8dad338feba9a0fa7fb2970792 / data-release/2026-11-13-r637。旧216個票を完全保持して計220件。productionはPR106の残課題カタログ1ファイル2文のみ更新し、Pages43424123417成功。主催者公式で日時・年齢・料金・受付中を確認し、リトミック年齢別2クラスは1件。優先保留54行・優先外350行・Tamemap GitHub403は未解決。mainPR105の凍結ガードとStrict・回帰CI43423216345成功。アプリのその他差分は昇格しない。"
     }
   ],
-  "current_public_version": "1.29"
+  "current_public_version": "1.30"
 }

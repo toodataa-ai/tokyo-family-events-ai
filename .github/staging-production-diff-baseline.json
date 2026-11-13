@@ -656,6 +656,54 @@
       "reason": "旧430候補台帳を保持し、前回保留4候補の確認経過と未解決54候補を記録。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_community_review_addition.py",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "本番220件を基準に主催者本文で日付・会場を確認した7件のみ追加する凍結ゲート。既存個票・履歴・取得失敗は完全保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_community_review_gate.py",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "7件限定ゲートの改ざん拒否と、未記載時刻・施設月会費・パントリー別予約条件の非推測を検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/community-content-review.yml",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "凍結7件候補の全Strict監査・旧220件非退行・回帰テストを実行する読み取り専用CI。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/community_review_20261113/publishable.json",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "主催者提供本文/申込フォームで個別確認した7件。未記載の時刻6件は空欄、料金・申込不明は要確認を保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/community_review_20261113/source_evidence.json",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "主催者投稿7件と一次資料の取得日時・SHA・本文。フォームの閲覧のみで送信なし、画像からの事実推測なし。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/community_review_20261113/review_addendum.json",
+      "kind": "staging_only",
+      "category": "verified_community_addition_control",
+      "reason": "前回保留54行から7行を照合した追補。未確認47行と優先外350行は未解決のまま。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "0bfb2f51da13966ef9a1b11e92cdb4a1070804a5",

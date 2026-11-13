@@ -1,10 +1,6 @@
-# Verified recovered Nakano content batch; source failures remain recorded.
-operation=verified-nakano-review-20261113
-candidate_sha=bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d
-base_data_production_sha=0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8
-requested_at_jst=2026-11-13
-new_weekly_records=6
-old_event_records_changed=0
-old_event_ids_removed=0
-proof_ci_run=43324756967
-note=Individually reviewed primary/organizer-provided body evidence; no source registry change, no false complete-source claim.
+operation=verified-hiromachi-review-20261113
+candidate_sha=16fce3b01284cc8dad338feba9a0fa7fb2970792
+base_data_production_sha=bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d
+review_evidence=research/hiromachi_review_20261113/official_evidence.json
+read_only_validation_run=43423216345
+note=Four venue-verified park classes; preserve all 216 old records and source failures; partial review only.

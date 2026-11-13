@@ -796,11 +796,71 @@
           "sha256": "3598681f2374b9ccf37c93afff9e5aba21a0e53c5f8c6d6b27c9fcdb82ebf7f8"
         }
       ]
+    },
+    {
+      "id": "reviewed-20261121-nakano-160131",
+      "status": "verified",
+      "source": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+      "source_kind": "venue_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026年・講座名・時刻・料金・対象年齢・受付中を公園の予約詳細で確認。会場は公園維持・管理係の提供投稿で照合。画像は同一イベント投稿で観測した素材で、事実推測には使用しない。",
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "checked_at": "2026-11-13T12:07:45.749246+00:00",
+          "sha256": "addb7f2992cddf11f60cb469f3e6cf8d750118a8b1839190793fdfd57195bfd8",
+          "detail_keyid": "7388"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160131/2026-11-21?locale=ja",
+          "checked_at": "2026-11-13T07:43:53+09:00",
+          "sha256": "cf80fc720ef82605fb0f526e66f1bfaaaeb141bcf21b02f74d0541d68b7f1919"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-20261122-nakano-160190",
+      "status": "verified",
+      "source": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+      "source_kind": "venue_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026年・講座名・時刻・料金・対象年齢・受付中を公園の予約詳細で確認。会場は公園維持・管理係の提供投稿で照合。画像は同一イベント投稿で観測した素材で、事実推測には使用しない。",
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "checked_at": "2026-11-13T12:07:47.655830+00:00",
+          "sha256": "56e61c4dd842021beb3e9e84dbddabf45390c475a61046d29b2ce0a25076bee5",
+          "detail_keyid": "7409"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160190/2026-11-22?locale=ja",
+          "checked_at": "2026-11-13T07:44:16+09:00",
+          "sha256": "7a8e670714df7a35c8425288889584a5f80796278a086f782effb233f92cbe00"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 41,
-    "verified": 33,
+    "total": 43,
+    "verified": 35,
     "announced": 8
   }
 }

@@ -923,11 +923,77 @@
           "sha256": "4fc8a0ec34236f0a4d28c525d9b6a3a9729c95b85fa68f613e6d336587ac099f"
         }
       ]
+    },
+    {
+      "id": "reviewed-20261115-nakano-160023",
+      "status": "verified",
+      "source": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+      "source_kind": "venue_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026年・講座名・時刻・料金・対象年齢・受付中を公園の予約詳細で確認。会場は公園維持・管理係の提供投稿で照合。画像は同一イベント投稿で観測した素材で、事実推測には使用しない。",
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "checked_at": "2026-11-13T12:07:40.384470+00:00",
+          "sha256": "b4f304f4b0e5b725b9dbe8b55e291cff5afcbd84836125bdd770b9c577b9953c",
+          "detail_keyid": "7398"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160023/2026-11-15?locale=ja",
+          "checked_at": "2026-11-13T07:43:34+09:00",
+          "sha256": "81aa113e91dea60ad2d6856932bcc2496c492b389679808c9f79c19b5911b74f"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-20261115-nakano-160164",
+      "status": "verified",
+      "source": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+      "source_kind": "venue_official",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2026年・講座名・時刻・料金・対象年齢・受付中を公園の予約詳細で確認。会場は公園維持・管理係の提供投稿で照合。画像は同一イベント投稿で観測した素材で、事実推測には使用しない。リトミックは同日2クラスを1参加企画として掲載。",
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "checked_at": "2026-11-13T12:07:42.118045+00:00",
+          "sha256": "b7f71cd70bb75a674b2111512a2e62eb182062541dcdcd5b0325a4d2bc61e3f0",
+          "detail_keyid": "7399"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "checked_at": "2026-11-13T12:07:43.846776+00:00",
+          "sha256": "3012d3374df15e9cf190c1abced74ad8e35bdc6840f95990fdff83201a4fd0a4",
+          "detail_keyid": "7400"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160164/2026-11-15?locale=ja",
+          "checked_at": "2026-11-13T07:43:36+09:00",
+          "sha256": "e6291aa1a1d858b4de92471585419e4a6c6acb329329dfc192abe6b0f6082a41"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 49,
-    "verified": 49,
+    "total": 51,
+    "verified": 51,
     "announced": 0,
     "corrected": 0
   }

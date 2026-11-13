@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 41,
-    "verified": 33,
+    "published": 43,
+    "verified": 35,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2179,6 +2179,23 @@
       "reviewed-20261122-nakano-161794"
     ],
     "base_data_production_sha": "0dc84f68a3cd4ec3e32b8a28e6fa541b86f1dbe8",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-13",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "verified_hiromachi_followup_20261113": {
+    "new_event_ids": [
+      "reviewed-20261121-nakano-160131",
+      "reviewed-20261122-nakano-160190"
+    ],
+    "base_data_production_sha": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

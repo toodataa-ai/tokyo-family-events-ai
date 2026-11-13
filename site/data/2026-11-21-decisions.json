@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 57,
-    "published": 41,
+    "candidate_total": 59,
+    "published": 43,
     "excluded": 16,
     "duplicate": 0
   },
@@ -3857,6 +3857,150 @@
         {
           "url": "https://pc.tamemap.net/1311401/event/161794/2026-11-22?locale=ja",
           "basis": "主催団体/担当課名が明記された提供投稿の本文で、日付・会場・参加条件を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261121-nakano-160131",
+      "name": "笑顔で楽しくおどるケイキフラ",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "年中〜小学生を対象。保護者同伴は1名まで。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "音楽に合わせて体を動かし、フラダンスを踊る。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "年中〜小学生を対象。保護者同伴は1名まで。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "室内履き等の持参品と当日キャンセル料を事前確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1,500円。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/20(金)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "音楽に合わせて体を動かし、フラダンスを踊る。対象年齢に合う子どもの休日の体験になる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "hands_on",
+        "daytime",
+        "family_venue"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_hands_on_class",
+      "reason_codes": [
+        "child_hands_on_class"
+      ],
+      "reasons": [
+        "主催者予約詳細で2026年の日程・対象年齢・料金・受付中を確認。申込期限と当日キャンセル条件を案内して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "主催者予約詳細keyid=7388と公園担当部署の提供投稿を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "reviewed-20261122-nakano-160190",
+      "name": "はじめてのキッズダンス",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3〜6歳対象。付き添いは1名まで。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "ポーズやステップを練習する参加型ダンス講座。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3〜6歳対象。付き添いは1名まで。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "室内履き等の持参品と当日キャンセル料を事前確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1,500円。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/21(土)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "ポーズやステップを練習する参加型ダンス講座。対象年齢に合う子どもの休日の体験になる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "hands_on",
+        "daytime",
+        "family_venue"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_hands_on_class",
+      "reason_codes": [
+        "child_hands_on_class"
+      ],
+      "reasons": [
+        "主催者予約詳細で2026年の日程・対象年齢・料金・受付中を確認。申込期限と当日キャンセル条件を案内して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "主催者予約詳細keyid=7409と公園担当部署の提供投稿を照合。"
         }
       ],
       "override_reason": "",

@@ -443,6 +443,39 @@
         "https://pc.tamemap.net/1311401/event/161794/2026-11-22?locale=ja"
       ],
       "note": "区公式または主催者名を明記した提供投稿で個別確認した6件のみ追加。申込終了・満席・募集記事は追加しない。未記載の時刻は空欄。旧ソース取得失敗と未検証候補は残す。"
+    },
+    {
+      "run_id": "reviewed-hiromachi-20261113",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-13",
+      "executed_at": "2026-11-13T12:10:08.676339+00:00",
+      "base_data_production_sha": "bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d",
+      "target_weekends": [
+        "2026-11-14",
+        "2026-11-21"
+      ],
+      "added_weekly_records": 4,
+      "new_event_ids": [
+        "reviewed-20261115-nakano-160023",
+        "reviewed-20261115-nakano-160164",
+        "reviewed-20261121-nakano-160131",
+        "reviewed-20261122-nakano-160190"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "recovery_pool_total": 430,
+      "priority_candidate_rows_read": 80,
+      "distinct_priority_detail_pages_read": 61,
+      "official_evidence_urls": [
+        "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+        "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+        "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+        "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751"
+      ],
+      "note": "前回保留の4件を公園公式予約詳細で再確認して追加。年齢別リトミック2クラスは1件。申込期限・料金・キャンセル条件を表示。既存216件と旧取得失敗・未確認候補は保持。"
     }
   ]
 }

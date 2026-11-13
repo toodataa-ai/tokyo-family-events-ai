@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 54,
-    "published": 49,
+    "candidate_total": 56,
+    "published": 51,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -4267,6 +4267,234 @@
           "family_value": {
             "grade": "B",
             "reason": "鉄道とまちの未来を考える親子の体験・学び。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 audit envelope only; canonical_family_fit_v2 and public event retain actual family-fit-v2 assessment."
+    },
+    {
+      "candidate_id": "reviewed-20261115-nakano-160023",
+      "name": "図画工作「魔法つかいのほうき屋さん」",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3歳くらいから大人まで。小学2年生以下は保護者同伴。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "布リボンを巻いて作品を作る手作業を体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3歳くらいから大人まで。小学2年生以下は保護者同伴。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "室内履き等の持参品と当日キャンセル料を事前確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1,000円（材料費込み）。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/14(土)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "布リボンを巻いて作品を作る手作業を体験できる。対象年齢に合う子どもの休日の体験になる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "child_explicit",
+        "hands_on",
+        "daytime",
+        "family_venue"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_hands_on_class",
+      "reason_codes": [
+        "child_hands_on_class"
+      ],
+      "reasons": [
+        "主催者予約詳細で2026年の日程・対象年齢・料金・受付中を確認。申込期限と当日キャンセル条件を案内して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "主催者予約詳細keyid=7398と公園担当部署の提供投稿を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3歳くらいから大人まで。小学2年生以下は保護者同伴。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "布リボンを巻いて作品を作る手作業を体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3歳くらいから大人まで。小学2年生以下は保護者同伴。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "室内履き等の持参品と当日キャンセル料を事前確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1,000円（材料費込み）。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/14(土)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "布リボンを巻いて作品を作る手作業を体験できる。対象年齢に合う子どもの休日の体験になる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 audit envelope only; canonical_family_fit_v2 and public event retain actual family-fit-v2 assessment."
+    },
+    {
+      "candidate_id": "reviewed-20261115-nakano-160164",
+      "name": "ファミリーリトミック（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "首すわり頃の0歳〜2歳未満／2歳〜未就学児の年齢別クラス。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "親子でふれあいながら音楽と季節の活動を楽しむ。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "首すわり頃の0歳〜2歳未満／2歳〜未就学児の年齢別クラス。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "年齢別の40分講座。当日キャンセル・無断欠席は病欠でも参加費が必要。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1回2,000円、兄弟姉妹の追加参加は1,000円。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/14(土)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子でふれあいながら音楽と季節の活動を楽しむ。対象年齢に合う子どもの休日の体験になる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "child_explicit",
+        "hands_on",
+        "daytime",
+        "family_venue"
+      ],
+      "negative_signals": [
+        "reservation_difficult"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "child_hands_on_class",
+      "reason_codes": [
+        "child_hands_on_class"
+      ],
+      "reasons": [
+        "主催者予約詳細で2026年の日程・対象年齢・料金・受付中を確認。申込期限と当日キャンセル条件を案内して掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "主催者予約詳細keyid=7399,7400と公園担当部署の提供投稿を照合。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "主催者予約ページと公園担当部署の投稿で、対象年齢・時刻・料金・申込条件を照合。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "首すわり頃の0歳〜2歳未満／2歳〜未就学児の年齢別クラス。"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "親子でふれあいながら音楽と季節の活動を楽しむ。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "首すわり頃の0歳〜2歳未満／2歳〜未就学児の年齢別クラス。"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "時刻を定めた事前申込制の講座。途中入退場の可否は未記載。"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "年齢別の40分講座。当日キャンセル・無断欠席は病欠でも参加費が必要。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "主催者予約ページの参加費は1回2,000円、兄弟姉妹の追加参加は1,000円。"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前申込・先着順、期限は11/14(土)。11/13閲覧時は受付中で空きあり、以後は変動。"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子でふれあいながら音楽と季節の活動を楽しむ。対象年齢に合う子どもの休日の体験になる。"
           }
         }
       },

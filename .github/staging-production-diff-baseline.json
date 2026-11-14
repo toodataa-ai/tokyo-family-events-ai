@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-14T21:05:37.436756+09:00",
-  "baseline_app_release": "release/2026-11-14-r4",
-  "baseline_production_commit": "48ea14ef33d762958448ab562fd1d5f1ae4c834e",
+  "audited_at_jst": "2026-11-15T06:53:52.749300+09:00",
+  "baseline_app_release": "release/2026-11-15-r1",
+  "baseline_production_commit": "5d7f8b961e6c93e5a8950c426e3ffddac9a6d7aa",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 288,
+  "expected_total_differences_after_governance": 286,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -1706,7 +1706,7 @@
       "path": "tests/pending_issues_release.test.mjs",
       "kind": "production_only",
       "category": "main_operational_inventory",
-      "reason": "productionだけにある公開版残課題ページの導線と表示契約のリリース検証。未公開ステージング監査画面とは別の正本として保持。",
+      "reason": "本番の残課題ページの回帰テスト。現在/完了の分離、接続成功で保留を完了にしないこと、実際の503時に未確認とする処理を検証。mainでは別ファイルの同等テストで検証する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -2295,42 +2295,23 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/audit/pending_issues_catalog.json",
-      "kind": "different",
-      "category": "pending_status_cleanup",
-      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/pending-issues-model.mjs",
-      "kind": "different",
-      "category": "pending_status_cleanup",
-      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/pending-issues.css",
-      "kind": "different",
-      "category": "pending_status_cleanup",
-      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
       "path": ".github/workflows/pending-status-cleanup.yml",
       "kind": "staging_only",
       "category": "pending_status_cleanup",
       "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証するmain専用CI。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/pending_status_cleanup_20261115.json",
+      "kind": "staging_only",
+      "category": "pending_status_cleanup",
+      "reason": "利用者依頼の残課題整理v1.36の限定リリース、CI、実配信5ファイル、モバイル・PC検証と598イベント保持の証跡。アプリへの配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
-  "latest_verified_staging_baseline_commit": "1856b3bc4b542a05c2bdba779f745a7d02372c19",
+  "latest_verified_staging_baseline_commit": "bb7acfcdf3aa42fdded138f87cdd6ce835a575d2",
   "remaining_unclassified_paths": [],
-  "release_scope_note": "本番v1.35は851候補の判定結果・合計598件と保留理由を説明文だけに反映。固定851候補は未着手0、本文取得不能46件・保留24候補と直接追跡の保留2企画を保持。旧480個票を保持して99企画118個票を追加。未公開の監査導線・履歴画面・Worker等はpending_releaseのまま、本番承認や一括昇格を行わない。"
+  "release_scope_note": "v1.36は残課題ページ関連5ファイルと回帰テストのみ。現在2項目と完了3項目を分け、接続監査と対応状態を独立表示。データ598件は不変。既存のsource-auditへの導線・ローカル監査パス差と他の未公開UI/Workerは引き続きpending_releaseで保持。"
 }

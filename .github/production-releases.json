@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-14-r4",
+  "current_public_release": "release/2026-11-15-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -329,6 +329,15 @@
       "workflow_run_id": 43592955747,
       "public_version": "1.35",
       "note": "固定851候補の判定完了と99企画118週別個票の追加・合計598件を説明文に反映。本文取得不能46件・保留24候補と直接追跡の保留2企画を明示。productionベースの単一JSONのみ、既存480個票と未承認UIを保持。データ公開43592763300・92公開JSON・モバイル10例の照合成功。"
+    },
+    {
+      "release_id": "release/2026-11-15-r1",
+      "branch": "release/2026-11-15-r1",
+      "commit_sha": "5d7f8b961e6c93e5a8950c426e3ffddac9a6d7aa",
+      "deployed_at": "2026-11-14T21:53:52.745235+00:00",
+      "workflow_run_id": 43644991399,
+      "public_version": "1.36",
+      "note": "残課題ページを現在の2項目と完了3項目に分離。完了分は対象範囲・確認日付きで折りたたみ、件数から除外。作業状態と接続監査を独立させ、一覧取得失敗時は未確認を表示。公開5ファイルの一致と390/1280幅の表示・絞り込み・折りたたみを確認。598イベントおよび他の未公開UIは変更なし。"
     }
   ],
   "current_public_version": "1.34"

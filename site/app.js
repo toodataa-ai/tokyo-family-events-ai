@@ -422,7 +422,7 @@ export function applyVerification(events, audit){
     const merged = {...ev,...c};
     if(c.family_fit) merged.family_fit={...(ev.family_fit||{}),...c.family_fit};
     if(c.reservation) merged.reservation={...(ev.reservation||{}),...c.reservation};
-    merged.verification={status:row.status||'unverified',source:row.source||'',source_kind:row.source_kind||'',fields:row.fields||{},note:row.note||'',verified_on:audit?.verified_on||''};
+    merged.verification={status:row.status||'unverified',source:row.source||'',source_kind:row.source_kind||'',fields:row.fields||{},note:row.note||'',verified_on:row.verified_on||audit?.verified_on||''};
     return merged;
   });
 }

@@ -704,6 +704,102 @@
       "reason": "前回保留54行から7行を照合した追補。未確認47行と優先外350行は未解決のまま。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/final-backlog-review.yml",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_final_backlog_addition.py",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_final_backlog_gate.py",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/verification_date.test.mjs",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/itabashi_extraction.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/publishable.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/retrieval_index.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/suginami_review_ledger.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/tamemap_review_ledger.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "2026-11-14の本文照合・個別採否・取得証跡または凍結した142件追加専用監査/回帰テスト。本番アプリへは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/final_backlog_review_20261114/candidate_refs.json",
+      "kind": "staging_only",
+      "category": "final_backlog_review_control",
+      "reason": "照合したデータ・隔離アプリ候補の不変SHAと基準を固定する公開前記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "2dbe50443835192ee30fc6f74f445cb63320a57b",
@@ -824,5 +920,5 @@
     "tools/validate_verified_weekend_subset.py",
     "tools/validate_zoo_add_20261108.py"
   ],
-  "release_scope_note": "今回の本番アプリ反映はPR108の残課題カタログ1ファイル2文のみ。データはdata-onlyで7件追加し旧220個票・履歴・取得失敗を保持。mainの新規6パスは個別登録の照合証跡/凍結ゲートのみ。未分類115パスと既存tools/holiday_after_collect.pyの種別不一致1件は未承認・要調査として保持。"
+  "release_scope_note": "既存115未分類パスとtools/holiday_after_collect.pyの種別不一致1件は未解決のまま。今回追加の照合証跡・142件凍結ゲートのみ正確なパスで登録。本番アプリ候補は個票確認日表示の1行と残課題カタログだけ。"
 }

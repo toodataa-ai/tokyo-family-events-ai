@@ -43,7 +43,7 @@ assert.match(page,/完了分は残課題の件数に含めません/);
 assert.match(js,/model\.entries\.filter/);assert.match(js,/pendingStatusFilter/);
 assert.match(js,/textContent/);assert.doesNotMatch(js,/\.innerHTML\s*=/);
 assert.match(read('site/index.html'),/href="pending-issues\.html"/);
-for(const id of ['pendingTotal','pendingConnection','pendingVerification','pendingIssueList','pendingCategoryFilter','pendingCompleted','pendingStatusFilter'])assert.ok(page.includes(`id="${id}"`));
+for(const id of ['pendingIssueList','pendingCategoryFilter','pendingStatusFilter'])assert.ok(page.includes(`id="${id}"`));
 console.log('PASS: remaining/completed counts, explicit holds, independent audit changes, missing evidence and safe rendering');
 
 // Exercise the actual asynchronous load-failure handler, not only model fixtures.
@@ -54,7 +54,11 @@ const context=vm.createContext({document,fetch:async()=>({ok:false,status:503}),
 const runtime=js.replace(/^import[^\n]+\n/,'').replace(/\ninit\(\);\s*$/,'\nglobalThis.initStatusPage=init;');
 vm.runInContext(runtime,context);await context.initStatusPage();
 assert.equal(nodes.get('pendingVisibleCount').textContent,'未確認');
-assert.equal(nodes.get('pendingCompleted').textContent,'未確認');
-assert.notEqual(nodes.get('pendingTotal')?.textContent,'0');
+
+
 assert.match(nodes.get('pendingIssueList').children[0].textContent,/取得できません/);
 console.log('PASS: actual load failure keeps both lists unknown and does not access a missing model');
+
+assert.doesNotMatch(page,/全体の状況|id="pendingTotal"|id="pendingCompleted"|class="pending-issues-stats"/);
+assert.doesNotMatch(js,/model\.counts\./);
+console.log("PASS: no aggregate dashboard; direct task list with explicit status and preserved details");

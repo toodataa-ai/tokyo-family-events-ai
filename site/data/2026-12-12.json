@@ -3,17 +3,17 @@
   "sat": "2026-12-12",
   "sun": "2026-12-13",
   "label": "12/12(土)〜12/13(日)",
-  "generated": "2026-11-08T16:10:00+09:00",
+  "generated": "2026-11-13T23:19:36.185883+00:00",
   "horizon_index": 6,
   "publication_tier": "announcement",
   "verification_file": "2026-12-12-verification.json",
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 20,
+    "candidate_count": 39,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 18,
+    "published_count": 37,
     "wards": [
       {
         "ward": "千代田区",
@@ -137,8 +137,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 0,
+        "candidate_count": 15,
+        "published_count": 14,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -146,8 +146,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 4,
+        "published_count": 4,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -191,8 +191,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
+        "candidate_count": 4,
+        "published_count": 4,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -225,7 +225,8 @@
     ]
   },
   "event_files": [
-    "2026-12-12-events-current-verified.json"
+    "2026-12-12-events-current-verified.json",
+    "2026-12-12-events-reviewed-backlog-20261114.json"
   ],
   "events": []
 }

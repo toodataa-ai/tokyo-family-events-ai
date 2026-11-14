@@ -4,8 +4,8 @@
   "generated": "2026-11-08T16:10:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 20,
-    "published": 18,
+    "candidate_total": 39,
+    "published": 37,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -1468,6 +1468,1310 @@
           "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/kankyo/ondankataisaku/kikoukuminkaigi.html"
         }
       ]
+    },
+    {
+      "candidate_id": "final-20261213-nakano-146912",
+      "name": "森のファミリー合唱団",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,000円未満"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加可能。開催時刻・料金の詳細と空き状況は主催者へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "子どもから祖父母まで一緒に歌うファミリー合唱。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-nakano-142698",
+      "name": "おひさまリトミック",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども・家族向けとして主催者が案内するリトミック。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子ども・家族向けとして主催者が案内するリトミック。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,000円未満"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "事前申込。開催時刻・対象月齢・定員と料金詳細はZEROキッズへ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子ども・家族向けとして主催者が案内するリトミック。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "子ども・家族向けとして主催者が案内するリトミック。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/142698/2026-11-29?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-nakano-163377",
+      "name": "桃園「親子で囲碁教室2026」",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "親子向けとして運営委員会が案内する囲碁教室。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "親子向けとして運営委員会が案内する囲碁教室。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "事前申込。開催時刻・年齢条件・初心者対応・空きは桃園区民活動センター運営委員会へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子向けとして運営委員会が案内する囲碁教室。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "親子向けとして運営委員会が案内する囲碁教室。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163377/2026-12-12?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-nakano-162896",
+      "name": "12月映画会『若草物語』",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "物語や原作を家族で話し合える映画鑑賞。字幕を読める子ども向けの選択肢。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "公式の年齢制限は未記載。1933年作品・字幕115分で、長時間座って読めるか事前判断が必要。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "物語や原作を家族で話し合える映画鑑賞。字幕を読める子ども向けの選択肢。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "公式の年齢制限は未記載。1933年作品・字幕115分で、長時間座って読めるか事前判断が必要。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "事前申込・先着順。図書館案内で申込方法と空きを確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "物語や原作を家族で話し合える映画鑑賞。字幕を読める子ども向けの選択肢。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "物語や原作を家族で話し合える映画鑑賞。字幕を読める子ども向けの選択肢。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/162896/2026-12-12?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-nakano-163152",
+      "name": "ほんごcafe＠本五ふれあい公園でクリスマス🎄",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "公園で遊び・音楽・読み聞かせなどを家族で体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "公園で遊び・音楽・読み聞かせなどを家族で体験できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日参加可能。参加費・開催時刻は未記載のため主催者へ確認。パンとスープ350円は参加費とは別料金、11:00から数量限定販売。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "公園で遊び・音楽・読み聞かせなどを家族で体験できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "公園で遊び・音楽・読み聞かせなどを家族で体験できる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/163152/2026-12-13?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-nakano-161828",
+      "name": "日本で学ぶ！働く！外国人によるビブリオバトル（観覧・投票）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "本の紹介を聞いて投票し、親子で読書や異文化に触れられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。発表者は別の募集枠のため同じ催しを二重掲載しない。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "本の紹介を聞いて投票し、親子で読書や異文化に触れられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。発表者は別の募集枠のため同じ催しを二重掲載しない。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/8 9:00からウェブ・電話・カウンターで先着30名。空きは図書館へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "本の紹介を聞いて投票し、親子で読書や異文化に触れられる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "本の紹介を聞いて投票し、親子で読書や異文化に触れられる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/161828/2026-12-13?locale=ja",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-park-7419",
+      "name": "笑顔で楽しくおどるケイキフラ（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "初めてでもフラダンスに挑戦できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "年中〜小学生、保護者同伴1名まで。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "初めてでもフラダンスに挑戦できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年中〜小学生、保護者同伴1名まで。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,500円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "初めてでもフラダンスに挑戦できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "初めてでもフラダンスに挑戦できる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-park-7421",
+      "name": "かきぞめ教室（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "親子でかきぞめを練習できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "4歳〜大人、付添い1名まで。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "親子でかきぞめを練習できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "4歳〜大人、付添い1名まで。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "3,500円（手本・道具貸出込）、兄弟・親子追加3,000円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子でかきぞめを練習できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "親子でかきぞめを練習できる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-park-7436",
+      "name": "将棋ひろば（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "将棋教室・自由対局など、レベルに合わせて参加できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "5歳〜大人。初心者歓迎。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "将棋教室・自由対局など、レベルに合わせて参加できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "5歳〜大人。初心者歓迎。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,000円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "将棋教室・自由対局など、レベルに合わせて参加できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "将棋教室・自由対局など、レベルに合わせて参加できる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-park-7428",
+      "name": "図画工作 福をよぶお正月飾り（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "親子でしめ縄飾りを作る。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3歳くらい〜大人。小学2年生以下は保護者同伴。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "親子でしめ縄飾りを作る。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "3歳くらい〜大人。小学2年生以下は保護者同伴。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,800円（材料費込）"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子でしめ縄飾りを作る。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "親子でしめ縄飾りを作る。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-park-7424",
+      "name": "みんなでボイトレ（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども同伴で参加できる少人数の歌のグループレッスン。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも・子ども連れ可、託児なし。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子ども同伴で参加できる少人数の歌のグループレッスン。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも・子ども連れ可、託児なし。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,500円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子ども同伴で参加できる少人数の歌のグループレッスン。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "子ども同伴で参加できる少人数の歌のグループレッスン。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-park-7425",
+      "name": "朝ヨガ（広町みらい公園）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども同伴が明記された保護者の運動の選択肢。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "静かに待てる子ども1名の同伴可。子ども向け講座ではない。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子ども同伴が明記された保護者の運動の選択肢。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "静かに待てる子ども1名の同伴可。子ども向け講座ではない。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1,500円。10歳以上の同伴児も有料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子ども同伴が明記された保護者の運動の選択肢。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "子ども同伴が明記された保護者の運動の選択肢。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-suginami-27274",
+      "name": "すぎなみアートウオーク",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。18歳未満も保護者のスマートフォンで参加可。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。18歳未満も保護者のスマートフォンで参加可。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。健康ポイントは任意アプリ利用時のみ、18歳未満分は保護者に付与。歩きスマホ禁止。悪天候時はサイン一時撤去あり。費用未記載。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s092/event/27274.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-suginami-28241",
+      "name": "楽しい指導の「シャンソンの扉」開けてみませんか？（ゆうゆう大宮前館）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "どなたでも参加できるグループの歌のレッスン。子どもの参加条件は申込時に要確認。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "どなたでも参加できるグループの歌のレッスン。子どもの参加条件は申込時に要確認。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "各800円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "必要 電話でお申し込みください。（毎月第3日曜日は休館です） すでに定員に達している場合もありますので、あらかじめご了承ください。 申込先：ゆうゆう大宮前館 電話番号：03-3334-9640 申込期間：2026年10月1日から 2026年12月12日まで 定員・空きは主催者へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "どなたでも参加できるグループの歌のレッスン。子どもの参加条件は申込時に要確認。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "どなたでも参加できるグループの歌のレッスン。子どもの参加条件は申込時に要確認。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s038/event/28241.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-suginami-28456",
+      "name": "令和8年度企画展「農村に生まれた小さな西洋 天沼教会と東京衛生病院の歩みからみる地域史」（郷土博物館分館）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "同館の公式案内では月曜・第3木曜休館、祝休日は開館し翌平日休館。11/23開館。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s113/event/28456.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-suginami-28578",
+      "name": "企画展「近衞文麿の大礼服」（荻外荘公園）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "9:00〜17:00、最終入場16:30。会期中水曜休館（一部臨時開館あり）。展示棟の入場無料。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/28578.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-nakano-162738",
+      "name": "地域展「野方・沼袋」",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "地域の昔の写真や道具を親子で見て話せる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向けの案内。細かな年齢条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "地域の昔の写真や道具を親子で見て話せる。"
+          },
+          "age_fit": {
+            "grade": "unknown",
+            "reason": "公式の対象年齢記載がないため、子どもに合うか事前に確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約不要。月曜・第3日曜休館。11/15と11/23は休館のため掲載しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の昔の写真や道具を親子で見て話せる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "地域の昔の写真や道具を親子で見て話せる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/chiikiten1027.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261212-nakano-163067",
+      "name": "企画展「我が名は豊国－館蔵品でみる浮世絵の世界Ⅱ」",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向けの案内。細かな年齢条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。"
+          },
+          "age_fit": {
+            "grade": "unknown",
+            "reason": "公式の対象年齢記載がないため、子どもに合うか事前に確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約不要。月曜・第3日曜休館。11/15と11/23は休館のため掲載しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "浮世絵の役者や色彩、構図を親子で見比べられる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/rekimin_kikaku1103.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "final-20261213-nerima-chicoowa-xmas",
+      "name": "chicoowaマルシェ Xmas 2026",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "親子で作品を選んだり、手作りを体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "一般向け。体験の年齢条件は個別確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "親子で作品を選んだり、手作りを体験できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け。体験の年齢条件は個別確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場無料（購入・ワークショップ等は別途）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "個別体験の対象年齢・料金・受付方法は出店者へ確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子で作品を選んだり、手作りを体験できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "親子で作品を選んだり、手作りを体験できる。",
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.chicoowa.com/cont14/81.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
     }
   ]
 }

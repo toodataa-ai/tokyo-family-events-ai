@@ -162,11 +162,13 @@ def source_audit(source, start, end, fetcher=None, max_workers=8):
 
 def build_report(registry, start, end, *, fetcher=None, workers=8, checked_at=None):
     sources = registry.get("explicit_sources", [])
-    if not isinstance(sources, list) or len(sources) != 26:
-        raise ValueError("expected all 26 original explicit source registrations")
+    if not isinstance(sources, list) or len(sources) < 26:
+        raise ValueError("expected the original registrations plus any newly registered sources")
     ids = [s.get("id") for s in sources]
-    if any(not s.get("enabled", False) for s in sources) or len(set(ids)) != 26:
+    if any(not s.get("enabled", False) for s in sources) or len(set(ids)) != len(sources):
         raise ValueError("disabled or duplicate fixed source ID")
+    if not set(registry.get("protected_source_ids", [])).issubset(ids):
+        raise ValueError("protected source registration missing")
     protected = set(registry.get("protected_legacy_source_ids", []))
     if len(protected) != 18 or not protected.issubset(ids):
         raise ValueError("protected 18 legacy sources missing")

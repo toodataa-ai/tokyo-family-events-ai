@@ -147,10 +147,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 20,
-    "published": 51,
+    "published": 71,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 48,
+    "verified": 68,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -312,5 +312,41 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "all_non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "all-reviewed-20261212-sugi-214",
+      "all-reviewed-20261213-sugi-230",
+      "all-reviewed-20261212-sugi-231",
+      "all-reviewed-20261213-sugi-470",
+      "all-reviewed-20261213-sugi-506",
+      "all-reviewed-20261213-sugi-536",
+      "all-reviewed-20261213-sugi-640",
+      "all-reviewed-20261213-sugi-641",
+      "all-reviewed-20261213-sugi-676",
+      "all-reviewed-20261212-sugi-711",
+      "all-reviewed-20261213-sugi-772",
+      "all-reviewed-20261212-orsay-exhibition",
+      "all-reviewed-20261212-art-annex",
+      "all-reviewed-20261212-rose-illumination",
+      "all-reviewed-20261213-rose-family-concert",
+      "all-reviewed-20261213-rose-adult-concert",
+      "all-reviewed-20261212-rose-training",
+      "all-reviewed-20261212-shibuya-tennis-family",
+      "all-reviewed-20261212-shibuya-tennis-older",
+      "all-reviewed-20261212-senju-artpath2026"
+    ],
+    "base_data_production_sha": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
   }
 }

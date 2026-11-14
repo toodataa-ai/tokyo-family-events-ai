@@ -3,17 +3,17 @@
   "sat": "2026-12-12",
   "sun": "2026-12-13",
   "label": "12/12(土)〜12/13(日)",
-  "generated": "2026-11-14T09:14:24.970965+00:00",
+  "generated": "2026-11-14T11:36:16.232165+00:00",
   "horizon_index": 6,
   "publication_tier": "announcement",
   "verification_file": "2026-12-12-verification.json",
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 53,
+    "candidate_count": 73,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 51,
+    "published_count": 71,
     "wards": [
       {
         "ward": "千代田区",
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
+        "candidate_count": 6,
+        "published_count": 6,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -128,8 +128,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 4,
+        "published_count": 4,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -146,8 +146,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 4,
-        "published_count": 4,
+        "candidate_count": 15,
+        "published_count": 15,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -191,8 +191,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 4,
-        "published_count": 4,
+        "candidate_count": 8,
+        "published_count": 8,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -200,8 +200,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -229,7 +229,8 @@
     "2026-12-12-events-reviewed-backlog-20261114.json",
     "2026-12-12-events-additional-primary-20261114.json",
     "2026-12-12-events-non-tamemap-20261114.json",
-    "2026-12-12-events-non-tamemap-next-20261114.json"
+    "2026-12-12-events-non-tamemap-next-20261114.json",
+    "2026-12-12-events-all-non-tamemap-20261114.json"
   ],
   "events": []
 }

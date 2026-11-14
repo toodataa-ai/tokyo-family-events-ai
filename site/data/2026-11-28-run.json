@@ -1810,8 +1810,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 82,
-    "verified": 76,
+    "published": 106,
+    "verified": 100,
     "announced": 6,
     "candidates": 43,
     "excluded": 16,
@@ -2149,5 +2149,45 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "all_non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "all-reviewed-20261129-sugi-489",
+      "all-reviewed-20261129-sugi-589",
+      "all-reviewed-20261129-sugi-630",
+      "all-reviewed-20261129-sugi-636",
+      "all-reviewed-20261129-sugi-690",
+      "all-reviewed-20261129-sugi-693",
+      "all-reviewed-20261128-sugi-711",
+      "all-reviewed-20261128-sugi-720",
+      "all-reviewed-20261129-sugi-731",
+      "all-reviewed-20261128-sugi-743",
+      "all-reviewed-20261128-sugi-759",
+      "all-reviewed-20261128-sugi-805",
+      "all-reviewed-20261128-sugi-810",
+      "all-reviewed-20261129-sugi-822",
+      "all-reviewed-20261129-sugi-828",
+      "all-reviewed-20261129-sugi-731-walkin",
+      "all-reviewed-20261128-sugi-803-exhibit",
+      "all-reviewed-20261128-sugi-803-korczak",
+      "all-reviewed-20261129-sugi-803-dialogue",
+      "all-reviewed-20261128-chiyoda-family-bazaar",
+      "all-reviewed-20261128-meguro-free-space",
+      "all-reviewed-20261129-nerima-marche",
+      "all-reviewed-20261128-orsay-exhibition",
+      "all-reviewed-20261128-philippine-festival2026"
+    ],
+    "base_data_production_sha": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
   }
 }

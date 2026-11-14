@@ -5,7 +5,7 @@ This is a review gate, not a grade calculator. It never averages axes, promotes
 by A-count, or lowers grades just because an unrelated field is unknown.
 Unchanged legacy assessments are retained and are not silently reclassified.
 """
-import argparse,json,re,sys
+import argparse,json,re,sys,unicodedata
 from pathlib import Path
 from validate_non_regression import CurrentStore,GitStore,load_bundle,read_json
 AXES=('child_target','interactivity','age_fit','stay_flexibility','burden','cost','reservation','family_value')
@@ -39,6 +39,19 @@ def inspect_assessment(fit):
  if axes.get('burden',{}).get('grade')=='A' and re.search('駅.*近|駅直近',str(axes['burden'].get('reason',''))) and not review.get('burden_evidence'):errors.append('near a station alone does not establish low safety/crowding burden')
  return errors
 
+def normalized_identity(value):
+ return re.sub(r'\s+','',unicodedata.normalize('NFKC',str(value or '')))
+
+def decision_index(rows):
+ """Keep historical candidate IDs; resolve only explicit, unique published aliases."""
+ result={}
+ for row in rows:
+  for key in {row.get('candidate_id'),row.get('published_event_id')} - {None,''}:
+   if not isinstance(key,str):raise ValueError('invalid explicit decision identity')
+   if key in result and result[key] is not row:raise ValueError('ambiguous published decision identity: '+key)
+   result[key]=row
+ return result
+
 def bundles(store,prefix):
  manifest=read_json(store,prefix+'/manifest.json')
  if not isinstance(manifest,dict):raise ValueError('manifest missing')
@@ -52,14 +65,17 @@ def check(base,directory):
  errors=[];reviewed=0;comparisons={}
  for week,bundle in after.items():
   if not bundle:raise ValueError('candidate bundle missing '+week)
-  decisions={r['candidate_id']:r for r in bundle['decisions']}
+  decisions=decision_index(bundle['decisions'])
   for e in bundle['events']:
    previous=old.get((week,e['id']));fit=e.get('family_fit');unchanged=previous and previous.get('family_fit')==fit
    # Exact same-ID, same-assessment carryover is not a new rating decision.
    carried=not previous and any(p.get('family_fit')==fit for p in by_id.get(e['id'],[]))
    if unchanged or carried:continue
    reviewed+=1;key=week+'/'+e['id'];errors.extend(key+': '+s for s in inspect_assessment(fit))
-   decision=decisions.get(e['id']) or {};d_fit=decision.get('canonical_family_fit_v2') or decision.get('family_fit') or {}
+   decision=decisions.get(e['id']) or {}
+   if decision.get('published_event_id'):
+    if any(normalized_identity(decision.get(k))!=normalized_identity(e.get(k)) for k in ['name','ward']):errors.append(key+': explicit published alias does not match event identity')
+   d_fit=decision.get('canonical_family_fit_v2') or decision.get('family_fit') or {}
    if any(d_fit.get(k)!=fit.get(k) for k in ['grade','overall','reason','axes','review']):errors.append(key+': published and decision assessments disagree')
    if fit.get('overall') in ('C','D') and not str(decision.get('override_reason') or '').strip():errors.append(key+': conditional publication requires a specific override')
    review=fit.get('review') or {};comparison=review.get('grade_comparison');identity=(e.get('name'),e.get('official_url'),e.get('venue'))

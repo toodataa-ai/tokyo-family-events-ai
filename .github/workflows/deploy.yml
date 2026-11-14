@@ -190,6 +190,8 @@ jobs:
         with:
           ref: main
           path: staging-policy-src
+      - name: Require individual evidence for every new or changed family-fit assessment
+        run: python3 staging-policy-src/tools/validate_family_fit_quality.py --base-ref ${{ needs.gate.outputs.base_data_production_sha }} --data-dir site/data
       - name: Download immutable 2026-10-26 source evidence for verified horizon subset
         if: ${{ needs.gate.outputs.operation == 'verified-horizon-subset' }}
         uses: actions/download-artifact@v4
@@ -259,7 +261,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "rail-family-fit-correction-20261114" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "weekly-family-fit-correction-20261114" ]; then
+            python3 staging-policy-src/tools/validate_weekly_family_fit_correction.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+          elif [ "${{ needs.gate.outputs.operation }}" = "rail-family-fit-correction-20261114" ]; then
             python3 staging-policy-src/tools/validate_rail_family_fit_correction.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-additional-primary-20261114" ]; then
@@ -427,6 +432,9 @@ jobs:
             cd data-staging-src
             python3 ../production-src/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
             python3 ../production-src/tools/validate_decisions.py --strict site/data
+            if [ "$stage" != "$base" ]; then
+              python3 ../staging-src/tools/validate_family_fit_quality.py --base-ref "$base" --data-dir site/data
+            fi
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
             elif [ "$base" = "4d3352bee7bd9b6318fbc3febc6ac9ffa3a1bfe2" ] && [ "$stage" != "$base" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then

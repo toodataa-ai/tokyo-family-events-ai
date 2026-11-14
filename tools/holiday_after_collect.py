@@ -24,6 +24,7 @@ from http_source_diagnostics import diagnostic_for_http_error, diagnostic_for_ht
 from nerima_annual_resolver import resolve_annual_schedule_urls
 from official_schedule_discovery import extract_candidates
 from nerima_forest_schedule import parse_schedule as parse_nerima_forest_schedule
+from sankaku_event_listing import parse_listing as parse_sankaku_listing
 from tamemap_calendar import calendar_leads as tamemap_calendar_leads
 
 JST = dt.timezone(dt.timedelta(hours=9))
@@ -453,6 +454,7 @@ def build_jobs(plan):
                          "required": source["required"], "url": url,
                          "target_start": plan["target_start"],
                          "target_end": plan["target_end"],
+                         "holiday_dates": [h["date"] for h in plan.get("holiday_targets", [])],
                          "annual_listing_url": source.get("annual_listing_url")})
     return jobs
 
@@ -553,6 +555,13 @@ def inspect(job, fetcher=None):
             result["page_title"] = "ためまっぷなかの・月別カレンダー"
             result["candidate_status"] = "unverified_calendar_links"
             result["decision_reconciliation"] = "pending"
+        elif job.get("source_id") == "shinjuku_sankaku_hiroba":
+            result.update(parse_sankaku_listing(
+                evidence["body"], dt.date.fromisoformat(job["target_start"]),
+                dt.date.fromisoformat(job["target_end"]), job["url"],
+                holiday_dates=job.get("holiday_dates", [])))
+            result["page_title"] = "新宿住友ビル三角広場 イベント一覧"
+            result["candidate_status"] = "unverified_external_organizer_links"
         elif job.get("source_id") == "suginami_calendar_all":
             result["candidates"] = suginami_official_event_links(evidence["body"], job["url"])
             result["page_title"] = "杉並区公式イベントカレンダー"

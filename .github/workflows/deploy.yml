@@ -452,6 +452,8 @@ jobs:
             fi
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "$base" = "847e388e65b99e38a0f108ecc96009778b3fdcd2" ] && [ "$stage" = "e9886705d9c6ce2cc21fdd276553df2a34849fd4" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+              python3 ../staging-src/tools/validate_aipaku_addition_20261115.py --base-ref "$base" --data-dir site/data
             elif [ "$base" = "847e388e65b99e38a0f108ecc96009778b3fdcd2" ] && [ "$stage" = "6fb1abd131411ba64bbb175667c3d8a0fc922d69" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
               # User review preview only; exact frozen additions/assessments,
               # full old-event/history equality and source-error multiset.
@@ -517,6 +519,8 @@ jobs:
               if [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
                 node ../staging-src/tools/validate_history_metadata_provenance.mjs \
                   --base-ref "$base" --data-dir site/data
+              elif [ "$base" = "847e388e65b99e38a0f108ecc96009778b3fdcd2" ] && [ "$stage" = "e9886705d9c6ce2cc21fdd276553df2a34849fd4" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+                python3 ../staging-src/tools/validate_aipaku_addition_20261115.py --base-ref "$base" --data-dir site/data
               elif [ "$base" = "847e388e65b99e38a0f108ecc96009778b3fdcd2" ] && [ "$stage" = "6fb1abd131411ba64bbb175667c3d8a0fc922d69" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
                 python3 ../staging-src/tools/validate_evidence_recovery_20261115.py --base-ref "$base" --data-dir site/data
 
@@ -565,6 +569,7 @@ jobs:
           # Source connectivity is independent read-only evidence, not app or event data.
           python3 staging-src/tools/compose_source_audit.py \
             --snapshot staging-src/site/audit/fixed_sources.json \
+            --fallback-snapshot staging-src/research/aipaku_review_20261115/fixed_sources_before_addition.json \
             --registry production-src/site/data/discovery_sources.json \
             --pages-dir pages
 

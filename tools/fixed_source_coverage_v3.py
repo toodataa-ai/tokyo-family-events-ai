@@ -231,7 +231,7 @@ def build_report(registry, start, end, *, fetcher=None, workers=8, checked_at=No
             "publication_gaps_confirmed": None,
         },
         "sources": output, "read_only": True,
-        "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。",
+        "disclaimer": f"全{len(output)}サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。",
     }
 
 
@@ -242,7 +242,7 @@ def validate(report, registry):
     ids = [s["source_id"] for s in report["sources"]]
     if ids != [s["id"] for s in original]:
         raise ValueError("source register drift or order changed")
-    if report["summary"]["registered"] != 26 or report["summary"]["full_event_row_parity_verified_by_this_report"] != 0:
+    if report["summary"]["registered"] != len(original) or report["summary"]["full_event_row_parity_verified_by_this_report"] != 0:
         raise ValueError("unsafe audit scope or false parity claim")
     if any(s["event_candidates_total"] is not None or
            s["candidate_publication_parity"] != "未検証" for s in report["sources"]):

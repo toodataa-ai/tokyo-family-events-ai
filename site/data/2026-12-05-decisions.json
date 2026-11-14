@@ -2015,22 +2015,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。",
+        "reason": "父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。 細かな開催時刻や費用は未記載だが、それだけを理由に親子体験の強みをBへ抑えない。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。"
+            "grade": "A",
+            "reason": "父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "reason": "細かな開催時刻や費用は未記載だが、それだけを理由に親子体験の強みをBへ抑えない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2049,14 +2049,51 @@
             "reason": "当日参加可能。開催時刻・料金の詳細と空き状況は主催者へ確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "子どもから祖父母まで一緒に歌うファミリー合唱。"
+            "grade": "A",
+            "reason": "父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。"
+          ],
+          "limitations": [
+            "細かな開催時刻や費用は未記載だが、それだけを理由に親子体験の強みをBへ抑えない。"
+          ],
+          "grade_comparison": "総合A：父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。 細かな開催時刻や費用は未記載だが、それだけを理由に親子体験の強みをBへ抑えない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
+              "quote": "森のファミリー合唱団 | 東京都中野区 | イベント 森のファミリー合唱団 - ためまっぷなかの ためまっぷなかの ためまっぷなかの ためまっぷなかの 言語を選択してください 日本語 English Português Tagalog イベントへのご参加ありがとうございました。よろしければイベントの評価をお願いいします イベントの評価をありがとうございました star_border star_border star_border star_border star_border キャンセル 決定 ▼ 森のファミリー合唱団 | イベント情報 戻る 11月22日 (日) 8日後 1/7 詳細情報 森のファミリー合唱団 みんなで一緒に歌いましょう! 子どもも、パパもママも、おじいちゃんもおばあちゃんも歓迎! ★森の音楽会にも出演します! calendar_month 開催日 11月22日 (日) 他の開催日 edit_calendar カレンダーに追加 カレンダー登録 Googleカレンダー Yahoo!カレンダー Outlookカレンダー 開催地 経路 江古田3丁目14−1 プライムメゾン江古田の杜ウエスト1階 参加費 参加費 1,000円未満 参加形式 当日参加可能 電話番号 phone 電話番号 03-3385-5111 もりのいえ もりのいえは10:00~17:00 第二火曜日と毎水曜日休館です 主な対象 一般 ファミリー・キッズ シニア テーマ 子育て 小中学生向け 若者 福祉 生涯学習 ボランティア 音楽・アート・エンタメ イベントに対する イメージ わくわく のんびり あったかい SDGs 投稿者 ZEROキッズ 投稿サイト ためまっぷなかの 近くのイベント 親子De英語 calendar_month 11月17日 (火) 3日後 500m以内 第九を歌いませんか? calendar_month 11月20日 (金) 6日後 500m以内 あかちゃんおはなし会 calendar_month 11月16日 (月) 明後日 500m以内 全ての近くのイベントを見る 同日開催のイベント 地域展「野方・沼袋」 calendar_month 11月14日 (土) 今日 0",
+              "checked_at": "2026-11-14T13:24:35+09:00",
+              "sha256": "58b15f40ef431526ec52eb5c8524489d0fd06e5c8481bc5a96d779f87ac4837e"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2067,12 +2104,17 @@
       ],
       "reasons": [
         "子どもから祖父母まで一緒に歌うファミリー合唱。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：父母・祖父母と子どもが一緒に歌う、世代を越えた参加型のファミリー合唱。 細かな開催時刻や費用は未記載だが、それだけを理由に親子体験の強みをBへ抑えない。"
       ],
       "evidence": [
         {
           "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/146912/2026-11-22?locale=ja",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2087,19 +2129,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "重症心身障害児者を対象にした音楽活動を家族で共有できる。",
+        "reason": "重症心身障害児者が音楽の活動を家族と共有する機会になる。 具体的な当日の音楽活動や介助・付き添いの方法は未記載で、障害ではなく参加体験の範囲を留保する。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 重症心身障害児者が音楽の活動を家族と共有する機会になる。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "重症心身障害児者を対象にした音楽活動を家族で共有できる。"
+            "grade": "unknown",
+            "reason": "重症心身障害児者が音楽の活動を家族と共有する機会になる。"
           },
           "age_fit": {
-            "grade": "B",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "grade": "unknown",
+            "reason": "具体的な当日の音楽活動や介助・付き添いの方法は未記載で、障害ではなく参加体験の範囲を留保する。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2119,13 +2161,52 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "重症心身障害児者を対象にした音楽活動を家族で共有できる。"
+            "reason": "重症心身障害児者が音楽の活動を家族と共有する機会になる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "重症心身障害児者が音楽の活動を家族と共有する機会になる。"
+          ],
+          "limitations": [
+            "具体的な当日の音楽活動や介助・付き添いの方法は未記載で、障害ではなく参加体験の範囲を留保する。"
+          ],
+          "grade_comparison": "総合B：重症心身障害児者が音楽の活動を家族と共有する機会になる。 具体的な当日の音楽活動や介助・付き添いの方法は未記載で、障害ではなく参加体験の範囲を留保する。",
+          "unsupported_axes": [
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://pc.tamemap.net/1311401/event/159839/2026-12-06?locale=ja",
+              "quote": "プライマリィ中野 2026定期活動5 | 東京都杉並区 | イベント プライマリィ中野 2026定期活動5 - ためまっぷなかの ためまっぷなかの ためまっぷなかの ためまっぷなかの 言語を選択してください 日本語 English Português Tagalog イベントへのご参加ありがとうございました。よろしければイベントの評価をお願いいします イベントの評価をありがとうございました star_border star_border star_border star_border star_border キャンセル 決定 ▼ プライマリィ中野 2026定期活動5 | イベント情報 戻る 12月6日 (日) 22日後 1/1 詳細情報 プライマリィ中野 2026定期活動5 重心児者の音楽療法 calendar_month 開催日 12月6日 (日) edit_calendar カレンダーに追加 カレンダー登録 Googleカレンダー Yahoo!カレンダー Outlookカレンダー 開催地 経路 マイルドハート高円寺 参加費 参加費 1,000円未満 参加形式 当日参加可能 電話番号 phone 電話番号 090-5775-9767 担当:井田 主な対象 一般 ファミリー・キッズ テーマ 若者 介護 福祉 イベントに対する イメージ あったかい SDGs 投稿者 ぷらいまりぃ中野 投稿サイト ためまっぷなかの 近くのイベント ぷらいまりぃ中野 2026定期活動6 calendar_month 3月14日 (日) 500m以内 健康茶房 calendar_month 11月14日 (土) 今日 500m以内 人権啓発講演会【その「普通」は、だれが決めた普通?】 calendar_month 11月21日 (土) 7日後 500m以内 全ての近くのイベントを見る 同日開催のイベント 2026年中野ティーンズ会議報告会を実施します! calendar_month 12月6日 (日) 22日後 0.5km以内 大和クリスマスコンサート calendar_month 12月6日 (日) 22日後 1.0km以内 地域展「野方・沼袋」 calendar_month 11月14日",
+              "checked_at": "2026-11-14T13:24:41+09:00",
+              "sha256": "03c627937ea1375cacc99609a3bb5c5518633089d26387c16f621d599ca65841"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2136,12 +2217,17 @@
       ],
       "reasons": [
         "重症心身障害児者を対象にした音楽活動を家族で共有できる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：重症心身障害児者が音楽の活動を家族と共有する機会になる。 具体的な当日の音楽活動や介助・付き添いの方法は未記載で、障害ではなく参加体験の範囲を留保する。"
       ],
       "evidence": [
         {
           "url": "https://pc.tamemap.net/1311401/event/159839/2026-12-06?locale=ja",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/159839/2026-12-06?locale=ja",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2153,22 +2239,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "レトロゲームを大画面で遊ぶ体験を家族で共有できる。",
+        "reason": "子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。 ゲームごとの内容・難易度は選択時に確認。全800作品が全ての年齢に合うとは判断しない。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "レトロゲームを大画面で遊ぶ体験を家族で共有できる。"
+            "grade": "A",
+            "reason": "子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "子ども・家族向け。細かな対象年齢は主催者へ確認。"
+            "reason": "ゲームごとの内容・難易度は選択時に確認。全800作品が全ての年齢に合うとは判断しない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2187,14 +2273,51 @@
             "reason": "当日参加可能。開催時刻・料金の詳細と空き状況は主催者へ確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "レトロゲームを大画面で遊ぶ体験を家族で共有できる。"
+            "grade": "A",
+            "reason": "子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。"
+          ],
+          "limitations": [
+            "ゲームごとの内容・難易度は選択時に確認。全800作品が全ての年齢に合うとは判断しない。"
+          ],
+          "grade_comparison": "総合A：子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。 ゲームごとの内容・難易度は選択時に確認。全800作品が全ての年齢に合うとは判断しない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://pc.tamemap.net/1311401/event/162068/2026-12-06?locale=ja",
+              "quote": "ファミコンあつまる@ゲーム大会 | 東京都中野区 | イベント ファミコンあつまる@ゲーム大会 - ためまっぷなかの ためまっぷなかの ためまっぷなかの ためまっぷなかの 言語を選択してください 日本語 English Português Tagalog イベントへのご参加ありがとうございました。よろしければイベントの評価をお願いいします イベントの評価をありがとうございました star_border star_border star_border star_border star_border キャンセル 決定 ▼ ファミコンあつまる@ゲーム大会 | イベント情報 戻る 12月6日 (日) 22日後 1/6 詳細情報 ファミコンあつまる@ゲーム大会 中野区江古田のファミコンイベントです。 800のレトロゲームを大画面で遊んでみませんか? calendar_month 開催日 12月6日 (日) edit_calendar カレンダーに追加 カレンダー登録 Googleカレンダー Yahoo!カレンダー Outlookカレンダー 開催地 経路 中野区江古田区民活動センター 参加費 参加費 1,000円未満 参加形式 当日参加可能 主な対象 一般 ファミリー・キッズ 地域 北部 テーマ 小中学生向け 若者 音楽・アート・エンタメ イベントに対する イメージ わくわく のんびり SDGs 投稿者 ミニ寄合「ファミコンあつまる」 投稿サイト ためまっぷなかの 近くのイベント ファミコンあつまる@ゲーム大会 calendar_month 1月11日 (月) 500m以内 三療サービス(はり・灸・マッサージ) calendar_month 11月24日 (火) 10日後 500m以内 スマホカフェ calendar_month 11月20日 (金) 6日後 500m以内 全ての近くのイベントを見る 同日開催のイベント 森のファミリー合唱団 calendar_month 11月22日 (日) 8日後 500m以内 地域展「野方・沼袋」 calendar_month 11月14日 (土) 今日 1.0km以内 企画展「我が名は豊国-館蔵品でみる浮世絵の世界II」 calendar_",
+              "checked_at": "2026-11-14T13:24:50+09:00",
+              "sha256": "dcc125f47ca6c49c6e2e7608b5df2e3e11b4d9e08874301bda0b4aa72ca88339"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2205,12 +2328,17 @@
       ],
       "reasons": [
         "レトロゲームを大画面で遊ぶ体験を家族で共有できる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：子どもと保護者が大画面でレトロゲームを実際に遊び、世代を越えて共有できる。 ゲームごとの内容・難易度は選択時に確認。全800作品が全ての年齢に合うとは判断しない。"
       ],
       "evidence": [
         {
           "url": "https://pc.tamemap.net/1311401/event/162068/2026-12-06?locale=ja",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/event/162068/2026-12-06?locale=ja",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2222,22 +2350,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "女流棋士の講義と実戦で伝統文化の将棋を体験する。",
+        "reason": "基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。 区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "基本ルールを知っている小学生以上（区民優先）。"
+            "grade": "B",
+            "reason": "年齢等の参加条件として子どもも含むが、子ども専用企画とは区別する。 区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "女流棋士の講義と実戦で伝統文化の将棋を体験する。"
+            "grade": "A",
+            "reason": "基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "基本ルールを知っている小学生以上（区民優先）。"
+            "reason": "区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2256,13 +2384,50 @@
             "reason": "11/24までに申込。定員30名・抽選。非参加者の会場内見学は不可。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "女流棋士の講義と実戦で伝統文化の将棋を体験する。"
+            "grade": "A",
+            "reason": "基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。"
+          ],
+          "limitations": [
+            "区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。"
+          ],
+          "grade_comparison": "総合A：基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。 区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kouza/rekimin_syogi.html",
+              "quote": " 伝統文化体験講座 将棋の世界 ページID: 163378480 更新日:2026年10月20日 印刷 将棋の世界 ポスター 日時・会場・対象 【日時】2026年12月6日(日曜)午後1時30分~3時30分 【会場】中野区立歴史民俗資料館 研修室 【対象】小学生以上で基本的なルールを習得されている方(区民優先) 【定員】30名(多数時抽選) 【 参加費】無料 講師 女流二段 島井咲緒里 日本女子プロ将棋協会(LPSA)業務執行理事。 高知県観光特使。将棋の楽しさを伝える姿勢と指導力に定評あり。 女流1級 田中沙紀 日本女子プロ将棋協会(LPSA)所属。 丁寧な指導で人気。 申込み期間 2026年11月10日(火曜)~24日(火曜)まで締切必着 申込み期間外の応募は無効となりますのでご注意ください。 申込み方法 電子申請(Googleフォーム)での申込み 下記2次元コードまたは、下記URLからお申込みください。 https://forms.gle/CjqzkAYz2jAut2HP6(外部サイト) 2次元コード 直接申込み 宛名面に住所、氏名を記入した郵便はがきを開館時間内に直接当館へご持参ください。 往復はがきでの申込み 往復はがきに申込み事項を記入の上、当館へ郵送してください。(申込み期間内到着有効) 連名で申込み(2名様まで)の場合は往信うらに代表者1名の住所・電話番号、参加希望者全員の氏名・年齢をご記入ください。 往復はがき 注意事項 参加者以外の方の室内での見学はできません。 掲載イベントの中止または延期、内容の変更をする場合があります。ご了承ください。 お預かりした個人情報は本企画実施のご案内のみに利用します。利用目的にご同意の上、お申込みください。 はがきへの記入の際、消せるボールペンのご使用はお控えください。 宛先&お問合せ先 〒165-0022 東京都中野区江古田4-3-4 中野区立歴史民俗資料館 TEL 03-3319-9221 FAX 03-3319-9119 【開館時間】 午前9時~午後5時(入館は午後4時30分まで) 【休館日】月曜日・第3日曜日【入館料】無料 中野区立歴史民俗資料館 企画展示情報 講座・イベント情報 歴史民俗資料館 展示・イベン",
+              "checked_at": "2026-11-14T13:26:57+09:00",
+              "sha256": "6630a0055d7717164b37ccdc4d9a1fb803f8a9f03f22234358c1d2afc5457b5b"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2273,12 +2438,17 @@
       ],
       "reasons": [
         "女流棋士の講義と実戦で伝統文化の将棋を体験する。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：基本ルールを知る小学生以上が女流棋士の講義と実戦を体験できる、無料の将棋企画。 区民優先・抽選で、非参加者の室内見学は不可。保護者も一緒に見学できると誤解させない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kouza/rekimin_syogi.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kouza/rekimin_syogi.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2290,22 +2460,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "初めてでもフラダンスに挑戦できる。",
+        "reason": "年中〜小学生が初心者から45分のフラダンスを楽しめる。 保護者1名までの同伴と持ち物が必要で、12月枠の予約は11/15 9時開始。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "年中〜小学生、保護者同伴1名まで。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 年中〜小学生が初心者から45分のフラダンスを楽しめる。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "初めてでもフラダンスに挑戦できる。"
+            "grade": "A",
+            "reason": "年中〜小学生が初心者から45分のフラダンスを楽しめる。"
           },
           "age_fit": {
-            "grade": "B",
-            "reason": "年中〜小学生、保護者同伴1名まで。"
+            "grade": "A",
+            "reason": "年中〜小学生が初心者から45分のフラダンスを楽しめる。 保護者1名までの同伴と持ち物が必要で、12月枠の予約は11/15 9時開始。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2324,14 +2494,52 @@
             "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "初めてでもフラダンスに挑戦できる。"
+            "grade": "A",
+            "reason": "年中〜小学生が初心者から45分のフラダンスを楽しめる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "年中〜小学生が初心者から45分のフラダンスを楽しめる。"
+          ],
+          "limitations": [
+            "保護者1名までの同伴と持ち物が必要で、12月枠の予約は11/15 9時開始。"
+          ],
+          "grade_comparison": "総合A：年中〜小学生が初心者から45分のフラダンスを楽しめる。 保護者1名までの同伴と持ち物が必要で、12月枠の予約は11/15 9時開始。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+              "quote": "いき「 | サイト越えトラッキングを防ぐ」を「OFF」にします。 | 4. 「すべてのCookieをブロック」を「OFF」にします。 | 受付していません | 笑顔で楽しくおどるケイキフラ1 12月 | 2026/12/05 (土) 10:00-10:45 | 1,500円 | 税込 | ※キャンセルの場合は開催日前日の午後9時までに体験学習センター管理事務所にお電話でご連絡ください。 | 無断欠席、当日キャンセルの場合は、病欠であっても参加費をいただきます。 | [略称] ケイキフラ1 | 初めてのお子様も安心。楽しく音楽に合わせて体を動かし、自然と笑顔になれるフラダンスを踊ります。 | 参加費:1,500円 | 時 間:10:00~10:45 | 講 師:アロヒラニ高橋 | 対 象:年中~小学生 | 持ち物:パウスカート(フレアスカート) | 飲み物・室内履き(バレエシューズ等) | 定 員:15名 | ※メッセージ欄にお子様のお名前、年齢をご記入ください | (例:〇〇 、5歳) | ※保護者の同伴は1名まででお願いします | [担当] アロヒラニ高橋 | [詳細URL] | https://alohilani-hula.com/ | 前の画面に戻る",
+              "checked_at": "2026-11-14T04:32:01.733781+00:00",
+              "sha256": "90d1d0ae0ab44ca1f3df6fa86782933c39c8f56c9a7282825c16b8834d84f1cd",
+              "detail_keyid": "7418"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2342,12 +2550,17 @@
       ],
       "reasons": [
         "初めてでもフラダンスに挑戦できる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：年中〜小学生が初心者から45分のフラダンスを楽しめる。 保護者1名までの同伴と持ち物が必要で、12月枠の予約は11/15 9時開始。"
       ],
       "evidence": [
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2359,22 +2572,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "クリスマスツリー型食器を転写シールで飾る。",
+        "reason": "子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。 2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。",
         "axes": {
           "child_target": {
-            "grade": "A",
-            "reason": "どなたでも・子連れ可。小学2年生以下は保護者同伴。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "クリスマスツリー型食器を転写シールで飾る。"
+            "grade": "A",
+            "reason": "子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも・子連れ可。小学2年生以下は保護者同伴。"
+            "reason": "2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2393,14 +2606,52 @@
             "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "クリスマスツリー型食器を転写シールで飾る。"
+            "grade": "A",
+            "reason": "子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。"
+          ],
+          "limitations": [
+            "2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。"
+          ],
+          "grade_comparison": "総合A：子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。 2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+              "quote": "体験学習センター管理事務所にお電話でご連絡ください。 | 無断欠席、当日キャンセルの場合は、病欠であっても参加費をいただきます。 | [略称] ポーセラーツ | クリスマスツリー型の食器をご用意します。 | 可愛い転写シールでオリジナルな作品作りを楽しんで下さい。 | 参加費:2,800円(材料費、焼成費込) | 時 間:10:00~12:00 | 講 師:姫田 真帆 ヴォーグ社認定インストラクター) | 対 象:どなたでも。お子様連れ可。小学2年生以下は保護者同伴 | 定 員:8名 | 持ち物:室内履き | ※作品の個数1個分で1回のお申込みをお願いします | (※2作品制作の場合は2回申込。メッセージにその旨お知らせください) | ※お付き添いは各1名様まででお願いします。 | ※ご質問等ございましたら直接広町みらい公園管理事務所までお電話ください。 | [担当] 姫田 真帆(ヴォーグ社認定インストラクター) | [詳細URL] | https://www.instagram.com/voile.salon/ | 前の画面に戻る",
+              "checked_at": "2026-11-14T04:32:03.583721+00:00",
+              "sha256": "a03ecf38779a00aa282ece7118520ec891ed4ff38fab19dc692f105c96f42e13",
+              "detail_keyid": "7420"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2411,12 +2662,17 @@
       ],
       "reasons": [
         "クリスマスツリー型食器を転写シールで飾る。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：子ども連れでツリー型食器を飾り、親子でクリスマスの作品を作れる。 2時間・材料焼成費2800円で、小学2年生以下は同伴が必要。予約開始前に受付中とは扱わない。"
       ],
       "evidence": [
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2428,22 +2684,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "家族のクリスマス写真を撮影する。",
+        "reason": "0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。 写真3枚の料金で、友人家族との合同参加は不可。撮影を工作体験のようには評価しない。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "0歳以上の未就学児と家族。友人との合同参加不可。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "家族のクリスマス写真を撮影する。"
+            "reason": "0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。"
           },
           "age_fit": {
-            "grade": "B",
-            "reason": "0歳以上の未就学児と家族。友人との合同参加不可。"
+            "grade": "A",
+            "reason": "0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。 写真3枚の料金で、友人家族との合同参加は不可。撮影を工作体験のようには評価しない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2462,14 +2718,52 @@
             "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "家族のクリスマス写真を撮影する。"
+            "grade": "A",
+            "reason": "0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。"
+          ],
+          "limitations": [
+            "写真3枚の料金で、友人家族との合同参加は不可。撮影を工作体験のようには評価しない。"
+          ],
+          "grade_comparison": "総合A：0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。 写真3枚の料金で、友人家族との合同参加は不可。撮影を工作体験のようには評価しない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+              "quote": "いき「 | サイト越えトラッキングを防ぐ」を「OFF」にします。 | 4. 「すべてのCookieをブロック」を「OFF」にします。 | 受付していません | クリスマス親子撮影会1 | 2026/12/06 (日) 10:00-10:40 | 1,500円 | 税込み | お写真3ポーズの撮影料(データ) | 当日のキャンセルは病欠であっても、参加費を徴収いたします。 | [略称] 撮影会1 | 普段なかなか自分では撮れない、お子さまやご家族のお写真を撮影いたします。 | 撮影時間は20分で写真データ3枚分を撮影いたします。(データは後日、各自でダウンロードしていただきます) | 撮影:比嘉 久美子(フォトグラファー) | 参加費:1,500円/1組 お写真データ3枚 | データは後日、各自でダウンロードしていただきます。 | 当日のキャンセルは病欠であっても参加費を徴収いたします。 | 時間: | 10:00~10:40 | 撮影時間は20分/1組、撮影の順番はお申込み順となります。 | お時間の確認は、開催日当日お電話にてお問い合わせ下さい。 | 遅刻した場合には、撮影時間が短くなります。時間厳守でお集まりください。 | 対象:0歳以上の未就学児とご家族 | お友達はご一緒できません。 | メッセージ欄にお子様のお名前・年齢、月齢とお座りができるかの有無をご記入ください。 | (例:〇〇、 5歳2カ月、お座りはできる) | 持ち物:お気に入りのおもちゃ、衣装など | お着換えは撮影開始前にすませて下さい。更衣室はありません。 | 定員:2組 | 会場:体験学習室C ※受付は2階管理事務所窓口 | [担当] 比嘉 久美子(フォトグラファー) | 前の画面に戻る",
+              "checked_at": "2026-11-14T04:32:08.992212+00:00",
+              "sha256": "a5308cfb91654fe259ba6ad3e24e620b70907d994b3893e132d635ce040e3bf6",
+              "detail_keyid": "7442"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2480,12 +2774,17 @@
       ],
       "reasons": [
         "家族のクリスマス写真を撮影する。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：0歳以上の未就学児と家族が、20分の短い枠で季節の写真と成長を残せる。 写真3枚の料金で、友人家族との合同参加は不可。撮影を工作体験のようには評価しない。"
       ],
       "evidence": [
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2497,22 +2796,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "親子でマスキングテープのクリスマスカードを作る。",
+        "reason": "3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。 小さい子は保護者の補助が必要。当日受付・先着20名で参加枠に限りがある。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "3歳頃〜どなたでも。小さい子は保護者と参加可。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "親子でマスキングテープのクリスマスカードを作る。"
+            "grade": "A",
+            "reason": "3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。"
           },
           "age_fit": {
-            "grade": "B",
-            "reason": "3歳頃〜どなたでも。小さい子は保護者と参加可。"
+            "grade": "A",
+            "reason": "3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。 小さい子は保護者の補助が必要。当日受付・先着20名で参加枠に限りがある。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2531,14 +2830,52 @@
             "reason": "当日会場受付・先着20名。事前予約不要。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "親子でマスキングテープのクリスマスカードを作る。"
+            "grade": "A",
+            "reason": "3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。"
+          ],
+          "limitations": [
+            "小さい子は保護者の補助が必要。当日受付・先着20名で参加枠に限りがある。"
+          ],
+          "grade_comparison": "総合A：3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。 小さい子は保護者の補助が必要。当日受付・先着20名で参加枠に限りがある。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+              "quote": "いき「 | サイト越えトラッキングを防ぐ」を「OFF」にします。 | 4. 「すべてのCookieをブロック」を「OFF」にします。 | 受付していません | マスキングテープでつくるXmasカード | 2026/12/06 (日) 13:00-15:00 | 500円 | 税込み | こちらのイベントは当日会場で受付けいたします。(先着順) | [略称] クリスマスカード | ✨デコって楽しい✨ | マスキングテープでつくるクリスマスカード | こちらのイベントの受付は開催日当日会場でいたします。(先着順) | カラフルなマスキングテープを貼って、世界に1つだけのクリスマスカードを作ります。 | 小さなお子さまも保護者の方と一緒にご参加いただけます。 | 日付:12月6日(日) | 時間:13:00~15:00 | 参加費:500円(税込) | 講師:Yumi | 定員:20名 | 会場:広町みらい公園体験学習室B1 | 対象:3歳頃~どなたでも | [担当] Yumi | 前の画面に戻る",
+              "checked_at": "2026-11-14T04:32:17.781897+00:00",
+              "sha256": "5bc7590161512d944a7931b86ae1bb324e74c45f550be7ac24b7ac327bca5fde",
+              "detail_keyid": "7451"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2549,12 +2886,17 @@
       ],
       "reasons": [
         "親子でマスキングテープのクリスマスカードを作る。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：3歳頃から親子でマスキングテープを使ってカードを作れる、500円の季節工作。 小さい子は保護者の補助が必要。当日受付・先着20名で参加枠に限りがある。"
       ],
       "evidence": [
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2566,22 +2908,22 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "親子向けのコンサートと楽器体験。",
+        "reason": "親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。 親子組と追加人数の料金があり、1歳未満無料だけを見て全員無料とは判断しない。",
         "axes": {
           "child_target": {
             "grade": "A",
-            "reason": "どなたでも。"
+            "reason": "子ども・親子向けの対象が主催者案内にある。 親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "親子向けのコンサートと楽器体験。"
+            "grade": "A",
+            "reason": "親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。"
+            "reason": "親子組と追加人数の料金があり、1歳未満無料だけを見て全員無料とは判断しない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2600,14 +2942,52 @@
             "reason": "11/15 9:00から予約受付開始。受付開始前。 取消・無断欠席等の費用は公式案内を確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "親子向けのコンサートと楽器体験。"
+            "grade": "A",
+            "reason": "親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。"
+          ],
+          "limitations": [
+            "親子組と追加人数の料金があり、1歳未満無料だけを見て全員無料とは判断しない。"
+          ],
+          "grade_comparison": "総合A：親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。 親子組と追加人数の料金があり、1歳未満無料だけを見て全員無料とは判断しない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+              "quote": "い。 | 無断欠席、当日キャンセルの場合には病欠であっても参加費をいただきます。 | [略称] クリスマスコンサート | ✨キラキラ冬のクリスマスパーク✨ | Love’itのクリスマスコンサート | ファミリーリトミック担当のLove’it音楽教室の講師陣がお届けするクリスマススペシャルコンサート! | 楽器体験コーナーもあります♪ | 日付:12月6日(日) | 時間:14:15~15:00(開場14:00~) | 参加費:2,000(税込)/親子1組 | 追加参加はプラス1,000円/1人(1歳未満は無料) | !お願い!※必ず、全員で何名のご参加になるのか明記ください。 | 講師:Love’it音楽教室の講師 | 定員:20組 | 会場:広町みらい公園体験学習室A | 対象:どなたでも | [担当] Love’it音楽教室 | 前の画面に戻る",
+              "checked_at": "2026-11-14T04:32:21.278147+00:00",
+              "sha256": "8bd7528ce0ef46353b1d6ed89e5f36a190b90a6f30487ba4b8fb2f4b45cd7129",
+              "detail_keyid": "7450"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2618,12 +2998,17 @@
       ],
       "reasons": [
         "親子向けのコンサートと楽器体験。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：親子向けの45分コンサートに楽器体験も加わり、音楽を一緒に聴いて参加できる。 親子組と追加人数の料金があり、1歳未満無料だけを見て全員無料とは判断しない。"
       ],
       "evidence": [
         {
           "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2638,19 +3023,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "障害のある子どもが介助者とアートクラブに参加できる。",
+        "reason": "障害のある子どもも介助者とアート活動を楽しめる。 初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。",
         "axes": {
           "child_target": {
-            "grade": "A",
-            "reason": "小学生・中学生・高校生・成人・高齢者 区内在住で障害のある方とその介助者"
+            "grade": "B",
+            "reason": "年齢等の参加条件として子どもも含むが、子ども専用企画とは区別する。 初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "障害のある子どもが介助者とアートクラブに参加できる。"
+            "reason": "障害のある子どもも介助者とアート活動を楽しめる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "小学生・中学生・高校生・成人・高齢者 区内在住で障害のある方とその介助者"
+            "reason": "初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2670,13 +3055,50 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "障害のある子どもが介助者とアートクラブに参加できる。"
+            "reason": "障害のある子どもも介助者とアート活動を楽しめる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "障害のある子どもも介助者とアート活動を楽しめる。"
+          ],
+          "limitations": [
+            "初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。"
+          ],
+          "grade_comparison": "総合B：障害のある子どもも介助者とアート活動を楽しめる。 初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s036/event/26086.html",
+              "quote": " ページID : 26086 更新日 : 2026年6月1日 障害者のためのアート教室(すだちの里すぎなみ) 事前申込 直接会場へ 募集終了 イベント情報詳細 開催日 2026年6月6日(土曜日) 2026年6月20日(土曜日) 2026年7月4日(土曜日) 2026年7月18日(土曜日) 2026年8月1日(土曜日) 2026年8月15日(土曜日) 2026年9月5日(土曜日) 2026年9月19日(土曜日) 2026年10月3日(土曜日) 2026年10月10日(土曜日) 2026年11月7日(土曜日) 2026年11月21日(土曜日) 2026年12月5日(土曜日) 2026年12月19日(土曜日) 2027年1月9日(土曜日) 2027年1月16日(土曜日) 2027年2月6日(土曜日) 2027年2月20日(土曜日) 2027年3月6日(土曜日) 2027年3月20日(土曜日) 開催時間 午前9時30分 から 午前11時 まで 対象者 小学生|中学生|高校生|成人|高齢者 区内在住で障害のある方とその介助者 開催場所 すだちの里すぎなみ 地域交流室 杉並区今川2丁目14番12号 Google Mapsで地図を開く 内容 アートクラブ 申し込み 必要 電話で、各実施日の前月の1日(日曜日または祝日の場合は翌日)から前日までにお申し込みください。(令和8年12月28日から令和9年1月3日を除く) 申し込みをせずに来所した場合は参加をお断りしていますので、必ず申し込みをお願いします。 申込先:杉並障害者自立生活支援センターすだち 電話番号:03-5310-3362 申し込み期間 2026年6月1日から 2027年3月19日まで 定員 (見学込み)各8名 申込順 費用 無料 問い合わせ 杉並障害者自立生活支援センターすだち 電話:03-5310-3362 その他 初回の方は見学をお願いしています。 関連情報 障害者のための(1)リトミック(2)ユニカール教室(すだちの里すぎなみ) イベント情報をiPhone・iPad端末のカレンダーに取り込めます。 カレンダーへの取り込みについて説明を読む iCalendar取込み (iPhone、iPadなど) お問い合わせ先 こ",
+              "checked_at": "2026-11-14T13:26:14+09:00",
+              "sha256": "73eea8813a2be765793f84a7a0038bbd8499156be89199567b955716e4425073"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2687,12 +3109,17 @@
       ],
       "reasons": [
         "障害のある子どもが介助者とアートクラブに参加できる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：障害のある子どもも介助者とアート活動を楽しめる。 初回は見学で、今回作る作品や作業内容は未記載。障害の有無ではなく、初参加での体験範囲を留保する。"
       ],
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s036/event/26086.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/26086.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2704,26 +3131,26 @@
       "ward": "杉並区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。",
+        "reason": "なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。 全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。",
         "axes": {
           "child_target": {
-            "grade": "A",
-            "reason": "どなたでも。18歳未満も保護者のスマートフォンで参加可。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。"
+            "grade": "A",
+            "reason": "なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。18歳未満も保護者のスマートフォンで参加可。"
+            "reason": "全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。"
           },
           "stay_flexibility": {
-            "grade": "unknown",
-            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+            "grade": "A",
+            "reason": "期間・開催時間内に回る区間や立ち寄りを家族で選べる。"
           },
           "burden": {
             "grade": "unknown",
@@ -2738,14 +3165,51 @@
             "reason": "申込不要。健康ポイントは任意アプリ利用時のみ、18歳未満分は保護者に付与。歩きスマホ禁止。悪天候時はサイン一時撤去あり。費用未記載。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。"
+            "grade": "A",
+            "reason": "なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。"
+          ],
+          "limitations": [
+            "全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。"
+          ],
+          "grade_comparison": "総合A：なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。 全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。",
+          "unsupported_axes": [
+            "burden",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s092/event/27274.html",
+              "quote": " ページID : 27274 更新日 : 2026年10月30日 すぎなみアートウオーク 阿佐谷・高円寺地域の公園などに設置したアートを巡りながらまち歩きを楽しむ「すぎなみアートウオーク」を令和8年10月1日から実施します。 アートが描かれた看板(アートサイン)を鑑賞しながらまち歩きすることで健康づくりや地域の魅力を再発見できるほか、杉並区健幸アプリ「なみチャレ」の利用で健康ポイントの獲得や、AR(拡張現実)を用いてなみすけと記念撮影ができます。 この事業は令和7年度区民参加型予算事業で区民の方からの提案と投票により実施するものです。ぜひご参加ください。 イベント情報詳細 開催日 2026年10月1日(木曜日) から2027年3月21日(日曜日) 対象者 どなたでも 実施地域 阿佐谷・高円寺地域 ウオーキングコース 一周約5~6キロメートル アートサイン設置場所 7箇所に設置(阿佐ケ谷駅南口駅前広場、阿佐ヶ谷児童遊園、阿佐谷にしはら公園、桃園川緑道、高円寺中央公園、馬橋公園、阿佐谷地域区民センター(阿佐谷けやき公園)) アートサインについて 本事業は、7か所に設置されたアートサインを巡りながらまち歩きを楽しみます。 阿佐谷・高円寺地域の魅力や特色を題材に、女子美術大学の学生さんに制作いただきました。作品に込められた想いや、この場所ならではの風景とのつながりを感じながらお楽しみください。 作品情報 アートサインに掲載している作品タイトルやコンセプトは下記のリンクからご覧いただけます。 なお、作品の画像は掲載しておりません。 アートサイン設置場所 作品タイトル 阿佐ケ谷駅南口駅前広場 星降る街の即興詩 阿佐ヶ谷児童遊園 本から広がる世界 阿佐谷にしはら公園 緑と生きるまち 桃園川緑道 桃から繋がる物語 高円寺中央公園 “好き”が響くまち 馬橋公園 木の下で、のびのびと 阿佐谷地域区民センター(阿佐谷けやき公園) 欅と共に育つ街 おすすめの散策ルート アートサインを巡りながらまち歩きができるルートマップを作成しましたので、ぜひご活用ください。 なお、ルートは自由にアレンジできますので、ご自身のペースでまち歩きをお楽しみください。 すぎなみアートウオーク推奨コースマップ(PD",
+              "checked_at": "2026-11-14T13:26:26+09:00",
+              "sha256": "d70baedfc8f2b95f802d293267fbc692b2db7103afa3ed53a03ac78bf8fbc4c9"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2756,12 +3220,17 @@
       ],
       "reasons": [
         "家族のペースでアートを探し、まち歩きとAR撮影を楽しめる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：なみすけのAR撮影とアート探しを、短い区間から家族のペースで楽しめる。 全周は約5〜6km。スマートフォンは保護者が扱い、歩きながらの操作を避ける。"
       ],
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s092/event/27274.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s092/event/27274.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2776,19 +3245,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。",
+        "reason": "写真や資料で天沼の教会・病院と商店街の歴史をたどれる。 地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "どなたでも"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。"
+            "reason": "写真や資料で天沼の教会・病院と商店街の歴史をたどれる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも"
+            "reason": "地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2808,12 +3277,49 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。"
+            "reason": "写真や資料で天沼の教会・病院と商店街の歴史をたどれる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "写真や資料で天沼の教会・病院と商店街の歴史をたどれる。"
+          ],
+          "limitations": [
+            "地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。"
+          ],
+          "grade_comparison": "総合B：写真や資料で天沼の教会・病院と商店街の歴史をたどれる。 地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s113/event/28456.html",
+              "quote": " ページID : 28456 更新日 : 2026年11月1日 令和8年度企画展「農村に生まれた小さな西洋 天沼教会と東京衛生病院の歩みからみる地域史」(郷土博物館分館) 天沼教会の教会堂(昭和期)(セブンスデー・アドベンチスト天沼教会・東京衛生アドベンチスト病院・三育学院大学 所蔵) 教会堂の椅子(セブンスデー・アドベンチスト天沼教会・東京衛生アドベンチスト病院・三育学院大学 所蔵) 文書伝道(明治35年)(セブンスデー・アドベンチスト天沼教会・東京衛生アドベンチスト病院・三育学院大学 所蔵) 善福寺川での洗礼(矢嶋又次作「大正初期善福寺川 薪屋の堰」より)(当館蔵) イベント情報詳細 開催日 2026年11月13日(金曜日) から2027年1月24日(日曜日) 開催時間 午前9時 から 午後5時 まで 対象者 どなたでも 開催場所 杉並区立郷土博物館分館 西棟2階展示室 杉並区天沼3-23-1 天沼弁天池公園内 Google Mapsで地図を開く 内容 杉並区天沼3丁目に位置するセブンスデー・アドベンチスト天沼教会が誕生するのは、杉並地域がまだ田畑や雑木林を有する都市近郊型の農村であった大正3年(1914)のことです。のどかな風景の中に突如出現したレンガ造りの洋館は、地元住民が初めて触れる西洋という異文化でしたが、やがては周囲のランドマークとなって地域の中に溶け込んでいきます。 昭和4年(1929)に同敷地内に開院した東京衛生病院(現東京衛生アドベンチスト病院)は、「医療伝道は福音の右腕」という教えのもと、地域の人々へも医療を提供してきました。教会から青梅街道に至る道は、いつしか「教会通り」と呼ばれるようになり、現在では教会通り商店街が形成されて個性豊かな商店が建ち並んでいます。教会と病院がおよそ100年の時をかけて地域とともに歩んだ歴史は、天沼地域を語るうえで欠かせないものとなりました。 本展は、地域博物館の展示ではあまり取り上げられることのない教会や病院を中心に据えて地域史を捉える試みです。天沼教会と東京衛生病院の歴史を通して、周辺地域が発展する様子や商店街をはじめとする地域の人々のつながりを紹介します。 費用 無料 添付ファイル 令和8年度企画展「農村に生ま",
+              "checked_at": "2026-11-14T13:26:42+09:00",
+              "sha256": "71926bfe8bdb15c4c082865de6405f8a8e732bb27e746eb561ad93dba6b73522"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2824,12 +3330,17 @@
       ],
       "reasons": [
         "写真・資料を通じて天沼の教会・病院と街の歴史を家族でたどれる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：写真や資料で天沼の教会・病院と商店街の歴史をたどれる。 地域史の説明を読む一般展示であり、小さい子が遊べる企画や触れる資料は案内されていない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s113/event/28456.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s113/event/28456.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2844,19 +3355,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。",
+        "reason": "大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。 衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "どなたでも"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。"
+            "reason": "大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも"
+            "reason": "衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2876,12 +3387,49 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。"
+            "reason": "大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。"
+          ],
+          "limitations": [
+            "衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。"
+          ],
+          "grade_comparison": "総合B：大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。 衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s100/event/28578.html",
+              "quote": " ページID : 28578 更新日 : 2026年10月15日 企画展「近衞文麿の大礼服」(荻外荘公園) 荻外荘展示棟にて「近衞文麿の大礼服」を紐解く企画展を開催します。大礼服の意味、種類、歴史とともに、近衞文麿の大礼服の特徴、復元に用いられた技術を紹介します。 写真提供:荻窪三庭園 イベント情報詳細 開催日 2026年10月24日(土曜日) から2027年2月14日(日曜日) 開催時間 午前9時 から 午後5時 まで 最終入場:午後4時30分 会期中の水曜日と年末年始(12月29日から1月1日)は休館 (注)ただし、11月4日、11日、18日、25日、12月2日は臨時開館 対象者 どなたでも 開催場所 荻外荘展示棟 杉並区荻窪2丁目42番12号(荻外荘東側) Google Mapsで地図を開く 内容 大礼服は1872年(明治5年)から1954年(昭和29年)まで制定された、日本における洋式の最高礼服です。荻外荘が復原整備工事により近衞文麿居住時のかたちで公開されるのにあわせ、近衞が着用した大礼服も復元され、開館以来荻外荘内の蔵で展示されてきました。長身だった近衞の体型に沿った仕立て、華やかな金モール刺繍は、多くの来館者の目をひいています。 本展示では、歴史的空白を経て大礼服再現に関わった職人の方々からお預かりした資料などもあわせ、「近衞文麿の大礼服」を紐解きます。 費用 入場無料 その他 10月15日(木曜日)から23日(金曜日)は、展示準備のため展示棟2階への立ち入りができません。常設展「荻窪 実業家、政治家、芸術家たちがすごしたまち」の見学もできませんのでご注意ください。 イベント情報をiPhone・iPad端末のカレンダーに取り込めます。 カレンダーへの取り込みについて説明を読む iCalendar取込み (iPhone、iPadなど) お問い合わせ先 荻外荘公園 〒167-0051杉並区荻窪2丁目43番36号 電話:03-6383-5711(午前9時から午後5時まで) 水曜日、年末年始(12月29日から1月1日)休園 ここまでが本文です。",
+              "checked_at": "2026-11-14T13:26:28+09:00",
+              "sha256": "72f71e4a253882a216d2ea02a5c4ae6c458eae572604e1a2faab7426e2e84e41"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2892,12 +3440,17 @@
       ],
       "reasons": [
         "礼服の形・刺繍や再現資料を見て、歴史や衣服について家族で話せる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：大礼服の刺繍や復元資料から衣服と歴史を家族で見比べられる。 衣服資料を読む・見る展示が中心で、衣装を着る体験や子ども用解説は確認できない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s100/event/28578.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/28578.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2912,19 +3465,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "地域の昔の写真や道具を親子で見て話せる。",
+        "reason": "昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。 観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "一般向けの案内。細かな年齢条件は未記載。"
+            "reason": "子どもを主対象とする明記は確認できない。 観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "地域の昔の写真や道具を親子で見て話せる。"
+            "reason": "昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。"
           },
           "age_fit": {
             "grade": "unknown",
-            "reason": "公式の対象年齢記載がないため、子どもに合うか事前に確認。"
+            "reason": "観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -2944,12 +3497,51 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "地域の昔の写真や道具を親子で見て話せる。"
+            "reason": "昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。"
+          ],
+          "limitations": [
+            "観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。"
+          ],
+          "grade_comparison": "総合B：昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。 観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。",
+          "unsupported_axes": [
+            "child_target",
+            "age_fit",
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/chiikiten1027.html",
+              "quote": " 地域展「野方・沼袋」 ページID: 797436035 更新日:2026年10月14日 印刷 地域展「野方・沼袋」 ポスター 開催期間 令和8年10月27日(火曜)から令和8年12月19日(土曜)まで 展示概要 「野方・沼袋」の大部分は江戸時代の下沼袋村にあたる地域で、明治22年(1889)野方村の一部になって以来、村役場や町役場の置かれた、村や町の中心地であったところです。区民ホールや活気ある商店街に人が集う町であり、由緒ある神社や寺院の集まる、落ち着きのある町でもあります。 地域に残された文化財を紹介し、昭和から現代に至る、町の移り変わりを写真でたどります。 古い写真を集めています 昭和時代までの中野の風景や時代をあらわすものが写っている写真を収集しています。 プリント写真をお借りしてデータ化し、原本をお返しいたします。 今後の展示などに利用させていただきたいと思います。 中野区立歴史民俗資料館 企画展示情報 講座・イベント情報 歴史民俗資料館 展示・イベント年間スケジュールパンフレット 歴史民俗資料館 お問い合わせ このページは 区民部 文化振興・多文化共生推進課 が担当しています。 本文ここまで サブナビゲーションここから 情報が見つからないときは サブナビゲーションここまで PC版を表示する スマートフォン版を表示する",
+              "checked_at": "2026-11-14T13:26:54+09:00",
+              "sha256": "ccf9c179a69971e7c3e7020a7a858f508e0a2a0a0f9d031f7ff7afe3b3a195ed"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -2960,12 +3552,17 @@
       ],
       "reasons": [
         "地域の昔の写真や道具を親子で見て話せる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：昔と今の写真や生活道具を比べ、住む町の歴史を共有できる。 観察中心の地域展示で、道具に触れる体験や小さい子への案内は確認できない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/chiikiten1027.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/chiikiten1027.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -2980,19 +3577,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。",
+        "reason": "浮世絵の色・役者・構図を親子で見比べられる無料展示。 歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "一般向けの案内。細かな年齢条件は未記載。"
+            "reason": "子どもを主対象とする明記は確認できない。 歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。"
+            "reason": "浮世絵の色・役者・構図を親子で見比べられる無料展示。"
           },
           "age_fit": {
             "grade": "unknown",
-            "reason": "公式の対象年齢記載がないため、子どもに合うか事前に確認。"
+            "reason": "歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3012,12 +3609,51 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "浮世絵の役者や色彩、構図を親子で見比べられる。"
+            "reason": "浮世絵の色・役者・構図を親子で見比べられる無料展示。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "浮世絵の色・役者・構図を親子で見比べられる無料展示。"
+          ],
+          "limitations": [
+            "歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。"
+          ],
+          "grade_comparison": "総合B：浮世絵の色・役者・構図を親子で見比べられる無料展示。 歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。",
+          "unsupported_axes": [
+            "child_target",
+            "age_fit",
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/rekimin_kikaku1103.html",
+              "quote": " 企画展「我が名は豊国ー館蔵品でみる浮世絵の世界2」 ページID: 324359596 更新日:2026年11月6日 印刷 我が名は豊国 チラシ表 我が名は豊国 チラシ裏 我が名は豊国_A4パンフレット(PDF形式:4,216KB) ・配布しているパンフレットをダウンロードできます。 開催期間 2026年11月3日(火曜・祝)から12月13日(日曜)まで 展示概要 質の高い役者絵・美人画で人気の初代国貞。多作家で、息長く活動し、どんな注文にも応え、多くの門人を育てました。曲亭馬琴は友人への手紙に「国貞の名声は師の豊国(初代)を超えた」と書いています。 初代国貞は、名実ともに歌川派のリーダー的存在でした。しかし「豊国」の名を継いだのは、弟弟子の豊重。初代国貞ものちに「豊国」を称しますが、「自分こそ二代目」との主張には、批判もありました。 本展では、関係作品約150点を出品。その優れた画業と、「豊国」襲名をめぐる経緯をたどります。 ギャラリートーク 担当学芸員による展示解説を行います 2026年11月7日(土曜) 2026年11月21日(土曜) 各日午後2時から(約30分) ポストカード プレゼント 3種類の中からお好きな絵柄をプレゼント(お1人様1枚) 数に限りがあります。なくなり次第終了とさせていただきます。 中野区立歴史民俗資料館 企画展示情報 講座・イベント情報 歴史民俗資料館 展示・イベント年間スケジュールパンフレット 歴史民俗資料館 アクセス PDF形式のファイルを開くには、Adobe Acrobat Readerが必要です。 お持ちでない方は、Adobe社から無償でダウンロードできます。 お問い合わせ このページは 区民部 文化振興・多文化共生推進課 が担当しています。 本文ここまで サブナビゲーションここから 情報が見つからないときは サブナビゲーションここまで PC版を表示する スマートフォン版を表示する",
+              "checked_at": "2026-11-14T13:26:56+09:00",
+              "sha256": "f1969e8dca5530422a39961495b5057219992671f169c15fcea3d2c1247f7df6"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3028,12 +3664,17 @@
       ],
       "reasons": [
         "浮世絵の役者や色彩、構図を親子で見比べられる。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：浮世絵の色・役者・構図を親子で見比べられる無料展示。 歌舞伎や浮世絵の背景への関心が楽しみ方を左右し、子ども向けの制作は未記載。"
       ],
       "evidence": [
         {
           "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/rekimin_kikaku1103.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/kikakutenji/rekimin_kikaku1103.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3048,19 +3689,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "絵本作家の壁画やアートと地域の関係を、家族で学べる公開講座。",
+        "reason": "絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。 90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "どなたでも。子どもの細かな年齢条件は申込時に確認。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "絵本作家の壁画やアートと地域の関係を、家族で学べる公開講座。"
+            "reason": "絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。子どもの細かな年齢条件は申込時に確認。"
+            "reason": "90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3080,12 +3721,49 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "絵本作家の壁画やアートと地域の関係を、家族で学べる公開講座。"
+            "reason": "絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。"
+          ],
+          "limitations": [
+            "90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。"
+          ],
+          "grade_comparison": "総合B：絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。 90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s113/event/27454.html",
+              "quote": " いわさきちひろ美術館 7 11月7日 現在調整中 8 11月14日 現在調整中 9 11月21日 現在調整中 10 11月28日 現在調整中 11 12月5日 まちの壁画を描き続けて(福島県会津塩沢駅・台湾・ベトナムの幼稚園) 吉田 瑠美 絵本作家 12 12月12日 現在調整中 13 12月19日 東京郊外の開発と鉄道 老川慶喜 (注)上記の表は一部変更される可能性があります。最新の情報は高千穂大学ホームページをご確認ください。 関連情報 高千穂大学ホームページ イベント情報をiPhone・iPad端末のカレンダーに取り込めます。 カレンダーへの取り込みについて説明を読む iCalendar取込み (iPhone、iPadなど) お問い合わせ先 杉並区立社会教育センター 〒166-0011 東京都杉並区梅里1丁目22番32号 電話番号:03-3317-6621 ファクス番号:03-3317-6620 お問い合わせフォーム ここまでが本文です。",
+              "checked_at": "2026-11-14T13:26:35+09:00",
+              "sha256": "e473f99646cc372f15b4d5df9f35244aaec646a8e01cf6f5c617140315f83908"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3096,12 +3774,17 @@
       ],
       "reasons": [
         "絵本作家の壁画やアートと地域の関係を、家族で学べる公開講座。",
-        "既存227件と開催日・参加単位を照合し、同一の掲載がない。"
+        "既存227件と開催日・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：絵本作家の壁画制作と地域のつながりを家族で学べる公開講座。 90分の講演であり、子ども自身が壁画を描くワークショップとしては案内されていない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s113/event/27454.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s113/event/27454.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3116,19 +3799,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。",
+        "reason": "馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。 11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "一般向け展示。細かな対象年齢は未記載。"
+            "reason": "子どもを主対象とする明記は確認できない。 11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+            "reason": "馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "一般向け展示。細かな対象年齢は未記載。"
+            "reason": "11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3148,12 +3831,50 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+            "reason": "馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。"
+          ],
+          "limitations": [
+            "11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。"
+          ],
+          "grade_comparison": "総合B：馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。 11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。",
+          "unsupported_axes": [
+            "child_target",
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+              "quote": " 令和8年度 秋季企画展 「目黒と馬」 目黒は馬に由来する地名という説があり、また区内の駒沢や衾といった地名も同様に馬に関連する地名とされます。世田谷区との区境には「葦毛塚」があるほか、区内各所には「馬頭観音」が多く建立され、古くから馬と密接であった土地でした。 また、かつて区内には駒沢練兵場や陸軍騎兵学校、そして目黒競馬場があり、競馬については現在も中央競馬の重賞・目黒記念(G2)が行われています。 こうした「目黒」と「馬」について、歴史的な視点を中心に着目し、午年である2026年の最後に馬と歩んだ目黒の歴史を紹介します。 展示の紹介 「目黒」の名前の起こり 現在当たり前のように使われている「目黒」という地名。これが「馬」と関連した地名であることはあまり知られていないように思われます。 馬がどのようにして、目黒という地名に関連するようになったか、また、区内の地名で馬に関する言い伝えが由来となっている駒場・衾を紹介します。 馬の蹄鉄 目黒競馬場の様子 目黒区と馬にまつわるランドマーク 区内に多数ある「馬頭観音」、世田谷区との区境にある源頼朝ゆかりの「葦毛塚」、近代に建てられた駒沢練兵場など陸軍関係施設、そして「目黒競馬場」。 これらの目黒と馬にまつわるランドマークについて、建てられた経緯と現在の様子、そして現在の目黒に与えた影響について説明していきます。 開催概要 会期 令和8年11月17日(火曜日)から令和9年1月8日(金曜日)まで パネルのみ展示 :11月17日(火曜日)から12月4日(金曜日)まで 上記パネルと資料展示 :12月5日(土曜日)から令和9年1月8日(金曜日)まで 開館時間 午前9時30分から午後5時まで 休館日 月曜日、年末年始(12月29日から1月4日まで) 会場 東山社会教育館 202教室、ホール、廊下 目黒区東山三丁目24番2号(東山地区センター2階) アクセス 東急田園都市線「池尻大橋駅」下車、東口から徒歩7分 東急バス黒09、渋31系「寿福寺前」バス停徒歩10分 東急バス渋31、41、42系「菅刈小学校」バス停徒歩10分 東急バス渋05、11、12、21、22、23、24、31、32、41、42、82系「大橋」バス停徒歩10分 案内図 入",
+              "checked_at": "2026-11-14T13:25:51+09:00",
+              "sha256": "29d4fc79ba52fcadf958a4590fe3b804094d39a6f1d1b4b1c43ffca307bd0a5b"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3164,12 +3885,17 @@
       ],
       "reasons": [
         "馬と地域の地名や歴史のつながりを親子で発見できる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：馬と地名・競馬場など、地域の歴史を親子でたどれる無料の展示。 11月はパネル中心で、乗馬や動物とのふれあいがある催しとは評価しない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3184,19 +3910,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "地域の歴史や資料の見方を家族で学べる。",
+        "reason": "馬と地域史を学芸員の1時間の解説で深められる。 一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "一般向け解説。子ども向け内容・途中退出可否は要確認。"
+            "reason": "子どもを主対象とする明記は確認できない。 一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "地域の歴史や資料の見方を家族で学べる。"
+            "reason": "馬と地域史を学芸員の1時間の解説で深められる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "一般向け解説。子ども向け内容・途中退出可否は要確認。"
+            "reason": "一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3216,12 +3942,50 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "地域の歴史や資料の見方を家族で学べる。"
+            "reason": "馬と地域史を学芸員の1時間の解説で深められる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "馬と地域史を学芸員の1時間の解説で深められる。"
+          ],
+          "limitations": [
+            "一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。"
+          ],
+          "grade_comparison": "総合B：馬と地域史を学芸員の1時間の解説で深められる。 一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。",
+          "unsupported_axes": [
+            "child_target",
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+              "quote": " 令和8年度 秋季企画展 「目黒と馬」 目黒は馬に由来する地名という説があり、また区内の駒沢や衾といった地名も同様に馬に関連する地名とされます。世田谷区との区境には「葦毛塚」があるほか、区内各所には「馬頭観音」が多く建立され、古くから馬と密接であった土地でした。 また、かつて区内には駒沢練兵場や陸軍騎兵学校、そして目黒競馬場があり、競馬については現在も中央競馬の重賞・目黒記念(G2)が行われています。 こうした「目黒」と「馬」について、歴史的な視点を中心に着目し、午年である2026年の最後に馬と歩んだ目黒の歴史を紹介します。 展示の紹介 「目黒」の名前の起こり 現在当たり前のように使われている「目黒」という地名。これが「馬」と関連した地名であることはあまり知られていないように思われます。 馬がどのようにして、目黒という地名に関連するようになったか、また、区内の地名で馬に関する言い伝えが由来となっている駒場・衾を紹介します。 馬の蹄鉄 目黒競馬場の様子 目黒区と馬にまつわるランドマーク 区内に多数ある「馬頭観音」、世田谷区との区境にある源頼朝ゆかりの「葦毛塚」、近代に建てられた駒沢練兵場など陸軍関係施設、そして「目黒競馬場」。 これらの目黒と馬にまつわるランドマークについて、建てられた経緯と現在の様子、そして現在の目黒に与えた影響について説明していきます。 開催概要 会期 令和8年11月17日(火曜日)から令和9年1月8日(金曜日)まで パネルのみ展示 :11月17日(火曜日)から12月4日(金曜日)まで 上記パネルと資料展示 :12月5日(土曜日)から令和9年1月8日(金曜日)まで 開館時間 午前9時30分から午後5時まで 休館日 月曜日、年末年始(12月29日から1月4日まで) 会場 東山社会教育館 202教室、ホール、廊下 目黒区東山三丁目24番2号(東山地区センター2階) アクセス 東急田園都市線「池尻大橋駅」下車、東口から徒歩7分 東急バス黒09、渋31系「寿福寺前」バス停徒歩10分 東急バス渋31、41、42系「菅刈小学校」バス停徒歩10分 東急バス渋05、11、12、21、22、23、24、31、32、41、42、82系「大橋」バス停徒歩10分 案内図 入",
+              "checked_at": "2026-11-14T13:25:51+09:00",
+              "sha256": "29d4fc79ba52fcadf958a4590fe3b804094d39a6f1d1b4b1c43ffca307bd0a5b"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3232,12 +3996,17 @@
       ],
       "reasons": [
         "地域の歴史や資料の見方を家族で学べる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：馬と地域史を学芸員の1時間の解説で深められる。 一般向けの説明で、子ども向けの進行や途中退出の扱いは未記載。乗馬体験とは別。"
       ],
       "evidence": [
         {
           "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3252,19 +4021,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "住まいの形やくらしの変化を親子で見比べられる。",
+        "reason": "スターハウス型の展示で住まいの形や暮らしを親子で比べられる。 移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "どなたでも。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+            "reason": "スターハウス型の展示で住まいの形や暮らしを親子で比べられる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。"
+            "reason": "移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3284,12 +4053,49 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+            "reason": "スターハウス型の展示で住まいの形や暮らしを親子で比べられる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "スターハウス型の展示で住まいの形や暮らしを親子で比べられる。"
+          ],
+          "limitations": [
+            "移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。"
+          ],
+          "grade_comparison": "総合B：スターハウス型の展示で住まいの形や暮らしを親子で比べられる。 移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+              "quote": " 【申込不要】URまちとくらしのミュージアム出張展示(北区飛鳥山博物館) ページ番号1026912 更新日: 2026年11月8日 印刷 大きな文字で印刷 イベントカテゴリ: 講演・講座・教室 開催エリア:王子 赤羽台にある「URまちとくらしのミュージアムから、スターハウス型の移動式展示コーナーがやってきます。 開催期間 2026年11月3日(火曜日)から2026年12月6日(日曜日)まで 開催時間 午前10時 から 午後5時 まで 開催場所 ホワイエ 対象 どなたでも 費用 無料 その他 11月6日(金曜日)は、当館にて夜間開館を実施しております。お時間にご注意ください。 関連情報 秋期企画展「明るい台所‐台所の移り変わりと北区‐」(北区飛鳥山博物館) お問い合わせ 教育委員会事務局教育振興部 飛鳥山博物館 管理運営係 〒114-0002 東京都北区王子1-1-3 飛鳥山公園内 電話:03-3916-1133 教育委員会事務局教育振興部 飛鳥山博物館 管理運営係へのお問い合わせは専用フォームをご利用ください。 このページの先頭へ戻る 前のページへ戻る トップページへ戻る",
+              "checked_at": "2026-11-14T13:25:39+09:00",
+              "sha256": "28d8ad1af821d183ec12c501564e5d00ab0a37d231781de47365e7a678d34193"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3300,12 +4106,17 @@
       ],
       "reasons": [
         "住まいの形やくらしの変化を親子で見比べられる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：スターハウス型の展示で住まいの形や暮らしを親子で比べられる。 移動式の展示コーナーであり、遊具や模型に触る企画があるとは案内されていない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3320,19 +4131,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "reason": "かまどから団地の台所まで、生活道具の変化を家族で観察できる。 見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。",
         "axes": {
           "child_target": {
-            "grade": "unknown",
-            "reason": "どなたでも。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+            "reason": "かまどから団地の台所まで、生活道具の変化を家族で観察できる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。"
+            "reason": "見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3352,12 +4163,49 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+            "reason": "かまどから団地の台所まで、生活道具の変化を家族で観察できる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "かまどから団地の台所まで、生活道具の変化を家族で観察できる。"
+          ],
+          "limitations": [
+            "見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。"
+          ],
+          "grade_comparison": "総合B：かまどから団地の台所まで、生活道具の変化を家族で観察できる。 見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+              "quote": " 秋期企画展「明るい台所‐台所の移り変わりと北区‐」(北区飛鳥山博物館) ページ番号1026687 更新日: 2026年11月8日 印刷 大きな文字で印刷 イベントカテゴリ: 催し 開催エリア:王子 現代はライフスタイルに応じ、日々の食事をめぐる光景も多様になっています。しかしながら、少し前の時代、「家で料理を作り、家族で食べる」これが生活の基本スタイルでした。今回の展示では、こうした食をめぐる生活の変化を台所(キッチン)の移り変わりを中心にご紹介します。展示では、かまどでご飯を炊いた古民家の台所から赤羽台団地のダイニングキッチンまで、時代とともに台所が変わっていく様子や、それとともに変わっていく家族の食卓の在りようなどをお伝えします。 協力:UR都市機構 開催期間 2026年10月27日(火曜日)から2026年12月6日(日曜日)まで 休館日:毎週月曜日(11月23日を除く)、11月24日(火曜日) 開催時間 午前10時 から 午後5時 まで 特別夜間開館:11月6日(金曜日)は夜間開館を行います。当日は、午後8時まで開館時間を延長します。 開催場所 特別展示室・ホワイエ 対象 どなたでも 費用 観覧無料 その他 本展示には関連イベントがあります。詳細は関連情報のリンクからご確認ください。 関連情報 【申込不要】URまちとくらしのミュージアム出張展示(北区飛鳥山博物館) 【申込不要】秋期企画展展示解説会(北区飛鳥山博物館) 【11月19日締切】野外講座「団地と古民家現地見学会」(北区飛鳥山博物館) お問い合わせ 教育委員会事務局教育振興部 飛鳥山博物館 管理運営係 〒114-0002 東京都北区王子1-1-3 飛鳥山公園内 電話:03-3916-1133 教育委員会事務局教育振興部 飛鳥山博物館 管理運営係へのお問い合わせは専用フォームをご利用ください。 このページの先頭へ戻る 前のページへ戻る トップページへ戻る",
+              "checked_at": "2026-11-14T13:25:41+09:00",
+              "sha256": "a240f59a47d34cc21e1d417cfe50411f5348662930a2f7a32bcee06f3e43a20a"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3368,12 +4216,17 @@
       ],
       "reasons": [
         "昔と今の台所や道具を比べ、家族の生活史について話せる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：かまどから団地の台所まで、生活道具の変化を家族で観察できる。 見比べる展示が中心で、料理・道具操作の体験を行うとは案内されていない。"
       ],
       "evidence": [
         {
           "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3385,22 +4238,22 @@
       "ward": "台東区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "reason": "実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。 専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+            "reason": "子どもを主対象とする明記は確認できない。 専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+            "grade": "A",
+            "reason": "実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+            "reason": "専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3419,13 +4272,52 @@
             "reason": "常設展示入館料で観覧可。月曜休館だが11/23は開館。講演会・映画会の申込は展示とは別枠。入館の事前手続は公式案内で確認。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+            "grade": "A",
+            "reason": "実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。"
+          ],
+          "limitations": [
+            "専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。"
+          ],
+          "grade_comparison": "総合A：実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。 専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。",
+          "unsupported_axes": [
+            "child_target",
+            "stay_flexibility",
+            "burden",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+              "quote": "5章 感染症研究の現在と未来 感染症研究は未来の社会を支える重要な基盤です。人間と病原体との関係、 そして科学の果たす役割について考えます。 イベント 講演会 野口英世生誕150年記念企画展「感染症への挑戦:過去・現在・未来」開催を記念して講演会を開催します。 本展監修者と野口英世記念会関係者が登壇し、本展のみどころや展示に込めた思いを紹介します。それぞれの立場から本展に関連する話題をお届けします。 開催日時 2026年12月12日(土)13時~15時 登壇者 細矢 剛(国立科学博物館)、倉根 一郎(公益財団法人 野口英世記念会)、森田 鉄平(公益財団法人 野口英世記念会) 申込方法 WEB申込(申込期間2026年11月5日~11月23日 23時) 講演会(WEB申込) (HTML) (リンクを新しいタブで開きます) 映画上映会 マリー=モニク・ロバン監督映画「なぜ新型ウイルスが次々と世界を襲うのか」(日本語字幕)(2020年製作/110分/フランス)を上映します。 開催日時 2026 年 11月 22 日 ( 日)13時~15時 申込方法 WEB申込 (申込期間2026年10月22日~11月8日 23時) 映画上映会(WEB申込) (HTML) (リンクを新しいタブで開きます) 開催概要 企画展名称 野口英世生誕150年記念企画展「感染症への挑戦:過去・現在・未来」 開催期間 2026(令和8)年10月27日(火)~2027(令和9)年2月28日(日) 開催場所 国立科学博物館(東京・上野公園) 日本館1階企画展示室 開館時間 9時~17時 ※入館は閉館時刻の30分前まで 休館日 月曜日(月曜日が祝日の場合は翌火曜日)、11月4日(水)、12月28日(月)~1月1日(金・祝) ※ただし、11月2日(月)、11月23日(月・祝)、1月11日(月・祝)、2月15日(月)は開館 入館料 一般・大学生630円(団体510円) ※常設展示入館料のみでご覧いただけます ※団体は20名以上 ※高校生以下および65歳以上は無料 主催 国立科学博物館/公益財団法人 野口英世記念会 公益財団法人 野口英世記念会(本展共催者) 野口英世の追悼会に出席した関係者が“後世に科学者野口英世の業",
+              "checked_at": "2026-11-14T13:27:02+09:00",
+              "sha256": "26a7c939a9d1f1f267ae09b5abf18bfed14fca0dc824d07f49c6ef9ed6e2d7dc"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3436,12 +4328,17 @@
       ],
       "reasons": [
         "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。 専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。"
       ],
       "evidence": [
         {
           "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3456,19 +4353,19 @@
         "grade": "B",
         "overall": "B",
         "rubric_version": "family-fit-v2",
-        "reason": "地域の魚食文化と生産地の違いを親子で楽しめる。",
+        "reason": "各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。 中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。",
         "axes": {
           "child_target": {
             "grade": "unknown",
-            "reason": "細かな年齢条件は未記載。"
+            "reason": "子どもを主対象とする明記は確認できない。 中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。"
           },
           "interactivity": {
             "grade": "B",
-            "reason": "地域の魚食文化と生産地の違いを親子で楽しめる。"
+            "reason": "各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "細かな年齢条件は未記載。"
+            "reason": "中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3488,12 +4385,51 @@
           },
           "family_value": {
             "grade": "B",
-            "reason": "地域の魚食文化と生産地の違いを親子で楽しめる。"
+            "reason": "各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。"
+          ],
+          "limitations": [
+            "中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。"
+          ],
+          "grade_comparison": "総合B：各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。 中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。",
+          "unsupported_axes": [
+            "child_target",
+            "stay_flexibility",
+            "burden",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://37sakana.jp/sjfesodaiba/",
+              "quote": "SAKANA&JAPAN FESTIVAL in お台場 | SAKANA & JAPAN PROJECT menu TOP メニュー ステージ よくある質問 全国各地の魚介グルメが味わえる「SAKANA&JAPAN FESTIVAL(魚ジャパンフェス)2026 in お台場」(主催・SAKANA&JAPAN FESTIVAL実行委員会)が2026年12月4日(金)~6日(日)の3日間、東京都江東区のお台場青海地区特設会場で開催されます。魚ジャパンフェスは、四方を海に囲まれた日本の大切な食文化であり栄養豊富な「魚食」の活性化を目的に開催している日本最大級の魚介グルメフェスティバルです。2016年3月から前身の「ジャパンフィッシャーマンズフェスティバル~全国魚市場&魚河岸まつり~」を東京都千代田区の日比谷公園で開催し、19年に東京都渋谷区の代々木公園で姉妹イベントとして魚ジャパンフェスもスタートしました。2025年度は、25年11月に日比谷公園、26年2月に代々木公園、3月に大阪の万博記念公園で魚ジャパンフェスを計3回開催。合計約45万人が来場し、累計来場者数は約295万人に達しました。今回、24年11月以来2年ぶりに再開発で進化を続ける注目スポットのお台場で開催します。 魅力いっぱい!ふくしまフェスティバル 自慢の魚介「常磐もの」にスイーツも おいしく食べて復興を応援 親潮と黒潮がぶつかる福島県沖は、エサが豊富で、「常磐もの」と呼ばれる脂ののったおいしい魚介の宝庫。沿岸の浜通り地方は、温暖な気候を生かし、パッションフルーツやバナナ、キウイといったフルーツの栽培も盛んです。そんな福島の魅力を発信し、東日本大震災と原発事故からの復興応援を目的に「魅力いっぱい!ふくしまフェスティバル」を開催します。2026年10月に大阪府吹田市の万博記念公園お祭り広場で初開催したのに続く2回目。昨年まで魚ジャパンフェスと同時開催してきた「発見!ふくしまお魚まつり」をパワーアップ。「常磐もの」だけでなく、特産フルーツを使ったスイーツもお楽しみいただけます。おいしく食べて福島の復興を応援しましょう。 第12回Fish-1グランプリ プライドフィッシュなど 国産水産物の魅力を発信! Fish-1",
+              "checked_at": "2026-11-14T13:30:29+09:00",
+              "sha256": "b56c3cb40104187bb464974258bcd1cd718d41f6fca6d7bc56118fda87d8386c"
+            }
+          ]
         }
       },
       "positive_signals": [
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3504,12 +4440,17 @@
       ],
       "reasons": [
         "地域の魚食文化と生産地の違いを親子で楽しめる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：各地の魚料理と産地の文化を、家族で選んで味わえる大規模な食の催し。 中心は飲食の購入で、子どもの個別体験は日程・受付条件が異なる。全日同じ体験があるとはしない。"
       ],
       "evidence": [
         {
           "url": "https://37sakana.jp/sjfesodaiba/",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://37sakana.jp/sjfesodaiba/",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",
@@ -3521,22 +4462,22 @@
       "ward": "豊島区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "reason": "公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。 10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。",
         "axes": {
           "child_target": {
-            "grade": "A",
-            "reason": "どなたでも。"
+            "grade": "B",
+            "reason": "一般にも開かれる対象で、子ども専用という根拠にはしない。 10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。"
           },
           "interactivity": {
-            "grade": "B",
-            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+            "grade": "A",
+            "reason": "公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。"
           },
           "age_fit": {
             "grade": "B",
-            "reason": "どなたでも。"
+            "reason": "10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。"
           },
           "stay_flexibility": {
             "grade": "unknown",
@@ -3555,14 +4496,51 @@
             "reason": "申込不要。月曜休館、祝日の場合は翌平日休館。11/23開館。10/25の関連ワークショップは終了済み。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+            "grade": "A",
+            "reason": "公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。"
           }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-14",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。"
+          ],
+          "limitations": [
+            "10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。"
+          ],
+          "grade_comparison": "総合A：公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。 10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "burden"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
+              "quote": " トキワ荘通り昭和レトロ館企画展「くらしのなかの『伝える』~あのころの看板や雑貨たち~」 直接会場へ 開催日 令和8年10月24日(土曜日)~12月6日(日曜日) ※毎週月曜日(祝日の場合は翌平日)は休館 開催時間 午前10時から午後6時まで(入館は午後5時30分まで) 場所 トキワ荘通り昭和レトロ館(豊島区立昭和歴史文化記念館) 交通アクセス <電車の場合> 西武池袋線椎名町駅・東長崎駅より徒歩13分 都営大江戸線落合南長崎駅より徒歩8分 <バスの場合> 都営バス[池65・白61・練68]/国際興業バス・関東バス[池11]南長崎二丁目停留所より徒歩3分 ※当館には駐車場、駐輪場がございません。 (駐輪場はトキワ荘マンガミュージアム駐輪場をご利用いただけます。) 内容 今回の企画展では、かつて駅にあった伝言板や赤い公衆電話のほか、店舗や商品の魅力を多くの人に『伝える』役割を持つホーロー看板や商品パッケージなど、100以上のまちかどで見かけた昭和時代のアナログな『伝える』ものを紹介します。 公衆電話エリアでは、赤い公衆電話など計5台を展示し、初代から現代に至るまでの変遷を解説とともに振り返るほか、直接触ってダイヤルを回す体験ができます。 また、昔の駅舎や待合室をイメージした空間には、チョークで自由に書き込める伝言板を設置。 当時の人々が伝言板を使って行っていたコミュニケーションをお楽しみいただけます。 スマートフォンもEメールLINEもGPS(位置情報)もない時代の「伝える」方法は、 ちょっと不便だけれども、言葉のぬくもりを感じるものでもありました。 展示をご覧になる年代により、思うこと感じることはさまざまだと思いますが、 ここでは昭和という時代のあたりまえの光景を楽しんでみましょう。 対象 どなたでも 費用 無料 主催・共催・後援など 主催:豊島区 申込み方法 申し込み不要です。 いつでも、お気軽に足をお運びください。 関連イベント ~たどる、あそぶ、つくる~鬼ごっこでこどもの遊びをたどる 子どもの遊びといえば「鬼ごっこ」。鬼ごっこはいつからある遊びで、どんな鬼ごっこをしてきたのかを、アンケート集計や資料で紹介します。 会期中には「新しい鬼ごっこ」を作って楽しむワーク",
+              "checked_at": "2026-11-14T13:27:02+09:00",
+              "sha256": "be416ceddc17c32f12e89ba2471e0c2570f8fca0fabeaac6496094da09e1dcb1"
+            }
+          ]
         }
       },
       "positive_signals": [
         "child_explicit",
-        "family_value"
+        "family_value",
+        "individual_evidence_review"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -3573,12 +4551,17 @@
       ],
       "reasons": [
         "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
-        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。",
+        "2026-11-14週次再評価：公衆電話のダイヤルを回し、伝言板に書く実物体験を無料で親子が共有できる。 10月の関連ワークショップは終了済み。今回の会期中の体験は電話・伝言板の展示に限定して評価する。"
       ],
       "evidence": [
         {
           "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        },
+        {
+          "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
+          "basis": "8軸を個別確認し総合評価の強み・留保点・出典を記録。research/weekly_family_fit_review_20261114/review.json"
         }
       ],
       "override_reason": "",

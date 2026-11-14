@@ -213,5 +213,37 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "weekly_family_fit_review_20261114": {
+    "base_data_production_sha": "cdad50949ead6fe7fff2e8bb28e7c22bfbdd12fd",
+    "reviewed_ids": [
+      "final-20261212-suginami-27274",
+      "final-20261212-suginami-28241",
+      "final-20261212-suginami-28456",
+      "final-20261212-suginami-28578",
+      "final-20261212-nakano-162738",
+      "final-20261212-nakano-163067",
+      "primary-20261212-taito-noguchi",
+      "primary-20261212-meguro-horse-exhibit",
+      "final-20261213-nakano-146912",
+      "final-20261213-nakano-142698",
+      "final-20261212-park-7419",
+      "primary-20261212-meguro-horse-talk",
+      "final-20261212-nakano-163377",
+      "final-20261212-nakano-162896",
+      "final-20261213-nakano-163152",
+      "final-20261213-nakano-161828",
+      "final-20261212-park-7421",
+      "final-20261212-park-7436",
+      "final-20261213-park-7428",
+      "final-20261213-park-7424",
+      "final-20261213-park-7425",
+      "final-20261213-nerima-chicoowa-xmas",
+      "primary-20261213-meguro-kyogen"
+    ],
+    "assessment_only": true,
+    "event_facts_changed": false,
+    "source_checks_changed": false,
+    "review": "research/weekly_family_fit_review_20261114/review.json"
   }
 }

@@ -1702,5 +1702,37 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "weekly_family_fit_review_20261114": {
+    "base_data_production_sha": "cdad50949ead6fe7fff2e8bb28e7c22bfbdd12fd",
+    "reviewed_ids": [
+      "final-20261205-suginami-27274",
+      "final-20261205-suginami-28456",
+      "final-20261205-suginami-28578",
+      "final-20261205-nakano-162738",
+      "final-20261205-nakano-163067",
+      "primary-20261205-kita-ur",
+      "primary-20261205-kita-kitchen",
+      "primary-20261205-taito-noguchi",
+      "primary-20261205-toshima-retro",
+      "final-20261205-suginami-26086",
+      "primary-20261205-meguro-horse-exhibit",
+      "final-20261206-nakano-146912",
+      "final-20261206-nakano-159839",
+      "final-20261206-nakano-162068",
+      "final-20261206-nakano-163359",
+      "final-20261205-park-7418",
+      "final-20261205-park-7420",
+      "final-20261206-park-7442",
+      "final-20261206-park-7451",
+      "final-20261206-park-7450",
+      "final-20261205-suginami-27454",
+      "primary-20261205-meguro-horse-talk",
+      "primary-20261205-koto-fish-festival"
+    ],
+    "assessment_only": true,
+    "event_facts_changed": false,
+    "source_checks_changed": false,
+    "review": "research/weekly_family_fit_review_20261114/review.json"
   }
 }

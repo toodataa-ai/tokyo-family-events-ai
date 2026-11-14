@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15T07:22:09.135267+09:00",
+  "audited_at_jst": "2026-11-15",
   "baseline_app_release": "release/2026-11-15-r2",
   "baseline_production_commit": "9aa067f0756bb900ff3f95e33f1dee7473e9c63f",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 288,
+  "expected_total_differences_after_governance": 297,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2323,6 +2323,78 @@
       "kind": "staging_only",
       "category": "compact_status_decisions",
       "reason": "v1.37の限定8パス・読み取りCI・ステージング/本番の折りたたみ一覧検証と598イベント/310判定原本保持の証跡。配信アプリへは不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_evidence_recovery_20261115.py",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_evidence_recovery_gate.py",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/evidence-recovery-review.yml",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/evidence_recovery_20261115/README.md",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/evidence_recovery_20261115/publishable.json",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/evidence_recovery_20261115/review_ledger.json",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/evidence_recovery_20261115/review_summary.json",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/evidence_recovery_20261115/source_evidence.json",
+      "kind": "staging_only",
+      "category": "evidence_recovery_review",
+      "reason": "手動変更は利用者がステージングURLを確認した後に本番反映する。公式代替根拠・未解決記録・凍結候補と598件の旧開催事実/履歴/取得失敗保持を検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/pending_issues_catalog.json",
+      "kind": "different",
+      "category": "evidence_recovery_review",
+      "reason": "根拠不足の再照合結果とステージング確認待ちを表示。本番は利用者の確認後に反映する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

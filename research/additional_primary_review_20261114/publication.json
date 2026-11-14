@@ -176,5 +176,25 @@
     },
     "existing_unclassified_app_paths": 115,
     "existing_wrong_kind_paths": 1
+  },
+  "registry_pages_run": 43550448301,
+  "registry_pages_conclusion": "success",
+  "final_release_proof": {
+    "verified_at": "2026-11-14T03:43:13.595513+00:00",
+    "public_version": "1.33",
+    "public_release": "release/2026-11-14-r2",
+    "registry_pages_conclusion": "success",
+    "production_app_js_sha256": "0812d8687e352cba410b6d0ad1d0b7e650adf593f11db93f4379d794da613990",
+    "public_app_matches_production": true,
+    "public_catalog_matches_production": true,
+    "public_registry_matches_release_snapshot": true,
+    "public_total": 408
+  },
+  "final_environment_diff": {
+    "actual_count": 223,
+    "approved_count": 107,
+    "unclassified_count": 115,
+    "wrong_kind_count": 1,
+    "release_baseline_moved": false
   }
 }

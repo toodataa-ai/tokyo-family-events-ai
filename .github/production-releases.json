@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-13-r4",
+  "current_public_release": "release/2026-11-14-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -293,7 +293,16 @@
       "workflow_run_id": 43429674472,
       "public_version": "1.31",
       "note": "継続依頼に基づき前回保留7件（親子フラ・児童館開放・花植え・食堂2件・合唱・あかちゃん会）の開催日・会場を主催者本文/申込案内で照合し、data-only run43429130812で公開。data-production 81dd7269a6f0683c635db8491d137b12b50f3707 / data-release/2026-11-13-r642。旧220個票を保持して計227件。時刻未記載6件は要確認、施設月会費300円・別枠パントリー予約を明示。表示判定の誤解釈を注記文言で修正し回帰CI43428793526成功、実ブラウザでも申込不明2件と料金を検証。productionはPR108の残課題カタログ1ファイル2文だけ変更しPages43429674472成功。累計17件追加・優先保留47行・優先外350行を表示し、Tamemap GitHub403や全候補の照合は未解決のまま。main全体の未承認アプリ差分は昇格しない。"
+    },
+    {
+      "release_id": "release/2026-11-14-r1",
+      "branch": "release/2026-11-14-r1",
+      "commit_sha": "34531c0fcb7ac4eddc0c1c261927e4aadd8cc4a5",
+      "deployed_at": "2026-11-14T01:42:02Z",
+      "workflow_run_id": 43542047853,
+      "public_version": "1.32",
+      "note": "未照合候補を通常HTTPSの本文で再確認し、独立参加単位142延べ個票をdata-only run43541686211で公開。data-production89c9211 / data-release/2026-11-14-r646、旧227個票・履歴・ソース失敗を保持して計369。公開71ファイルを候補と全件照合、6企画とスマホ表示を実ブラウザで検証。板橋の記事リンク消失をmainで修正。production PR111は個票確認日表示1行と残課題カタログの2ファイルのみ、Pages43542047853成功。ためまっぷGitHub403・参加条件不足13件・杉並2件・全851URLの全件採否照合・既存115未分類差分と1種別不一致は未解消。旧杉並監査43541322782の404も記録に保持。"
     }
   ],
-  "current_public_version": "1.31"
+  "current_public_version": "1.32"
 }

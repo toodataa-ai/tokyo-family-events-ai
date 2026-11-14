@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-14T12:11:47.020227+09:00",
+  "audited_at_jst": "2026-11-14T12:56:12.725153+09:00",
   "baseline_app_release": "release/2026-11-14-r2",
   "baseline_production_commit": "e311ee769291a84ff7d6b070ac306f6da3b03977",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "033c9e12728f1fca18899b3b47d9a8ca62e3ab48",
+  "baseline_data_production_commit": "cdad50949ead6fe7fff2e8bb28e7c22bfbdd12fd",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 227,
+  "expected_total_differences_after_governance": 228,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -902,6 +902,14 @@
       "kind": "staging_only",
       "category": "assessment_review_guard",
       "reason": "公式本文に基づく鉄道上部空間1件の総合A訂正を固定し、408件の開催事実・他企画評価・参照元失敗の改変を拒否する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/rail_family_fit_review_20261114/publication.json",
+      "kind": "staging_only",
+      "category": "assessment_review_guard",
+      "reason": "鉄道体験の総合A訂正、408件開催事実保護、実ブラウザ星3と公開スナップショットの完了証跡。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

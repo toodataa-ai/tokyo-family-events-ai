@@ -5,7 +5,7 @@
 <title>現在の残課題・対応状況 | 東京23区子連れイベントAI収集</title>
 <meta name="description" content="子連れイベントの収集や掲載確認で、まだ対応が必要なことをわかりやすくご案内します。">
 <link rel="stylesheet" href="styles.css?v=20261017-fixed-source-directory">
-<link rel="stylesheet" href="pending-issues.css?v=20261028-1">
+<link rel="stylesheet" href="pending-issues.css?v=20261114-status-1">
 </head>
 <body class="pending-issues-page">
 <section class="site-hero"><div class="hero-inner">
@@ -18,7 +18,7 @@
   </div>
   <div class="hero-eyebrow">CURRENT OPEN ITEMS</div>
   <h1>現在の残課題・対応状況</h1>
-  <p class="hero-copy">イベント情報を集めるときに、まだ確認・改善が必要なことをまとめています。今起きていることと、代わりに行っている対応をお知らせします。</p>
+  <p class="hero-copy">現在も残っている確認事項と、完了した対応を分けてお知らせします。</p>
 </div></section>
 <main class="home-main">
   <section class="home-section panel">
@@ -27,17 +27,17 @@
       <p id="pendingIntro">残課題の情報を確認しています。</p></div>
     </div>
     <div class="pending-issues-stats">
-      <div><strong id="pendingTotal">—</strong><span>確認・対応が必要な項目</span></div>
-      <div><strong id="pendingConnection">—</strong><span>サイトへの接続に関する問題</span></div>
-      <div><strong id="pendingVerification">—</strong><span>イベント情報の確認作業</span></div>
+      <div><strong id="pendingTotal">—</strong><span>現在の残課題（項目）</span></div>
+      <div><strong id="pendingConnection">—</strong><span>公式根拠の確認待ち</span></div>
+      <div><strong id="pendingVerification">—</strong><span>指定による保留</span></div>
     </div>
-    <p class="pending-issues-note">これらは<strong>掲載中のイベントがすべて間違っているという意味ではありません</strong>。取得できなかったために既存情報を消すこともありません。未確認は「解決済み」にせず、そのまま表示します。</p>
+    <p class="pending-issues-note">これらは<strong>掲載中のイベントがすべて間違っているという意味ではありません</strong>。取得できなかったために既存情報を消すこともありません。未確認は「解決済み」にせず、そのまま表示します。完了分は下の「完了した対応」に分けています。</p>
     <div id="pendingCheckedAt" class="pending-issues-checked" role="status">監査日時を確認中です。</div>
   </section>
   <section class="home-section panel" aria-labelledby="pendingListTitle">
     <div class="section-head">
       <div><div class="eyebrow">WORK IN PROGRESS</div><h2 id="pendingListTitle">残課題一覧</h2>
-        <p>困っていること、利用者への影響、いまの対処方法、次の対応を項目ごとに表示します。</p>
+        <p>現在残っていることと、確認に必要な情報・今後の対応を表示します。</p>
       </div>
     </div>
     <div class="pending-issues-filters">
@@ -51,16 +51,23 @@
     <p class="pending-issues-list-count" id="pendingVisibleCount" role="status" aria-live="polite">一覧を読み込み中です。</p>
     <div id="pendingIssueList" class="pending-issue-list"><p>残課題一覧を読み込み中です。</p></div>
   </section>
+  <section class="home-section panel" aria-label="完了した対応">
+    <details id="completedIssues">
+      <summary>完了した対応（<span id="completedIssueCount">—</span>項目）</summary>
+      <p>対応が完了した範囲と確認日を残しています。現在の残課題の件数には含めません。</p>
+      <div id="completedIssueList" class="pending-issue-list"><p>完了した対応を読み込み中です。</p></div>
+    </details>
+  </section>
   <section class="home-section panel">
     <div class="section-head"><div><div class="eyebrow">WHAT THIS MEANS</div><h2>どうやって更新されるの？</h2></div></div>
     <div class="pending-issues-explainer">
-      <p><strong>サイトにつながるか</strong>は定期的な実際のアクセス結果から確認します。サイトに接続できたとしても、イベント情報の確認が完了するまでは課題を自動的に消しません。</p>
-      <p><strong>候補の確認作業</strong>は日時・会場・主催者の情報を照合し、完了した項目を更新します。表示されている課題はGitHubの管理記録にもリンクしています。</p>
+      <p><strong>サイトにつながるか</strong>は定期的な実際のアクセス結果から確認します。接続の結果と、対応が完了したかどうかは別に表示します。接続成功だけで保留を完了に変えることはありません。</p>
+      <p><strong>候補の確認作業</strong>は日時・会場・主催者の情報を照合し、完了した範囲と残る確認事項を整理します。候補を「保留」と判定したことと、その開催を確認できたことは区別します。</p>
     </div>
     <p class="pending-issues-related"><a href="https://github.com/toodataa-ai/tokyo-family-events-ai/issues" target="_blank" rel="noopener noreferrer">対応課題の管理記録を見る</a>　／　<a href="search.html">イベントを探す</a></p>
   </section>
 </main>
 <footer class="site-footer"><a href="index.html">トップへ戻る</a>　／　取得できないページがあっても、確認済みのイベントは保持します。</footer>
-<script type="module" src="pending-issues.js?v=20261028-1"></script>
+<script type="module" src="pending-issues.js?v=20261114-status-1"></script>
 </body>
 </html>

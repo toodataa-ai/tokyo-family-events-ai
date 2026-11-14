@@ -44,3 +44,8 @@
  .pending-issues-home {display:block;}
  .pending-issues-home a {margin-top:9px;}
 }
+
+.pending-issue-card[data-work-status="completed"] {border-color:#b8d9cb;background:#fbfefc;}
+.pending-issue-card[data-work-status="completed"] .pending-issue-status {color:#245d47;background:#eaf7ef;border-color:#b4d5c1;}
+#completedIssues summary {cursor:pointer;color:#254d40;font-size:17px;font-weight:700;padding:8px 0;}
+#completedIssues>p {font-size:12px;line-height:1.8;color:#506477;}

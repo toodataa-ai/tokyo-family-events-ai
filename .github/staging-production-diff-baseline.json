@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 284,
+  "expected_total_differences_after_governance": 288,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2291,6 +2291,41 @@
       "kind": "staging_only",
       "category": "all_non_tamemap_review",
       "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/pending_issues_catalog.json",
+      "kind": "different",
+      "category": "pending_status_cleanup",
+      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/pending-issues-model.mjs",
+      "kind": "different",
+      "category": "pending_status_cleanup",
+      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/pending-issues.css",
+      "kind": "different",
+      "category": "pending_status_cleanup",
+      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証する限定した画面改修。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": ".github/workflows/pending-status-cleanup.yml",
+      "kind": "staging_only",
+      "category": "pending_status_cleanup",
+      "reason": "利用者依頼の残課題整理。完了3項目と現在の残課題2項目を分け、明示状態と接続監査の独立性・読み込み失敗を検証するmain専用CI。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

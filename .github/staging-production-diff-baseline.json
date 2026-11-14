@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-14T17:29:13.535770+09:00",
-  "baseline_app_release": "release/2026-11-14-r2",
-  "baseline_production_commit": "e311ee769291a84ff7d6b070ac306f6da3b03977",
+  "audited_at_jst": "2026-11-14T18:49:13.879682+09:00",
+  "baseline_app_release": "release/2026-11-14-r3",
+  "baseline_production_commit": "f05bfe3698c0d61ece44509c4c8d8597e058125f",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "99d1082e560ab9469d93ef431af2704fed12e4da",
+  "baseline_data_production_commit": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 272,
+  "expected_total_differences_after_governance": 275,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2195,6 +2195,30 @@
       "kind": "staging_only",
       "category": "non_tamemap_next_data_review",
       "reason": "31個票追加の本番Pages成功と86公開ファイル・スマホ8ケースの実測照合記録。公開アプリへ昇格しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_last_review_20261114/publication.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_last_data_review",
+      "reason": "最後の1件を公開したPages成功、87公開ファイル一致、既存479個票と履歴保持の実測記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_last_review_20261114/public_browser_proof.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_last_data_review",
+      "reason": "本番スマホ表示で中野区検定の星・絞り込み・申込11/16期限を照合した記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_last_review_20261114/final_review.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_last_data_review",
+      "reason": "今回再開分32個票と累計72個票追加、再評価196件、未解決・対象外・未公開UIを区別した最終照合記録。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

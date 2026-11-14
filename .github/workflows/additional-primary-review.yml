@@ -42,3 +42,17 @@ jobs:
           python3 ../scanner/tools/audit_event_image_identity.py --strict site/data
           python3 ../scanner/tools/validate_protected_events.py --base-ref 89c9211fa561fcaabf9d03063d5b745978a52cf8 site/data
           python3 ../scanner/tools/validate_non_regression.py --base-ref 89c9211fa561fcaabf9d03063d5b745978a52cf8 site/data
+      - uses: actions/checkout@v4
+        with:
+          ref: 398036311eda4ac4432a6de92f10af020f9e6d67
+          path: app-candidate
+          fetch-depth: 0
+      - name: Verify isolated pending guidance update
+        working-directory: app-candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "34531c0fcb7ac4eddc0c1c261927e4aadd8cc4a5"
+          test "$(git diff --name-only HEAD^ HEAD)" = "site/audit/pending_issues_catalog.json"
+          git diff --quiet HEAD^ HEAD -- site/data prompts policy tools
+          npm test

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-14T10:43:55.625036+09:00",
-  "baseline_app_release": "release/2026-11-14-r1",
-  "baseline_production_commit": "34531c0fcb7ac4eddc0c1c261927e4aadd8cc4a5",
+  "audited_at_jst": "2026-11-14T12:11:47.020227+09:00",
+  "baseline_app_release": "release/2026-11-14-r2",
+  "baseline_production_commit": "e311ee769291a84ff7d6b070ac306f6da3b03977",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "89c9211fa561fcaabf9d03063d5b745978a52cf8",
+  "baseline_data_production_commit": "033c9e12728f1fca18899b3b47d9a8ca62e3ab48",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 202,
+  "expected_total_differences_after_governance": 223,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -862,6 +862,14 @@
       "kind": "staging_only",
       "category": "source_review_evidence",
       "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/additional_primary_review_20261114/publication.json",
+      "kind": "staging_only",
+      "category": "source_review_evidence",
+      "reason": "追加39件の本番配信・旧369件保持・ブラウザ確認の証跡。公開アプリへは移植しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

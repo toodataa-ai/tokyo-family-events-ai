@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-14-r1",
+  "current_public_release": "release/2026-11-14-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -302,7 +302,16 @@
       "workflow_run_id": 43542047853,
       "public_version": "1.32",
       "note": "未照合候補を通常HTTPSの本文で再確認し、独立参加単位142延べ個票をdata-only run43541686211で公開。data-production89c9211 / data-release/2026-11-14-r646、旧227個票・履歴・ソース失敗を保持して計369。公開71ファイルを候補と全件照合、6企画とスマホ表示を実ブラウザで検証。板橋の記事リンク消失をmainで修正。production PR111は個票確認日表示1行と残課題カタログの2ファイルのみ、Pages43542047853成功。ためまっぷGitHub403・参加条件不足13件・杉並2件・全851URLの全件採否照合・既存115未分類差分と1種別不一致は未解消。旧杉並監査43541322782の404も記録に保持。"
+    },
+    {
+      "release_id": "release/2026-11-14-r2",
+      "branch": "release/2026-11-14-r2",
+      "commit_sha": "e311ee769291a84ff7d6b070ac306f6da3b03977",
+      "deployed_at": "2026-11-14T03:10:52Z",
+      "workflow_run_id": 43550173494,
+      "public_version": "1.33",
+      "note": "残件を再調査し、目黒・北区・荒川など20企画39週別個票を公式本文で追加確認。data-only43549900408成功、data-production033c9e1 / data-release/2026-11-14-r650、旧369個票・履歴・参照元失敗を完全保持し計408件。公開データ76ファイルを全件比較。江古田図書館本の探し方講座の対象中学生以上・時刻・会場を確認し保留を解消。production PR113は残課題カタログ1ファイルのみ、固定候補とアプリのCI43549636655およびPages43550173494が成功。全候補の個別照合、参加条件不足の残件、GitHub403、歴史杉並監査404および既存115未分類差分・1種別不一致は未解決。"
     }
   ],
-  "current_public_version": "1.32"
+  "current_public_version": "1.33"
 }

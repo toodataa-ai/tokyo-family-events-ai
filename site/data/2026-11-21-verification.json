@@ -4320,11 +4320,106 @@
           "sha256": "ef2f0bb46e0e762c75233398204596d4fed479689c2f32a1b85e30833a6386d9"
         }
       ]
+    },
+    {
+      "id": "evidence-recovery-20261121-mucha-weekend",
+      "status": "verified",
+      "source": "https://shibu-cul.jp/event/52959",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://shibu-cul.jp/event/52959",
+          "checked_at": "2026-11-15T07:30:52+09:00",
+          "sha256": "9e18f1d2f7e2232b38a31cc3daa557ee0a028b1a04177b4a01053cc9e3f1f730"
+        },
+        {
+          "url": "https://shibu-cul.jp/event/mucha2026",
+          "checked_at": "2026-11-15T07:29:27+09:00",
+          "sha256": "aa7345930092f9341e7637fab8775f1accc54c3a78b3c8c2486eb4845815441e"
+        },
+        {
+          "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1622/20261101_bunka.html",
+          "checked_at": "2026-11-14T19:58:02+09:00",
+          "sha256": "21ad6357f79f0679f185fec9bf79c8f850620e4c901216fd59ab75b63ef3083f"
+        }
+      ]
+    },
+    {
+      "id": "evidence-recovery-20261121-kita-iwate-fair",
+      "status": "verified",
+      "source": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html",
+          "checked_at": "2026-11-15T07:34:49+09:00",
+          "sha256": "a21b31f9e6f3bead4247b24efd81889fbc2dadb77e09dfdb865de982d87fc81c"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/living/community/1017287/1002202.html",
+          "checked_at": "2026-11-15T07:32:37+09:00",
+          "sha256": "46bbe7a926d052e4fd2687315de617076a7b23d5161e4e39f6ef395e73af4f91"
+        }
+      ]
+    },
+    {
+      "id": "evidence-recovery-20261122-meguro-dance-view",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/sports/event/taiikusai_dance.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/sports/event/taiikusai_dance.html",
+          "checked_at": "2026-11-15T07:32:40+09:00",
+          "sha256": "af60699548eef4806b0134603390dbbf2c0221a6390d6ef29501bc7f980c05ee"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/documents/13260/65-aki-dance-yo.pdf",
+          "checked_at": "2026-11-14T22:34:55.282658+00:00",
+          "sha256": "f3af7a3d5f74bbf9f4efd1ca4e41660cfa889934a9d58cbe3c0c5a3a52a46a2f"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 150,
-    "verified": 142,
+    "total": 153,
+    "verified": 145,
     "announced": 8
   }
 }

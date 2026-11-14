@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 150,
-    "verified": 142,
+    "published": 153,
+    "verified": 145,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2517,6 +2517,25 @@
       "resolved": true
     },
     "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
+  },
+  "evidence_recovery_20261115": {
+    "new_event_ids": [
+      "evidence-recovery-20261121-mucha-weekend",
+      "evidence-recovery-20261121-kita-iwate-fair",
+      "evidence-recovery-20261122-meguro-dance-view"
+    ],
+    "base_data_production_sha": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-15",
     "source_failures_remain_unverified": true,
     "old_events_changed": 0,
     "old_events_removed": 0,

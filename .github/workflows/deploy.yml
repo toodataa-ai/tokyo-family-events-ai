@@ -259,7 +259,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-community-review-20261113" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-final-backlog-20261114" ]; then
+            python3 staging-policy-src/tools/validate_final_backlog_addition.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-community-review-20261113" ]; then
             python3 staging-policy-src/tools/validate_community_review_addition.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-hiromachi-review-20261113" ]; then

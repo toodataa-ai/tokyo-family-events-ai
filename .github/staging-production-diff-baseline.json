@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 275,
+  "expected_total_differences_after_governance": 284,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2219,6 +2219,78 @@
       "kind": "staging_only",
       "category": "non_tamemap_last_data_review",
       "reason": "今回再開分32個票と累計72個票追加、再評価196件、未解決・対象外・未公開UIを区別した最終照合記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_all_non_tamemap_addition.py",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_all_non_tamemap_gate.py",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/all-non-tamemap-review.yml",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/candidate_ledger.json",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/publishable.json",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/retrieval_attempts.json",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/review_summary.json",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_non_tamemap_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "all_non_tamemap_review",
+      "reason": "固定851候補の全判定、118追加個票の公式根拠と個別評価、旧480個票・履歴・取得失敗の保持を検証するmain専用の照合証跡・検証コード。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

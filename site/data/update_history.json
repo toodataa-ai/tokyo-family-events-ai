@@ -837,6 +837,29 @@
         "https://www.nerimakanko.jp/event/detail.php?event_id=e000002971"
       ],
       "note": "本文照合した追加分のみ公開。週をまたぐ企画は各週に掲載し、休館日をまたがない。既存369個票・履歴・取得失敗を保持。全参照元の全件照合完了は主張しない。"
+    },
+    {
+      "run_id": "rail-family-fit-review-20261114",
+      "run_type": "manual_assessment_correction",
+      "status": "verified_correction",
+      "as_of_jst": "2026-11-14",
+      "executed_at": "2026-11-14T03:46:18.526441+00:00",
+      "base_data_production_sha": "033c9e12728f1fca18899b3b47d9a8ca62e3ab48",
+      "target_weekends": [
+        "2026-11-14"
+      ],
+      "changed_event_ids": [
+        "reviewed-20261115-nakano-161805"
+      ],
+      "added_weekly_records": 0,
+      "removed_weekly_records": 0,
+      "changed_existing_records": 1,
+      "assessment_only": true,
+      "event_facts_changed": false,
+      "official_evidence_urls": [
+        "https://www.city.tokyo-nakano.lg.jp/machizukuri/machizukuri/oshirase/TetsudoJobu.html"
+      ],
+      "note": "総合評価B→A（星2→3）を公式の子ども向け体験・無料・入退場自由に基づき再評価。日時・会場・料金等の個票事実、他407個票、既存履歴と参照元失敗は不変。年齢適合Bと未記載条件を機械的にAへ引き上げない。"
     }
   ]
 }

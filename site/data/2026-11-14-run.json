@@ -389,5 +389,13 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "rail_family_fit_correction_20261114": {
+    "event_id": "reviewed-20261115-nakano-161805",
+    "old_grade": "B",
+    "new_grade": "A",
+    "event_facts_changed": false,
+    "source_checks_changed": false,
+    "review": "research/rail_family_fit_review_20261114/review.json"
   }
 }

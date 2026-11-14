@@ -4162,10 +4162,10 @@
       "ward": "中野区",
       "decision": "published",
       "family_fit": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v1",
-        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "reason": "子ども向けの画像作成体験に模型・シール投票を組み合わせ、親子で未来のまちを考えられる。無料・申込不要・入退場自由という家族利用の明確な強みがある。",
         "axes": {
           "child_target": {
             "grade": "A",
@@ -4181,11 +4181,11 @@
           },
           "stay_flexibility": {
             "grade": "A",
-            "reason": "予約不要・当日参加可能。短時間参加の扱いは各主催者案内に従う。"
+            "reason": "こども向け体験とパネル・模型展示は公式に入退場自由と明記。"
           },
           "burden": {
-            "grade": "B",
-            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+            "grade": "unknown",
+            "reason": "混雑や待ち時間、休憩設備などは未記載。安全・負担が小さいとは断定しない。"
           },
           "cost": {
             "grade": "A",
@@ -4196,8 +4196,8 @@
             "reason": "対象として掲載する催しは当日参加可能または申込不要。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "鉄道とまちの未来を考える親子の体験・学び。"
+            "grade": "A",
+            "reason": "自分のアイデアを生成AIでまちの画像にし、1枚持ち帰れる体験と模型・シール投票を親子で共有できる。"
           }
         },
         "evaluation_rubric_version": "family-fit-v2"
@@ -4206,7 +4206,11 @@
         "daytime",
         "free_or_low_cost",
         "family_venue",
-        "all_ages"
+        "all_ages",
+        "child_explicit",
+        "hands_on",
+        "flexible_visit",
+        "learning_value"
       ],
       "negative_signals": [],
       "hard_exclusion": null,
@@ -4216,7 +4220,8 @@
         "family_community_activity"
       ],
       "reasons": [
-        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。"
+        "詳細本文の日時・会場・参加条件を確認。既存公開と照合し独立参加単位の新規候補。",
+        "旧総合理由は公式照合の説明で、B評価にとどめる実質的理由を示していなかった。8軸の平均やAの個数で機械的に星を変更せず、公式の体験と参加条件を総合してこの1件を再評価。年齢適合Bは維持し、未記載の負担はunknownとする。"
       ],
       "evidence": [
         {
@@ -4226,15 +4231,20 @@
         {
           "url": "https://pc.tamemap.net/1311401/event/161805/2026-11-15?locale=ja",
           "basis": "同じ日時・会場の主催担当課による投稿。"
+        },
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/machizukuri/machizukuri/oshirase/TetsudoJobu.html",
+          "basis": "旧総合理由は公式照合の説明で、B評価にとどめる実質的理由を示していなかった。8軸の平均やAの個数で機械的に星を変更せず、公式の体験と参加条件を総合してこの1件を再評価。年齢適合Bは維持し、未記載の負担はunknownとする。",
+          "checked_at": "2026-11-14T12:43:40+09:00"
         }
       ],
       "override_reason": "",
       "tradeoff_reason": "",
       "canonical_family_fit_v2": {
-        "grade": "B",
-        "overall": "B",
+        "grade": "A",
+        "overall": "A",
         "rubric_version": "family-fit-v2",
-        "reason": "公式または主催者提供の詳細本文で日付・会場・参加条件を確認。",
+        "reason": "子ども向けの画像作成体験に模型・シール投票を組み合わせ、親子で未来のまちを考えられる。無料・申込不要・入退場自由という家族利用の明確な強みがある。",
         "axes": {
           "child_target": {
             "grade": "A",
@@ -4250,11 +4260,11 @@
           },
           "stay_flexibility": {
             "grade": "A",
-            "reason": "予約不要・当日参加可能。短時間参加の扱いは各主催者案内に従う。"
+            "reason": "こども向け体験とパネル・模型展示は公式に入退場自由と明記。"
           },
           "burden": {
-            "grade": "B",
-            "reason": "会場と参加条件を確認。屋外では天候、写真展示では内容を保護者が事前確認。"
+            "grade": "unknown",
+            "reason": "混雑や待ち時間、休憩設備などは未記載。安全・負担が小さいとは断定しない。"
           },
           "cost": {
             "grade": "A",
@@ -4265,8 +4275,8 @@
             "reason": "対象として掲載する催しは当日参加可能または申込不要。"
           },
           "family_value": {
-            "grade": "B",
-            "reason": "鉄道とまちの未来を考える親子の体験・学び。"
+            "grade": "A",
+            "reason": "自分のアイデアを生成AIでまちの画像にし、1枚持ち帰れる体験と模型・シール投票を親子で共有できる。"
           }
         }
       },

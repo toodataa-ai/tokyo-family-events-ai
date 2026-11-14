@@ -1,17 +1,17 @@
-# Individual review progress after verified six-event data-only publication.
+# Isolated verified-date display and reviewed backlog status release.
 operation=release
 production_ref=production
-production_sha=4f219260e0f315cb5789ac421cff94b9c190dbbf
-previous_production_sha=01f04fe95ebe24e47a14ca53fea9536b1dc68f63
-candidate_sha=e7585d1189d3ca71b9c7f8b025bb7fbcb9068b78
-pr=104
-target_public_version=1.29
-previous_public_release=release/2026-11-13-r1
-release_date_jst=2026-11-13
-expected_data_production_sha=bd4ec22347d0d5cac1df1fa9e47fdd9e07b7356d
-approved_scope=site/audit/pending_issues_catalog.json
+production_sha=34531c0fcb7ac4eddc0c1c261927e4aadd8cc4a5
+previous_production_sha=ce64f0578f6df5a700fcc631350ec8669e323ed0
+candidate_sha=c1c37b8e348e5ef30edb677d495875ce317787d5
+pr=111
+target_public_version=1.32
+previous_public_release=release/2026-11-13-r4
+release_date_jst=2026-11-14
+expected_data_production_sha=89c9211fa561fcaabf9d03063d5b745978a52cf8
+approved_scope=site/app.js,site/audit/pending_issues_catalog.json
 event_record_mutation=none
 source_registry_mutation=none
-verified_pages_run=43326190478
-data_publication_run=43325412594
-note=Catalog-only progress wording. Six additions were published independently via validated data-only path. Remaining content review and GitHub Tamemap403 stay open.
+read_only_validation_run=43541322840
+data_publication_run=43541686211
+note=Per-event explicit verification dates keep old audit dates intact. Published total369 includes142 added weekly records. Historical source failures and broader parity debt remain open.

@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/checkout@v4
         with:
-          ref: 952d001ed1898784d5586297fe1941fe49934f56
+          ref: 6fb1abd131411ba64bbb175667c3d8a0fc922d69
           path: candidate
           fetch-depth: 0
       - uses: actions/setup-python@v5

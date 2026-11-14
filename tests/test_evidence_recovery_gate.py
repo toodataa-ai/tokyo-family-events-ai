@@ -5,7 +5,7 @@ from validate_evidence_recovery_20261115 import BASE,load_spec,expected_outputs,
 class EvidenceRecoveryTests(unittest.TestCase):
  def test_general_admission_and_separate_programme_conditions(self):
   spec=load_spec();events={r['review_key']:r['event']for r in spec['records']}
-  m=events['magokoro-marche'];self.assertIn('どなたでも',m['description']);self.assertFalse(m['reservation']['required'])
+  self.assertNotIn('magokoro-marche',events) # already published from the same official source
   m=events['mucha-weekend'];self.assertEqual((m['date_start'],m['date_end']),('2026-11-21','2026-11-22'));self.assertIn('18:00',m['time']);self.assertIn('途中',m['family_fit']['axes']['stay_flexibility']['reason']);self.assertIn('11/23',m['reservation']['note'])
   m=events['meguro-dance-view'];self.assertIn('幼児',m['description']);self.assertIn('定員',m['reservation']['note']);self.assertIn('1200',m['price']);self.assertIn('11/13',m['reservation']['note'])
   m=events['kita-iwate-fair'];self.assertIn('店舗',m['time']);self.assertIn('日曜休業',m['family_fit']['reason'])
@@ -13,6 +13,13 @@ class EvidenceRecoveryTests(unittest.TestCase):
    self.assertGreaterEqual(r['event']['date_start'],'2026-11-21');self.assertNotIn('tamemap',r['event']['official_url'])
   for r in spec['assessment_reviews']:
    self.assertEqual(r['before_family_fit']['overall'],r['after_family_fit']['overall']);self.assertEqual(len(r['after_family_fit']['axes']),8)
+ def test_no_new_official_url_duplicates_existing_week(self):
+  old=lambda n:json.loads(subprocess.check_output(['git','show',BASE+':site/data/'+n],cwd=ROOT))
+  for r in load_spec()['records']:
+   doc=old(r['week']+'.json');es=list(doc.get('events',[]))
+   for n in doc.get('event_files',[]):es.extend(old(n))
+   urls={e.get('official_url','').split('?')[0].rstrip('/') for e in es}
+   self.assertNotIn(r['event']['official_url'].split('?')[0].rstrip('/'),urls)
  def test_all_old_facts_history_and_source_checks_preserved(self):
   old=lambda n:json.loads(subprocess.check_output(['git','show',BASE+':site/data/'+n],cwd=ROOT));spec=load_spec();out=expected_outputs(old,spec,'2026-11-14T22:00:00Z')
   self.assertEqual(out['update_history.json']['history'][:-1],old('update_history.json')['history'])

@@ -10,8 +10,8 @@ from validate_official_schedule_audit import validate
 
 BASE = '847e388e65b99e38a0f108ecc96009778b3fdcd2'
 SPEC = Path(__file__).resolve().parents[1] / 'research/evidence_recovery_20261115/publishable.json'
-SPEC_SHA256 = '54e26af647709c279d7d6ac46e85a780e6c9074aa04a57ad65c667e96ce8129c'
-COUNTS = {'2026-11-21': 4, '2026-11-28': 1}
+SPEC_SHA256 = '573adaaa6b2c8a393409cea03dcfd71d018bd64105416dc184111f981d977256'
+COUNTS = {'2026-11-21': 3, '2026-11-28': 1}
 WEEKS = tuple(COUNTS)
 KEY = 'evidence_recovery_20261115'
 
@@ -83,7 +83,7 @@ def expected_additions(read_old, rows, stamp):
         'new_event_ids':ids,'removed_weekly_records':0,'changed_existing_records':0,
         'source_failures_remain_unverified':True,'content_review_complete':False,'fixed_851_adjudication_complete':True,'unreviewed_candidates':0,
         'official_evidence_urls':sorted({r['event']['official_url'] for r in rows}),
-        'note':'公式代替根拠で4企画・週別5件を追加、既存6件の8軸を再確認（総合A/B変更なし）。既存598件の開催事実・過去履歴・取得失敗は保持。手動変更はユーザーのステージング確認後だけ本番反映する。'})
+        'note':'公式代替根拠で3企画・週別4件を追加、既存6件の8軸を再確認（総合A/B変更なし）。既存598件の開催事実・過去履歴・取得失敗は保持。手動変更はユーザーのステージング確認後だけ本番反映する。'})
     outputs['update_history.json'] = history
     return outputs
 
@@ -152,7 +152,7 @@ def check(base, directory):
         after.update(validate(current(d+'-run.json'),current(d+'.json'),current(d+'-decisions.json'),config,()))
     if before != after:
         raise ValueError('historical source failures changed')
-    print('EVIDENCE RECOVERY GATE PASS: 5 additions, 6 assessments; 598 old event facts/history/source errors preserved')
+    print('EVIDENCE RECOVERY GATE PASS: 4 additions, 6 assessments; 598 old event facts/history/source errors preserved')
 
 
 if __name__ == '__main__':

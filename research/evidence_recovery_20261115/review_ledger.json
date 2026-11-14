@@ -774,11 +774,9 @@
         "bytes": 22774,
         "sha256": "f673c7f67f1b038c136cc8a02830c50735345aaf0d6752107996f0181c5fb7a4"
       },
-      "status": "staging_addition",
-      "reason": "区の独立した2026年11/22マルシェ案内で年を確認。普段の若者施設の対象と異なり、どなたでも来場可・予約不要・出入り自由。",
-      "staging_event_ids": [
-        "evidence-recovery-20261122-magokoro-marche"
-      ],
+      "status": "published_alias",
+      "reason": "区の独立した2026年11/22案内は既存掲載reviewed-20261122-nakano-162568と同一。どなたでも来場可・予約不要・出入り自由を再確認し、重複追加しない。",
+      "staging_event_ids": [],
       "alternative_evidence": {
         "url": "https://www.city.tokyo-nakano.lg.jp/kosodate/wakamonoshien/magokoromarche.html",
         "retrieval": {

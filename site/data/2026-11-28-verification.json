@@ -1902,11 +1902,116 @@
         "reason": "中学生以上が本の並び方を学び、実際に棚から探すゲームに取り組める。 図書館利用に関心のある中学生以上向けの実用講座で、小学生以下の親子の遊びには対象が合わない。",
         "source": "https://library.city.tokyo-nakano.lg.jp/event/?id=704"
       }
+    },
+    {
+      "id": "remaining-20261128-cincinnati-art",
+      "status": "verified",
+      "source": "https://www.cincinnati-art2026.jp/outline.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.cincinnati-art2026.jp/outline.html",
+          "checked_at": "2026-11-14T16:27:07+09:00",
+          "sha256": "f76a3c8f8ef8d4e72dfc143d5732fd0be1bbe358e81a1a99b0b1154b99014a2f"
+        },
+        {
+          "url": "https://www.cincinnati-art2026.jp/ticket.html",
+          "checked_at": "2026-11-14T16:27:10+09:00",
+          "sha256": "abe5cd53e44e8ca86a5a00b93cf4ecfffb9d033153146fe1c5828a16dbd441e4"
+        }
+      ]
+    },
+    {
+      "id": "remaining-20261129-nerima-indonesia",
+      "status": "verified",
+      "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002976",
+      "source_kind": "official_tourism",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002976",
+          "checked_at": "2026-11-14T16:40:11+09:00",
+          "sha256": "d63559922ba103a5bfcd676b09ed16c0893bf7c39c98ad6a35de5ea856f3d267"
+        }
+      ]
+    },
+    {
+      "id": "remaining-20261128-nerima-edokuri-rally",
+      "status": "verified",
+      "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003007",
+      "source_kind": "official_tourism",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003007",
+          "checked_at": "2026-11-14T16:27:02+09:00",
+          "sha256": "34f7d832df356fc82821aacf6b819dfb51fc4967685da34adaca8200e33d0b2e"
+        }
+      ]
+    },
+    {
+      "id": "remaining-20261128-tkg-yatai",
+      "status": "verified",
+      "source": "https://www.japan-tkg.jp/news/tamago-fes-2026",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.japan-tkg.jp/news/tamago-fes-2026",
+          "checked_at": "2026-11-14T16:27:15+09:00",
+          "sha256": "55d7974b42e5ec07d6bd638c432ea57bf1b67ec5a90f0e3d3ba35579121c4ca4"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 69,
-    "verified": 63,
+    "total": 73,
+    "verified": 67,
     "announced": 6
   }
 }

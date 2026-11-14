@@ -3,17 +3,17 @@
   "sat": "2026-11-14",
   "sun": "2026-11-15",
   "label": "11/14(土)〜11/15(日)",
-  "generated": "2026-11-14T04:36:51.370402+00:00",
+  "generated": "2026-11-14T07:45:55.303798+00:00",
   "horizon_index": 2,
   "publication_tier": "full",
   "verification_file": "2026-11-14-verification.json",
   "run_file": "2026-11-14-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 99,
+    "candidate_count": 112,
     "duplicate_removed": 0,
     "excluded_count": 5,
-    "published_count": 94,
+    "published_count": 107,
     "wards": [
       {
         "ward": "千代田区",
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 6,
-        "published_count": 6,
+        "candidate_count": 8,
+        "published_count": 8,
         "note": "v1.5完全再探索。候補5件、掲載5件。"
       },
       {
@@ -83,8 +83,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 5,
-        "published_count": 4,
+        "candidate_count": 6,
+        "published_count": 5,
         "note": "v1.5完全再探索。候補5件、掲載4件。 v1.6除外再審査反映。"
       },
       {
@@ -92,8 +92,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "v1.5完全再探索。候補1件、掲載1件。"
       },
       {
@@ -155,8 +155,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 6,
-        "published_count": 5,
+        "candidate_count": 9,
+        "published_count": 8,
         "note": "v1.5完全再探索。候補4件、掲載3件。 v1.6除外再審査反映。"
       },
       {
@@ -173,8 +173,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "v1.5完全再探索。候補0件、掲載0件。"
       },
       {
@@ -191,8 +191,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 11,
-        "published_count": 10,
+        "candidate_count": 12,
+        "published_count": 11,
         "note": "v1.5完全再探索。候補8件、掲載6件。 v1.6除外再審査反映。"
       },
       {
@@ -200,8 +200,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "v1.5完全再探索。候補0件、掲載0件。"
       },
       {
@@ -218,8 +218,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "v1.5完全再探索。候補0件、掲載0件。"
       }
     ]
@@ -236,7 +236,8 @@
     "2026-11-14-events-reviewed-hiromachi-20261113.json",
     "2026-11-14-events-reviewed-community-20261113.json",
     "2026-11-14-events-reviewed-backlog-20261114.json",
-    "2026-11-14-events-additional-primary-20261114.json"
+    "2026-11-14-events-additional-primary-20261114.json",
+    "2026-11-14-events-non-tamemap-20261114.json"
   ],
   "events": []
 }

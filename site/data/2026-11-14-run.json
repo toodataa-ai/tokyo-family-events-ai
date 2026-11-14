@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 51,
-    "published": 94,
+    "published": 107,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 94,
+    "verified": 107,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -455,5 +455,33 @@
     "event_facts_changed": false,
     "source_checks_changed": false,
     "review": "research/weekly_family_fit_review_20261114/review.json"
+  },
+  "non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "remaining-20261115-asakusa-wasshoi",
+      "remaining-20261115-adachi-lfesta-play",
+      "remaining-20261115-adachi-lfesta-english",
+      "remaining-20261115-adachi-lfesta-story",
+      "remaining-20261115-arakawa-tram-rally",
+      "remaining-20261115-edogawa-chrysanthemum",
+      "remaining-20261115-cincinnati-art",
+      "remaining-20261115-designfesta64",
+      "remaining-20261115-what-matsuri-art",
+      "remaining-20261115-toshima-4koma-museum",
+      "remaining-20261115-toshima-4koma-retro",
+      "remaining-20261115-toshima-tsunoda",
+      "remaining-20261115-nerima-edokuri-rally"
+    ],
+    "base_data_production_sha": "6aac4355afd8da739885d4ce6f3c64e84c7e5514",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
   }
 }

@@ -1810,8 +1810,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 69,
-    "verified": 63,
+    "published": 73,
+    "verified": 67,
     "announced": 6,
     "candidates": 43,
     "excluded": 16,
@@ -2055,5 +2055,24 @@
     "event_facts_changed": false,
     "source_checks_changed": false,
     "review": "research/weekly_family_fit_review_20261114/review.json"
+  },
+  "non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "remaining-20261128-cincinnati-art",
+      "remaining-20261129-nerima-indonesia",
+      "remaining-20261128-nerima-edokuri-rally",
+      "remaining-20261128-tkg-yatai"
+    ],
+    "base_data_production_sha": "6aac4355afd8da739885d4ce6f3c64e84c7e5514",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
   }
 }

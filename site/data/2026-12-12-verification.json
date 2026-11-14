@@ -1143,11 +1143,66 @@
         "reason": "実際に顕微鏡をのぞく観察と資料を組み合わせ、親子で感染症と科学を学べる。 専門用語の理解は子どもによる。映画会・講演会は展示とは別枠で、申込条件を流用しない。",
         "source": "https://www.kahaku.go.jp/tenji-event/nid00003997.html"
       }
+    },
+    {
+      "id": "remaining-20261212-cincinnati-art",
+      "status": "verified",
+      "source": "https://www.cincinnati-art2026.jp/outline.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.cincinnati-art2026.jp/outline.html",
+          "checked_at": "2026-11-14T16:27:07+09:00",
+          "sha256": "f76a3c8f8ef8d4e72dfc143d5732fd0be1bbe358e81a1a99b0b1154b99014a2f"
+        },
+        {
+          "url": "https://www.cincinnati-art2026.jp/ticket.html",
+          "checked_at": "2026-11-14T16:27:10+09:00",
+          "sha256": "abe5cd53e44e8ca86a5a00b93cf4ecfffb9d033153146fe1c5828a16dbd441e4"
+        }
+      ]
+    },
+    {
+      "id": "remaining-20261212-kahaku-noguchi-lecture",
+      "status": "verified",
+      "source": "https://www.kahaku.go.jp/event/nid00005688.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/event/nid00005688.html",
+          "checked_at": "2026-11-14T16:27:13+09:00",
+          "sha256": "885070f76fd52a696e4b25ebceaccc5bcafbda50d9a297d2671a5e2db1402dd4"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 41,
-    "verified": 38,
+    "total": 43,
+    "verified": 40,
     "announced": 3,
     "corrected": 0
   }

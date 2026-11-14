@@ -1810,8 +1810,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 81,
-    "verified": 75,
+    "published": 82,
+    "verified": 76,
     "announced": 6,
     "candidates": 43,
     "excluded": 16,
@@ -2123,6 +2123,22 @@
       "next-primary-20261129-suginami-exchange-easy"
     ],
     "base_data_production_sha": "273c8753a9d5ea09f38e580d4c51b4c87abd0189",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "non_tamemap_last_review_20261114": {
+    "new_event_ids": [
+      "next-primary-20261129-nakano-kentei13"
+    ],
+    "base_data_production_sha": "99d1082e560ab9469d93ef431af2704fed12e4da",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

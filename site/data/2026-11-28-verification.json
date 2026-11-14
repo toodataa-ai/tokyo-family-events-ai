@@ -2406,11 +2406,36 @@
           "sha256": "db1c92f9734a670a7d3ce5e66fb7dca74299834601b9ff6b9a6e273bdce58d84"
         }
       ]
+    },
+    {
+      "id": "next-primary-20261129-nakano-kentei13",
+      "status": "verified",
+      "source": "https://www.nakano-kanko.com/event-info/event-3797/",
+      "source_kind": "official_tourism",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.nakano-kanko.com/event-info/event-3797/",
+          "checked_at": "2026-11-14T18:38:05+09:00",
+          "sha256": "1e20a1322101948b5758a0e246b2eb9230952bbefa0c33c155fba1f35118d425"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 81,
-    "verified": 75,
+    "total": 82,
+    "verified": 76,
     "announced": 6
   }
 }

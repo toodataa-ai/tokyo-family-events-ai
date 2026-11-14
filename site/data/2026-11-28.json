@@ -3,17 +3,17 @@
   "sat": "2026-11-28",
   "sun": "2026-11-29",
   "label": "11/28(土)〜11/29(日)",
-  "generated": "2026-11-14T09:14:24.970965+00:00",
+  "generated": "2026-11-14T09:39:49.515801+00:00",
   "horizon_index": 4,
   "publication_tier": "preview",
   "verification_file": "2026-11-28-verification.json",
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 97,
+    "candidate_count": 98,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 81,
+    "published_count": 82,
     "wards": [
       {
         "ward": "千代田区",
@@ -137,8 +137,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 20,
-        "published_count": 19,
+        "candidate_count": 21,
+        "published_count": 20,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-29中野区検定（家族共同参加イベントではない個人受験）の公式ページを確認し、候補として審査・掲載見送り。 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
@@ -235,7 +235,8 @@
     "2026-11-28-events-reviewed-backlog-20261114.json",
     "2026-11-28-events-additional-primary-20261114.json",
     "2026-11-28-events-non-tamemap-20261114.json",
-    "2026-11-28-events-non-tamemap-next-20261114.json"
+    "2026-11-28-events-non-tamemap-next-20261114.json",
+    "2026-11-28-events-non-tamemap-last-20261114.json"
   ],
   "events": []
 }

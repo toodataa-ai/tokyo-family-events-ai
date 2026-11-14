@@ -22,7 +22,7 @@ def validate_snapshot(report, registry):
             registry["explicit_sources"], sort_keys=True,
             ensure_ascii=False).encode()).hexdigest()
         if (report.get("kind") != "registered_fixed_source_retrieval_and_link_leads"
-                or report.get("registered_source_count") != 26
+                or report.get("registered_source_count") != len(registry["explicit_sources"])
                 or report.get("protected_legacy_source_count") != 18
                 or report.get("source_registry_digest") != expected_digest):
             raise ValueError("source snapshot does not match the protected registry")
@@ -85,11 +85,18 @@ def validate_snapshot(report, registry):
     return True
 
 
-def compose_source_audit(snapshot_path, registry_path, pages_dir):
+def compose_source_audit(snapshot_path, registry_path, pages_dir, fallback_snapshot_path=None):
     raw = Path(snapshot_path).read_bytes()
     report = json.loads(raw)
     registry = apply_fallback_overlay(json.loads(
         Path(registry_path).read_text(encoding="utf-8")))
+    expected_digest = hashlib.sha256(json.dumps(
+        registry["explicit_sources"], sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    if report.get("source_registry_digest") != expected_digest and fallback_snapshot_path:
+        # A new staging source is not approved for production. Keep the last
+        # matching report, including every original failure and check timestamp.
+        raw = Path(fallback_snapshot_path).read_bytes()
+        report = json.loads(raw)
     validate_snapshot(report, registry)
     destination = Path(pages_dir) / "audit" / "fixed_sources.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -102,8 +109,9 @@ def main():
     parser.add_argument("--snapshot", required=True)
     parser.add_argument("--registry", required=True)
     parser.add_argument("--pages-dir", required=True)
+    parser.add_argument("--fallback-snapshot")
     args = parser.parse_args()
-    destination = compose_source_audit(args.snapshot, args.registry, args.pages_dir)
+    destination = compose_source_audit(args.snapshot, args.registry, args.pages_dir, args.fallback_snapshot)
     print("Validated source-status snapshot only: " + str(destination))
 
 

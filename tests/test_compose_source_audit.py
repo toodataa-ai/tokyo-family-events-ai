@@ -79,6 +79,22 @@ class SourceAuditCompositionTests(unittest.TestCase):
                          for p in pages.rglob("*") if p.is_file()}
                 self.assertEqual(after, before)
 
+    def test_new_staging_registry_uses_only_validated_previous_production_report(self):
+        old_registry=copy.deepcopy(self.registry)
+        old_registry['explicit_sources']=[r for r in old_registry['explicit_sources']if r['id']!='shinjuku_sankaku_hiroba']
+        raw=(ROOT/'research/aipaku_review_20261115/fixed_sources_before_addition.json').read_bytes()
+        with tempfile.TemporaryDirectory()as tmp:
+            root=Path(tmp);pages=root/'pages';self.seed_pages(pages)
+            registry_path=root/'registry.json';registry_path.write_text(json.dumps(old_registry))
+            candidate=root/'new-snapshot.json';candidate.write_text(json.dumps(self.report))
+            fallback=root/'previous.json';fallback.write_bytes(raw)
+            result=compose_source_audit(candidate,registry_path,pages,fallback)
+            self.assertEqual(result.read_bytes(),raw)
+            bad=json.loads(raw);bad['sources'][0]['pages_checked']+=1;fallback.write_text(json.dumps(bad))
+            before=result.read_bytes()
+            with self.assertRaises(ValueError):compose_source_audit(candidate,registry_path,pages,fallback)
+            self.assertEqual(result.read_bytes(),before)
+
     def test_snapshot_and_registry_are_not_modified(self):
         before_report = copy.deepcopy(self.report)
         before_registry = copy.deepcopy(self.registry)

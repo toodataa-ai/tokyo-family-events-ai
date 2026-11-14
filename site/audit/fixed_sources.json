@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "kind": "registered_fixed_source_retrieval_and_link_leads",
-  "generated_at_jst": "2026-11-13T06:56:44+09:00",
+  "generated_at_jst": "2026-11-15T08:47:44.438531+09:00",
   "horizon": [
     "2026-11-07",
     "2026-12-13"
   ],
   "execution_environment": "github_actions",
-  "registered_source_count": 26,
+  "registered_source_count": 27,
   "protected_legacy_source_count": 18,
-  "source_registry_digest": "140c394bb0fc734b8118dfa10bce69c41b101050d031d6dbcf312574c24c93c5",
+  "source_registry_digest": "b3b7bad43669e6e7598d871a00118eb94b44991f5963244c877d839e280dbf0c",
   "summary": {
-    "registered": 26,
-    "reachable_all_registered_urls": 25,
+    "registered": 27,
+    "reachable_all_registered_urls": 26,
     "partial_errors": 0,
     "source_errors": 1,
     "full_event_row_parity_verified_by_this_report": 0,
@@ -3823,8 +3823,59 @@
       "errors": [],
       "audit_method": "registered URLs; HTML link lead observation; no inferred event dates",
       "caveat": "接続成功は候補・掲載の全件照合完了を意味しません。"
+    },
+    {
+      "source_id": "shinjuku_sankaku_hiroba",
+      "label": "新宿住友ビル三角広場（会場公式）",
+      "origin": "official",
+      "required": false,
+      "group": "固定サイト",
+      "detail_adapter": null,
+      "base_url": "https://www.sumitomo-sankakuhiroba.jp/event/",
+      "retrieval_status": "checked",
+      "status_label": "要個別照合",
+      "pages_expected": 1,
+      "pages_checked": 1,
+      "pages_failed": 0,
+      "observed_distinct_link_leads": 1,
+      "example_leads": [
+        {
+          "url": "https://office-b.sumitomo-rd.co.jp/sankakuhiroba/contact",
+          "name": "イベント開催のお問い合わせはこちら",
+          "observed_in": [
+            "https://www.sumitomo-sankakuhiroba.jp/event/"
+          ]
+        }
+      ],
+      "new_arrival_post_leads_observed": 0,
+      "new_arrival_post_leads_are_unverified": true,
+      "new_arrival_samples": [],
+      "event_candidates_total": null,
+      "candidate_publication_parity": "未検証",
+      "published_count_from_source": null,
+      "excluded_count_from_source": null,
+      "duplicate_count_from_source": null,
+      "unreviewed_count_from_source": null,
+      "unverified_due_to_source_error": false,
+      "source_checks": [
+        {
+          "url": "https://www.sumitomo-sankakuhiroba.jp/event/",
+          "checked_at": "2026-11-15T08:40:40+09:00",
+          "status": "checked",
+          "http_status": 200,
+          "final_url": "https://www.sumitomo-sankakuhiroba.jp/event/",
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 64337,
+          "sha256": "a1a199731507fb2948e5ccdf6efa0565d5eddb0c1c8cfa66841576b1497f6329",
+          "page_title": "イベント一覧｜【イベント情報】新宿住友ビル三角広場 | 新宿住友ビル三角広場",
+          "observed_event_link_leads": 1
+        }
+      ],
+      "errors": [],
+      "audit_method": "registered URLs; HTML link lead observation; no inferred event dates",
+      "caveat": "接続成功は候補・掲載の全件照合完了を意味しません。"
     }
   ],
   "read_only": true,
-  "disclaimer": "全26サイトのURL取得監査。記事候補やリンク数は全件候補数ではなく、公式開催日・採否・公開整合性の検証は別に必要。エラーは0件に変換しません。"
+  "disclaimer": "登録27サイトの取得状況。従来26サイトの確認日時と取得失敗は保持し、三角広場の実取得結果を追記。接続成功は全催事の掲載確認を意味しません。"
 }

@@ -816,6 +816,54 @@
       "reason": "成功した本番公開と実配信・実ブラウザ検証の記録。未解消の旧ソース失敗と差分も保持する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_additional_primary_addition.py",
+      "kind": "staging_only",
+      "category": "data_release_guard",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_additional_primary_gate.py",
+      "kind": "staging_only",
+      "category": "data_release_guard",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/additional-primary-review.yml",
+      "kind": "staging_only",
+      "category": "data_release_guard",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/additional_primary_review_20261114/publishable.json",
+      "kind": "staging_only",
+      "category": "source_review_evidence",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/additional_primary_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "source_review_evidence",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/additional_primary_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "source_review_evidence",
+      "reason": "2026-11-14追加公式照合39件の固定証跡と369件保護。配信アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "eab75ab00592c5b38299f3e29d25fe0f8dcfdece",

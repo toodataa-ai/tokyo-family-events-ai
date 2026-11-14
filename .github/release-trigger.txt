@@ -1,17 +1,17 @@
-# Isolated factual pending-guidance refresh after verified480-record data publication.
+# Isolated factual guidance refresh after verified598-record data publication.
 operation=release
 production_ref=production
-production_sha=f05bfe3698c0d61ece44509c4c8d8597e058125f
-previous_production_sha=e311ee769291a84ff7d6b070ac306f6da3b03977
-candidate_sha=a2aa4a866ab59d1b0a4c0e6835405805a37488a1
-pr=121
-target_public_version=1.34
-previous_public_release=release/2026-11-14-r2
+production_sha=48ea14ef33d762958448ab562fd1d5f1ae4c834e
+previous_production_sha=f05bfe3698c0d61ece44509c4c8d8597e058125f
+candidate_sha=8acf87c86dca2370ee075248645e1bfc5e2aeadb
+pr=123
+target_public_version=1.35
+previous_public_release=release/2026-11-14-r3
 release_date_jst=2026-11-14
-expected_data_production_sha=d05e78f3550ec0f302ab5a3c6550414e7dce5391
+expected_data_production_sha=847e388e65b99e38a0f108ecc96009778b3fdcd2
 approved_scope=site/audit/pending_issues_catalog.json
 event_record_mutation=none
 source_registry_mutation=none
-read_only_validation_run=43581943377
-data_publication_run=43582156712
-note=Publish factual guidance only:55 non-Tamemap programmes72 weekly records added since408, total480; existing196 older assessments reviewed,10 unavailable evidence and2 excluded Tamemap retained. No unrelated UI promotion.
+read_only_validation_run=43592538020
+data_publication_run=43592763300
+note=Publish factual guidance only:851 candidate adjudications complete,99 programmes118 weekly records added since480,total598;46 failed source bodies and24 held candidates plus2 direct follow-up holds remain explicit. No unrelated UI promotion.

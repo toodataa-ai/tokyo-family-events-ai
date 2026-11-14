@@ -3,17 +3,17 @@
   "sat": "2026-11-21",
   "sun": "2026-11-22",
   "label": "11/21(土)〜11/22(日)",
-  "generated": "2026-11-14T00:48:36.106119+00:00",
+  "generated": "2026-11-14T02:47:08.224407+00:00",
   "horizon_index": 3,
   "publication_tier": "preview",
   "verification_file": "2026-11-21-verification.json",
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 104,
+    "candidate_count": 116,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 88,
+    "published_count": 100,
     "wards": [
       {
         "ward": "千代田区",
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -92,8 +92,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -101,8 +101,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。"
       },
       {
@@ -155,8 +155,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 6,
+        "candidate_count": 7,
+        "published_count": 7,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規1件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-09豊島区2026-10-29更新の公式原文により11/23秋祭りを個別確認・非破壊追加。元の探索HTTP実測は変更しない。"
       },
       {
@@ -164,8 +164,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 4,
+        "published_count": 4,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -182,8 +182,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 8,
-        "published_count": 8,
+        "candidate_count": 9,
+        "published_count": 9,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -218,8 +218,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 6,
+        "candidate_count": 7,
+        "published_count": 7,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
       }
     ]
@@ -238,7 +238,8 @@
     "2026-11-21-events-reviewed-nakano-20261113.json",
     "2026-11-21-events-reviewed-hiromachi-20261113.json",
     "2026-11-21-events-reviewed-community-20261113.json",
-    "2026-11-21-events-reviewed-backlog-20261114.json"
+    "2026-11-21-events-reviewed-backlog-20261114.json",
+    "2026-11-21-events-additional-primary-20261114.json"
   ],
   "events": []
 }

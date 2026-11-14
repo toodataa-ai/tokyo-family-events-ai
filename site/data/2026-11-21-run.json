@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 88,
-    "verified": 80,
+    "published": 100,
+    "verified": 92,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2271,6 +2271,33 @@
       "final-20261121-nakano-163204"
     ],
     "base_data_production_sha": "81dd7269a6f0683c635db8491d137b12b50f3707",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "additional_primary_review_20261114": {
+    "new_event_ids": [
+      "primary-20261121-meguro-child-music",
+      "primary-20261121-meguro-horse-exhibit",
+      "primary-20261121-kita-keene",
+      "primary-20261123-itabashi-misuzu",
+      "primary-20261123-edogawa-inclusive-culture",
+      "primary-20261121-kita-ur",
+      "primary-20261121-kita-kitchen",
+      "primary-20261121-kita-kitchen-talk",
+      "primary-20261121-shinagawa-museum-tour",
+      "primary-20261121-taito-zakka",
+      "primary-20261121-taito-noguchi",
+      "primary-20261121-toshima-retro"
+    ],
+    "base_data_production_sha": "89c9211fa561fcaabf9d03063d5b745978a52cf8",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

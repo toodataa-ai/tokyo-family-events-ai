@@ -3,17 +3,17 @@
   "sat": "2026-11-28",
   "sun": "2026-11-29",
   "label": "11/28(土)〜11/29(日)",
-  "generated": "2026-11-14T00:48:36.106119+00:00",
+  "generated": "2026-11-14T02:47:08.224407+00:00",
   "horizon_index": 4,
   "publication_tier": "preview",
   "verification_file": "2026-11-28-verification.json",
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 78,
+    "candidate_count": 85,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 62,
+    "published_count": 69,
     "wards": [
       {
         "ward": "千代田区",
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
@@ -101,8 +101,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -137,8 +137,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 19,
-        "published_count": 18,
+        "candidate_count": 20,
+        "published_count": 19,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-29中野区検定（家族共同参加イベントではない個人受験）の公式ページを確認し、候補として審査・掲載見送り。 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
@@ -155,8 +155,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -164,8 +164,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -232,7 +232,8 @@
     "2026-11-28-events-verified-subset-2026-11-29.json",
     "2026-11-28-events-nerima-forest-20261027.json",
     "2026-11-28-events-gap-recovery-20261108.json",
-    "2026-11-28-events-reviewed-backlog-20261114.json"
+    "2026-11-28-events-reviewed-backlog-20261114.json",
+    "2026-11-28-events-additional-primary-20261114.json"
   ],
   "events": []
 }

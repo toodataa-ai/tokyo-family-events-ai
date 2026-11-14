@@ -4,8 +4,8 @@
   "generated": "2026-11-08T16:10:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 39,
-    "published": 37,
+    "candidate_total": 43,
+    "published": 41,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -2767,6 +2767,279 @@
       "evidence": [
         {
           "url": "https://www.chicoowa.com/cont14/81.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261213-meguro-kyogen",
+      "name": "親子で体験！狂言と玉すだれ",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生と保護者が日本の伝統芸能を実際に体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "目黒区内在住・在学の小学1〜6年生とその保護者。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "小学生と保護者が日本の伝統芸能を実際に体験できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "目黒区内在住・在学の小学1〜6年生とその保護者。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/16締切のオンライン申込。各回25組50名、応募多数時抽選、11/17結果通知。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "小学生と保護者が日本の伝統芸能を実際に体験できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "小学生と保護者が日本の伝統芸能を実際に体験できる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/bunka/event/kyogenr8.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261212-meguro-horse-exhibit",
+      "name": "秋季企画展「目黒と馬」",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け展示。細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け展示。細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "展示観覧。関連する解説会・屋外講座は別の参加企画。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "馬と地域の地名や歴史のつながりを親子で発見できる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261212-meguro-horse-talk",
+      "name": "「目黒と馬」学芸員による展示解説",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "地域の歴史や資料の見方を家族で学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け解説。子ども向け内容・途中退出可否は要確認。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "地域の歴史や資料の見方を家族で学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け解説。子ども向け内容・途中退出可否は要確認。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日、東山社会教育館2階ホールへ直接。展示観覧とは別の時間指定企画。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の歴史や資料の見方を家族で学べる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "地域の歴史や資料の見方を家族で学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261212-taito-noguchi",
+      "name": "野口英世生誕150年記念企画展「感染症への挑戦：過去・現在・未来」",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般・大学生630円、高校生以下・65歳以上無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "常設展示入館料で観覧可。月曜休館だが11/23は開館。講演会・映画会の申込は展示とは別枠。入館の事前手続は公式案内で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
         }
       ],

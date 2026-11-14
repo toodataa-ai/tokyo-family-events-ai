@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 51,
-    "published": 85,
+    "published": 94,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 85,
+    "verified": 94,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -355,6 +355,30 @@
       "final-20261115-nakano-162185"
     ],
     "base_data_production_sha": "81dd7269a6f0683c635db8491d137b12b50f3707",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "additional_primary_review_20261114": {
+    "new_event_ids": [
+      "primary-20261115-meguro-international",
+      "primary-20261115-nerima-sweets",
+      "primary-20261114-kita-keene",
+      "primary-20261115-arakawa-yuinomori",
+      "primary-20261114-kita-ur",
+      "primary-20261114-kita-kitchen",
+      "primary-20261114-taito-noguchi",
+      "primary-20261115-sumida-disaster",
+      "primary-20261114-toshima-retro"
+    ],
+    "base_data_production_sha": "89c9211fa561fcaabf9d03063d5b745978a52cf8",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 90,
-    "published": 85,
+    "candidate_total": 99,
+    "published": 94,
     "excluded": 5,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -8250,6 +8250,998 @@
           "family_value": {
             "grade": "B",
             "reason": "家計や将来のお金の使い方を、関心のある子どもと保護者が話し合うきっかけになる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261115-meguro-international",
+      "name": "めぐろ国際交流フェスティバル",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "異文化の展示・ステージとクイズを親子で楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "地域で暮らす人々に向けた交流イベント。細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "異文化の展示・ステージとクイズを親子で楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "地域で暮らす人々に向けた交流イベント。細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場無料（飲食・物品購入は別途）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。個別ブースの参加条件は現地で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "異文化の展示・ステージとクイズを親子で楽しめる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "異文化の展示・ステージとクイズを親子で楽しめる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/bunka/event/internationalfesr8.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "異文化の展示・ステージとクイズを親子で楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "地域で暮らす人々に向けた交流イベント。細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "異文化の展示・ステージとクイズを親子で楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "地域で暮らす人々に向けた交流イベント。細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場無料（飲食・物品購入は別途）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。個別ブースの参加条件は現地で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "異文化の展示・ステージとクイズを親子で楽しめる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261115-nerima-sweets",
+      "name": "江戸栗プロジェクト 秋のスイーツフェスタwith大泉パティシエクラブ",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "フェスタ全体の年齢条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "フェスタ全体の年齢条件は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "販売品は購入費別途。フェスタ自体の入場料・申込要否は未記載。お茶会の条件を全体の条件に流用しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "地域の菓子や野菜に触れ、親子で食文化を楽しめる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002971",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "フェスタ全体の年齢条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "フェスタ全体の年齢条件は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "販売品は購入費別途。フェスタ自体の入場料・申込要否は未記載。お茶会の条件を全体の条件に流用しない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の菓子や野菜に触れ、親子で食文化を楽しめる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261114-kita-keene",
+      "name": "企画展「ドナルド・キーン、あなたは誰？」",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。11/16休館。子どもの滞在時間は家族で調整。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/culture-tourism-sports/culture/1018312/1010307/1026669.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。11/16休館。子どもの滞在時間は家族で調整。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261115-arakawa-yuinomori",
+      "name": "ゆいの森フェスティバル Let’s be a Hero",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。ティーンズは企画スタッフの年齢で、参加者の年齢制限ではない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "なぞ解きや本探しを通じて親子で図書館に親しめる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a018/event/2026reading-promotion/teens_festival.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。ティーンズは企画スタッフの年齢で、参加者の年齢制限ではない。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "なぞ解きや本探しを通じて親子で図書館に親しめる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261114-kita-ur",
+      "name": "URまちとくらしのミュージアム出張展示",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "住まいの形やくらしの変化を親子で見比べられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "住まいの形やくらしの変化を親子で見比べられる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "住まいの形やくらしの変化を親子で見比べられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261114-kita-kitchen",
+      "name": "秋期企画展「明るい台所‐台所の移り変わりと北区‐」",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261114-taito-noguchi",
+      "name": "野口英世生誕150年記念企画展「感染症への挑戦：過去・現在・未来」",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般・大学生630円、高校生以下・65歳以上無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "常設展示入館料で観覧可。月曜休館だが11/23は開館。講演会・映画会の申込は展示とは別枠。入館の事前手続は公式案内で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般・大学生630円、高校生以下・65歳以上無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "常設展示入館料で観覧可。月曜休館だが11/23は開館。講演会・映画会の申込は展示とは別枠。入館の事前手続は公式案内で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261115-sumida-disaster",
+      "name": "すみだ防災フェスタ2026",
+      "ward": "墨田区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "来場を広く呼びかける防災イベント。個別体験の条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "来場を広く呼びかける防災イベント。個別体験の条件は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "費用・個別体験の年齢や受付条件は公式案内で要確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "防災車両や展示を見ながら家族で災害への備えを考えられる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.sumida.lg.jp/anzen_anshin/bousai/bousaikunren/fest.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "来場を広く呼びかける防災イベント。個別体験の条件は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "来場を広く呼びかける防災イベント。個別体験の条件は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "費用・個別体験の年齢や受付条件は公式案内で要確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "防災車両や展示を見ながら家族で災害への備えを考えられる。"
+          }
+        }
+      },
+      "compatibility_note": "Historical v1 envelope; canonical_family_fit_v2 and public event preserve the actual v2 evaluation."
+    },
+    {
+      "candidate_id": "primary-20261114-toshima-retro",
+      "name": "くらしのなかの「伝える」～あのころの看板や雑貨たち～",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v1",
+        "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。月曜休館、祝日の場合は翌平日休館。11/23開館。10/25の関連ワークショップは終了済み。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+          }
+        },
+        "evaluation_rubric_version": "family-fit-v2"
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": "",
+      "canonical_family_fit_v2": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。月曜休館、祝日の場合は翌平日休館。11/23開館。10/25の関連ワークショップは終了済み。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
           }
         }
       },

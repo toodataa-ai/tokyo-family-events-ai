@@ -882,11 +882,111 @@
           "sha256": "320348dae684a85d9776048e68a0744bf6752ab42f5741adab0c351da4a23249"
         }
       ]
+    },
+    {
+      "id": "primary-20261213-meguro-kyogen",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/bunka/event/kyogenr8.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/bunka/event/kyogenr8.html",
+          "checked_at": "2026-11-14T11:29:40+09:00",
+          "sha256": "76ff639139be000eed8bb44b42e326a499a9fdb09f177ba0e9c849a6574307d8"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261212-meguro-horse-exhibit",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "checked_at": "2026-11-14T11:29:45+09:00",
+          "sha256": "29d4fc79ba52fcadf958a4590fe3b804094d39a6f1d1b4b1c43ffca307bd0a5b"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261212-meguro-horse-talk",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "checked_at": "2026-11-14T11:29:45+09:00",
+          "sha256": "29d4fc79ba52fcadf958a4590fe3b804094d39a6f1d1b4b1c43ffca307bd0a5b"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261212-taito-noguchi",
+      "status": "verified",
+      "source": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+      "source_kind": "venue_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+          "checked_at": "2026-11-14T11:34:53+09:00",
+          "sha256": "26a7c939a9d1f1f267ae09b5abf18bfed14fca0dc824d07f49c6ef9ed6e2d7dc"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 37,
-    "verified": 34,
+    "total": 41,
+    "verified": 38,
     "announced": 3,
     "corrected": 0
   }

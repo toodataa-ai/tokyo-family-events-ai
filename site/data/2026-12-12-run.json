@@ -147,10 +147,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 20,
-    "published": 37,
+    "published": 41,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 34,
+    "verified": 38,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -184,6 +184,25 @@
       "final-20261213-nerima-chicoowa-xmas"
     ],
     "base_data_production_sha": "81dd7269a6f0683c635db8491d137b12b50f3707",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false
+  },
+  "additional_primary_review_20261114": {
+    "new_event_ids": [
+      "primary-20261213-meguro-kyogen",
+      "primary-20261212-meguro-horse-exhibit",
+      "primary-20261212-meguro-horse-talk",
+      "primary-20261212-taito-noguchi"
+    ],
+    "base_data_production_sha": "89c9211fa561fcaabf9d03063d5b745978a52cf8",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

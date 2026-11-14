@@ -1425,11 +1425,194 @@
           "sha256": "ea9934ebdeb378cd031441ecb3c3e3f01373d86efa9a1b17781393fcf61724c4"
         }
       ]
+    },
+    {
+      "id": "primary-20261128-meguro-horse-exhibit",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "checked_at": "2026-11-14T11:29:45+09:00",
+          "sha256": "29d4fc79ba52fcadf958a4590fe3b804094d39a6f1d1b4b1c43ffca307bd0a5b"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-kita-keene",
+      "status": "verified",
+      "source": "https://www.city.kita.lg.jp/culture-tourism-sports/culture/1018312/1010307/1026669.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/culture-tourism-sports/culture/1018312/1010307/1026669.html",
+          "checked_at": "2026-11-14T11:34:24+09:00",
+          "sha256": "c6ebecde31be08cedd25d00cd3cd84cb7185d910ef5cf1ec7f59f085ef9cd05f"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-kita-ur",
+      "status": "verified",
+      "source": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+          "checked_at": "2026-11-14T11:34:44+09:00",
+          "sha256": "28d8ad1af821d183ec12c501564e5d00ab0a37d231781de47365e7a678d34193"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "basis": "同じ博物館の公式休館日案内。11/23開館、11/24休館。"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-kita-kitchen",
+      "status": "verified",
+      "source": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "checked_at": "2026-11-14T11:34:45+09:00",
+          "sha256": "a240f59a47d34cc21e1d417cfe50411f5348662930a2f7a32bcee06f3e43a20a"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "basis": "同じ博物館の公式休館日案内。11/23開館、11/24休館。"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-taito-noguchi",
+      "status": "verified",
+      "source": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+      "source_kind": "venue_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+          "checked_at": "2026-11-14T11:34:53+09:00",
+          "sha256": "26a7c939a9d1f1f267ae09b5abf18bfed14fca0dc824d07f49c6ef9ed6e2d7dc"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-toshima-retro",
+      "status": "verified",
+      "source": "https://www.city.toshima.lg.jp/499/2608101426.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
+          "checked_at": "2026-11-14T11:35:07+09:00",
+          "sha256": "be416ceddc17c32f12e89ba2471e0c2570f8fca0fabeaac6496094da09e1dcb1"
+        }
+      ]
+    },
+    {
+      "id": "primary-20261128-nakano-bookfinding",
+      "status": "verified",
+      "source": "https://library.city.tokyo-nakano.lg.jp/event/?id=704",
+      "source_kind": "venue_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://library.city.tokyo-nakano.lg.jp/event/?id=704",
+          "checked_at": "2026-11-14T11:35:09+09:00",
+          "sha256": "292630e115b651c528ee17d123540be029c5ea74204cfb343cf9de037632870a"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 62,
-    "verified": 56,
+    "total": 69,
+    "verified": 63,
     "announced": 6
   }
 }

@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 78,
-    "published": 62,
+    "candidate_total": 85,
+    "published": 69,
     "excluded": 16,
     "duplicate": 0
   },
@@ -5298,6 +5298,483 @@
       "evidence": [
         {
           "url": "https://www.city.suginami.tokyo.jp/s016/event/27464.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-meguro-horse-exhibit",
+      "name": "秋季企画展「目黒と馬」",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け展示。細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け展示。細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "展示観覧。関連する解説会・屋外講座は別の参加企画。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "馬と地域の地名や歴史のつながりを親子で発見できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "馬と地域の地名や歴史のつながりを親子で発見できる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/kikakuten.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-kita-keene",
+      "name": "企画展「ドナルド・キーン、あなたは誰？」",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "一般向け展示。ゲームの細かな対象年齢は未記載。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。11/16休館。子どもの滞在時間は家族で調整。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "ゲームと展示を通じ、日本文学と地域の人物について親子で学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/culture-tourism-sports/culture/1018312/1010307/1026669.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-kita-ur",
+      "name": "URまちとくらしのミュージアム出張展示",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "住まいの形やくらしの変化を親子で見比べられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "住まいの形やくらしの変化を親子で見比べられる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "住まいの形やくらしの変化を親子で見比べられる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/events/1018658/1026912.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-kita-kitchen",
+      "name": "秋期企画展「明るい台所‐台所の移り変わりと北区‐」",
+      "ward": "北区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。月曜休館、11/23は開館・11/24休館（同館企画展案内で確認）。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔と今の台所や道具を比べ、家族の生活史について話せる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "昔と今の台所や道具を比べ、家族の生活史について話せる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kita.lg.jp/museum/exhibitions/1018327/1026687.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-taito-noguchi",
+      "name": "野口英世生誕150年記念企画展「感染症への挑戦：過去・現在・未来」",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "細かな対象年齢は未記載。展示の説明が子どもに合うか保護者が判断。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般・大学生630円、高校生以下・65歳以上無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "常設展示入館料で観覧可。月曜休館だが11/23は開館。講演会・映画会の申込は展示とは別枠。入館の事前手続は公式案内で確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "顕微鏡の観察と資料から、親子で科学と病原体について学べる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "顕微鏡の観察と資料から、親子で科学と病原体について学べる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kahaku.go.jp/tenji-event/nid00003997.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-toshima-retro",
+      "name": "くらしのなかの「伝える」～あのころの看板や雑貨たち～",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要。月曜休館、祝日の場合は翌平日休館。11/23開館。10/25の関連ワークショップは終了済み。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "child_explicit",
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "昔の連絡道具に実際に触れ、家族の世代を越えて会話できる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/499/2608101426.html",
+          "basis": "取得した主催者/自治体の本文、開催日と会場。"
+        }
+      ],
+      "override_reason": "",
+      "tradeoff_reason": ""
+    },
+    {
+      "candidate_id": "primary-20261128-nakano-bookfinding",
+      "name": "本の探し方講座",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "中学生以上の子どもが図書館で本を見つける力を身につけられる。",
+        "axes": {
+          "child_target": {
+            "grade": "unknown",
+            "reason": "中学生以上。"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "中学生以上の子どもが図書館で本を見つける力を身につけられる。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "中学生以上。"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場・滞在時間の自由度は、明記された場合を除き要確認。"
+          },
+          "burden": {
+            "grade": "unknown",
+            "reason": "混雑、設備、休憩場所など未記載の条件は要確認。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載を確認できないため、無料とは判断しない。"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "11/7から江古田図書館カウンター・電話で先着10名。料金未記載。空きは申込時に確認。"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "中学生以上の子どもが図書館で本を見つける力を身につけられる。"
+          }
+        }
+      },
+      "positive_signals": [
+        "family_value"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "body_verified_backlog_addition",
+      "reason_codes": [
+        "body_verified_backlog_addition"
+      ],
+      "reasons": [
+        "中学生以上の子どもが図書館で本を見つける力を身につけられる。",
+        "既存369個票と日付・会場・参加単位を照合し、同一の掲載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://library.city.tokyo-nakano.lg.jp/event/?id=704",
           "basis": "取得した主催者/自治体の本文、開催日と会場。"
         }
       ],

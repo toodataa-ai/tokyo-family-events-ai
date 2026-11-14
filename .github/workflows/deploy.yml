@@ -261,7 +261,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "older-family-fit-correction-20261114" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-next-20261114" ]; then
+            python3 staging-policy-src/tools/validate_non_tamemap_next_addition.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+          elif [ "${{ needs.gate.outputs.operation }}" = "older-family-fit-correction-20261114" ]; then
             python3 staging-policy-src/tools/validate_older_family_fit_correction.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-20261114" ]; then

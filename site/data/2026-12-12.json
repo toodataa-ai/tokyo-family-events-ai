@@ -3,25 +3,25 @@
   "sat": "2026-12-12",
   "sun": "2026-12-13",
   "label": "12/12(土)〜12/13(日)",
-  "generated": "2026-11-14T08:15:08.762656+00:00",
+  "generated": "2026-11-14T09:14:24.970965+00:00",
   "horizon_index": 6,
   "publication_tier": "announcement",
   "verification_file": "2026-12-12-verification.json",
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 45,
+    "candidate_count": 53,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 43,
+    "published_count": 51,
     "wards": [
       {
         "ward": "千代田区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 7,
+        "published_count": 7,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 4,
-        "published_count": 4,
+        "candidate_count": 5,
+        "published_count": 5,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -137,8 +137,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 15,
-        "published_count": 14,
+        "candidate_count": 16,
+        "published_count": 15,
         "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
       },
       {
@@ -228,7 +228,8 @@
     "2026-12-12-events-current-verified.json",
     "2026-12-12-events-reviewed-backlog-20261114.json",
     "2026-12-12-events-additional-primary-20261114.json",
-    "2026-12-12-events-non-tamemap-20261114.json"
+    "2026-12-12-events-non-tamemap-20261114.json",
+    "2026-12-12-events-non-tamemap-next-20261114.json"
   ],
   "events": []
 }

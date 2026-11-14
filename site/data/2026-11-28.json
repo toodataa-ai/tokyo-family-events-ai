@@ -3,17 +3,17 @@
   "sat": "2026-11-28",
   "sun": "2026-11-29",
   "label": "11/28(土)〜11/29(日)",
-  "generated": "2026-11-14T08:15:08.762656+00:00",
+  "generated": "2026-11-14T09:14:24.970965+00:00",
   "horizon_index": 4,
   "publication_tier": "preview",
   "verification_file": "2026-11-28-verification.json",
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 89,
+    "candidate_count": 97,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 73,
+    "published_count": 81,
     "wards": [
       {
         "ward": "千代田区",
@@ -38,8 +38,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 5,
+        "published_count": 5,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -65,8 +65,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 4,
-        "published_count": 4,
+        "candidate_count": 5,
+        "published_count": 5,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規1件を追加。従前の検索回数と取得成功数は不変。"
       },
       {
@@ -83,8 +83,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -101,8 +101,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 2,
+        "published_count": 2,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -146,8 +146,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 13,
-        "published_count": 13,
+        "candidate_count": 14,
+        "published_count": 14,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -155,8 +155,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
+        "candidate_count": 4,
+        "published_count": 4,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -234,7 +234,8 @@
     "2026-11-28-events-gap-recovery-20261108.json",
     "2026-11-28-events-reviewed-backlog-20261114.json",
     "2026-11-28-events-additional-primary-20261114.json",
-    "2026-11-28-events-non-tamemap-20261114.json"
+    "2026-11-28-events-non-tamemap-20261114.json",
+    "2026-11-28-events-non-tamemap-next-20261114.json"
   ],
   "events": []
 }

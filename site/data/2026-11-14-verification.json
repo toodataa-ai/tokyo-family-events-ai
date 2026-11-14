@@ -3073,11 +3073,101 @@
           "sha256": "34f7d832df356fc82821aacf6b819dfb51fc4967685da34adaca8200e33d0b2e"
         }
       ]
+    },
+    {
+      "id": "next-primary-20261115-turner-exhibition",
+      "status": "verified",
+      "source": "https://turner2026-27.exhibit.jp/outline/index.html",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://turner2026-27.exhibit.jp/outline/index.html",
+          "checked_at": "2026-11-14T18:03:29+09:00",
+          "sha256": "65184cea827e1f386b8bdff700f11011ec4e5e34d44acc0a469eef23bd866214"
+        },
+        {
+          "url": "https://turner2026-27.exhibit.jp/ticket/",
+          "checked_at": "2026-11-14T16:27:14+09:00",
+          "sha256": "14c696d2a09d4d217cdc4dfaabf1a2db91366849a5751f00d010e673624a013c"
+        },
+        {
+          "url": "https://turner2026-27.exhibit.jp/",
+          "checked_at": "2026-11-14T16:26:43+09:00",
+          "sha256": "5af23decf6dbf6f7de91fc4cc6b7579af84efb0e29804f160ac0b09ca47151c5"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261115-hozuki-animate",
+      "status": "verified",
+      "source": "https://event.amnibus.com/hozuki-animate/",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://event.amnibus.com/hozuki-animate/",
+          "checked_at": "2026-11-14T16:26:42+09:00",
+          "sha256": "e44d8a4c79a4906a6fd04c96b5ea442edbab6342bfcd7ef35a58e86b09ee206a"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261115-nerima-flute-lecture",
+      "status": "verified",
+      "source": "https://6aa824c291af9b846bd1e300--lecture-concert-1115.netlify.app",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://6aa824c291af9b846bd1e300--lecture-concert-1115.netlify.app",
+          "checked_at": "2026-11-14T16:26:54+09:00",
+          "sha256": "37550a0057098d368891d1660fe03f8520d6ebadaef5edeae5f28bb86d93dfb1"
+        },
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002980",
+          "checked_at": "2026-11-14T16:27:00+09:00",
+          "sha256": "2d2880b722e89264efc499b0950a4abf06c881d6277fc514ecc5c98cbb6b2225"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 107,
-    "verified": 107,
+    "total": 110,
+    "verified": 110,
     "announced": 0,
     "corrected": 0
   }

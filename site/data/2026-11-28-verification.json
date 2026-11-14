@@ -2196,11 +2196,221 @@
           "sha256": "55d7974b42e5ec07d6bd638c432ea57bf1b67ec5a90f0e3d3ba35579121c4ca4"
         }
       ]
+    },
+    {
+      "id": "next-primary-20261128-minato-austria-market",
+      "status": "verified",
+      "source": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+          "checked_at": "2026-11-14T16:26:33+09:00",
+          "sha256": "36a35e6e1ad30ace83e2322126b2ad64c5754e22e6f505c7fd523200734dfdb0"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261128-minato-autumn-lightup",
+      "status": "verified",
+      "source": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+          "checked_at": "2026-11-14T16:26:33+09:00",
+          "sha256": "36a35e6e1ad30ace83e2322126b2ad64c5754e22e6f505c7fd523200734dfdb0"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261128-minato-karippa-sdgs",
+      "status": "verified",
+      "source": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+          "checked_at": "2026-11-14T16:26:33+09:00",
+          "sha256": "36a35e6e1ad30ace83e2322126b2ad64c5754e22e6f505c7fd523200734dfdb0"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261128-turner-exhibition",
+      "status": "verified",
+      "source": "https://turner2026-27.exhibit.jp/outline/index.html",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://turner2026-27.exhibit.jp/outline/index.html",
+          "checked_at": "2026-11-14T18:03:29+09:00",
+          "sha256": "65184cea827e1f386b8bdff700f11011ec4e5e34d44acc0a469eef23bd866214"
+        },
+        {
+          "url": "https://turner2026-27.exhibit.jp/ticket/",
+          "checked_at": "2026-11-14T16:27:14+09:00",
+          "sha256": "14c696d2a09d4d217cdc4dfaabf1a2db91366849a5751f00d010e673624a013c"
+        },
+        {
+          "url": "https://turner2026-27.exhibit.jp/",
+          "checked_at": "2026-11-14T16:26:43+09:00",
+          "sha256": "5af23decf6dbf6f7de91fc4cc6b7579af84efb0e29804f160ac0b09ca47151c5"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261128-hozuki-animate",
+      "status": "verified",
+      "source": "https://event.amnibus.com/hozuki-animate/",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://event.amnibus.com/hozuki-animate/",
+          "checked_at": "2026-11-14T16:26:42+09:00",
+          "sha256": "e44d8a4c79a4906a6fd04c96b5ea442edbab6342bfcd7ef35a58e86b09ee206a"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261128-wanko-odaiba",
+      "status": "verified",
+      "source": "https://japan-wanko-festa.com/",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://japan-wanko-festa.com/",
+          "checked_at": "2026-11-14T08:01:37.487314+00:00",
+          "sha256": "e1038ac887846c03e22610b8164059ec8fe1c16f3a766cfce2f88cd8daa4e9e5"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261129-meguro-math-19",
+      "status": "verified",
+      "source": "https://sgk2005.org/",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://sgk2005.org/",
+          "checked_at": "2026-11-14T16:26:57+09:00",
+          "sha256": "4d01998060a1a7fb06c856f2ec3cdde47978dd05cadd91e00a25d864af928403"
+        }
+      ]
+    },
+    {
+      "id": "next-primary-20261129-suginami-exchange-easy",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s030/event/28569.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-14",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28569.html",
+          "checked_at": "2026-11-14T16:27:22+09:00",
+          "sha256": "db1c92f9734a670a7d3ce5e66fb7dca74299834601b9ff6b9a6e273bdce58d84"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 73,
-    "verified": 67,
+    "total": 81,
+    "verified": 75,
     "announced": 6
   }
 }

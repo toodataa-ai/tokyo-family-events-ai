@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 286,
+  "expected_total_differences_after_governance": 292,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2307,6 +2307,59 @@
       "kind": "staging_only",
       "category": "pending_status_cleanup",
       "reason": "利用者依頼の残課題整理v1.36の限定リリース、CI、実配信5ファイル、モバイル・PC検証と598イベント保持の証跡。アプリへの配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/pending-issues.css",
+      "kind": "different",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/omitted.css",
+      "kind": "different",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/omitted.html",
+      "kind": "different",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/omitted.js",
+      "kind": "different",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "tests/omitted_page_contract.test.mjs",
+      "kind": "different",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": ".github/workflows/compact-status-decisions.yml",
+      "kind": "staging_only",
+      "category": "compact_status_decisions",
+      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修の不変候補を検証するmain専用CI。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

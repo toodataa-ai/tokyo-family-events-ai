@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261114-status-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-compact-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -13,13 +13,16 @@ function statusLine(title,value){
   return elem;
 }
 function renderCard(entry){
-  const article=textNode("article","","pending-issue-card");
+  const article=textNode("details","","pending-issue-card");
   article.dataset.workStatus=entry.work_status;
+  const summary=textNode("summary","","pending-issue-summary");
   const head=textNode("div","","pending-issue-card-top");
   head.appendChild(textNode("span",entry.category==="connection"?"サイトの取得に関する問題":"イベント情報の確認作業","pending-issue-kind"));
   head.appendChild(textNode("span",entry.status.label,"pending-issue-status"));
-  article.appendChild(head);
-  article.appendChild(textNode("h3",entry.title));
+  summary.appendChild(textNode("h3",entry.title));
+  summary.appendChild(head);
+  article.appendChild(summary);
+  const content=textNode("div","","pending-issue-content");
   const body=textNode("div","","pending-issue-parts");
   if(entry.work_status==="completed"){
     body.appendChild(statusLine("完了した対応",entry.now));
@@ -31,9 +34,9 @@ function renderCard(entry){
     body.appendChild(statusLine("代わりの対応",entry.workaround));
     body.appendChild(statusLine("今後の対応",entry.next));
   }
-  article.appendChild(body);
+  content.appendChild(body);
   if(entry.retrieval_status){
-    article.appendChild(statusLine("サイトへの接続（作業状況とは別）",
+    content.appendChild(statusLine("サイトへの接続（作業状況とは別）",
       entry.retrieval_status.label+"。"+entry.retrieval_status.detail));
   }
   const footer=textNode("div","","pending-issue-card-footer");
@@ -42,21 +45,20 @@ function renderCard(entry){
   a.target="_blank";
   a.rel="noopener noreferrer";
   footer.appendChild(a);
-  article.appendChild(footer);
+  content.appendChild(footer);
+  article.appendChild(content);
   return article;
 }
 function render(model){
   const f=byId("pendingCategoryFilter").value;
-  const items=model.remaining.filter(x=>f==="all"||x.category===f);
+  const work=byId("pendingStatusFilter").value;
+  const items=model.entries.filter(x=>(f==="all"||x.category===f)&&(work==="all"||x.work_status===work));
   const list=byId("pendingIssueList");
   list.replaceChildren();
   for(const item of items)list.appendChild(renderCard(item));
-  if(!items.length)list.appendChild(textNode("p","選択した区分の残課題はありません。"));
-  const completed=byId("completedIssueList");
-  completed.replaceChildren(...model.completed.map(renderCard));
-  byId("completedIssueCount").textContent=model.counts.completed;
+  if(!items.length)list.appendChild(textNode("p","選択した条件に当てはまる項目はありません。"));
   byId("pendingVisibleCount").textContent=
-    items.length+"項目を表示（現在の残課題 "+model.counts.total+"項目。完了した対応は含みません）";
+    items.length+"／"+model.entries.length+"項目を表示（残課題 "+model.counts.total+"項目・完了 "+model.counts.completed+"項目）";
 }
 async function getJson(path){
   const res=await fetch(path,{cache:"no-store"});
@@ -77,18 +79,19 @@ async function init(){
     byId("pendingCheckedAt").textContent="確認ができていないため、残課題が0件とは表示していません。";
     byId("pendingIssueList").replaceChildren(textNode("p","現在一覧を取得できません。時間をおいてもう一度お試しください。"));
     byId("pendingVisibleCount").textContent="未確認";
-    byId("completedIssueCount").textContent="未確認";
-    byId("completedIssueList").replaceChildren(textNode("p","完了した対応の記録も取得できませんでした。"));
+    byId("pendingCompleted").textContent="未確認";
     return;
   }
   byId("pendingTotal").textContent=model.counts.total;
+  byId("pendingCompleted").textContent=model.counts.completed;
   byId("pendingConnection").textContent=model.counts.pending;
   byId("pendingVerification").textContent=model.counts.deferred;
-  byId("pendingIntro").textContent="現在の残課題と、対応が完了した記録を分けています。件数は課題のまとまりで、候補数や取得できないページ数とは異なります。";
+  byId("pendingIntro").textContent="残課題・保留・完了を一覧で表示します。各項目を開くと、対応内容や確認できた範囲をご覧いただけます。";
   byId("pendingCheckedAt").textContent=
     "取得状況の最終監査："+(model.is_audit_current?formatJst(model.audit_checked_at):"最新結果は取得できませんでした")+
     "　／　対応リストの確認日："+(model.catalog_reviewed_at||"未確認")+
     "。掲載内容の確認はアクセス成功と別に実施します。";
+  byId("pendingStatusFilter").addEventListener("change",()=>render(model));
   byId("pendingCategoryFilter").addEventListener("change",()=>render(model));
   render(model);
 }

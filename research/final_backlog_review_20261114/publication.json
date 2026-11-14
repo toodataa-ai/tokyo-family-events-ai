@@ -63,5 +63,23 @@
   "published_total": 369,
   "old_event_mutations": 0,
   "old_event_removals": 0,
-  "old_source_errors_changed": 0
+  "old_source_errors_changed": 0,
+  "final_public_release_proof": {
+    "verified_at": "2026-11-14T01:47:28.365207+00:00",
+    "public_version": "1.32",
+    "public_release": "release/2026-11-14-r1",
+    "registry_pages_run": 43542428978,
+    "registry_pages_conclusion": "success",
+    "production_app_js_sha256": "0812d8687e352cba410b6d0ad1d0b7e650adf593f11db93f4379d794da613990",
+    "public_app_matches_production": true,
+    "public_catalog_matches_production": true,
+    "public_registry_matches_release_snapshot": true,
+    "public_total": 369
+  },
+  "issue_updates": {
+    "41": 6869618375,
+    "52": 6869626446,
+    "62": 6869628077,
+    "65": 6869629706
+  }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-15-r1",
+  "current_public_release": "release/2026-11-15-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -338,6 +338,15 @@
       "workflow_run_id": 43644991399,
       "public_version": "1.36",
       "note": "残課題ページを現在の2項目と完了3項目に分離。完了分は対象範囲・確認日付きで折りたたみ、件数から除外。作業状態と接続監査を独立させ、一覧取得失敗時は未確認を表示。公開5ファイルの一致と390/1280幅の表示・絞り込み・折りたたみを確認。598イベントおよび他の未公開UIは変更なし。"
+    },
+    {
+      "release_id": "release/2026-11-15-r2",
+      "branch": "release/2026-11-15-r2",
+      "commit_sha": "9aa067f0756bb900ff3f95e33f1dee7473e9c63f",
+      "deployed_at": "2026-11-14T22:22:09.130882+00:00",
+      "workflow_run_id": 43647527937,
+      "public_version": "1.37",
+      "note": "残課題・保留・完了の全5項目を同じ一覧へ配置し、項目ごとの詳細は初期折りたたみ。残2/完了3と状態別絞り込みを表示。掲載判断も名称・判定・理由抜粋の一覧とし、理由全文・公式リンクは詳細内へ保持。390/1280幅の実配信で開閉・検索・追加表示等を確認。598イベントと310判定原本は不変。"
     }
   ],
   "current_public_version": "1.34"

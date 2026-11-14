@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15T06:53:52.749300+09:00",
-  "baseline_app_release": "release/2026-11-15-r1",
-  "baseline_production_commit": "5d7f8b961e6c93e5a8950c426e3ffddac9a6d7aa",
+  "audited_at_jst": "2026-11-15T07:22:09.135267+09:00",
+  "baseline_app_release": "release/2026-11-15-r2",
+  "baseline_production_commit": "9aa067f0756bb900ff3f95e33f1dee7473e9c63f",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 292,
+  "expected_total_differences_after_governance": 288,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2311,60 +2311,23 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/pending-issues.css",
-      "kind": "different",
-      "category": "compact_status_decisions",
-      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/omitted.css",
-      "kind": "different",
-      "category": "compact_status_decisions",
-      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/omitted.html",
-      "kind": "different",
-      "category": "compact_status_decisions",
-      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/omitted.js",
-      "kind": "different",
-      "category": "compact_status_decisions",
-      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "tests/omitted_page_contract.test.mjs",
-      "kind": "different",
-      "category": "compact_status_decisions",
-      "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修。既存の採否・イベントデータは変更しない。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
       "path": ".github/workflows/compact-status-decisions.yml",
       "kind": "staging_only",
       "category": "compact_status_decisions",
       "reason": "利用者依頼の残課題・掲載判断ページの一覧化。名称と状態・理由抜粋を表示し、詳細は初期折りたたみとする限定改修の不変候補を検証するmain専用CI。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/compact_status_decisions_20261115.json",
+      "kind": "staging_only",
+      "category": "compact_status_decisions",
+      "reason": "v1.37の限定8パス・読み取りCI・ステージング/本番の折りたたみ一覧検証と598イベント/310判定原本保持の証跡。配信アプリへは不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
-  "latest_verified_staging_baseline_commit": "bb7acfcdf3aa42fdded138f87cdd6ce835a575d2",
+  "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",
   "remaining_unclassified_paths": [],
-  "release_scope_note": "v1.36は残課題ページ関連5ファイルと回帰テストのみ。現在2項目と完了3項目を分け、接続監査と対応状態を独立表示。データ598件は不変。既存のsource-auditへの導線・ローカル監査パス差と他の未公開UI/Workerは引き続きpending_releaseで保持。"
+  "release_scope_note": "v1.37は残課題・掲載判断ページ関連6ファイルとテスト2ファイルのみ。全5状態の俯瞰・詳細折りたたみ・理由抜粋の一覧を公開。598イベントと310判定原本は不変。既存のsource-audit導線・ローカル監査パス差と他の未公開UI/Workerはpending_releaseのまま保持。"
 }

@@ -45,3 +45,17 @@ jobs:
           python3 ../scanner/tools/validate_protected_events.py --base-ref d05e78f3550ec0f302ab5a3c6550414e7dce5391 site/data
           python3 ../scanner/tools/validate_non_regression.py --base-ref d05e78f3550ec0f302ab5a3c6550414e7dce5391 site/data
           python3 ../scanner/tools/validate_family_fit_quality.py --base-ref d05e78f3550ec0f302ab5a3c6550414e7dce5391
+      - uses: actions/checkout@v4
+        with:
+          ref: 8acf87c86dca2370ee075248645e1bfc5e2aeadb
+          path: app-candidate
+          fetch-depth: 0
+      - name: Verify isolated factual guidance refresh
+        working-directory: app-candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "f05bfe3698c0d61ece44509c4c8d8597e058125f"
+          test "$(git diff --name-only HEAD^ HEAD)" = "site/audit/pending_issues_catalog.json"
+          git diff --quiet HEAD^ HEAD -- site/data prompts policy tools
+          npm test

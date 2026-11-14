@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "273c8753a9d5ea09f38e580d4c51b4c87abd0189",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 257,
+  "expected_total_differences_after_governance": 264,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2075,6 +2075,62 @@
       "kind": "staging_only",
       "category": "non_tamemap_ops_review",
       "reason": "256差分の厳密な分類結果と7件の差分ポリシーテスト・回帰検証の証跡。記録前の正確なコミットを示し、未公開UIを公開承認と扱わない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_non_tamemap_next_addition.py",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の検証コード。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_non_tamemap_next_gate.py",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の回帰テスト。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/non-tamemap-next-review.yml",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用のCI。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_next_review_20261114/publishable.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の照合仕様・調査証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_next_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の照合仕様・調査証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_next_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の照合仕様・調査証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_next_review_20261114/scope_status.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_next_data_review",
+      "reason": "ためまっぷ以外の第2追加バッチ25企画31個票を、公式根拠・受付条件・個別評価・既存448個票の保持とともに固定して検証するmain専用の照合仕様・調査証跡。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

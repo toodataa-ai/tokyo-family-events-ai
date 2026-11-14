@@ -51,6 +51,32 @@
     "pages_conclusion": "success",
     "public_catalog_matches_production": true,
     "public_app_js_unchanged": true,
-    "registry_refresh_public_verification": "Verify after this registry commit Pages deployment; this evidence does not claim that future run is complete."
+    "registry_refresh_public_verification": {
+      "pages_run": 43582470326,
+      "conclusion": "success",
+      "public_version": "1.34",
+      "release_snapshot_matches_registry": true
+    }
+  },
+  "final_public_verification": {
+    "verified_at": "2026-11-14T09:52:08.930549+00:00",
+    "version": "1.34",
+    "release": "release/2026-11-14-r3",
+    "public_data_records": 480,
+    "runtime_files_match_production": true,
+    "app_js_unchanged": true,
+    "registry_matches_snapshot": true,
+    "data_snapshot": "data-release/2026-11-14-r665",
+    "environment_unclassified": 0,
+    "pending_app_paths_not_promoted": 10
+  },
+  "final_mobile_guidance_verification": {
+    "verified_at": "2026-11-14T09:51:48.047156+00:00",
+    "public_home_version": "1.34",
+    "public_guidance_total": 480,
+    "reviewed_older_count_visible": 196,
+    "unavailable_evidence_count_visible": 10,
+    "mobile_no_overflow": true,
+    "remaining_work_not_claimed_complete": true
   }
 }

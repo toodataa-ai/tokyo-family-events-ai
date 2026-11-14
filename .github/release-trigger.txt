@@ -1,17 +1,17 @@
-# Isolated factual guidance refresh after verified598-record data publication.
+# Release only the pending/completed status cleanup requested by the user.
 operation=release
 production_ref=production
-production_sha=48ea14ef33d762958448ab562fd1d5f1ae4c834e
-previous_production_sha=f05bfe3698c0d61ece44509c4c8d8597e058125f
-candidate_sha=8acf87c86dca2370ee075248645e1bfc5e2aeadb
-pr=123
-target_public_version=1.35
-previous_public_release=release/2026-11-14-r3
-release_date_jst=2026-11-14
+production_sha=5d7f8b961e6c93e5a8950c426e3ffddac9a6d7aa
+previous_production_sha=48ea14ef33d762958448ab562fd1d5f1ae4c834e
+candidate_sha=5f2ad98c8f8e18c0f25eb72bcac00cc0335feccf
+pr=125
+target_public_version=1.36
+previous_public_release=release/2026-11-14-r4
+release_date_jst=2026-11-15
 expected_data_production_sha=847e388e65b99e38a0f108ecc96009778b3fdcd2
-approved_scope=site/audit/pending_issues_catalog.json
+approved_scope=site/audit/pending_issues_catalog.json,site/pending-issues-model.mjs,site/pending-issues.css,site/pending-issues.html,site/pending-issues.js,tests/pending_issues_release.test.mjs
 event_record_mutation=none
 source_registry_mutation=none
-read_only_validation_run=43592538020
-data_publication_run=43592763300
-note=Publish factual guidance only:851 candidate adjudications complete,99 programmes118 weekly records added since480,total598;46 failed source bodies and24 held candidates plus2 direct follow-up holds remain explicit. No unrelated UI promotion.
+read_only_validation_run=43644660560
+staging_publication_run=43644780293
+note=Separate2 remaining items from3 completed scopes in collapsed history; independent connectivity status; retain holds and unknown load failures. Preserve all598 events and unrelated UI.

@@ -3,17 +3,17 @@
   "sat": "2026-11-14",
   "sun": "2026-11-15",
   "label": "11/14(土)〜11/15(日)",
-  "generated": "2026-11-13T12:50:00.144975+00:00",
+  "generated": "2026-11-14T00:48:36.106119+00:00",
   "horizon_index": 2,
   "publication_tier": "full",
   "verification_file": "2026-11-14-verification.json",
   "run_file": "2026-11-14-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 58,
+    "candidate_count": 90,
     "duplicate_removed": 0,
     "excluded_count": 5,
-    "published_count": 53,
+    "published_count": 85,
     "wards": [
       {
         "ward": "千代田区",
@@ -137,8 +137,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 11,
-        "published_count": 11,
+        "candidate_count": 20,
+        "published_count": 20,
         "note": "v1.5完全再探索。候補0件、掲載0件。 2026-10-17固定サイトと主催者公式照合で2件を差分追加。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08都公式・主催者の個別実測確認で色彩ワークショップを1件追加（旧探索計測は不変）。"
       },
       {
@@ -146,8 +146,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 1,
-        "published_count": 1,
+        "candidate_count": 17,
+        "published_count": 17,
         "note": "v1.5完全再探索。候補0件、掲載0件。"
       },
       {
@@ -182,8 +182,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 7,
+        "published_count": 7,
         "note": "v1.5完全再探索。候補0件、掲載0件。 2026-10-17固定サイトと主催者公式照合で1件を差分追加。 2026-11-08動物園主催者公式11/01告知で11/15 ZOOパークフェスタを1件追加。旧探索計測は不変。"
       },
       {
@@ -191,8 +191,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 8,
-        "published_count": 7,
+        "candidate_count": 10,
+        "published_count": 9,
         "note": "v1.5完全再探索。候補8件、掲載6件。 v1.6除外再審査反映。"
       },
       {
@@ -234,7 +234,8 @@
     "2026-11-14-events-verified-zoo-20261108.json",
     "2026-11-14-events-reviewed-nakano-20261113.json",
     "2026-11-14-events-reviewed-hiromachi-20261113.json",
-    "2026-11-14-events-reviewed-community-20261113.json"
+    "2026-11-14-events-reviewed-community-20261113.json",
+    "2026-11-14-events-reviewed-backlog-20261114.json"
   ],
   "events": []
 }

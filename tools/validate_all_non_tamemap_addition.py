@@ -10,7 +10,7 @@ from validate_official_schedule_audit import validate
 
 BASE = 'd05e78f3550ec0f302ab5a3c6550414e7dce5391'
 SPEC = Path(__file__).resolve().parents[1] / 'research/all_non_tamemap_review_20261114/publishable.json'
-SPEC_SHA256 = 'd7dd8bdc826e27f95f8cc1f3415088a82423b335d554939561099218d3768e04'
+SPEC_SHA256 = '08a1d94a1bef380103d33dbda07b7f6d047dc211e383f05f208516352cfcab5f'
 COUNTS = {'2026-11-14': 22, '2026-11-21': 29, '2026-11-28': 24, '2026-12-05': 23, '2026-12-12': 20}
 WEEKS = tuple(COUNTS)
 KEY = 'all_non_tamemap_review_20261114'

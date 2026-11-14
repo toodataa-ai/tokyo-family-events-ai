@@ -22,7 +22,7 @@ class AllReviewTests(unittest.TestCase):
   self.assertIn('各20人',d['shibuya-tennis-family']['reservation']['note'])
   self.assertTrue(d['playground-gym']['reservation']['required']);self.assertFalse(d['playground-walk']['reservation']['required'])
   for r in rows:
-   e=r['event'];self.assertGreaterEqual(e['date_start'],'2026-11-15');self.assertNotIn('tamemap',e['official_url'])
+   e=r['event'];self.assertNotIn('sunshinecity.jp/archives',e['image']);self.assertGreaterEqual(e['date_start'],'2026-11-15');self.assertNotIn('tamemap',e['official_url'])
    self.assertEqual(len(e['family_fit']['axes']),8);self.assertEqual(e['family_fit']['review']['method'],'individual_evidence_review')
    if e['family_fit']['grade']in ['C','D']:self.assertTrue(r['decision']['override_reason'])
    if r['review_key']=='meguro-free-space':self.assertFalse(e['date_start']<='2026-11-22'<=e['date_end']);self.assertFalse(e['date_start']<='2026-11-23'<=e['date_end'])

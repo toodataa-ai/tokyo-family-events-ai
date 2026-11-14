@@ -33,10 +33,10 @@ jobs:
         working-directory: scanner
         run: |
           npm test
-          python3 -m unittest discover -s tests -p test_non_tamemap_last_gate.py
       - name: Verify the frozen 7-file data candidate and all existing records
         working-directory: candidate
         run: |
+          python3 -m unittest discover -s ../scanner/tests -p test_non_tamemap_last_gate.py
           python3 ../scanner/tools/validate_non_tamemap_last_addition.py --base-ref 99d1082e560ab9469d93ef431af2704fed12e4da
           python3 ../scanner/tools/validate_data.py --strict --min-image-coverage 0.70 site/data
           python3 ../scanner/tools/validate_decisions.py --strict site/data

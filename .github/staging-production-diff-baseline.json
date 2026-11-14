@@ -1040,6 +1040,78 @@
       "reason": "追加・既存再評価・旧監査整理の進捗を分け、未完了を完了と誤表示しないための記録。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_older_family_fit_correction.py",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "既存196個票の凍結評価を照合し、448開催事実・履歴・旧取得失敗の改変を拒否するmain専用ゲート。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_older_family_fit_gate.py",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "評価以外の書換え、古い候補IDの消去、対象外2件・根拠再取得待ち10件の誤評価完了を拒否する検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/older-family-fit-review.yml",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "不変SHAの196評価訂正候補を読み取り監査するmainの専用CI。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/older_family_fit_review_20261114/review.json",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "公式本文に基づく196週別個票・116企画の訂正前後評価を固定する仕様。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/older_family_fit_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "再評価の取得URL・時刻・ハッシュと引用、強み・制約の個別証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/older_family_fit_review_20261114/review_ledger.json",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "208個票を再評価196・根拠再取得待ち10・ためまっぷ保留2に分けた点検台帳。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/older_family_fit_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "older_assessment_review",
+      "reason": "既存点検の範囲と星変更、候補ID互換、未解消10件を説明する記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_review_20261114/publication.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_publication_proof",
+      "reason": "40件追加のPages成功、本番81ファイル比較、旧408件保持と成功snapshotの完了証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/non_tamemap_review_20261114/public_browser_proof.json",
+      "kind": "staging_only",
+      "category": "non_tamemap_publication_proof",
+      "reason": "40件追加後の実スマートフォン表示で星・絞込・年齢・料金・申込条件を確かめた証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "eab75ab00592c5b38299f3e29d25fe0f8dcfdece",

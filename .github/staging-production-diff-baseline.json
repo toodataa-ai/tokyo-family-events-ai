@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "033c9e12728f1fca18899b3b47d9a8ca62e3ab48",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 223,
+  "expected_total_differences_after_governance": 227,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -870,6 +870,38 @@
       "kind": "staging_only",
       "category": "source_review_evidence",
       "reason": "追加39件の本番配信・旧369件保持・ブラウザ確認の証跡。公開アプリへは移植しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_rail_family_fit_correction.py",
+      "kind": "staging_only",
+      "category": "assessment_review_guard",
+      "reason": "公式本文に基づく鉄道上部空間1件の総合A訂正を固定し、408件の開催事実・他企画評価・参照元失敗の改変を拒否する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_rail_family_fit_gate.py",
+      "kind": "staging_only",
+      "category": "assessment_review_guard",
+      "reason": "公式本文に基づく鉄道上部空間1件の総合A訂正を固定し、408件の開催事実・他企画評価・参照元失敗の改変を拒否する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/rail-family-fit-review.yml",
+      "kind": "staging_only",
+      "category": "assessment_review_guard",
+      "reason": "公式本文に基づく鉄道上部空間1件の総合A訂正を固定し、408件の開催事実・他企画評価・参照元失敗の改変を拒否する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/rail_family_fit_review_20261114/review.json",
+      "kind": "staging_only",
+      "category": "assessment_review_guard",
+      "reason": "公式本文に基づく鉄道上部空間1件の総合A訂正を固定し、408件の開催事実・他企画評価・参照元失敗の改変を拒否する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

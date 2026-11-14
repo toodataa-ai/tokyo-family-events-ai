@@ -1760,6 +1760,32 @@
         "v15-d489193d95be"
       ],
       "event_facts_changed": false
+    },
+    {
+      "run_id": "aipaku-review-20261115",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-15",
+      "executed_at": "2026-11-14T23:45:16.316780+00:00",
+      "base_data_staging_sha": "6fb1abd131411ba64bbb175667c3d8a0fc922d69",
+      "base_data_production_sha": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
+      "target_weekends": [
+        "2026-11-14"
+      ],
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "aipaku-20261115-winter-aipaku-tokyo"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "fixed_851_adjudication_complete": true,
+      "unreviewed_candidates": 0,
+      "official_evidence_urls": [
+        "https://www.i-89.jp/"
+      ],
+      "note": "三角広場から外部主催者へ移るリンクを見落としたあいぱく1個票を追加。前回のステージング602件・既存評価根拠・履歴・取得失敗を保持。本番はユーザーの確認待ち。"
     }
   ]
 }

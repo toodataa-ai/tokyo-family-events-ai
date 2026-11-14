@@ -3,17 +3,17 @@
   "sat": "2026-11-14",
   "sun": "2026-11-15",
   "label": "11/14(土)〜11/15(日)",
-  "generated": "2026-11-14T23:31:38.638222+00:00",
+  "generated": "2026-11-14T23:45:16.316780+00:00",
   "horizon_index": 2,
   "publication_tier": "full",
   "verification_file": "2026-11-14-verification.json",
   "run_file": "2026-11-14-run.json",
   "coverage": {
     "sources_checked": 69,
-    "candidate_count": 137,
+    "candidate_count": 138,
     "duplicate_removed": 0,
     "excluded_count": 5,
-    "published_count": 132,
+    "published_count": 133,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,8 +47,8 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 3,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "v1.5完全再探索。候補0件、掲載0件。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
       },
       {
@@ -239,7 +239,8 @@
     "2026-11-14-events-additional-primary-20261114.json",
     "2026-11-14-events-non-tamemap-20261114.json",
     "2026-11-14-events-non-tamemap-next-20261114.json",
-    "2026-11-14-events-all-non-tamemap-20261114.json"
+    "2026-11-14-events-all-non-tamemap-20261114.json",
+    "2026-11-14-events-aipaku-20261115.json"
   ],
   "events": []
 }

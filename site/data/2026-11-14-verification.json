@@ -3754,11 +3754,51 @@
           "sha256": "d43d6d3fb91c2ec288867f9f8ed663ca463c80c95f86f4cc896f29f520957f60"
         }
       ]
+    },
+    {
+      "id": "aipaku-20261115-winter-aipaku-tokyo",
+      "status": "verified",
+      "source": "https://www.i-89.jp/",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://www.i-89.jp/",
+          "checked_at": "2026-11-15T08:40:40+09:00",
+          "sha256": "ffd0e8c0e42e285212d2ed3873fad55c17afed0c0472a832eb69a1e8df54ef07"
+        },
+        {
+          "url": "https://www.sumitomo-sankakuhiroba.jp/event/",
+          "checked_at": "2026-11-15T08:40:40+09:00",
+          "sha256": "a1a199731507fb2948e5ccdf6efa0565d5eddb0c1c8cfa66841576b1497f6329"
+        },
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000068.000065431.html",
+          "checked_at": "2026-11-15T08:40:39+09:00",
+          "sha256": "726ac95bfd03ef65abeed783928ae6e84820d44fac83f5db86512a305819e010"
+        },
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000070.000065431.html",
+          "checked_at": "2026-11-15T08:40:41+09:00",
+          "sha256": "f4ccee569a859d5dc40e9f3a87dbebbb1853633d7bbb77df5e2777edb20c159d"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 132,
-    "verified": 132,
+    "total": 133,
+    "verified": 133,
     "announced": 0,
     "corrected": 0
   }

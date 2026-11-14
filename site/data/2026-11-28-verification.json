@@ -3046,11 +3046,41 @@
           "sha256": "1855153fb82c113ff837e07297f1df3d581f6adc6158d228721b33d809830cc8"
         }
       ]
+    },
+    {
+      "id": "evidence-recovery-20261128-kita-iwate-fair",
+      "status": "verified",
+      "source": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "evidence": [
+        {
+          "url": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html",
+          "checked_at": "2026-11-15T07:34:49+09:00",
+          "sha256": "a21b31f9e6f3bead4247b24efd81889fbc2dadb77e09dfdb865de982d87fc81c"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/living/community/1017287/1002202.html",
+          "checked_at": "2026-11-15T07:32:37+09:00",
+          "sha256": "46bbe7a926d052e4fd2687315de617076a7b23d5161e4e39f6ef395e73af4f91"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 106,
-    "verified": 100,
+    "total": 107,
+    "verified": 101,
     "announced": 6
   }
 }

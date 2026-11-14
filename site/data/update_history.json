@@ -1715,6 +1715,53 @@
         "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/11.html"
       ],
       "note": "本文照合したためまっぷを除く追加分のみ公開。週をまたぐ企画は各週に掲載し、休館日をまたがない。既存480個票・履歴・取得失敗を保持。固定851候補の判定は完了。取得不能46本文・保留24候補を保持し、全本文確認成功とは主張しない。"
+    },
+    {
+      "run_id": "evidence-recovery-20261115",
+      "run_type": "manual_evidence_recovery",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-15",
+      "executed_at": "2026-11-14T22:45:24.086224+00:00",
+      "base_data_production_sha": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
+      "target_weekends": [
+        "2026-11-07",
+        "2026-11-14",
+        "2026-11-21",
+        "2026-11-28"
+      ],
+      "added_weekly_records": 5,
+      "new_event_ids": [
+        "evidence-recovery-20261122-magokoro-marche",
+        "evidence-recovery-20261121-mucha-weekend",
+        "evidence-recovery-20261121-kita-iwate-fair",
+        "evidence-recovery-20261122-meguro-dance-view",
+        "evidence-recovery-20261128-kita-iwate-fair"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 6,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "fixed_851_adjudication_complete": true,
+      "unreviewed_candidates": 0,
+      "official_evidence_urls": [
+        "https://kita-kei-kyo.org/iwate/iwate-fair2026.html",
+        "https://shibu-cul.jp/event/52959",
+        "https://www.city.meguro.tokyo.jp/sports/event/taiikusai_dance.html",
+        "https://www.city.tokyo-nakano.lg.jp/kosodate/wakamonoshien/magokoromarche.html"
+      ],
+      "note": "公式代替根拠で4企画・週別5件を追加、既存6件の8軸を再確認（総合A/B変更なし）。既存598件の開催事実・過去履歴・取得失敗は保持。手動変更はユーザーのステージング確認後だけ本番反映する。",
+      "reviewed_weekly_records": 6,
+      "reviewed_programs": 6,
+      "grade_changes": 0,
+      "changed_event_ids": [
+        "v15-08e4ca0aaaea",
+        "r16-896541e2bda1",
+        "official-2026-yayoi-fukusaku",
+        "v15-dbcd6b0db9e1",
+        "v15-76d7806297bb",
+        "v15-d489193d95be"
+      ],
+      "event_facts_changed": false
     }
   ]
 }

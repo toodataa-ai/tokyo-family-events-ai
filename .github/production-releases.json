@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-14-r3",
+  "current_public_release": "release/2026-11-14-r4",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -320,6 +320,15 @@
       "workflow_run_id": 43582308128,
       "public_version": "1.34",
       "note": "ためまっぷ以外の残件を順番に進める継続依頼に対応。追加40件(run43573187010)、既存196件の個別評価補足・訂正(run43575480117)、今回31件(run43581456344)と中野区検定1件(run43582156712)を公開。旧408件から55企画72週別個票を追加して合計480件。data-production d05e78f / data-release/2026-11-14-r665。本番87ファイル一致・旧個票と履歴保持・今回スマホ9ケースを検証。production PR121は残課題カタログ9文だけ変更、固定候補CI43581943377・Pages43582308128成功。評価根拠再取得不可10件、指定保留Tamemap2件、全851候補の個別照合未完了を明記。過去杉並監査を手動再照合へ整理、115未分類と種別不一致を個別調査し解消。未公開10アプリパスは昇格せず、Worker・その他UI・参照元不変。前版v1.33をロールバック保持。"
+    },
+    {
+      "release_id": "release/2026-11-14-r4",
+      "branch": "release/2026-11-14-r4",
+      "commit_sha": "48ea14ef33d762958448ab562fd1d5f1ae4c834e",
+      "deployed_at": "2026-11-14T12:05:37.435370+00:00",
+      "workflow_run_id": 43592955747,
+      "public_version": "1.35",
+      "note": "固定851候補の判定完了と99企画118週別個票の追加・合計598件を説明文に反映。本文取得不能46件・保留24候補と直接追跡の保留2企画を明示。productionベースの単一JSONのみ、既存480個票と未承認UIを保持。データ公開43592763300・92公開JSON・モバイル10例の照合成功。"
     }
   ],
   "current_public_version": "1.34"

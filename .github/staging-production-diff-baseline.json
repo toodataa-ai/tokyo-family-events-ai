@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-14T18:49:13.879682+09:00",
-  "baseline_app_release": "release/2026-11-14-r3",
-  "baseline_production_commit": "f05bfe3698c0d61ece44509c4c8d8597e058125f",
+  "audited_at_jst": "2026-11-14T21:05:37.436756+09:00",
+  "baseline_app_release": "release/2026-11-14-r4",
+  "baseline_production_commit": "48ea14ef33d762958448ab562fd1d5f1ae4c834e",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+  "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
   "expected_total_differences_after_governance": 284,
   "allowed_differences": [
@@ -2295,7 +2295,7 @@
       "requires_user_approval_to_release": true
     }
   ],
-  "latest_verified_staging_baseline_commit": "e90488e2f0eb0acda399402382c998aba4494b21",
+  "latest_verified_staging_baseline_commit": "1856b3bc4b542a05c2bdba779f745a7d02372c19",
   "remaining_unclassified_paths": [],
-  "release_scope_note": "本番アプリv1.33はe311ee7を保持。データは40個票追加で448件、196個票の評価を再点検。旧115未分類パスは内容別に登録し、コピー/検索の旧キャッシュ識別子差を解消、収集器の種別不一致をdifferentに訂正。未公開の監査導線・履歴画面・Worker候補はpending_releaseとして保持し、本番公開の承認とはしない。"
+  "release_scope_note": "本番v1.35は851候補の判定結果・合計598件と保留理由を説明文だけに反映。固定851候補は未着手0、本文取得不能46件・保留24候補と直接追跡の保留2企画を保持。旧480個票を保持して99企画118個票を追加。未公開の監査導線・履歴画面・Worker等はpending_releaseのまま、本番承認や一括昇格を行わない。"
 }

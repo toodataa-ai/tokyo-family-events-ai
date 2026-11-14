@@ -75,5 +75,112 @@
       "status": "blocked_projection_schedule",
       "reason": "11/14開始は確認。現在の土日祝投影枠が本文になく、開始日を全週に展開しない。"
     }
-  ]
+  ],
+  "publication": {
+    "data_production_sha": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
+    "data_staging_same_sha": true,
+    "data_release_snapshot": "data-release/2026-11-14-r669",
+    "data_publication_workflow_run": 43592763300,
+    "read_only_ci_run": 43592538020,
+    "control_pr": 122,
+    "guidance_pr": 123,
+    "live_json_verification": {
+      "verified_at": "2026-11-14T12:02:59.467119+00:00",
+      "public_total": 598,
+      "old_records_unchanged": 480,
+      "added_records": 118,
+      "new_programs": 99,
+      "week_counts": {
+        "2026-11-07": 52,
+        "2026-11-14": 132,
+        "2026-11-21": 150,
+        "2026-11-28": 106,
+        "2026-12-05": 87,
+        "2026-12-12": 71
+      },
+      "files_compared": 92,
+      "all_files_match_candidate": true,
+      "history_preserved": true
+    },
+    "mobile_cases_verified": [
+      {
+        "name": "当日参加メニュー",
+        "week": "2026-11-28",
+        "stars": 2,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "みんなでわくわくキャンプ体験",
+        "week": "2026-11-28",
+        "stars": 3,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "Dr.コルチャック",
+        "week": "2026-11-28",
+        "stars": 2,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "元イスラエル兵士",
+        "week": "2026-11-28",
+        "stars": 2,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "車いすテニス体験会 小中学生",
+        "week": "2026-12-12",
+        "stars": 3,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "フリースペース",
+        "week": "2026-11-21",
+        "stars": 3,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "タチウオ愛",
+        "week": "2026-11-14",
+        "stars": 3,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "世界のお酒フェス",
+        "week": "2026-11-21",
+        "stars": 1,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "オルセー美術館所蔵",
+        "week": "2026-11-21",
+        "stars": 2,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "name": "PLAYGROUND WALK",
+        "week": "2026-11-21",
+        "stars": 3,
+        "star_filter_matches": true,
+        "mobile_no_overflow": true
+      }
+    ],
+    "app_production_sha": "48ea14ef33d762958448ab562fd1d5f1ae4c834e",
+    "app_version": "1.35",
+    "app_release_snapshot": "release/2026-11-14-r4",
+    "app_publication_workflow_run": 43592955747,
+    "public_guidance": {
+      "guidance_matches": true,
+      "issues": 5
+    }
+  }
 }

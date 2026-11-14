@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import vm from 'node:vm';
 import {prepareIssues,validateCatalog,validateAudit,retrievalStatus} from '../site/pending-issues-model.mjs';
 const read=p=>fs.readFileSync(p,'utf8');
 const catalog=JSON.parse(read('site/audit/pending_issues_catalog.json'));
@@ -43,3 +44,16 @@ assert.match(js,/textContent/);assert.doesNotMatch(js,/\.innerHTML\s*=/);
 assert.match(read('site/index.html'),/href="pending-issues\.html"/);
 for(const id of ['pendingTotal','pendingConnection','pendingVerification','pendingIssueList','pendingCategoryFilter','completedIssueCount','completedIssueList'])assert.ok(page.includes(`id="${id}"`));
 console.log('PASS: remaining/completed counts, explicit holds, independent audit changes, missing evidence and safe rendering');
+
+// Exercise the actual asynchronous load-failure handler, not only model fixtures.
+const nodes=new Map();
+const node=()=>({textContent:'—',children:[],replaceChildren(...children){this.children=children;}});
+const document={getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},createElement:node};
+const context=vm.createContext({document,fetch:async()=>({ok:false,status:503}),console:{error(){},warn(){}}});
+const runtime=js.replace(/^import[^\n]+\n/,'').replace(/\ninit\(\);\s*$/,'\nglobalThis.initStatusPage=init;');
+vm.runInContext(runtime,context);await context.initStatusPage();
+assert.equal(nodes.get('pendingVisibleCount').textContent,'未確認');
+assert.equal(nodes.get('completedIssueCount').textContent,'未確認');
+assert.notEqual(nodes.get('pendingTotal')?.textContent,'0');
+assert.match(nodes.get('completedIssueList').children[0].textContent,/取得できません/);
+console.log('PASS: actual load failure keeps both lists unknown and does not access a missing model');

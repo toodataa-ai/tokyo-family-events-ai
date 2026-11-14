@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 121,
-    "verified": 113,
+    "published": 150,
+    "verified": 142,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2477,5 +2477,50 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "all_non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "all-reviewed-20261123-sugi-500",
+      "all-reviewed-20261122-sugi-598",
+      "all-reviewed-20261121-sugi-602",
+      "all-reviewed-20261121-sugi-685",
+      "all-reviewed-20261123-sugi-686",
+      "all-reviewed-20261121-sugi-711",
+      "all-reviewed-20261122-sugi-730",
+      "all-reviewed-20261122-sugi-809",
+      "all-reviewed-20261121-sugi-810",
+      "all-reviewed-20261123-arakawa-papa",
+      "all-reviewed-20261123-arakawa-sketch",
+      "all-reviewed-20261123-arakawa-parent-lecture",
+      "all-reviewed-20261123-edogawa-rakugo167",
+      "all-reviewed-20261121-edogawa-zenyoji-kiku",
+      "all-reviewed-20261121-meguro-playpark",
+      "all-reviewed-20261121-meguro-free-space",
+      "all-reviewed-20261121-orsay-exhibition",
+      "all-reviewed-20261121-women-children-festival",
+      "all-reviewed-20261122-nakano-climate-observe",
+      "all-reviewed-20261122-kawamoto-dolls-opening",
+      "all-reviewed-20261123-kantetsu2026",
+      "all-reviewed-20261121-shoto-road",
+      "all-reviewed-20261123-shoto-sento-parade",
+      "all-reviewed-20261121-playground-gym",
+      "all-reviewed-20261121-playground-walk",
+      "all-reviewed-20261121-playground-street",
+      "all-reviewed-20261123-football-park-freeplay",
+      "all-reviewed-20261123-shibuya-streetdance2026",
+      "all-reviewed-20261121-world-drinks2026"
+    ],
+    "base_data_production_sha": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
   }
 }

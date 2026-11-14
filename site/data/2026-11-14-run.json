@@ -94,10 +94,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 51,
-    "published": 110,
+    "published": 132,
     "excluded": 5,
     "duplicate_removed": 0,
-    "verified": 110,
+    "verified": 132,
     "announced": 0,
     "corrected": 2,
     "thumbnail_count": 33,
@@ -550,5 +550,43 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "all_non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "all-reviewed-20261115-sugi-221",
+      "all-reviewed-20261115-sugi-638",
+      "all-reviewed-20261115-sugi-739",
+      "all-reviewed-20261115-sugi-815",
+      "all-reviewed-20261115-sugi-825",
+      "all-reviewed-20261115-edogawa-zenyoji-kiku",
+      "all-reviewed-20261115-meguro-playpark",
+      "all-reviewed-20261115-meguro-free-space",
+      "all-reviewed-20261115-meguro-scout-rally",
+      "all-reviewed-20261115-orsay-exhibition",
+      "all-reviewed-20261115-nakano-drug-lecture",
+      "all-reviewed-20261115-nakano-drug-posters",
+      "all-reviewed-20261115-tachiuo-base",
+      "all-reviewed-20261115-tachiuo-tour",
+      "all-reviewed-20261115-nakano-tree-lecture",
+      "all-reviewed-20261115-shibuya-culture-shodo",
+      "all-reviewed-20261115-shibuya-culture-sakura",
+      "all-reviewed-20261115-shibuya-culture-densho",
+      "all-reviewed-20261115-shibuya-culture-flowers",
+      "all-reviewed-20261115-leonids2026",
+      "all-reviewed-20261115-shoto-road",
+      "all-reviewed-20261115-tokyo-food-fair18"
+    ],
+    "base_data_production_sha": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
   }
 }

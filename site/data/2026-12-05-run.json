@@ -1621,8 +1621,8 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 64,
-    "verified": 60,
+    "published": 87,
+    "verified": 83,
     "announced": 4,
     "candidates": 29,
     "excluded": 0,
@@ -1814,5 +1814,44 @@
     "old_events_changed": 0,
     "old_events_removed": 0,
     "whole_source_parity_complete": false
+  },
+  "all_non_tamemap_review_20261114": {
+    "new_event_ids": [
+      "all-reviewed-20261206-sugi-220",
+      "all-reviewed-20261205-sugi-227",
+      "all-reviewed-20261206-sugi-600",
+      "all-reviewed-20261206-sugi-608",
+      "all-reviewed-20261206-sugi-656",
+      "all-reviewed-20261206-sugi-690",
+      "all-reviewed-20261205-sugi-711",
+      "all-reviewed-20261205-sugi-743",
+      "all-reviewed-20261205-sugi-760",
+      "all-reviewed-20261205-sugi-776",
+      "all-reviewed-20261206-sugi-779",
+      "all-reviewed-20261206-sugi-809",
+      "all-reviewed-20261206-sugi-832",
+      "all-reviewed-20261205-chiyoda-family-bazaar",
+      "all-reviewed-20261205-orsay-exhibition",
+      "all-reviewed-20261205-art-annex",
+      "all-reviewed-20261205-nakano-disaster-condo",
+      "all-reviewed-20261205-nakano-maruyama-park",
+      "all-reviewed-20261205-rose-illumination",
+      "all-reviewed-20261205-rose-market",
+      "all-reviewed-20261205-rose-aroma",
+      "all-reviewed-20261205-rose-wreath",
+      "all-reviewed-20261206-kitashibu-run-satellite"
+    ],
+    "base_data_production_sha": "d05e78f3550ec0f302ab5a3c6550414e7dce5391",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
   }
 }

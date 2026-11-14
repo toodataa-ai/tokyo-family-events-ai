@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "cdad50949ead6fe7fff2e8bb28e7c22bfbdd12fd",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 228,
+  "expected_total_differences_after_governance": 236,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -910,6 +910,70 @@
       "kind": "staging_only",
       "category": "assessment_review_guard",
       "reason": "鉄道体験の総合A訂正、408件開催事実保護、実ブラウザ星3と公開スナップショットの完了証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_family_fit_quality.py",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_weekly_family_fit_correction.py",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_family_fit_quality.py",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_weekly_family_fit_gate.py",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/weekly-family-fit-review.yml",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/weekly_family_fit_review_20261114/review.json",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/weekly_family_fit_review_20261114/source_evidence.json",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/weekly_family_fit_review_20261114/README.md",
+      "kind": "staging_only",
+      "category": "family_fit_quality_control",
+      "reason": "今週200個票139企画の個別再評価と、以後の全data-only昇格に新規・変更評価の根拠確認を必須化するmainの検証・証跡。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

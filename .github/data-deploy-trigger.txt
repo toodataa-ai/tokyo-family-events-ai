@@ -1,7 +1,7 @@
-operation=verified-pending-data-20261115
-candidate_sha=e9886705d9c6ce2cc21fdd276553df2a34849fd4
-base_data_production_sha=847e388e65b99e38a0f108ecc96009778b3fdcd2
-review_evidence=research/evidence_recovery_20261115/publishable.json;research/aipaku_review_20261115/publishable.json
-read_only_validation_run=43663383961
-authorization=User on 2026-11-15 explicitly allows verified event data to update production directly; app/collector/source-setting changes remain subject to staging review.
-note=Publish only five individually verified added weekly records (including Aipaku) and six evidence-only assessment reviews, total603. Preserve all598 old event facts, history and source errors. Keep production app and its26-source registry unchanged.
+operation=verified-remaining-evidence-20261115
+candidate_sha=4d35bec6ac7c2b857d6580bd1ec852744519b79a
+base_data_production_sha=e9886705d9c6ce2cc21fdd276553df2a34849fd4
+review_evidence=research/remaining_evidence_review_20261115/publishable.json
+read_only_validation_run=43671404528
+authorization=User explicitly authorizes verified event data to update production directly; app and status-copy changes remain in staging for user review.
+note=Add only December13 Minnano Kitchen from the organizer network public calendar, total604. Preserve every old603 record, assessment, history and source-error record. Keep production app d2ee322 and its pending-issues catalogue unchanged.

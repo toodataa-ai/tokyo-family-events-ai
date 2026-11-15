@@ -76,3 +76,14 @@
 .pending-review-item>summary{cursor:pointer;font-weight:700;line-height:1.65;overflow-wrap:anywhere}
 .pending-review-item>p{line-height:1.8;overflow-wrap:anywhere}
 .pending-review-item a{display:inline-block;margin:.25rem .5rem .25rem 0}
+.pending-review-name{display:block;color:#173b55}
+.pending-review-summary{list-style:none;position:relative;padding-left:1rem}
+.pending-review-summary::-webkit-details-marker{display:none}
+.pending-review-summary::before{content:"▸";position:absolute;left:0;top:0}
+.pending-review-item[open]>.pending-review-summary::before{content:"▾"}
+.pending-review-state{display:block;margin-top:.25rem;font-size:12px;font-weight:400;color:#6b5426}
+.pending-review-item>.pending-issue-part{margin:.85rem 0}
+.pending-followup-policy{font-size:12px;line-height:1.8;color:#435c72}
+.pending-reviewed-history{border-top:1px solid #d3dfe8;margin-top:1rem;padding-top:1rem}
+.pending-reviewed-history>summary{cursor:pointer;font-weight:700;color:#355a70}
+.pending-reviewed-history>p{font-size:12px;line-height:1.8;color:#435c72}

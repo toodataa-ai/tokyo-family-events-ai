@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 341,
+  "expected_total_differences_after_governance": 342,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2751,6 +2751,14 @@
       "kind": "staging_only",
       "category": "nine_followup_publication_proof",
       "reason": "確認済みフィールドの1件追加、旧604件保持・97配信JSON一致・本番/ステージング実表示検証の証跡。未解決9件と時刻不一致を完了にせず、外部問い合わせ9案は未送信のまま記録する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/pending_remaining_clarity_20261115/change_record.json",
+      "kind": "staging_only",
+      "category": "pending_remaining_clarity",
+      "reason": "利用者指定により残9件の確認済み情報・不足する根拠・掲載への影響を明確化し、外部問い合わせの許可撤回を記録するmain専用証跡。605個票・過去台帳は変更しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -27,6 +27,15 @@ assert.equal(reviewed.status.label,'公式根拠の確認待ち');
 assert.equal(reviewed.review_results.length,20);
 assert.equal(reviewed.review_results.filter(r=>r.status==='withheld_insufficient_evidence').length,9);
 assert.match(reviewed.now,/未解決/);
+assert.equal(reviewed.public_information_only,true);
+assert.equal(reviewed.outbound_contact_allowed,false);
+assert.match(reviewed.followup_policy,/問い合わせは行いません/);
+for(const row of reviewed.review_results.filter(r=>r.status==='withheld_insufficient_evidence')){
+ assert.ok(row.pending_detail?.confirmed && row.pending_detail?.missing && row.pending_detail?.publication_impact && row.pending_detail?.needed_evidence);
+}
+for(const change of [c=>delete c.issues[3].review_results[0].pending_detail,c=>c.issues[3].review_results[0].pending_detail.missing='',c=>c.issues[3].outbound_contact_allowed=true]){
+ const invalid=structuredClone(catalog);change(invalid);assert.throws(()=>validateCatalog(invalid));
+}
 const premature=structuredClone(catalog);
 Object.assign(premature.issues[3],{work_status:'completed',completed_at:'2026-11-15',completed_scope:'全件を調査して掲載見送りを判定'});
 assert.throws(()=>validateCatalog(premature),/完了にできません/,'withholding must not silently complete missing primary evidence');
@@ -77,3 +86,23 @@ console.log('PASS: actual load failure keeps both lists unknown and does not acc
 assert.doesNotMatch(page,/全体の状況|id="pendingTotal"|id="pendingCompleted"|class="pending-issues-stats"/);
 assert.doesNotMatch(js,/model\.counts\./);
 console.log("PASS: no aggregate dashboard; direct task list with explicit status and preserved details");
+
+// The real renderer must put only unresolved rows before the collapsed history.
+class ReviewNode{
+ constructor(tag){this.tag=tag;this.children=[];this.dataset={};this.textContent='';this.open=false;}
+ appendChild(child){this.children.push(child);return child;}
+}
+const reviewDocument={createElement:tag=>new ReviewNode(tag),createTextNode:value=>Object.assign(new ReviewNode('#text'),{textContent:value})};
+const reviewContext=vm.createContext({document:reviewDocument,entry:reviewed});
+vm.runInContext(js.replace(/^import[^\n]+\n/,'').replace(/\ninit\(\);\s*$/,'\nglobalThis.card=renderCard(entry);'),reviewContext);
+const findNodes=(node,match)=>[...(match(node)?[node]:[]),...node.children.flatMap(n=>findNodes(n,match))];
+const section=findNodes(reviewContext.card,n=>n.className==='pending-unresolved-results')[0];
+assert.equal(section.children.filter(n=>n.className==='pending-review-item').length,9);
+const history=findNodes(reviewContext.card,n=>n.className==='pending-reviewed-history')[0];
+assert.equal(history.open,false);
+assert.equal(history.children.filter(n=>n.className==='pending-review-item').length,11);
+const row=section.children.find(n=>n.className==='pending-review-item');
+assert.equal(row.open,false);
+assert.equal(row.children.filter(n=>n.className==='pending-issue-part').length,4);
+assert.equal(findNodes(section,n=>n.dataset?.reviewStatus==='assessment_reconfirmed').length,0);
+console.log('PASS: nine explicit blockers and four detail fields; eleven reviewed records remain collapsed separately');

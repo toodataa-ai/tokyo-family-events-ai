@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-nine-followup-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-remaining-clarity-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -11,6 +11,33 @@ function statusLine(title,value){
   elem.appendChild(textNode("strong",title));
   elem.appendChild(textNode("p",value));
   return elem;
+}
+function renderReviewRow(row){
+  const item=textNode("details","","pending-review-item");
+  item.dataset.reviewStatus=row.status;
+  const summary=textNode("summary","","pending-review-summary");
+  summary.appendChild(textNode("span",row.name,"pending-review-name"));
+  if(row.pending_detail){
+    summary.appendChild(textNode("span",row.pending_detail.publication_status+" ／ "+row.pending_detail.blocker,"pending-review-state"));
+  }else{
+    summary.appendChild(textNode("span",row.status==="assessment_reconfirmed"?"既存評価を再確認":"終了・期間対象外で見送り","pending-review-state"));
+  }
+  item.appendChild(summary);
+  if(row.pending_detail){
+    const d=row.pending_detail;
+    for(const [title,value]of [["確認できたこと",d.confirmed],["残っている確認",d.missing],["掲載への影響",d.publication_impact],["確認に必要な資料",d.needed_evidence]]){
+      item.appendChild(statusLine(title,value));
+    }
+  }else{
+    item.appendChild(textNode("p",row.reason));
+  }
+  const links=textNode("p","");
+  row.sources.forEach((url,i)=>{
+    const a=textNode("a","参照資料"+(i+1));a.href=url;a.target="_blank";a.rel="noopener noreferrer";
+    links.appendChild(a);links.appendChild(document.createTextNode("　"));
+  });
+  item.appendChild(links);
+  return item;
 }
 function renderCard(entry){
   const article=textNode("details","","pending-issue-card");
@@ -29,6 +56,8 @@ function renderCard(entry){
     body.appendChild(statusLine("完了した対応",entry.now));
     body.appendChild(statusLine("完了とした範囲",entry.completed_scope));
     body.appendChild(statusLine("確認日",entry.completed_at));
+  }else if(entry.review_results){
+    body.appendChild(statusLine("残っている確認",entry.now));
   }else{
     body.appendChild(statusLine("どんな影響がある？",entry.impact));
     body.appendChild(statusLine("現在残っていること",entry.now));
@@ -37,19 +66,19 @@ function renderCard(entry){
   }
   content.appendChild(body);
   if(entry.review_results){
-    content.appendChild(textNode("h4","今回の個別照合結果"));
-    content.appendChild(textNode("p","根拠不足の候補は未解決です。掲載済み・終了済みの確認結果とは区別し、各項目に確認できた内容と不足する根拠を残しています。"));
-    const labels={assessment_reconfirmed:"既存評価を再確認",excluded_confirmed_scope:"終了・期間対象外で見送り",withheld_insufficient_evidence:"未解決・公式根拠の確認が必要"};
-    for(const row of entry.review_results){
-      const item=textNode("details","","pending-review-item");
-      item.appendChild(textNode("summary",row.name+" — "+(row.current_publication_state?"開催確認・終了時刻は未解決":labels[row.status])));
-      item.appendChild(textNode("p",row.reason));
-      const links=textNode("p","");
-      row.sources.forEach((url,i)=>{
-        const a=textNode("a","参照資料"+(i+1));a.href=url;a.target="_blank";a.rel="noopener noreferrer";
-        links.appendChild(a);links.appendChild(document.createTextNode("　"));
-      });
-      item.appendChild(links);content.appendChild(item);
+    const unresolved=entry.review_results.filter(row=>row.status==="withheld_insufficient_evidence");
+    const reviewed=entry.review_results.filter(row=>row.status!=="withheld_insufficient_evidence");
+    const remaining=textNode("section","","pending-unresolved-results");
+    remaining.appendChild(textNode("h4","未解決の"+unresolved.length+"件"));
+    if(entry.followup_policy)remaining.appendChild(textNode("p",entry.followup_policy,"pending-followup-policy"));
+    for(const row of unresolved)remaining.appendChild(renderReviewRow(row));
+    content.appendChild(remaining);
+    if(reviewed.length){
+      const history=textNode("details","","pending-reviewed-history");
+      history.appendChild(textNode("summary","確認済みの記録（"+reviewed.length+"件）"));
+      history.appendChild(textNode("p","終了・期間対象外を確認した候補と、根拠を再確認した既存評価です。未解決の9件には含めません。"));
+      for(const row of reviewed)history.appendChild(renderReviewRow(row));
+      content.appendChild(history);
     }
   }
   if(entry.retrieval_status){

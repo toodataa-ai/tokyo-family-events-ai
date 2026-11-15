@@ -1,12 +1,7 @@
 name: Verify pending and completed status separation
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'site/pending-issues*'
-      - 'site/audit/pending_issues_catalog.json'
-      - 'tests/pending_issues_page.test.mjs'
-      - '.github/workflows/pending-status-cleanup.yml'
+  # Historical frozen candidate: live branch SHAs intentionally reflect its pre-release state.
+  # Current changes run remaining-evidence-review (npm regression + current exact data gate).
   workflow_dispatch: {}
 permissions:
   contents: read

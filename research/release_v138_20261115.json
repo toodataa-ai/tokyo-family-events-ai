@@ -1,0 +1,20 @@
+{
+  "production_base_sha": "9aa067f0756bb900ff3f95e33f1dee7473e9c63f",
+  "candidate_sha": "02346ccdc28c0ade85ec10446097987f2edbc862",
+  "data_sha": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+  "public_version": "1.38",
+  "approved_files": {
+    "package.json": "686370606c3a53acbc49cc29a40bfb0e24acdbad2a11e62cf011dd93f6cdc172",
+    "site/audit/pending_issues_catalog.json": "86efad3481c89ce1f10db76f57728eda1ce55651fe84708ee9a4142564197f4a",
+    "site/data/discovery_sources.json": "d51dcfdc13eeaaa2d415f5c6f37fa7029b40bc429392dd233ad9750a09d5e642",
+    "site/pending-issues.html": "6430d9c2ce9e2d5fc2af897181fdd76952ebdb27484aee40ce9e32971f44eb3d",
+    "site/pending-issues.js": "46b767cf8feb9f442fb37e3e0b1c009a0403c2c0a45318ce934654b3dd18f72f",
+    "tests/fixed_source_directory.test.mjs": "fdf82901901f18750e5c31741322228083d9136a059198747e72154507c52c14",
+    "tests/pending_issues_release.test.mjs": "1a6bec7719c98f605de7a8426a9f9a5d446d5eb5c057e2511bc89ba519f2e15d",
+    "tests/test_sankaku_event_listing.py": "b1e8e56b392e7a11ce5e5780bd52eaede3b7ff8bd02cfc66de10580cf209dda2",
+    "tools/holiday_after_collect.py": "c1e3dfb69ae2e7c197a1a8fcdc3ec6cc888e30cbe930068e8523a23e2b54f2b7",
+    "tools/sankaku_event_listing.py": "c61f8a6c60f398820d9127eb6fffd9a78db7f89a129f95ca5c35426feae207f0"
+  },
+  "user_authorization": "2026-11-15 本番リリースOK。直前に提示した上部集計削除・対応状況と三角広場の収集先/抽出処理。未承認の別ダッシュボード・アクセス履歴・過去画像は含めない。",
+  "preserved": "603 dated event records; all curation/history; production base outside exactly ten approved files"
+}

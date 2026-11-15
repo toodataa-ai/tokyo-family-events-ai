@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-no-stats-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-all-review-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -15,6 +15,7 @@ function statusLine(title,value){
 function renderCard(entry){
   const article=textNode("details","","pending-issue-card");
   article.dataset.workStatus=entry.work_status;
+  article.id=entry.id;
   const summary=textNode("summary","","pending-issue-summary");
   const head=textNode("div","","pending-issue-card-top");
   head.appendChild(textNode("span",entry.category==="connection"?"サイトの取得に関する問題":"イベント情報の確認作業","pending-issue-kind"));
@@ -35,6 +36,22 @@ function renderCard(entry){
     body.appendChild(statusLine("今後の対応",entry.next));
   }
   content.appendChild(body);
+  if(entry.review_results){
+    content.appendChild(textNode("h4","今回の個別照合結果"));
+    content.appendChild(textNode("p","掲載見送りには、開催終了などを確認したものと、必要な公式根拠を確認できなかったものがあります。各項目を開くと理由と参照先を確認できます。"));
+    const labels={assessment_reconfirmed:"既存評価を再確認",excluded_confirmed_scope:"終了・期間対象外で見送り",withheld_insufficient_evidence:"根拠不足で掲載見送り"};
+    for(const row of entry.review_results){
+      const item=textNode("details","","pending-review-item");
+      item.appendChild(textNode("summary",row.name+" — "+labels[row.status]));
+      item.appendChild(textNode("p",row.reason));
+      const links=textNode("p","");
+      row.sources.forEach((url,i)=>{
+        const a=textNode("a","参照資料"+(i+1));a.href=url;a.target="_blank";a.rel="noopener noreferrer";
+        links.appendChild(a);links.appendChild(document.createTextNode("　"));
+      });
+      item.appendChild(links);content.appendChild(item);
+    }
+  }
   if(entry.retrieval_status){
     content.appendChild(statusLine("サイトへの接続（作業状況とは別）",
       entry.retrieval_status.label+"。"+entry.retrieval_status.detail));

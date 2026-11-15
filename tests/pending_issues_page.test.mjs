@@ -8,14 +8,19 @@ const audit={schema_version:1,read_only:true,registered_source_count:26,generate
 assert.equal(validateCatalog(catalog),true);assert.equal(validateAudit(audit),true);
 const model=prepareIssues(catalog,audit);
 assert.equal(model.entries.length,5);
-assert.deepEqual(model.counts,{total:2,pending:1,deferred:1,completed:3,connection:1,verification:1});
-assert.deepEqual(model.remaining.map(e=>e.id),['tamemap-nakano','article-leads']);
-assert.deepEqual(model.completed.map(e=>e.id),['itabashi-tourism','suginami-candidates','weekly-update']);
+assert.deepEqual(model.counts,{total:1,pending:0,deferred:1,completed:4,connection:1,verification:0});
+assert.deepEqual(model.remaining.map(e=>e.id),['tamemap-nakano']);
+assert.deepEqual(model.completed.map(e=>e.id),['itabashi-tourism','suginami-candidates','article-leads','weekly-update']);
 assert.ok(model.remaining.every(e=>e.work_status!=='completed'));
-assert.ok(model.completed.every(e=>e.completed_at && e.completed_scope && e.status.label==='対応完了'));
+assert.ok(model.completed.every(e=>e.completed_at && e.completed_scope && ['対応完了','全件判定済み（一部見送り）'].includes(e.status.label)));
 assert.match(model.remaining[0].status.label,/保留/);
 assert.equal(model.remaining[0].retrieval_status.label,'自動取得できません');
-assert.equal(model.remaining[1].status.label,'公式根拠の確認待ち');
+const reviewed=model.completed.find(e=>e.id==='article-leads');
+assert.equal(reviewed.status.label,'全件判定済み（一部見送り）');
+assert.equal(reviewed.review_results.length,20);
+assert.equal(reviewed.review_results.filter(r=>r.status==='withheld_insufficient_evidence').length,9);
+assert.match(reviewed.completed_scope,/9候補の開催内容を確認できた意味ではなく/);
+for(const mutation of [c=>c.issues[3].review_results[0].sources=['javascript:alert(1)'],c=>c.issues[3].review_results[0].status='verified',c=>c.issues[3].review_results.push(c.issues[3].review_results[0])]){const bad=structuredClone(catalog);mutation(bad);assert.throws(()=>validateCatalog(bad));}
 // An HTTP success must not complete a deferred investigation or an unverified event.
 const healed=structuredClone(audit);healed.sources[0].retrieval_status='checked';
 const next=prepareIssues(catalog,healed);

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15T11:02:05.585720+09:00",
+  "audited_at_jst": "2026-11-15T12:20:00.764234+09:00",
   "baseline_app_release": "release/2026-11-15-r3",
   "baseline_production_commit": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+  "baseline_data_production_commit": "4d35bec6ac7c2b857d6580bd1ec852744519b79a",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 317,
+  "expected_total_differences_after_governance": 318,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2558,6 +2558,14 @@
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true,
       "release_state": "pending_release"
+    },
+    {
+      "path": "research/remaining_evidence_review_20261115/publication.json",
+      "kind": "staging_only",
+      "category": "remaining_evidence_publication_proof",
+      "reason": "データ1件追加の本番Pages成功・604件・96配信JSON一致・本番とステージングのスマホ表示照合記録。既存603件と履歴/取得失敗、本番アプリと残課題説明の保持を記録する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

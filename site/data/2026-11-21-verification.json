@@ -4415,11 +4415,43 @@
           "sha256": "f3af7a3d5f74bbf9f4efd1ca4e41660cfa889934a9d58cbe3c0c5a3a52a46a2f"
         }
       ]
+    },
+    {
+      "id": "nine-followup-20261121-cambodia-water-festival",
+      "status": "verified",
+      "source": "https://www.instagram.com/bmi_jp/p/DfZRH7kN5mx/",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "年・開催日・会場・入場無料・文化内容を主催者の公開ポスターで確認。終了時刻は主催者18時と管理者19時で不一致のため未確定のまま表示。過去の直接取得失敗を成功へ書き換えない。",
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/bmi_jp/p/DfZRH7kN5mx/",
+          "checked_at": "2026-11-15T04:14:55.998337+00:00",
+          "sha256": "c01d3de7f74d51b218c3de1835d45f1cbc41468ea70d5de8789d764e98af89b8",
+          "capture_method": "normal_public_browser_render",
+          "hash_scope": "rendered_primary_poster_screenshot_png"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/11.html",
+          "checked_at": "2026-11-15T11:16:41+09:00",
+          "sha256": "a479d7a724ad6b9396336a33571e5068e295171a574096bdb3b93987fb6c8f96"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 153,
-    "verified": 145,
+    "total": 154,
+    "verified": 146,
     "announced": 8
   }
 }

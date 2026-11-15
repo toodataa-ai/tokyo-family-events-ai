@@ -3,17 +3,17 @@
   "sat": "2026-11-21",
   "sun": "2026-11-22",
   "label": "11/21(土)〜11/22(日)",
-  "generated": "2026-11-14T23:31:38.638222+00:00",
+  "generated": "2026-11-15T04:17:07.211942Z",
   "horizon_index": 3,
   "publication_tier": "preview",
   "verification_file": "2026-11-21-verification.json",
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 169,
+    "candidate_count": 170,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 153,
+    "published_count": 154,
     "wards": [
       {
         "ward": "千代田区",
@@ -128,8 +128,8 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 12,
-        "published_count": 12,
+        "candidate_count": 13,
+        "published_count": 13,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
       },
       {
@@ -243,7 +243,8 @@
     "2026-11-21-events-non-tamemap-20261114.json",
     "2026-11-21-events-non-tamemap-next-20261114.json",
     "2026-11-21-events-all-non-tamemap-20261114.json",
-    "2026-11-21-events-evidence-recovery-20261115.json"
+    "2026-11-21-events-evidence-recovery-20261115.json",
+    "2026-11-21-events-nine-followup-20261115.json"
   ],
   "events": []
 }

@@ -1992,8 +1992,8 @@
   ],
   "stages": [],
   "summary": {
-    "published": 153,
-    "verified": 145,
+    "published": 154,
+    "verified": 146,
     "announced": 8
   },
   "carryover_organizer_rechecks": [
@@ -2530,6 +2530,24 @@
       "evidence-recovery-20261122-meguro-dance-view"
     ],
     "base_data_production_sha": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-15",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
+  },
+  "nine_followup_20261115": {
+    "new_event_ids": [
+      "nine-followup-20261121-cambodia-water-festival"
+    ],
+    "base_data_staging_sha": "37288d43e28e9e7473ca75c3267432b97b57ee33",
+    "base_data_production_sha": "37288d43e28e9e7473ca75c3267432b97b57ee33",
     "prompt": {
       "version": "v1.15",
       "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",

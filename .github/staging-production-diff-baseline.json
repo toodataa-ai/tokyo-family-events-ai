@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 316,
+  "expected_total_differences_after_governance": 317,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2549,6 +2549,15 @@
       "reason": "残22単位の再照合。公式公開カレンダーの継続規則・例外日と凍結1追加候補を検証し、旧603個票・履歴・取得失敗を保持するmain専用証跡。収集コードや設定は本番昇格しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/pending_issues_catalog.json",
+      "kind": "different",
+      "category": "remaining_evidence_status_preview",
+      "reason": "残22単位の再照合結果と残20単位の説明をステージングだけに反映する。利用者確認後の限定リリースまで本番v1.38の説明は保持。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

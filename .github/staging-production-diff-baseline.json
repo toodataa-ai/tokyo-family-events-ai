@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "4d35bec6ac7c2b857d6580bd1ec852744519b79a",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 318,
+  "expected_total_differences_after_governance": 329,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2506,7 +2506,7 @@
       "path": ".github/workflows/remaining-evidence-review.yml",
       "kind": "staging_only",
       "category": "remaining_evidence_review",
-      "reason": "残22単位の再照合。公式公開カレンダーの継続規則・例外日と凍結1追加候補を検証し、旧603個票・履歴・取得失敗を保持するmain専用証跡。収集コードや設定は本番昇格しない。",
+      "reason": "残22単位の再照合。公式公開カレンダーの継続規則・例外日と凍結1追加候補を検証し、旧603個票・履歴・取得失敗を保持するmain専用証跡。収集コードや設定は本番昇格しない。 公開済み604件追加候補の事前SHAを固定するため手動起動の履歴監査に限定。現行の全件回帰・データ検証はall-remaining-evidence-reviewで実行。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -2566,6 +2566,97 @@
       "reason": "データ1件追加の本番Pages成功・604件・96配信JSON一致・本番とステージングのスマホ表示照合記録。既存603件と履歴/取得失敗、本番アプリと残課題説明の保持を記録する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_all_remaining_evidence_20261115.py",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_all_remaining_evidence_gate.py",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/all-remaining-evidence-review.yml",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/README.md",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/indexed_publication_captures.json",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/publishable.json",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/review_ledger.json",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/source_evidence.json",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_review",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/pending-issues-model.mjs",
+      "kind": "different",
+      "category": "all_remaining_evidence_review",
+      "reason": "利用者指定により全20項目の個別判定・根拠不足による見送り理由を折りたたみ一覧でステージングに提示する。本番の画面は確認後に限定反映。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/pending-issues.css",
+      "kind": "different",
+      "category": "all_remaining_evidence_review",
+      "reason": "利用者指定により全20項目の個別判定・根拠不足による見送り理由を折りたたみ一覧でステージングに提示する。本番の画面は確認後に限定反映。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
+    },
+    {
+      "path": "site/omitted.html",
+      "kind": "different",
+      "category": "all_remaining_evidence_review",
+      "reason": "利用者指定により全20項目の個別判定・根拠不足による見送り理由を折りたたみ一覧でステージングに提示する。本番の画面は確認後に限定反映。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

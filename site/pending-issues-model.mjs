@@ -21,14 +21,29 @@ export function validateCatalog(catalog) {
       throw new Error("取得課題に紐づく参照元がありません");
     }
     seen.add(entry.id);
+    if (entry.review_results !== undefined) {
+      const ids = new Set();
+      if (!Array.isArray(entry.review_results) || entry.review_results.length > 50) throw new Error("個別照合結果が不正です");
+      for (const row of entry.review_results) {
+        if (!row.id || ids.has(row.id) || !row.name || !row.reason ||
+            !["assessment_reconfirmed","excluded_confirmed_scope","withheld_insufficient_evidence"].includes(row.status) ||
+            !Array.isArray(row.sources) || !row.sources.length || row.sources.some(value => {
+              try { const url = new URL(value); return url.protocol !== "https:" || Boolean(url.username || url.password); }
+              catch (_) { return true; }
+            })) throw new Error("個別照合の根拠・判定が不正です");
+        ids.add(row.id);
+      }
+    }
   }
   return true;
 }
 
 export function validateAudit(audit) {
   return Boolean(audit && audit.schema_version === 1 && audit.read_only === true &&
-    audit.registered_source_count === 26 && Array.isArray(audit.sources) &&
-    audit.sources.length === 26 &&
+    Number.isInteger(audit.registered_source_count) && audit.registered_source_count > 0 &&
+    audit.registered_source_count <= 200 && Array.isArray(audit.sources) &&
+    audit.sources.length === audit.registered_source_count &&
+    new Set(audit.sources.map(x => x.source_id)).size === audit.sources.length &&
     audit.summary?.full_event_row_parity_verified_by_this_report === 0 &&
     audit.sources.every(x => typeof x.source_id === "string" &&
       ["checked", "partial_error", "source_error"].includes(x.retrieval_status) &&
@@ -62,6 +77,7 @@ export function retrievalStatus(entry, audit) {
 }
 
 export function issueStatus(entry) {
+  if (entry.work_status === "completed" && entry.completion_kind === "adjudication") return {label:"全件判定済み（一部見送り）",detail:entry.completed_scope};
   if (entry.work_status === "completed") return {label:"対応完了",detail:entry.completed_scope};
   if (entry.work_status === "deferred") return {label:"保留（指定により対象外）",detail:entry.next};
   return {label:"公式根拠の確認待ち",detail:entry.next};

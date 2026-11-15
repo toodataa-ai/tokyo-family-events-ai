@@ -261,7 +261,9 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-remaining-evidence-20261115" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-all-remaining-evidence-20261115" ]; then
+            python3 staging-policy-src/tools/validate_all_remaining_evidence_20261115.py               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-remaining-evidence-20261115" ]; then
             python3 staging-policy-src/tools/validate_remaining_evidence_addition_20261115.py               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-pending-data-20261115" ]; then
             python3 staging-policy-src/tools/validate_pending_data_release_20261115.py \
@@ -457,6 +459,9 @@ jobs:
             fi
             if [ "$stage" = "$base" ]; then
               echo "UNCHANGED_DATA_SHA: no new source checks were claimed; prior required-source audit debt remains recorded as before"
+            elif [ "$base" = "4d35bec6ac7c2b857d6580bd1ec852744519b79a" ] && [ "$stage" = "37288d43e28e9e7473ca75c3267432b97b57ee33" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+              python3 ../staging-src/tools/validate_all_remaining_evidence_20261115.py --base-ref "$base" --data-dir site/data
+
             elif [ "$base" = "e9886705d9c6ce2cc21fdd276553df2a34849fd4" ] && [ "$stage" = "4d35bec6ac7c2b857d6580bd1ec852744519b79a" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
               python3 ../staging-src/tools/validate_remaining_evidence_addition_20261115.py --base-ref "$base" --data-dir site/data
 
@@ -527,6 +532,9 @@ jobs:
               if [ "${{ needs.gate.outputs.mode }}" = "staging" ] && [ "$(git diff --name-only "$base" "$stage")" = "site/data/update_history.json" ]; then
                 node ../staging-src/tools/validate_history_metadata_provenance.mjs \
                   --base-ref "$base" --data-dir site/data
+              elif [ "$base" = "4d35bec6ac7c2b857d6580bd1ec852744519b79a" ] && [ "$stage" = "37288d43e28e9e7473ca75c3267432b97b57ee33" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
+                python3 ../staging-src/tools/validate_all_remaining_evidence_20261115.py --base-ref "$base" --data-dir site/data
+
               elif [ "$base" = "e9886705d9c6ce2cc21fdd276553df2a34849fd4" ] && [ "$stage" = "4d35bec6ac7c2b857d6580bd1ec852744519b79a" ] && [ "${{ needs.gate.outputs.mode }}" = "staging" ]; then
                 python3 ../staging-src/tools/validate_remaining_evidence_addition_20261115.py --base-ref "$base" --data-dir site/data
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-27",
+  "updated_at": "2026-11-15",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -453,6 +453,22 @@
       "note": "年度別の同一ページに複数日程・会場がある。テーブルの行を日付・体験名・会場で個別候補化。全行数と対象日程の候補IDを照合する。取得失敗は失敗・未処理として保持し、既存掲載を削除しない。次回以降の公開は独立公式確認を経て判定。",
       "candidate_extraction": "official_multi_date_schedule_rows",
       "effective_from": "2026-10-27"
+    },
+    {
+      "id": "shinjuku_sankaku_hiroba",
+      "label": "新宿住友ビル三角広場（会場公式）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.sumitomo-sankakuhiroba.jp/event/",
+      "search_urls": [
+        "https://www.sumitomo-sankakuhiroba.jp/event/"
+      ],
+      "candidate_extraction": "official_venue_cards_external_organizer",
+      "effective_from": "2026-11-15",
+      "note": "汎用的な「詳しくはこちら」のリンク文言だけで判定せず、同じarticleの催事名・開催期間と外部主催者URLを結び付けて候補化。重複表示をまとめ、主催者の開催年・年齢・料金・個別枠を別途本文確認してから掲載。過去のあいぱく別会期や未確認候補を自動掲載しない。"
     }
   ],
   "protected_source_ids": [
@@ -481,6 +497,7 @@
     "tamemap_nakano",
     "itabashi_times_event",
     "suginami_calendar_all",
-    "nerima_forest_festa_2026"
+    "nerima_forest_festa_2026",
+    "shinjuku_sankaku_hiroba"
   ]
 }

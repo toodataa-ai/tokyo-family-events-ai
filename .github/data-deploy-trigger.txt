@@ -1,7 +1,7 @@
-operation=verified-all-remaining-evidence-20261115
-candidate_sha=37288d43e28e9e7473ca75c3267432b97b57ee33
-base_data_production_sha=4d35bec6ac7c2b857d6580bd1ec852744519b79a
-review_evidence=research/all_remaining_evidence_20261115/publishable.json
-read_only_validation_run=43674498202
-authorization=User explicitly authorizes verified individual event data corrections to update production directly; UI changes require staging review.
-note=Update only four historical individual assessment explanations; grades B/A/A/A and all604 event facts remain unchanged. Preserve every source error and old history entry. The20-item decision UI and pending-status catalogue remain in staging, with production app d2ee322 unchanged.
+operation=verified-nine-followup-20261115
+candidate_sha=1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f
+base_data_production_sha=37288d43e28e9e7473ca75c3267432b97b57ee33
+review_evidence=research/nine_followup_20261115/publishable.json
+read_only_validation_run=43676465465
+authorization=Verified event data may update production directly; application and pending-status changes remain staging-only until user review. External contact drafts remain unsent.
+note=Add only the Cambodia festival verified from the organizer's2026 public poster, total605. Preserve all604 existing records, assessments, history and source failures. Show the unresolved organizer18:00/park19:00 end-time conflict explicitly with verification time=unknown. Keep all nine unresolved units pending; do not mark them complete by withholding publication.

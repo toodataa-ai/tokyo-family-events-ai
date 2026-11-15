@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-15-r2",
+  "current_public_release": "release/2026-11-15-r3",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -347,6 +347,15 @@
       "workflow_run_id": 43647527937,
       "public_version": "1.37",
       "note": "残課題・保留・完了の全5項目を同じ一覧へ配置し、項目ごとの詳細は初期折りたたみ。残2/完了3と状態別絞り込みを表示。掲載判断も名称・判定・理由抜粋の一覧とし、理由全文・公式リンクは詳細内へ保持。390/1280幅の実配信で開閉・検索・追加表示等を確認。598イベントと310判定原本は不変。"
+    },
+    {
+      "release_id": "release/2026-11-15-r3",
+      "branch": "release/2026-11-15-r3",
+      "commit_sha": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
+      "deployed_at": "2026-11-15T02:02:05.581396+00:00",
+      "workflow_run_id": 43665676887,
+      "public_version": "1.38",
+      "note": "残課題ページの上部集計を削除。三角広場を固定収集先に追加し、催事名・開催期間・主催者リンクを関連付けて取得するよう改善。対応状況を更新し、公開済み603イベント・履歴・掲載判断原本を保持。"
     }
   ],
   "current_public_version": "1.34"

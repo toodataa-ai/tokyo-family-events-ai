@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15",
-  "baseline_app_release": "release/2026-11-15-r2",
-  "baseline_production_commit": "9aa067f0756bb900ff3f95e33f1dee7473e9c63f",
+  "audited_at_jst": "2026-11-15T11:02:05.585720+09:00",
+  "baseline_app_release": "release/2026-11-15-r3",
+  "baseline_production_commit": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 312,
+  "expected_total_differences_after_governance": 307,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -1610,7 +1610,7 @@
       "path": "site/pending-issues.html",
       "kind": "different",
       "category": "pending_staging_app",
-      "reason": "ステージング専用の固定26サイト監査画面への導線。公開版の掲載判断一覧への導線を本番では保持し、この差分は自動公開しない。",
+      "reason": "v1.38の上部集計削除・折り畳みは公開済み。残差分は未承認の取得状況ダッシュボード導線（HTML）と監査データ参照先の変更（JS）のみ。今回リリースに混ぜず、main側で保留。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true,
       "release_state": "pending_release"
@@ -1619,7 +1619,7 @@
       "path": "site/pending-issues.js",
       "kind": "different",
       "category": "pending_staging_app",
-      "reason": "ステージングのローカル監査JSONを読む版。本番のstaging/audit参照との差を保持し、取得時刻・候補確認の状態を混ぜない。",
+      "reason": "v1.38の上部集計削除・折り畳みは公開済み。残差分は未承認の取得状況ダッシュボード導線（HTML）と監査データ参照先の変更（JS）のみ。今回リリースに混ぜず、main側で保留。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true,
       "release_state": "pending_release"
@@ -2391,31 +2391,7 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/audit/pending_issues_catalog.json",
-      "kind": "different",
-      "category": "evidence_recovery_review",
-      "reason": "根拠不足の再照合結果とステージング確認待ちを表示。本番は利用者の確認後に反映する。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tools/sankaku_event_listing.py",
-      "kind": "staging_only",
-      "category": "aipaku_venue_discovery_review",
-      "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
       "path": "tools/validate_aipaku_addition_20261115.py",
-      "kind": "staging_only",
-      "category": "aipaku_venue_discovery_review",
-      "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tests/test_sankaku_event_listing.py",
       "kind": "staging_only",
       "category": "aipaku_venue_discovery_review",
       "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
@@ -2465,22 +2441,6 @@
     {
       "path": "research/aipaku_review_20261115/source_evidence.json",
       "kind": "staging_only",
-      "category": "aipaku_venue_discovery_review",
-      "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/data/discovery_sources.json",
-      "kind": "different",
-      "category": "aipaku_venue_discovery_review",
-      "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tests/fixed_source_directory.test.mjs",
-      "kind": "different",
       "category": "aipaku_venue_discovery_review",
       "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
       "disposition": "intentional_staging_only",

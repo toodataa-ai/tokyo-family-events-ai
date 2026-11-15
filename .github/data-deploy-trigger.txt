@@ -1,7 +1,7 @@
-operation=verified-remaining-evidence-20261115
-candidate_sha=4d35bec6ac7c2b857d6580bd1ec852744519b79a
-base_data_production_sha=e9886705d9c6ce2cc21fdd276553df2a34849fd4
-review_evidence=research/remaining_evidence_review_20261115/publishable.json
-read_only_validation_run=43671404528
-authorization=User explicitly authorizes verified event data to update production directly; app and status-copy changes remain in staging for user review.
-note=Add only December13 Minnano Kitchen from the organizer network public calendar, total604. Preserve every old603 record, assessment, history and source-error record. Keep production app d2ee322 and its pending-issues catalogue unchanged.
+operation=verified-all-remaining-evidence-20261115
+candidate_sha=37288d43e28e9e7473ca75c3267432b97b57ee33
+base_data_production_sha=4d35bec6ac7c2b857d6580bd1ec852744519b79a
+review_evidence=research/all_remaining_evidence_20261115/publishable.json
+read_only_validation_run=43674498202
+authorization=User explicitly authorizes verified individual event data corrections to update production directly; UI changes require staging review.
+note=Update only four historical individual assessment explanations; grades B/A/A/A and all604 event facts remain unchanged. Preserve every source error and old history entry. The20-item decision UI and pending-status catalogue remain in staging, with production app d2ee322 unchanged.

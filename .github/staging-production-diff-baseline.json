@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 310,
+  "expected_total_differences_after_governance": 312,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2499,6 +2499,22 @@
       "kind": "staging_only",
       "category": "data_release_control",
       "reason": "最新のユーザー指定に基づき、確認済みイベントデータのみを既存の本番専用ゲートで公開する。凍結した2候補の連続性と旧598件の開催事実・履歴・取得失敗を検証し、アプリ/収集設定は本番へ昇格しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/release_v138_20261115.json",
+      "kind": "staging_only",
+      "category": "approved_app_release_verification",
+      "reason": "利用者が明示承認したv1.38のproductionベース10ファイル候補を凍結し、603イベント・履歴・判定原本・無関係なアプリ差分の保持を検証するmain専用記録。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/release-v138-reviewed.yml",
+      "kind": "staging_only",
+      "category": "approved_app_release_verification",
+      "reason": "利用者が明示承認したv1.38のproductionベース10ファイル候補を凍結し、603イベント・履歴・判定原本・無関係なアプリ差分の保持を検証するmain専用記録。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

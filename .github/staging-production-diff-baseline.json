@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "847e388e65b99e38a0f108ecc96009778b3fdcd2",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 308,
+  "expected_total_differences_after_governance": 310,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2483,6 +2483,22 @@
       "kind": "different",
       "category": "aipaku_venue_discovery_review",
       "reason": "三角広場の汎用リンク名で失う催事見出し・日付・外部主催者リンクを関連付ける修正と凍結1追加候補の証跡。本番はユーザーのステージング確認後のみ反映し、現行26ソース監査と旧602件候補を保持する。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_pending_data_release_20261115.py",
+      "kind": "staging_only",
+      "category": "data_release_control",
+      "reason": "最新のユーザー指定に基づき、確認済みイベントデータのみを既存の本番専用ゲートで公開する。凍結した2候補の連続性と旧598件の開催事実・履歴・取得失敗を検証し、アプリ/収集設定は本番へ昇格しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/pending-data-release-review.yml",
+      "kind": "staging_only",
+      "category": "data_release_control",
+      "reason": "最新のユーザー指定に基づき、確認済みイベントデータのみを既存の本番専用ゲートで公開する。凍結した2候補の連続性と旧598件の開催事実・履歴・取得失敗を検証し、アプリ/収集設定は本番へ昇格しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

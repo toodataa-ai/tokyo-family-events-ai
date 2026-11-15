@@ -261,7 +261,10 @@ jobs:
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-all-non-tamemap-20261114" ]; then
+          if [ "${{ needs.gate.outputs.operation }}" = "verified-pending-data-20261115" ]; then
+            python3 staging-policy-src/tools/validate_pending_data_release_20261115.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-all-non-tamemap-20261114" ]; then
             python3 staging-policy-src/tools/validate_all_non_tamemap_addition.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-last-20261114" ]; then

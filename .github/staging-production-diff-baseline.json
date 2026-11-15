@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15T13:01:19.808285+09:00",
+  "audited_at_jst": "2026-11-15T13:28:31.213344+09:00",
   "baseline_app_release": "release/2026-11-15-r3",
   "baseline_production_commit": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "37288d43e28e9e7473ca75c3267432b97b57ee33",
+  "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 340,
+  "expected_total_differences_after_governance": 341,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2743,6 +2743,14 @@
       "kind": "staging_only",
       "category": "nine_unresolved_followup",
       "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/publication.json",
+      "kind": "staging_only",
+      "category": "nine_followup_publication_proof",
+      "reason": "確認済みフィールドの1件追加、旧604件保持・97配信JSON一致・本番/ステージング実表示検証の証跡。未解決9件と時刻不一致を完了にせず、外部問い合わせ9案は未送信のまま記録する。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

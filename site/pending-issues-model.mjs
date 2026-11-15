@@ -40,8 +40,10 @@ export function validateCatalog(catalog) {
 
 export function validateAudit(audit) {
   return Boolean(audit && audit.schema_version === 1 && audit.read_only === true &&
-    audit.registered_source_count === 26 && Array.isArray(audit.sources) &&
-    audit.sources.length === 26 &&
+    Number.isInteger(audit.registered_source_count) && audit.registered_source_count > 0 &&
+    audit.registered_source_count <= 200 && Array.isArray(audit.sources) &&
+    audit.sources.length === audit.registered_source_count &&
+    new Set(audit.sources.map(x => x.source_id)).size === audit.sources.length &&
     audit.summary?.full_event_row_parity_verified_by_this_report === 0 &&
     audit.sources.every(x => typeof x.source_id === "string" &&
       ["checked", "partial_error", "source_error"].includes(x.retrieval_status) &&

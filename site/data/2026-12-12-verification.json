@@ -2044,11 +2044,36 @@
           "sha256": "54b5352d957087771bc69753067760deffc7619705a5833fe1a972966a03628f"
         }
       ]
+    },
+    {
+      "id": "evidence2-20261213-minnano-kitchen",
+      "status": "verified",
+      "source": "https://calendar.google.com/calendar/ical/kodomohot.nakano%40gmail.com/public/basic.ics",
+      "source_kind": "official",
+      "verified_on": "2026-11-15",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "2025年の記事の曜日から生成せず、公式サイト埋込カレンダーの現在公開中の継続規則・EXDATE・例外インスタンスを照合。11/15以降の対象週末は12/13。変更の有無は来場前にも確認。",
+      "evidence": [
+        {
+          "url": "https://calendar.google.com/calendar/ical/kodomohot.nakano%40gmail.com/public/basic.ics",
+          "checked_at": "2026-11-15T02:57:43.212566+00:00",
+          "sha256": "0894484ddfd6b836057b5ac0184a0de37b741b14f20ef93f028bdf6b8391865f"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 71,
-    "verified": 68,
+    "total": 72,
+    "verified": 69,
     "announced": 3,
     "corrected": 0
   }

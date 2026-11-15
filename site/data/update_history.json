@@ -1786,6 +1786,32 @@
         "https://www.i-89.jp/"
       ],
       "note": "三角広場から外部主催者へ移るリンクを見落としたあいぱく1個票を追加。前回のステージング602件・既存評価根拠・履歴・取得失敗を保持。本番はユーザーの確認待ち。"
+    },
+    {
+      "run_id": "remaining-evidence-review-20261115",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-15",
+      "executed_at": "2026-11-15T03:07:27.394497Z",
+      "base_data_staging_sha": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+      "base_data_production_sha": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+      "target_weekends": [
+        "2026-12-12"
+      ],
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "evidence2-20261213-minnano-kitchen"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "fixed_851_adjudication_complete": true,
+      "unreviewed_candidates": 0,
+      "official_evidence_urls": [
+        "https://calendar.google.com/calendar/ical/kodomohot.nakano%40gmail.com/public/basic.ics"
+      ],
+      "note": "残22単位を再照合し、公開カレンダーの明示継続規則と例外日から確認したみんなのキッチン12/13を1件追加。練馬企画募集は対象外と判定、残20単位は根拠待ち。旧603個票・評価・履歴・取得失敗を保持。改修は本番に含めない。"
     }
   ]
 }

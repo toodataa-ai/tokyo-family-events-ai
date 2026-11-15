@@ -147,10 +147,10 @@
   "summary": {
     "wards_checked": 23,
     "candidates": 20,
-    "published": 71,
+    "published": 72,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 68,
+    "verified": 69,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -343,6 +343,24 @@
       "resolved": true
     },
     "reviewed_on": "2026-11-14",
+    "source_failures_remain_unverified": true,
+    "old_events_changed": 0,
+    "old_events_removed": 0,
+    "whole_source_parity_complete": false,
+    "fixed_851_adjudication_complete": true
+  },
+  "remaining_evidence_review_20261115": {
+    "new_event_ids": [
+      "evidence2-20261213-minnano-kitchen"
+    ],
+    "base_data_staging_sha": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+    "base_data_production_sha": "e9886705d9c6ce2cc21fdd276553df2a34849fd4",
+    "prompt": {
+      "version": "v1.15",
+      "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+      "resolved": true
+    },
+    "reviewed_on": "2026-11-15",
     "source_failures_remain_unverified": true,
     "old_events_changed": 0,
     "old_events_removed": 0,

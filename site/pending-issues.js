@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-compact-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-no-stats-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -58,7 +58,7 @@ function render(model){
   for(const item of items)list.appendChild(renderCard(item));
   if(!items.length)list.appendChild(textNode("p","選択した条件に当てはまる項目はありません。"));
   byId("pendingVisibleCount").textContent=
-    items.length+"／"+model.entries.length+"項目を表示（残課題 "+model.counts.total+"項目・完了 "+model.counts.completed+"項目）";
+    f==="all"&&work==="all" ? "すべての対応状況を表示しています。" : "選択した条件の対応状況を表示しています。";
 }
 async function getJson(path){
   const res=await fetch(path,{cache:"no-store"});
@@ -79,13 +79,8 @@ async function init(){
     byId("pendingCheckedAt").textContent="確認ができていないため、残課題が0件とは表示していません。";
     byId("pendingIssueList").replaceChildren(textNode("p","現在一覧を取得できません。時間をおいてもう一度お試しください。"));
     byId("pendingVisibleCount").textContent="未確認";
-    byId("pendingCompleted").textContent="未確認";
     return;
   }
-  byId("pendingTotal").textContent=model.counts.total;
-  byId("pendingCompleted").textContent=model.counts.completed;
-  byId("pendingConnection").textContent=model.counts.pending;
-  byId("pendingVerification").textContent=model.counts.deferred;
   byId("pendingIntro").textContent="残課題・保留・完了を一覧で表示します。各項目を開くと、対応内容や確認できた範囲をご覧いただけます。";
   byId("pendingCheckedAt").textContent=
     "取得状況の最終監査："+(model.is_audit_current?formatJst(model.audit_checked_at):"最新結果は取得できませんでした")+

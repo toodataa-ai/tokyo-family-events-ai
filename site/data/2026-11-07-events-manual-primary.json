@@ -235,43 +235,79 @@
       "親子"
     ],
     "family_fit": {
-      "rubric_version": "family-fit-v2",
       "grade": "A",
       "overall": "A",
-      "reason": "地域探索と交流",
+      "rubric_version": "family-fit-v2",
+      "reason": "親子を明示した地域のまち歩きで、ゆかりのスポットのスタンプ集めとミッションに子どもが参加できる。 申込締切は11/3で終了。11/7 14〜16時・最終受付15:30、屋外で小雨決行・荒天中止。移動距離・対象年齢の明記はない。",
       "axes": {
         "child_target": {
           "grade": "A",
-          "reason": "親子対象が明示"
+          "reason": "催し名で親子を対象に含め、子どもが参加できるミッションと景品を案内。"
         },
         "interactivity": {
           "grade": "A",
-          "reason": "街歩きミッション・景品"
+          "reason": "鷺宮・白鷺・若宮のスポットを歩き、スタンプ集めとミッションに挑戦。"
         },
         "age_fit": {
-          "grade": "A",
-          "reason": "歩ける年齢と体力を確認"
+          "grade": "B",
+          "reason": "親子が対象だが、歩行距離・細かな対象年齢は未記載。"
         },
         "stay_flexibility": {
           "grade": "B",
-          "reason": "1〜2時間程度"
+          "reason": "14〜16時、最終受付15:30。受付場所はしらさぎ桜苑。"
         },
         "burden": {
           "grade": "B",
-          "reason": "小雨決行・荒天中止"
+          "reason": "動きやすい服装と飲み物が必要。小雨決行・荒天中止の屋外まち歩き。"
         },
         "cost": {
           "grade": "A",
-          "reason": "無料"
+          "reason": "参加費は無料と明記。"
         },
         "reservation": {
-          "grade": "B",
-          "reason": "11/3締切の事前申込"
+          "grade": "C",
+          "reason": "電話または申込フォームで11/3締切。定員なしでも締切後の当日受付可とは解釈しない。"
         },
         "family_value": {
           "grade": "A",
-          "reason": "地域探索と交流"
+          "reason": "親子を明示した地域のまち歩きで、ゆかりのスポットのスタンプ集めとミッションに子どもが参加できる。"
         }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_evidence_review",
+        "reviewed_on": "2026-11-15",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "child_program",
+        "child_activity_confirmed": true,
+        "strengths": [
+          "親子を明示した地域のまち歩きで、ゆかりのスポットのスタンプ集めとミッションに子どもが参加できる。"
+        ],
+        "limitations": [
+          "申込締切は11/3で終了。11/7 14〜16時・最終受付15:30、屋外で小雨決行・荒天中止。移動距離・対象年齢の明記はない。"
+        ],
+        "grade_comparison": "総合Aを維持：親子を明示した地域のまち歩きで、ゆかりのスポットのスタンプ集めとミッションに子どもが参加できる。 申込締切は11/3で終了。11/7 14〜16時・最終受付15:30、屋外で小雨決行・荒天中止。移動距離・対象年齢の明記はない。",
+        "unsupported_axes": [],
+        "evidence": [
+          {
+            "url": "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+            "quote": "スタンプをあつめたり、ミッションに挑戦しよう！",
+            "sha256": "6ba69f763715b09110c90240e3695b182c1677e73b5bcf05c4d144cff5ed4804",
+            "checked_at": "2026-11-15T03:45:33.098779+00:00",
+            "capture_method": "indexed_primary_publication",
+            "hash_scope": "indexed_primary_text_utf8",
+            "note": "社協の公式公開本文の検索保存を照合。現在の同URLは一覧へ移動するため、元イベント本文のHTTP取得成功とは記録しない。"
+          }
+        ]
       }
     },
     "reservation": {

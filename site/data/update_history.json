@@ -1812,6 +1812,42 @@
         "https://calendar.google.com/calendar/ical/kodomohot.nakano%40gmail.com/public/basic.ics"
       ],
       "note": "残22単位を再照合し、公開カレンダーの明示継続規則と例外日から確認したみんなのキッチン12/13を1件追加。練馬企画募集は対象外と判定、残20単位は根拠待ち。旧603個票・評価・履歴・取得失敗を保持。改修は本番に含めない。"
+    },
+    {
+      "run_id": "evidence-recovery-20261115",
+      "run_type": "manual_evidence_recovery",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-15",
+      "executed_at": "2026-11-15T03:45:33.578432Z",
+      "base_data_production_sha": "4d35bec6ac7c2b857d6580bd1ec852744519b79a",
+      "target_weekends": [
+        "2026-11-07"
+      ],
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 4,
+      "source_failures_remain_unverified": true,
+      "content_review_complete": false,
+      "fixed_851_adjudication_complete": true,
+      "unreviewed_candidates": 0,
+      "official_evidence_urls": [
+        "https://nakanoshakyo.com/nakanoinfo/event/result/?did=14585",
+        "https://suginami.goguynet.jp/wp-content/uploads/sites/69/2026/11/IMG_0389-1.jpeg",
+        "https://www.city.ota.tokyo.jp/seikatsu/fukushi/shougai/hoiku_kyoiku/hoiku/kodomo-matsuri_20261108.html",
+        "https://www.city.tokyo-nakano.lg.jp/kanko/machirenkei/shotengai_sinmai.html"
+      ],
+      "note": "残20項目を全件調査・判定。既存4評価の8軸を再確認（総合B/A/A/Aは維持）、7候補は終了・期間対象外、9候補は根拠不足で今回の掲載見送り。全604個票の開催事実・既存履歴・取得失敗は保持。",
+      "reviewed_weekly_records": 4,
+      "reviewed_programs": 4,
+      "grade_changes": 0,
+      "changed_event_ids": [
+        "v15-bdb7fcbca1d9",
+        "v15-8fd7f8c017c9",
+        "fx-20261107-nakano-food-workshop",
+        "official-2026-shirasagi-stamp"
+      ],
+      "event_facts_changed": false
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
-  "audited_at_jst": "2026-11-15T12:20:00.764234+09:00",
+  "audited_at_jst": "2026-11-15T13:01:19.808285+09:00",
   "baseline_app_release": "release/2026-11-15-r3",
   "baseline_production_commit": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
-  "baseline_data_production_commit": "4d35bec6ac7c2b857d6580bd1ec852744519b79a",
+  "baseline_data_production_commit": "37288d43e28e9e7473ca75c3267432b97b57ee33",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 329,
+  "expected_total_differences_after_governance": 330,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2657,6 +2657,14 @@
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true,
       "release_state": "pending_release"
+    },
+    {
+      "path": "research/all_remaining_evidence_20261115/publication.json",
+      "kind": "staging_only",
+      "category": "all_remaining_evidence_publication_proof",
+      "reason": "残20項目の全件調査・判定と4評価説明の本番データ公開成功、604個票・96JSON一致、スマホ/PCの実表示照合記録。9候補は根拠不足の見送りであり確認済み・取得復旧とは扱わない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

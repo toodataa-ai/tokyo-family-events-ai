@@ -15,18 +15,21 @@ currentAudit.registered_source_count=27;currentAudit.sources[26].source_id=curre
 assert.equal(validateAudit(currentAudit),false,'duplicate source IDs must fail closed');
 const model=prepareIssues(catalog,audit);
 assert.equal(model.entries.length,5);
-assert.deepEqual(model.counts,{total:1,pending:0,deferred:1,completed:4,connection:1,verification:0});
-assert.deepEqual(model.remaining.map(e=>e.id),['tamemap-nakano']);
-assert.deepEqual(model.completed.map(e=>e.id),['itabashi-tourism','suginami-candidates','article-leads','weekly-update']);
+assert.deepEqual(model.counts,{total:2,pending:1,deferred:1,completed:3,connection:1,verification:1});
+assert.deepEqual(model.remaining.map(e=>e.id),['tamemap-nakano','article-leads']);
+assert.deepEqual(model.completed.map(e=>e.id),['itabashi-tourism','suginami-candidates','weekly-update']);
 assert.ok(model.remaining.every(e=>e.work_status!=='completed'));
 assert.ok(model.completed.every(e=>e.completed_at && e.completed_scope && ['対応完了','全件判定済み（一部見送り）'].includes(e.status.label)));
 assert.match(model.remaining[0].status.label,/保留/);
 assert.equal(model.remaining[0].retrieval_status.label,'自動取得できません');
-const reviewed=model.completed.find(e=>e.id==='article-leads');
-assert.equal(reviewed.status.label,'全件判定済み（一部見送り）');
+const reviewed=model.remaining.find(e=>e.id==='article-leads');
+assert.equal(reviewed.status.label,'公式根拠の確認待ち');
 assert.equal(reviewed.review_results.length,20);
 assert.equal(reviewed.review_results.filter(r=>r.status==='withheld_insufficient_evidence').length,9);
-assert.match(reviewed.completed_scope,/9候補の開催内容を確認できた意味ではなく/);
+assert.match(reviewed.now,/未解決/);
+const premature=structuredClone(catalog);
+Object.assign(premature.issues[3],{work_status:'completed',completed_at:'2026-11-15',completed_scope:'全件を調査して掲載見送りを判定'});
+assert.throws(()=>validateCatalog(premature),/完了にできません/,'withholding must not silently complete missing primary evidence');
 for(const mutation of [c=>c.issues[3].review_results[0].sources=['javascript:alert(1)'],c=>c.issues[3].review_results[0].status='verified',c=>c.issues[3].review_results.push(c.issues[3].review_results[0])]){const bad=structuredClone(catalog);mutation(bad);assert.throws(()=>validateCatalog(bad));}
 // An HTTP success must not complete a deferred investigation or an unverified event.
 const healed=structuredClone(audit);healed.sources[0].retrieval_status='checked';
@@ -41,7 +44,7 @@ assert.deepEqual(unavailable.counts,model.counts);
 assert.equal(unavailable.is_audit_current,false);
 assert.equal(unavailable.remaining[0].retrieval_status.label,'取得状況を確認できません');
 const allDone=structuredClone(catalog);
-for(const e of allDone.issues)Object.assign(e,{work_status:'completed',completed_at:'2026-11-14',completed_scope:'Fixture scope only'});
+for(const e of allDone.issues){Object.assign(e,{work_status:'completed',completed_at:'2026-11-14',completed_scope:'Fixture scope only'});delete e.review_results;}
 assert.equal(prepareIssues(allDone,null).counts.total,0);
 assert.equal(prepareIssues(allDone,null).completed.length,5);
 // Missing/unknown work status fails closed instead of silently looking complete.

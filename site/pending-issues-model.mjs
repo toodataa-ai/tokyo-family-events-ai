@@ -33,6 +33,9 @@ export function validateCatalog(catalog) {
             })) throw new Error("個別照合の根拠・判定が不正です");
         ids.add(row.id);
       }
+      if (entry.work_status === "completed" && entry.review_results.some(row => row.status === "withheld_insufficient_evidence")) {
+        throw new Error("公式根拠が未確認の候補を含む作業は完了にできません");
+      }
     }
   }
   return true;

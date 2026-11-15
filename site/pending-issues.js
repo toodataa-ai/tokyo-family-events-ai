@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-all-review-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-nine-followup-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -38,11 +38,11 @@ function renderCard(entry){
   content.appendChild(body);
   if(entry.review_results){
     content.appendChild(textNode("h4","今回の個別照合結果"));
-    content.appendChild(textNode("p","掲載見送りには、開催終了などを確認したものと、必要な公式根拠を確認できなかったものがあります。各項目を開くと理由と参照先を確認できます。"));
-    const labels={assessment_reconfirmed:"既存評価を再確認",excluded_confirmed_scope:"終了・期間対象外で見送り",withheld_insufficient_evidence:"根拠不足で掲載見送り"};
+    content.appendChild(textNode("p","根拠不足の候補は未解決です。掲載済み・終了済みの確認結果とは区別し、各項目に確認できた内容と不足する根拠を残しています。"));
+    const labels={assessment_reconfirmed:"既存評価を再確認",excluded_confirmed_scope:"終了・期間対象外で見送り",withheld_insufficient_evidence:"未解決・公式根拠の確認が必要"};
     for(const row of entry.review_results){
       const item=textNode("details","","pending-review-item");
-      item.appendChild(textNode("summary",row.name+" — "+labels[row.status]));
+      item.appendChild(textNode("summary",row.name+" — "+(row.current_publication_state?"開催確認・終了時刻は未解決":labels[row.status])));
       item.appendChild(textNode("p",row.reason));
       const links=textNode("p","");
       row.sources.forEach((url,i)=>{

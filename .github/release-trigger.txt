@@ -1,17 +1,16 @@
-# User-requested compact disclosure lists on two public pages.
+# User-approved v1.38: issue-list simplification and Sankaku organizer-link discovery.
 operation=release
 production_ref=production
-production_sha=9aa067f0756bb900ff3f95e33f1dee7473e9c63f
-previous_production_sha=5d7f8b961e6c93e5a8950c426e3ffddac9a6d7aa
-candidate_sha=411702d051ca73204fc1e48924591f94c64ba713
-pr=127
-target_public_version=1.37
-previous_public_release=release/2026-11-15-r1
+production_sha=d2ee3226f64f42c56a5ed0ca61e3696769c4db21
+previous_production_sha=9aa067f0756bb900ff3f95e33f1dee7473e9c63f
+candidate_sha=02346ccdc28c0ade85ec10446097987f2edbc862
+pr=132
+target_public_version=1.38
+previous_public_release=release/2026-11-15-r2
 release_date_jst=2026-11-15
-expected_data_production_sha=847e388e65b99e38a0f108ecc96009778b3fdcd2
-approved_scope=site/omitted.css,site/omitted.html,site/omitted.js,site/pending-issues.css,site/pending-issues.html,site/pending-issues.js,tests/omitted_page_contract.test.mjs,tests/pending_issues_release.test.mjs
+expected_data_production_sha=e9886705d9c6ce2cc21fdd276553df2a34849fd4
+approved_scope=package.json,site/audit/pending_issues_catalog.json,site/data/discovery_sources.json,site/pending-issues.html,site/pending-issues.js,tests/fixed_source_directory.test.mjs,tests/pending_issues_release.test.mjs,tests/test_sankaku_event_listing.py,tools/holiday_after_collect.py,tools/sankaku_event_listing.py
+read_only_validation_run=43665511129
 event_record_mutation=none
 curation_record_mutation=none
-read_only_validation_run=43647285437
-staging_publication_run=43647357226
-note=All5 work statuses visible with per-row collapsed details;publication decisions show title/status/reason excerpt with full facts and source inside. Preserve598 events and310 historical decisions,search,tabs,show-more and unrelated UI.
+note=Publish only user-approved issue aggregate removal and current status content, plus official Sankaku source registration/card parser and necessary tests. Preserve all603 event records/history and310 historical decisions; unrelated staging dashboards/usage/image changes excluded.

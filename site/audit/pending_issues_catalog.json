@@ -46,22 +46,19 @@
     {
       "id": "article-leads",
       "category": "verification",
-      "title": "公式根拠が不足していた全候補・評価の調査と掲載判断",
+      "title": "公式根拠が不足している9候補の確認",
       "impact": "開催日・年・会場・受付条件などを裏付けられない企画は、確認済みとして追加できません。一部の既存評価も再確認を保留しています。",
-      "now": "残20項目すべてを、自治体・主催者・会場・当年広報や公式公開本文まで追跡しました。既存4評価は総合B/A/A/Aを維持し、対象児・午後枠・整理券・受付終了などの8軸説明を本番データへ反映しました。全604個票の開催事実・総合評価・履歴を保持します。個別の判定と不足していた根拠は以下の一覧で確認できます。",
+      "now": "既存4件の評価根拠と7候補の終了・対象期間外を確認しました。一方、残る9候補は開催年・具体日・会場・参加条件等を確認できておらず、未解決です。掲載見送りの判断と、根拠の確認完了は別に扱います。",
       "workaround": "代替の自治体・主催者情報で根拠がそろったものを掲載し、不明な年齢・料金・受付可否は推測しません。",
-      "next": "今回の20項目の掲載判断は完了しました。根拠不足で見送った9候補は、別企画・推定日で補完しません。新しい公式告知が出た場合は、その根拠で新たに掲載判断します。",
+      "next": "9候補について画像告知を通常ブラウザーでも確認し、自治体・主催者の別資料を引き続き照合します。公開情報で不足する内容は、確認すべき点と問い合わせ先を個別に残します。",
       "issue_url": "https://github.com/toodataa-ai/tokyo-family-events-ai/issues/62",
-      "work_status": "completed",
-      "completion_kind": "adjudication",
-      "completed_at": "2026-11-15",
-      "completed_scope": "前回残っていた20項目すべての調査・掲載判断と、既存4評価の8軸再確認まで。7候補は終了・対象期間外、9候補は必要な公式根拠を確認できず今回の掲載見送り。9候補の開催内容を確認できた意味ではなく、元ページの404・制限・メンテナンスも解消扱いにしていません。",
+      "work_status": "pending",
       "review_results": [
         {
           "id": "21",
           "name": "おかのうえプレイルーム「プレム」",
           "status": "withheld_insufficient_evidence",
-          "reason": "2026年9月の区公式ガイドと主催運営委員会サイトまで確認。月1回土曜・テーマ可変で、掲載対象の確定日を取得できない。主催サイトの最新画像は403で読めず、月例曜日から実施日を生成しない。",
+          "reason": "通常ブラウザーでは主催者のポスターを表示でき、11/28土曜9:30〜11:30、ボクササイズ・ヨガ、無料・予約不要と確認。画像に開催年の明記がなく、当年の開催との裏付けが残る。 未確認事項：11/28の開催年と、12月休止の対象企画。",
           "sources": [
             "https://www.higashinonet.com/",
             "https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/kaigoyobo/nakakatsuguide.files/higashinakano_nakakatsuguide.pdf"
@@ -101,7 +98,7 @@
           "id": "55",
           "name": "がきんちょ食堂",
           "status": "withheld_insufficient_evidence",
-          "reason": "足立区の現行食堂一覧と主催団体の公開サイト2系統を追跡。会場は南花畑住区センター等と変動し、主催サイトは取得できない。12月の実施日・会場が確定できず一律に第1日曜で作らない。",
+          "reason": "通常ブラウザーでも主催者の2サイトは403。制限は回避しない。 未確認事項：2026/11/15〜12/13の開催日・会場・料金・対象・申込条件。",
           "sources": [
             "https://www.city.adachi.tokyo.jp/sesaku/adachiku-kodomosyokudo.html",
             "https://peraichi.com/landing_pages/view/kodomocienn2915/",
@@ -206,11 +203,12 @@
           "id": "cambodia-water-festival",
           "name": "カンボジア水祭り",
           "status": "withheld_insufficient_evidence",
-          "reason": "公園管理者は2026/11/21〜22・11〜19時・ケヤキ並木を確認。主催者のInstagramはログイン案内だけで当年の内容・料金・参加条件が読めず、別サイトとの終了時刻差もある。水遊び・子ども体験・無料を推定して掲載しない。",
+          "reason": "主催者の2026年公開ポスターで入場無料・カンボジア文化/料理/民芸、11/21〜22を確認。終了時刻は主催者18時、公園管理者19時で不一致。 未確認事項：正しい終了時刻。確認済みの開催日・会場・内容を、時刻差異を明示して掲載可能。",
           "sources": [
             "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/11.html",
             "https://www.instagram.com/bmi_jp/"
-          ]
+          ],
+          "current_publication_state": "verified_fields_only_end_time_unresolved"
         },
         {
           "id": "27",

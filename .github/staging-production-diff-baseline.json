@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "37288d43e28e9e7473ca75c3267432b97b57ee33",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 330,
+  "expected_total_differences_after_governance": 340,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2587,7 +2587,7 @@
       "path": ".github/workflows/all-remaining-evidence-review.yml",
       "kind": "staging_only",
       "category": "all_remaining_evidence_review",
-      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
+      "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。 公開成功後は当時の事前SHAを固定する履歴監査として手動起動のみ。現行UI検証をpending-issues-currentへ分離し、将来の画面修正を過去SHAで誤って拒否しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -2663,6 +2663,86 @@
       "kind": "staging_only",
       "category": "all_remaining_evidence_publication_proof",
       "reason": "残20項目の全件調査・判定と4評価説明の本番データ公開成功、604個票・96JSON一致、スマホ/PCの実表示照合記録。9候補は根拠不足の見送りであり確認済み・取得復旧とは扱わない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_nine_followup_addition_20261115.py",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_nine_followup_gate.py",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/nine-followup-review.yml",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/pending-issues-current.yml",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/README.md",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/contact_drafts.json",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/contact_drafts.md",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/followup.json",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/publishable.json",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/nine_followup_20261115/source_evidence.json",
+      "kind": "staging_only",
+      "category": "nine_unresolved_followup",
+      "reason": "未確認9件の完了扱いを禁止し、通常ブラウザーによる画像確認・未解決事項・未送信の外部確認依頼案を記録する。主催者と管理者の終了時刻差を保持した1件追加と旧604個票/履歴/取得失敗の保持を検証するmain専用資料。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

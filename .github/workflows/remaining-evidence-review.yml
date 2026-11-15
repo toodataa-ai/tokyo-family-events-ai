@@ -3,6 +3,11 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - 'site/pending-issues*'
+      - 'site/omitted*'
+      - 'site/audit/pending_issues_catalog.json'
+      - 'tests/pending_issues*'
+      - 'tests/omitted_page_contract.test.mjs'
       - 'tools/validate_remaining_evidence_addition_20261115.py'
       - 'tools/review_public_monthly_calendar.py'
       - 'tests/test_public_monthly_calendar.py'

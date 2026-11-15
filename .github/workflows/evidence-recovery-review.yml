@@ -1,14 +1,7 @@
 name: Verify manual evidence recovery staging candidate
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'tools/validate_evidence_recovery_20261115.py'
-      - 'tests/test_evidence_recovery_gate.py'
-      - 'research/evidence_recovery_20261115/**'
-      - 'site/pending-issues.*'
-      - 'site/audit/pending_issues_catalog.json'
-      - '.github/workflows/evidence-recovery-review.yml'
+  # Historical frozen candidate: live branch SHAs intentionally reflect its pre-release state.
+  # Current changes run remaining-evidence-review (npm regression + current exact data gate).
   workflow_dispatch: {}
 permissions:
   contents: read

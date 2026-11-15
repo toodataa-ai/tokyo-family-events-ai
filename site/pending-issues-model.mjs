@@ -32,10 +32,19 @@ export function validateCatalog(catalog) {
               catch (_) { return true; }
             })) throw new Error("個別照合の根拠・判定が不正です");
         ids.add(row.id);
+        if (row.status === "withheld_insufficient_evidence") {
+          const detail = row.pending_detail;
+          if (!detail || ["blocker","confirmed","missing","publication_impact","needed_evidence","publication_status"].some(key => typeof detail[key] !== "string" || !detail[key].trim())) {
+            throw new Error("未解決候補には確認済みの内容・不足する根拠・掲載への影響が必要です");
+          }
+        }
       }
       if (entry.work_status === "completed" && entry.review_results.some(row => row.status === "withheld_insufficient_evidence")) {
         throw new Error("公式根拠が未確認の候補を含む作業は完了にできません");
       }
+    }
+    if (entry.public_information_only === true && (entry.outbound_contact_allowed !== false || !entry.followup_policy)) {
+      throw new Error("公開情報のみの確認方針と外部問い合わせの許可状態が一致しません");
     }
   }
   return true;

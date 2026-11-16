@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "source_ids": [
+    "suginami_calendar_all",
+    "suginami_festival"
+  ],
+  "status": "partial_verified_date_scoped_not_all_42_dates",
+  "daily_calendar_url_pattern": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3&year=2026&month=12&day={DD}",
+  "individual_days_opened": [
+    "2026-11-21",
+    "2026-11-22",
+    "2026-12-19",
+    "2026-12-20",
+    "2026-12-26",
+    "2026-12-27"
+  ],
+  "included_weekly_records": 12,
+  "distinct_event_ids": 9,
+  "excluded": [
+    {
+      "id": "exclude-suginami-20261219-documentary",
+      "event_name": "子どもドキュメンタリー映画制作ワークショップ",
+      "source": "https://www.city.suginami.tokyo.jp/s107/event/28877.html",
+      "date": "2026-12-19/20",
+      "decision": "exclude_unavailable_for_new_reservation",
+      "reason": "11/15で募集終了。全7回の有料一括申込であり11/16時点で新規参加できない"
+    },
+    {
+      "id": "exclude-suginami-20261219-kids-gym",
+      "event_name": "親子チャレンジ体操教室",
+      "source": "https://www.city.suginami.tokyo.jp/s032/event/29036.html",
+      "date": "2026-12-19/26",
+      "decision": "exclude_unavailable_for_new_reservation",
+      "reason": "11/13で抽選申込締切。全6回コースの途中回を個別参加可能とみなさない"
+    },
+    {
+      "id": "exclude-suginami-20261219-unesco",
+      "event_name": "ユネスコ中学生クラブ",
+      "source": "https://www.city.suginami.tokyo.jp/s113/event/24444.html",
+      "date": "2026-12-19",
+      "decision": "exclude_unavailable_for_new_reservation",
+      "reason": "年会費4,000円の年間連続講座、2026年3月20日で申込期間終了"
+    },
+    {
+      "id": "exclude-suginami-20261226-irori",
+      "event_name": "古民家の囲炉裏当番で薪を燃やしてみよう",
+      "source": "https://www.city.suginami.tokyo.jp/s113/event/28197.html",
+      "date": "2026-12-26",
+      "decision": "hard_exclude_adult_only",
+      "reason": "公式対象者は区内在住在勤在学の成人のみ、子ども参加対象ではない"
+    }
+  ],
+  "per_week": {
+    "2026-12-19": 9,
+    "2026-12-26": 3
+  },
+  "candidate_ids": [
+    {
+      "id": "official-20261219-suginami-science-fair",
+      "official_url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html"
+    },
+    {
+      "id": "official-20261219-suginami-planetarium",
+      "official_url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html"
+    },
+    {
+      "id": "official-20261219-suginami-shimenawa",
+      "official_url": "https://www.city.suginami.tokyo.jp/s121/event/29120.html"
+    },
+    {
+      "id": "official-20261220-suginami-ehon-live28",
+      "official_url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html"
+    },
+    {
+      "id": "official-20261220-suginami-brass-workshop",
+      "official_url": "https://www.city.suginami.tokyo.jp/s111/event/29029.html"
+    },
+    {
+      "id": "official-20261219-suginami-inclusive-art",
+      "official_url": "https://www.city.suginami.tokyo.jp/s036/event/26086.html"
+    },
+    {
+      "id": "official-2026-suginami-nishiogi-illumination",
+      "official_url": "https://www.city.suginami.tokyo.jp/s033/event/29002.html"
+    },
+    {
+      "id": "official-2026-suginami-asagaya-illumination",
+      "official_url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html"
+    },
+    {
+      "id": "official-2026-suginami-ogikubo-illumination",
+      "official_url": "https://www.city.suginami.tokyo.jp/s033/event/29148.html"
+    }
+  ],
+  "sources_not_equivalent": "祭り限定・月別の必須検索URLは取得失敗したため完了と主張しない。公式の日別全ジャンルURLの対象日断面を別途確認した部分成果。",
+  "family_fit": "8軸を今回候補ごとに確認。イルミネーションは子ども専用体験でないためB、科学・工作系はA、専門的制約のある音楽・障害者向けアートはB。",
+  "release_blockers": [
+    "23区全体の探索と必須25ソースの検証未完了",
+    "杉並区の日別42日全巡回未完了",
+    "新週の公開用インデックス/verification/decisions/runまだ未生成",
+    "画像HTTP検証・Strict CI未完了"
+  ],
+  "publication_allowed": false
+}

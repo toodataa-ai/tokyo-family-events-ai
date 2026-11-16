@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "kind": "holiday_after_publication_gate_read_only_audit",
+  "status": "blocked_no_deploy",
+  "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "production_app_sha": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
+  "canonical_prompt": {
+    "version": "v1.15",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt"
+  },
+  "intended_horizon": {
+    "as_of": "2026-11-16",
+    "first_week_start": "2026-11-21",
+    "last_week_start": "2026-12-26",
+    "end": "2026-12-27",
+    "holidays": [
+      {
+        "date": "2026-11-23",
+        "name": "勤労感謝の日"
+      }
+    ]
+  },
+  "verified_file_statistics": {
+    "weeks": [
+      {
+        "week_start": "2026-11-21",
+        "current_published_events": 154,
+        "verified": 146,
+        "announced": 8,
+        "image_url_records": 91,
+        "image_ratio": 0.5909090909,
+        "required_images_for_current_count": 108,
+        "missing_images_for_gate": 17,
+        "required_tier": "full"
+      },
+      {
+        "week_start": "2026-11-28",
+        "current_published_events": 107,
+        "verified": 101,
+        "announced": 6,
+        "image_url_records": 60,
+        "image_ratio": 0.5607476636,
+        "required_images_for_current_count": 75,
+        "missing_images_for_gate": 15,
+        "required_tier": "full"
+      },
+      {
+        "week_start": "2026-12-05",
+        "current_published_events": 87,
+        "verified": 83,
+        "announced": 4,
+        "required_tier": "preview"
+      },
+      {
+        "week_start": "2026-12-12",
+        "current_published_events": 72,
+        "verified": 69,
+        "announced": 3,
+        "required_tier": "preview"
+      }
+    ],
+    "basis": "Image count read by fetching all event shard JSON listed in the current data-production week indices. This is URL presence, not remote-image HTTP success. Official image identity must still be audited."
+  },
+  "candidate_data": {
+    "weekly_records": 29,
+    "distinct_ids": 22,
+    "files": [
+      "2026-11-21-events-official-subset-20261116.json",
+      "2026-12-19-events-official-subset-20261116.json",
+      "2026-12-19-events-official-more-20261116.json",
+      "2026-12-19-events-carryover-review-20261116.json",
+      "2026-12-26-events-official-subset-20261116.json",
+      "2026-12-26-events-carryover-review-20261116.json"
+    ],
+    "note": "These are unpublished fragments without final week indices, verified decision reconciliation or complete source coverage."
+  },
+  "official_source_spot_rechecks": [
+    {
+      "name": "NIJIN教育万博2026",
+      "url": "https://expo.nijin.co.jp/venue-real/",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "event_name",
+        "date",
+        "venue",
+        "entry_conditions"
+      ],
+      "note": "Nov 21-22 at DMM六本木本社24F, free LINE registration"
+    },
+    {
+      "name": "えどがわパラスポーツ体験会",
+      "url": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "event_name",
+        "date",
+        "venue",
+        "target"
+      ],
+      "note": "Nov 22 at 江戸川区スポーツセンター"
+    },
+    {
+      "name": "練馬区文化祭",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "handicrafts",
+        "nihonbuyo",
+        "date",
+        "venue"
+      ]
+    },
+    {
+      "name": "羽田航空博物館展",
+      "url": "https://www.o-2.jp/en/event/hasmhicity2026/",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "name",
+        "date_range",
+        "venue",
+        "nov28_program"
+      ],
+      "note": "Tourism site English content contains some garbled text; avoid inventing time/price details"
+    },
+    {
+      "name": "日本橋みちみちこみち2026",
+      "url": "https://www.keepallsmiles.com/komichi2026",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "name",
+        "date_range",
+        "no_reservation",
+        "price"
+      ]
+    },
+    {
+      "name": "SUMIDA光のナイトガーデン",
+      "url": "https://sumida-artfest.jp/programs/3990/",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "name",
+        "date_range",
+        "venue"
+      ]
+    },
+    {
+      "name": "MOA美術館墨田児童作品展",
+      "url": "https://sumida-artfest.jp/programs/4004/",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "name",
+        "date",
+        "venue"
+      ]
+    },
+    {
+      "name": "LUMINA STUDIO 2nd show",
+      "url": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "date",
+        "venue",
+        "reservation",
+        "price"
+      ]
+    },
+    {
+      "name": "練馬区地区祭年度一覧",
+      "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html",
+      "status": "source_web_page_reviewed",
+      "checked_at_jst": "2026-11-16",
+      "verified_fields": [
+        "2026_fiscal_year_link"
+      ]
+    }
+  ],
+  "source_access_blockers": [
+    {
+      "source_id": "tamemap_nakano",
+      "required": true,
+      "pattern": "https://pc.tamemap.net/1311401/calendar/{YYYY-MM}",
+      "issue": "Exact URL web opens failed. A search-index cached copy of 2026-11 was readable, but that does not establish successful fresh URL fetch, full monthly coverage, current revisions, or explicit-source check PASS.",
+      "resolution": "Requires successful monthly fetching, pagination/detail reconciliation and source evidence or sanctioned equivalent under formally revised production rules."
+    },
+    {
+      "source_id": "suginami_festival",
+      "required": true,
+      "pattern": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1",
+      "issue": "Web open for Nov/Dec exact calendar URLs failed in this audit. No successful required-source status claimed."
+    }
+  ],
+  "publication_gate": {
+    "minimum_image_coverage": 0.7,
+    "full_ward_audit_completed": false,
+    "all_required_explicit_sources_checked": false,
+    "image_identity_audit_completed": false,
+    "announced_promotions_reconciled": false,
+    "new_week_indexes_complete": false,
+    "strict_validator_executed": false,
+    "non_regression_validator_executed": false,
+    "github_actions_deploy_triggered": false,
+    "pages_publication_verified": false
+  },
+  "protected_data_policy": {
+    "existing_events_deleted": 0,
+    "production_data_updated": false,
+    "production_app_updated": false,
+    "app_version_updated": false
+  },
+  "next_required_actions": [
+    "Resolve or re-verify 14 announced entries in 11/21 and 11/28 full weeks with official evidence.",
+    "Acquire and verify at least 17 additional image URLs for the currently published 11/21 records and at least 15 additional for 11/28, then recompute after any adds.",
+    "Finish 23-ward and mandatory explicit URL audits, especially tamemap and Suginami calendars, without synthetic success flags.",
+    "Reconcile new weeks with candidate decisions, verification records, thumbnail evidence, holiday coverage, safe non-regression and publication history.",
+    "Run production validators and CI; only upon success use the established main data-deploy trigger and validate Pages release."
+  ],
+  "note": "Audit-only provenance; do not change any verified status based on source checks alone, and do not interpret partial candidates as publication-ready."
+}

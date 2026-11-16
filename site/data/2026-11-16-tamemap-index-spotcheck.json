@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "status": "partial_cache_index_crosscheck_not_required_source_pass",
+  "source_id": "tamemap_nakano",
+  "enabled": true,
+  "required": true,
+  "official_source_config_path": "site/data/discovery_sources.json",
+  "exact_source_url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+  "exact_url_result": "web_fetch_failed_2026-11-16",
+  "alternative_index_url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.70037460516024&level=5000&lng=139.67420518398285&locale=ja",
+  "alternative_index_crawl_age": "~2_weeks_old",
+  "alternative_map_radius": "500m",
+  "alternative_scope": "partial/possibly stale, not full Nakano ward",
+  "dates_inspected": [
+    "2026-11-21",
+    "2026-11-22",
+    "2026-11-23",
+    "2026-11-28",
+    "2026-11-29"
+  ],
+  "matched_existing_week_records": [
+    {
+      "date": "2026-11-22",
+      "title": "ママほっとキッチン",
+      "event_id": "reviewed-20261122-nakano-153058",
+      "week_start": "2026-11-21",
+      "existing_shard": "2026-11-21-events-reviewed-community-20261113.json",
+      "event_detail_url": "https://pc.tamemap.net/1311401/event/153058/2026-11-22?locale=ja",
+      "organizer_evidence_url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+      "action": "no new event created, already published candidate"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "〖はじめてのキッズダンス〗",
+      "event_id": "reviewed-20261122-nakano-160190",
+      "week_start": "2026-11-21",
+      "existing_shard": "2026-11-21-events-reviewed-hiromachi-20261113.json",
+      "event_detail_url": "https://pc.tamemap.net/1311401/event/160190/2026-11-22?locale=ja",
+      "organizer_evidence_url": "https://nakano-hiromatimirai.resv.jp/reserve/calendar.php?x=1634516751",
+      "action": "no new event created, already published candidate"
+    }
+  ],
+  "additional_index_items_for_official_followup": [
+    {
+      "date": "2026-11-22",
+      "title": "第56回 誰でも音楽会",
+      "venue": "野方さんくちゅありぃ",
+      "reason": "Organiser date, target and official page not individually reverified"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "中野区 将棋 人気棋士フェスティバル/渡辺明九段杯",
+      "venue": "鷺宮区民活動センター",
+      "reason": "Organiser official detail and child access not individually reverified"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "大人も楽しめる花育 クリスマスアレンジ / 手作りのミニツリー",
+      "venue": "広町みらい公園",
+      "reason": "Separate workshop sessions and family suitability require official organiser confirmation"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "子どものための日本舞踊教室",
+      "venue": "松が丘片山会館",
+      "reason": "Nov28 practice versus Dec12 performance and participation eligibility must be checked"
+    },
+    {
+      "date": "2026-11-29",
+      "title": "おひさまリトミック",
+      "venue": "もりのいえ",
+      "reason": "Organiser event detail not yet crosschecked"
+    }
+  ],
+  "not_claimed": [
+    "No exact search_urls successful fetch.",
+    "No all-ward map mode verified.",
+    "No complete pagination or daily detail traversal.",
+    "No December page retrieved.",
+    "No candidate_count=0 or full explicit_source_checks=passed."
+  ],
+  "preservation": "Existing events preserved and duplicates avoided; no published-week data altered by this audit."
+}

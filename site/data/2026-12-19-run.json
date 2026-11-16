@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "target": {
+    "sat": "2026-12-19",
+    "sun": "2026-12-20"
+  },
+  "horizon_index": 5,
+  "publication_tier": "announcement",
+  "mode": "partial_prepublication_staging_draft_not_approved",
+  "prompt": {
+    "version": "v1.15",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+    "pointer": "site/data/latest_prompt.json",
+    "resolved": true
+  },
+  "source_data": {
+    "week_file": "2026-12-19.json",
+    "verification_file": "2026-12-19-verification.json",
+    "decision_file": "2026-12-19-decisions.json"
+  },
+  "candidate_evidence": {
+    "source_shards": [
+      "2026-12-19-events-official-subset-20261116.json",
+      "2026-12-19-events-carryover-review-20261116.json",
+      "2026-12-19-events-official-more-20261116.json",
+      "2026-12-19-events-suginami-official-20261116.json"
+    ],
+    "source_audits": [
+      "2026-11-16-candidate-audit.json",
+      "2026-11-16-carryover-audit.json",
+      "2026-11-16-suginami-december-audit.json"
+    ],
+    "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f"
+  },
+  "discovery_evidence": {
+    "wards_total": 23,
+    "wards_fully_checked_this_run": 0,
+    "required_sources_total": 25,
+    "required_sources_fully_checked_this_run": 0,
+    "full_42_day_suginami_daily_sweep": false
+  },
+  "explicit_source_checks": [],
+  "official_schedule_checks": [
+    {
+      "source_id": "suginami_calendar_all",
+      "status": "partial",
+      "days_reviewed": [
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "official_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3&year=2026&month=12&day=19"
+    }
+  ],
+  "stages": [
+    {
+      "name": "candidate_shards_prepared",
+      "status": "passed"
+    },
+    {
+      "name": "official_event_subset",
+      "status": "partial"
+    },
+    {
+      "name": "discover_23_wards",
+      "status": "blocked"
+    },
+    {
+      "name": "mandatory_explicit_source_crawl",
+      "status": "blocked"
+    },
+    {
+      "name": "strict_validation",
+      "status": "pending"
+    },
+    {
+      "name": "deploy",
+      "status": "not_attempted"
+    }
+  ],
+  "summary": {
+    "wards_checked": 0,
+    "candidates": 30,
+    "published": 27,
+    "excluded": 3,
+    "duplicate_removed": 0,
+    "verified": 19,
+    "announced": 8,
+    "thumbnail_count": 9,
+    "source_audit_complete": false,
+    "publication_ready": false
+  }
+}

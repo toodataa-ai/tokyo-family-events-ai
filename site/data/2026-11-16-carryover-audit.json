@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "status": "candidate_only_blocked_not_for_publication",
+  "base_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "base_data_staging_sha": "81ec814baa7726e70ba04c98bbc6c30bf50cb479",
+  "prompt_version": "v1.15",
+  "week_candidate_counts": {
+    "2026-12-19": 12,
+    "2026-12-26": 6
+  },
+  "carryover_counts": {
+    "2026-12-19": 10,
+    "2026-12-26": 6
+  },
+  "new_discoveries": [
+    {
+      "id": "candidate-20261219-funsportnexus",
+      "url": "https://funsportnexus.org/202612orisen/"
+    },
+    {
+      "id": "candidate-20261219-minamisuna-christmas-mini-concert",
+      "url": "https://www.city.koto.lg.jp/011501/kuse/koho/kuho/r08/text/111102.html"
+    }
+  ],
+  "carryover_official_evidence": [
+    {
+      "week_start": "2026-12-19",
+      "id": "v15-8bc88232815c",
+      "official_url": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "v15-ad2f72f74ab7",
+      "official_url": "https://www.kodomo.go.jp/event/exhibition/tenji2026-02"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "v15-0c6fcb6bf768",
+      "official_url": "https://chihiro.jp/tokyo/visit/"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "v15-7b30b706f728",
+      "official_url": "https://www.city.toshima.lg.jp/129/2609101123.html"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "ongoing-20261128-v15-97ee0aaed408",
+      "official_url": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "ongoing-20261128-v15-d7b35a2aa60b",
+      "official_url": "https://www.aquarium.gr.jp/news/events/31639"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "ongoing-20261128-r16-a998e43102c9",
+      "official_url": "https://tokyoatlas.jp/"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "ongoing-20261128-r16-d1fc65f778d6",
+      "official_url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "ongoing-20261128-v15-5e0e43c28e84",
+      "official_url": "https://www.yoyogiforestoflights.tokyo/"
+    },
+    {
+      "week_start": "2026-12-19",
+      "id": "official-2026-sumida-light-garden",
+      "official_url": "https://sumida-artfest.jp/programs/3990/"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "v15-8bc88232815c",
+      "official_url": "https://www.hibiya.tokyo-midtown.com/jp/event/7587/"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "v15-0c6fcb6bf768",
+      "official_url": "https://chihiro.jp/tokyo/visit/"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "ongoing-20261128-v15-97ee0aaed408",
+      "official_url": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "ongoing-20261128-r16-d1fc65f778d6",
+      "official_url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "ongoing-20261128-v15-5e0e43c28e84",
+      "official_url": "https://www.yoyogiforestoflights.tokyo/"
+    },
+    {
+      "week_start": "2026-12-26",
+      "id": "official-2026-sumida-light-garden",
+      "official_url": "https://sumida-artfest.jp/programs/3990/"
+    }
+  ],
+  "image_extraction_complete": false,
+  "required_source_checks_complete": false,
+  "full_23_ward_search_complete": false,
+  "verification_decision_run_reconciled": false,
+  "strict_validation_complete": false,
+  "changes_to_published_manifest": false,
+  "changes_to_history": false,
+  "public_deploy_triggered": false,
+  "notes": [
+    "12/12週までの既存公式照合済み10企画について対象週の開催期間・休館を個別再照合した候補",
+    "HIBIYA 8mメインツリーは12/25終了。12/26分は継続エリアのみ。",
+    "子ども図書館展は12/20終了で12/26週に含めない。",
+    "しながわ水族館エリック・カール展は12/25終了で12/26週に含めない。",
+    "新規候補は公式2件、前回11件と合計3つの未完成候補ファイル群として保存、正式イベント週index/verification/decisionは変更しない。",
+    "明示参照元25系統の最新全URL取得や23区一括監査・画像確認が未完了のため公開不可。"
+  ]
+}

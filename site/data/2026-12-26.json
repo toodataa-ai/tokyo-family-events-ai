@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 0,
-    "candidate_count": 15,
+    "candidate_count": 18,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 13,
+    "published_count": 16,
     "wards": [
       {
         "ward": "千代田区",
@@ -182,8 +182,8 @@
         "status": "pending_reaudit",
         "queries": 0,
         "sources_checked": 0,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "今回の全23区再探索は未完了。個別イベント根拠を持つ候補のみ。"
       },
       {
@@ -191,8 +191,8 @@
         "status": "pending_reaudit",
         "queries": 0,
         "sources_checked": 0,
-        "candidate_count": 2,
-        "published_count": 2,
+        "candidate_count": 3,
+        "published_count": 3,
         "note": "今回の全23区再探索は未完了。個別イベント根拠を持つ候補のみ。"
       },
       {
@@ -200,8 +200,8 @@
         "status": "pending_reaudit",
         "queries": 0,
         "sources_checked": 0,
-        "candidate_count": 0,
-        "published_count": 0,
+        "candidate_count": 1,
+        "published_count": 1,
         "note": "今回の全23区再探索は未完了。個別イベント根拠を持つ候補のみ。"
       },
       {
@@ -227,7 +227,8 @@
   "event_files": [
     "2026-12-26-events-official-subset-20261116.json",
     "2026-12-26-events-carryover-review-20261116.json",
-    "2026-12-26-events-suginami-official-20261116.json"
+    "2026-12-26-events-suginami-official-20261116.json",
+    "2026-12-26-events-multiward-official-20261116.json"
   ],
   "events": []
 }

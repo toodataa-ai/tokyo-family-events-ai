@@ -22,7 +22,8 @@
     "source_shards": [
       "2026-12-26-events-official-subset-20261116.json",
       "2026-12-26-events-carryover-review-20261116.json",
-      "2026-12-26-events-suginami-official-20261116.json"
+      "2026-12-26-events-suginami-official-20261116.json",
+      "2026-12-26-events-multiward-official-20261116.json"
     ],
     "source_audits": [
       "2026-11-16-candidate-audit.json",
@@ -80,14 +81,24 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 15,
-    "published": 13,
+    "candidates": 18,
+    "published": 16,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 9,
+    "verified": 12,
     "announced": 4,
     "thumbnail_count": 5,
     "source_audit_complete": false,
     "publication_ready": false
+  },
+  "official_source_rechecks_added": {
+    "checked_at_jst": "2026-11-16",
+    "source_list": [
+      "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1226.html",
+      "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "https://www.city.itabashi.tokyo.jp/koho/1062992/1066514/1066517.html"
+    ],
+    "added_events": 3,
+    "coverage_status": "partial_ward_targeted_search"
   }
 }

@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 15,
-    "published": 13,
+    "candidate_total": 18,
+    "published": 16,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -1448,6 +1448,303 @@
         {
           "url": "https://www.city.suginami.tokyo.jp/s113/event/28197.html",
           "basis": "2026-11-16公式の開催対象・申込締切を直接確認"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261226-adachi-wildbirds",
+      "name": "親子で楽しむ野鳥観察会",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生と保護者、10組"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生と保護者、10組"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場の自由度は公式に記載がないため要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要申込、11/11 9時から窓口・電話・オンライン・FAX、先着10組。満員時キャンセル待ち"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_page_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。"
+          ],
+          "limitations": [
+            "要申込、11/11 9時から窓口・電話・オンライン・FAX、先着10組。満員時キャンセル待ち"
+          ],
+          "grade_comparison": "総合A：小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1226.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_program"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "小学生と保護者が野鳥観察を一緒に体験できる明確な自然学習。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1226.html",
+          "basis": "2026-11-16 official 2026 event page"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261226-nerima-forest-work",
+      "name": "ねりまの森こどもフェスタ 森のおしごと体験",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子どもが自然と触れ合い、森の維持活動を体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "親子・子ども、18歳以下はグッズ対象"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子どもが自然と触れ合い、森の維持活動を体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子・子ども、18歳以下はグッズ対象"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場の自由度は公式に記載がないため要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "子どもが自然と触れ合い、森の維持活動を体験できる。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料（公式は一部有料企画ありと注意記載）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "基本予約不要、当日直接会場へ。雨天中止・企画変更の可能性あり"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもが自然と触れ合い、森の維持活動を体験できる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_page_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子どもが自然と触れ合い、森の維持活動を体験できる。"
+          ],
+          "limitations": [
+            "基本予約不要、当日直接会場へ。雨天中止・企画変更の可能性あり"
+          ],
+          "grade_comparison": "総合A：子どもが自然と触れ合い、森の維持活動を体験できる。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_program"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子どもが自然と触れ合い、森の維持活動を体験できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "basis": "2026-11-16 official 2026 event page"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261226-itabashi-brass",
+      "name": "チャリティーコンサート 音楽の絵本 ブラス・バトル",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "親子・家族向け、未就学児は保護者同伴で観賞"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "親子・家族向け、未就学児は保護者同伴で観賞"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場の自由度は公式に記載がないため要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "1,500円（全席指定）、2歳以下の膝上鑑賞は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要チケット購入。文化会館窓口・電話または指定販売サイトから、申込順1,200人"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_page_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。"
+          ],
+          "limitations": [
+            "要チケット購入。文化会館窓口・電話または指定販売サイトから、申込順1,200人"
+          ],
+          "grade_comparison": "総合A：動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1066514/1066517.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_program"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "動物の演奏家たちによる、子どもが親しみやすい音楽コンサート。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1066514/1066517.html",
+          "basis": "2026-11-16 official 2026 event page"
         }
       ],
       "override_reason": ""

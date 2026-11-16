@@ -3,7 +3,7 @@
   "as_of_jst": "2026-11-16",
   "status": "partial_official_image_enrichment_not_deployable",
   "source_data_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
-  "image_record_count": 12,
+  "image_record_count": 33,
   "records": [
     {
       "week_start": "2026-11-21",
@@ -112,7 +112,222 @@
       "added_on_jst": "2026-11-16",
       "selection_rule": "source event photo / dated official event flyer; not guessed",
       "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "official-2026-nihonbashi-komichi",
+      "image_url": "https://rstatic.enjoytokyo.jp/assets/images/event_draft/32/2086147/img_1.jpg?1791186923=&p=t&w=1800",
+      "source_page_url": "https://www.enjoytokyo.jp/event/2086147/",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "2026 event artwork on event media, verified program title",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "partial-20261123-edogawa-keyholder",
+      "image_url": "https://www.city.edogawa.tokyo.jp/images/74633/1123keyholder.jpg",
+      "source_page_url": "https://www.city.edogawa.tokyo.jp/event/2611keyholder.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal event image",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "partial-20261123-edogawa-magic",
+      "image_url": "https://www.city.edogawa.tokyo.jp/images/74642/1123magic.jpg",
+      "source_page_url": "https://www.city.edogawa.tokyo.jp/event/2611kosaku.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal event image",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "gap-20261123-edogawa-kasai-super-fes",
+      "image_url": "https://www.city.edogawa.tokyo.jp/images/74965/1.jpg",
+      "source_page_url": "https://www.city.edogawa.tokyo.jp/event/super_fes.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 event flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "gap-20261123-edogawa-walking",
+      "image_url": "https://www.city.edogawa.tokyo.jp/images/49504/uokin.jpg",
+      "source_page_url": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal event illustration",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "final-20261122-nerima-music-family",
+      "image_url": "https://www.nerimakanko.jp/img_data/e000002936.jpg?1788841594=",
+      "source_page_url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202608081786175523",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "official tourism published combined event flyer: family session",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "final-20261122-nerima-music-brass",
+      "image_url": "https://www.nerimakanko.jp/img_data/e000002936.jpg?1788841594=",
+      "source_page_url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202608081786175523",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "official tourism published combined event flyer: brass session",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-21",
+      "event_id": "nerima-forest-20261121-minamitakamatsu",
+      "image_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.images/kodomofesurogo.png",
+      "source_page_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal program-series logo not specific-event photo",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "official-2026-nihonbashi-komichi",
+      "image_url": "https://rstatic.enjoytokyo.jp/assets/images/event_draft/32/2086147/img_1.jpg?1791186923=&p=t&w=1800",
+      "source_page_url": "https://www.enjoytokyo.jp/event/2086147/",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "2026 event artwork on event media, verified program title",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "partial-20261129-nakano-precure-rally",
+      "image_url": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.images/precurequiz.jpg",
+      "source_page_url": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 rally image",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "partial-20261129-edogawa-origami",
+      "image_url": "https://www.city.edogawa.tokyo.jp/images/74643/1129origami.jpg",
+      "source_page_url": "https://www.city.edogawa.tokyo.jp/event/2611origami.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal workshop image",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "partial-20261129-setagaya-workfes",
+      "image_url": "https://prcdn.freetls.fastly.net/release_image/45871/91/45871-91-91b02a2f0f973c76b22bbffbbeb01331-2716x1517.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
+      "source_page_url": "https://prtimes.jp/main/html/rd/p/000000091.000045871.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "organizer-issued 2026 event poster",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "partial-20261129-taito-bookstand",
+      "image_url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/ishi-workshop-kodomo.images/book2.jpg",
+      "source_page_url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/ishi-workshop-kodomo.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal workshop completed craft photo",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "nerima-forest-20261129-kitappara",
+      "image_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.images/kodomofesurogo.png",
+      "source_page_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal program-series logo not specific-event photo",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "final-20261128-nerima-walk-rally",
+      "image_url": "https://www.city.nerima.tokyo.jp/hokenfukushi/hoken/kenkodukuri/undo/202610_stamprally.images/panfu_2026stamprally_omote.png",
+      "source_page_url": "https://www.city.nerima.tokyo.jp/hokenfukushi/hoken/kenkodukuri/undo/202610_stamprally.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 program flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "all-reviewed-20261129-nerima-marche",
+      "image_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/oshirase/nerimaruche.images/nerimarche_A3_light.jpg",
+      "source_page_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/oshirase/nerimaruche.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 event flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "next-primary-20261128-minato-austria-market",
+      "image_url": "https://www.city.minato.tokyo.jp/images/150656/20261019090228.jpg",
+      "source_page_url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal umbrella SDGs month visual, not specific-event flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "next-primary-20261128-minato-autumn-lightup",
+      "image_url": "https://www.city.minato.tokyo.jp/images/150656/20261019090228.jpg",
+      "source_page_url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal umbrella SDGs month visual, not specific-event flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "next-primary-20261128-minato-karippa-sdgs",
+      "image_url": "https://www.city.minato.tokyo.jp/images/150656/20261019090228.jpg",
+      "source_page_url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal umbrella SDGs month visual, not specific-event flyer",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "gap-20261129-shinjuku-kashiwa",
+      "image_url": "https://www.city.shinjuku.lg.jp/content/000470063.jpg",
+      "source_page_url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 specific-event poster",
+      "image_http_status_check": "not independently verified in CI"
+    },
+    {
+      "week_start": "2026-11-28",
+      "event_id": "gap-20261129-shinjuku-goalball",
+      "image_url": "https://www.city.shinjuku.lg.jp/content/000469228.jpg",
+      "source_page_url": "https://www.city.shinjuku.lg.jp/kusei/kashiwagi01_000001_00042.html",
+      "added_on_jst": "2026-11-16",
+      "selection_rule": "municipal 2026 specific-event poster",
+      "image_http_status_check": "not independently verified in CI"
     }
   ],
-  "note": "候補データのみ・公式ページ上のイベント画像の掲載URL記録。画像レスポンス・CMSレンダリング・full tier 70%判定は別途CI確認が必須。"
+  "note": "候補データのみ・公式ページ上のイベント画像の掲載URL記録。画像レスポンス・CMSレンダリング・full tier 70%判定は別途CI確認が必須。",
+  "coverage_by_week": [
+    {
+      "week_start": "2026-11-21",
+      "base_images": 91,
+      "images_added": 17,
+      "current_images": 108,
+      "published_events": 154,
+      "ratio": 0.7012987012987013,
+      "required_ratio": 0.7
+    },
+    {
+      "week_start": "2026-11-28",
+      "base_images": 60,
+      "images_added": 16,
+      "current_images": 76,
+      "published_events": 107,
+      "ratio": 0.7102803738317757,
+      "required_ratio": 0.7
+    }
+  ],
+  "notes": [
+    "Image URL presence counts come from stage full-shard read-back; remote render/HTTP response checks remain incomplete.",
+    "For Minato 3 sub-events and Nerima forest 2 events, visuals are official parent/series illustrations, not event-specific flyers.",
+    "Some image URLs are third-party press-distribution or media assets as explicitly specified per record; do not claim all are hosted on government domains.",
+    "Official source audit of 25 mandatory catalogs, new December weekend completeness and formal CI release validation are unfinished; publication remains prohibited."
+  ]
 }

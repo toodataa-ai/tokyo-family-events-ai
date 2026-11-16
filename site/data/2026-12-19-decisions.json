@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 30,
-    "published": 27,
+    "candidate_total": 41,
+    "published": 38,
     "excluded": 3,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -2846,6 +2846,1101 @@
         {
           "url": "https://www.city.suginami.tokyo.jp/s113/event/24444.html",
           "basis": "2026-11-16公式の開催対象・申込締切を直接確認"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-shinjuku-track",
+      "name": "新宿区×よしもと 陸上教室（小学生）",
+      "ward": "新宿区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども自身が走り方を学べるスポーツ体験。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学1〜6年生、60人"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子ども自身が走り方を学べるスポーツ体験。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学1〜6年生、60人"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "子ども自身が走り方を学べるスポーツ体験。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要申込。11/30 15時締切（はがき必着）。抽選。空席があれば12/8から電話・FAXで先着受付"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子ども自身が走り方を学べるスポーツ体験。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども自身が走り方を学べるスポーツ体験。"
+          ],
+          "limitations": [
+            "要申込。11/30 15時締切（はがき必着）。抽選。空席があれば12/8から電話・FAXで先着受付"
+          ],
+          "grade_comparison": "総合A：子ども自身が走り方を学べるスポーツ体験。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子ども自身が走り方を学べるスポーツ体験。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-adachi-3x3-beginner",
+      "name": "3X3親子体験会 第1部（未経験の小3〜6）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生と保護者がプロの3人制バスケットを一緒に体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "足立区在住・在学の小学3〜6年生のバスケット未経験者と保護者"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "小学生と保護者がプロの3人制バスケットを一緒に体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "足立区在住・在学の小学3〜6年生のバスケット未経験者と保護者"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "小学生と保護者がプロの3人制バスケットを一緒に体験できる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要申込。11/25正午〜12/7、抽選。応募状況により第1部・第2部の合同開催あり"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "小学生と保護者がプロの3人制バスケットを一緒に体験できる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "小学生と保護者がプロの3人制バスケットを一緒に体験できる。"
+          ],
+          "limitations": [
+            "要申込。11/25正午〜12/7、抽選。応募状況により第1部・第2部の合同開催あり"
+          ],
+          "grade_comparison": "総合A：小学生と保護者がプロの3人制バスケットを一緒に体験できる。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "小学生と保護者がプロの3人制バスケットを一緒に体験できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-adachi-3x3-experienced",
+      "name": "3X3親子体験会 第2部（経験者の小3〜6）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "競技経験のある小学生と保護者がスポーツを体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "足立区在住・在学の小学3〜6年生のバスケット経験者と保護者"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "競技経験のある小学生と保護者がスポーツを体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "足立区在住・在学の小学3〜6年生のバスケット経験者と保護者"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "競技経験のある小学生と保護者がスポーツを体験できる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要申込。11/25正午〜12/7、抽選。応募状況により第1部に合同変更の場合あり"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "競技経験のある小学生と保護者がスポーツを体験できる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "競技経験のある小学生と保護者がスポーツを体験できる。"
+          ],
+          "limitations": [
+            "要申込。11/25正午〜12/7、抽選。応募状況により第1部に合同変更の場合あり"
+          ],
+          "grade_comparison": "総合A：競技経験のある小学生と保護者がスポーツを体験できる。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "競技経験のある小学生と保護者がスポーツを体験できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-adachi-ceramics-am",
+      "name": "初心者向け陶芸体験教室（午前）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生以上が手びねり陶芸を初めて体験できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "足立区内在住・在勤・在学の小学生以上。小学1〜3年生は皿作り限定"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "小学生以上が手びねり陶芸を初めて体験できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "足立区内在住・在勤・在学の小学生以上。小学1〜3年生は皿作り限定"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "小学生以上が手びねり陶芸を初めて体験できる。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "500円（材料費）"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要往復はがきまたはWeb申込、11/24必着、午前16名抽選。午前午後の重複申込不可"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "小学生以上が手びねり陶芸を初めて体験できる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "小学生以上が手びねり陶芸を初めて体験できる。"
+          ],
+          "limitations": [
+            "要往復はがきまたはWeb申込、11/24必着、午前16名抽選。午前午後の重複申込不可"
+          ],
+          "grade_comparison": "総合A：小学生以上が手びねり陶芸を初めて体験できる。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "小学生以上が手びねり陶芸を初めて体験できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-adachi-ceramics-pm",
+      "name": "初心者向け陶芸体験教室（午後）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "午前枠とは異なる参加枠の子ども向け陶芸体験。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "足立区内在住・在勤・在学の小学生以上。小学1〜3年生は皿作り限定"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "午前枠とは異なる参加枠の子ども向け陶芸体験。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "足立区内在住・在勤・在学の小学生以上。小学1〜3年生は皿作り限定"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "午前枠とは異なる参加枠の子ども向け陶芸体験。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "500円（材料費）"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "要往復はがきまたはWeb申込、11/24必着、午後16名抽選。午前午後の重複申込不可"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "午前枠とは異なる参加枠の子ども向け陶芸体験。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "午前枠とは異なる参加枠の子ども向け陶芸体験。"
+          ],
+          "limitations": [
+            "要往復はがきまたはWeb申込、11/24必着、午後16名抽選。午前午後の重複申込不可"
+          ],
+          "grade_comparison": "総合A：午前枠とは異なる参加枠の子ども向け陶芸体験。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "午前枠とは異なる参加枠の子ども向け陶芸体験。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-arakawa-yuinomori-story",
+      "name": "ゆいの森 たのしさいっぱい、ふゆのおはなし会",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向けの季節のおはなし会を短時間で楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子ども向けの季節のおはなし会を短時間で楽しめる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "子ども向けの季節のおはなし会を短時間で楽しめる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子ども向けの季節のおはなし会を短時間で楽しめる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども向けの季節のおはなし会を短時間で楽しめる。"
+          ],
+          "limitations": [
+            "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          ],
+          "grade_comparison": "総合A：子ども向けの季節のおはなし会を短時間で楽しめる。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子ども向けの季節のおはなし会を短時間で楽しめる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-arakawa-minamisenju-story",
+      "name": "南千住図書館 ろうそくでおはなし",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向け読み聞かせ企画として公式日程に掲載。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子ども向け読み聞かせ企画として公式日程に掲載。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "子ども向け読み聞かせ企画として公式日程に掲載。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子ども向け読み聞かせ企画として公式日程に掲載。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども向け読み聞かせ企画として公式日程に掲載。"
+          ],
+          "limitations": [
+            "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          ],
+          "grade_comparison": "総合A：子ども向け読み聞かせ企画として公式日程に掲載。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子ども向け読み聞かせ企画として公式日程に掲載。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-arakawa-nippori-story",
+      "name": "日暮里図書館 おたのしみ会",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向けの図書館行事として開催が公式確認できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "子ども向けの図書館行事として開催が公式確認できる。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "子ども向けの図書館行事として開催が公式確認できる。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子ども向けの図書館行事として開催が公式確認できる。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども向けの図書館行事として開催が公式確認できる。"
+          ],
+          "limitations": [
+            "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          ],
+          "grade_comparison": "総合A：子ども向けの図書館行事として開催が公式確認できる。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "子ども向けの図書館行事として開催が公式確認できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261220-arakawa-ogu-christmas",
+      "name": "尾久図書館 ちょっと特別なクリスマスのおはなし会",
+      "ward": "荒川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "クリスマスを題材にした子ども向け読み聞かせ。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "クリスマスを題材にした子ども向け読み聞かせ。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "子ども"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "クリスマスを題材にした子ども向け読み聞かせ。"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金は主催者公式に記載なし"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "クリスマスを題材にした子ども向け読み聞かせ。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "クリスマスを題材にした子ども向け読み聞かせ。"
+          ],
+          "limitations": [
+            "公式月別カレンダーに申込要否と費用の明記なし。図書館に確認"
+          ],
+          "grade_comparison": "総合A：クリスマスを題材にした子ども向け読み聞かせ。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "クリスマスを題材にした子ども向け読み聞かせ。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-katsushika-newyear",
+      "name": "年中行事教室 葛飾区の年越しと正月を学ぶ",
+      "ward": "葛飾区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "どなたでも・先着50名"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "どなたでも・先着50名"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "大人100円、中学生以下無料（土曜日の入館料）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込不要、当日会場へ。先着50人"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。"
+          ],
+          "limitations": [
+            "事前申込不要、当日会場へ。先着50人"
+          ],
+          "grade_comparison": "総合A：親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "child_activity"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "親子で郷土の年中行事や料理の意味を知り、雑煮を試食する体験。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+          "basis": "2026-11-16 individual official schedule row"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "official-20261219-katsushika-farmers-fair",
+      "name": "歳の市（農業交流市）",
+      "ward": "葛飾区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "どなたでも"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "どなたでも"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中入退場について公式に記載がないため会場へ要確認"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場無料（野菜購入は有料）"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "直接会場へ。混雑時は人数制限の可能性あり"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_official_webpage_review",
+          "reviewed_on": "2026-11-16",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。"
+          ],
+          "limitations": [
+            "直接会場へ。混雑時は人数制限の可能性あり"
+          ],
+          "grade_comparison": "総合B：家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php",
+              "checked_at": "2026-11-16"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "family_access"
+      ],
+      "negative_signals": [],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "家族で季節の地場野菜を見て地域の食文化を学べるが、子ども専用体験はない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php",
+          "basis": "2026-11-16 individual official schedule row"
         }
       ],
       "override_reason": ""

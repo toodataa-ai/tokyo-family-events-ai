@@ -23,7 +23,8 @@
       "2026-12-19-events-official-subset-20261116.json",
       "2026-12-19-events-carryover-review-20261116.json",
       "2026-12-19-events-official-more-20261116.json",
-      "2026-12-19-events-suginami-official-20261116.json"
+      "2026-12-19-events-suginami-official-20261116.json",
+      "2026-12-19-events-multiward-official-20261116.json"
     ],
     "source_audits": [
       "2026-11-16-candidate-audit.json",
@@ -81,14 +82,27 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 30,
-    "published": 27,
+    "candidates": 41,
+    "published": 38,
     "excluded": 3,
     "duplicate_removed": 0,
-    "verified": 19,
+    "verified": 30,
     "announced": 8,
     "thumbnail_count": 9,
     "source_audit_complete": false,
     "publication_ready": false
+  },
+  "official_source_rechecks_added": {
+    "checked_at_jst": "2026-11-16",
+    "source_list": [
+      "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+      "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+      "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+      "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+      "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+      "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php"
+    ],
+    "added_events": 11,
+    "coverage_status": "partial_23_ward_search_first_pass"
   }
 }

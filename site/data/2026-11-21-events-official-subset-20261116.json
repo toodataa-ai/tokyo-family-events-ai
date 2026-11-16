@@ -1,0 +1,111 @@
+[
+  {
+    "id": "candidate-20261121-kids-street-itabashi",
+    "ward": "板橋区",
+    "name": "キッズストリートいたばし",
+    "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+    "official_url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+    "source": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+    "image": "",
+    "period": "11/21",
+    "date_start": "2026-11-21",
+    "date_end": "2026-11-21",
+    "time": "10:00〜15:00",
+    "venue": "高島平緑地",
+    "price": "参加無料",
+    "description": "子どもが店員となるお仕事体験、キッズカフェ、ステージなど。主催：ちゃいるどまーけっと。雨天時の開催判断は要確認。",
+    "categories": [
+      "体験・ワークショップ"
+    ],
+    "family_fit": {
+      "grade": "A",
+      "overall": "A",
+      "rubric_version": "family-fit-v2",
+      "reason": "子どもが主役の実体験型イベント。仕事を選んで接客や運営を体験できる。",
+      "axes": {
+        "child_target": {
+          "grade": "A",
+          "reason": "子どもと保護者、参加無料、予約不要"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "子どもが主役の実体験型イベント。仕事を選んで接客や運営を体験できる。"
+        },
+        "age_fit": {
+          "grade": "A",
+          "reason": "子どもと保護者、参加無料、予約不要"
+        },
+        "stay_flexibility": {
+          "grade": "unknown",
+          "reason": "途中退出・滞在時間の自由度は公式情報に明記されていないため要確認。"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "定員・対象年齢・申込期限を事前に確認する必要がある。"
+        },
+        "cost": {
+          "grade": "A",
+          "reason": "参加無料"
+        },
+        "reservation": {
+          "grade": "A",
+          "reason": "予約不要・当日参加"
+        },
+        "family_value": {
+          "grade": "A",
+          "reason": "子どもが主役の実体験型イベント。仕事を選んで接客や運営を体験できる。"
+        }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_official_source_review",
+        "reviewed_on": "2026-11-16",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "child_program",
+        "child_activity_confirmed": true,
+        "strengths": [
+          "子どもが主役の実体験型イベント。仕事を選んで接客や運営を体験できる。"
+        ],
+        "limitations": [
+          "途中退出・滞在時間の自由度は公式情報に明記されていないため要確認。"
+        ],
+        "grade_comparison": "総合A：子どもが主役の実体験型イベント。仕事を選んで接客や運営を体験できる。",
+        "unsupported_axes": [
+          "stay_flexibility"
+        ],
+        "evidence": [
+          {
+            "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+            "checked_at": "2026-11-16"
+          }
+        ]
+      }
+    },
+    "reservation": {
+      "required": false,
+      "note": "予約不要・当日参加"
+    },
+    "indoor_outdoor": "屋外",
+    "ai": {
+      "checked_at": "2026-11-16",
+      "confidence": "high",
+      "discovery_query": "2026年11月16日・候補限定で公式本文の日時/会場/参加条件を実読。23区全探索の完了証跡ではない。"
+    },
+    "discovery_sources": [
+      {
+        "channel": "ai_cross",
+        "kind": "official_source_direct",
+        "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568"
+      }
+    ]
+  }
+]

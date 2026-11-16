@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "created_on_jst": "2026-11-16",
+  "run_type": "partial_official_candidate_preparation",
+  "status": "blocked_not_for_publication",
+  "base_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "production_prompt_version": "v1.15",
+  "production_prompt_path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+  "publication_attempted": false,
+  "manifest_updated": false,
+  "update_history_updated": false,
+  "full_23_ward_discovery_completed": false,
+  "explicit_source_audit_completed": false,
+  "thumbnail_audit_completed": false,
+  "source_fields_checked": [
+    "name",
+    "date",
+    "venue",
+    "time",
+    "price when stated",
+    "reservation when stated",
+    "target when stated"
+  ],
+  "week_candidate_counts": {
+    "2026-11-21": 1,
+    "2026-12-19": 6,
+    "2026-12-26": 4
+  },
+  "candidate_event_ids": [
+    {
+      "id": "candidate-20261121-kids-street-itabashi",
+      "week_start": "2026-11-21",
+      "official_evidence_url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568"
+    },
+    {
+      "id": "candidate-20261219-ojima-xmas-morning",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.koto.lg.jp/281000/event/xmas2026.html"
+    },
+    {
+      "id": "candidate-20261219-ojima-xmas-afternoon",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.koto.lg.jp/281000/event/xmas2026.html"
+    },
+    {
+      "id": "candidate-20261219-onagigawa-winter-festival",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.koto.lg.jp/281000/onagigawa0812.html"
+    },
+    {
+      "id": "candidate-2026-ekokkuru-quiz-version5",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/4/2026_quizrally_event_ver5.html"
+    },
+    {
+      "id": "candidate-20261219-milk-carton-message-card",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/12/261219_messagecard.html"
+    },
+    {
+      "id": "candidate-20261220-taito-wreath",
+      "week_start": "2026-12-19",
+      "official_evidence_url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/kozaeventannai/oyakogakusyuhiroba/oyakogakusyuhiroba12.html"
+    },
+    {
+      "id": "candidate-2026-ekokkuru-quiz-version5",
+      "week_start": "2026-12-26",
+      "official_evidence_url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/4/2026_quizrally_event_ver5.html"
+    },
+    {
+      "id": "candidate-20261226-taito-calligraphy-grade3",
+      "week_start": "2026-12-26",
+      "official_evidence_url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/seishonenjigyo/jisyugakusyuusien/sirutukurumanabu.html"
+    },
+    {
+      "id": "candidate-20261227-taito-calligraphy-grade4",
+      "week_start": "2026-12-26",
+      "official_evidence_url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/seishonenjigyo/jisyugakusyuusien/sirutukurumanabu.html"
+    },
+    {
+      "id": "candidate-20261226-taito-seed-science",
+      "week_start": "2026-12-26",
+      "official_evidence_url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/seishonenjigyo/jisyugakusyuusien/sirutukurumanabu.html"
+    }
+  ],
+  "issues": [
+    "未対象の多数の区・全必須URLの巡回と公式日程表の行単位照合が未実施",
+    "新しい12/19と12/26の週全体の候補発見・重複監査・公式再監査が未完了",
+    "候補画像は公式og:image等の実測未確認のため空欄。fullの70%以上要件未検証",
+    "11/21の既存週データへの統合・個別verification/decisionsの同期未実施",
+    "6週間ローリングのmanifest・全週run・決定台帳と公開ゲートは未更新",
+    "完成まで本番へのトリガー書込み禁止"
+  ],
+  "note": "既存公開全件・履歴・アプリコードを変更せず、公式本文で個別照合した候補のイベントshardと根拠だけを準備した部分成果。公開用の完成データではない。"
+}

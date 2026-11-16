@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "run_type": "explicit_source_landing_and_selected_monthly_probe",
+  "status": "PARTIAL_NO_PUBLICATION",
+  "canonical_config": "production/site/data/discovery_sources.json",
+  "canonical_prompt_version": "v1.15",
+  "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "enabled_required_count": 25,
+  "landing_readable_count": 23,
+  "landing_failed_count": 2,
+  "fully_compliant_required_sources": 0,
+  "source_rows": [
+    {
+      "source_id": "sumida",
+      "required": true,
+      "entry_url": "https://www.sumidaevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "asakusa",
+      "required": true,
+      "entry_url": "https://www.asakusaevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "ueno",
+      "required": true,
+      "entry_url": "https://www.uenopark.info/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "akihabara",
+      "required": true,
+      "entry_url": "https://www.akihabaraevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "hibiya",
+      "required": true,
+      "entry_url": "https://www.hibiyapark.info/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "ikebukuro",
+      "required": true,
+      "entry_url": "https://www.ikebukuropark.info/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "shinjuku",
+      "required": true,
+      "entry_url": "https://www.shinjukuevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "nakano",
+      "required": true,
+      "entry_url": "https://www.nakanoevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "yoyogi",
+      "required": true,
+      "entry_url": "https://www.yoyogikoen.info/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "shibuya",
+      "required": true,
+      "entry_url": "https://www.miyashitapark.info/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "roppongi",
+      "required": true,
+      "entry_url": "https://www.roppongievents.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "toyosu",
+      "required": true,
+      "entry_url": "https://www.toyosuevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "odaiba",
+      "required": true,
+      "entry_url": "https://www.odaibapark.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "shinagawa",
+      "required": true,
+      "entry_url": "https://www.shinagawaevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "tachikawa",
+      "required": true,
+      "entry_url": "https://www.tachikawaevent.com/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "iterrace",
+      "required": true,
+      "entry_url": "https://www.iterrace.jp/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "nerimakanko",
+      "required": true,
+      "entry_url": "https://www.nerimakanko.jp/event/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "suginami_festival",
+      "required": true,
+      "entry_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
+      "landing_response": "fetch_failed",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "nerima_district_festivals_2026",
+      "required": true,
+      "entry_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "nakano_official_tourism",
+      "required": true,
+      "entry_url": "https://www.nakano-kanko.com/event/",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "itabashi_official_festival",
+      "required": true,
+      "entry_url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "itabashi_tourism_festival",
+      "required": true,
+      "entry_url": "https://itabashi-kanko.jp/pickup/detail?id=1799",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "tamemap_nakano",
+      "required": true,
+      "entry_url": "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+      "landing_response": "fetch_failed",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "itabashi_times_event",
+      "required": true,
+      "entry_url": "https://itabashi-times.com/category/event",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    },
+    {
+      "source_id": "suginami_calendar_all",
+      "required": true,
+      "entry_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
+      "landing_response": "readable_in_web_search_system",
+      "required_search_urls_fully_checked": false,
+      "monthly_or_daily_parity_complete": false,
+      "official_event_detail_rechecked_for_every_candidate": false,
+      "source_can_be_marked_checked": false
+    }
+  ],
+  "monthly_pages_probed": [
+    {
+      "source_id": "nerimakanko",
+      "url": "https://www.nerimakanko.jp/event/search.php?month=2026-11",
+      "displayed_total": 30,
+      "listed_rows_all_adjudicated": false
+    },
+    {
+      "source_id": "nerimakanko",
+      "url": "https://www.nerimakanko.jp/event/search.php?month=2026-12",
+      "displayed_total": 16,
+      "listed_rows_all_adjudicated": false
+    },
+    {
+      "source_id": "suginami_calendar_all",
+      "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11",
+      "displayed_total": null,
+      "listed_rows_all_adjudicated": false
+    },
+    {
+      "source_id": "suginami_calendar_all",
+      "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12",
+      "displayed_total": null,
+      "listed_rows_all_adjudicated": false
+    }
+  ],
+  "other_pages_probed": [
+    {
+      "source_id": "suginami_calendar_all",
+      "dates": [
+        "2026-11-21",
+        "2026-11-22",
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "status": "subset_partial",
+      "note": "6 daily pages, not 42"
+    },
+    {
+      "source_id": "itabashi_official_festival",
+      "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html",
+      "observed_year": 2026,
+      "observed_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "in_current_horizon": false
+    }
+  ],
+  "blockers": [
+    {
+      "source_id": "tamemap_nakano",
+      "kind": "exact_monthly_calendar_url_inaccessible",
+      "urls": [
+        "https://pc.tamemap.net/1311401/calendar/2026-11?lat=35.7089745&lng=139.6630981&level=5000&locale=ja",
+        "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
+      ],
+      "alternative": "search-cached partial 500m 2026-11 view, not equivalent to full ward/month"
+    },
+    {
+      "source_id": "suginami_festival",
+      "kind": "exact_category_filtered_calendar_inaccessible",
+      "urls": [
+        "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=11&event_category=5&siteid=1",
+        "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year=2026&month=12&event_category=5&siteid=1"
+      ],
+      "alternative": "unfiltered monthly type=2 and selected daily type=3 accessed, not all required category-filtered URLs"
+    }
+  ],
+  "not_claimed": [
+    "Landing accessibility does not prove monthly pagination or date-specific completeness.",
+    "No 23 ward exhaustive search was performed in this audit.",
+    "No source check is assigned status=passed.",
+    "Do not use these counters to satisfy strict gate or trigger production."
+  ]
+}

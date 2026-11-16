@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-16",
+  "kind": "ai_cross_search_first_pass_by_ward",
+  "period": "2026-11-21_to_2026-12-27",
+  "status": "PARTIAL_NOT_FULL_AUDIT",
+  "searched_wards_first_pass": 23,
+  "required_independent_ward_list": [
+    "千代田区",
+    "中央区",
+    "港区",
+    "新宿区",
+    "文京区",
+    "台東区",
+    "墨田区",
+    "江東区",
+    "品川区",
+    "目黒区",
+    "大田区",
+    "世田谷区",
+    "渋谷区",
+    "中野区",
+    "杉並区",
+    "豊島区",
+    "北区",
+    "荒川区",
+    "板橋区",
+    "練馬区",
+    "足立区",
+    "葛飾区",
+    "江戸川区"
+  ],
+  "per_ward": [
+    {
+      "ward": "千代田区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "中央区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "港区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "新宿区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+          "added_ids": [
+            "official-20261219-shinjuku-track"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "文京区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "台東区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "墨田区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "江東区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.koto.lg.jp/cgi-bin/event_cal_multi/calendar.cgi?current_month_flg=0&day=1&month=12&year=2026",
+          "added_ids": [],
+          "notes": "既存候補の大島児童館・ウィンターフェス・クイズ・牛乳パックを月別索引で発見。公式行ごとの全件採否は未完了。"
+        }
+      ]
+    },
+    {
+      "ward": "品川区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "目黒区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "大田区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "世田谷区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "渋谷区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "中野区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "杉並区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3&year=2026&month=12&day=19",
+          "added_ids": [],
+          "notes": "日別複数日・個別公式リンクから杉並9イベントを掲載候補として追加済み"
+        }
+      ]
+    },
+    {
+      "ward": "豊島区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "北区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": []
+    },
+    {
+      "ward": "荒川区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+          "added_ids": [
+            "official-20261219-arakawa-yuinomori-story",
+            "official-20261219-arakawa-minamisenju-story",
+            "official-20261219-arakawa-nippori-story",
+            "official-20261220-arakawa-ogu-christmas"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "板橋区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1066514/1066517.html",
+          "added_ids": [
+            "official-20261226-itabashi-brass"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "練馬区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+          "added_ids": [
+            "official-20261226-nerima-forest-work"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "足立区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+          "added_ids": [
+            "official-20261219-adachi-3x3-beginner",
+            "official-20261219-adachi-3x3-experienced"
+          ],
+          "notes": null
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+          "added_ids": [
+            "official-20261219-adachi-ceramics-am",
+            "official-20261219-adachi-ceramics-pm"
+          ],
+          "notes": null
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1226.html",
+          "added_ids": [
+            "official-20261226-adachi-wildbirds"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "葛飾区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+          "added_ids": [
+            "official-20261219-katsushika-newyear"
+          ],
+          "notes": null
+        },
+        {
+          "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php",
+          "added_ids": [
+            "official-20261219-katsushika-farmers-fair"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ward": "江戸川区",
+      "first_pass_web_search_issued": true,
+      "first_pass_scope": "2026年12月19日・26日 子ども/親子/ワークショップ 区公式対象検索",
+      "full_search_dimensions_covered": false,
+      "all_official_subcatalogues_and_pagination_visited": false,
+      "official_event_rows_reconciled": false,
+      "fully_checked": false,
+      "primary_pages_recorded": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=26&month=12&type=3&year=2026",
+          "added_ids": [],
+          "notes": "12月26日の区公式日別一覧を部分確認。施設別・年齢別の全候補再照合は未完了。"
+        }
+      ]
+    }
+  ],
+  "added_event_ids": [
+    "official-20261219-shinjuku-track",
+    "official-20261219-adachi-3x3-beginner",
+    "official-20261219-adachi-3x3-experienced",
+    "official-20261219-adachi-ceramics-am",
+    "official-20261219-adachi-ceramics-pm",
+    "official-20261226-adachi-wildbirds",
+    "official-20261219-arakawa-yuinomori-story",
+    "official-20261219-arakawa-minamisenju-story",
+    "official-20261219-arakawa-nippori-story",
+    "official-20261220-arakawa-ogu-christmas",
+    "official-20261219-katsushika-newyear",
+    "official-20261219-katsushika-farmers-fair",
+    "official-20261226-nerima-forest-work",
+    "official-20261226-itabashi-brass"
+  ],
+  "added_week_counts": {
+    "2026-12-19": 11,
+    "2026-12-26": 3
+  },
+  "explicit_source_landing_probe": "2026-11-16-required-source-probe.json",
+  "must_not_claim": [
+    "23 ward complete: false",
+    "25 mandatory explicit-source URL crawl: false",
+    "candidate parity against all official rows: false",
+    "new weekends published: false"
+  ],
+  "release_blockers": [
+    "tamemap_Nakano 2026-11/12 exact monthly URL unreachable",
+    "Suginami festival filtered November/December URL unreachable",
+    "Official page / library / child facility / monthly bulletin plus source pagination not exhausted for 23 wards",
+    "Suginami daily type=3 required 42 days not fully traversed",
+    "Archive preservation and strict validation/CI/Pages not executed"
+  ],
+  "preservation": "全既存公開レコードを維持、日付別候補と部分照合記録のみをdata-stagingに保存"
+}

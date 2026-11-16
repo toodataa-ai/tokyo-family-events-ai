@@ -26,24 +26,30 @@
       {
         "week_start": "2026-11-21",
         "current_published_events": 154,
-        "verified": 146,
-        "announced": 8,
-        "image_url_records": 91,
-        "image_ratio": 0.5909090909,
+        "verified": 154,
+        "announced": 0,
+        "image_url_records": 108,
+        "image_ratio": 0.7012987012987013,
         "required_images_for_current_count": 108,
-        "missing_images_for_gate": 17,
-        "required_tier": "full"
+        "missing_images_for_gate": 0,
+        "required_tier": "full",
+        "image_enrichment_added": 17,
+        "full_tier_count_gate_met": true,
+        "official_source_data_reverified": true
       },
       {
         "week_start": "2026-11-28",
         "current_published_events": 107,
-        "verified": 101,
-        "announced": 6,
-        "image_url_records": 60,
-        "image_ratio": 0.5607476636,
+        "verified": 107,
+        "announced": 0,
+        "image_url_records": 76,
+        "image_ratio": 0.7102803738317757,
         "required_images_for_current_count": 75,
-        "missing_images_for_gate": 15,
-        "required_tier": "full"
+        "missing_images_for_gate": 0,
+        "required_tier": "full",
+        "image_enrichment_added": 16,
+        "full_tier_count_gate_met": true,
+        "official_source_data_reverified": true
       },
       {
         "week_start": "2026-12-05",
@@ -203,12 +209,15 @@
     "full_ward_audit_completed": false,
     "all_required_explicit_sources_checked": false,
     "image_identity_audit_completed": false,
-    "announced_promotions_reconciled": false,
+    "announced_promotions_reconciled": true,
     "new_week_indexes_complete": false,
     "strict_validator_executed": false,
     "non_regression_validator_executed": false,
     "github_actions_deploy_triggered": false,
-    "pages_publication_verified": false
+    "pages_publication_verified": false,
+    "image_url_count_threshold_met": true,
+    "image_http_checked_for_all_urls": false,
+    "official_image_provenance_record_file": "site/data/2026-11-16-official-image-evidence.json"
   },
   "protected_data_policy": {
     "existing_events_deleted": 0,
@@ -217,11 +226,32 @@
     "app_version_updated": false
   },
   "next_required_actions": [
-    "Resolve or re-verify 14 announced entries in 11/21 and 11/28 full weeks with official evidence.",
-    "Acquire and verify at least 17 additional image URLs for the currently published 11/21 records and at least 15 additional for 11/28, then recompute after any adds.",
-    "Finish 23-ward and mandatory explicit URL audits, especially tamemap and Suginami calendars, without synthetic success flags.",
-    "Reconcile new weeks with candidate decisions, verification records, thumbnail evidence, holiday coverage, safe non-regression and publication history.",
-    "Run production validators and CI; only upon success use the established main data-deploy trigger and validate Pages release."
+    "Continue 23 ward AI cross-search and mandatory 25 explicit source URL checks (including tamemap Nakano and Suginami calendar daily rows), with true evidence and timestamps.",
+    "Reconcile complete 6-week horizon candidate inventory, add Dec 19 and Dec 26 week indices, verification files, decisions and run manifests, preserving all published events.",
+    "Validate every added image URL HTTP/render and all existing full-week thumbnails for valid event matching; registered URL count gate is now reached.",
+    "Perform strict validators / protected preservation / non-regression and CI; publish via main workflow only if full gates pass and verify Pages."
   ],
-  "note": "Audit-only provenance; do not change any verified status based on source checks alone, and do not interpret partial candidates as publication-ready."
+  "note": "2026-11-16 live re-audit: 14 announced entries reverified, all 11/21 and 11/28 records now status=verified; 33 official/organizer/media images added and URL count ratio >=70% in each full week. This does NOT satisfy mandatory source sweeps, completed December week data, remote image rendering, CI strict validation or publication. Old baseline state preserved in audit_history. Production unchanged.",
+  "audit_history": [
+    {
+      "date_jst": "2026-11-16",
+      "phase": "initial_gate",
+      "full_weeks": [
+        {
+          "week_start": "2026-11-21",
+          "verified": 146,
+          "announced": 8,
+          "image_url_records": 91,
+          "image_ratio": 0.5909090909
+        },
+        {
+          "week_start": "2026-11-28",
+          "verified": 101,
+          "announced": 6,
+          "image_url_records": 60,
+          "image_ratio": 0.5607476636
+        }
+      ]
+    }
+  ]
 }

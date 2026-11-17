@@ -70,9 +70,9 @@ jobs:
               # Scope eligibility to the event detail body, not the global navigation
               detail=(txt.split('イベント情報詳細',1)[1] if 'イベント情報詳細' in txt else txt)
               detail=detail.split('イベント情報をiPhone',1)[0]
-              audience=re.search(r'対象者\\s*(.*?)\\s*開催場所',detail)
+              audience=re.search(r'対象者\s*(.*?)\s*開催場所',detail)
               audience_text=(audience.group(1) if audience else '')[:300]
-              booking=re.search(r'申し込み\\s*(.*?)\\s*(?:申し込み期間|定員|費用|問い合わせ)',detail)
+              booking=re.search(r'申し込み\s*(.*?)\s*(?:申し込み期間|定員|費用|問い合わせ)',detail)
               booking_text=(booking.group(1) if booking else '')[:350]
               eligibility_child=bool(re.search(r'未就学児|乳幼児|小学生|中学生|高校生|子ども|こども|親子|どなたでも',audience_text))
               eligibility_adult_only=bool(re.search(r'成人|高齢者|60歳以上',audience_text)) and not eligibility_child

@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 155,
-    "verified": 155,
+    "published": 157,
+    "verified": 157,
     "announced": 0,
-    "candidates": 1
+    "candidates": 3
   },
   "carryover_organizer_rechecks": [
     {
@@ -5166,5 +5166,21 @@
         }
       ]
     }
+  },
+  "leads_addition_20261118": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261123-toshima-wanpaku-matsuri",
+      "verified-20261123-arakawa-film-rocket-stars"
+    ],
+    "held_not_published": [
+      "arakawa-hanga-20261123",
+      "nakano-dinosaur-diorama-20261121",
+      "nerima-daikon-20261206",
+      "nerima-sibling-dance-20261205"
+    ],
+    "pages_committed_at": "research/2026-11-18-leads-triage/pages/",
+    "base_data_production_sha": "cae532ddf582dccec739404e8a3a2324d411898a",
+    "global_source_audit_complete": false
   }
 }

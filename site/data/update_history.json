@@ -2020,6 +2020,38 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "杉並区公式の個別ページで日付・会場・対象・申込を確認できた4件のみ追加。条件が合わない4件は掲載せず理由を保存。"
+    },
+    {
+      "run_id": "leads-triage-addition-20261118",
+      "run_type": "manual_verified_leads_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-18",
+      "executed_at": "2026-11-18T10:00:00+09:00",
+      "base_data_production_sha": "cae532ddf582dccec739404e8a3a2324d411898a",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 434,
+      "candidate_active_week_records": 437,
+      "added_weekly_records": 3,
+      "new_event_ids": [
+        "verified-20261123-toshima-wanpaku-matsuri",
+        "verified-20261123-arakawa-film-rocket-stars",
+        "verified-20261205-nerima-shogaisha-festival"
+      ],
+      "held_not_published": [
+        "arakawa-hanga-20261123",
+        "nakano-dinosaur-diorama-20261121",
+        "nerima-daikon-20261206",
+        "nerima-sibling-dance-20261205"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "未確認リンクの仕分けで公式個別ページを確認できた3件のみ追加。条件が合わない4件は掲載せず理由を保存。"
     }
   ]
 }

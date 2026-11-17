@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 87,
-    "verified": 83,
+    "published": 88,
+    "verified": 84,
     "announced": 4,
-    "candidates": 29,
+    "candidates": 30,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3628,5 +3628,20 @@
     ],
     "unverified_candidate_links": 821,
     "full_23_ward_25_source_audit_complete": false
+  },
+  "leads_addition_20261118": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-nerima-shogaisha-festival"
+    ],
+    "held_not_published": [
+      "arakawa-hanga-20261123",
+      "nakano-dinosaur-diorama-20261121",
+      "nerima-daikon-20261206",
+      "nerima-sibling-dance-20261205"
+    ],
+    "pages_committed_at": "research/2026-11-18-leads-triage/pages/",
+    "base_data_production_sha": "cae532ddf582dccec739404e8a3a2324d411898a",
+    "global_source_audit_complete": false
   }
 }

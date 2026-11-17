@@ -1,8 +1,8 @@
-name: Read-only fetch of six-week discovery leads and the Nerima month-less official calendars
+name: Read-only fetch of Nerima and holiday candidate detail pages
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/fetch-leads-20261118.yml']
+    paths: ['.github/workflows/fetch-leads2-20261118.yml']
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -24,15 +24,11 @@ jobs:
             i=$((i+1))
             curl -sS -L -m 60 -A "Mozilla/5.0 (compatible; family-events-audit)" -o "out/page$i.html" -w "page$i $u %{http_code} %{size_download} %{url_effective}\n" "$u" | tee -a out/STATUS.txt
           done <<'URLS'
-          https://www.city.toshima.lg.jp/231/2609151435.html
-          https://www.city.arakawa.tokyo.jp/a015/event/kouenmeigi/hangakousyuukai.html
-          https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html
-          https://www.city.tokyo-nakano.lg.jp/event/kosodate/kyouryuuziorama.html
-          https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/chillnightpicnic.html
-          https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar.html
-          https://www.city.nerima.tokyo.jp/nerimakids/event/calendar/list_calendar.html
-          https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202611.html
-          https://www.city.nerima.tokyo.jp/kankomoyoshi/event/calendar/list_calendar202612.html
+          https://www.city.nerima.tokyo.jp/hokenfukushi/shogai/koryu/syogai_festival.html
+          https://www.city.nerima.tokyo.jp/hokenfukushi/shogai/oshirase/sibling.html
+          https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/hureai/daikon/hikkonukibosyuu.html
+          https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html
+          https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/fukei/kouyamateien/kouyama.html
           URLS
           date -u +%FT%TZ > out/FETCHED_AT.txt
       - name: Commit raw fetches to a research-only branch
@@ -41,9 +37,9 @@ jobs:
           cd repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan research/leads-20261118
+          git checkout --orphan research/leads2-20261118
           git rm -rf . >/dev/null 2>&1 || true
           cp -r ../out/. .
           git add -A
           git commit -m "research: raw read-only fetches of discovery leads"
-          git push --force origin research/leads-20261118
+          git push --force origin research/leads2-20261118

@@ -43,7 +43,9 @@ jobs:
               if t in ('script','style','noscript'):self.skip=max(0,self.skip-1)
             def handle_data(self,s):
               if not self.skip:self.buf.append(s)
-          pool=json.load(open('sourced/candidate_pool.json'))
+          files=list(pathlib.Path('sourced').rglob('candidate_pool.json'))
+          assert len(files)==1,('artifact nesting unexpected',files)
+          pool=json.load(open(files[0]))
           rows={}
           for x in pool:
             via=x.get('discovered_via') or {};su=via.get('search_url') or ''

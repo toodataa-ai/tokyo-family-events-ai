@@ -4,8 +4,8 @@
     "sat": "2026-12-12",
     "sun": "2026-12-13"
   },
-  "horizon_index": 6,
-  "publication_tier": "announcement",
+  "horizon_index": 4,
+  "publication_tier": "preview",
   "mode": "verified-current-horizon-subset",
   "prompt": {
     "version": "v1.15",
@@ -366,5 +366,12 @@
     "old_events_removed": 0,
     "whole_source_parity_complete": false,
     "fixed_851_adjudication_complete": true
+  },
+  "scoped_rollover_20261117": {
+    "as_of_jst": "2026-11-17",
+    "preserved_prior_evidence": true,
+    "source_reaudit_20261117": "read-only HTTP spot check; does not imply 23-ward/25-source complete refresh",
+    "full_tier_verification_not_yet_complete": false,
+    "old_event_ids_preserved": true
   }
 }

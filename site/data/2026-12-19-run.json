@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "target": {
+    "sat": "2026-12-19",
+    "sun": "2026-12-20"
+  },
+  "horizon_index": 5,
+  "publication_tier": "announcement",
+  "mode": "manual_partial_non_ng_candidate_not_published",
+  "prompt": {
+    "version": "v1.15",
+    "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
+    "pointer": "site/data/latest_prompt.json",
+    "resolved": true
+  },
+  "source_data": {
+    "week_file": "2026-12-19.json",
+    "verification_file": "2026-12-19-verification.json",
+    "decision_file": "2026-12-19-decisions.json"
+  },
+  "candidate_evidence": {
+    "source_shards": [
+      "2026-12-19-events-non-ng-verified-only-20261117.json"
+    ],
+    "source_audits": [
+      "2026-11-16-candidate-audit.json",
+      "2026-11-16-carryover-audit.json",
+      "2026-11-16-suginami-december-audit.json"
+    ],
+    "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f"
+  },
+  "discovery_evidence": {
+    "wards_total": 23,
+    "wards_fully_checked_this_run": 0,
+    "required_sources_total": 25,
+    "required_sources_fully_checked_this_run": 0,
+    "full_42_day_suginami_daily_sweep": false
+  },
+  "explicit_source_checks": [],
+  "official_schedule_checks": [
+    {
+      "source_id": "suginami_calendar_all",
+      "status": "partial",
+      "days_reviewed": [
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "official_url": "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3&year=2026&month=12&day=19"
+    }
+  ],
+  "stages": [
+    {
+      "name": "candidate_shards_prepared",
+      "status": "passed"
+    },
+    {
+      "name": "official_event_subset",
+      "status": "partial"
+    },
+    {
+      "name": "discover_23_wards",
+      "status": "blocked"
+    },
+    {
+      "name": "mandatory_explicit_source_crawl",
+      "status": "blocked"
+    },
+    {
+      "name": "strict_validation",
+      "status": "pending"
+    },
+    {
+      "name": "deploy",
+      "status": "not_attempted"
+    }
+  ],
+  "summary": {
+    "wards_checked": 0,
+    "candidates": 4,
+    "published": 4,
+    "excluded": 0,
+    "duplicate_removed": 0,
+    "verified": 3,
+    "announced": 1,
+    "thumbnail_count": 9,
+    "source_audit_complete": false,
+    "publication_ready": false
+  },
+  "official_source_rechecks_added": {
+    "checked_at_jst": "2026-11-16",
+    "source_list": [
+      "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+      "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+      "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+      "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+      "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+      "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php"
+    ],
+    "added_events": 11,
+    "coverage_status": "partial_23_ward_search_first_pass"
+  },
+  "scoped_addendum_20261117": {
+    "kind": "eight_non_ng_approved_only",
+    "added_ids": [
+      "confirmed-20261219-nakano-rock-experience",
+      "confirmed-20261220-nakano-ikebana",
+      "tamemap-20261219-nakano-family-rhythm",
+      "tamemap-20261220-nakano-forest-choir"
+    ],
+    "verified": 3,
+    "announced": 1,
+    "publication_ready": false,
+    "global_source_audit_complete": false,
+    "as_of_jst": "2026-11-17",
+    "original_staged_week_candidates_preserved_elsewhere": true
+  }
+}

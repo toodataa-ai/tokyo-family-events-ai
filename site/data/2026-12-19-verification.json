@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-17",
+  "events": [
+    {
+      "id": "confirmed-20261219-nakano-rock-experience",
+      "status": "verified",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin01-2.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "区内在住・在勤・在学の限定と12月7日の申込締切がある。週別全源照合は未完であるため本番manifestには追加していない。",
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin01-2.html",
+          "quote": "2026年12月19日（土曜日）",
+          "checked_at": "2026-11-17",
+          "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
+        }
+      ]
+    },
+    {
+      "id": "confirmed-20261220-nakano-ikebana",
+      "status": "verified",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin05.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "対象が区内関係者に限定され、作品・材料は持ち帰れない。週別全源照合は未完であるため本番manifestには追加していない。",
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin05.html",
+          "quote": "2026年12月20日（日曜日）",
+          "checked_at": "2026-11-17",
+          "sha256": "16e628107ce60bad668e705681b842a9f938fcdbf9e039667da18c929076d470",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
+        }
+      ]
+    },
+    {
+      "id": "tamemap-20261219-nakano-family-rhythm",
+      "status": "announced",
+      "source": "https://pc.tamemap.net/1311401/event/160164?locale=ja",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "unknown",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "個別の12月19日開催時刻と予約空席が公式個別ページで未確認。週別全源照合は未完であるため本番manifestには追加していない。",
+      "evidence": [
+        {
+          "url": "https://pc.tamemap.net/1311401/event/160164?locale=ja",
+          "quote": "笑顔があふれる音楽体験！季節のアクティビティで、親子でふれあいながら心と体を楽しく育みます。",
+          "checked_at": "2026-11-17",
+          "sha256": "7d758ff9566a8ca6c9d9d9eb13f54d948d4813c7b1b244e3206526f90c206316",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
+        }
+      ]
+    },
+    {
+      "id": "tamemap-20261220-nakano-forest-choir",
+      "status": "verified",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "継続活動であり、当日の参加枠・体験希望は主催団体に確認が必要。週別全源照合は未完であるため本番manifestには追加していない。",
+      "evidence": [
+        {
+          "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html",
+          "quote": "毎週日曜日9時30分～11時",
+          "checked_at": "2026-11-17",
+          "sha256": "c92e77a3b61fb1958bd4efa847f5b130fe97509fbd53dc995216a023008e9848",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "verified": 3,
+    "announced": 1
+  }
+}

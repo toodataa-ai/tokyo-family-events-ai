@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-11-08",
+  "verified_on": "2026-11-17",
   "events": [
     {
       "id": "v15-ad2f72f74ab7",
@@ -144,7 +144,7 @@
     },
     {
       "id": "nerima-district-0275426b6920",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
       "source_kind": "public_official",
       "fields": {
@@ -157,18 +157,30 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "区の公式日程表で日付・会場・催事内容・時間を確認済み。料金・予約は未公表で推測しない。",
+      "note": "区の公式日程表で日付・会場・催事内容・時間を確認済み。料金・予約は未公表で推測しない。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "A",
         "reason": "豊玉南小の昔遊びやゲーム・餅つきなどで、子どもが地域の世代と交流できる。 雨天は規模縮小。餅つきへの実技参加条件・費用・受付は日程表に明記されていない。",
         "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+        "http_status": 200,
+        "raw_response_sha256": "985741ac14ef0492eaa28ded6bffffb24449142daae91cfce848cd132462e60c",
+        "exact_marker_hits": [
+          "地区祭開催日程",
+          "11月29日",
+          "豊玉南小学校"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-lumina-nogata",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47",
       "source_kind": "venue_official",
       "fields": {
@@ -181,18 +193,30 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 中野区文化施設公式の主催者案内で11月28日野方区民ホール、入場無料、事前申込要と確認。。事前予約制。主催者公式LINEまたはInstagramのDMから申込。前年度満席のため残席要確認。",
+      "note": "2026-10-20公式照合: 中野区文化施設公式の主催者案内で11月28日野方区民ホール、入場無料、事前申込要と確認。。事前予約制。主催者公式LINEまたはInstagramのDMから申込。前年度満席のため残席要確認。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "同世代のピアノ・バレエ・ミュージカルを親子で鑑賞し、表現への関心を広げられる無料公演。 出演者が子どもというだけで参加者向け体験とは判断しない。事前予約制で、前年満席を今年の満席とは扱わない。",
         "source": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47",
+        "http_status": 200,
+        "raw_response_sha256": "c4c481054102de9077e7488d2706c9e4b88ff365a5720911355fff96b463898e",
+        "exact_marker_hits": [
+          "LUMINA STUDIO",
+          "2026年11月28日",
+          "野方区民ホール"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-nihonbashi-komichi",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.keepallsmiles.com/komichi2026",
       "source_kind": "organizer_official",
       "fields": {
@@ -205,18 +229,31 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。。予約不要。日本橋案内所で謎解き用紙を受け取る。",
+      "note": "2026-10-20公式照合: 日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。。予約不要。日本橋案内所で謎解き用紙を受け取る。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "A",
         "reason": "商店街の謎を親子で相談して解き、歩きながら日本橋の街を発見できる無料ラリー。 90〜120分が目安で読み解き・歩行の負担はある。幼児は保護者の手助けが必要で、買い物券は数量限定。",
         "source": "https://www.keepallsmiles.com/komichi2026"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.keepallsmiles.com/komichi2026",
+        "http_status": 200,
+        "raw_response_sha256": "72aef9403f6db60f4e8586b8a4c20d964d587a3accd8f94188a786045dd585b7",
+        "exact_marker_hits": [
+          "みちみちこみち2026",
+          "10月1日",
+          "11月30日",
+          "日本橋案内所"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-haneda-museum",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.o-2.jp/en/event/hasmhicity2026/",
       "source_kind": "official_tourism",
       "fields": {
@@ -229,13 +266,25 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。",
+      "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "B",
         "reason": "航空写真や資料を見比べ、飛行機好きの親子が羽田空港の歴史を学べる。 展示本体と特定日の工作・関連催事は別。普段の観覧で必ず実技体験できるとは判断しない。",
         "source": "https://www.o-2.jp/en/event/hasmhicity2026/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.o-2.jp/en/event/hasmhicity2026/",
+        "http_status": 200,
+        "raw_response_sha256": "a27a9f7524a5af7e599a7b6d143ff604a7ed4b21812bbd6aed3cccefb66bfef8",
+        "exact_marker_hits": [
+          "Haneda Aviation Museum",
+          "November 29, 2026",
+          "Haneda Innovation City"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
@@ -490,7 +539,7 @@
     },
     {
       "id": "official-2026-sumida-light-garden",
-      "status": "announced",
+      "status": "verified",
       "source": "https://sumida-artfest.jp/programs/3990/",
       "source_kind": "organizer_official",
       "fields": {
@@ -503,18 +552,31 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。。公式掲載は自由観覧の庭園ライトアップ。運営変更・天候時は主催者へ確認。",
+      "note": "2026-10-20公式照合: 主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。。公式掲載は自由観覧の庭園ライトアップ。運営変更・天候時は主催者へ確認。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "庭園の紅葉と池に映る光を見比べ、家族で歴史ある庭園の景色を楽しめる無料鑑賞。 夕方以降の屋外散策で防寒と足元に配慮。工作や子ども専用の参加体験は案内されていない。",
         "source": "https://sumida-artfest.jp/programs/3990/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://sumida-artfest.jp/programs/3990/",
+        "http_status": 200,
+        "raw_response_sha256": "ab535fd8299ca333f57661f78c67d93f669d2f61bda823db5636456cf4817884",
+        "exact_marker_hits": [
+          "SUMIDA光のナイトガーデン",
+          "11月19日",
+          "12月27日",
+          "旧安田庭園"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-sumida-moa-art",
-      "status": "announced",
+      "status": "verified",
       "source": "https://sumida-artfest.jp/programs/4004/",
       "source_kind": "organizer_official",
       "fields": {
@@ -527,13 +589,26 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 主催者公式11/28(土)9〜21時と11/29(日)9〜15時、すみだユートリヤギャラリー、無料。。無料展示、一般観覧の予約条件は公式掲載に記載なし。",
+      "note": "2026-10-20公式照合: 主催者公式11/28(土)9〜21時と11/29(日)9〜15時、すみだユートリヤギャラリー、無料。。無料展示、一般観覧の予約条件は公式掲載に記載なし。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "B",
         "reason": "同世代の子どもが描いた自然や環境の作品を見比べ、親子で表現への関心を広げられる。 作品の作者が児童であることと来場者の制作体験は区別する。表彰式の参加枠を一般観覧と混同しない。",
         "source": "https://sumida-artfest.jp/programs/4004/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://sumida-artfest.jp/programs/4004/",
+        "http_status": 200,
+        "raw_response_sha256": "3241142904811500d40b9ce88708b0a599be501c8d92c368ddfe77a04c9b3c20",
+        "exact_marker_hits": [
+          "MOA美術館墨田児童作品展",
+          "11月28日",
+          "11月29日",
+          "すみだ生涯学習センター"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
@@ -3114,7 +3189,7 @@
   ],
   "summary": {
     "total": 108,
-    "verified": 102,
-    "announced": 6
+    "verified": 108,
+    "announced": 0
   }
 }

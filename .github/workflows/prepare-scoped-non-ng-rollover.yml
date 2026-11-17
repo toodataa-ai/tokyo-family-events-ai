@@ -2,7 +2,7 @@ name: Build guarded non-NG eight-item rollover candidate only
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/prepare-scoped-non-ng-rollover.yml']
+    paths: ['.github/workflows/prepare-scoped-non-ng-rollover.yml', 'tools/prepare_scoped_rollover_20261117.py']
   workflow_dispatch: {}
 permissions:
   contents: write

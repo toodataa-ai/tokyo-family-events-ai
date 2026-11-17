@@ -1,4 +1,4 @@
-name: Read-only holiday-after official discovery audit
+name: Read-only December source and carried-announcement audit
 
 on:
   push:
@@ -23,12 +23,12 @@ jobs:
           path: released
       - uses: actions/checkout@v4
         with:
-          ref: data-production
-          path: data-src
+          ref: data-staging
+          path: data-staging-src
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Fetch actual 23-ward, 19 explicit sources, and existing official pages
+      - name: Check 23 wards, all 25 required sources, 8 new leads and 14 carried announcements
         id: crawl
         continue-on-error: true
         run: python3 stage/tools/holiday_readonly_crawl.py
@@ -36,12 +36,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: holiday-source-evidence-2026-10-13
+          name: holiday-source-evidence-2026-11-17
           path: /tmp/tokyo-holiday-evidence/*.json
           if-no-files-found: warn
           retention-days: 30
       - name: Enforce fail-closed required-source policy
         if: steps.crawl.outcome != 'success'
         run: |
-          echo 'Some required queries failed. Do not publish data without complete official audit.'
+          echo 'Some required source or query checks failed. Do not claim the six-week global official audit completed.'
           exit 1

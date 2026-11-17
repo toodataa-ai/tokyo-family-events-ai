@@ -2225,7 +2225,7 @@
     {
       "id": "next-primary-20261128-minato-autumn-lightup",
       "status": "verified",
-      "source": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "source": "https://www.city.minato.tokyo.jp/akasakadobokutan/reiwa8/1126korekiyo.html",
       "source_kind": "official",
       "verified_on": "2026-11-14",
       "fields": {
@@ -2237,20 +2237,30 @@
         "reservation": "unknown",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "corrections": {
+        "official_url": "https://www.city.minato.tokyo.jp/akasakadobokutan/reiwa8/1126korekiyo.html"
+      },
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。 2026-11-17再照合：2026年11月26〜29日開催の独立公式ページ（ライトアップ、無料、予約不要）が公開されたため、旧SDGs集合案内より優先。共通画像の異催事衝突を解消する。",
       "evidence": [
         {
           "url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
           "checked_at": "2026-11-14T16:26:33+09:00",
           "sha256": "36a35e6e1ad30ace83e2322126b2ad64c5754e22e6f505c7fd523200734dfdb0"
         }
-      ]
+      ],
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+          "to": "https://www.city.minato.tokyo.jp/akasakadobokutan/reiwa8/1126korekiyo.html",
+          "reason": "2026年11月26〜29日開催の独立公式ページ（ライトアップ、無料、予約不要）が公開されたため、旧SDGs集合案内より優先。共通画像の異催事衝突を解消する。",
+          "source": "https://www.city.minato.tokyo.jp/akasakadobokutan/reiwa8/1126korekiyo.html"
+        }
+      }
     },
     {
       "id": "next-primary-20261128-minato-karippa-sdgs",
       "status": "verified",
-      "source": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+      "source": "https://www.city.minato.tokyo.jp/kouhou/kuse/koho/minato2026/202610/20261015top/16.html",
       "source_kind": "official",
       "verified_on": "2026-11-14",
       "fields": {
@@ -2262,15 +2272,25 @@
         "reservation": "pass",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "corrections": {
+        "official_url": "https://www.city.minato.tokyo.jp/kouhou/kuse/koho/minato2026/202610/20261015top/16.html"
+      },
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。 2026-11-17再照合：2026年10月15日号の区公式広報に11月28日・参加費150円の個別企画として記載。旧SDGs月間集合案内より根拠が明確なページを公式リンクに選定し、共通画像の異催事衝突を解消。",
       "evidence": [
         {
           "url": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
           "checked_at": "2026-11-14T16:26:33+09:00",
           "sha256": "36a35e6e1ad30ace83e2322126b2ad64c5754e22e6f505c7fd523200734dfdb0"
         }
-      ]
+      ],
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.city.minato.tokyo.jp/akasakakanri/sdgs/2024/toppage.html",
+          "to": "https://www.city.minato.tokyo.jp/kouhou/kuse/koho/minato2026/202610/20261015top/16.html",
+          "reason": "2026年10月15日号の区公式広報に11月28日・参加費150円の個別企画として記載。旧SDGs月間集合案内より根拠が明確なページを公式リンクに選定し、共通画像の異催事衝突を解消。",
+          "source": "https://www.city.minato.tokyo.jp/kouhou/kuse/koho/minato2026/202610/20261015top/16.html"
+        }
+      }
     },
     {
       "id": "next-primary-20261128-turner-exhibition",

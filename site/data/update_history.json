@@ -1988,6 +1988,38 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "ward_week_search_receipts_checked": 414
+    },
+    {
+      "run_id": "suginami-december-addition-20261118",
+      "run_type": "manual_verified_suginami_december_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-18",
+      "executed_at": "2026-11-18T09:00:00+09:00",
+      "base_data_production_sha": "06888a9239c86436c4a499b4268847fa34f4dd2c",
+      "target_weekends": [
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 430,
+      "candidate_active_week_records": 434,
+      "added_weekly_records": 4,
+      "new_event_ids": [
+        "verified-20261219-suginami-29249",
+        "verified-20261219-suginami-28963",
+        "verified-20261219-suginami-29140",
+        "verified-20261220-suginami-29174"
+      ],
+      "held_not_published": [
+        "suginami-official-29029",
+        "suginami-official-29120",
+        "suginami-official-29192",
+        "suginami-official-29334"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "杉並区公式の個別ページで日付・会場・対象・申込を確認できた4件のみ追加。条件が合わない4件は掲載せず理由を保存。"
     }
   ]
 }

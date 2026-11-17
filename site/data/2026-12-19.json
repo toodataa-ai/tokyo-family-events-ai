@@ -10,10 +10,10 @@
   "run_file": "2026-12-19-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 4,
+    "candidate_count": 8,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 4,
+    "published_count": 8,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 杉並区公式の個別ページ確認済み4件を掲載（2026-11-18）。"
       },
       {
         "ward": "豊島区",
@@ -225,7 +225,8 @@
     ]
   },
   "event_files": [
-    "2026-12-19-events-non-ng-verified-only-20261117.json"
+    "2026-12-19-events-non-ng-verified-only-20261117.json",
+    "2026-12-19-events-suginami-official-20261118.json"
   ],
   "events": []
 }

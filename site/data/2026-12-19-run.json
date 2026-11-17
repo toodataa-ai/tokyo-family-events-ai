@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 4,
-    "published": 4,
+    "candidates": 8,
+    "published": 8,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 3,
+    "verified": 7,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -1884,5 +1884,23 @@
     ],
     "unverified_candidate_links": 821,
     "full_23_ward_25_source_audit_complete": false
+  },
+  "suginami_addition_20261118": {
+    "kind": "four_individually_verified_official_events",
+    "added_ids": [
+      "verified-20261219-suginami-29249",
+      "verified-20261219-suginami-28963",
+      "verified-20261219-suginami-29140",
+      "verified-20261220-suginami-29174"
+    ],
+    "held_not_published": [
+      "suginami-official-29029",
+      "suginami-official-29120",
+      "suginami-official-29192",
+      "suginami-official-29334"
+    ],
+    "pages_committed_at": "research/2026-11-18-suginami-pages/",
+    "base_data_production_sha": "06888a9239c86436c4a499b4268847fa34f4dd2c",
+    "global_source_audit_complete": false
   }
 }

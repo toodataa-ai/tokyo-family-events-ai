@@ -113,11 +113,251 @@
           "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
         }
       ]
+    },
+    {
+      "id": "verified-20261219-suginami-29249",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-18",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は杉並区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+          "quote": "2026年12月19日（土曜日）",
+          "checked_at": "2026-11-18",
+          "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+          "quote": "午後0時から午後3時まで",
+          "checked_at": "2026-11-18",
+          "sha256": "2f2674fd50821fdb2974ac641f3989937430779a0eee518b4e2babae40eac764",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+          "quote": "開催場所 荻窪地域区民センター",
+          "checked_at": "2026-11-18",
+          "sha256": "29cd6836e1d80cae78ef15facddfb449f1c6e34e2b0b36bfcfb4a6c3bcc58239",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+          "quote": "当日直接会場へお越しください。",
+          "checked_at": "2026-11-18",
+          "sha256": "262d4c787ebcfd42b4055ef49b14adeaa1f618a5fd580b3fb709745fdedfd665",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+          "quote": "小学生以上（未就学児は保護者同伴）",
+          "checked_at": "2026-11-18",
+          "sha256": "700437c5da4faa48075dd9a417878e08a84147810c1870447b3ed229e6212bb8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261219-suginami-28963",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-18",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は杉並区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+          "quote": "2026年12月19日（土曜日）",
+          "checked_at": "2026-11-18",
+          "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+          "quote": "午後5時30分から午後7時まで",
+          "checked_at": "2026-11-18",
+          "sha256": "0f46389789a779902ae5bbad1349c20a6753f0568d00e019b4c14edc5e87635d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+          "quote": "子どもから大人まで楽しめる交流クリスマス会です。",
+          "checked_at": "2026-11-18",
+          "sha256": "8de76426135f668b9e38c873cb93833f0dc5fad8746a06649aecc910e218b64c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+          "quote": "中高生750円 小学生500円 乳幼児無料",
+          "checked_at": "2026-11-18",
+          "sha256": "9bfdcd646d5e44673cb6b4dd317d088eed4e0baffbfdf3a93fff044ed932a459",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+          "quote": "2026年12月19日まで 定員 45名",
+          "checked_at": "2026-11-18",
+          "sha256": "820e127eb5ed58e2f7688507106ff1b03efb94fd908d97d0cb50b531485c7cf2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261219-suginami-29140",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-18",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は杉並区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+          "quote": "2026年12月19日（土曜日）",
+          "checked_at": "2026-11-18",
+          "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+          "quote": "4歳以上。未就学児は保護者の付き添いが必要です。",
+          "checked_at": "2026-11-18",
+          "sha256": "737522e72931bacbd536d23f579f3cd05d29145789e1a590ffb153ae776ea7fe",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+          "quote": "5メートルのドーム型プラネタリウム",
+          "checked_at": "2026-11-18",
+          "sha256": "18eb995fe3536751d7660c0ffae88778c7dfc2a47443fc104ced77fcf09f7792",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+          "quote": "2026年12月6日まで 定員 各20名",
+          "checked_at": "2026-11-18",
+          "sha256": "fccb5aa8d0cdcf97e2f68004dc6203cd345ced147b6c849075a6cb7dae3b9209",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+          "quote": "申し込み1件につき、4名まで記入できます。",
+          "checked_at": "2026-11-18",
+          "sha256": "c2e6cd352f708bf4172cb579ae77e00d58af9e69b4e5d6bd2e31bb2072eb957e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261220-suginami-29174",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-18",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は杉並区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+          "quote": "2026年12月20日（日曜日）",
+          "checked_at": "2026-11-18",
+          "sha256": "16e628107ce60bad668e705681b842a9f938fcdbf9e039667da18c929076d470",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+          "quote": "午前10時30分から午前11時10分まで",
+          "checked_at": "2026-11-18",
+          "sha256": "72308f42d902bb4cabc6d27a5dd858d8b9965028690196e453018a0db65de19c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+          "quote": "子供（乳幼児から）、大人（保護者、教育関係者、絵本に関心のある方）",
+          "checked_at": "2026-11-18",
+          "sha256": "0c55509d0209ffe5cade9e21c84965643a9d8959d51235ad7eab70cc894e8aa1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+          "quote": "絵本の読み聞かせを楽しむとともに、絵本による子育ての方法を紹介します。",
+          "checked_at": "2026-11-18",
+          "sha256": "271e68ca203bedda5d2ed2c2daf67ada12ef4b4fc0def76bbf52f5ddfbe73883",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+          "quote": "2026年12月16日まで 定員 各回20組40名",
+          "checked_at": "2026-11-18",
+          "sha256": "5305d88aca7009c857a511feb3303199c0c5933758ae81555b5043b9e10dd5fb",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-suginami-pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 4,
-    "verified": 3,
+    "total": 8,
+    "verified": 7,
     "announced": 1
   }
 }

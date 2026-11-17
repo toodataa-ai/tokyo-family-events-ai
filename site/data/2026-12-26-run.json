@@ -81,12 +81,12 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 21,
-    "published": 19,
+    "candidates": 22,
+    "published": 20,
     "excluded": 2,
     "duplicate_removed": 0,
     "verified": 13,
-    "announced": 6,
+    "announced": 7,
     "thumbnail_count": 5,
     "source_audit_complete": false,
     "publication_ready": false
@@ -106,13 +106,18 @@
     "added_ids": [
       "confirmed-20261226-nakano-wagakki",
       "tamemap-20261227-nakano-family-rhythm",
-      "tamemap-20261226-nakano-tomocchao"
+      "tamemap-20261226-nakano-tomocchao",
+      "tamemap-20261227-nakano-mama-hot-kitchen"
     ],
     "verified": 1,
-    "announced": 2,
+    "announced": 3,
     "publication_ready": false,
     "global_source_audit_complete": false,
     "as_of_jst": "2026-11-17",
-    "original_staged_week_candidates_preserved": true
+    "original_staged_week_candidates_preserved": true,
+    "individual_conditions_unverified": [
+      "tamemap-20261227-nakano-mama-hot-kitchen"
+    ],
+    "note": "12/27は当年月別索引と社協の定期案内による日付特定、当日固有の時刻/価格/予約はunknown。必須ソース監査未完は解消扱いしない。"
   }
 }

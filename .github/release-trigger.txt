@@ -14,3 +14,4 @@ read_only_validation_run=43665511129
 event_record_mutation=none
 curation_record_mutation=none
 note=Publish only user-approved issue aggregate removal and current status content, plus official Sankaku source registration/card parser and necessary tests. Preserve all603 event records/history and310 historical decisions; unrelated staging dashboards/usage/image changes excluded.
+# pages_only_refresh_20261117: Rebuild production Pages overlay from data-production ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71; no application release or app changes.

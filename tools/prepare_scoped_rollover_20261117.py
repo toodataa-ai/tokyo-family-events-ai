@@ -152,6 +152,8 @@ def main():
   w["publication_tier"]="announcement"
   w["coverage"]["published_count"]=len(ids)
   w["coverage"]["candidate_count"]=len(ids)
+  w["coverage"]["excluded_count"]=0
+  w["coverage"]["duplicate_removed"]=0
   for item in w["coverage"]["wards"]:
    item["candidate_count"]=len(ids) if item["ward"]=="中野区" else 0
    item["published_count"]=len(ids) if item["ward"]=="中野区" else 0

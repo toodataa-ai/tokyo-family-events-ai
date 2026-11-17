@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 367,
+  "expected_total_differences_after_governance": 381,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2959,6 +2959,118 @@
       "kind": "staging_only",
       "category": "investigation_20261117_18",
       "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-live-and-suginami-20261118.yml",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "読取専用。実サイトと杉並区公式ページを取得して研究用ブランチへ保存する調査ワークフロー。本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-dispositions.json",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/FETCHED_AT.txt",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/STATUS.txt",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s022_event_29249.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s023_event_28963.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s025_event_29140.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s100_event_29192.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s103_event_29334.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s111_event_29029.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s116_event_29174.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-suginami-pages/s121_event_29120.html",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "2026-11-18に取得した杉並区公式ページの不変コピーと個別判断の記録。ゲート検証が突合する証跡で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/suginami_addition_20261118.py",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "利用者承認済みの運用で追加した杉並区公式ページ4件のデータ専用ゲート検証・生成モジュール。mainのデプロイゲートが使用し本番アプリには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_suginami_addition_20261118.py",
+      "kind": "staging_only",
+      "category": "suginami_20261118",
+      "reason": "利用者承認済みの運用で追加した杉並区公式ページ4件のデータ専用ゲート検証・生成モジュール。mainのデプロイゲートが使用し本番アプリには含めない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

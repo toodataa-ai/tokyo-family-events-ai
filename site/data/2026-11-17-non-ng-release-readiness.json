@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-17",
+  "purpose": "Release-readiness evidence for user-requested all non-NG category 3/4 items; do not label incomplete source coverage as passed",
+  "current_state": {
+    "production_manifest_end": "2026-12-12",
+    "production_data_sha": "fc6bec505975c6dabbddd404f33cd7d9f3f525e9",
+    "existing_published_weekly_records": 607,
+    "scope_reviewed": 16,
+    "scope_already_published": 1,
+    "scope_new_week_candidate": 8,
+    "scope_pending_evidence": 6,
+    "scope_out_of_scope": 1
+  },
+  "week_candidate_integrity": {
+    "2026-12-19": {
+      "event_records": 42,
+      "verified": 33,
+      "announced": 9,
+      "thumbnail_count": 9,
+      "record_ward_verification_decision_run_checks": "passed",
+      "full_23_ward_audit": false
+    },
+    "2026-12-26": {
+      "event_records": 20,
+      "verified": 13,
+      "announced": 7,
+      "thumbnail_count": 5,
+      "record_ward_verification_decision_run_checks": "passed",
+      "full_23_ward_audit": false
+    }
+  },
+  "non_ng_records": [
+    {
+      "id": "confirmed-20261219-nakano-rock-experience",
+      "name": "今日から君もロックミュージシャン！ギター・ドラム・ベース体験",
+      "date": "2026-12-19",
+      "result": "verified_staged_wait_week_rollover",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin01-2.html"
+    },
+    {
+      "id": "confirmed-20261220-nakano-ikebana",
+      "name": "いけ花ワークショップ～お正月の花をいけよう～",
+      "date": "2026-12-20",
+      "result": "verified_staged_wait_week_rollover",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin05.html"
+    },
+    {
+      "id": "confirmed-20261226-nakano-wagakki",
+      "name": "子ども向け和楽器体験＆スペシャルコンサート（12月26日回）",
+      "date": "2026-12-26",
+      "result": "verified_staged_wait_week_rollover",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei04.html"
+    },
+    {
+      "id": "tamemap-20261219-nakano-family-rhythm",
+      "name": "ファミリーリトミック（12月19日）",
+      "date": "2026-12-19",
+      "result": "announced_staged_wait_week_rollover",
+      "source": "https://pc.tamemap.net/1311401/event/160164?locale=ja"
+    },
+    {
+      "id": "tamemap-20261220-nakano-forest-choir",
+      "name": "森のファミリー合唱団（12月20日）",
+      "date": "2026-12-20",
+      "result": "verified_staged_wait_week_rollover",
+      "source": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html"
+    },
+    {
+      "id": "tamemap-20261226-nakano-tomocchao",
+      "name": "ともっちゃお！ おやこdeひろば（12月26日）",
+      "date": "2026-12-26",
+      "result": "announced_staged_wait_week_rollover",
+      "source": "https://pc.tamemap.net/1311401/event/160639?locale=ja"
+    },
+    {
+      "id": "tamemap-20261227-nakano-mama-hot-kitchen",
+      "name": "ママほっとキッチン",
+      "date": "2026-12-27",
+      "result": "announced_staged_wait_week_rollover",
+      "source": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971"
+    },
+    {
+      "id": "tamemap-20261227-nakano-family-rhythm",
+      "name": "ファミリーリトミック（12月27日）",
+      "date": "2026-12-27",
+      "result": "announced_staged_wait_week_rollover",
+      "source": "https://pc.tamemap.net/1311401/event/160164?locale=ja"
+    }
+  ],
+  "mandatory_sources": {
+    "configured_enabled_required_count": 25,
+    "browser_open_success_for_source_paths_count": 22,
+    "browser_open_error_count": 3,
+    "error_source_ids": [
+      "suginami_festival",
+      "tamemap_nakano",
+      "suginami_calendar_all"
+    ],
+    "alternative_tamemap_calendar_view_confirmed": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+    "caveat": "Browser opens are not equivalent to raw HTTP crawler source evidence, monthly row extraction, URL-by-URL source coverage, or strict official schedule audit. The previous inaccessible exact URL checks are not overwritten."
+  },
+  "release_gate": {
+    "status": "blocked",
+    "reason_codes": [
+      "six_week_horizon_rollover_pending",
+      "new_weeks_23_ward_search_and_25_source_official_audit_incomplete",
+      "existing_weeks_full_tier_reverification_pending",
+      "three_mandatory_exact_urls_browser_access_failed"
+    ],
+    "details": "Current six-week live window 2026-11-07 through 2026-12-12 does not include 2026-12-19 or 2026-12-26. The 2026-11-21 and 2026-11-28 previous preview cohorts contain 8 and 6 'announced' verifications that must be rechecked when they become full tier. Two new week candidates still mark all 23 wards pending_reaudit and 0/25 required sources fully checked. A data-only publish operation cannot bypass the released strict validation gates.",
+    "no_unauthorized_production_edits": true,
+    "do_not_falsify_coverage": true
+  },
+  "change_note": "Reconciled the 2026-12-27 Nakano child kitchen record, verification source_kind/unknown fields and 12/26 shard/ward/run counters. Added 8 non-NG candidate identities exactly once and confirmed all 6 pending-evidence IDs excluded from candidate event shards. No production manifest has been extended."
+}

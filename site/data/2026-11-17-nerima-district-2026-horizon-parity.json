@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "scope": "2026-11-16 holiday-after six-week horizon 2026-11-21 through 2026-12-27",
+  "audit_on_jst": "2026-11-17",
+  "audit_type": "official_2026_nerima_district_festival_schedule_to_published_staging_decisions",
+  "official_schedule_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html",
+  "official_annual_index_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/index.html",
+  "range_start": "2026-11-21",
+  "range_end": "2026-12-27",
+  "expected_rows_in_horizon": 2,
+  "reconciled_rows": 2,
+  "missing_rows": 0,
+  "schedule_rows": [
+    {
+      "date": "2026-11-29",
+      "time": "10:00〜12:00",
+      "name": "第一地区祭",
+      "venue": "豊玉南小学校",
+      "address": "練馬区豊玉南2-14-1",
+      "week_start": "2026-11-28",
+      "published_candidate_id": "nerima-district-0275426b6920",
+      "source_shard": "2026-11-28-events-01.json",
+      "decision": "published",
+      "match": {
+        "name": true,
+        "date": true,
+        "time": true,
+        "venue": true,
+        "official_url": true,
+        "decision_present": true
+      }
+    },
+    {
+      "date": "2026-12-05",
+      "time": "12:00〜15:00",
+      "name": "第一地区祭",
+      "venue": "豊玉小学校",
+      "address": "練馬区豊玉中4-2-20",
+      "week_start": "2026-12-05",
+      "published_candidate_id": "v15-20261205-toyotama-district",
+      "source_shard": "2026-12-05-events-official-verified.json",
+      "decision": "published",
+      "match": {
+        "name": true,
+        "date": true,
+        "time": true,
+        "venue": true,
+        "official_url": true,
+        "decision_present": true
+      }
+    }
+  ],
+  "range_disclaimer": "2026年度の地区祭のうち公開対象6週間に該当する2行に限定した公式対掲載済みデータ照合。別期間の全行照合や他主催のイベントを含む全25必須参照元の照合は未完了。",
+  "source_access": "official annual detail page readable in web viewer; direct raw HTTP bytes not locally captured",
+  "raw_source_sha256": null,
+  "source_quote_hash": null,
+  "records_modified": 0,
+  "existing_published_events_deleted": 0,
+  "approved_for_whole_horizon_release": false
+}

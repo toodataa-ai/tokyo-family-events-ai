@@ -1,9 +1,8 @@
-operation=verified-current-rollover-20261118
-candidate_sha=06888a9239c86436c4a499b4268847fa34f4dd2c
-base_data_production_sha=fc6bec505975c6dabbddd404f33cd7d9f3f525e9
-official_evidence=research/2026-11-18-source-evidence/PROVENANCE.md (GitHub Actions run 44187635448, artifact 14375267058)
-authorization=User directed data-only direct production update on 2026-11-15 and approved the rollover gate change on 2026-11-18.
-change_scope=Roll the six-week window to 2026-11-21..2026-12-26; add the eight individually verified non-NG events (12/19 week 4, 12/26 week 4); 42 event-matched thumbnail updates on already-published events; record real 23-ward x 6-week receipts. No published record removed or edited except 42 image fields.
-validation=Pinned operation validator tools/validate_current_rollover_20261118.py plus strict data, decisions, rereview, non-regression, protected events (607 retained), image identity, and family-fit gates.
-note=Five failed source receipts (tamemap_nakano 403 x3, Nerima legacy monthly calendar 404 x2) stay recorded as failed and are never marked checked; the full 25-source audit is NOT complete and is not claimed. 821 discovery links remain unverified.
-staging_branch_original_archived=archive/data-staging-pre-rollover-20261118
+operation=verified-suginami-addition-20261118
+candidate_sha=cae532ddf582dccec739404e8a3a2324d411898a
+base_data_production_sha=06888a9239c86436c4a499b4268847fa34f4dd2c
+official_evidence=research/2026-11-18-suginami-pages/ (unchanged official Suginami pages, HTTP200, fetched 2026-11-18) and research/2026-11-18-suginami-dispositions.json
+authorization=User directed data-only direct production update on 2026-11-15 and told Claude on 2026-11-18 to proceed with the Suginami evaluation.
+change_scope=Add four individually verified Suginami official events to the 2026-12-19 week (12/19 x3, 12/20 x1). Four other Suginami candidates stay unpublished with recorded reasons. No existing record, week, or history entry changed.
+validation=Pinned validator tools/validate_suginami_addition_20261118.py re-derives every new record from the committed official pages; plus strict data, decisions, non-regression, protected events, image identity and family-fit gates.
+note=Source debt is unchanged: tamemap_nakano 403 x3 and Nerima legacy calendar 404 x2 remain recorded as failed; the full 25-source audit is not complete and is not claimed.

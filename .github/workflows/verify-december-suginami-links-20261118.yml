@@ -67,6 +67,15 @@ jobs:
                 enc=resp.headers.get_content_charset() or 'utf-8'
               p=Visible();p.feed(raw.decode(enc,errors='replace'))
               txt=html.unescape(' '.join(''.join(p.buf).split()))
+              # Scope eligibility to the event detail body, not the global navigation
+              detail=(txt.split('イベント情報詳細',1)[1] if 'イベント情報詳細' in txt else txt)
+              detail=detail.split('イベント情報をiPhone',1)[0]
+              audience=re.search(r'対象者\\s*(.*?)\\s*開催場所',detail)
+              audience_text=(audience.group(1) if audience else '')[:300]
+              booking=re.search(r'申し込み\\s*(.*?)\\s*(?:申し込み期間|定員|費用|問い合わせ)',detail)
+              booking_text=(booking.group(1) if booking else '')[:350]
+              eligibility_child=bool(re.search(r'未就学児|乳幼児|小学生|中学生|高校生|子ども|こども|親子|どなたでも',audience_text))
+              eligibility_adult_only=bool(re.search(r'成人|高齢者|60歳以上',audience_text)) and not eligibility_child
               day=row['event_day'];ymd=datetime.date.fromisoformat(day)
               label=f'{ymd.year}年{ymd.month}月{ymd.day}日'
               d.update(status='checked' if resp.status==200 else 'http_error',text_length=len(txt),
@@ -74,6 +83,9 @@ jobs:
                 children_word_found=bool(re.search(r'子ども|こども|親子|小学生|中学生|児童|乳幼児|青少年|ファミリー|こども向け|おもちゃ|科学|プラネタリウム',txt)),
                 adult_only_cue=bool(re.search(r'対象者.{0,25}(?:成人|高齢者)|中学生のみ|区内在住・在学の令和8年度中学生|募集終了',txt)),
                 body_markers=[txt[max(0,m.start()-65):m.start()+110] for m in list(re.finditer(re.escape(label),txt))[:3]],
+                eligibility_text=audience_text,eligibility_child=eligibility_child,
+                eligibility_adult_only=eligibility_adult_only,booking_excerpt=booking_text,
+                detail_excerpt=detail[:1650],
                 title_in_body=row['name'].replace(' ','')[:9] in txt.replace(' ',''))
             except Exception as err:d['error']=str(err)[:250]
             return d

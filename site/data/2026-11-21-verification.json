@@ -2476,8 +2476,10 @@
         "reservation": "pass",
         "official_url": "pass"
       },
-      "corrections": {},
-      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。",
+      "corrections": {
+        "official_url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002936"
+      },
+      "note": "名前・2026年の実施日・会場を本文/構造化日程で照合。日付クエリ・更新日・写真を開催事実の根拠にしない。未記載事項は未確認のまま。 2026-11-17追加照合：2部は15:30開始、未就学児は入場不可。主催者および練馬区観光協会を照合し、画像衝突防止のため観光協会個別ページに公式リンク補正。",
       "evidence": [
         {
           "url": "https://www.neribun.or.jp/event/detail_n.cgi?id=202608081786175523",
@@ -2491,6 +2493,14 @@
         "to": "B",
         "reason": "小学生以上が1時間で金管楽器の名曲とおしゃべりを楽しめる。 未就学児は入場不可。小学生以上という年齢条件だけで、乳幼児向け公演と同じ適合とはしない。",
         "source": "https://www.neribun.or.jp/event/detail_n.cgi?id=202608081786175523"
+      },
+      "field_changes": {
+        "official_url": {
+          "from": "https://www.neribun.or.jp/event/detail_n.cgi?id=202608081786175523",
+          "to": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002936",
+          "reason": "同一公式主催者ページにある2公演の共通写真をイベント別に重複割当しないよう、2部の公式観光協会個別掲載ページへリンクを差し替える。主催者原典はraw url/sourceに維持。",
+          "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000002936"
+        }
       }
     },
     {

@@ -245,7 +245,12 @@
         "all_daily_URLs_retrieved_via_link_or_retry": true,
         "full_row_decision_reconciliation": false
       }
-    ]
+    ],
+    "blocked_exact_url_ids": [
+      "tamemap_nakano",
+      "suginami_festival"
+    ],
+    "evidence_classification": "Inaccessible via present web tool is not global physical impossibility; alternative indexing and unfiltered official Suginami calendar are partially available."
   },
   "ward_searches": {
     "ward_searches_invoked": 23,
@@ -730,5 +735,47 @@
     "cross-week strict validations",
     "approved data-only production promotion"
   ],
-  "production_promotion_attempted": false
+  "production_promotion_attempted": false,
+  "completed_scoped_work_2026_11_17": [
+    {
+      "work": "2026 Nerima district-festival official rows inside six-week horizon",
+      "result": "2 out of 2 published events and decision records match official times, dates, venues",
+      "record": "site/data/2026-11-17-nerima-district-2026-horizon-parity.json"
+    },
+    {
+      "work": "Suginami 42 daily calendar pages",
+      "result": "42 of 42 pages readable via month/day navigation (some direct exact source URLs are still inaccessible)",
+      "record": "this audit; source direct category filter not completed"
+    },
+    {
+      "work": "Suginami 12/19-20 family event omissions",
+      "result": "two primary official page facts matched, not yet merged into event/decision/verification",
+      "record": "site/data/2026-11-17-suginami-dec19-dec20-official-omission-audit.json"
+    },
+    {
+      "work": "26 primary official pages for 38 incomplete reviews",
+      "result": "source access verified, per-event quote/hash capture incomplete",
+      "record": "individual_event_sources rows"
+    },
+    {
+      "work": "23 ward independent targeted search",
+      "result": "23 date-scoped first-pass searches executed; full six-week cross-source candidate reconciliation remains undone",
+      "record": "ward_searches results"
+    }
+  ],
+  "newly_found_suginami_scoped_items_2026_11_17": [
+    {
+      "title": "クリスマス交流会アフリカハープ コラ演奏会",
+      "date": "2026-12-19",
+      "official_url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+      "status": "verified_candidate_not_published"
+    },
+    {
+      "title": "おもちゃのクリニック",
+      "date": "2026-12-20",
+      "official_url": "https://www.city.suginami.tokyo.jp/s103/event/29334.html",
+      "status": "verified_candidate_not_published"
+    }
+  ],
+  "last_audit_update_jst": "2026-11-17"
 }

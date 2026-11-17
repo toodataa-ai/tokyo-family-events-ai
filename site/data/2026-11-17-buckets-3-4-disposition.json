@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-17",
+  "scope": "User-specified outstanding bucket 3 (6 dated leads) and bucket 4 (10 dated Tamemap leads) only; global collection blocked",
+  "reference_data_production_sha": "fc6bec505975c6dabbddd404f33cd7d9f3f525e9",
+  "previous_data_staging_sha": "b6bcfe466922de8c0020e66930027d4f62cc8981",
+  "count_unit": "dated event candidates; not necessarily distinct programs",
+  "groups": {
+    "category3": {
+      "total": 6,
+      "published": 1,
+      "verified_new_week_queued": 3,
+      "pending_specific_source": 2
+    },
+    "category4": {
+      "total": 10,
+      "new_week_queued": 4,
+      "excluded_out_of_scope": 1,
+      "pending_specific_source": 5
+    }
+  },
+  "overall": {
+    "total_reviewed": 16,
+    "published_production": 1,
+    "integrated_new_week_candidate_shards": 7,
+    "held_due_missing_or_conflicting_evidence": 7,
+    "excluded_out_of_scope": 1
+  },
+  "new_week_candidate_summary": {
+    "week_2026_12_19_added": 4,
+    "week_2026_12_26_added": 3,
+    "verification_status_verified": 4,
+    "verification_status_announced": 3,
+    "site_production_manifest_unchanged": true,
+    "source_coverage_not_claimed_complete": true
+  },
+  "source_failure_policy": {
+    "tamemap_monthly_index_readable": true,
+    "individual_date_specific_Tamemap_urls_some_403": true,
+    "suginami_two_individual_urls_inaccessible_on_recheck": true,
+    "no_invalid_or_fake_hashes": true
+  },
+  "source_hash_note": "SHA256 fields in the new published candidacy records are hashes of exact confirmed quotation strings only; they are not hashes of a complete HTTP response. Do not reuse as evidence of a successful raw HTTP download.",
+  "decisions": [
+    {
+      "group": 3,
+      "id": "candidate-20261121-kids-street-itabashi",
+      "date": "2026-11-21",
+      "name": "キッズストリートいたばし",
+      "result": "published_production",
+      "basis": "主催者公式開催日時・無料・予約不要、既存レコード非破壊で2026-11-17公開",
+      "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568"
+    },
+    {
+      "group": 3,
+      "id": "confirmed-20261219-nakano-rock-experience",
+      "date": "2026-12-19",
+      "name": "今日から君もロックミュージシャン！ギター・ドラム・ベース体験",
+      "result": "verified_staged_wait_week_rollover",
+      "basis": "中野区公式、対象5-18歳、要12/7申込。価格は区公式ページ未記載でunknown",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin01-2.html"
+    },
+    {
+      "group": 3,
+      "id": "confirmed-20261220-nakano-ikebana",
+      "date": "2026-12-20",
+      "name": "いけ花ワークショップ～お正月の花をいけよう～",
+      "result": "verified_staged_wait_week_rollover",
+      "basis": "中野区公式、10-18歳、12/9申込締切、材料持ち帰り不可。費用unknown",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin05.html"
+    },
+    {
+      "group": 3,
+      "id": "confirmed-20261226-nakano-wagakki",
+      "date": "2026-12-26",
+      "name": "子ども向け和楽器体験＆スペシャルコンサート（12月26日回）",
+      "result": "verified_staged_wait_week_rollover",
+      "basis": "中野区公式、四回コース一律2000円、参加回数によらず同額・先着申込。2026-12-26単日回の日時を確認",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei04.html"
+    },
+    {
+      "group": 3,
+      "id": "candidate-20261219-suginami-kora-christmas",
+      "date": "2026-12-19",
+      "name": "クリスマス交流会アフリカハープ コラ演奏会",
+      "result": "pending_live_source_recheck",
+      "basis": "前回区公式個別ページのイベント日程・料金確認記録あり。今回該当ページの直接再取得が失敗、引用ハッシュ未取得。旧照合記録は保持",
+      "url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html"
+    },
+    {
+      "group": 3,
+      "id": "candidate-20261220-suginami-toy-clinic",
+      "date": "2026-12-20",
+      "name": "おもちゃのクリニック",
+      "result": "pending_live_source_recheck",
+      "basis": "前回区公式個別ページの日時・対象記録あり。今回直接再取得が失敗、引用ハッシュ未取得。旧照合記録は保持",
+      "url": "https://www.city.suginami.tokyo.jp/s103/event/29334.html"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261219-nakano-family-rhythm",
+      "date": "2026-12-19",
+      "name": "ファミリーリトミック（12月19日）",
+      "result": "announced_staged_wait_week_rollover",
+      "basis": "ためまっぷ2026年12月19日の月別一覧と主催者のリトミック投稿を照合。個別時刻・空席はunknown、条件明示",
+      "url": "https://pc.tamemap.net/1311401/event/160164?locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261219-nakano-pinecone-tree",
+      "date": "2026-12-19",
+      "name": "木の実のクリスマスツリーづくり",
+      "result": "pending_individual_organizer_details",
+      "basis": "ためまっぷ12月月別索引の名称・会場は確認。主催者による2026年当日詳細・料金・対象は確認不能。2025年同名催事を今年の根拠に転用しない",
+      "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261219-nakano-forest-choir",
+      "date": "2026-12-19",
+      "name": "森のファミリー合唱団（12/19）",
+      "result": "pending_date_conflict",
+      "basis": "ためまっぷには土曜12/19の掲載がある一方、中野区公式は通常活動が毎週日曜と記載。土曜特別回の主催者確認が必要",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261220-nakano-forest-choir",
+      "date": "2026-12-20",
+      "name": "森のファミリー合唱団（12月20日）",
+      "result": "verified_staged_wait_week_rollover",
+      "basis": "中野区の認定事業で毎週日曜9:30-11:00と一回1000円/家族、初回体験無料。ためまっぷ12/20にも掲載",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261220-nakano-flower-newyear",
+      "date": "2026-12-20",
+      "name": "大人も楽しめる花育 お正月アレンジ",
+      "result": "pending_child_fit_and_organizer_details",
+      "basis": "ためまっぷ12月一覧に名称と会場掲載。対象年齢、親子での体験可否、料金の今年分の主催者告知が未確認",
+      "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261220-nakano-flower-shimenawa",
+      "date": "2026-12-20",
+      "name": "大人も楽しめる花育 お正月しめ縄飾り",
+      "result": "pending_child_fit_and_organizer_details",
+      "basis": "ためまっぷ12月一覧に名称と会場掲載。子ども対象の確認、料金、予約条件の2026個別根拠が不足",
+      "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261226-nakano-tomocchao",
+      "date": "2026-12-26",
+      "name": "ともっちゃお！ おやこdeひろば（12月26日）",
+      "result": "announced_staged_wait_week_rollover",
+      "basis": "ためまっぷの主催者ゆるナカ投稿が2026年12月26日の開催日と13-17時枠、無料・前日までの要予約を明記。個別空席は未確認",
+      "url": "https://pc.tamemap.net/1311401/event/160639?locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261226-nakano-family-talk",
+      "date": "2026-12-26",
+      "name": "かぞくのしゃべり場",
+      "result": "excluded_not_child_outing",
+      "basis": "中野区委託の若者フリースペースの若者の家族向け交流・相談。子ども自身の参加型外出イベントではない。一般の子連れイベント扱いしない",
+      "url": "https://pc.tamemap.net/1311401/event/161470?locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261227-nakano-mama-hot-kitchen",
+      "date": "2026-12-27",
+      "name": "ママほっとキッチン",
+      "result": "pending_date_specific_organizer_details",
+      "basis": "ためまっぷ月別索引に12/27と掲載。11/22の同名主催者投稿は存在するが12/27参加方法・時刻の個別詳細は未取得",
+      "url": "https://pc.tamemap.net/1311401/event/153058/2026-11-22?locale=ja"
+    },
+    {
+      "group": 4,
+      "id": "tamemap-20261227-nakano-family-rhythm",
+      "date": "2026-12-27",
+      "name": "ファミリーリトミック（12月27日）",
+      "result": "announced_staged_wait_week_rollover",
+      "basis": "ためまっぷ12/27一覧と主催者リトミック投稿を照合。個別の開始時刻・空き状況は未取得でunknown",
+      "url": "https://pc.tamemap.net/1311401/event/160164?locale=ja"
+    }
+  ],
+  "next_release_dependency": "Promote the 12/19 and 12/26 candidate weeks only after mandatory 23-ward and 25-source 6-week roll validation. Seven unsatisfied/deferred source records must not be promoted by assumption.",
+  "all_previous_published_events_kept": true,
+  "excluded_or_unverified_records_not_discarded": true,
+  "production_source_status_unmodified": true
+}

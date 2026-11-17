@@ -81,12 +81,12 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 18,
-    "published": 16,
+    "candidates": 21,
+    "published": 19,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 12,
-    "announced": 4,
+    "verified": 13,
+    "announced": 6,
     "thumbnail_count": 5,
     "source_audit_complete": false,
     "publication_ready": false
@@ -100,5 +100,19 @@
     ],
     "added_events": 3,
     "coverage_status": "partial_ward_targeted_search"
+  },
+  "scoped_addendum_20261117": {
+    "kind": "resolved_scope_3_and_4_candidate_integration",
+    "added_ids": [
+      "confirmed-20261226-nakano-wagakki",
+      "tamemap-20261227-nakano-family-rhythm",
+      "tamemap-20261226-nakano-tomocchao"
+    ],
+    "verified": 1,
+    "announced": 2,
+    "publication_ready": false,
+    "global_source_audit_complete": false,
+    "as_of_jst": "2026-11-17",
+    "original_staged_week_candidates_preserved": true
   }
 }

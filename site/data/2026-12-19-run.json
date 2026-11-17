@@ -82,12 +82,12 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 41,
-    "published": 38,
+    "candidates": 45,
+    "published": 42,
     "excluded": 3,
     "duplicate_removed": 0,
-    "verified": 30,
-    "announced": 8,
+    "verified": 33,
+    "announced": 9,
     "thumbnail_count": 9,
     "source_audit_complete": false,
     "publication_ready": false
@@ -104,5 +104,20 @@
     ],
     "added_events": 11,
     "coverage_status": "partial_23_ward_search_first_pass"
+  },
+  "scoped_addendum_20261117": {
+    "kind": "resolved_scope_3_and_4_candidate_integration",
+    "added_ids": [
+      "confirmed-20261219-nakano-rock-experience",
+      "confirmed-20261220-nakano-ikebana",
+      "tamemap-20261219-nakano-family-rhythm",
+      "tamemap-20261220-nakano-forest-choir"
+    ],
+    "verified": 3,
+    "announced": 1,
+    "publication_ready": false,
+    "global_source_audit_complete": false,
+    "as_of_jst": "2026-11-17",
+    "original_staged_week_candidates_preserved": true
   }
 }

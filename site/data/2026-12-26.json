@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 0,
-    "candidate_count": 18,
+    "candidate_count": 21,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 16,
+    "published_count": 19,
     "wards": [
       {
         "ward": "千代田区",
@@ -137,9 +137,9 @@
         "status": "pending_reaudit",
         "queries": 0,
         "sources_checked": 0,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "今回の全23区再探索は未完了。個別イベント根拠を持つ候補のみ。"
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "今回の全23区再探索は未完了。個別イベント根拠を持つ候補のみ。 2026-11-17に7件のうち本週3件を個別証拠で整理。23区の全件再探索は未完のまま。"
       },
       {
         "ward": "杉並区",
@@ -228,7 +228,8 @@
     "2026-12-26-events-official-subset-20261116.json",
     "2026-12-26-events-carryover-review-20261116.json",
     "2026-12-26-events-suginami-official-20261116.json",
-    "2026-12-26-events-multiward-official-20261116.json"
+    "2026-12-26-events-multiward-official-20261116.json",
+    "2026-12-26-events-nakano-verified-20261117.json"
   ],
   "events": []
 }

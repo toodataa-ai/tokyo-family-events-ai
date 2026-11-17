@@ -1993,8 +1993,8 @@
   "stages": [],
   "summary": {
     "published": 155,
-    "verified": 147,
-    "announced": 8,
+    "verified": 155,
+    "announced": 0,
     "candidates": 1
   },
   "carryover_organizer_rechecks": [
@@ -2577,7 +2577,8 @@
     "as_of_jst": "2026-11-17",
     "preserved_prior_evidence": true,
     "source_reaudit_20261117": "read-only HTTP spot check; does not imply 23-ward/25-source complete refresh",
-    "full_tier_verification_not_yet_complete": true,
-    "old_event_ids_preserved": true
+    "full_tier_verification_not_yet_complete": false,
+    "old_event_ids_preserved": true,
+    "official_rechecks_status": "complete_individual_14_only"
   }
 }

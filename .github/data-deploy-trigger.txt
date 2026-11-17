@@ -1,7 +1,9 @@
-operation=verified-nine-followup-20261115
-candidate_sha=1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f
-base_data_production_sha=37288d43e28e9e7473ca75c3267432b97b57ee33
-review_evidence=research/nine_followup_20261115/publishable.json
-read_only_validation_run=43676465465
-authorization=Verified event data may update production directly; application and pending-status changes remain staging-only until user review. External contact drafts remain unsent.
-note=Add only the Cambodia festival verified from the organizer's2026 public poster, total605. Preserve all604 existing records, assessments, history and source failures. Show the unresolved organizer18:00/park19:00 end-time conflict explicitly with verification time=unknown. Keep all nine unresolved units pending; do not mark them complete by withholding publication.
+operation=manual-official-verified-subset-20261117
+candidate_sha=9d4b195fd5f05345886c24c771198346901489d5
+base_data_production_sha=1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f
+official_evidence=https://ikou.nttud.co.jp/topics/detail/id/n28054.html
+authorization=User explicitly requested production application of verified events only on 2026-11-17.
+change_scope=One independently verified Minato event on 2026-11-28 and 2026-11-29; preserve all baseline events and all unresolved source errors. Not a full holiday-after refresh.
+staging_branch_original_archived=archive/data-staging-pre-safe-release-20261117
+validation=Strict data-only CI must pass before promoting data-production; no bypass of source gate.
+note=Increment existing 2026-11-28 week by one; retain six existing published week indexes and do not publish two incomplete December week candidates.

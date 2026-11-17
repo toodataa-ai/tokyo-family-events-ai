@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-17",
+  "refresh_for_jst": "2026-11-16",
+  "mode": "cached_public_december_index_discovery_only",
+  "status": "PARTIAL_DO_NOT_USE_AS_REQUIRED_SOURCE_CHECK",
+  "source_id": "tamemap_nakano",
+  "source_url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+  "web_search_index_crawled_at": "last_month_as_reported_2026-11-17",
+  "fresh_exact_source_download_succeeded": false,
+  "source_scope": "Map viewport / indexed summary. Not 23-ward, not full monthly pagination or organizer-verified.",
+  "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "staging_new_week_existing_nakano_event_counts": {
+    "2026-12-19": 0,
+    "2026-12-26": 0
+  },
+  "source_observed_candidates": [
+    {
+      "day": "2026-12-19",
+      "name": "〖ファミリーリトミック〗",
+      "venue": "広町みらい公園",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-19",
+      "name": "〖木の実のクリスマスツリーづくり〗",
+      "venue": "広町みらい公園",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-19",
+      "name": "森のファミリー合唱団",
+      "venue": "プライムメゾン江古田の杜ウエスト1階",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-20",
+      "name": "森のファミリー合唱団",
+      "venue": "プライムメゾン江古田の杜ウエスト1階",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-20",
+      "name": "〖大人も楽しめる花育〗人気のお正月アレンジ。",
+      "venue": "広町みらい公園",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-20",
+      "name": "〖大人も楽しめる花育〗ステキなお正月しめ縄飾りを作りましょう",
+      "venue": "広町みらい公園",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-26",
+      "name": "ともっちゃお！ おやこdeひろば",
+      "venue": "遊びのひろば ゆるナカふぇ",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-26",
+      "name": "かぞくのしゃべり場",
+      "venue": "中野区若者フリースペース まごころドーナッツ",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-27",
+      "name": "ママほっとキッチン",
+      "venue": "桃園区民活動センター 2階調理室",
+      "event_detail_verified": false
+    },
+    {
+      "day": "2026-12-27",
+      "name": "〖ファミリーリトミック〗",
+      "venue": "広町みらい公園",
+      "event_detail_verified": false
+    }
+  ],
+  "potential_explicit_exclusions": [
+    {
+      "day": "2026-12-19",
+      "name": "〖女性のためのボールフィット〗",
+      "reason": "対象が大人の女性向けの可能性あり。詳細主催者照合まで候補止まり"
+    },
+    {
+      "day": "2026-12-19",
+      "name": "食事&自習室つき無料・低額塾『ステップアップ塾』講師募集中！",
+      "reason": "参加者向けイベントではなく募集告知の可能性"
+    }
+  ],
+  "required_next_checks": [
+    "2026年12月の対象地域・全ページを実取得する",
+    "候補の個別ためまっぷ詳細と主催者の2026年日程・料金・予約条件を照合する",
+    "開催回ごとのID同一性・重複判定と家族適性8軸を確認する",
+    "新週のevents/verification/decisions/runに同期してstrict gateを通す"
+  ],
+  "publication_ready": false,
+  "existing_published_data_modified": false
+}

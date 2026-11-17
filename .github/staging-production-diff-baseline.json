@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 342,
+  "expected_total_differences_after_governance": 367,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -2759,6 +2759,206 @@
       "kind": "staging_only",
       "category": "pending_remaining_clarity",
       "reason": "利用者指定により残9件の確認済み情報・不足する根拠・掲載への影響を明確化し、外部問い合わせの許可撤回を記録するmain専用証跡。605個票・過去台帳は変更しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/audit-scoped-rollover-gates.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/export-evidence-20261118.yml",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "読取専用。Actions証跡を研究用ブランチへ不変コピーするための調査ワークフロー。本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/prepare-clean-non-ng-release.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/prepare-safe-december-images.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/prepare-scoped-non-ng-rollover.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/probe-tamemap-chromium-20261117.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/verify-20261116-all-23ward-sources.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/verify-carried-announcements-20261117.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/verify-december-suginami-links-20261118.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/verify-final-non-ng-gates-20261118.yml",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/CLAUDE_HANDOVER_2026-11-18.md",
+      "kind": "staging_only",
+      "category": "handover_20261118",
+      "reason": "ChatGPTからClaudeへの引き継ぎ書と全面検証の機械可読証跡。mainの運用文書で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-six-week-full-verification-audit.json",
+      "kind": "staging_only",
+      "category": "handover_20261118",
+      "reason": "ChatGPTからClaudeへの引き継ぎ書と全面検証の機械可読証跡。mainの運用文書で本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/PROVENANCE.md",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/plan.json",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/requests.json",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/review_packet.json",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/source_fallbacks.json",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-source-evidence/summary.json",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "2026-11-18の全23区・必須25参照元の実測ログ(Actions run 44187635448)の不変コピー。ゲート検証が突合する証跡で、本番配信は不要。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/test_rollover_20261118_gate.py",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "利用者承認(2026-11-18)済みのデータ専用ゲート改修。11/21開始6週の公開検証と回帰テスト。mainのデプロイゲートが使用し、本番アプリには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/prepare_clean_scoped_non_ng_20261117.py",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/prepare_scoped_rollover_20261117.py",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/rollover_evidence_20261118.py",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "利用者承認(2026-11-18)済みのデータ専用ゲート改修。11/21開始6週の公開検証と回帰テスト。mainのデプロイゲートが使用し、本番アプリには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_current_rollover_20261118.py",
+      "kind": "staging_only",
+      "category": "rollover_20261118",
+      "reason": "利用者承認(2026-11-18)済みのデータ専用ゲート改修。11/21開始6週の公開検証と回帰テスト。mainのデプロイゲートが使用し、本番アプリには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_manual_20261117_verified_subset.py",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/verify_carried_announcements_20261117.py",
+      "kind": "staging_only",
+      "category": "investigation_20261117_18",
+      "reason": "2026-11-17〜18の読取専用/候補生成の調査ワークフロー・ツール(ChatGPT作成)。過去の調査証跡としてmainに保管し、本番へは配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

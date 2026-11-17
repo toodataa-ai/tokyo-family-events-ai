@@ -334,6 +334,12 @@ jobs:
               --main-dir staging-policy-src \
               --evidence-dir original-audit-evidence/holiday-after-source-evidence \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ]; then
+            python3 staging-policy-src/tools/validate_current_rollover_20261118.py \
+              --data-dir site/data \
+              --evidence-dir staging-policy-src/research/2026-11-18-source-evidence \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover" ]; then
             python3 staging-policy-src/tools/validate_current_rollover_20261108.py \
               --data-dir site/data \
@@ -367,7 +373,7 @@ jobs:
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data
           fi
       - name: Refuse holiday-after refresh if official weekday holidays are missing from six-week manifest
-        if: ${{ needs.gate.outputs.operation == 'holiday-after-update' || needs.gate.outputs.operation == 'verified-horizon-subset' || needs.gate.outputs.operation == 'verified-current-rollover' }}
+        if: ${{ needs.gate.outputs.operation == 'holiday-after-update' || needs.gate.outputs.operation == 'verified-horizon-subset' || needs.gate.outputs.operation == 'verified-current-rollover' || needs.gate.outputs.operation == 'verified-current-rollover-20261118' }}
         run: |
           python3 -m unittest discover -s staging-policy-src/tests -p 'test_weekday_holiday_coverage.py'
           python3 staging-policy-src/tools/audit_weekday_holiday_coverage.py --manifest site/data/manifest.json --strict
@@ -500,6 +506,8 @@ jobs:
                 --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
+            elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview inherits the pinned 2026-11-18 receipt-backed rollover proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits immutable verified-subset proof and scoped source audit from validate_data on candidate SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
@@ -567,6 +575,8 @@ jobs:
                 python3 ../staging-src/tools/validate_nerima_forest_addition.py --base-ref "$base"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
                 echo "Immutable source+history already audited by validate_data on candidate before promotion; data-staging unchanged."
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ]; then
+                echo "Receipt-backed rollover already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "manual-official-gap-recovery-20261108" ]; then
                 python3 ../staging-src/tools/validate_official_gap_recovery_20261108.py --data-dir site/data --base-ref "$base"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then

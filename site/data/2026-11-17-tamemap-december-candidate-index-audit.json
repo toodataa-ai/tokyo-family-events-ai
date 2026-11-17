@@ -55,7 +55,15 @@
       "day": "2026-12-26",
       "name": "ともっちゃお！ おやこdeひろば",
       "venue": "遊びのひろば ゆるナカふぇ",
-      "event_detail_verified": false
+      "event_detail_verified": true,
+      "organizer_post_event_url": "https://pc.tamemap.net/1311401/event/160639?locale=ja",
+      "organizer_posted_recurring_schedule": "2026-09-19, 2026-10-24, 2026-11-28, 2026-12-26",
+      "event_source_kind": "organizer_post_on_tamemap",
+      "time": "13:00〜15:00 / 15:00〜17:00 (2部、各回8名)",
+      "price": "参加費無料。延長30分500円・追加飲料は有料。",
+      "reservation": "前日までに予約する旨の本文記載。ただし開催日個別の12/26申込受付表示は未確認。",
+      "venue_official_site": "https://yurunaka.notion.site/cdb2fc8d25c04bacac734222dd0843f8",
+      "venue_site_does_not_explicitly_list_dec26": true
     },
     {
       "day": "2026-12-26",
@@ -95,5 +103,25 @@
     "新週のevents/verification/decisions/runに同期してstrict gateを通す"
   ],
   "publication_ready": false,
-  "existing_published_data_modified": false
+  "existing_published_data_modified": false,
+  "confirmed_one_recurring_organizer_listing": {
+    "event_name": "ともっちゃお！ おやこdeひろば",
+    "date": "2026-12-26",
+    "event_page": "https://pc.tamemap.net/1311401/event/160639?locale=ja",
+    "verified_from": "主催者（ゆるナカ）名義のためまっぷ投稿本文にある4回分の2026年開催日記述",
+    "verified_fields": [
+      "date_as_recurring_schedule",
+      "name",
+      "venue",
+      "start_end_times",
+      "general_fee",
+      "reservation_note"
+    ],
+    "unchecked_fields": [
+      "date_specific_registration_status",
+      "December_only_cancellation_or_revision",
+      "image_identity"
+    ],
+    "publication_ready": false
+  }
 }

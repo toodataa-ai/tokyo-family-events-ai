@@ -318,6 +318,9 @@ jobs:
             python3 staging-policy-src/tools/validate_two_official_omissions_20261108.py \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
             echo 'No old source failure was changed, and the 859 remaining candidate links are not marked audited.'
+          elif [ "${{ needs.gate.outputs.operation }}" = "manual-official-verified-subset-20261117" ]; then
+            python3 staging-policy-src/tools/validate_manual_20261117_verified_subset.py \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
           elif [ "${{ needs.gate.outputs.operation }}" = "history-provenance-only-20261108" ]; then
             node staging-policy-src/tools/validate_history_metadata_provenance.mjs \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data

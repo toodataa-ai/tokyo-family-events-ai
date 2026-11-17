@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-11-08",
+  "verified_on": "2026-11-17",
   "events": [
     {
       "id": "v15-ad2f72f74ab7",
@@ -167,7 +167,7 @@
     },
     {
       "id": "official-2026-nijin-expo",
-      "status": "announced",
+      "status": "verified",
       "source": "https://expo.nijin.co.jp/venue-real/",
       "source_kind": "organizer_official",
       "fields": {
@@ -180,18 +180,31 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 主催者会場案内で11月21・22日、DMM六本木本社24F、11〜16時体験、入場無料、LINE登録必須確認。。公式LINEで来場者各自の無料参加登録が必要。コンテスト応募は別途締切。",
+      "note": "2026-10-20公式照合: 主催者会場案内で11月21・22日、DMM六本木本社24F、11〜16時体験、入場無料、LINE登録必須確認。。公式LINEで来場者各自の無料参加登録が必要。コンテスト応募は別途締切。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "A",
         "reason": "企業や子どものブース、制作・プログラミングなどで子ども自身が挑戦し、興味を広げられる。 各自の公式LINE登録が必要。体験ごとの対象・定員は異なり、教育者向け夜間企画とは区別する。",
         "source": "https://expo.nijin.co.jp/venue-real/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://expo.nijin.co.jp/venue-real/",
+        "http_status": 200,
+        "raw_response_sha256": "27969392cf3998df002af966f5604a4569343d980b6bd043c1e30b13906944b1",
+        "exact_marker_hits": [
+          "NIJIN教育万博2026",
+          "2026.11.21",
+          "11.22",
+          "DMM六本木"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-urban-agriculture-pre",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
       "source_kind": "public_official",
       "fields": {
@@ -204,18 +217,30 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 練馬区2026-10-18更新の公式開催概要で11月21・22日10〜16時、光が丘公園けやき広場・農産物販売を確認。。練馬区公式開催概要に入場予約条件の明記なし。",
+      "note": "2026-10-20公式照合: 練馬区2026-10-18更新の公式開催概要で11月21・22日10〜16時、光が丘公園けやき広場・農産物販売を確認。。練馬区公式開催概要に入場予約条件の明記なし。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "全国15自治体の農産物や取り組みを見比べ、親子で食の産地や都市農業に触れられる。 公式概要の主な内容は販売・紹介。子ども専用の収穫体験や無料入場・予約不要の条件は明記されていない。",
         "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html",
+        "http_status": 200,
+        "raw_response_sha256": "dd993a443ca3fc8926280ffb910e55ab2a7a47c5df7ec549fea491dfb4fd9eb1",
+        "exact_marker_hits": [
+          "全国都市農業フェスティバル2027",
+          "11月21日",
+          "光が丘公園"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-edogawa-parasports",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
       "source_kind": "public_official",
       "fields": {
@@ -228,18 +253,30 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 江戸川区公式で11月22日10〜16時スポーツセンター、無料、障害のある方と保護者・関係者対象を確認。。主催者公式ページに申込要否の明記なし。障害のある方と保護者・関係者が対象。",
+      "note": "2026-10-20公式照合: 江戸川区公式で11月22日10〜16時スポーツセンター、無料、障害のある方と保護者・関係者対象を確認。。主催者公式ページに申込要否の明記なし。障害のある方と保護者・関係者が対象。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "A",
         "reason": "対象となる障害のある子どもと家族が、多様なスポーツを無料で試せ、手話・看護・理学療法の支援もある。 対象は障害のある方と保護者・関係者で、一般来場者すべてを対象としない。年齢・身体の状態に合う競技は各受付で相談。",
         "source": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html",
+        "http_status": 200,
+        "raw_response_sha256": "89dda655efad16c9e743957b9f6e649afd27ed7fe5909a81e4f61de7fcbdd4a6",
+        "exact_marker_hits": [
+          "えどがわパラスポーツ体験会",
+          "11月22日",
+          "スポーツセンター"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-nihonbashi-komichi",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.keepallsmiles.com/komichi2026",
       "source_kind": "organizer_official",
       "fields": {
@@ -252,18 +289,31 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。。予約不要。日本橋案内所で謎解き用紙を受け取る。",
+      "note": "2026-10-20公式照合: 日本橋北詰商店会の制作会社公式案内で10月1日～11月30日、無料・予約不要、案内所受付を確認。。予約不要。日本橋案内所で謎解き用紙を受け取る。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "A",
         "reason": "商店街の謎を親子で相談して解き、歩きながら日本橋の街を発見できる無料ラリー。 90〜120分が目安で読み解き・歩行の負担はある。幼児は保護者の手助けが必要で、買い物券は数量限定。",
         "source": "https://www.keepallsmiles.com/komichi2026"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.keepallsmiles.com/komichi2026",
+        "http_status": 200,
+        "raw_response_sha256": "72aef9403f6db60f4e8586b8a4c20d964d587a3accd8f94188a786045dd585b7",
+        "exact_marker_hits": [
+          "みちみちこみち2026",
+          "10月1日",
+          "11月30日",
+          "日本橋案内所"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-haneda-museum",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.o-2.jp/en/event/hasmhicity2026/",
       "source_kind": "official_tourism",
       "fields": {
@@ -276,13 +326,25 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。",
+      "note": "2026-10-20公式照合: 大田区観光協会公式の2026開催情報で9月5日～11月29日、羽田イノベーションシティ Zone C 2Fと11月28〜29日の併催日程を確認。。展示観覧は原則自由。ラジオ工作など一部関連プログラムは予約制。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "A",
         "to": "B",
         "reason": "航空写真や資料を見比べ、飛行機好きの親子が羽田空港の歴史を学べる。 展示本体と特定日の工作・関連催事は別。普段の観覧で必ず実技体験できるとは判断しない。",
         "source": "https://www.o-2.jp/en/event/hasmhicity2026/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.o-2.jp/en/event/hasmhicity2026/",
+        "http_status": 200,
+        "raw_response_sha256": "a27a9f7524a5af7e599a7b6d143ff604a7ed4b21812bbd6aed3cccefb66bfef8",
+        "exact_marker_hits": [
+          "Haneda Aviation Museum",
+          "November 29, 2026",
+          "Haneda Innovation City"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
@@ -609,7 +671,7 @@
     },
     {
       "id": "official-2026-nerima-cultural-craft",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
       "source_kind": "public_official",
       "fields": {
@@ -622,18 +684,31 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 練馬区公式の手工芸作家展行：11月19日〜23日10〜17時、石神井公園ふるさと文化館、無料。。一般来場自由。展示の作品制作体験等は別途開催確認。",
+      "note": "2026-10-20公式照合: 練馬区公式の手工芸作家展行：11月19日〜23日10〜17時、石神井公園ふるさと文化館、無料。。一般来場自由。展示の作品制作体験等は別途開催確認。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "地域の手工芸作品の素材や技法を親子で見比べ、ものづくりへの関心を広げられる。 作品鑑賞の展示で、子どもが制作する体験は確認できない。11/23は16時までと終了時刻が異なる。",
         "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "raw_response_sha256": "70deddc1496e7a031a7df1c15d618bab2320769a8ecf64be87bad5654e2157c2",
+        "exact_marker_hits": [
+          "手工芸作家展",
+          "11月19日",
+          "11月23日",
+          "石神井公園ふるさと文化館"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-nerima-cultural-dance",
-      "status": "announced",
+      "status": "verified",
       "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
       "source_kind": "public_official",
       "fields": {
@@ -646,18 +721,30 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 練馬区公式の日本舞踊の会行：11月22日11〜17:30、練馬文化センター小ホール、入場無料。。練馬区公式で一般入場可・無料。満席や途中入退場は会場案内を確認。",
+      "note": "2026-10-20公式照合: 練馬区公式の日本舞踊の会行：11月22日11〜17:30、練馬文化センター小ホール、入場無料。。練馬区公式で一般入場可・無料。満席や途中入退場は会場案内を確認。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "日本舞踊の衣装・音楽・動きを親子で鑑賞し、地域で継承される文化に触れられる。 一般向けの舞台で実技教室ではない。全時間の着席が必要とは明記されていないが、入退場条件は会場確認。",
         "source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/shogaigakushu/kyogikai/kuminbunkasai.html",
+        "http_status": 200,
+        "raw_response_sha256": "70deddc1496e7a031a7df1c15d618bab2320769a8ecf64be87bad5654e2157c2",
+        "exact_marker_hits": [
+          "日本舞踊の会",
+          "11月22日",
+          "練馬文化センター"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
       "id": "official-2026-sumida-light-garden",
-      "status": "announced",
+      "status": "verified",
       "source": "https://sumida-artfest.jp/programs/3990/",
       "source_kind": "organizer_official",
       "fields": {
@@ -670,13 +757,26 @@
         "official_url": "pass"
       },
       "corrections": {},
-      "note": "2026-10-20公式照合: 主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。。公式掲載は自由観覧の庭園ライトアップ。運営変更・天候時は主催者へ確認。",
+      "note": "2026-10-20公式照合: 主催者公式の個別企画：11/19〜12/27毎日16:30〜20時、旧安田庭園、参加無料。。公式掲載は自由観覧の庭園ライトアップ。運営変更・天候時は主催者へ確認。 2026-11-17現在の公式ページ本文を再取得して企画名・開催日/期間・会場の文字列一致を確認。",
       "assessment_review": {
         "reviewed_on": "2026-11-14",
         "from": "B",
         "to": "B",
         "reason": "庭園の紅葉と池に映る光を見比べ、家族で歴史ある庭園の景色を楽しめる無料鑑賞。 夕方以降の屋外散策で防寒と足元に配慮。工作や子ども専用の参加体験は案内されていない。",
         "source": "https://sumida-artfest.jp/programs/3990/"
+      },
+      "independent_recheck": {
+        "checked_at": "2026-11-17T23:27:35+09:00",
+        "source_url": "https://sumida-artfest.jp/programs/3990/",
+        "http_status": 200,
+        "raw_response_sha256": "ab535fd8299ca333f57661f78c67d93f669d2f61bda823db5636456cf4817884",
+        "exact_marker_hits": [
+          "SUMIDA光のナイトガーデン",
+          "11月19日",
+          "12月27日",
+          "旧安田庭園"
+        ],
+        "note": "HTMLの可視文字列をUnicode正規化して照合。差分がなければ事前登録内容を保持。"
       }
     },
     {
@@ -4492,7 +4592,7 @@
   ],
   "summary": {
     "total": 155,
-    "verified": 147,
-    "announced": 8
+    "verified": 155,
+    "announced": 0
   }
 }

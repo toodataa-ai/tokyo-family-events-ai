@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-17",
+  "scope": "2026-11-16 holiday-after six-week refresh: independently verified subset production publication and remaining candidate inventory",
+  "data_production_sha": "ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71",
+  "production_manifest": {
+    "current_weeks": [
+      "2026-11-07",
+      "2026-11-14",
+      "2026-11-21",
+      "2026-11-28",
+      "2026-12-05",
+      "2026-12-12"
+    ],
+    "before_weekly_records": 605,
+    "after_weekly_records": 606,
+    "new_weekly_records": 1,
+    "affected_week": "2026-11-28",
+    "week_before": 107,
+    "week_after": 108,
+    "removed_records": 0,
+    "added_ids": [
+      "official-20261128-minato-neighbors-garden-party4"
+    ],
+    "official_source": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html"
+  },
+  "pages": {
+    "verified_by_actions_run_id": 44072853303,
+    "actions_status": "success",
+    "composition": "production/site + data-production/site/data",
+    "direct_browser_public_HTTP_confirmation": "not_available_through_current_web_viewer",
+    "immutable_manual_snapshot_branch": "data-release/2026-11-17-verified-subset",
+    "snapshot_sha": "ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71"
+  },
+  "pending_scoped_candidate_inventory": {
+    "total_record_leads": 70,
+    "counting_rule": "Records/dated participation units from documented staging inventory; not a unique-event count; historical unverified links excluded. Primary reason categories are mutually exclusive within these 70 records.",
+    "buckets": [
+      {
+        "cause": "individual_review_missing_exact_excerpts_or_content_hashes",
+        "count": 38,
+        "details": {
+          "2026-12-19": 28,
+          "2026-12-26": 10
+        },
+        "note": "Official pages were viewed, but evidence quotes/hashes and per-axis proof remain insufficient for the production assessment gate. Required-wide-source audit also incomplete."
+      },
+      {
+        "cause": "new_week_rollover_and_global_source_reconciliation_incomplete",
+        "count": 16,
+        "details": {
+          "2026-12-19": 10,
+          "2026-12-26": 6
+        },
+        "note": "Candidate records not in preceding 38-gap group. Their two week indexes cannot be enabled because 23-ward evidence and all required source row reconciliation are incomplete."
+      },
+      {
+        "cause": "individual_official_leads_not_integrated_into_current_week_bundle",
+        "count": 6,
+        "details": {
+          "itabashi_20261121": 1,
+          "nakano_dec_2026": 3,
+          "suginami_dec_2026": 2
+        },
+        "note": "Additional individually documented official-page leads outside 54 new-week records. Some still need participation/reservation checks before approval."
+      },
+      {
+        "cause": "tamemap_index_only_leads_without_full_individual_organizer_verification",
+        "count": 10,
+        "details": {
+          "index_only": 9,
+          "organizer_recurring_notice_seen_but_date_specific_registration_unconfirmed": 1
+        },
+        "note": "Ten dated index leads, not ten distinct activities. Calendar full-page coverage and venue-organizer details not complete."
+      }
+    ]
+  },
+  "source_and_process_blockers_nonadditive": {
+    "required_source_systems": 25,
+    "landing_or_listing_readable": 23,
+    "configured_exact_URL_failures": 2,
+    "exact_URL_failed_source_ids": [
+      "tamemap_nakano",
+      "suginami_festival"
+    ],
+    "required_sources_with_complete_annual_monthly_url_and_candidate_row_audit": 0,
+    "new_week_ward_evidence_rows_missing_required_counts": 46,
+    "fully_verified_holiday_after_six_week_rollover": false,
+    "historical_unverified_candidate_links_as_of_2026_11_08": 844,
+    "historical_844_is_neither_new_2026_11_17_unique_events_nor_additive_to_70": true,
+    "separately_excluded_candidate_week_records": 5,
+    "excluded_breakdown": {
+      "registration_unavailable": 4,
+      "adult_only": 1
+    },
+    "excluded_5_records_include_same_course_in_two_weeks": true
+  },
+  "branch_preservation": {
+    "original_staged_work_saved": "archive/data-staging-pre-safe-release-20261117",
+    "reconciled_data_staging_merge_commit": "77df2466c5e9c2e87a77e98ab8d4eb187e06eb6a",
+    "new_weeks_retained_in_data_staging": {
+      "2026-12-19": 38,
+      "2026-12-26": 16
+    }
+  },
+  "release_pipeline_note": "Initial data release CI failed on missing excerpt hash, then legacy source audit debt; excerpt hashes and a strict additive-preservation gate were added. The data-production SHA advanced during concurrent workflow executions and subsequent Pages staging-composition deploy passed. The blocked older source tests were not represented as passed.",
+  "future_work": [
+    "Finish the remaining 38 per-event evidence captures",
+    "Complete candidate-level 23-ward and 25-source required row parity for the two new December weekends",
+    "Confirm official/organizer details of the additional 16 indexed/individual leads",
+    "Preserve all prior records; publish future verified additions without upgrading unresolved sources to checked"
+  ]
+}

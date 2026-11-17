@@ -6,7 +6,7 @@
   },
   "horizon_index": 6,
   "publication_tier": "announcement",
-  "mode": "partial_prepublication_staging_draft_not_approved",
+  "mode": "manual_partial_non_ng_candidate_not_published",
   "prompt": {
     "version": "v1.15",
     "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
@@ -20,10 +20,7 @@
   },
   "candidate_evidence": {
     "source_shards": [
-      "2026-12-26-events-official-subset-20261116.json",
-      "2026-12-26-events-carryover-review-20261116.json",
-      "2026-12-26-events-suginami-official-20261116.json",
-      "2026-12-26-events-multiward-official-20261116.json"
+      "2026-12-26-events-non-ng-verified-only-20261117.json"
     ],
     "source_audits": [
       "2026-11-16-candidate-audit.json",
@@ -81,12 +78,12 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 22,
-    "published": 20,
-    "excluded": 2,
+    "candidates": 4,
+    "published": 4,
+    "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 13,
-    "announced": 7,
+    "verified": 1,
+    "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
     "publication_ready": false
@@ -102,7 +99,7 @@
     "coverage_status": "partial_ward_targeted_search"
   },
   "scoped_addendum_20261117": {
-    "kind": "resolved_scope_3_and_4_candidate_integration",
+    "kind": "eight_non_ng_approved_only",
     "added_ids": [
       "confirmed-20261226-nakano-wagakki",
       "tamemap-20261227-nakano-family-rhythm",
@@ -114,10 +111,6 @@
     "publication_ready": false,
     "global_source_audit_complete": false,
     "as_of_jst": "2026-11-17",
-    "original_staged_week_candidates_preserved": true,
-    "individual_conditions_unverified": [
-      "tamemap-20261227-nakano-mama-hot-kitchen"
-    ],
-    "note": "12/27は当年月別索引と社協の定期案内による日付特定、当日固有の時刻/価格/予約はunknown。必須ソース監査未完は解消扱いしない。"
+    "original_staged_week_candidates_preserved_elsewhere": true
   }
 }

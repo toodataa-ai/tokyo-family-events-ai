@@ -1920,6 +1920,65 @@
       "source_failures_remain_unverified": true,
       "full_23_ward_refresh_not_completed": true,
       "note": "11/21の子ども職業体験1件を主催者公式で照合し追加。既存データは削除・変更せず、過去の取得失敗もそのまま保持。"
+    },
+    {
+      "run_id": "non-ng-candidate-20261117",
+      "run_type": "manual_scoped_non_ng_candidate",
+      "status": "pending_release_gate",
+      "as_of_jst": "2026-11-17",
+      "executed_at": "2026-11-17T23:24:21+09:00",
+      "base_data_production_sha": "fc6bec505975c6dabbddd404f33cd7d9f3f525e9",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 607,
+      "candidate_active_week_records": 430,
+      "added_weekly_records": 8,
+      "new_event_ids": [
+        "confirmed-20261219-nakano-rock-experience",
+        "confirmed-20261220-nakano-ikebana",
+        "tamemap-20261219-nakano-family-rhythm",
+        "tamemap-20261220-nakano-forest-choir",
+        "confirmed-20261226-nakano-wagakki",
+        "tamemap-20261227-nakano-family-rhythm",
+        "tamemap-20261226-nakano-tomocchao",
+        "tamemap-20261227-nakano-mama-hot-kitchen"
+      ],
+      "retired_from_active_rolling_window": [
+        "2026-11-07",
+        "2026-11-14"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 42,
+      "full_tier_pending_verification": {
+        "2026-11-21": [
+          "official-2026-nijin-expo",
+          "official-2026-urban-agriculture-pre",
+          "official-2026-edogawa-parasports",
+          "official-2026-nihonbashi-komichi",
+          "official-2026-haneda-museum",
+          "official-2026-nerima-cultural-craft",
+          "official-2026-nerima-cultural-dance",
+          "official-2026-sumida-light-garden"
+        ],
+        "2026-11-28": [
+          "nerima-district-0275426b6920",
+          "official-2026-lumina-nogata",
+          "official-2026-nihonbashi-komichi",
+          "official-2026-haneda-museum",
+          "official-2026-sumida-light-garden",
+          "official-2026-sumida-moa-art"
+        ]
+      },
+      "global_required_source_audit_pending": true,
+      "not_published": true,
+      "source_failures_remain_unverified": true,
+      "note": "未公開の対象8件と既存11/21・11/28の公式画像42件を統合し6週候補のみ準備。14既存announcedの正式再確認、全源監査とNG条件は未完で公開不可。既存607件の物理削除なし。"
     }
   ]
 }

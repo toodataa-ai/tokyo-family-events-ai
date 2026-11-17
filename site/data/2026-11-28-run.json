@@ -4,8 +4,8 @@
     "sat": "2026-11-28",
     "sun": "2026-11-29"
   },
-  "publication_tier": "preview",
-  "horizon_index": 4,
+  "publication_tier": "full",
+  "horizon_index": 2,
   "mode": "temporary-read-only-unverified-candidate",
   "prompt": {
     "version": "v1.15",
@@ -2219,5 +2219,12 @@
     "full_nov16_holiday_audit_completed": false,
     "strict_source_counter_not_fabricated": true,
     "base_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f"
+  },
+  "scoped_rollover_20261117": {
+    "as_of_jst": "2026-11-17",
+    "preserved_prior_evidence": true,
+    "source_reaudit_20261117": "read-only HTTP spot check; does not imply 23-ward/25-source complete refresh",
+    "full_tier_verification_not_yet_complete": true,
+    "old_event_ids_preserved": true
   }
 }

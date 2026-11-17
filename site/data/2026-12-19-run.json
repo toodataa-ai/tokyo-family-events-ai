@@ -6,7 +6,7 @@
   },
   "horizon_index": 5,
   "publication_tier": "announcement",
-  "mode": "partial_prepublication_staging_draft_not_approved",
+  "mode": "manual_partial_non_ng_candidate_not_published",
   "prompt": {
     "version": "v1.15",
     "path": "prompts/tokyo_family_events_complete_prompt_v1.15.txt",
@@ -20,11 +20,7 @@
   },
   "candidate_evidence": {
     "source_shards": [
-      "2026-12-19-events-official-subset-20261116.json",
-      "2026-12-19-events-carryover-review-20261116.json",
-      "2026-12-19-events-official-more-20261116.json",
-      "2026-12-19-events-suginami-official-20261116.json",
-      "2026-12-19-events-multiward-official-20261116.json"
+      "2026-12-19-events-non-ng-verified-only-20261117.json"
     ],
     "source_audits": [
       "2026-11-16-candidate-audit.json",
@@ -82,12 +78,12 @@
   ],
   "summary": {
     "wards_checked": 0,
-    "candidates": 45,
-    "published": 42,
-    "excluded": 3,
+    "candidates": 4,
+    "published": 4,
+    "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 33,
-    "announced": 9,
+    "verified": 3,
+    "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
     "publication_ready": false
@@ -106,7 +102,7 @@
     "coverage_status": "partial_23_ward_search_first_pass"
   },
   "scoped_addendum_20261117": {
-    "kind": "resolved_scope_3_and_4_candidate_integration",
+    "kind": "eight_non_ng_approved_only",
     "added_ids": [
       "confirmed-20261219-nakano-rock-experience",
       "confirmed-20261220-nakano-ikebana",
@@ -118,6 +114,6 @@
     "publication_ready": false,
     "global_source_audit_complete": false,
     "as_of_jst": "2026-11-17",
-    "original_staged_week_candidates_preserved": true
+    "original_staged_week_candidates_preserved_elsewhere": true
   }
 }

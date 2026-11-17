@@ -3097,9 +3097,17 @@
       "evidence": [
         {
           "url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+          "quote": "子どもたちと一緒に楽しめる縁日",
           "checked_at": "2026-11-17",
-          "quote": "イベント名称 NEIGHBORS’ GARDEN PARTY #4 日時 2026年11月28日（土）10：00～17：00 2026年11月29日（日）10：00～17：00 場所 SHARE GREEN MINAMI AOYAMA 入場料 無料",
-          "source_note": "Web閲覧テキストの抜粋。原文HTTPバイト列のSHA256は未取得のため付与しない。"
+          "sha256": "b8bfc17c0ba9f0df45600621796c644e59e583653f9bc04280678abb0fe46748",
+          "hash_scope": "exact_utf8_quote"
+        },
+        {
+          "url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+          "quote": "2026年11月28日（土）10：00～17：00",
+          "checked_at": "2026-11-17",
+          "sha256": "101d05653dc882d3079e2f743c03a8f3dc1487b2ed11e32f7532017a3f18894c",
+          "hash_scope": "exact_utf8_quote"
         }
       ]
     }

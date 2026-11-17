@@ -55,7 +55,10 @@ jobs:
                 assert original['id']==new['id'],(sat,filename)
                 a=str(original.get('image') or '');b=str(new.get('image') or '')
                 if a!=b:
-                  assert not a and b.startswith('https://') and not bad.search(b),(filename,original['id'],a,b)
+                  assert not a,(filename,original['id'],a,b)
+                  if not b.startswith('https://') or bad.search(b):
+                    print('SKIP_WEAK_OR_NONHTTPS_IMAGE',sat,original['id'],b)
+                    continue
                   assert {k:v for k,v in original.items() if k!='image'} == {k:v for k,v in new.items() if k!='image'}
                   original['image']=b;changed+=1
                   images_changed.append({'week':sat,'id':original['id'],'name':original['name'],'image':b,'official_source':original.get('official_url') or original.get('source')})

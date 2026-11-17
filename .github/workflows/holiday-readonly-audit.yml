@@ -69,8 +69,12 @@ jobs:
               events=[]
               for file in base.glob(week+"-events-*.json"):
                   events+=json.loads(file.read_text())
-              imgs=[e for e in events if e.get("image","").startswith(("https://","http://"))]
-              result["weeks"][week]={"total":len(events),"with_image":len(imgs),"ratio":round(len(imgs)/max(1,len(events)),4),"need_for_70_percent":max(0, __import__("math").ceil(len(events)*.70)-len(imgs)),"image_candidates":[{"id":e["id"],"name":e["name"],"url":e["image"],"official_url":e.get("official_url","")} for e in imgs]}
+              imgs=[e for e in events if str(e.get("image") or "").startswith(("https://","http://"))]
+              import sys
+              sys.path.insert(0,"released/tools")
+              from audit_event_image_identity import inspect_events
+              image_errors,image_warnings=inspect_events(events,week)
+              result["weeks"][week]={"image_collisions":image_errors,"generic_sharing_warnings":image_warnings,"total":len(events),"with_image":len(imgs),"ratio":round(len(imgs)/max(1,len(events)),4),"need_for_70_percent":max(0, __import__("math").ceil(len(events)*.70)-len(imgs)),"image_candidates":[{"id":e["id"],"name":e["name"],"url":e["image"],"official_url":e.get("official_url","")} for e in imgs]}
           (pathlib.Path("/tmp/tokyo-holiday-evidence")/"image-probe-summary.json").write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
           print("IMAGE_PROBE",json.dumps({w:{k:v for k,v in obj.items() if k!="image_candidates"} for w,obj in result["weeks"].items()},ensure_ascii=False))
           PY

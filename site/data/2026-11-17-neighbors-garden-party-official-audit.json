@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-17",
+  "refresh_date_jst": "2026-11-16",
+  "mode": "individual_organizer_published_event_evidence",
+  "status": "verified_candidate_not_yet_integrated_or_published",
+  "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "staging_audit_sha_before_change": "2bd8362e5b5e2be3b5c24aa37869dac2c213652c",
+  "intended_week": "2026-11-28",
+  "candidate": {
+    "candidate_id": "official-20261128-minato-neighbors-garden-party4",
+    "event_name": "NEIGHBORS’ GARDEN PARTY #4",
+    "ward": "港区",
+    "date_start": "2026-11-28",
+    "date_end": "2026-11-29",
+    "time": "10:00〜17:00（両日）",
+    "venue": "SHARE GREEN MINAMI AOYAMA（港区南青山1-12-32）",
+    "admission": "入場無料",
+    "activities": [
+      "子ども縁日「KIDS FEST.」",
+      "公園協会連携の松ぼっくり fishing",
+      "野菜詰め放題",
+      "飲食販売",
+      "陶芸体験などのワークショップ"
+    ],
+    "published_participation_prices": {
+      "kids_fest": "各ゲーム1回200円",
+      "pinecone_fishing": "1回100円",
+      "pottery_workshop": "5,500〜7,150円",
+      "stamp_rally": "無料"
+    },
+    "reservation": {
+      "admission": "入場予約不要",
+      "pottery": "要事前予約・受付枠が埋まり次第終了",
+      "other_activities": "参加条件はコンテンツ別"
+    },
+    "age_restriction": "未就学児は縁日や陶芸などで保護者同伴",
+    "weather": "雨天決行、荒天中止。中止の際は当日7時に公式SNSで告知",
+    "official_detail_url": "https://jointhub.jp/sharegreen-ngp4/",
+    "organizer_release_url": "https://prtimes.jp/main/html/rd/p/000000195.000134094.html",
+    "organizer": "NTT都市開発株式会社",
+    "organizer_release_date": "2026-11-06",
+    "image": ""
+  },
+  "official_evidence": {
+    "published_by": "NTT都市開発株式会社（主催者）のプレスリリース",
+    "checked_at_jst": "2026-11-17",
+    "verified_fields": [
+      "name",
+      "year",
+      "dates",
+      "time",
+      "venue",
+      "organizer",
+      "entry_fee",
+      "child_activities",
+      "individual_activity_fees",
+      "weather_policy"
+    ],
+    "source_url": "https://prtimes.jp/main/html/rd/p/000000195.000134094.html",
+    "direct_special_site_fetch_succeeded": false,
+    "direct_special_site_fetch_note": "特設サイトの読み込みは今回の確認経路で失敗。主催者名義の2026-11-06発表を根拠にし、旧2025年特設ページを混同しない。",
+    "source_quote_hash": null,
+    "source_http_sha256": null
+  },
+  "family_fit_preliminary": {
+    "rubric_version": "family-fit-v2",
+    "grade": "A",
+    "child_target": {
+      "grade": "A",
+      "reason": "子ども向け縁日や親子参加可能な松ぼっくり釣りを主催者が明示"
+    },
+    "interactivity": {
+      "grade": "A",
+      "reason": "縁日・松ぼっくり釣り・スタンプラリーなど参加型企画"
+    },
+    "age_fit": {
+      "grade": "A",
+      "reason": "未就学児は保護者同伴で参加可能な子ども向け企画"
+    },
+    "stay_flexibility": {
+      "grade": "B",
+      "reason": "マーケット等を回遊できるが、個別の体験企画は開催枠の制限あり"
+    },
+    "burden": {
+      "grade": "unknown",
+      "reason": "混雑・待ち時間は公式情報だけでは確定しない"
+    },
+    "cost": {
+      "grade": "B",
+      "reason": "入場無料。縁日等は少額有料、陶芸などは高額な任意企画"
+    },
+    "reservation": {
+      "grade": "B",
+      "reason": "入場予約不要だが陶芸など一部の体験は予約が必要"
+    },
+    "family_value": {
+      "grade": "A",
+      "reason": "屋外イベント・縁日・食・自然体験を家族で楽しめる"
+    }
+  },
+  "deduplication": {
+    "compared_week": "2026-11-28",
+    "reviewed_existing_shards": 14,
+    "existing_event_or_decision_match_found": false,
+    "rule": "同じ施設で別企画が開催されても、日付・イベント名・参加単位によって判別する"
+  },
+  "unresolved_for_publication": [
+    "正式なイベントshardおよび11/28週のindex,verification,decisions,runへの同期",
+    "画像のイベント同一性と表示検証",
+    "23区全件・必須25ソースの公式探索監査",
+    "Strict CI、非退行、Pages公開確認"
+  ],
+  "production_mutated": false
+}

@@ -1,0 +1,317 @@
+{
+  "source": "read-only official event page extraction",
+  "weeks": {
+    "2026-11-21": {
+      "total": 155,
+      "image_count": 116,
+      "enriched": 25,
+      "ratio": 0.7484,
+      "image_warnings_preserved": 4
+    },
+    "2026-11-28": {
+      "total": 108,
+      "image_count": 77,
+      "enriched": 17,
+      "ratio": 0.713,
+      "image_warnings_preserved": 3
+    }
+  },
+  "changes": [
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-nijin-expo",
+      "name": "NIJIN教育万博2026（子ども体験・ワークショップ）",
+      "image": "https://expo.nijin.co.jp/wp-content/uploads/2026/07/ChatGPT-Image-2026年7月25日-16_57_47-1024x576.png",
+      "official_source": "https://expo.nijin.co.jp/venue-real/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-urban-agriculture-pre",
+      "name": "全国都市農業フェスティバル2027 プレイベント",
+      "image": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.images/fes.png",
+      "official_source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/toshinou_festival/festival2027pre.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-edogawa-parasports",
+      "name": "えどがわパラスポーツ体験会inスポーツセンター（参加対象要確認）",
+      "image": "https://www.city.edogawa.tokyo.jp/images/64325/parasportfesta_leaflet.png",
+      "official_source": "https://www.city.edogawa.tokyo.jp/e028/sports/sports/parasports/torikumi/jigyo/edopara.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-nihonbashi-komichi",
+      "name": "みちみちこみち2026 小道探偵と謎解き問答日本橋",
+      "image": "https://static.wixstatic.com/media/092767_8bd5b3828a494cc4bfc72a3e877c8861~mv2.jpg/v1/fill/w_2500,h_3507,al_c/092767_8bd5b3828a494cc4bfc72a3e877c8861~mv2.jpg",
+      "official_source": "https://www.keepallsmiles.com/komichi2026"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-haneda-museum",
+      "name": "第10回羽田航空博物館展 in HICity",
+      "image": "https://www.o-2.jp/ota2022/wp-content/uploads/2026/09/HASM2026-scaled.jpg",
+      "official_source": "https://www.o-2.jp/en/event/hasmhicity2026/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "official-2026-sumida-light-garden",
+      "name": "SUMIDA光のナイトガーデン（旧安田庭園）",
+      "image": "https://sumida-artfest.jp/wp-content/uploads/2026/07/R51.jpg",
+      "official_source": "https://sumida-artfest.jp/programs/3990/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "partial-20261123-edogawa-planaria",
+      "name": "謎の生物プラナリア大研究",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74632/1123animal_planaria.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/2611puranaria.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "partial-20261123-edogawa-keyholder",
+      "name": "光るキーホルダーをつくろう",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74633/1123keyholder.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/2611keyholder.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "partial-20261123-edogawa-magic",
+      "name": "工作とマジックに挑戦",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74642/1123magic.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/2611kosaku.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "gap-20261123-edogawa-kasai-super-fes",
+      "name": "KASAI Super Fes（共育プラザ葛西館まつり）",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74965/1.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/super_fes.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "gap-20261123-edogawa-walking",
+      "name": "ウオーキングフェスタえどがわ2026",
+      "image": "https://www.city.edogawa.tokyo.jp/images/49504/uokin.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/261123walking.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "verified-20261121-meguro-shinobu-playpark",
+      "name": "志のぶわいわいパーク28（創立115周年記念コンサート）",
+      "image": "https://shinobu-kg.com/wp-content/uploads/2025/07/BQYA8662のコピー.jpg",
+      "official_source": "https://shinobu-kg.com/park/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "verified-20261123-toshima-somei-autumn-festival",
+      "name": "染井よしの桜の里秋祭り2026",
+      "image": "https://www.city.toshima.lg.jp/images/57900/20260916110452.jpg",
+      "official_source": "https://www.city.toshima.lg.jp/132/2609161020.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "primary-20261121-shinagawa-museum-tour",
+      "name": "品川歴史館 展示解説ボランティアによるガイドツアー",
+      "image": "https://www.city.shinagawa.tokyo.jp/_res/projects/default_project/_page_/001/011/994/borareku.jpg",
+      "official_source": "https://www.city.shinagawa.tokyo.jp/historyhp/event/moyoshi/1011994.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261123-edogawa-rakugo167",
+      "name": "第167回小岩で落語を聴く会",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74387/rakugo_koiwa.png",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/167koiwa.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261121-meguro-playpark",
+      "name": "菅刈公園プレーパーク 第3期",
+      "image": "https://www.city.meguro.tokyo.jp/images/21084/playpark_b.jpg",
+      "official_source": "https://www.city.meguro.tokyo.jp/houkago/kosodatekyouiku/kosodate/sugekarikouen_playpark.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261121-meguro-free-space",
+      "name": "菅刈住区センターフリースペース",
+      "image": "https://www.city.meguro.tokyo.jp/images/21080/freespace_b.jpg",
+      "official_source": "https://www.city.meguro.tokyo.jp/houkago/kosodatekyouiku/kosodate/sugekariju-ku_freespace.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261123-kantetsu2026",
+      "name": "完徹プラネタリウム",
+      "image": "https://shibu-cul.jp/cms/wp-content/uploads/2026/09/6a73f3fb6e4f96821fa08566fe59e3e1-418x280.jpg",
+      "official_source": "https://shibu-cul.jp/event/jukusui_kantetu2026"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261123-football-park-freeplay",
+      "name": "FOOTBALL PARK SHIBUYA 無料体験",
+      "image": "https://www.footballpark-shibuya.jp/_next/image?url=%2Fhero_image01.jpg&w=3840&q=75&dpl=dpl_9zZa4uur7vFSgoojjrEg8WDtxLWK",
+      "official_source": "https://www.footballpark-shibuya.jp/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261123-shibuya-streetdance2026",
+      "name": "Shibuya StreetDance Week2026",
+      "image": "https://streetdanceweek.jp/2026/wp/wp-content/themes/ssdw2026/assets/img/kv-pc.jpg",
+      "official_source": "https://streetdanceweek.jp/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "all-reviewed-20261121-world-drinks2026",
+      "name": "世界のお酒フェス2026",
+      "image": "https://worlddrinks-fest.jp/wp-content/themes/worlddrinkfes-theme/images/top_s2_text1_pc.webp",
+      "official_source": "https://worlddrinks-fest.jp/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "evidence-recovery-20261121-mucha-weekend",
+      "name": "プラネタリウム特別番組 ミュシャ -旅する彗星-",
+      "image": "https://shibu-cul.jp/cms/wp-content/uploads/2022/09/d2d2b2e03b58437b065e361486b73f8b-1-e1663323173235-418x280.png",
+      "official_source": "https://shibu-cul.jp/event/52959"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "evidence-recovery-20261121-kita-iwate-fair",
+      "name": "岩手-野田村-釜石市-北区連携マルシェ 岩手フェア",
+      "image": "https://kita-kei-kyo.org/iwate/img/shop_list.png",
+      "official_source": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "nine-followup-20261121-cambodia-water-festival",
+      "name": "第4回 カンボジア水祭り",
+      "image": "https://scontent-ord5-2.cdninstagram.com/v/t51.82787-15/892575794_18122063257973152_3442308916947063959_n.jpg?stp=c217.0.653.652a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=wrVeW6IaQPkQ7kNvwH2bUWh&_nc_oc=AdrYanoc-gXU3gx22k-mD-MikUmJ14KzJxd9LnIz6_APcXxxq62s8ZjoCjKpqDkQEcc&_nc_zt=23&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_gid=qJk2kHjCHw6eLAQXPSEHEA&_nc_ss=7b60f&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQw_VazTaw9YcpgQ8OChM8DQRAigDiP3NG1ViaJQKS6RA&oe=6B024DAE",
+      "official_source": "https://www.instagram.com/bmi_jp/p/DfZRH7kN5mx/"
+    },
+    {
+      "week": "2026-11-21",
+      "id": "candidate-20261121-kids-street-itabashi",
+      "name": "キッズストリートいたばし",
+      "image": "https://city-itabashi-sdgs.jp/assets/img/bnr_ehon_clm2.webp",
+      "official_source": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-2026-lumina-nogata",
+      "name": "LUMINA STUDIO第2回お披露目会（子どものピアノ・バレエ・ミュージカル）",
+      "image": "https://static.wixstatic.com/media/09a241_9869603069a24ffba3dd7074b6615f73~mv2.png/v1/fill/w_1414,h_2000,al_c/LUMINA%20STUDIO%E7%AC%AC%E4%BA%8C%E5%9B%9E%E3%81%8A%E6%8A%AB%E9%9C%B2%E7%9B%AE%E4%BC%9A%E3%80%9C%E3%83%94%E3%82%A2%E3%83%8E%E3%83%BB%E3%83%90%E3%83%AC%E3%82%A8%E3%83%BB%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%AB%E3%83%AB%E3%80%9C.png",
+      "official_source": "https://www.naka-lab.jp/events/4227ab33-4f6e-4373-b64a-f04c78f4aa47"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-2026-nihonbashi-komichi",
+      "name": "みちみちこみち2026 小道探偵と謎解き問答日本橋",
+      "image": "https://static.wixstatic.com/media/092767_8bd5b3828a494cc4bfc72a3e877c8861~mv2.jpg/v1/fill/w_2500,h_3507,al_c/092767_8bd5b3828a494cc4bfc72a3e877c8861~mv2.jpg",
+      "official_source": "https://www.keepallsmiles.com/komichi2026"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-2026-haneda-museum",
+      "name": "第10回羽田航空博物館展 in HICity",
+      "image": "https://www.o-2.jp/ota2022/wp-content/uploads/2026/09/HASM2026-scaled.jpg",
+      "official_source": "https://www.o-2.jp/en/event/hasmhicity2026/"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-2026-sumida-light-garden",
+      "name": "SUMIDA光のナイトガーデン（旧安田庭園）",
+      "image": "https://sumida-artfest.jp/wp-content/uploads/2026/07/R51.jpg",
+      "official_source": "https://sumida-artfest.jp/programs/3990/"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-2026-sumida-moa-art",
+      "name": "MOA美術館墨田児童作品展",
+      "image": "https://sumida-artfest.jp/wp-content/uploads/2026/07/R58-1200x630.jpg",
+      "official_source": "https://sumida-artfest.jp/programs/4004/"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "partial-20261129-nakano-precure-rally",
+      "name": "名探偵プリキュア！クイズラリー",
+      "image": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.images/animecomicfes.jpg",
+      "official_source": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/animemangafest2026.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "partial-20261129-edogawa-origami",
+      "name": "おりがみヒコーキで科学する",
+      "image": "https://www.city.edogawa.tokyo.jp/images/74643/1129origami.jpg",
+      "official_source": "https://www.city.edogawa.tokyo.jp/event/2611origami.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "partial-20261129-taito-bookstand",
+      "name": "こども向け石浜工房「ダンボールブックスタンド」",
+      "image": "https://www.city.taito.lg.jp/library/kodomo/event/event11/ishi-workshop-kodomo.images/book1.jpg",
+      "official_source": "https://www.city.taito.lg.jp/library/kodomo/event/event11/ishi-workshop-kodomo.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "partial-20261129-setagaya-languages",
+      "name": "親子向け多言語ワークショップ「世界に通じる力を育てる」",
+      "image": "https://celulas.or.jp/_ntm_-rk4_7smmr8-_/wp-content/uploads/2017/10/6c799f6a32f4ce470d39e621ceb02894.png",
+      "official_source": "https://celulas.or.jp/?p=8175"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "partial-20261129-setagaya-workfes",
+      "name": "第2回 世田谷こどもおしごとフェス！！",
+      "image": "https://setagaya.event-hub.jp/assets/img/home/quest_img-01.webp",
+      "official_source": "https://setagaya.event-hub.jp/"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "remaining-20261128-tkg-yatai",
+      "name": "卵フェスin東京2026 屋台村",
+      "image": "https://storage.googleapis.com/production-os-assets/assets/366d96f4-44bd-485f-a463-84034dd25113",
+      "official_source": "https://www.japan-tkg.jp/news/tamago-fes-2026"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "next-primary-20261129-meguro-math-19",
+      "name": "数学月間2026秋 第19回企画講演会",
+      "image": "https://sgk2005.org/wysiwyg/image/download/6/2811/medium",
+      "official_source": "https://sgk2005.org/"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "all-reviewed-20261128-chiyoda-family-bazaar",
+      "name": "第92回 岩本町・東神田ファミリーバザール",
+      "image": "https://www.city.chiyoda.lg.jp/images/34974/map.png",
+      "official_source": "https://www.city.chiyoda.lg.jp/koho/kuse/koho/pressrelease/r8/r811/20261105.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "all-reviewed-20261128-meguro-free-space",
+      "name": "菅刈住区センターフリースペース",
+      "image": "https://www.city.meguro.tokyo.jp/images/21080/freespace_b.jpg",
+      "official_source": "https://www.city.meguro.tokyo.jp/houkago/kosodatekyouiku/kosodate/sugekariju-ku_freespace.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "all-reviewed-20261129-nerima-marche",
+      "name": "ねりマルシェ",
+      "image": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/oshirase/nerimaruche.images/nerimarche_A3_light.jpg",
+      "official_source": "https://www.city.nerima.tokyo.jp/kankomoyoshi/nogyo/oshirase/nerimaruche.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "evidence-recovery-20261128-kita-iwate-fair",
+      "name": "岩手-野田村-釜石市-北区連携マルシェ 岩手フェア",
+      "image": "https://kita-kei-kyo.org/iwate/img/shop_list.png",
+      "official_source": "https://kita-kei-kyo.org/iwate/iwate-fair2026.html"
+    },
+    {
+      "week": "2026-11-28",
+      "id": "official-20261128-minato-neighbors-garden-party4",
+      "name": "NEIGHBORS’ GARDEN PARTY #4",
+      "image": "https://ikou.nttud.co.jp/company/news_img/topics_261106_01.webp",
+      "official_source": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html"
+    }
+  ],
+  "declared_limit": "ONLY existing empty image properties are assigned and all other event fields preserved",
+  "production_was_not_modified": true
+}

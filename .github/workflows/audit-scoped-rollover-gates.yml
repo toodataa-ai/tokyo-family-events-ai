@@ -36,8 +36,10 @@ jobs:
         working-directory: candidate
         shell: bash
         run: |
+          set +e
           python3 ../released/tools/validate_data.py --strict --min-image-coverage 0.70 site/data >/tmp/strict.txt 2>&1
           rc=$?
+          set -e
           grep -E '^ERROR:|^FAILED:|^OK:' /tmp/strict.txt | head -90 || true
           exit "$rc"
       - name: Test existing protected-event gate against date rollover

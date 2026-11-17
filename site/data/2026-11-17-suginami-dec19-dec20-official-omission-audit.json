@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "audit_date_jst": "2026-11-17",
+  "refresh_for_date_jst": "2026-11-16",
+  "week_start": "2026-12-19",
+  "source_calendar_pages": [
+    "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=19&month=12&type=3&year=2026",
+    "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?day=20&month=12&type=3&year=2026"
+  ],
+  "status": "OFFICIAL_INDIVIDUAL_EVENT_FACTS_VERIFIED_PENDING_WEEK_INTEGRATION",
+  "already_present_in_staged_dec19_week": false,
+  "candidate_rows": [
+    {
+      "provisional_id": "candidate-20261219-suginami-kora-christmas",
+      "name": "クリスマス交流会アフリカハープ コラ演奏会",
+      "ward": "杉並区",
+      "date_start": "2026-12-19",
+      "date_end": "2026-12-19",
+      "time": "17:30〜19:00（17:00開場）",
+      "venue": "コミュニティふらっと成田（成田西1丁目28番18号）",
+      "official_url": "https://www.city.suginami.tokyo.jp/s023/event/28963.html",
+      "source_last_updated": "2026-11-01",
+      "target": "全年齢（子どもから大人まで）",
+      "contents": [
+        "アフリカの伝統楽器コラの演奏",
+        "ゲームと合唱",
+        "地域・国際交流"
+      ],
+      "prices": {
+        "adult": "1,500円",
+        "adult_santa_costume": "750円",
+        "junior_high_high_school": "750円",
+        "elementary": "500円",
+        "preschool": "無料"
+      },
+      "reservation": "要予約、11月1日〜12月19日、先着45名、電話か窓口受付",
+      "family_fit_preliminary": "B",
+      "family_fit_rationale": "親子歓迎・歌とゲームの魅力があるが夕方開催で低年齢負担あり",
+      "title_date_venue_official_verified": true,
+      "quote_hash_captured": false,
+      "image_checked": false,
+      "decision_record_not_yet_integrated": true
+    },
+    {
+      "provisional_id": "candidate-20261220-suginami-toy-clinic",
+      "name": "おもちゃのクリニック",
+      "ward": "杉並区",
+      "date_start": "2026-12-20",
+      "date_end": "2026-12-20",
+      "time": "13:00〜16:00（受付15:00まで）",
+      "venue": "環境活動推進センター3階講座室（高井戸東3丁目7番4号）",
+      "official_url": "https://www.city.suginami.tokyo.jp/s103/event/29334.html",
+      "source_last_updated": "2026-11-15",
+      "target": "どなたでも。区内在住・在勤・在学",
+      "contents": [
+        "故障したおもちゃをおもちゃドクターが修理"
+      ],
+      "price": "無料。ただし交換部品実費の可能性",
+      "reservation": "当日直接来場。電池式おもちゃは新品電池を持参",
+      "family_fit_preliminary": "B",
+      "family_fit_rationale": "玩具の修理を親子で見守れるが開催形式や所要時間に制限あり",
+      "title_date_venue_official_verified": true,
+      "quote_hash_captured": false,
+      "image_checked": false,
+      "decision_record_not_yet_integrated": true
+    }
+  ],
+  "assessment_only": [
+    {
+      "name": "すぎなみ探究部（マルコせいさく所）",
+      "date": "2026-12-20",
+      "official_url": "https://www.city.suginami.tokyo.jp/s107/event/29236.html",
+      "reason": "2026-12-06開始、2027-02-21までの全6回連続企画。新規受講受付の可否・12月20日単日参加可否を確定できず、公開候補にはまだ追加しない。",
+      "fee": "9,000円、加入時期・参加頻度により要相談",
+      "registration": "11/15〜12/31"
+    }
+  ],
+  "duplicate_search_scope": "Staging 2026-12-19 eight existing event shards; no exact event title/official URL match",
+  "mandatory_source_reconciliation_remains_incomplete": true,
+  "site_manifest_modified": false,
+  "production_modified": false
+}

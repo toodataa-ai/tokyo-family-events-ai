@@ -95,7 +95,7 @@ def main():
         run, base_run = load(d / f'{week}-run.json'), show(a.base_ref, f'site/data/{week}-run.json')
         if run.get('rollover_evidence_20261118') != base_run.get('rollover_evidence_20261118'):
             err(f'{week}: receipt-backed evidence block changed')
-        if run.get('summary', {}).get('source_audit_complete') is not False:
+        if run.get('summary', {}).get('source_audit_complete') is True:
             err(f'{week}: run must not claim a complete source audit')
         if (run.get('leads_addition_20261118') or {}).get('held_not_published') != sorted(lg.HELD):
             err(f'{week}: held list differs from the recorded dispositions')

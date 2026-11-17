@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 123,
+    "candidate_count": 124,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 107,
+    "published_count": 108,
     "wards": [
       {
         "ward": "千代田区",
@@ -38,9 +38,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 6,
+        "published_count": 6,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17主催者公式で新規1件を独立確認して追加。既存の実測検索カウントは不変。"
       },
       {
         "ward": "新宿区",
@@ -238,7 +238,8 @@
     "2026-11-28-events-non-tamemap-next-20261114.json",
     "2026-11-28-events-non-tamemap-last-20261114.json",
     "2026-11-28-events-all-non-tamemap-20261114.json",
-    "2026-11-28-events-evidence-recovery-20261115.json"
+    "2026-11-28-events-evidence-recovery-20261115.json",
+    "2026-11-28-events-neighbors-official-20261117.json"
   ],
   "events": []
 }

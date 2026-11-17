@@ -3076,11 +3076,37 @@
           "sha256": "46bbe7a926d052e4fd2687315de617076a7b23d5161e4e39f6ef395e73af4f91"
         }
       ]
+    },
+    {
+      "id": "official-20261128-minato-neighbors-garden-party4",
+      "status": "verified",
+      "source": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "主催者NTT都市開発の2026年11月公式発表により日付・会場・子ども向け内容・料金を確認。荒天時の中止は当日告知。",
+      "evidence": [
+        {
+          "url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+          "checked_at": "2026-11-17",
+          "quote": "イベント名称 NEIGHBORS’ GARDEN PARTY #4 日時 2026年11月28日（土）10：00～17：00 2026年11月29日（日）10：00～17：00 場所 SHARE GREEN MINAMI AOYAMA 入場料 無料",
+          "source_note": "Web閲覧テキストの抜粋。原文HTTPバイト列のSHA256は未取得のため付与しない。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 107,
-    "verified": 101,
+    "total": 108,
+    "verified": 102,
     "announced": 6
   }
 }

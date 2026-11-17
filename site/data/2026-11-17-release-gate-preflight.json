@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "as_of_jst": "2026-11-17",
+  "continued_refresh_for": "2026-11-16",
+  "status": "BLOCKED_NO_PUBLICATION",
+  "baseline": {
+    "data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+    "application_production_sha": "d2ee3226f64f42c56a5ed0ca61e3696769c4db21",
+    "candidate_before_audit_sha": "32ff36e3eca008458c246daa5f8f884bf1364810",
+    "source_registry_sha": "7d39370a170df609c9f193956e782791e85939ae",
+    "canonical_prompt_version": "v1.15"
+  },
+  "data_candidate": {
+    "new_december_weekends": [
+      {
+        "week_start": "2026-12-19",
+        "event_records": 38,
+        "verified": 30,
+        "announced": 8,
+        "excluded": 3
+      },
+      {
+        "week_start": "2026-12-26",
+        "event_records": 16,
+        "verified": 12,
+        "announced": 4,
+        "excluded": 2
+      }
+    ],
+    "current_manifest_unchanged": true,
+    "production_promotion_attempted": false
+  },
+  "validator_preflight": {
+    "new_december_family_fit_quality": [
+      {
+        "week_start": "2026-12-19",
+        "rows_with_wrong_review_method_and_missing_evidence_capture": 28,
+        "all_age_with_child_target_A": 3
+      },
+      {
+        "week_start": "2026-12-26",
+        "rows_with_wrong_review_method_and_missing_evidence_capture": 10,
+        "all_age_with_child_target_A": 0
+      }
+    ],
+    "new_december_ward_evidence": {
+      "weeks": 2,
+      "ward_rows_per_week": 23,
+      "rows_lacking_required_query_and_source_counts": 46
+    },
+    "new_december_official_schedule_evidence": "No complete 2026 Nerima annual schedule-to-decisions reconciliation in new weeks",
+    "new_december_explicit_source_checks": {
+      "registered": 27,
+      "required": 25,
+      "completed_in_new_week_runs": 0
+    },
+    "strict_ci_executed_on_candidate": false,
+    "image_identity": {
+      "verified_link_corrections": [
+        "final-20261122-nerima-music-brass",
+        "next-primary-20261128-minato-autumn-lightup",
+        "next-primary-20261128-minato-karippa-sdgs"
+      ],
+      "status": "known same-URL image collisions repaired by specific official URL corrections; full strict identity audit not executed"
+    }
+  },
+  "availability_and_history": {
+    "recent_nov15_holiday_after_workflow": "success_but_skipped_due_to_not_holiday_after_day",
+    "nov08_actual_holiday_evidence": {
+      "requests_total": 588,
+      "requests_success": 583,
+      "unverified_candidate_leads": 844,
+      "required_tamemap_403": 3,
+      "publication_permitted": false
+    },
+    "temporary_tamemap_exception": "2026-10-19 only; cannot reuse for 2026-11-16",
+    "nov16_actual_GitHub_Actions_collector_output": "not_available"
+  },
+  "release_rules": {
+    "data_updates_do_not_need_user_staging_approval": true,
+    "existing_actions_implementation_requires_internal_staging_candidate_sha": true,
+    "release_requires_strict_and_preservation_validation": true,
+    "never_mark_missing_required_source_successful": true,
+    "never_fabricate_website_quotes_or_hashes": true,
+    "app_code_and_registry_changes_out_of_scope": true
+  },
+  "to_finish": [
+    "Collect dated Nov16 evidence via approved runner and retain per-query, per-URL hashes for 23 wards and 25 required sources.",
+    "Resolve 403 required-source errors via allowed official supplemental evidence AND policy-compliant required-source handling; no reuse of expired temporary exception.",
+    "Resolve all official schedule rows/candidate decisions including 844 historical unverified leads where relevant to horizon.",
+    "Capture genuine 12/19 and 12/26 newly published family-fit quote/check-date/SHA evidence; correct 38 insufficient individual review rows and regrade all-ages when necessary.",
+    "Populate truthful ward query and source checks, official schedule annual parity, and explicit source checks for new weekly run files; reconcile existing weeks and 11/23 holiday.",
+    "Complete 6-week manifest/update_history with preservation proof and exact baseline, then run full CI strict, nonregression, image-identity, app tests.",
+    "Only after all passing, submit main data-only deploy trigger for this candidate, check data-production Pages and immutable data-release snapshot."
+  ],
+  "note": "Preflight is read-only validator emulation of selected static conditions, not a successful run of production strict validator. Candidate not activated in production manifest."
+}

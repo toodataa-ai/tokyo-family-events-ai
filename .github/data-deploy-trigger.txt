@@ -1,8 +1,3 @@
-operation=verified-suginami-addition-20261118
-candidate_sha=cae532ddf582dccec739404e8a3a2324d411898a
-base_data_production_sha=06888a9239c86436c4a499b4268847fa34f4dd2c
-official_evidence=research/2026-11-18-suginami-pages/ (unchanged official Suginami pages, HTTP200, fetched 2026-11-18) and research/2026-11-18-suginami-dispositions.json
-authorization=User directed data-only direct production update on 2026-11-15 and told Claude on 2026-11-18 to proceed with the Suginami evaluation.
-change_scope=Add four individually verified Suginami official events to the 2026-12-19 week (12/19 x3, 12/20 x1). Four other Suginami candidates stay unpublished with recorded reasons. No existing record, week, or history entry changed.
-validation=Pinned validator tools/validate_suginami_addition_20261118.py re-derives every new record from the committed official pages; plus strict data, decisions, non-regression, protected events, image identity and family-fit gates.
-note=Source debt is unchanged: tamemap_nakano 403 x3 and Nerima legacy calendar 404 x2 remain recorded as failed; the full 25-source audit is not complete and is not claimed.
+operation=verified-leads-addition-20261118
+candidate_sha=455be3b3979e68bef0af70b5785cbac0edaec8ab
+base_data_production_sha=cae532ddf582dccec739404e8a3a2324d411898a

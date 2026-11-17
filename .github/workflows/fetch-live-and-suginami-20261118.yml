@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p out/live out/suginami
           B=https://toodataa-ai.github.io/tokyo-family-events-ai
-          for f in data/manifest.json data/update_history.json data/2026-12-19.json data/2026-12-26.json data/2026-11-21.json data/2026-11-28.json index.html; do
+          for f in data/2026-12-19-events-suginami-official-20261118.json data/2026-12-19-events-non-ng-verified-only-20261117.json data/2026-12-26-events-non-ng-verified-only-20261117.json data/manifest.json data/update_history.json data/2026-12-19.json data/2026-12-26.json data/2026-11-21.json data/2026-11-28.json index.html; do
             n=$(echo "$f" | tr '/' '_')
             curl -sS -L -m 60 -A "Mozilla/5.0 (compatible; family-events-audit)" -o "out/live/$n" -w "$f %{http_code} %{size_download}\n" "$B/$f" | tee -a out/live/STATUS.txt
           done
@@ -35,9 +35,9 @@ jobs:
           cd repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan research/live-and-suginami-20261118
+          git checkout --orphan research/live-and-suginami-20261118b
           git rm -rf . >/dev/null 2>&1 || true
           cp -r ../out/. .
           git add -A
           git commit -m "research: raw read-only fetches of live site and Suginami official pages"
-          git push --force origin research/live-and-suginami-20261118
+          git push --force origin research/live-and-suginami-20261118b

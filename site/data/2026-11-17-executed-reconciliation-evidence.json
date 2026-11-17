@@ -1,0 +1,734 @@
+{
+  "schema_version": 1,
+  "run_type": "partial_2026_11_16_holiday_refresh_reconciliation",
+  "executed_on_jst": "2026-11-17",
+  "status": "EVIDENCE_COLLECTION_PROGRESS_NOT_STRICT_PASS",
+  "main_manifest_unchanged": true,
+  "baseline_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
+  "canonical_prompt_version": "v1.15",
+  "source_checks": {
+    "required_sources": 25,
+    "required_sources_with_readable_listings": 23,
+    "required_sources_without_exact_url_access": 2,
+    "all_rows_reconciled": 0,
+    "rows": [
+      {
+        "id": "sumida",
+        "required_search_urls": [
+          "https://www.sumidaevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "asakusa",
+        "required_search_urls": [
+          "https://www.asakusaevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "ueno",
+        "required_search_urls": [
+          "https://www.uenopark.info/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "akihabara",
+        "required_search_urls": [
+          "https://www.akihabaraevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "hibiya",
+        "required_search_urls": [
+          "https://www.hibiyapark.info/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "ikebukuro",
+        "required_search_urls": [
+          "https://www.ikebukuropark.info/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "shinjuku",
+        "required_search_urls": [
+          "https://www.shinjukuevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "nakano",
+        "required_search_urls": [
+          "https://www.nakanoevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "yoyogi",
+        "required_search_urls": [
+          "https://www.yoyogikoen.info/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "shibuya",
+        "required_search_urls": [
+          "https://www.miyashitapark.info/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "roppongi",
+        "required_search_urls": [
+          "https://www.roppongievents.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "toyosu",
+        "required_search_urls": [
+          "https://www.toyosuevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "odaiba",
+        "required_search_urls": [
+          "https://www.odaibapark.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "shinagawa",
+        "required_search_urls": [
+          "https://www.shinagawaevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "tachikawa",
+        "required_search_urls": [
+          "https://www.tachikawaevent.com/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "iterrace",
+        "required_search_urls": [
+          "https://www.iterrace.jp/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "nerimakanko",
+        "required_search_urls": [
+          "https://www.nerimakanko.jp/event/",
+          "https://www.nerimakanko.jp/event/search.php?month={YYYY-MM}"
+        ],
+        "web_open_status": "landing_plus_2026-11_and_2026-12_monthly_search_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "suginami_festival",
+        "required_search_urls": [
+          "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}&event_category=5&siteid=1"
+        ],
+        "web_open_status": "specific_required_URL_not_accessible",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "nerima_district_festivals_2026",
+        "required_search_urls": [
+          "https://www.city.nerima.tokyo.jp/kankomoyoshi/annai/omatsuri/chikusai/20260616103208700.html"
+        ],
+        "web_open_status": "2026_annual_detail_and_index_readable_rows_not_reconciled",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "nakano_official_tourism",
+        "required_search_urls": [
+          "https://www.nakano-kanko.com/event/"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "itabashi_official_festival",
+        "required_search_urls": [
+          "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/index.html",
+          "https://www.city.itabashi.tokyo.jp/bunka/kanko/matsuri/1006858.html"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "itabashi_tourism_festival",
+        "required_search_urls": [
+          "https://itabashi-kanko.jp/pickup/detail?id=1799"
+        ],
+        "web_open_status": "required_URL_or_landing_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "tamemap_nakano",
+        "required_search_urls": [
+          "https://pc.tamemap.net/1311401/calendar/{YYYY-MM}?lat=35.7089745&lng=139.6630981&level=5000&locale=ja"
+        ],
+        "web_open_status": "specific_required_URL_not_accessible",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "itabashi_times_event",
+        "required_search_urls": [
+          "https://itabashi-times.com/category/event",
+          "https://itabashi-times.com/category/event/page/2"
+        ],
+        "web_open_status": "page_1_and_page_2_readable",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false
+      },
+      {
+        "id": "suginami_calendar_all",
+        "required_search_urls": [
+          "https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM}"
+        ],
+        "web_open_status": "November_month_direct_open_December_month_via_calendar_link_and_42_daily_dates_via_calendar_links",
+        "detail_row_reconciliation": "not_completed",
+        "strict_pass": false,
+        "page_navigation_readable": true,
+        "unique_daily_date_count": 42,
+        "daily_range": "2026-11-16/2026-12-27",
+        "all_daily_URLs_retrieved_via_link_or_retry": true,
+        "full_row_decision_reconciliation": false
+      }
+    ]
+  },
+  "ward_searches": {
+    "ward_searches_invoked": 23,
+    "scope": "new 12/19 and 12/26 weekend holiday-after expansion; not the entire 6-week full audit",
+    "results": [
+      {
+        "ward": "千代田区",
+        "source_scope": "city.chiyoda.lg.jp",
+        "query": "site:city.chiyoda.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "中央区",
+        "source_scope": "city.chuo.lg.jp",
+        "query": "site:city.chuo.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "港区",
+        "source_scope": "city.minato.tokyo.jp",
+        "query": "site:city.minato.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "新宿区",
+        "source_scope": "city.shinjuku.lg.jp",
+        "query": "site:city.shinjuku.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "文京区",
+        "source_scope": "city.bunkyo.lg.jp",
+        "query": "site:city.bunkyo.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "台東区",
+        "source_scope": "city.taito.lg.jp",
+        "query": "site:city.taito.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "墨田区",
+        "source_scope": "city.sumida.lg.jp",
+        "query": "site:city.sumida.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "江東区",
+        "source_scope": "city.koto.lg.jp",
+        "query": "site:city.koto.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "品川区",
+        "source_scope": "city.shinagawa.tokyo.jp",
+        "query": "site:city.shinagawa.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "目黒区",
+        "source_scope": "city.meguro.tokyo.jp",
+        "query": "site:city.meguro.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "大田区",
+        "source_scope": "city.ota.tokyo.jp",
+        "query": "site:city.ota.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "世田谷区",
+        "source_scope": "city.setagaya.lg.jp",
+        "query": "site:city.setagaya.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "渋谷区",
+        "source_scope": "city.shibuya.tokyo.jp",
+        "query": "site:city.shibuya.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "中野区",
+        "source_scope": "city.tokyo-nakano.lg.jp",
+        "query": "site:city.tokyo-nakano.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "杉並区",
+        "source_scope": "city.suginami.tokyo.jp",
+        "query": "site:city.suginami.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "豊島区",
+        "source_scope": "city.toshima.lg.jp",
+        "query": "site:city.toshima.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "北区",
+        "source_scope": "city.kita.lg.jp",
+        "query": "site:city.kita.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "荒川区",
+        "source_scope": "city.arakawa.tokyo.jp",
+        "query": "site:city.arakawa.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "板橋区",
+        "source_scope": "city.itabashi.tokyo.jp",
+        "query": "site:city.itabashi.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "練馬区",
+        "source_scope": "city.nerima.tokyo.jp",
+        "query": "site:city.nerima.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "足立区",
+        "source_scope": "city.adachi.tokyo.jp",
+        "query": "site:city.adachi.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "葛飾区",
+        "source_scope": "city.katsushika.lg.jp",
+        "query": "site:city.katsushika.lg.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      },
+      {
+        "ward": "江戸川区",
+        "source_scope": "city.edogawa.tokyo.jp",
+        "query": "site:city.edogawa.tokyo.jp 2026年12月19日 12月26日 子ども 親子 イベント",
+        "search_invoked_on": "2026-11-17",
+        "search_result_completeness": "not_proven",
+        "official_page_followup": "partial_only"
+      }
+    ],
+    "fully_audited_wards": 0
+  },
+  "suginami_daily_calendar": {
+    "source_id": "suginami_calendar_all",
+    "opened_by_month_calendar_link_navigation": true,
+    "range_start": "2026-11-16",
+    "range_end": "2026-12-27",
+    "daily_pages_readable": 42,
+    "daily_pages_blocked_after_retry": 0,
+    "row_by_row_publication_decisions_completed": false,
+    "direct_monthly_December_fetch_failed_but_navigation_succeeded": true,
+    "suginami_festival_category_filter_still_inaccessible": true,
+    "discovered_but_unreviewed_rows_exist": true
+  },
+  "individual_event_sources": {
+    "records_missing_full_evidence_in_old_preflight": {
+      "2026-12-19": 28,
+      "2026-12-26": 10
+    },
+    "unique_official_source_urls": 26,
+    "unique_source_pages_opened_in_web": 26,
+    "rows": [
+      {
+        "url": "https://www.city.koto.lg.jp/281000/event/xmas2026.html",
+        "record_ids": [
+          "candidate-20261219-ojima-xmas-morning",
+          "candidate-20261219-ojima-xmas-afternoon"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.koto.lg.jp/281000/onagigawa0812.html",
+        "record_ids": [
+          "candidate-20261219-onagigawa-winter-festival"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/4/2026_quizrally_event_ver5.html",
+        "record_ids": [
+          "candidate-2026-ekokkuru-quiz-version5",
+          "candidate-2026-ekokkuru-quiz-version5"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.koto.lg.jp/380291/ekokkuru/event/r8/12/261219_messagecard.html",
+        "record_ids": [
+          "candidate-20261219-milk-carton-message-card"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/kozaeventannai/oyakogakusyuhiroba/oyakogakusyuhiroba12.html",
+        "record_ids": [
+          "candidate-20261220-taito-wreath"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://funsportnexus.org/202612orisen/",
+        "record_ids": [
+          "candidate-20261219-funsportnexus"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.koto.lg.jp/011501/kuse/koho/kuho/r08/text/111102.html",
+        "record_ids": [
+          "candidate-20261219-minamisuna-christmas-mini-concert"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s022/event/29249.html",
+        "record_ids": [
+          "official-20261219-suginami-science-fair"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s025/event/29140.html",
+        "record_ids": [
+          "official-20261219-suginami-planetarium"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s121/event/29120.html",
+        "record_ids": [
+          "official-20261219-suginami-shimenawa"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s116/event/29174.html",
+        "record_ids": [
+          "official-20261220-suginami-ehon-live28"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s111/event/29029.html",
+        "record_ids": [
+          "official-20261220-suginami-brass-workshop"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s036/event/26086.html",
+        "record_ids": [
+          "official-20261219-suginami-inclusive-art"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s033/event/29002.html",
+        "record_ids": [
+          "official-2026-suginami-nishiogi-illumination",
+          "official-2026-suginami-nishiogi-illumination"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html",
+        "record_ids": [
+          "official-2026-suginami-asagaya-illumination",
+          "official-2026-suginami-asagaya-illumination"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.suginami.tokyo.jp/s033/event/29148.html",
+        "record_ids": [
+          "official-2026-suginami-ogikubo-illumination",
+          "official-2026-suginami-ogikubo-illumination"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.shinjuku.lg.jp/kanko/community01_002104.html",
+        "record_ids": [
+          "official-20261219-shinjuku-track"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.adachi.tokyo.jp/sports/3x3taikenkai.html",
+        "record_ids": [
+          "official-20261219-adachi-3x3-beginner",
+          "official-20261219-adachi-3x3-experienced"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.adachi.tokyo.jp/shogai-c/shariha1219.html",
+        "record_ids": [
+          "official-20261219-adachi-ceramics-am",
+          "official-20261219-adachi-ceramics-pm"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.library.city.arakawa.tokyo.jp/kidseventview?1=&of=1&t=3&type=month",
+        "record_ids": [
+          "official-20261219-arakawa-yuinomori-story",
+          "official-20261219-arakawa-minamisenju-story",
+          "official-20261219-arakawa-nippori-story",
+          "official-20261220-arakawa-ogu-christmas"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-281.php",
+        "record_ids": [
+          "official-20261219-katsushika-newyear"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.museum.city.katsushika.lg.jp/event/2026/11/post-280.php",
+        "record_ids": [
+          "official-20261219-katsushika-farmers-fair"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/seishonenjigyo/jisyugakusyuusien/sirutukurumanabu.html",
+        "record_ids": [
+          "candidate-20261226-taito-calligraphy-grade3",
+          "candidate-20261227-taito-calligraphy-grade4",
+          "candidate-20261226-taito-seed-science"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1226.html",
+        "record_ids": [
+          "official-20261226-adachi-wildbirds"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
+        "record_ids": [
+          "official-20261226-nerima-forest-work"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      },
+      {
+        "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1066514/1066517.html",
+        "record_ids": [
+          "official-20261226-itabashi-brass"
+        ],
+        "web_opened_2026_11_17": true,
+        "field_matching_and_source_sha_capture_complete": false
+      }
+    ],
+    "missing_true_capture_of_quotes_hashes": 38
+  },
+  "newly_found_primary_events_not_integrated": [
+    {
+      "ward": "中野区",
+      "date": "2026-12-19",
+      "name": "今日から君もロックミュージシャン！ギター・ドラム・ベース体験",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin01-2.html",
+      "source_last_updated": "2026-11-17",
+      "sessions": "10:30-11:30,13:00-14:00,15:00-16:00",
+      "eligible": "5歳-18歳の中野区在住・在勤・在学の子ども",
+      "registration_deadline": "2026-12-07",
+      "price": "unknown_no_verified_stated_price"
+    },
+    {
+      "ward": "中野区",
+      "date": "2026-12-20",
+      "name": "いけ花ワークショップ～お正月の花をいけよう～",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/shinkoukikin/kikin05.html",
+      "source_last_updated": "2026-11-17",
+      "sessions": "11:00-12:30,14:00-15:30",
+      "eligible": "10歳-18歳の中野区在住・在勤・在学の子ども",
+      "registration_deadline": "2026-12-09",
+      "price": "unknown_no_verified_stated_price"
+    },
+    {
+      "ward": "中野区",
+      "date": "2026-12-26",
+      "name": "子ども向け和楽器体験&スペシャルコンサート（12/26回）",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei04.html",
+      "schedules": "10:00-10:40 pre-school parent, 10:50-11:30 elementary/middle school",
+      "price": "2,000円 for four-session course plus concert; need check mid-course registration",
+      "participation_unit": "not_yet_confirmed"
+    }
+  ],
+  "important_findings": [
+    "Tamemap exact configured URL and Suginami category-filtered festival URLs inaccessible using web tool. A current alternate/cached source is not equivalent to exact mandatory source parity.",
+    "Suginami unfiltered monthly and all 42 daily pages succeeded via navigation. Row-by-row matching still pending.",
+    "26 unique official pages for 38 incomplete review records are accessible. Rendering alone does not create actual quotes/hash or certify all 8 axes.",
+    "Taito 12/26 source URLs in stored staging events are CORRECT; a manual URL transcription typo in ad hoc check caused false alarm, corrected without modifying source.",
+    "This audit deliberately does not modify public manifest or fake a strict-check PASS."
+  ],
+  "source_network_limit": "Model execution container cannot resolve public internet hosts; public website data viewed via web browser only. GitHub connector has no advertised workflow_dispatch action; strict CI not triggered in this audit.",
+  "blockers_remaining": [
+    "25-source full pagination and individual row decisions",
+    "2026 Nerima annual district festival row-to-decision parity",
+    "844 historical leads where relevant to horizon",
+    "38 individual family-fit quote/hash capture",
+    "cross-week strict validations",
+    "approved data-only production promotion"
+  ],
+  "production_promotion_attempted": false
+}

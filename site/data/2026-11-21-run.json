@@ -1992,9 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 154,
-    "verified": 146,
-    "announced": 8
+    "published": 155,
+    "verified": 147,
+    "announced": 8,
+    "candidates": 1
   },
   "carryover_organizer_rechecks": [
     {
@@ -2559,5 +2560,17 @@
     "old_events_removed": 0,
     "whole_source_parity_complete": false,
     "fixed_851_adjudication_complete": true
+  },
+  "manual_official_addition_20261117": {
+    "run_type": "manual_official_add_only",
+    "as_of_jst": "2026-11-17",
+    "target_weekend": "2026-11-21",
+    "event_id": "candidate-20261121-kids-street-itabashi",
+    "added_weekly_records": 1,
+    "removed_weekly_records": 0,
+    "official_source_url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+    "full_23_ward_audit_complete": false,
+    "required_source_failures_still_unverified": true,
+    "base_data_production_sha": "ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71"
   }
 }

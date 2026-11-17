@@ -4447,11 +4447,52 @@
           "sha256": "a479d7a724ad6b9396336a33571e5068e295171a574096bdb3b93987fb6c8f96"
         }
       ]
+    },
+    {
+      "id": "candidate-20261121-kids-street-itabashi",
+      "status": "verified",
+      "source": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "板橋区SDGsポータル掲載の主催者記事（2026年10月8日）で11月21日・高島平緑地・無料・予約不要を確認。",
+      "evidence": [
+        {
+          "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+          "quote": "2026年11月21日（土）、高島平緑地にて「キッズストリートいたばし」を開催します。",
+          "checked_at": "2026-11-17",
+          "sha256": "1be1b8ea60b9b8ff7b03e9f5f1fc972a4250dbedb1eef5a17c5ec8309f3b8ddb",
+          "hash_scope": "exact_utf8_quote"
+        },
+        {
+          "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+          "quote": "参加費は無料、予約不要で、当日参加できます。",
+          "checked_at": "2026-11-17",
+          "sha256": "338638e179a4557d893e33d99ed4989e8df9d413ad27f769ca8006886dd2177e",
+          "hash_scope": "exact_utf8_quote"
+        },
+        {
+          "url": "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568",
+          "quote": "子どもたちが主役となり、実際のお仕事を体験できるイベントです。",
+          "checked_at": "2026-11-17",
+          "sha256": "9e460eb7530d9b7ff2c058d552f580cd1a01d5aac179a1a62f7d55060f4b8cbe",
+          "hash_scope": "exact_utf8_quote"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 154,
-    "verified": 146,
+    "total": 155,
+    "verified": 147,
     "announced": 8
   }
 }

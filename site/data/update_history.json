@@ -1897,6 +1897,29 @@
       "source_failures_remain_unverified": true,
       "full_23_ward_refresh_not_completed": true,
       "note": "2026年11月28・29日開催の南青山の家族向けイベント1件を主催者公式発表で照合して非破壊追加。元の全掲載データ・既存の取得エラー・更新履歴は維持。11月16日の全23区・6週間ローリングの代替とはしない。"
+    },
+    {
+      "run_id": "manual-confirmed-2026-11-17-kids-street-itabashi",
+      "run_type": "manual_official_add_only",
+      "status": "verified_subset",
+      "as_of_jst": "2026-11-17",
+      "executed_at": "2026-11-17T11:22:00Z",
+      "base_data_production_sha": "ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71",
+      "target_weekends": [
+        "2026-11-21"
+      ],
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "candidate-20261121-kids-street-itabashi"
+      ],
+      "removed_weekly_records": 0,
+      "changed_existing_records": 0,
+      "official_evidence_urls": [
+        "https://city-itabashi-sdgs.jp/story/partnersstory/index.php?c=partnersstory_view&pk=1791382568"
+      ],
+      "source_failures_remain_unverified": true,
+      "full_23_ward_refresh_not_completed": true,
+      "note": "11/21の子ども職業体験1件を主催者公式で照合し追加。既存データは削除・変更せず、過去の取得失敗もそのまま保持。"
     }
   ]
 }

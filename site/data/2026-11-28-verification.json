@@ -3096,11 +3096,45 @@
           "sha256": "46bbe7a926d052e4fd2687315de617076a7b23d5161e4e39f6ef395e73af4f91"
         }
       ]
+    },
+    {
+      "id": "official-20261128-minato-neighbors-garden-party4",
+      "status": "verified",
+      "source": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+      "source_kind": "organizer_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "主催者NTT都市開発の2026年11月公式発表により日付・会場・子ども向け内容・料金を確認。荒天時の中止は当日告知。",
+      "evidence": [
+        {
+          "url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+          "quote": "子どもたちと一緒に楽しめる縁日",
+          "checked_at": "2026-11-17",
+          "sha256": "b8bfc17c0ba9f0df45600621796c644e59e583653f9bc04280678abb0fe46748",
+          "hash_scope": "exact_utf8_quote"
+        },
+        {
+          "url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+          "quote": "2026年11月28日（土）10：00～17：00",
+          "checked_at": "2026-11-17",
+          "sha256": "101d05653dc882d3079e2f743c03a8f3dc1487b2ed11e32f7532017a3f18894c",
+          "hash_scope": "exact_utf8_quote"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 107,
-    "verified": 107,
+    "total": 108,
+    "verified": 108,
     "announced": 0
   }
 }

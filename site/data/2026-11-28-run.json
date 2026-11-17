@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 107,
-    "verified": 101,
+    "published": 108,
+    "verified": 102,
     "announced": 6,
-    "candidates": 43,
+    "candidates": 44,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -2206,5 +2206,18 @@
     "old_events_removed": 0,
     "whole_source_parity_complete": false,
     "fixed_851_adjudication_complete": true
+  },
+  "manual_verified_subset_20261117": {
+    "run_type": "manual_official_add_only",
+    "as_of_jst": "2026-11-17",
+    "target_weekend": "2026-11-28",
+    "event_id": "official-20261128-minato-neighbors-garden-party4",
+    "official_url": "https://ikou.nttud.co.jp/topics/detail/id/n28054.html",
+    "added_weekly_records": 1,
+    "removed_weekly_records": 0,
+    "required_source_errors_still_unresolved": true,
+    "full_nov16_holiday_audit_completed": false,
+    "strict_source_counter_not_fabricated": true,
+    "base_data_production_sha": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f"
   }
 }

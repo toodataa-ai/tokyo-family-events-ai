@@ -427,11 +427,11 @@
           },
           {
             "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
-            "quote": "27(日)view_list  | ママほっとキッチン",
+            "quote": "ママほっとキッチン",
             "checked_at": "2026-11-17",
-            "sha256": "f80dbea777b6317b091f51c0d299b1f56aef21e18ae08cf36959f76c4cac57d3",
-            "hash_scope": "exact_utf8_excerpt",
-            "note": "ためまっぷ2026年12月月別一覧で27日の日付・名称・桃園区民活動センターを確認。個別投稿ページ未取得"
+            "sha256": "d71c878f3de2e82555cf34fe4b890d0b9ae9313e80008f8ee1b0af14eb44c0a9",
+            "hash_scope": "exact_utf8_name_quote_not_entire_calendar_response_hash",
+            "note": "ためまっぷ2026年12月の27日行内に掲載されたイベント名の正確な文字列のみのSHA-256。日付は当該月別索引の行・位置から別途確認。"
           }
         ]
       }

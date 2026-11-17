@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 381,
+  "expected_total_differences_after_governance": 390,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -3071,6 +3071,78 @@
       "kind": "staging_only",
       "category": "suginami_20261118",
       "reason": "利用者承認済みの運用で追加した杉並区公式ページ4件のデータ専用ゲート検証・生成モジュール。mainのデプロイゲートが使用し本番アプリには含めない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-leads3-20261118.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/DISPOSITIONS.md",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/STATUS-leads1.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/STATUS-nerima-details.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/pages/arakawa_rocket.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/pages/nerima_shogai_festival.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-18-leads-triage/pages/toshima_wanpaku.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/leads_addition_20261118.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_leads_addition_20261118.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-18の未確認リンク仕分けで取得した公式ページの不変コピー・判断記録・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

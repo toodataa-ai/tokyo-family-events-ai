@@ -334,6 +334,12 @@ jobs:
               --main-dir staging-policy-src \
               --evidence-dir original-audit-evidence/holiday-after-source-evidence \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ]; then
+            python3 staging-policy-src/tools/validate_leads_addition_20261118.py \
+              --data-dir site/data \
+              --pages-dir staging-policy-src/research/2026-11-18-leads-triage/pages \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-addition-20261118" ]; then
             python3 staging-policy-src/tools/validate_suginami_addition_20261118.py \
               --data-dir site/data \
@@ -512,6 +518,8 @@ jobs:
                 --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
+            elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview inherits the pinned lead-triage official-page addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-addition-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits the pinned Suginami official-page addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
@@ -583,6 +591,8 @@ jobs:
                 python3 ../staging-src/tools/validate_nerima_forest_addition.py --base-ref "$base"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
                 echo "Immutable source+history already audited by validate_data on candidate before promotion; data-staging unchanged."
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ]; then
+                echo "Lead-triage addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-addition-20261118" ]; then
                 echo "Suginami addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ]; then

@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 21,
-    "published": 19,
+    "candidate_total": 22,
+    "published": 20,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 1,
@@ -2063,6 +2063,135 @@
         {
           "url": "https://pc.tamemap.net/1311401/event/160639?locale=ja",
           "basis": "2026-11-17 dated independent official or organizer detail and indexed date; 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "tamemap-20261227-nakano-mama-hot-kitchen",
+      "name": "ママほっとキッチン（12月27日）",
+      "ward": "中野区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "中野区社協の毎月第4日曜開催・子ども料金・会場を確認し、ためまっぷ2026年12月27日一覧と突き合わせた。2026年当日限定の時刻変更・参加方法は未確認。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "中野区社会福祉協議会の案内は乳幼児親子・子ども対象の子ども食堂と記載"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "子どもや家族が会場で食事をとり交流できる"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "社協の案内では18歳以下の子どもを対象としている"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "滞在時間・途中出入り条件は個別の2026年12月27日分で未確認"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "食事は売り切れ終了であり、2026年当日の提供・開催内容に変更の可能性"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "社協の定期開催案内では18歳以下無料、大人300円。12月27日個別の変更は未確認"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "社協の概要に申込方法の明記がなく、個別2026年12月27日の案内を未取得"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子どもと家族向けの地域の食事・交流の場"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "cross_reference_recurring_schedule_and_dated_index",
+          "reviewed_on": "2026-11-17",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども食堂の対象・通常料金・定期開催日と2026年12月27日の日付を公的団体案内・当年索引から照合"
+          ],
+          "limitations": [
+            "12月27日個別の時刻・予約方法・開催変更は取得できず、現地参加前の確認を推奨"
+          ],
+          "grade_comparison": "総合B：子ども歓迎の地域食堂。日時は当年の掲載確認済みだが個別条件を確約できない。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+              "quote": "毎月第4日曜日 11:30～14:00（売り切れ終了）",
+              "checked_at": "2026-11-17",
+              "sha256": "9a22ef3332b658c355029dcac2a70ceee76788efcec78256569c7d94c5e33144",
+              "hash_scope": "exact_utf8_quote",
+              "note": "中野区社会福祉協議会の定期開催案内。掲載日2023年の継続案内であり2026年当日の変更を否定するものではない"
+            },
+            {
+              "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+              "quote": "こども(18歳以下)無料、大人300円",
+              "checked_at": "2026-11-17",
+              "sha256": "05a723a1a0e6a127b5474725de1ce3ada8f21912f4140897be06e52f77e3b3a3",
+              "hash_scope": "exact_utf8_quote",
+              "note": "社協に記載された通常の料金。12月27日の個別例外未確認"
+            },
+            {
+              "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+              "quote": "27(日)view_list  | ママほっとキッチン",
+              "checked_at": "2026-11-17",
+              "sha256": "f80dbea777b6317b091f51c0d299b1f56aef21e18ae08cf36959f76c4cac57d3",
+              "hash_scope": "exact_utf8_excerpt",
+              "note": "ためまっぷ2026年12月月別一覧で27日の日付・名称・桃園区民活動センターを確認。個別投稿ページ未取得"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "2026_dated_calendar_index",
+        "social_welfare_recurring_schedule",
+        "child_target_confirmed"
+      ],
+      "negative_signals": [
+        "individual_date_specific_conditions_pending",
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "balanced_family_fit",
+      "reason_codes": [
+        "balanced_family_fit"
+      ],
+      "reasons": [
+        "中野区社協の毎月第4日曜開催・子ども料金・会場を確認し、ためまっぷ2026年12月27日一覧と突き合わせた。2026年当日限定の時刻変更・参加方法は未確認。"
+      ],
+      "evidence": [
+        {
+          "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+          "basis": "Monthly fourth-Sunday recurrence, 11:30-14:00, age/price/venue, with changes possible"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+          "basis": "2026-12-27 dated calendar listing (not individual-event-page evidence)"
         }
       ],
       "override_reason": ""

@@ -14,23 +14,23 @@
     },
     "category4": {
       "total": 10,
-      "new_week_queued": 4,
+      "new_week_queued": 5,
       "excluded_out_of_scope": 1,
-      "pending_specific_source": 5
+      "pending_specific_source": 4
     }
   },
   "overall": {
     "total_reviewed": 16,
     "published_production": 1,
-    "integrated_new_week_candidate_shards": 7,
-    "held_due_missing_or_conflicting_evidence": 7,
+    "integrated_new_week_candidate_shards": 8,
+    "held_due_missing_or_conflicting_evidence": 6,
     "excluded_out_of_scope": 1
   },
   "new_week_candidate_summary": {
     "week_2026_12_19_added": 4,
-    "week_2026_12_26_added": 3,
+    "week_2026_12_26_added": 4,
     "verification_status_verified": 4,
-    "verification_status_announced": 3,
+    "verification_status_announced": 4,
     "site_production_manifest_unchanged": true,
     "source_coverage_not_claimed_complete": true
   },
@@ -119,9 +119,10 @@
       "id": "tamemap-20261219-nakano-forest-choir",
       "date": "2026-12-19",
       "name": "森のファミリー合唱団（12/19）",
-      "result": "pending_date_conflict",
-      "basis": "ためまっぷには土曜12/19の掲載がある一方、中野区公式は通常活動が毎週日曜と記載。土曜特別回の主催者確認が必要",
-      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html"
+      "result": "pending_public_participation_and_venue_specificity",
+      "basis": "主催者ZEROキッズ2026年8月20日告知は12/19(土)を練習＆本番、14:00ベタニヤホーム訪問と明記。ためまっぷはえごたいえ開催と表示しており、通常練習の当日開催・一般参加可否・会場が一致したとは確認できないため保留継続。",
+      "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/bunka/kodomowakamono_bunka/nakano_ninteijigyo/nintei03.html",
+      "additional_organizer_url": "https://zerokids.org/topics/news/%E3%80%8C%E6%A3%AE%E3%81%AE%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E5%90%88%E5%94%B1%E5%9B%A3%E3%80%8D%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E5%8B%9F%E9%9B%86%EF%BC%81%E3%80%9C%E9%9F%B3%E6%A5%BD.html"
     },
     {
       "group": 4,
@@ -173,9 +174,36 @@
       "id": "tamemap-20261227-nakano-mama-hot-kitchen",
       "date": "2026-12-27",
       "name": "ママほっとキッチン",
-      "result": "pending_date_specific_organizer_details",
-      "basis": "ためまっぷ月別索引に12/27と掲載。11/22の同名主催者投稿は存在するが12/27参加方法・時刻の個別詳細は未取得",
-      "url": "https://pc.tamemap.net/1311401/event/153058/2026-11-22?locale=ja"
+      "result": "announced_staged_wait_week_rollover",
+      "basis": "ためまっぷ2026/12/27一覧の日付と、社協の第4日曜日・通常11:30～14:00、子ども無料/大人300円、会場を独立照合。ただし個別の当日変更・予約条件は未取得。",
+      "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+      "additional_index_url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+      "evidence": [
+        {
+          "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+          "quote": "毎月第4日曜日 11:30～14:00（売り切れ終了）",
+          "checked_at": "2026-11-17",
+          "sha256": "9a22ef3332b658c355029dcac2a70ceee76788efcec78256569c7d94c5e33144",
+          "hash_scope": "exact_utf8_quote",
+          "note": "中野区社会福祉協議会の定期開催案内。掲載日2023年の継続案内であり2026年当日の変更を否定するものではない"
+        },
+        {
+          "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+          "quote": "こども(18歳以下)無料、大人300円",
+          "checked_at": "2026-11-17",
+          "sha256": "05a723a1a0e6a127b5474725de1ce3ada8f21912f4140897be06e52f77e3b3a3",
+          "hash_scope": "exact_utf8_quote",
+          "note": "社協に記載された通常の料金。12月27日の個別例外未確認"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+          "quote": "27(日)view_list  | ママほっとキッチン",
+          "checked_at": "2026-11-17",
+          "sha256": "f80dbea777b6317b091f51c0d299b1f56aef21e18ae08cf36959f76c4cac57d3",
+          "hash_scope": "exact_utf8_excerpt",
+          "note": "ためまっぷ2026年12月月別一覧で27日の日付・名称・桃園区民活動センターを確認。個別投稿ページ未取得"
+        }
+      ]
     },
     {
       "group": 4,
@@ -190,5 +218,6 @@
   "next_release_dependency": "Promote the 12/19 and 12/26 candidate weeks only after mandatory 23-ward and 25-source 6-week roll validation. Seven unsatisfied/deferred source records must not be promoted by assumption.",
   "all_previous_published_events_kept": true,
   "excluded_or_unverified_records_not_discarded": true,
-  "production_source_status_unmodified": true
+  "production_source_status_unmodified": true,
+  "new_evidence_note": "2026-11-17追加監査：ママほっとキッチンを、開催日が当年一覧で確認できた'条件一部保留の次週候補'に分類変更。森のファミリー合唱団12/19は主催者公式で14時ベタニヤホーム訪問の特別活動を確認したが、通常練習の参加可否・会場が確定できないため公開保留継続。杉並2ページは当日直接取得不能。"
 }

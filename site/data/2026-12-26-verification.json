@@ -357,11 +357,55 @@
           "description": "公式または主催者名義の2026年掲載情報を取得。引用文字列だけのUTF-8 SHA-256。月別一覧の日付が必要な候補は別途 indexUrl に保存。"
         }
       ]
+    },
+    {
+      "id": "tamemap-20261227-nakano-mama-hot-kitchen",
+      "status": "announced",
+      "source": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+      "source_kind": "community_social_welfare_official",
+      "verified_on": "2026-11-17",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "provisional",
+        "price": "regular_schedule_only",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "社協の定期案内＋ためまっぷ12月27日一覧で照合。2026年当日の個別時刻・予約・例外は不明のまま。全23区検証未完のため本番公開不可。",
+      "evidence": [
+        {
+          "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+          "quote": "毎月第4日曜日 11:30～14:00（売り切れ終了）",
+          "checked_at": "2026-11-17",
+          "sha256": "9a22ef3332b658c355029dcac2a70ceee76788efcec78256569c7d94c5e33144",
+          "hash_scope": "exact_utf8_quote",
+          "note": "中野区社会福祉協議会の定期開催案内。掲載日2023年の継続案内であり2026年当日の変更を否定するものではない"
+        },
+        {
+          "url": "https://nakanoshakyo.com/nakanoinfo/result/?did=13971",
+          "quote": "こども(18歳以下)無料、大人300円",
+          "checked_at": "2026-11-17",
+          "sha256": "05a723a1a0e6a127b5474725de1ce3ada8f21912f4140897be06e52f77e3b3a3",
+          "hash_scope": "exact_utf8_quote",
+          "note": "社協に記載された通常の料金。12月27日の個別例外未確認"
+        },
+        {
+          "url": "https://pc.tamemap.net/1311401/calendar/2026-12?lat=35.7073&level=5000&lng=139.675&locale=ja",
+          "quote": "27(日)view_list  | ママほっとキッチン",
+          "checked_at": "2026-11-17",
+          "sha256": "f80dbea777b6317b091f51c0d299b1f56aef21e18ae08cf36959f76c4cac57d3",
+          "hash_scope": "exact_utf8_excerpt",
+          "note": "ためまっぷ2026年12月月別一覧で27日の日付・名称・桃園区民活動センターを確認。個別投稿ページ未取得"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 19,
+    "total": 20,
     "verified": 13,
-    "announced": 6
+    "announced": 7
   }
 }

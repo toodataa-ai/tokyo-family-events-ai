@@ -162,3 +162,5 @@ jobs:
           print("Read-only evidence exported. Publication BLOCKED by:", summary["blockers"])
           print("There is no push, data candidate, or Pages release in this audit workflow.")
           PY
+
+# re-run 2026-11-19 full six-week read-only source audit (no data change)

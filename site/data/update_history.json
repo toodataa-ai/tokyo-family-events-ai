@@ -2052,6 +2052,44 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "未確認リンクの仕分けで公式個別ページを確認できた3件のみ追加。条件が合わない4件は掲載せず理由を保存。"
+    },
+    {
+      "run_id": "audit-addition-20261119",
+      "run_type": "manual_verified_audit_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T10:00:00+09:00",
+      "base_data_production_sha": "455be3b3979e68bef0af70b5785cbac0edaec8ab",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 437,
+      "candidate_active_week_records": 444,
+      "added_weekly_records": 7,
+      "new_event_ids": [
+        "verified-20261121-sumida-smile-festival",
+        "verified-20261128-suginami-narita-shukakusai",
+        "verified-20261128-taito-uguisudani-imohori",
+        "verified-20261128-nerima-hikarigaoka-park-festa",
+        "verified-20261205-suginami-ochiba-kanshasai",
+        "verified-20261206-suginami-fureai-festa",
+        "verified-20261213-suginami-cesion-christmas"
+      ],
+      "held_not_published": [
+        "adachi-hime-fes-20261205",
+        "bunkyo-craft-festival-20261121",
+        "suginami-minor-registration-events",
+        "suginami-oyako-sports-challenge-20261129"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "未確認リンクの仕分けで公式個別ページを確認できた3件のみ追加。条件が合わない4件は掲載せず理由を保存。"
     }
   ]
 }

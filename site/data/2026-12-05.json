@@ -10,10 +10,10 @@
   "run_file": "2026-12-05-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 88,
+    "candidate_count": 90,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 88,
+    "published_count": 90,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 21,
-        "published_count": 21,
-        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026/10/27杉並区公式の個別活動1件を別根拠で追加。過去ソース監査ログの実測は不変。"
+        "candidate_count": 23,
+        "published_count": 23,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026/10/27杉並区公式の個別活動1件を別根拠で追加。過去ソース監査ログの実測は不変。 2026-11-19 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "豊島区",
@@ -233,7 +233,8 @@
     "2026-12-05-events-non-tamemap-20261114.json",
     "2026-12-05-events-non-tamemap-next-20261114.json",
     "2026-12-05-events-all-non-tamemap-20261114.json",
-    "2026-12-05-events-leads-20261118.json"
+    "2026-12-05-events-leads-20261118.json",
+    "2026-12-05-events-audit-20261119.json"
   ],
   "events": []
 }

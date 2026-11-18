@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 20,
-    "published": 72,
+    "candidates": 21,
+    "published": 73,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 69,
+    "verified": 70,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2141,5 +2141,20 @@
     ],
     "unverified_candidate_links": 821,
     "full_23_ward_25_source_audit_complete": false
+  },
+  "audit_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-suginami-cesion-christmas"
+    ],
+    "held_not_published": [
+      "adachi-hime-fes-20261205",
+      "bunkyo-craft-festival-20261121",
+      "suginami-minor-registration-events",
+      "suginami-oyako-sports-challenge-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "455be3b3979e68bef0af70b5785cbac0edaec8ab",
+    "global_source_audit_complete": false
   }
 }

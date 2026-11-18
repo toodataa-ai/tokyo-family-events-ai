@@ -2516,11 +2516,147 @@
           "description": "練馬区公式ページ（2026-11-18にHTTP200で取得、research/2026-11-18-leads-triage/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-suginami-ochiba-kanshasai",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "開催時間午前9時から午後3時まで会場ごとに開催時間が異なります。",
+          "checked_at": "2026-11-19",
+          "sha256": "611d31b4e6a9aa1f77b3e3f0a7ac8abdc3934ef3d3c55b268a4024ebb78fcece",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "対象者どなたでも開催場所",
+          "checked_at": "2026-11-19",
+          "sha256": "eb0ecf3339ef13d00e3716eb58179cf05ea5fb37c5e819c6cd2d8f4d88e9c0d6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "内容落ち葉掃き、おたのしみイベント",
+          "checked_at": "2026-11-19",
+          "sha256": "7b14a8a15af3648f6172614f17dd07b9640a0261aa15a3f5351eea7038f6e434",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "当日直接会場へお越しください。",
+          "checked_at": "2026-11-19",
+          "sha256": "262d4c787ebcfd42b4055ef49b14adeaa1f618a5fd580b3fb709745fdedfd665",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "どんぐりなどを使った工作、草木",
+          "checked_at": "2026-11-19",
+          "sha256": "d214ba30e5d0378bc8c78f42f9f296e1e15a4ac603472db500eb50dcf96ff209",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s100/event/23008.html",
+          "quote": "雨天の場合は「落ち葉掃き」は中止し、井草森公園の「おたのしみイベント」は規模を縮小して実施します。",
+          "checked_at": "2026-11-19",
+          "sha256": "5c850fed1f105ed3b6d0b2787f79b5a2d1303dafb9dc65bb7634e4e3b13e95ab",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261206-suginami-fureai-festa",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "2026年12月6日（日曜日）開催時間午前10時から午後3時まで",
+          "checked_at": "2026-11-19",
+          "sha256": "df0c9b4288b7c0faf6267ce9ce76d50f10fa9f6a91736e146c1afb14b1ceed80",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "セシオン杉並杉並区梅里1丁目22番32号",
+          "checked_at": "2026-11-19",
+          "sha256": "5454ecae58b6d3f107b14527f256b21da00b84345f431bb742796f95cb9af4da",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "対象者どなたでも開催場所",
+          "checked_at": "2026-11-19",
+          "sha256": "eb0ecf3339ef13d00e3716eb58179cf05ea5fb37c5e819c6cd2d8f4d88e9c0d6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "お子様から大人まで気軽にチャレンジできる内容ばかりで",
+          "checked_at": "2026-11-19",
+          "sha256": "26de33325c6a9c3735f944d1fccc4817e883bf78bb021d5c03a63bbf2e01406a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "似顔絵コーナーバルーンアート",
+          "checked_at": "2026-11-19",
+          "sha256": "8760bb21873f8aeeaac4848a0a84a5da56835d954d883f4502ef6fb93db2d02d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s036/event/23030.html",
+          "quote": "当日直接会場へお越しください。費用無料",
+          "checked_at": "2026-11-19",
+          "sha256": "6af25c9921536fd77849724cd110ff8d65058846bfadadfe81d27138352d0fd6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 88,
-    "verified": 84,
+    "total": 90,
+    "verified": 86,
     "announced": 4
   }
 }

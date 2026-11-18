@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 157,
-    "verified": 157,
+    "published": 158,
+    "verified": 158,
     "announced": 0,
-    "candidates": 3
+    "candidates": 4
   },
   "carryover_organizer_rechecks": [
     {
@@ -5181,6 +5181,21 @@
     ],
     "pages_committed_at": "research/2026-11-18-leads-triage/pages/",
     "base_data_production_sha": "cae532ddf582dccec739404e8a3a2324d411898a",
+    "global_source_audit_complete": false
+  },
+  "audit_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-sumida-smile-festival"
+    ],
+    "held_not_published": [
+      "adachi-hime-fes-20261205",
+      "bunkyo-craft-festival-20261121",
+      "suginami-minor-registration-events",
+      "suginami-oyako-sports-challenge-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "455be3b3979e68bef0af70b5785cbac0edaec8ab",
     "global_source_audit_complete": false
   }
 }

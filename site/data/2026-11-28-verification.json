@@ -3185,11 +3185,207 @@
           "hash_scope": "exact_utf8_quote"
         }
       ]
+    },
+    {
+      "id": "verified-20261128-suginami-narita-shukakusai",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "2026年11月28日（土曜日）開催時間午前10時30分から午後0時30分まで",
+          "checked_at": "2026-11-19",
+          "sha256": "4f83fb8251b559ad019bff8b72d732ed7de7f611720566efa32a2178d4e0ac6d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "成田西ふれあい農業公園杉並区成田西3丁目18番9号",
+          "checked_at": "2026-11-19",
+          "sha256": "9e747dc3f0884187edc6735f0d94bc1c32048dfb4f71a11ea3f3df805e4d79ee",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "対象者どなたでも小学生以下は保護者同伴",
+          "checked_at": "2026-11-19",
+          "sha256": "edfcd642d64ffc0215e944cadcf4082791a260d9dc6d027e786b111c5094384b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "当日直接会場へお越しください。費用無料",
+          "checked_at": "2026-11-19",
+          "sha256": "6af25c9921536fd77849724cd110ff8d65058846bfadadfe81d27138352d0fd6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "けんちん汁や焼いもの販売、野菜の即売会、くわ体験やワークショップ",
+          "checked_at": "2026-11-19",
+          "sha256": "71810a0ef45834e8e9bf0a3890007780e561486aff29bc7904986d09f1ff62a1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s121/event/29068.html",
+          "quote": "なみすけもやって来ます！",
+          "checked_at": "2026-11-19",
+          "sha256": "c27d88b2062548836d2d6932beea45b29dd55e44904ceae4c750cd608dd1b08e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-taito-uguisudani-imohori",
+      "status": "verified",
+      "source": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "令和8年11月28日（土曜日）第一部午前10時集合第二部午前11時集合",
+          "checked_at": "2026-11-19",
+          "sha256": "2623c811257c90a0f6b0df185512f7f835ac960ee291d8a895c2627b996f5828",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "区立鶯谷公園台東区根岸1丁目3番17号",
+          "checked_at": "2026-11-19",
+          "sha256": "fc41645894185e1dd142d316f6807753dd4007a4a202090a268a5a851fe6c894",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "ご家族で、お芋掘りにご参加しませんか。",
+          "checked_at": "2026-11-19",
+          "sha256": "fbae0ade2939c7424567cc2232d3a10f02f7df562b801be74a9b09bf221efa02",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "サツマイモのツルを使ったクリスマスリース作りのワークショップ",
+          "checked_at": "2026-11-19",
+          "sha256": "05659181addfa5475eeb414ba2db2171a7f9bb9054c3d835d4f168f7459637e1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "申込定員：各部15組、計30組",
+          "checked_at": "2026-11-19",
+          "sha256": "90e8a733bafd772c3181ecccb4596fe6a7442bfd0d036b08f6e379d5fc8dc426",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kenchiku/koumin/katsuyou/torikumi.html",
+          "quote": "申込締切は11月20日（金曜日）です。",
+          "checked_at": "2026-11-19",
+          "sha256": "0c0c562949f2059041793899d43fb81e9e21fb0a65de8e1a934e0d7475418737",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-nerima-hikarigaoka-park-festa",
+      "status": "verified",
+      "source": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+          "quote": "2026年11月28日（土）、11月29日（日）10：00～16：00",
+          "checked_at": "2026-11-19",
+          "sha256": "82531b76ad7f302c56f7f78c0b11e693eb2197f230b22fb7d50fd4143c379357",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+          "quote": "都立光が丘公園けやき広場",
+          "checked_at": "2026-11-19",
+          "sha256": "44aa0003fdcdac499f5d4defd3525f8ad41e12d003237629f44611472a76de2e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+          "quote": "落葉やどんぐりを使った遊びや工作で秋の公園をたのしもう！",
+          "checked_at": "2026-11-19",
+          "sha256": "c13ee98754197a406b7d04c1e40aba10defbd8b944533a47e72b2317a3f20837",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+          "quote": "はたらく車大集合のほか、かわいい動物たちにも会えるよ。",
+          "checked_at": "2026-11-19",
+          "sha256": "af73c0be67d38cff738ad5eb783543c7a0cc2284d6999a5be0edc9ffac5b714f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003035",
+          "quote": "料金参加無料主催者光が丘公園サービスセンター",
+          "checked_at": "2026-11-19",
+          "sha256": "c0aa57fa8c3598462b4d2cd0aa5e4c3bc77139d88bec83fd0368497a783bded3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 108,
-    "verified": 108,
+    "total": 111,
+    "verified": 111,
     "announced": 0
   }
 }

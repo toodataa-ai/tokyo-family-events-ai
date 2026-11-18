@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 395,
+  "expected_total_differences_after_governance": 404,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -3183,6 +3183,78 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-19の6週間ソース再監査で得た候補プールと取得対象一覧。読み取り専用の調査記録でアプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/nerima_hikarigaoka_festa.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_cesion_xmas.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_fureai_festa.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_ochiba.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_shukakusai.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/sumida_smile.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/taito_uguisudani.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/audit_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_audit_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 449,
+  "expected_total_differences_after_governance": 454,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -4919,6 +4919,46 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead16_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の足立区公式ページ由来の追加（lead16）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead16_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の足立区公式ページ由来の追加（lead16）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/adachi_kuwabukuro_donguri.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の足立区公式ページ由来の追加（lead16）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/adachi_cruyff_nov29.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の足立区公式ページ由来の追加（lead16）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/adachi_cruyff_dec6.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の足立区公式ページ由来の追加（lead16）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 188,
+    "candidate_count": 189,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 172,
+    "published_count": 173,
     "wards": [
       {
         "ward": "千代田区",
@@ -182,9 +182,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 10,
-        "published_count": 10,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17に主催者公式確認済みの子ども職業体験1件を追加。過去の検索回数は変更せず。"
+        "candidate_count": 11,
+        "published_count": 11,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17に主催者公式確認済みの子ども職業体験1件を追加。過去の検索回数は変更せず。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "練馬区",
@@ -253,7 +253,8 @@
     "2026-11-21-events-lead4-20261119.json",
     "2026-11-21-events-lead5-20261119.json",
     "2026-11-21-events-lead6-20261119.json",
-    "2026-11-21-events-lead7-20261119.json"
+    "2026-11-21-events-lead7-20261119.json",
+    "2026-11-21-events-lead8-20261119.json"
   ],
   "events": []
 }

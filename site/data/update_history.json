@@ -2329,6 +2329,51 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "残りの候補プールとカレンダーの個別ページを精読し、公式個別ページで条件を確認できた10件の週別レコード（画像なしを含む保留分）のみ追加。条件が合わないものは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead8-addition-20261119",
+      "run_type": "manual_verified_lead8_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T20:00:00+09:00",
+      "base_data_production_sha": "badd9f948fc48a31061dc2576110d897d2e728d8",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 484,
+      "candidate_active_week_records": 490,
+      "added_weekly_records": 6,
+      "new_event_ids": [
+        "verified-20261121-itabashi-hasune-programming",
+        "verified-20261129-suginami-nishiogi-oshanashi",
+        "verified-20261129-nerima-molkky",
+        "verified-20261205-nerima-ochiba-matsuri",
+        "verified-20261205-nerima-oshigoto-minamitakamatsu",
+        "verified-20261205-nerima-oshigoto-oozekiyama"
+      ],
+      "held_not_published": [
+        "adachi-ouka-hakoniwa-20261128",
+        "arakawa-ishihama-papa-20261123",
+        "chiyoda-first-bicycle-20261129",
+        "edogawa-kodomo-mirai-kan-20261123",
+        "edogawa-konnitsuto-ichi-20261121",
+        "itabashi-shimizu-berezza-20261123",
+        "shinjuku-poreporefes-20261128",
+        "suginami-futago-ryuseigun-20261212",
+        "suginami-inawara-20261206",
+        "suginami-nazo-sanpo-20261116",
+        "suginami-takekatombo-20261123",
+        "suginami-zenpukuji-patapata-20261206",
+        "toshima-kumanokko-day-20261123"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "残りの候補プールとカレンダーの個別ページを精読し、公式個別ページで条件を確認できた10件の週別レコード（画像なしを含む保留分）のみ追加。条件が合わないものは掲載せず理由を保存。"
     }
   ]
 }

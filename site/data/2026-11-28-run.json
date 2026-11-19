@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 123,
-    "verified": 123,
+    "published": 125,
+    "verified": 125,
     "announced": 0,
-    "candidates": 59,
+    "candidates": 61,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4075,6 +4075,31 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "e68dbb647f405c97175bb5cd5337466dddb37720",
+    "global_source_audit_complete": false
+  },
+  "lead8_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-suginami-nishiogi-oshanashi",
+      "verified-20261129-nerima-molkky"
+    ],
+    "held_not_published": [
+      "adachi-ouka-hakoniwa-20261128",
+      "arakawa-ishihama-papa-20261123",
+      "chiyoda-first-bicycle-20261129",
+      "edogawa-kodomo-mirai-kan-20261123",
+      "edogawa-konnitsuto-ichi-20261121",
+      "itabashi-shimizu-berezza-20261123",
+      "shinjuku-poreporefes-20261128",
+      "suginami-futago-ryuseigun-20261212",
+      "suginami-inawara-20261206",
+      "suginami-nazo-sanpo-20261116",
+      "suginami-takekatombo-20261123",
+      "suginami-zenpukuji-patapata-20261206",
+      "toshima-kumanokko-day-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "badd9f948fc48a31061dc2576110d897d2e728d8",
     "global_source_audit_complete": false
   }
 }

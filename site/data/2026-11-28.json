@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 139,
+    "candidate_count": 141,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 123,
+    "published_count": 125,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 37,
-        "published_count": 37,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。"
+        "candidate_count": 38,
+        "published_count": 38,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "豊島区",
@@ -191,9 +191,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 11,
-        "published_count": 11,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-10-27公式森フェスタ日程表から11/29の1行を補完。旧探索実測は維持。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 12,
+        "published_count": 12,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-10-27公式森フェスタ日程表から11/29の1行を補完。旧探索実測は維持。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "足立区",
@@ -243,7 +243,8 @@
     "2026-11-28-events-audit-20261119.json",
     "2026-11-28-events-sankaku-20261119.json",
     "2026-11-28-events-lead5-20261119.json",
-    "2026-11-28-events-lead7-20261119.json"
+    "2026-11-28-events-lead7-20261119.json",
+    "2026-11-28-events-lead8-20261119.json"
   ],
   "events": []
 }

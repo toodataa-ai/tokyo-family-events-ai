@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 32,
-    "published": 84,
+    "candidates": 35,
+    "published": 87,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 81,
+    "verified": 84,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2318,6 +2318,23 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
+    "global_source_audit_complete": false
+  },
+  "lead15_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-adachi-galaxcity-caravan-dec12",
+      "verified-20261212-adachi-galaxcity-kamishibai-dec12",
+      "verified-20261212-adachi-galaxcity-yomikatari-dec12"
+    ],
+    "held_not_published": [
+      "galax-12-26-announcement",
+      "galax-adult-lecture",
+      "galax-always-on",
+      "galax-registration-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "fc681fb08f448716bcf07948837f1b057b497ead",
     "global_source_audit_complete": false
   }
 }

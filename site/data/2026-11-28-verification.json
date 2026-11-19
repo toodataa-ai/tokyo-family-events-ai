@@ -4849,11 +4849,371 @@
           "description": "江東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261128-adachi-galaxcity-yomikatari-nov28",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+          "quote": "読み語りボランティアのみなさんによる絵本の読み語りと楽しい手あそびです！",
+          "checked_at": "2026-11-20",
+          "sha256": "82911c561964962d8ff16112ee0dc2fe1148ba30d02f5e833ba333f22739b3b7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+          "quote": "日時2026年11月14日・28日（すべて土曜日）10：30～11：00",
+          "checked_at": "2026-11-20",
+          "sha256": "79d7c41c1644657fcca3af5fb10e0668f32f538561f64605a9be63b29783397e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+          "quote": "場所わーくしょっぷスタジオ対象未就学のお子さまとその保護者",
+          "checked_at": "2026-11-20",
+          "sha256": "cae98433e1684078ea4cd5d5231e4f63ad7b827b3ca059b11198f061f054fc17",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+          "quote": "対象未就学のお子さまとその保護者",
+          "checked_at": "2026-11-20",
+          "sha256": "4e1dead388c2942361845c74cd3cc8c799fa3d0ed7a1f7cdd1f3a5067a35ba41",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009244.html",
+          "quote": "料金無料申込当日直接会場へ講師",
+          "checked_at": "2026-11-20",
+          "sha256": "605b5b14b7e9a0861b58640fecbcef2bbd48c01b196acede0db9da79c8850fef",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-adachi-galaxcity-kamishibai-nov28",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+          "quote": "紙芝居サークル「おはなしたまてばこ」による楽しい紙芝居の読み語りを行います！どなたでもお気軽にご参加ください。",
+          "checked_at": "2026-11-20",
+          "sha256": "634d84135341dcc22525c497befbd19a271481bbad0c1d8c705ce9b9b253b812",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+          "quote": "日時2026年11月28日（土）14：00～14：30",
+          "checked_at": "2026-11-20",
+          "sha256": "80003def9e18b861d1f918e766db89ba6a66b838b8a225aea047169b3a4c175a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+          "quote": "場所地下2階 レクリエーションホール2",
+          "checked_at": "2026-11-20",
+          "sha256": "b1e1b9de264e5a4b05b6ecd92fd6001b2402570f67bc638d7fee9201cce46646",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+          "quote": "対象どなたでも（未就学児は保護者同伴）",
+          "checked_at": "2026-11-20",
+          "sha256": "51172dcb77863fd9240eaab88add59f7e932f831c717d86d4a1375caaff13d54",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261128-009250.html",
+          "quote": "料金無料申込当日直接会場へ講師",
+          "checked_at": "2026-11-20",
+          "sha256": "605b5b14b7e9a0861b58640fecbcef2bbd48c01b196acede0db9da79c8850fef",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261129-adachi-galaxcity-brillante-nov29",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+          "quote": "「身近で気軽にクラシック」をモットーに活動するブリランテによる演奏。",
+          "checked_at": "2026-11-20",
+          "sha256": "872ab043e892ce210b22db57b0e220f987b34ed217b44f61364a06b0b115ecb2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+          "quote": "日時2026年11月29日（日）【第一部】11：00～11：40（10：30開場）",
+          "checked_at": "2026-11-20",
+          "sha256": "4fedae6d7783ac6326ac066e3235cdad4848472d10d44d96f502f37577e0e1f0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+          "quote": "場所ホワイトあとりえ、ものづくりガレージ",
+          "checked_at": "2026-11-20",
+          "sha256": "115e18135062d876d017b75d1a7ffd64beee966b31eb55c5a4fe2724ec1bc938",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+          "quote": "対象どなたでも（未就学児は保護者同伴）",
+          "checked_at": "2026-11-20",
+          "sha256": "51172dcb77863fd9240eaab88add59f7e932f831c717d86d4a1375caaff13d54",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-008889.html",
+          "quote": "料金無料申込当日直接会場へイベント詳細",
+          "checked_at": "2026-11-20",
+          "sha256": "9b866e896012f4117ec7545f8d8d48b72e529d1c6e96c60604a733ebeced57bf",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261129-adachi-galaxcity-yume-clay-nov29",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+          "quote": "粘土でフィギュアをつくって動かして、iPadでひとコマずつ撮影してアニメーションにしよう！",
+          "checked_at": "2026-11-20",
+          "sha256": "8a5b48a11c64f5e7ecf717637d8dea78952b96bc6098adfd0cf25c65d5e2151d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+          "quote": "日時2026年11月29日（日）14：00～15：30",
+          "checked_at": "2026-11-20",
+          "sha256": "02b7e2936bb5fc21d7c47ee96702553d135b31d7ec32c8a3062b976007db9936",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+          "quote": "場所地下2階 レクリエーションホール2",
+          "checked_at": "2026-11-20",
+          "sha256": "b1e1b9de264e5a4b05b6ecd92fd6001b2402570f67bc638d7fee9201cce46646",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+          "quote": "対象小学生・中学生（小学3年生以下は保護者同伴）",
+          "checked_at": "2026-11-20",
+          "sha256": "8caa5aa3a07f1bbe30cfdaa7231cbee62d04a1b706c704adc13a6cbf23eeb119",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009222.html",
+          "quote": "料金無料申込事前申込制※10月24日（土）より受付開始",
+          "checked_at": "2026-11-20",
+          "sha256": "434915f93f5f4c52865ead7c42fafb4231c0e8d885f19394ce7e9a0d4cf1a6e7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-adachi-galaxcity-kosaku-holiday",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "紙コップや割り箸など身近な材料をつかって季節や行事にちなんだ工作を楽しもう！",
+          "checked_at": "2026-11-20",
+          "sha256": "0322b76af683bfb6860f1fb684efcb0147dc0cb8ac4660960e6dd9df41278e50",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "日時2026年11月1日（日）・3日（火・祝）・7日（土）・8日（日）・14日（土）・15日（日）・21日（土）～23日（月・祝）・28日（土）・29日（日）①10：00～12：00（受付11：45まで）",
+          "checked_at": "2026-11-20",
+          "sha256": "70f21739b897718b04abb63907d1384f2f16af995374bf130cb42aa3e0d7e659",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "場所11月1日（日）・3日（火・祝）・14日（土）午前・21日（土）～23日（月・祝）・28日（土）ものづくりガレージ11月7日（土）・8日（日）3階 多目的室111月14日（土）・29日（日）すべて午後わーくしょっぷスタジオ11月15日（日）・29日（日）午前地下2階 レクリエーションホール2",
+          "checked_at": "2026-11-20",
+          "sha256": "c80a8a9c272f8e1fcee7f158ed5928681fcd98aa21a8390c926f90eda79a492b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "対象どなたでも（未就学児は保護者同伴）",
+          "checked_at": "2026-11-20",
+          "sha256": "51172dcb77863fd9240eaab88add59f7e932f831c717d86d4a1375caaff13d54",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "料金無料申込当日直接会場へ注意事項",
+          "checked_at": "2026-11-20",
+          "sha256": "d3a0c1176e25e9ba87b0ba46d128fdf78de129628da1f268b99c6daef5d7e20e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261129-adachi-galaxcity-kosaku-holiday",
+      "status": "verified",
+      "source": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件はギャラクシティ公式の個別イベントページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "紙コップや割り箸など身近な材料をつかって季節や行事にちなんだ工作を楽しもう！",
+          "checked_at": "2026-11-20",
+          "sha256": "0322b76af683bfb6860f1fb684efcb0147dc0cb8ac4660960e6dd9df41278e50",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "日時2026年11月1日（日）・3日（火・祝）・7日（土）・8日（日）・14日（土）・15日（日）・21日（土）～23日（月・祝）・28日（土）・29日（日）①10：00～12：00（受付11：45まで）",
+          "checked_at": "2026-11-20",
+          "sha256": "70f21739b897718b04abb63907d1384f2f16af995374bf130cb42aa3e0d7e659",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "場所11月1日（日）・3日（火・祝）・14日（土）午前・21日（土）～23日（月・祝）・28日（土）ものづくりガレージ11月7日（土）・8日（日）3階 多目的室111月14日（土）・29日（日）すべて午後わーくしょっぷスタジオ11月15日（日）・29日（日）午前地下2階 レクリエーションホール2",
+          "checked_at": "2026-11-20",
+          "sha256": "c80a8a9c272f8e1fcee7f158ed5928681fcd98aa21a8390c926f90eda79a492b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "対象どなたでも（未就学児は保護者同伴）",
+          "checked_at": "2026-11-20",
+          "sha256": "51172dcb77863fd9240eaab88add59f7e932f831c717d86d4a1375caaff13d54",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.galaxcity.jp/future-creation-hall/event/20261129-009303.html",
+          "quote": "料金無料申込当日直接会場へ注意事項",
+          "checked_at": "2026-11-20",
+          "sha256": "d3a0c1176e25e9ba87b0ba46d128fdf78de129628da1f268b99c6daef5d7e20e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "ギャラクシティイベントページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 138,
-    "verified": 138,
+    "total": 144,
+    "verified": 144,
     "announced": 0
   }
 }

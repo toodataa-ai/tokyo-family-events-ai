@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 198,
-    "verified": 198,
+    "published": 212,
+    "verified": 212,
     "announced": 0,
-    "candidates": 44
+    "candidates": 58
   },
   "carryover_organizer_rechecks": [
     {
@@ -5446,6 +5446,34 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
+    "global_source_audit_complete": false
+  },
+  "lead15_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-adachi-galaxcity-hoshi-nov21",
+      "verified-20261121-adachi-galaxcity-starday-mini",
+      "verified-20261122-adachi-galaxcity-starday-mini",
+      "verified-20261121-adachi-galaxcity-starday-seiza",
+      "verified-20261122-adachi-galaxcity-starday-seiza",
+      "verified-20261121-adachi-galaxcity-starday-oekaki",
+      "verified-20261122-adachi-galaxcity-starday-oekaki",
+      "verified-20261122-adachi-galaxcity-shougai-nov22",
+      "verified-20261122-adachi-galaxcity-yume-robot-nov22",
+      "verified-20261123-adachi-galaxcity-toshokan-nov23",
+      "verified-20261123-adachi-galaxcity-oto-nov23",
+      "verified-20261121-adachi-galaxcity-kosaku-holiday",
+      "verified-20261122-adachi-galaxcity-kosaku-holiday",
+      "verified-20261123-adachi-galaxcity-kosaku-holiday"
+    ],
+    "held_not_published": [
+      "galax-12-26-announcement",
+      "galax-adult-lecture",
+      "galax-always-on",
+      "galax-registration-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "fc681fb08f448716bcf07948837f1b057b497ead",
     "global_source_audit_complete": false
   }
 }

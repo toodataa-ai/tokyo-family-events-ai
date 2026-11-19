@@ -6080,11 +6080,319 @@
           "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-setagaya-todoroki-papamo-rhythm",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03070/24025.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03070/24025.html",
+          "quote": "等々力児童館パパも気軽に！PaPaMo募集中募集終了事前申込必要表示しないパパも歓迎！パパじゃなくても、ママも祖父母もシッターさんも里親さんももちろん大歓迎！",
+          "checked_at": "2026-11-19",
+          "sha256": "2dfffd4a3bdec441e5148d7b289973d15f46b135457f8909da98b9d80e256689",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03070/24025.html",
+          "quote": "日程2026年11月21日（土曜日）2026年12月12日（土曜日）時間午前10時30分から11時30分",
+          "checked_at": "2026-11-19",
+          "sha256": "2a9a57054bd467d490ad58749fb78fd8182931739c24005af8409f58bb60a861",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03070/24025.html",
+          "quote": "場所・会場等々力児童館グランドもしくは遊戯室対象0歳から未就学のお子さんとその保護者申し込み方法下記の内容をご参照ください。",
+          "checked_at": "2026-11-19",
+          "sha256": "5cfe992143726352a417c28412835e9670cff2d0729e6603ddf2ffc0a5a125e2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-setagaya-ikejiri-matcha",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03061/36833.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/36833.html",
+          "quote": "池尻児童館お抹茶を楽しもう募集中募集終了事前申込必要表示しないおいしいお抹茶とおかしをめしあがれ！親子での参加も大歓迎！「芽吹きの会」のみなさんが、教えてくださいます。",
+          "checked_at": "2026-11-19",
+          "sha256": "2732632341517d51229b710d91f23db950f14bf8cced25ed314ccdfe5f4f7dc9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/36833.html",
+          "quote": "日程2026年11月21日（土曜日）時間午後1時30分から3時【受付】午後2時30分まで",
+          "checked_at": "2026-11-19",
+          "sha256": "096d444610d4bc26a45fb16c4844405decad57dc562a1c3f67eaf5b55c423efb",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/36833.html",
+          "quote": "場所・会場池尻児童館図書室対象おすわりができるお子さまから。先着30名",
+          "checked_at": "2026-11-19",
+          "sha256": "86f0e589fd98c36186853432fc9081eeb803185f881f39b8b891dc425217d9f5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261123-setagaya-soshigaya-michiasobi",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03080/36450.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03080/36450.html",
+          "quote": "祖師谷児童館11月「祖師谷みちとの遭遇」募集中募集終了事前申込必要表示しない",
+          "checked_at": "2026-11-19",
+          "sha256": "fbefb7e2da427c16a260d4fd7665c70f5669c5ac47d37ba12c2c7421d141ae79",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03080/36450.html",
+          "quote": "日程2026年11月23日（月曜日）当日、児童館はお休みです。時間午後1時から午後3時",
+          "checked_at": "2026-11-19",
+          "sha256": "415eb732079e870ea30a45c583d5e97516e824b9217bdd9a26be9f70f91db11a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03080/36450.html",
+          "quote": "場所・会場祖師谷商店街けやきロード主催：祖師谷みちとの遭遇プロジェクト対象乳幼児から大人までどなたでもお気軽にどうぞ！申し込み方法申込みはありません。",
+          "checked_at": "2026-11-19",
+          "sha256": "a14777e8000326463d3b56a0c2d8ee55e6068d4a98a8028db2cc22de00f468ea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-arakawa-kumanomae-kumaputtostudio",
+      "status": "verified",
+      "source": "https://www.city.arakawa.tokyo.jp/a036/kumanomae/papatoasobou.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a036/kumanomae/papatoasobou.html",
+          "quote": "熊野前ひろば館親子ふれあいママ講座・パパとあそぼう！コラボ！「くまぷっちスタジオ～ひつじモコモコ～」パパ、ママ、じいじ、ばあば、どなたでも参加できます！みんなで遊びに来てください。今回は親子ふれあいママ講座「くまぷっちスタジオ～ひつじモコモコ～」とコラボ開催です。",
+          "checked_at": "2026-11-19",
+          "sha256": "33551e9584b0546bfa9da149ac3a5e2945a8473b0f1093224d7212a683e888be",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a036/kumanomae/papatoasobou.html",
+          "quote": "開催日日付2026年11月21日（土曜日）時間午前10時30分から11時30分まで受付時間午前10時15分から10時45分まで",
+          "checked_at": "2026-11-19",
+          "sha256": "4995ef927a6af921738c626c2f4fe52b0a7e0f56d077ef5229405bf09a701e6e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a036/kumanomae/papatoasobou.html",
+          "quote": "場所熊野前ひろば館多目的室内容写真講座（保護者による写真撮影）です。新しい年が明るく元気に過ごせるよう願いを込めて記念撮影を撮りましょう。講師の先生が、かわいい背景を用意してくれます。対象者未就学児とその保護者出演者（講師）中島涼子氏（ねぞうアート、ごろりんアート）持ち物タオル、飲み物、カメラやスマートフォンなど写真が撮れるもの申し込み当日自由参加くまぷっちスタジオ～ひつじモコモコ～（PDF：534KB）",
+          "checked_at": "2026-11-19",
+          "sha256": "b99b034ba3797fd4bffb98cd0b4c5cfb4ea8377cab849e9b31f52b297f01aa30",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-katsushika-otanoshimi-trainday",
+      "status": "verified",
+      "source": "https://www.city.katsushika.lg.jp/event/1000107/1000586.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000107/1000586.html",
+          "quote": "わくわくドキドキお楽しみトレインデーページ番号1000586更新日令和8年5月12日印刷大きな文字で印刷緊急事態宣言が発令された際には、中止となる場合があります。イベントカテゴリ：催事・イベントどの新幹線が走るかは当日のお楽しみ！お楽しみトレインデー（無断転載禁止）",
+          "checked_at": "2026-11-19",
+          "sha256": "650dad4ce4a10bbe7ff60d48b222691253f3caa5d2347be5b9d9c5ad6f7badd4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000107/1000586.html",
+          "quote": "開催日令和8年5月24日（日曜日）、7月26日（日曜日）、9月27日（日曜日）、10月25日（日曜日）、11月22日（日曜日）、12月27日（日曜日）令和9年1月24日（日曜日）、3月28日（日曜日）時間午前10時から正午まで、午後1時から午後4時まで（雨天中止）（午前の最終は午前11時45分発、午後の最終は午後3時55分発です。）",
+          "checked_at": "2026-11-19",
+          "sha256": "247e1e6e35d25aaec6a46e9e60ea6836e7ac6d594d5e0678a1fed3b4d3c02435",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000107/1000586.html",
+          "quote": "会場新宿交通公園対象どなたでも内容園内をいつもと違う電車が、皆さまを乗せて走ります。どんなトレインが走るかは当日のお楽しみです。トレインの種類に関するお問い合わせはご遠慮ください。料金就学前児童（無料。大人の方の付き添いが必要です。）小学生（1回30円）、中学生以上（1回100円）事前申込不要（直接会場へお越しください）",
+          "checked_at": "2026-11-19",
+          "sha256": "63f4a8759c16a08bde90d52c6ee0f09823f22f9e9554794e253c56583e273dea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-katsushika-nishikameari-plarail",
+      "status": "verified",
+      "source": "https://www.city.katsushika.lg.jp/event/1000114/1000796/1043520.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000114/1000796/1043520.html",
+          "quote": "西亀有児童館令和8年11月の行事予定",
+          "checked_at": "2026-11-19",
+          "sha256": "7499c11dbb164d0dbc9d73e095e469ea8153e5ea14d230ea4199982e4d2d3277",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000114/1000796/1043520.html",
+          "quote": "プラレール広場ホールいっぱいに広げたレールの上に好きな電車を走らせよう！新幹線や特急、ローカル線や貨物車も走ります。ぐるぐると登って降りるタワーも登場します。",
+          "checked_at": "2026-11-19",
+          "sha256": "0e9023cbdafe768a8fc9212a01233a4427ca52dd093cdd1258651cfb423614da",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.katsushika.lg.jp/event/1000114/1000796/1043520.html",
+          "quote": "実施日・曜日11月20日（金曜日）・21日（土曜日）時間午後3時から午後4時30分時間内にいつでも遊ぶことができます。内容ホールいっぱいに広げたレールの上に好きな電車を走らせよう！新幹線や特急、ローカル線や貨物車も走ります。ぐるぐると登って降りるタワーも登場します。対象乳幼児と保護者事前申込不要申込方法当日受付",
+          "checked_at": "2026-11-19",
+          "sha256": "8eeb1c6eec4892f8cc56499468ddc9ecdb3039793d4e0247b60229eec02fb236",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "葛飾区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-bunkyo-motomachi-fes",
+      "status": "verified",
+      "source": "https://www.city.bunkyo.lg.jp/kuseijouhou/kouhou/houdou/r08/11/p008303.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.bunkyo.lg.jp/kuseijouhou/kouhou/houdou/r08/11/p008303.html",
+          "quote": "「もとまちフェス2026」を開催します【事前PR】いつ令和8年11月22日（日曜日）午前10時～午後3時どこで元町ウェルネスパーク（文京区本郷一丁目1番19号）及び文京区立元町公園（文京区本郷一丁目1番1号）",
+          "checked_at": "2026-11-19",
+          "sha256": "944508b49e78a3f5acf9e3a59e9011d483886fb95fe57d121de5afc91566e7ef",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "文京区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.bunkyo.lg.jp/kuseijouhou/kouhou/houdou/r08/11/p008303.html",
+          "quote": "内容元町ウェルネスパーク及び元町公園を活用した施設一体イベントとして、「もとまちフェス2026」を開催いたします。本イベントは、区、順天堂、施設に入居する事業者や近隣町会が力を合わせて、地域の賑わいを創出するため、リニューアルオープンした昨年から、毎年開催しております。今年度は、各入居施設が実施するアクティビティープログラムや見学型のブース、体験型のブースに加え、「もとまちマルシェ＆もとまちキッチン」と評した飲食、物販ブースを元町公園に8店舗展開いたします。",
+          "checked_at": "2026-11-19",
+          "sha256": "e66d06a9ce312610f93fe5f90e2a33e55de5ab7a45065d1a4eaa073dd7019746",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "文京区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.bunkyo.lg.jp/kuseijouhou/kouhou/houdou/r08/11/p008303.html",
+          "quote": "※1当日申込みが必要（先着順）※スタンプラリーを実施［お菓子をプレゼント（なくなり次第終了）］PhotoGallery（昨年度の様子）",
+          "checked_at": "2026-11-19",
+          "sha256": "ddf02560238e13edf852df98353c681daec319342db2645f2b7d83eb94da661e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "文京区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 182,
-    "verified": 182,
+    "total": 189,
+    "verified": 189,
     "announced": 0
   }
 }

@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 28,
-    "published": 80,
+    "candidates": 29,
+    "published": 81,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 77,
+    "verified": 78,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2256,6 +2256,25 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "47b0042468cf5b3ca91621b821464fc464fbb889",
+    "global_source_audit_complete": false
+  },
+  "lead10_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-setagaya-todoroki-papamo-nabe"
+    ],
+    "held_not_published": [
+      "arakawa-kumanomae-xmas-20261209",
+      "bunkyo-craft-festival-20261121",
+      "katsushika-jidokan-monthly-routine",
+      "katsushika-shibamata-donta-20261121",
+      "katsushika-train-day-20261227",
+      "koto-sailing-20261213",
+      "ota-shinagawa-koto-minato-others",
+      "shinagawa-pro-sports-20261219"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "9a2fe5046ebeeb11aef3731a180411eee6241c07",
     "global_source_audit_complete": false
   }
 }

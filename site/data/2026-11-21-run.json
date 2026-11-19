@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 159,
-    "verified": 159,
+    "published": 165,
+    "verified": 165,
     "announced": 0,
-    "candidates": 5
+    "candidates": 11
   },
   "carryover_organizer_rechecks": [
     {
@@ -5208,6 +5208,27 @@
     "instagram_reference": "https://www.instagram.com/sankakuhiroba_srd/",
     "hours_published": false,
     "base_data_production_sha": "d32b8dbe18b04e41791cf88801bec57d5ace0aaa",
+    "global_source_audit_complete": false
+  },
+  "lead3_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-meguro-kodomo-ongakusai",
+      "verified-20261123-edogawa-kasai-super-fes",
+      "verified-20261121-suginami-suginoko-nouen-matsuri",
+      "verified-20261122-suginami-koukaido-tree-tento",
+      "verified-20261121-nerima-minamioizumi-nofesta",
+      "verified-20261121-nerima-nomori-ochiba-asobi"
+    ],
+    "held_not_published": [
+      "asuka-oyako-challenge-kita-20261129",
+      "meguro-ajimi-club-20261121",
+      "nerima-nomori-moruk-20261129",
+      "suginami-cesion-xmas-family-concert-20261213",
+      "toshima-kumin-hiroba-fes-20261121"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "b4154af0d152a613f408fae94f40b4de9b2ed34c",
     "global_source_audit_complete": false
   }
 }

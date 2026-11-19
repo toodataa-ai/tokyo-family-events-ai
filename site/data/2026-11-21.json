@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 175,
+    "candidate_count": 181,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 159,
+    "published_count": 165,
     "wards": [
       {
         "ward": "千代田区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 7,
-        "published_count": 7,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。"
+        "candidate_count": 8,
+        "published_count": 8,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "大田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 29,
-        "published_count": 29,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 31,
+        "published_count": 31,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "豊島区",
@@ -191,9 +191,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 14,
-        "published_count": 14,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-10-27公式森フェスタ日程表から11/21の1行を補完。旧探索実測は維持。"
+        "candidate_count": 16,
+        "published_count": 16,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-10-27公式森フェスタ日程表から11/21の1行を補完。旧探索実測は維持。 2026-11-19 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "足立区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 10,
-        "published_count": 10,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
+        "candidate_count": 11,
+        "published_count": 11,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       }
     ]
   },
@@ -248,7 +248,8 @@
     "2026-11-21-events-official-subset-20261116.json",
     "2026-11-21-events-leads-20261118.json",
     "2026-11-21-events-audit-20261119.json",
-    "2026-11-21-events-sankaku-20261119.json"
+    "2026-11-21-events-sankaku-20261119.json",
+    "2026-11-21-events-lead3-20261119.json"
   ],
   "events": []
 }

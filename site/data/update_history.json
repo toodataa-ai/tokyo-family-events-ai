@@ -2120,6 +2120,41 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "三角広場のクリスマス（11/20〜12/13）を4週末レコードで追加。開催時間・休演日は公式Instagram参照とし、推測値は載せない（ユーザー承認の特例）。"
+    },
+    {
+      "run_id": "lead3-addition-20261119",
+      "run_type": "manual_verified_lead3_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T12:00:00+09:00",
+      "base_data_production_sha": "b4154af0d152a613f408fae94f40b4de9b2ed34c",
+      "target_weekends": [
+        "2026-11-21"
+      ],
+      "prior_active_week_records": 448,
+      "candidate_active_week_records": 454,
+      "added_weekly_records": 6,
+      "new_event_ids": [
+        "verified-20261121-meguro-kodomo-ongakusai",
+        "verified-20261123-edogawa-kasai-super-fes",
+        "verified-20261121-suginami-suginoko-nouen-matsuri",
+        "verified-20261122-suginami-koukaido-tree-tento",
+        "verified-20261121-nerima-minamioizumi-nofesta",
+        "verified-20261121-nerima-nomori-ochiba-asobi"
+      ],
+      "held_not_published": [
+        "asuka-oyako-challenge-kita-20261129",
+        "meguro-ajimi-club-20261121",
+        "nerima-nomori-moruk-20261129",
+        "suginami-cesion-xmas-family-concert-20261213",
+        "toshima-kumin-hiroba-fes-20261121"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "未読の日付つき候補79件のうち、公式個別ページで条件を確認できた6件のみ追加。条件が合わないものは掲載せず理由を保存。"
     }
   ]
 }

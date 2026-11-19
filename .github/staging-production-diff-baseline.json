@@ -3585,6 +3585,46 @@
       "reason": "2026-11-19の残り候補とカレンダー個別ページの精読による追加（7イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead6_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead6_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/adachi_seibutsuen_hotaru.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/arakawa_hoshizora_rocket.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/edogawa_fuyusakura.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

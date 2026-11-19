@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 111,
-    "verified": 107,
+    "published": 112,
+    "verified": 108,
     "announced": 4,
-    "candidates": 53,
+    "candidates": 54,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3824,6 +3824,19 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
+    "global_source_audit_complete": false
+  },
+  "lead14_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-koto-tatsumi-family-day-crystal"
+    ],
+    "held_not_published": [
+      "koto-teens-and-weekday",
+      "shinagawa-koho-pages"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
     "global_source_audit_complete": false
   }
 }

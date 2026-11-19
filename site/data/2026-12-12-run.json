@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 31,
-    "published": 83,
+    "candidates": 32,
+    "published": 84,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 80,
+    "verified": 81,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2305,6 +2305,19 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
+    "global_source_audit_complete": false
+  },
+  "lead14_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-koto-papa-happy-xmas-tree-art"
+    ],
+    "held_not_published": [
+      "koto-teens-and-weekday",
+      "shinagawa-koho-pages"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
     "global_source_audit_complete": false
   }
 }

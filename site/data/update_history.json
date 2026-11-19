@@ -2603,6 +2603,43 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "大田区の児童館の月間おしらせPDF（原本と本文抽出を保存）で日付と内容を確認できた5件の週別レコードのみ追加。"
+    },
+    {
+      "run_id": "lead14-addition-20261119",
+      "run_type": "manual_verified_lead14_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-20T02:00:00+09:00",
+      "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 552,
+      "candidate_active_week_records": 559,
+      "added_weekly_records": 7,
+      "new_event_ids": [
+        "verified-20261123-koto-midori-kosodate-kameido",
+        "verified-20261129-koto-higashisuna-nyanmatsuri",
+        "verified-20261205-koto-tatsumi-family-day-crystal",
+        "verified-20261219-koto-minamisuna-xmas-concert",
+        "verified-20261219-koto-onagigawa-winter-festival",
+        "verified-20261219-koto-oshima-xmas-party",
+        "verified-20261213-koto-papa-happy-xmas-tree-art"
+      ],
+      "held_not_published": [
+        "koto-teens-and-weekday",
+        "shinagawa-koho-pages"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "江東区報（令和8年11月1日号・11日号）の公式テキスト版で日付と内容を確認できた7件の週別レコードのみ追加。"
     }
   ]
 }

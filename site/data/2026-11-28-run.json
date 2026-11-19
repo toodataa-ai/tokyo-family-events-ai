@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 137,
-    "verified": 137,
+    "published": 138,
+    "verified": 138,
     "announced": 0,
-    "candidates": 73,
+    "candidates": 74,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4197,6 +4197,19 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "a871cce168c683fb37eb07d898b8c5f481f019ad",
+    "global_source_audit_complete": false
+  },
+  "lead14_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-koto-higashisuna-nyanmatsuri"
+    ],
+    "held_not_published": [
+      "koto-teens-and-weekday",
+      "shinagawa-koho-pages"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
     "global_source_audit_complete": false
   }
 }

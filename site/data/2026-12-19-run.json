@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 20,
-    "published": 20,
+    "candidates": 23,
+    "published": 23,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 19,
+    "verified": 22,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -1966,6 +1966,21 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
+    "global_source_audit_complete": false
+  },
+  "lead14_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-koto-minamisuna-xmas-concert",
+      "verified-20261219-koto-onagigawa-winter-festival",
+      "verified-20261219-koto-oshima-xmas-party"
+    ],
+    "held_not_published": [
+      "koto-teens-and-weekday",
+      "shinagawa-koho-pages"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
     "global_source_audit_complete": false
   }
 }

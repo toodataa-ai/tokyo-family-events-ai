@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 197,
-    "verified": 197,
+    "published": 198,
+    "verified": 198,
     "announced": 0,
-    "candidates": 43
+    "candidates": 44
   },
   "carryover_organizer_rechecks": [
     {
@@ -5433,6 +5433,19 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "a871cce168c683fb37eb07d898b8c5f481f019ad",
+    "global_source_audit_complete": false
+  },
+  "lead14_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261123-koto-midori-kosodate-kameido"
+    ],
+    "held_not_published": [
+      "koto-teens-and-weekday",
+      "shinagawa-koho-pages"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "003709fe1fdce9af71fb83da6fe3ff2c225b4ba3",
     "global_source_audit_complete": false
   }
 }

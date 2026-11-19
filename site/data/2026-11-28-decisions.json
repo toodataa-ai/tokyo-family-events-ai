@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 150,
-    "published": 134,
+    "candidate_total": 151,
+    "published": 135,
     "excluded": 16,
     "duplicate": 0
   },
@@ -16326,6 +16326,129 @@
       "evidence": [
         {
           "url": "https://www.city.chuo.lg.jp/a0013/bunkakankou/kankoujouhou/event/harumimaturi.html",
+          "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": ""
+    },
+    {
+      "candidate_id": "verified-20261129-edogawa-recycle-world-tobu",
+      "name": "第36回リサイクルワールド・IN・東部",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "フリーマーケット、フードドライブ、模擬店、小松菜販売などがある環境イベント。無料。申込の案内はなく、当日参加できる。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "地域の家族連れが楽しめるイベント"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "フリマや模擬店を見て回る"
+          },
+          "age_fit": {
+            "grade": "unknown",
+            "reason": "対象年齢の目安は明記がない"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "10:00〜14:00"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "申込不要で出入り自由"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "買い物や模擬店を家族で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-19",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "申込不要",
+            "無料"
+          ],
+          "limitations": [
+            "雨天中止の場合がある"
+          ],
+          "grade_comparison": "総合B：11/29(日)の東部区民館駐車場・周辺道路で10:00〜14:00の開催。無料。申込不要で気軽に参加できる。",
+          "unsupported_axes": [
+            "age_fit"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/261129recycle.html",
+              "quote": "第36回リサイクルワールド・IN・東部リサイクルワールド・IN・東部が今年も開催します。フリーマーケットや模擬店、フードドライブなどを実施します。リサイクルや環境問題に関心を持つきっかけとして、ぜひ「リサイクルワールド・IN・東部」へ遊びに来ませんか。",
+              "checked_at": "2026-11-19",
+              "sha256": "2a71e7c76a9346d77ad3ffd35e1c23412d81dd63ca60974b2d3db740bf586d89",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/261129recycle.html",
+              "quote": "開催日時2026年11月29日（日曜日）10時00分から14時00分（注）気象条件（雨天など）による中止の判断は、当日午前8時を予定。",
+              "checked_at": "2026-11-19",
+              "sha256": "f9a1d0714d355bd3a132151776c53ae856a019994ff53ec08355a6e9b1d57b50",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/261129recycle.html",
+              "quote": "場所東部区民館駐車場・周辺道路",
+              "checked_at": "2026-11-19",
+              "sha256": "b639bf28b0bce633b9d3ba2994abf702e2ffd00e81025b23d7a8b80ac262d9d1",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "フリーマーケット、フードドライブ、模擬店、小松菜販売などがある環境イベント。無料。申込の案内はなく、当日参加できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261129recycle.html",
           "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],

@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 11,
-    "published": 11,
+    "candidates": 20,
+    "published": 20,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 10,
+    "verified": 19,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -1943,6 +1943,29 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "db9501b3a8dcd9c11c06c8b4f058061b8a248263",
+    "global_source_audit_complete": false
+  },
+  "lead12_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-setagaya-seijo-sakura-candle",
+      "verified-20261219-setagaya-kasuya-baton",
+      "verified-20261220-setagaya-todoroki-jinchi-survival",
+      "verified-20261219-setagaya-daita-candle",
+      "verified-20261219-edogawa-kamiisshiki-magic",
+      "verified-20261219-meguro-higashiyama-english",
+      "verified-20261219-meguro-tairamachi-baby-xmas",
+      "verified-20261219-meguro-higashine-xmas",
+      "verified-20261220-arakawa-ogu-library-xmas"
+    ],
+    "held_not_published": [
+      "edogawa-adult-or-closed",
+      "edogawa-pony-lottery",
+      "ota-jidokan-monthly-pdf",
+      "shinagawa-koto-event-lists"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
     "global_source_audit_complete": false
   }
 }

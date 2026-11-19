@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 189,
-    "verified": 189,
+    "published": 194,
+    "verified": 194,
     "announced": 0,
-    "candidates": 35
+    "candidates": 40
   },
   "carryover_organizer_rechecks": [
     {
@@ -5399,6 +5399,25 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "9a2fe5046ebeeb11aef3731a180411eee6241c07",
+    "global_source_audit_complete": false
+  },
+  "lead12_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-setagaya-kinupiku-picnic",
+      "verified-20261122-edogawa-shinkawa-hyakkiyako",
+      "verified-20261121-edogawa-kasai-night-watching",
+      "verified-20261123-edogawa-walking-festa",
+      "verified-20261121-meguro-higashiyama-yoga"
+    ],
+    "held_not_published": [
+      "edogawa-adult-or-closed",
+      "edogawa-pony-lottery",
+      "ota-jidokan-monthly-pdf",
+      "shinagawa-koto-event-lists"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
     "global_source_audit_complete": false
   }
 }

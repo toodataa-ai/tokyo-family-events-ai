@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 30,
-    "published": 82,
+    "candidates": 31,
+    "published": 83,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 79,
+    "verified": 80,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2290,6 +2290,21 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "1dedddfea851b7a2ebe8d09f4b5cb664039eb030",
+    "global_source_audit_complete": false
+  },
+  "lead12_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-edogawa-bunkageijutsusai-ongakusai"
+    ],
+    "held_not_published": [
+      "edogawa-adult-or-closed",
+      "edogawa-pony-lottery",
+      "ota-jidokan-monthly-pdf",
+      "shinagawa-koto-event-lists"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
     "global_source_audit_complete": false
   }
 }

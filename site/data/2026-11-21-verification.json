@@ -6388,11 +6388,247 @@
           "description": "文京区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-setagaya-kinupiku-picnic",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03081/35481.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03081/35481.html",
+          "quote": "合同おでかけひろば『きぬピク』募集中募集終了事前申込必要表示しないきぬた地域でピクニック！乳幼児の親子あつまれ！楽しくみんなで交流をしましょう。「なにぬのやさん」が布で作った布芝居をするよ！！会場：大蔵総合運動場・自由広場雨天時：山野児童館ぜひ、遊びに来てください。お待ちしております。",
+          "checked_at": "2026-11-19",
+          "sha256": "2100b117e507f4393481ae9e6097159b1f9e59b07df5971ff0ede5bc8ceab1d5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03081/35481.html",
+          "quote": "日程2026年11月21日（土曜日）10時30分から2026年11月21日（土曜日）12時00分＜持ち物＞水筒・帽子・ビニール袋・雨具など時間午前10時30分～正午",
+          "checked_at": "2026-11-19",
+          "sha256": "84b03ba2113dad3f83956fa275e1ec0cdf0ba64d22de8636511bdb5b1e02d214",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03081/35481.html",
+          "quote": "場所・会場大蔵運動場・自由広場（世田谷区大蔵4ー6）〇雨天時は山野児童館で開催（世田谷区砧4ー1ー7）対象0～3歳ぐらいの乳幼児と保護者＜主催＞世田谷区子ども・若者部児童課砧地域児童館＜協力＞NPO法人砧・多摩川あそび村/砧地域子育て支援コーディネーター",
+          "checked_at": "2026-11-19",
+          "sha256": "11cdcb9fb7f95d23fdf68e30c0c642a4e5a1d395a227478f2662d47e760dfb35",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-edogawa-shinkawa-hyakkiyako",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/20261122_shinkawasakura.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261122_shinkawasakura.html",
+          "quote": "新川さくら館新川百鬼夜行妖怪たちが新川を練り歩く「百鬼夜行行列」をはじめ、妖怪とともに新川を巡る「妖怪和船」、怪談や妖怪をテーマにしたトークなど、さまざまな企画をお楽しみいただけます。",
+          "checked_at": "2026-11-19",
+          "sha256": "b34053c41c63be8d2a98c5fcdeb52ed10f1b54026e48c9517103a9e4b3672922",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261122_shinkawasakura.html",
+          "quote": "開催日時2026年11月22日（日曜日）10時00分から16時30分",
+          "checked_at": "2026-11-19",
+          "sha256": "2f6a376222eaa7350fe8e228545170252dad390eb4af93807437c86daf94350d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261122_shinkawasakura.html",
+          "quote": "【妖怪和船】妖怪とともに新川を巡る、特別な船旅11時00分から14時00分（受付9時30分開始予定）",
+          "checked_at": "2026-11-19",
+          "sha256": "d6f59d87c15853c56aa086f9bd6801212393b6ea3c613f8fc1700e4cfc227ce2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261122_shinkawasakura.html",
+          "quote": "申し込み必要申し込み方法【妖怪和船】当日・現金払い【怪談と不思議な話の会】下記「申し込む」ボタンより受付",
+          "checked_at": "2026-11-19",
+          "sha256": "f36672d8f13e00ff9300ba24d0b280e3f9805afdc828b8f520c42c6e6f04bd6c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-edogawa-kasai-night-watching",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/20261115event1.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261115event1.html",
+          "quote": "ナイトウォッチング秋の生きもの観察会夕方から夜にかけて、葛西臨海公園鳥類園周辺を巡りながら、生きものの観察会を行います。秋の夜に鳴くコオロギやキリギリスの仲間、夜に網を張り直すオニグモ、夜に寝ている昆虫など、昼間とは違った行動をする生きものたちを観察します。",
+          "checked_at": "2026-11-19",
+          "sha256": "3d97013b27b1465fc089ab92c35ed4a91924d13f7ff1d9c48b20d97cc0cd59ca",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261115event1.html",
+          "quote": "開催日時2026年11月21日（土曜日）16時30分から18時30分（注）小雨実施",
+          "checked_at": "2026-11-19",
+          "sha256": "c72b789b0a59f409664435abeb87c293b1599bff653e46cf29272fcc701259d7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/20261115event1.html",
+          "quote": "場所葛西臨海公園鳥類園ウォッチングセンター",
+          "checked_at": "2026-11-19",
+          "sha256": "7e7f1f5adb74a123c4cbaa349d1b947a15df10b167c3e3333ce0ef4352a7d611",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261123-edogawa-walking-festa",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+          "quote": "ウオーキングフェスタえどがわ2026毎月23日の区内一斉ウオーキングデーの集大成！水面きらめく、笑顔はずむ、秋のウオーキング。今年は江戸川河川敷を歩きます。",
+          "checked_at": "2026-11-19",
+          "sha256": "6d197d32e84ad9145ac69608c684b01bd53656b8c0bfce4140c3a7e157f7b522",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+          "quote": "開催日時2026年11月23日（月曜日）式典：午前9時ウオーキングスタート：午前9時25分（注）小雨実施・荒天中止",
+          "checked_at": "2026-11-19",
+          "sha256": "a382ff5e261e7e037937e10123c03773c4990e6aa9af761ca3e378afb5ecde25",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261123walking.html",
+          "quote": "場所水辺のスポーツガーデン（スタート＆ゴール）",
+          "checked_at": "2026-11-19",
+          "sha256": "e1dfd74a969baf930d6744ba1408b5c0058bb423caf2de888abcbff9b39254b7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-meguro-higashiyama-yoga",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/houkago/event/higashiyama_nyu_tudoi261121.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/higashiyama_nyu_tudoi261121.html",
+          "quote": "東山児童館乳幼児のつどい「親子ヨガをしよう」（11月21日開催）東山児童館イメージキャラクターの東山カンタ",
+          "checked_at": "2026-11-19",
+          "sha256": "a442b4d664c8326164975ddcfd6b8424bba5924403e0bf87d55bc07c21ee6fd6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "目黒区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/higashiyama_nyu_tudoi261121.html",
+          "quote": "日にち令和8年11月21日（土曜日）",
+          "checked_at": "2026-11-19",
+          "sha256": "75b0aaf6fcbe7e7817dafbd27fb380e8c1b12df7e7a53a0c0e5f5028a4f989a5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "目黒区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/higashiyama_nyu_tudoi261121.html",
+          "quote": "対象・時間・定員対象時間定員0歳児、1歳児午前10時から午前10時45分まで30組2歳児から5歳児まで午前11時から午前11時45分まで30組",
+          "checked_at": "2026-11-19",
+          "sha256": "d89f9a6aff2ca370cb4dd0f9268792ff2cf962d62a740e1e96cba37986f4c956",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "目黒区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/higashiyama_nyu_tudoi261121.html",
+          "quote": "会場東山児童館1階プレイルーム",
+          "checked_at": "2026-11-19",
+          "sha256": "643e45ffae578abee6e5a1f49cc679fafcc3fe6ab401202df0c4e27b41ee8dd9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "目黒区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 189,
-    "verified": 189,
+    "total": 194,
+    "verified": 194,
     "announced": 0
   }
 }

@@ -2605,11 +2605,55 @@
           "description": "港区公式イベントカレンダーの日別ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。開催日の確認用。"
         }
       ]
+    },
+    {
+      "id": "verified-20261213-edogawa-bunkageijutsusai-ongakusai",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/261213grandart_ongakusai.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261213grandart_ongakusai.html",
+          "quote": "第2回江戸川区文化芸術祭音楽祭区内最大の音楽イベントです。オーケストラ、合唱、ハーモニカ、琴、三味線、マンドリンなど多彩なアンサンブルをお楽しみください。響け！江戸川のハーモニー♪",
+          "checked_at": "2026-11-19",
+          "sha256": "a6c6c88da0e9502fe982ccf31d322b0a62e1ecdc5d5310ecd7c59b47885d182d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261213grandart_ongakusai.html",
+          "quote": "開催日時2026年12月13日（日曜日）開場：12時30分開演：13時00分",
+          "checked_at": "2026-11-19",
+          "sha256": "5718cdc5c754bf48a8964f59d19f32866251086bfc0a5a9ebdf0c97a4d058dbd",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/261213grandart_ongakusai.html",
+          "quote": "場所タワーホール船堀大ホール（5階）",
+          "checked_at": "2026-11-19",
+          "sha256": "2a3d043186769d46e60fef09be449fcc46c62667bb8984027fe580be84ef02b1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 82,
-    "verified": 79,
+    "total": 83,
+    "verified": 80,
     "announced": 3,
     "corrected": 0
   }

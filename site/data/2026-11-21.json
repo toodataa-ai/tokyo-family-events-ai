@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 205,
+    "candidate_count": 210,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 189,
+    "published_count": 194,
     "wards": [
       {
         "ward": "千代田区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 8,
-        "published_count": 8,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 9,
+        "published_count": 9,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08学校法人・幼稚園公式11/21園庭催しを独立確認し追加（旧探索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "大田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 12,
-        "published_count": 12,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み9件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。"
+        "candidate_count": 13,
+        "published_count": 13,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み9件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 13,
-        "published_count": 13,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 16,
+        "published_count": 16,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。"
       }
     ]
   },
@@ -256,7 +256,8 @@
     "2026-11-21-events-lead7-20261119.json",
     "2026-11-21-events-lead8-20261119.json",
     "2026-11-21-events-lead9-20261119.json",
-    "2026-11-21-events-lead10-20261119.json"
+    "2026-11-21-events-lead10-20261119.json",
+    "2026-11-21-events-lead12-20261119.json"
   ],
   "events": []
 }

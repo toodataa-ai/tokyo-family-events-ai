@@ -10,10 +10,10 @@
   "run_file": "2026-12-19-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 11,
+    "candidate_count": 20,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 11,
+    "published_count": 20,
     "wards": [
       {
         "ward": "千代田区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。"
       },
       {
         "ward": "大田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-19 公式個別ページ確認済み4件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
@@ -173,9 +173,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "板橋区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       }
     ]
   },
@@ -228,7 +228,8 @@
     "2026-12-19-events-non-ng-verified-only-20261117.json",
     "2026-12-19-events-suginami-official-20261118.json",
     "2026-12-19-events-lead5-20261119.json",
-    "2026-12-19-events-lead6-20261119.json"
+    "2026-12-19-events-lead6-20261119.json",
+    "2026-12-19-events-lead12-20261119.json"
   ],
   "events": []
 }

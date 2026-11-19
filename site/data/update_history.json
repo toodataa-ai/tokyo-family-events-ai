@@ -2522,6 +2522,55 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "中央区の晴海まつりと、港区の公式カレンダーで日付を確認できた3件の週別レコードのみ追加。区内在住限定・平日・予約制などは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead12-addition-20261119",
+      "run_type": "manual_verified_lead12_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-20T01:00:00+09:00",
+      "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 530,
+      "candidate_active_week_records": 547,
+      "added_weekly_records": 17,
+      "new_event_ids": [
+        "verified-20261219-setagaya-seijo-sakura-candle",
+        "verified-20261219-setagaya-kasuya-baton",
+        "verified-20261220-setagaya-todoroki-jinchi-survival",
+        "verified-20261121-setagaya-kinupiku-picnic",
+        "verified-20261219-setagaya-daita-candle",
+        "verified-20261122-edogawa-shinkawa-hyakkiyako",
+        "verified-20261121-edogawa-kasai-night-watching",
+        "verified-20261123-edogawa-walking-festa",
+        "verified-20261129-edogawa-recycle-world-tobu",
+        "verified-20261205-edogawa-volunteer-festival",
+        "verified-20261213-edogawa-bunkageijutsusai-ongakusai",
+        "verified-20261219-edogawa-kamiisshiki-magic",
+        "verified-20261121-meguro-higashiyama-yoga",
+        "verified-20261219-meguro-higashiyama-english",
+        "verified-20261219-meguro-tairamachi-baby-xmas",
+        "verified-20261219-meguro-higashine-xmas",
+        "verified-20261220-arakawa-ogu-library-xmas"
+      ],
+      "held_not_published": [
+        "edogawa-adult-or-closed",
+        "edogawa-pony-lottery",
+        "ota-jidokan-monthly-pdf",
+        "shinagawa-koto-event-lists"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "江戸川・目黒・世田谷・荒川の公式ページで日付と内容を確認できた17件の週別レコードのみ追加。申込終了・抽選枠が極小・大人向けなどは掲載せず理由を保存。"
     }
   ]
 }

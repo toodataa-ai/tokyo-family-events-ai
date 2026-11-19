@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 127,
+    "candidate_count": 128,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 111,
+    "published_count": 112,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,9 +47,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 2,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。"
       },
       {
         "ward": "文京区",
@@ -240,7 +240,8 @@
     "2026-11-28-events-all-non-tamemap-20261114.json",
     "2026-11-28-events-evidence-recovery-20261115.json",
     "2026-11-28-events-neighbors-official-20261117.json",
-    "2026-11-28-events-audit-20261119.json"
+    "2026-11-28-events-audit-20261119.json",
+    "2026-11-28-events-sankaku-20261119.json"
   ],
   "events": []
 }

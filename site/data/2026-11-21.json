@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 174,
+    "candidate_count": 175,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 158,
+    "published_count": 159,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,9 +47,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。"
       },
       {
         "ward": "文京区",
@@ -247,7 +247,8 @@
     "2026-11-21-events-nine-followup-20261115.json",
     "2026-11-21-events-official-subset-20261116.json",
     "2026-11-21-events-leads-20261118.json",
-    "2026-11-21-events-audit-20261119.json"
+    "2026-11-21-events-audit-20261119.json",
+    "2026-11-21-events-sankaku-20261119.json"
   ],
   "events": []
 }

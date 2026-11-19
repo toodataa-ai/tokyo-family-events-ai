@@ -2090,6 +2090,36 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "未確認リンクの仕分けで公式個別ページを確認できた3件のみ追加。条件が合わない4件は掲載せず理由を保存。"
+    },
+    {
+      "run_id": "sankaku-addition-20261119",
+      "run_type": "manual_verified_sankaku_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T11:00:00+09:00",
+      "base_data_production_sha": "d32b8dbe18b04e41791cf88801bec57d5ace0aaa",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 444,
+      "candidate_active_week_records": 448,
+      "added_weekly_records": 4,
+      "new_event_ids": [
+        "verified-20261121-sankaku-christmas",
+        "verified-20261128-sankaku-christmas",
+        "verified-20261205-sankaku-christmas",
+        "verified-20261212-sankaku-christmas"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "三角広場のクリスマス（11/20〜12/13）を4週末レコードで追加。開催時間・休演日は公式Instagram参照とし、推測値は載せない（ユーザー承認の特例）。"
     }
   ]
 }

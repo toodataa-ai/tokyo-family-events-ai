@@ -4521,6 +4521,38 @@
       "reason": "2026-11-19の江東区報・広報しながわ（公式広報）の読み取り専用取得。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead14_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead14追加の生成・検証ツールと公式資料原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead14_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead14追加の生成・検証ツールと公式資料原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/koto_kuho_1101_3.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead14追加の生成・検証ツールと公式資料原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/koto_kuho_1111_2.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead14追加の生成・検証ツールと公式資料原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 144,
-    "verified": 144,
+    "published": 147,
+    "verified": 147,
     "announced": 0,
-    "candidates": 80,
+    "candidates": 83,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4230,6 +4230,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "fc681fb08f448716bcf07948837f1b057b497ead",
+    "global_source_audit_complete": false
+  },
+  "lead16_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-adachi-cruyff-parasports",
+      "verified-20261128-adachi-kuwabukuro-donguri",
+      "verified-20261129-adachi-kuwabukuro-donguri"
+    ],
+    "held_not_published": [
+      "adachi-wreath-residents-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "42a4df85628e29e526f063cc8fe4fbff0b4d163a",
     "global_source_audit_complete": false
   }
 }

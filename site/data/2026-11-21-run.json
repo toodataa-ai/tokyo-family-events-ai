@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 212,
-    "verified": 212,
+    "published": 214,
+    "verified": 214,
     "announced": 0,
-    "candidates": 58
+    "candidates": 60
   },
   "carryover_organizer_rechecks": [
     {
@@ -5474,6 +5474,19 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "fc681fb08f448716bcf07948837f1b057b497ead",
+    "global_source_audit_complete": false
+  },
+  "lead16_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-adachi-kuwabukuro-donguri",
+      "verified-20261122-adachi-kuwabukuro-donguri"
+    ],
+    "held_not_published": [
+      "adachi-wreath-residents-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "42a4df85628e29e526f063cc8fe4fbff0b4d163a",
     "global_source_audit_complete": false
   }
 }

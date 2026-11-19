@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 404,
+  "expected_total_differences_after_governance": 406,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -3255,6 +3255,22 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-19の6週間ソース再監査の記録・公式ページの不変コピー・データ専用ゲート。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-leads5-20261119.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の取得失敗ソースの読み取り専用の再取得。アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/lead_urls2.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の取得失敗ソースの読み取り専用の再取得。アプリには配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

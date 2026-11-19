@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 417,
+  "expected_total_differences_after_governance": 449,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -4663,6 +4663,262 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20の取得対象URL一覧（第5回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead15_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead15_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_babymassage_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_brillante_nov29.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_caravan_dec12.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_dakko_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_gokko_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_hihai_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_hoshi_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_hoshi_nov21.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_kamishibai_dec12.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_kamishibai_nov28.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_kosaku_holiday_nov.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_oshigoto_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_oto_dec20.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_oto_nov23.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_photospot_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_present_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_robot_dec5_6.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_santa_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_shougai_nov22.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_starday_mini.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_starday_oekaki.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_starday_seiza.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_toshokan_nov23.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_undou_dec19.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_xmasfes_planet.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_yomikatari_panel_dec12.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_yomikatari_panel_nov28.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_yume_clay.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_yume_robot.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/galax_yume_robot_dec6.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20のギャラクシティ公式イベントページ由来の追加（lead15）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

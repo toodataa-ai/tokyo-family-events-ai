@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 409,
+  "expected_total_differences_after_governance": 411,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -4599,6 +4599,22 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20の件数の少ない区の取得対象URL一覧（第1回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards2-20261120.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の件数の少ない区の公式カレンダー・施設ページの読み取り専用取得（第2回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls2.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の件数の少ない区の取得対象URL一覧（第2回）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

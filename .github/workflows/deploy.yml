@@ -358,6 +358,12 @@ jobs:
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ]; then
+            python3 staging-policy-src/tools/validate_lead9_addition_20261119.py \
+              --data-dir site/data \
+              --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead8_addition_20261119.py \
               --data-dir site/data \
@@ -574,6 +580,8 @@ jobs:
               echo "Preview inherits the pinned 2026-11-19 lead6 addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits the pinned 2026-11-19 lead7 addition proof from the successful validate_data job for exact stage SHA"
+            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "Preview inherits the pinned 2026-11-19 lead9 addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits the pinned 2026-11-19 lead8 addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead4-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
@@ -663,6 +671,8 @@ jobs:
                 echo "2026-11-19 lead6 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ]; then
                 echo "2026-11-19 lead7 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ]; then
+                echo "2026-11-19 lead9 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ]; then
                 echo "2026-11-19 lead8 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead4-addition-20261119" ]; then

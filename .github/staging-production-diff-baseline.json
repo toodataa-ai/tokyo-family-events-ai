@@ -3625,6 +3625,70 @@
       "reason": "2026-11-19の残り候補ページ精読による追加（3イベント）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead7_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead7_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/meguro_gohongi_oyako.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/shinjuku_3r_festa.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_asagaya_xmas_market.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_beach_sports.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/suginami_unesco_tsudoi.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/taito_asakusabashi_kosaku.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の画像なしで保留していたイベントの追加（8件）の生成・データ専用ゲート・公式ページの不変コピー。mainのデプロイゲートが使用し本番アプリには配信しない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

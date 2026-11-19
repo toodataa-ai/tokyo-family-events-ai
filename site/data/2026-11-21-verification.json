@@ -5504,11 +5504,131 @@
           "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-edogawa-fuyusakura",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+          "quote": "きらめく光に包まれた幻想的な冬のお花見をお楽しみください。",
+          "checked_at": "2026-11-19",
+          "sha256": "249eadc884db91ceb069b123f97c1c6cbd60339548e097bb38b81fef4e533456",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+          "quote": "開催日時2026年11月21日（土曜日）から2026年12月25日（金曜日）16時30分～21時30分",
+          "checked_at": "2026-11-19",
+          "sha256": "d54716ac26411c6f5cff1cb0df3222a2a675973b10738d33dee84c5fdacb22e7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+          "quote": "申し込み不要場所新川さくら館広場住所江戸川区船堀7丁目15番12号",
+          "checked_at": "2026-11-19",
+          "sha256": "e3ee5819c2b27967abd9cac4aef20b679b81b97b6e585708aa13899385bde698",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+          "quote": "冬の夜を彩るイルミネーションを、ぜひお楽しみください。",
+          "checked_at": "2026-11-19",
+          "sha256": "2f5ab960882c3e75e5cb8883c057330f8cd1d6f4786cf2154fc606ce1f2d0c17",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26fuyusakura.html",
+          "quote": "費用無料問合せ新川さくら館",
+          "checked_at": "2026-11-19",
+          "sha256": "28474ded6b7915e426495f587a22e464d7f922b5ecd23823af8e445374c9b17f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-taito-asakusabashi-kosaku",
+      "status": "verified",
+      "source": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+          "quote": "日時令和8年11月（がつ）22日（にち）（日曜日（にちようび））午前11時（じ）から11時（じ）30分（ふん）まで",
+          "checked_at": "2026-11-19",
+          "sha256": "d7885e32116d26328bc1594a22d4a2c04466287e269a60421e7c7e4460b7b2d9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+          "quote": "場所浅草橋区民館（あさくさばしくみんかん）6階和室（かいわしつ）",
+          "checked_at": "2026-11-19",
+          "sha256": "3a7427f445b9758b871b1ffa8c4af5e99b178336baf637a6db0ab3811105c056",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+          "quote": "対象・人数幼児（ようじ）から小学生（しょうがくせい）までのお子（こ）さんとその保護者（ほごしゃ）8組（くみ）",
+          "checked_at": "2026-11-19",
+          "sha256": "ef266b8b5c0f593ffd950a24ca23166e0d1830fa1a52f952d93fe30075945256",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+          "quote": "申込不要（ふよう）※当日直接会場（とうじつちょくせつかいじょう）にお越（こ）しください",
+          "checked_at": "2026-11-19",
+          "sha256": "44871c306bedf481f7cdd6e49494aacb09dc915ad030004729eafebd2b4f89a4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/library/kodomo/event/event11/01583891201702041601.html",
+          "quote": "参加費無料（むりょう）※材料（ざいりょう）は図書館（としょかん）で用意（ようい）します",
+          "checked_at": "2026-11-19",
+          "sha256": "a900ed9916a66d81ca0f84ce8f5b3b0fbdfeef182361ce841ba8679ffe7b3299",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 170,
-    "verified": 170,
+    "total": 172,
+    "verified": 172,
     "announced": 0
   }
 }

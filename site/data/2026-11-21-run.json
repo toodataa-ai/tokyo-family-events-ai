@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 170,
-    "verified": 170,
+    "published": 172,
+    "verified": 172,
     "announced": 0,
-    "candidates": 16
+    "candidates": 18
   },
   "carryover_organizer_rechecks": [
     {
@@ -5290,6 +5290,30 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "db9501b3a8dcd9c11c06c8b4f058061b8a248263",
+    "global_source_audit_complete": false
+  },
+  "lead7_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-edogawa-fuyusakura",
+      "verified-20261122-taito-asakusabashi-kosaku"
+    ],
+    "held_not_published": [
+      "adachi-ouka-hakoniwa-20261128",
+      "arakawa-ishihama-papa-20261123",
+      "chiyoda-first-bicycle-20261129",
+      "edogawa-kodomo-mirai-kan-20261123",
+      "edogawa-konnitsuto-ichi-20261121",
+      "itabashi-hasune-programming-20261121",
+      "itabashi-shimizu-berezza-20261123",
+      "shinjuku-poreporefes-20261128",
+      "suginami-futago-ryuseigun-20261212",
+      "suginami-nazo-sanpo-20261116",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "toshima-kumanokko-day-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "e68dbb647f405c97175bb5cd5337466dddb37720",
     "global_source_audit_complete": false
   }
 }

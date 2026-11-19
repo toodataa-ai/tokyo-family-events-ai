@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 133,
+    "candidate_count": 139,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 117,
+    "published_count": 123,
     "wards": [
       {
         "ward": "千代田区",
@@ -47,9 +47,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "文京区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "大田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 34,
-        "published_count": 34,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 37,
+        "published_count": 37,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。"
       },
       {
         "ward": "豊島区",
@@ -200,9 +200,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "葛飾区",
@@ -242,7 +242,8 @@
     "2026-11-28-events-neighbors-official-20261117.json",
     "2026-11-28-events-audit-20261119.json",
     "2026-11-28-events-sankaku-20261119.json",
-    "2026-11-28-events-lead5-20261119.json"
+    "2026-11-28-events-lead5-20261119.json",
+    "2026-11-28-events-lead7-20261119.json"
   ],
   "events": []
 }

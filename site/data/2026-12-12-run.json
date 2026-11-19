@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 26,
-    "published": 78,
+    "candidates": 28,
+    "published": 80,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 75,
+    "verified": 77,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2227,6 +2227,35 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "db9501b3a8dcd9c11c06c8b4f058061b8a248263",
+    "global_source_audit_complete": false
+  },
+  "lead9_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-setagaya-kamimachi-saturday",
+      "verified-20261213-setagaya-futakotamagawa-xmas-concert"
+    ],
+    "held_not_published": [
+      "arakawa-fureaikan-5events",
+      "arakawa-kumanomae-mama-papa-20261121",
+      "arakawa-kumanomae-xmas-20261209",
+      "arakawa-recycle-wreath-20261205",
+      "arakawa-yuen-tougei-20261129",
+      "bunkyo-flying-disc-20261129",
+      "bunkyo-furoshiki-20261213",
+      "bunkyo-parent-child-futsal-20261128",
+      "chuo-hinohara-tour-20261212",
+      "chuo-music-movement-20261127",
+      "minato-calendar-events",
+      "setagaya-daitaminami-minicamp-20261121",
+      "setagaya-kasuya-nursing-20261212",
+      "setagaya-kitazawa-mukashiasobi-20261123",
+      "setagaya-nozawa-hiking-20261128",
+      "setagaya-todoroki-papamo-20261121",
+      "setagaya-ueno-boccia-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "47b0042468cf5b3ca91621b821464fc464fbb889",
     "global_source_audit_complete": false
   }
 }

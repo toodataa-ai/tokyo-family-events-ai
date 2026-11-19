@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 125,
-    "verified": 125,
+    "published": 131,
+    "verified": 131,
     "announced": 0,
-    "candidates": 61,
+    "candidates": 67,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4100,6 +4100,39 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "badd9f948fc48a31061dc2576110d897d2e728d8",
+    "global_source_audit_complete": false
+  },
+  "lead9_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-setagaya-kamimachi-daigakusei",
+      "verified-20261128-setagaya-kamimachi-music-movement",
+      "verified-20261128-setagaya-karasuyama-enoshima",
+      "verified-20261129-setagaya-celulas-multilingual",
+      "verified-20261129-setagaya-kamimachi-bosai-festa",
+      "verified-20261129-setagaya-daita-inline-1129"
+    ],
+    "held_not_published": [
+      "arakawa-fureaikan-5events",
+      "arakawa-kumanomae-mama-papa-20261121",
+      "arakawa-kumanomae-xmas-20261209",
+      "arakawa-recycle-wreath-20261205",
+      "arakawa-yuen-tougei-20261129",
+      "bunkyo-flying-disc-20261129",
+      "bunkyo-furoshiki-20261213",
+      "bunkyo-parent-child-futsal-20261128",
+      "chuo-hinohara-tour-20261212",
+      "chuo-music-movement-20261127",
+      "minato-calendar-events",
+      "setagaya-daitaminami-minicamp-20261121",
+      "setagaya-kasuya-nursing-20261212",
+      "setagaya-kitazawa-mukashiasobi-20261123",
+      "setagaya-nozawa-hiking-20261128",
+      "setagaya-todoroki-papamo-20261121",
+      "setagaya-ueno-boccia-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "47b0042468cf5b3ca91621b821464fc464fbb889",
     "global_source_audit_complete": false
   }
 }

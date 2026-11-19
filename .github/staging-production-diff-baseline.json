@@ -4097,6 +4097,78 @@
       "reason": "2026-11-19の大田・品川・中央・江東の子ども向けイベントページの読み取り専用取得。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead11_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead11_addition_20261119.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/chuo_harumi_matsuri.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_aiport_xmas.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_cal_1205.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_cal_1206.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_cal_1212.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_mizube_sanpo.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/pages/minato_shinmei_fes.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19のlead11追加の生成・検証ツールと公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

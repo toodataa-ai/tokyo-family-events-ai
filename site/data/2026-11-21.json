@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 181,
+    "candidate_count": 183,
     "duplicate_removed": 0,
     "excluded_count": 16,
-    "published_count": 165,
+    "published_count": 167,
     "wards": [
       {
         "ward": "千代田区",
@@ -146,9 +146,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 31,
-        "published_count": 31,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み2件を非破壊追加。"
+        "candidate_count": 32,
+        "published_count": 32,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み2件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "豊島区",
@@ -164,9 +164,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 6,
+        "published_count": 6,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "荒川区",
@@ -249,7 +249,8 @@
     "2026-11-21-events-leads-20261118.json",
     "2026-11-21-events-audit-20261119.json",
     "2026-11-21-events-sankaku-20261119.json",
-    "2026-11-21-events-lead3-20261119.json"
+    "2026-11-21-events-lead3-20261119.json",
+    "2026-11-21-events-lead4-20261119.json"
   ],
   "events": []
 }

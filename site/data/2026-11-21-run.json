@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 165,
-    "verified": 165,
+    "published": 167,
+    "verified": 167,
     "announced": 0,
-    "candidates": 11
+    "candidates": 13
   },
   "carryover_organizer_rechecks": [
     {
@@ -5229,6 +5229,25 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "b4154af0d152a613f408fae94f40b4de9b2ed34c",
+    "global_source_audit_complete": false
+  },
+  "lead4_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-kita-kodomo-kenri-sugoroku",
+      "verified-20261122-suginami-boyscout-akimatsuri"
+    ],
+    "held_not_published": [
+      "meguro-kyogen-tamasudare-20261213",
+      "ota-bicycle-class-20261212",
+      "suginami-asagaya-xmas-market-20261129",
+      "suginami-beach-sports-20261129",
+      "suginami-environment-center-classes-20261206",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "tokyo-women-children-festival-20261121"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "ca369883be37d90327f59b21d5bc33d50d79b554",
     "global_source_audit_complete": false
   }
 }

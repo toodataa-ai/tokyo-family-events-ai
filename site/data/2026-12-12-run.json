@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 22,
-    "published": 74,
+    "candidates": 23,
+    "published": 75,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 71,
+    "verified": 72,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2167,6 +2167,24 @@
     "instagram_reference": "https://www.instagram.com/sankakuhiroba_srd/",
     "hours_published": false,
     "base_data_production_sha": "d32b8dbe18b04e41791cf88801bec57d5ace0aaa",
+    "global_source_audit_complete": false
+  },
+  "lead4_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-suginami-motoamanuma-noel"
+    ],
+    "held_not_published": [
+      "meguro-kyogen-tamasudare-20261213",
+      "ota-bicycle-class-20261212",
+      "suginami-asagaya-xmas-market-20261129",
+      "suginami-beach-sports-20261129",
+      "suginami-environment-center-classes-20261206",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "tokyo-women-children-festival-20261121"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "ca369883be37d90327f59b21d5bc33d50d79b554",
     "global_source_audit_complete": false
   }
 }

@@ -2189,11 +2189,71 @@
           "description": "三角広場公式イベントページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261213-suginami-motoamanuma-noel",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+          "quote": "開催日2026年12月13日（日曜日）開催時間午前10時から午後2時まで",
+          "checked_at": "2026-11-19",
+          "sha256": "36327d6ce886ad199f4ec84de4867d8c9dedc980fa4e8872ec8bd3a1ddf52b41",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+          "quote": "開催場所コミュニティふらっと本天沼杉並区本天沼2丁目12番10号",
+          "checked_at": "2026-11-19",
+          "sha256": "c51294d8ce339cdabcec5afda1c4dfe7778dbb423f37449907cd65cbe14321a5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+          "quote": "クリスマス音楽イベントをはじめ、オーナメント作りなどのワークショップなど",
+          "checked_at": "2026-11-19",
+          "sha256": "705d9ea1776ae537f61dc4319537195febc9770c186d7d53ac4e0aba1a75cc90",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+          "quote": "縁日や屋台もクリスマス一色で充実。子どもから大人まで一日中楽しめます。",
+          "checked_at": "2026-11-19",
+          "sha256": "8c98fb04ff8d163eacfc4cf18b7b25d4d70cf1456289daff089048f1d30e4b33",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s022/event/28941.html",
+          "quote": "申し込み当日直接会場へお越しください。ワークショップのみ事前申込制です。",
+          "checked_at": "2026-11-19",
+          "sha256": "d6f9f55eefbb1b6facab65dd8da011d31fc6a7abcdfd939c887a29fc865f33ac",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 74,
-    "verified": 71,
+    "total": 75,
+    "verified": 72,
     "announced": 3,
     "corrected": 0
   }

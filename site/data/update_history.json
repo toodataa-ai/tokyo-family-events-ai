@@ -2155,6 +2155,44 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "未読の日付つき候補79件のうち、公式個別ページで条件を確認できた6件のみ追加。条件が合わないものは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead4-addition-20261119",
+      "run_type": "manual_verified_lead4_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T13:00:00+09:00",
+      "base_data_production_sha": "ca369883be37d90327f59b21d5bc33d50d79b554",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 454,
+      "candidate_active_week_records": 459,
+      "added_weekly_records": 5,
+      "new_event_ids": [
+        "verified-20261121-kita-kodomo-kenri-sugoroku",
+        "verified-20261122-suginami-boyscout-akimatsuri",
+        "verified-20261205-suginami-higashihara-xmas-market",
+        "verified-20261206-suginami-bremen-concert",
+        "verified-20261213-suginami-motoamanuma-noel"
+      ],
+      "held_not_published": [
+        "meguro-kyogen-tamasudare-20261213",
+        "ota-bicycle-class-20261212",
+        "suginami-asagaya-xmas-market-20261129",
+        "suginami-beach-sports-20261129",
+        "suginami-environment-center-classes-20261206",
+        "suginami-nishiogi-library-oshanashi-20261129",
+        "tokyo-women-children-festival-20261121"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "日付なし候補367件のページを精読し、公式個別ページで条件を確認できた5件のみ追加。条件が合わないものは掲載せず理由を保存。"
     }
   ]
 }

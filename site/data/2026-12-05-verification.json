@@ -2712,11 +2712,131 @@
           "description": "三角広場公式イベントページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-suginami-higashihara-xmas-market",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+          "quote": "開催日2026年12月5日（土曜日）開催時間午前10時30分から午後2時30分まで",
+          "checked_at": "2026-11-19",
+          "sha256": "54b5b79fe2d38d95b5579011ae446e0a3240d4f1aac4201c7680d7e647093c43",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+          "quote": "開催場所コミュニティふらっと東原杉並区下井草1-23-23",
+          "checked_at": "2026-11-19",
+          "sha256": "23c9eed86ca2134ebf54f3589d28f1b9d8c70423832293b9eb131f8e908c1e92",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+          "quote": "ミニコンサート、クリスマスワークショップ、クリスマスゲームなど、多世代が楽しめるクリスマスイベントです。",
+          "checked_at": "2026-11-19",
+          "sha256": "b0ca5a85cb57fb0e1a9f9ef3f4890c0e8e9a9a8a89ae2434f2a5c031aa35fcaf",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+          "quote": "クリスマスコンサート、親子で参加プログラム、ワークショップ、雑貨・食品の販売など。",
+          "checked_at": "2026-11-19",
+          "sha256": "afbe6b40c80238327d34a65cf2bba283e28fa0be5c4365366109482f6c0ead0d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s020/event/28883.html",
+          "quote": "一部事前申し込み必要（親子参加型プログラム、ワークショップ等）。",
+          "checked_at": "2026-11-19",
+          "sha256": "5b0e1fa1b601a04086f322d30639a8ac54e62f90d5def03568c4acc8a20e43a7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261206-suginami-bremen-concert",
+      "status": "verified",
+      "source": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+          "quote": "グリム童話「ブレーメンの音楽隊」。フルート、バイオリン、電子ピアノによる演奏と語りに加え、",
+          "checked_at": "2026-11-19",
+          "sha256": "b0b9dad9d4b2e5bb45bd62ad0b1c1bb9b45e315759fd856d2853dab6ef50c318",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+          "quote": "開催日2026年12月6日（日曜日）開催時間【午前の部】午前11時から正午【午後の部】午後2時から午後3時",
+          "checked_at": "2026-11-19",
+          "sha256": "770fe732dc768fbd8b869998767fc9eba984cf6690de53d4841c963be3a3cc8c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+          "quote": "対象者どなたでも0歳から入場可",
+          "checked_at": "2026-11-19",
+          "sha256": "95fec12069ea2c441a27ff1d1c813d431838cc4b0e89e3b8cda0bdafa5f84343",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+          "quote": "開催場所杉並公会堂小ホール杉並区上荻1丁目23番15号",
+          "checked_at": "2026-11-19",
+          "sha256": "8912a4a1779df13a194b65859d96b2ebd0af42a39b1e0bce2e6651896d151ccf",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s030/event/28895.html",
+          "quote": "一般：2,000円子ども（中学生以下）：1,000円1歳以下ひざ上無料",
+          "checked_at": "2026-11-19",
+          "sha256": "97a26f8257de7ebd9f17f5f8097f5ac8e669ef1b0c29acf0af855c0ad937ce85",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 91,
-    "verified": 87,
+    "total": 93,
+    "verified": 89,
     "announced": 4
   }
 }

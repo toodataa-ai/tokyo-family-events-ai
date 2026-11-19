@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 8,
-    "published": 8,
+    "candidates": 9,
+    "published": 9,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 7,
+    "verified": 8,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -1901,6 +1901,26 @@
     ],
     "pages_committed_at": "research/2026-11-18-suginami-pages/",
     "base_data_production_sha": "06888a9239c86436c4a499b4268847fa34f4dd2c",
+    "global_source_audit_complete": false
+  },
+  "lead5_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-adachi-seibutsuen-night"
+    ],
+    "held_not_published": [
+      "edogawa-kodomo-mirai-kan-20261123",
+      "edogawa-konnitsuto-ichi-20261121",
+      "itabashi-hasune-programming-20261121",
+      "shinjuku-3r-festa-20261128",
+      "shinjuku-poreporefes-20261128",
+      "suginami-asagaya-xmas-market-20261129",
+      "suginami-beach-sports-20261129",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "toshima-kumanokko-day-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "4896e679ff43b1b29abdfa2a61abe5f1a923d8b5",
     "global_source_audit_complete": false
   }
 }

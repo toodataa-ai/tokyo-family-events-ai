@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 167,
-    "verified": 167,
+    "published": 169,
+    "verified": 169,
     "announced": 0,
-    "candidates": 13
+    "candidates": 15
   },
   "carryover_organizer_rechecks": [
     {
@@ -5248,6 +5248,27 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "ca369883be37d90327f59b21d5bc33d50d79b554",
+    "global_source_audit_complete": false
+  },
+  "lead5_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-edogawa-rakuichi",
+      "verified-20261122-suginami-irori-ohanashi"
+    ],
+    "held_not_published": [
+      "edogawa-kodomo-mirai-kan-20261123",
+      "edogawa-konnitsuto-ichi-20261121",
+      "itabashi-hasune-programming-20261121",
+      "shinjuku-3r-festa-20261128",
+      "shinjuku-poreporefes-20261128",
+      "suginami-asagaya-xmas-market-20261129",
+      "suginami-beach-sports-20261129",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "toshima-kumanokko-day-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "4896e679ff43b1b29abdfa2a61abe5f1a923d8b5",
     "global_source_audit_complete": false
   }
 }

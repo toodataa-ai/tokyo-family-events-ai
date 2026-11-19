@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 112,
-    "verified": 112,
+    "published": 117,
+    "verified": 117,
     "announced": 0,
-    "candidates": 48,
+    "candidates": 53,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4023,6 +4023,30 @@
     "instagram_reference": "https://www.instagram.com/sankakuhiroba_srd/",
     "hours_published": false,
     "base_data_production_sha": "d32b8dbe18b04e41791cf88801bec57d5ace0aaa",
+    "global_source_audit_complete": false
+  },
+  "lead5_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-adachi-seibutsuen-night",
+      "verified-20261128-edogawa-harue-fes",
+      "verified-20261129-edogawa-seinen-carnival",
+      "verified-20261128-taito-asobo-festa",
+      "verified-20261128-itabashi-hasune-panda-time"
+    ],
+    "held_not_published": [
+      "edogawa-kodomo-mirai-kan-20261123",
+      "edogawa-konnitsuto-ichi-20261121",
+      "itabashi-hasune-programming-20261121",
+      "shinjuku-3r-festa-20261128",
+      "shinjuku-poreporefes-20261128",
+      "suginami-asagaya-xmas-market-20261129",
+      "suginami-beach-sports-20261129",
+      "suginami-nishiogi-library-oshanashi-20261129",
+      "toshima-kumanokko-day-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "4896e679ff43b1b29abdfa2a61abe5f1a923d8b5",
     "global_source_audit_complete": false
   }
 }

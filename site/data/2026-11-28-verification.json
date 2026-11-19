@@ -3441,11 +3441,319 @@
           "description": "三角広場公式イベントページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261128-adachi-seibutsuen-night",
+      "status": "verified",
+      "source": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "光の祭典の開催期間に合わせて、生物園を夜間に特別開園します。",
+          "checked_at": "2026-11-19",
+          "sha256": "b321d6ec9c9f123e45bb766341ff50af4ae217feedee8f5861fdaee394fa8855",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "開催日時2026年11月28日（土曜日）から2026年11月29日（日曜日）2026年12月5日（土曜日）から2026年12月6日（日曜日）",
+          "checked_at": "2026-11-19",
+          "sha256": "181b212ad81b08ed29c40420ac318f2258b2aa8ceb21c3d5c45e8e814aae879c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "各日、午後5時から午後9時※最終入園は午後8時30分",
+          "checked_at": "2026-11-19",
+          "sha256": "7cc717f827c2c54381cc618e8ef4817c16aaf0efc161530376fc759de0ea1b13",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "足立区保木間二丁目17番1号（元渕江公園内）",
+          "checked_at": "2026-11-19",
+          "sha256": "e18e79fda31e8d0fe36143bb74beeebe249c78d83d0607d0db7cd813d22ac9c9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "対象どなたでも※小学生以下の方は保護者の同伴が必要です。",
+          "checked_at": "2026-11-19",
+          "sha256": "66079628c325262d50a4381fe9712a7a17cd3ed9c91a0eb73576c0379e153c74",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/k-iji/event/seibutsuen_yakankaien.html",
+          "quote": "費用入園料が必要です。申込方法事前の申し込みは不要です。",
+          "checked_at": "2026-11-19",
+          "sha256": "a71f397a614d31519acab7a1e6b3ac1851105be0db982d435df0b463e7655d84",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "足立区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-edogawa-harue-fes",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+          "quote": "音楽フェスティバルや体験型のスタンプラリーを実施します。",
+          "checked_at": "2026-11-19",
+          "sha256": "0fcbfde99418bb32fa450d8920eb53c5a3b2a866d8c5e78f586c40a9746c028e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+          "quote": "開催日時2026年11月28日（土曜日）10時00分から16時00分",
+          "checked_at": "2026-11-19",
+          "sha256": "20a08a31e106f0f0fe8087c8a3dcf166d9dda795e32c3299a02af5799ad9bbfd",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+          "quote": "申し込み不要場所春江小学校（体育館・グラウンド）住所瑞江一丁目3番30号",
+          "checked_at": "2026-11-19",
+          "sha256": "6a1fd4ff0098d403bba7d1a4e4afd8e020cbcc576399838e5c665a0467b454ea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+          "quote": "複数の障害者施設や春江小学校が協力し、小学生たちに障害者の日常や困難を理解し、共感する機会を提供します。",
+          "checked_at": "2026-11-19",
+          "sha256": "06f1c991d9e844e0f15464e4d831ef5ba6bccbe6788c6fd09d509c4b33512a97",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/1128fes.html",
+          "quote": "対象小学生、中学生、地域住民の方",
+          "checked_at": "2026-11-19",
+          "sha256": "79ebdc6a9b45c5298e36ac1beb70213c78076300993528ba1925282d36c440a4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261129-edogawa-seinen-carnival",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/46seikani.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/46seikani.html",
+          "quote": "平井小松川青年連絡会【各町会・自治会の青年部の集まり】が企画・立案しているおまつりです。",
+          "checked_at": "2026-11-19",
+          "sha256": "19700b3041bc40c34993b1031e2c80cc4cb345f5bc6affd67ac152b61567285e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/46seikani.html",
+          "quote": "みこし・模擬店・ステージ等、多様なプログラムをお届けします！",
+          "checked_at": "2026-11-19",
+          "sha256": "129eeb5b8aa910c7867d25e73da9fe42e3e922e0e1109a5ef45c7a37b7d43bd3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/46seikani.html",
+          "quote": "開催日時2026年11月29日（日曜日）11時00分から18時00分【式典】16時00分",
+          "checked_at": "2026-11-19",
+          "sha256": "ab77a38523e97665ffd2faa2e8b5d41b80fb77a6cd7dbd90fc1ace2520f0b2b3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/46seikani.html",
+          "quote": "申し込み不要場所小松川小学校校庭ほかホームページ第46回青年カーニバル費用無料",
+          "checked_at": "2026-11-19",
+          "sha256": "641561b3601b5aa3ceff13d2494287f5fe1c2c694caf76d9eabb88ed0bedade6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "江戸川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-taito-asobo-festa",
+      "status": "verified",
+      "source": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "いろいろなおもちゃに触れて遊んでいただくイベントです。",
+          "checked_at": "2026-11-19",
+          "sha256": "588c89f8670208302cca1f06697895a859386dd67c996b1c63420a514f990eb4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "手作り体験のコーナーもあります。",
+          "checked_at": "2026-11-19",
+          "sha256": "90a09c6b3a225a2a28036627399821b9c8b072f00d95dc6574738e192ce26c2a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "日時令和8年11月28日（土曜日）10時30分～15時30分",
+          "checked_at": "2026-11-19",
+          "sha256": "f126ecaa54572358d5fc0cd24c0e71dbfc07d1de25772a5688d15704ce2410da",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "会場寿子ども家庭支援センターのびのびひろば（ことぶきこども園3階体育館）",
+          "checked_at": "2026-11-19",
+          "sha256": "7e1c6afee17c2b3ce9fa778ca945094def316ff26a8b6d7cf24be40799311027",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "対象0歳から小学3年生までの児童と保護者",
+          "checked_at": "2026-11-19",
+          "sha256": "971bb89845dc14b6a68f96b523aa6ab60981c5ae54e835a61738a3a343caf05d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/kouzaevent/kodomo_center/combination/asobo.html",
+          "quote": "申込・費用事前申込不要参加費無料",
+          "checked_at": "2026-11-19",
+          "sha256": "703ddf6413f819df8f19fde437703317e62cf50a45980f7a102e5fb352181979",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "台東区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261128-itabashi-hasune-panda-time",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+          "quote": "開催日2026年11月28日（土曜日）開催時間午前11時から午前11時40分まで",
+          "checked_at": "2026-11-19",
+          "sha256": "cc18c064f0af253014e57c058897679985ea0ae22392a2be584d9f4170f0dc89",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "板橋区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+          "quote": "開催場所舟渡ホール内容おはなし会・簡単な工作",
+          "checked_at": "2026-11-19",
+          "sha256": "8b1c0b7df1ff392f73d1e85e38072be5289f4f9a47af56f705747651e72a3408",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "板橋区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+          "quote": "申込み不要費用不要定員15人（先着順）",
+          "checked_at": "2026-11-19",
+          "sha256": "32fbdba0fc4dbae81f4e21b8a828355933f5ca2694e37668fe7f4dcd51960d4f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "板橋区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+          "quote": "対象小学生以下（未就学児は保護者同伴）",
+          "checked_at": "2026-11-19",
+          "sha256": "47b4e94e406ab6011ec98f17e500482dfe7236ddfdb27691257e7e87a4ca3edc",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "板橋区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/etc/1066379.html",
+          "quote": "イベントカテゴリ：子ども・保護者向け",
+          "checked_at": "2026-11-19",
+          "sha256": "e108aa100a615d1dcf2dce86971b04870287015b3f36efc65a89cbe48faab40f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "板橋区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 112,
-    "verified": 112,
+    "total": 117,
+    "verified": 117,
     "announced": 0
   }
 }

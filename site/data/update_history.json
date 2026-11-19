@@ -2193,6 +2193,53 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "日付なし候補367件のページを精読し、公式個別ページで条件を確認できた5件のみ追加。条件が合わないものは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead5-addition-20261119",
+      "run_type": "manual_verified_lead5_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T14:00:00+09:00",
+      "base_data_production_sha": "4896e679ff43b1b29abdfa2a61abe5f1a923d8b5",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 459,
+      "candidate_active_week_records": 469,
+      "added_weekly_records": 10,
+      "new_event_ids": [
+        "verified-20261121-edogawa-rakuichi",
+        "verified-20261122-suginami-irori-ohanashi",
+        "verified-20261128-adachi-seibutsuen-night",
+        "verified-20261205-adachi-seibutsuen-night",
+        "verified-20261212-adachi-seibutsuen-night",
+        "verified-20261219-adachi-seibutsuen-night",
+        "verified-20261128-edogawa-harue-fes",
+        "verified-20261129-edogawa-seinen-carnival",
+        "verified-20261128-taito-asobo-festa",
+        "verified-20261128-itabashi-hasune-panda-time"
+      ],
+      "held_not_published": [
+        "edogawa-kodomo-mirai-kan-20261123",
+        "edogawa-konnitsuto-ichi-20261121",
+        "itabashi-hasune-programming-20261121",
+        "shinjuku-3r-festa-20261128",
+        "shinjuku-poreporefes-20261128",
+        "suginami-asagaya-xmas-market-20261129",
+        "suginami-beach-sports-20261129",
+        "suginami-nishiogi-library-oshanashi-20261129",
+        "toshima-kumanokko-day-20261123"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "残りの候補プールとカレンダーの個別ページを精読し、公式個別ページで条件を確認できた7イベント（10週別レコード）のみ追加。条件が合わないものは掲載せず理由を保存。"
     }
   ]
 }

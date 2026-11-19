@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 108,
-    "verified": 104,
+    "published": 110,
+    "verified": 106,
     "announced": 4,
-    "candidates": 50,
+    "candidates": 52,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3793,6 +3793,22 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "47b0042468cf5b3ca91621b821464fc464fbb889",
+    "global_source_audit_complete": false
+  },
+  "lead11_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-minato-aiport-xmas-concert",
+      "verified-20261206-minato-mizube-sanpo-nurie"
+    ],
+    "held_not_published": [
+      "minato-eco-nijimi-card-20261206",
+      "minato-weekday-hoikuen-asobo",
+      "ota-jidokan-monthly-pdf",
+      "shinagawa-koto-event-lists"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "1dedddfea851b7a2ebe8d09f4b5cb664039eb030",
     "global_source_audit_complete": false
   }
 }

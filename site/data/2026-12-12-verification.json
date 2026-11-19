@@ -2561,11 +2561,55 @@
           "description": "世田谷区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261212-minato-plaza-shinmei-festival",
+      "status": "verified",
+      "source": "https://www.city.minato.tokyo.jp/kouhou/event/261212-purazashinmei.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.minato.tokyo.jp/kouhou/event/261212-purazashinmei.html",
+          "quote": "プラザ神明フェスティバル2026",
+          "checked_at": "2026-11-19",
+          "sha256": "21b69a57dc3cb8920001425d547eedbdc8d57c2d7818eaeb9b901e4c10bbd99e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "港区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.minato.tokyo.jp/kouhou/event/261212-purazashinmei.html",
+          "quote": "イベント詳細各種展示・体験コーナー・ステージ発表等対象どなたでも開催場所プラザ神明（ステージ観覧は靴の履き替えが必要です。室内履き・靴袋を持参してください）費用無料（食事代は自己負担）申込・予約当日直接会場へ（一部のイベントは申し込みが必要です。電話または直接、神明いきいきプラザへ）。",
+          "checked_at": "2026-11-19",
+          "sha256": "2212f8b37de4a82a082ee59a1ecc658f2a6d0e02a4d8a24d8123dc293449a929",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "港区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.minato.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=3&year=2026&month=12&day=12",
+          "quote": "プラザ神明フェスティバル20262026年12月12日（土曜日）",
+          "checked_at": "2026-11-19",
+          "sha256": "8a43681ba11ce82e745ef9b805f0e128654ce8556b88aea469fe5f7bb468db17",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "港区公式イベントカレンダーの日別ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。開催日の確認用。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 81,
-    "verified": 78,
+    "total": 82,
+    "verified": 79,
     "announced": 3,
     "corrected": 0
   }

@@ -2488,6 +2488,40 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "世田谷・荒川・葛飾・文京の公式ページを精読し、参加費の記載がないものは「記載なし」と明示したうえで、条件を確認できた10件の週別レコードのみ追加。区内在住限定・受付終了・内容未記載などは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead11-addition-20261119",
+      "run_type": "manual_verified_lead11_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-20T00:00:00+09:00",
+      "base_data_production_sha": "1dedddfea851b7a2ebe8d09f4b5cb664039eb030",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 526,
+      "candidate_active_week_records": 530,
+      "added_weekly_records": 4,
+      "new_event_ids": [
+        "verified-20261128-chuo-harumi-matsuri",
+        "verified-20261205-minato-aiport-xmas-concert",
+        "verified-20261206-minato-mizube-sanpo-nurie",
+        "verified-20261212-minato-plaza-shinmei-festival"
+      ],
+      "held_not_published": [
+        "minato-eco-nijimi-card-20261206",
+        "minato-weekday-hoikuen-asobo",
+        "ota-jidokan-monthly-pdf",
+        "shinagawa-koto-event-lists"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "中央区の晴海まつりと、港区の公式カレンダーで日付を確認できた3件の週別レコードのみ追加。区内在住限定・平日・予約制などは掲載せず理由を保存。"
     }
   ]
 }

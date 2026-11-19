@@ -2240,6 +2240,50 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "残りの候補プールとカレンダーの個別ページを精読し、公式個別ページで条件を確認できた7イベント（10週別レコード）のみ追加。条件が合わないものは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead6-addition-20261119",
+      "run_type": "manual_verified_lead6_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-19T16:00:00+09:00",
+      "base_data_production_sha": "db9501b3a8dcd9c11c06c8b4f058061b8a248263",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 469,
+      "candidate_active_week_records": 476,
+      "added_weekly_records": 7,
+      "new_event_ids": [
+        "verified-20261123-arakawa-hoshizora-rocket",
+        "verified-20261205-adachi-seibutsuen-hotaru",
+        "verified-20261212-adachi-seibutsuen-hotaru",
+        "verified-20261219-adachi-seibutsuen-hotaru",
+        "verified-20261205-edogawa-fuyusakura",
+        "verified-20261212-edogawa-fuyusakura",
+        "verified-20261219-edogawa-fuyusakura"
+      ],
+      "held_not_published": [
+        "adachi-ouka-hakoniwa-20261128",
+        "adachi-seibutsuen-hotaru-20261128",
+        "chiyoda-first-bicycle-20261129",
+        "edogawa-fuyusakura-20261121",
+        "itabashi-shimizu-berezza-20261123",
+        "meguro-gohongi-oyako-asobo-20261128",
+        "suginami-futago-ryuseigun-20261212",
+        "suginami-nazo-sanpo-20261116",
+        "suginami-unesco-tsudoi-20261128",
+        "taito-asakusabashi-kosaku-20261122"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "残りの候補プールとカレンダーの個別ページを精読し、公式個別ページで条件を確認できた3イベント（7週別レコード）のみ追加。条件が合わないものは掲載せず理由を保存。"
     }
   ]
 }

@@ -5444,11 +5444,71 @@
           "description": "杉並区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261123-arakawa-hoshizora-rocket",
+      "status": "verified",
+      "source": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-19",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+          "quote": "ロケット工作と星空観察会を楽しもう！！",
+          "checked_at": "2026-11-19",
+          "sha256": "ac32e93360d56e8ae2d6a3e550161f124af69e397409dc5be44f24c241b9029e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+          "quote": "フィルムロケット工作13時00分～16時00分星空観察会17時30分～19時30分場所荒川自然公園野球場",
+          "checked_at": "2026-11-19",
+          "sha256": "12a947a1074ece5d308069a90302f256afae2f88cce0b98178424a185b8c10ee",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+          "quote": "フィルムケースを使ってロケットを作り、飛ばします。",
+          "checked_at": "2026-11-19",
+          "sha256": "5b3502a395fcf32734ce9ec4e87135c54a1007094ffa3a1b675e2089bdff86f4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+          "quote": "望遠鏡で月や惑星を観察します。",
+          "checked_at": "2026-11-19",
+          "sha256": "67b90d12537e4154dd43b6ef9750c1ef2c67ad1ebf3c81f056f274c3e1a17b48",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.arakawa.tokyo.jp/a042/koen/koen/sizenkouen2.html",
+          "quote": "対象者誰でも自由参加定員工作：80名観察会：なし費用工作：200円観察会：無料",
+          "checked_at": "2026-11-19",
+          "sha256": "53fb03eade87507e93ceffc04448a7cff89364937804ccb620e7df2d096a4118",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "荒川区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 169,
-    "verified": 169,
+    "total": 170,
+    "verified": 170,
     "announced": 0
   }
 }

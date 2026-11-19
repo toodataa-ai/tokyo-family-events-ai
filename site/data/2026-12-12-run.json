@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 24,
-    "published": 76,
+    "candidates": 26,
+    "published": 78,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 73,
+    "verified": 75,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2205,6 +2205,28 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "4896e679ff43b1b29abdfa2a61abe5f1a923d8b5",
+    "global_source_audit_complete": false
+  },
+  "lead6_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-adachi-seibutsuen-hotaru",
+      "verified-20261212-edogawa-fuyusakura"
+    ],
+    "held_not_published": [
+      "adachi-ouka-hakoniwa-20261128",
+      "adachi-seibutsuen-hotaru-20261128",
+      "chiyoda-first-bicycle-20261129",
+      "edogawa-fuyusakura-20261121",
+      "itabashi-shimizu-berezza-20261123",
+      "meguro-gohongi-oyako-asobo-20261128",
+      "suginami-futago-ryuseigun-20261212",
+      "suginami-nazo-sanpo-20261116",
+      "suginami-unesco-tsudoi-20261128",
+      "taito-asakusabashi-kosaku-20261122"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "db9501b3a8dcd9c11c06c8b4f058061b8a248263",
     "global_source_audit_complete": false
   }
 }

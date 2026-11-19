@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 194,
-    "verified": 194,
+    "published": 197,
+    "verified": 197,
     "announced": 0,
-    "candidates": 40
+    "candidates": 43
   },
   "carryover_organizer_rechecks": [
     {
@@ -5418,6 +5418,21 @@
     ],
     "pages_committed_at": "research/2026-11-19-audit/pages/",
     "base_data_production_sha": "fa70fd6c4d0426e683725150056c0c34ee1c8c13",
+    "global_source_audit_complete": false
+  },
+  "lead13_addition_20261119": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-ota-ikegami-densha-asobo",
+      "verified-20261121-ota-tokumochi-ohanashi",
+      "verified-20261121-ota-minamimagome-family-time"
+    ],
+    "held_not_published": [
+      "ota-jidokan-others",
+      "shinagawa-koto-event-lists"
+    ],
+    "pages_committed_at": "research/2026-11-19-audit/pages/",
+    "base_data_production_sha": "a871cce168c683fb37eb07d898b8c5f481f019ad",
     "global_source_audit_complete": false
   }
 }

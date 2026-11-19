@@ -2571,6 +2571,38 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "江戸川・目黒・世田谷・荒川の公式ページで日付と内容を確認できた17件の週別レコードのみ追加。申込終了・抽選枠が極小・大人向けなどは掲載せず理由を保存。"
+    },
+    {
+      "run_id": "lead13-addition-20261119",
+      "run_type": "manual_verified_lead13_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-19",
+      "executed_at": "2026-11-20T02:00:00+09:00",
+      "base_data_production_sha": "a871cce168c683fb37eb07d898b8c5f481f019ad",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28"
+      ],
+      "prior_active_week_records": 547,
+      "candidate_active_week_records": 552,
+      "added_weekly_records": 5,
+      "new_event_ids": [
+        "verified-20261128-ota-takahata-undo-asobi",
+        "verified-20261128-ota-minamimagome3-undo-asobi",
+        "verified-20261121-ota-ikegami-densha-asobo",
+        "verified-20261121-ota-tokumochi-ohanashi",
+        "verified-20261121-ota-minamimagome-family-time"
+      ],
+      "held_not_published": [
+        "ota-jidokan-others",
+        "shinagawa-koto-event-lists"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "大田区の児童館の月間おしらせPDF（原本と本文抽出を保存）で日付と内容を確認できた5件の週別レコードのみ追加。"
     }
   ]
 }

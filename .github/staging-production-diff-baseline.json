@@ -4185,6 +4185,22 @@
       "reason": "2026-11-19の区イベントカレンダー日別一覧（12/14以降・2ページ目以降・江戸川・目黒）の読み取り専用取得。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-leads14-20261119.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の江戸川・目黒・世田谷・荒川の個別イベントページの読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-19-audit/lead_urls11.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の江戸川・目黒・世田谷・荒川の個別イベントページの読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

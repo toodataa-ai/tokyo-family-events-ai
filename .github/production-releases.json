@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-20-r1",
+  "current_public_release": "release/2026-11-20-r2",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -365,7 +365,16 @@
       "workflow_run_id": 44746179721,
       "public_version": "1.39",
       "note": "写真がない行事のサムネイルを、区の頭文字から種類別アイコンのタイルに変更。データ変更なし。"
+    },
+    {
+      "release_id": "release/2026-11-20-r2",
+      "branch": "release/2026-11-20-r2",
+      "commit_sha": "ede99e6844bb77eaa9a533153b99f2385f73158f",
+      "deployed_at": "2026-11-20T14:52:49.630264+00:00",
+      "workflow_run_id": 44757226113,
+      "public_version": "1.40",
+      "note": "トップページの説明を、休日明けの週次更新から毎日更新の表記に変更。データ変更なし。"
     }
   ],
-  "current_public_version": "1.39"
+  "current_public_version": "1.40"
 }

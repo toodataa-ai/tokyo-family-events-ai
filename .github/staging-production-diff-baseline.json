@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 580,
+  "expected_total_differences_after_governance": 582,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5964,6 +5964,22 @@
     },
     {
       "path": "tools/validate_image_fill_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20 サムネイル補完（画像のみ）の追加ツール",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/image_fill2_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20 サムネイル補完（画像のみ）の追加ツール",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_image_fill2_20261120.py",
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20 サムネイル補完（画像のみ）の追加ツール",

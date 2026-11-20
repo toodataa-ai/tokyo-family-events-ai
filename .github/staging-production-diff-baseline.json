@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 495,
+  "expected_total_differences_after_governance": 502,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5287,6 +5287,62 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20の薄い区の公式ページ取得（第11回、都立動物園・水族園・東京都こども向け情報、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead21_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都こども向け行事ポータル・川崎重工業・八十介などの主催者公式ページ由来の追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead21_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都こども向け行事ポータル・川崎重工業・八十介などの主催者公式ページ由来の追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/nakano_nogata_edit_1205.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都こども向け行事ポータル・川崎重工業・八十介などの主催者公式ページ由来の追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/kawasaki_robo_haneda.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都こども向け行事ポータル・川崎重工業・八十介などの主催者公式ページ由来の追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/edo_wonder_1121.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都こども向け行事ポータル・川崎重工業・八十介などの主催者公式ページ由来の追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards12-20261120.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の公式ページ取得（第12回、東京都こども向け行事の詳細ページ、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls12.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の公式ページ取得（第12回、東京都こども向け行事の詳細ページ、読み取り専用）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -2822,6 +2822,28 @@
       "image_only_updates": 2,
       "global_source_audit_complete": false,
       "note": "同一IDの墨田「光のナイトガーデン」で、11/21週・11/28週は画像あり、12/5週・12/12週は画像なしだった食い違いを、公開済みの同じ画像URLで揃えた。画像以外は変更なし。"
+    },
+    {
+      "run_id": "nakano-image-alignment-20261120",
+      "run_type": "manual_image_alignment",
+      "status": "image_only_update",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T17:30:00+09:00",
+      "base_data_production_sha": "2e8c6f87c025b07f6b7b9f8c60544e6e40973b58",
+      "target_weekends": [
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 629,
+      "candidate_active_week_records": 629,
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "image_updated": [
+        "partial-20261129-nakano-precure-rally@2026-12-05"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 1,
+      "global_source_audit_complete": false,
+      "note": "同一IDの中野「プリキュアラリー」で、11/28週は画像あり、12/5週は画像が空だった食い違いを、公開済みの同じ画像URLで揃えた。画像以外は変更なし。"
     }
   ]
 }

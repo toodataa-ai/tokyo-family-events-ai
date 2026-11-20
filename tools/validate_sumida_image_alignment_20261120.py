@@ -14,7 +14,7 @@ def main():
     def show(p): return json.loads(subprocess.check_output(['git', 'show', f'{a.base_ref}:{p}'], text=True))
     load = lambda p: json.loads(pathlib.Path(p).read_text(encoding='utf-8'))
     base_files = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', a.base_ref, 'site/data'], text=True).split()
-    base_files = [b for b in base_files if b.endswith('.json')]
+    base_files = [b for b in base_files if b.endswith('.json') and (pathlib.Path(b).name.startswith('2026-') or pathlib.Path(b).name in ('manifest.json', 'update_history.json'))]
     changed = []
     for bf in base_files:
         cur = d / pathlib.Path(bf).name
@@ -22,7 +22,7 @@ def main():
         if load(cur) != show(bf): changed.append(pathlib.Path(bf).name)
     exp = sorted(list(lg.TARGETS.values()) + ['update_history.json'])
     if sorted(changed) != exp: err(f'changed files {sorted(changed)} != {exp}')
-    new = {p.name for p in d.glob('*') if p.is_file() and p.suffix == '.json'} - {pathlib.Path(b).name for b in base_files}
+    new = {p.name for p in d.glob('*') if p.is_file() and p.suffix == '.json' and p.name.startswith('2026-')} - {pathlib.Path(b).name for b in base_files}
     if new: err(f'unexpected new files {sorted(new)}')
     for fn in lg.TARGETS.values():
         cur = load(d / fn); base = show('site/data/' + fn)

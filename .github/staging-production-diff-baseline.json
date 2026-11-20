@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 466,
+  "expected_total_differences_after_governance": 469,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5055,6 +5055,30 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "中野「プリキュアラリー」の週間画像の食い違いを揃える（2026-11-20、ユーザー承認A）の生成ツールと検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/nerima_duplicate_removal_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "練馬『森こどもフェスタ』二重掲載5件の整理（2026-11-20、ユーザー承認A）のツール・検証・削除承認台帳。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_nerima_duplicate_removal_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "練馬『森こどもフェスタ』二重掲載5件の整理（2026-11-20、ユーザー承認A）のツール・検証・削除承認台帳。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "policy/approved_event_removals.json",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "練馬『森こどもフェスタ』二重掲載5件の整理（2026-11-20、ユーザー承認A）のツール・検証・削除承認台帳。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

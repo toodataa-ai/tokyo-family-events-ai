@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 5,
-    "published": 5,
+    "candidates": 7,
+    "published": 7,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 2,
+    "verified": 4,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -1890,6 +1890,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "8fc09442381d87b85046659b46cfdaec315655a0",
+    "global_source_audit_complete": false
+  },
+  "lead20_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261227-shinagawa-inline-dec27",
+      "verified-20261226-edogawa-kanusura-park"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
     "global_source_audit_complete": false
   }
 }

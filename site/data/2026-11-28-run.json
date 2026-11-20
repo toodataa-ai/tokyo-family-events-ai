@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 164,
-    "verified": 164,
+    "published": 167,
+    "verified": 167,
     "announced": 0,
-    "candidates": 101,
+    "candidates": 104,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4274,6 +4274,18 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "3c1e048d3a1b8f934471578094efcf2cd49c252f",
+    "global_source_audit_complete": false
+  },
+  "lead20_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-shinjuku-ttm-sugoroku",
+      "verified-20261129-shinagawa-inline-nov29",
+      "verified-20261128-edogawa-kanusura-park"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
     "global_source_audit_complete": false
   }
 }

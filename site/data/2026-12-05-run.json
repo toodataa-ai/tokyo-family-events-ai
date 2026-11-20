@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 116,
-    "verified": 112,
+    "published": 120,
+    "verified": 116,
     "announced": 4,
-    "candidates": 61,
+    "candidates": 65,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3878,6 +3878,19 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "2f1a3e2e8801442490dda45a493fe969eb35f12a",
+    "global_source_audit_complete": false
+  },
+  "lead20_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-shinjuku-ttm-harikoko",
+      "verified-20261205-shinjuku-ttm-satoyama",
+      "verified-20261206-shinagawa-nagisa-beach",
+      "verified-20261205-edogawa-kanusura-park"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
     "global_source_audit_complete": false
   }
 }

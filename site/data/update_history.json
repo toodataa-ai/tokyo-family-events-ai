@@ -2926,6 +2926,52 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "文京区公式の防災フェスタ案内ページで日付・時間・会場・体験内容を確認できた12/5週の1件のみ追加。"
+    },
+    {
+      "run_id": "lead20-addition-20261120",
+      "run_type": "manual_verified_lead20_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 626,
+      "candidate_active_week_records": 644,
+      "added_weekly_records": 18,
+      "new_event_ids": [
+        "verified-20261121-koto-umi-hikoki",
+        "verified-20261129-shinjuku-ttm-sugoroku",
+        "verified-20261205-shinjuku-ttm-harikoko",
+        "verified-20261205-shinjuku-ttm-satoyama",
+        "verified-20261219-shinjuku-ttm-reindeer",
+        "verified-20261220-shinjuku-ttm-stick",
+        "verified-20261220-sumida-honjo-santa",
+        "verified-20261129-shinagawa-inline-nov29",
+        "verified-20261220-shinagawa-inline-dec20",
+        "verified-20261227-shinagawa-inline-dec27",
+        "verified-20261206-shinagawa-nagisa-beach",
+        "verified-20261121-edogawa-kanusura-park",
+        "verified-20261128-edogawa-kanusura-park",
+        "verified-20261205-edogawa-kanusura-park",
+        "verified-20261212-edogawa-kanusura-park",
+        "verified-20261219-edogawa-kanusura-park",
+        "verified-20261226-edogawa-kanusura-park",
+        "verified-20261219-adachi-tdu-recycle"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都の公園管理者・東京おもちゃ美術館・本所防災館・東京電機大学などの主催者公式ページで日付・時間・会場・条件を確認できた18件のみ追加。"
     }
   ]
 }

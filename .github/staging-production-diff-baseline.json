@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 538,
+  "expected_total_differences_after_governance": 551,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5631,6 +5631,110 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-19の品川区児童センター月間お知らせページの読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead26_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead26_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1121.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1122.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1123.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1128.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1129.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1205.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1206.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1212.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1219.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1220.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/mizunokagaku_1227.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

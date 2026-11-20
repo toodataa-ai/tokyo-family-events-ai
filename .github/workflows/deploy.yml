@@ -418,6 +418,12 @@ jobs:
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead28-addition-20261120" ]; then
+            python3 staging-policy-src/tools/validate_lead28_addition_20261120.py \
+              --data-dir site/data \
+              --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ]; then
             python3 staging-policy-src/tools/validate_nerima_duplicate_removal_20261120.py \
               --data-dir site/data \
@@ -700,7 +706,7 @@ jobs:
               echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
-            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^verified-lead(1[89]|2[0-7])-addition-20261120$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^verified-lead(1[89]|2[0-8])-addition-20261120$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
@@ -835,6 +841,8 @@ jobs:
                 echo "lead26 audited"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead27-addition-20261120" ]; then
                 echo "lead27 audited"
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead28-addition-20261120" ]; then
+                echo "lead28 audited"
               elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ]; then
                 echo "nerima dup audited"
               elif [ "${{ needs.gate.outputs.operation }}" = "nakano-image-alignment-20261120" ]; then

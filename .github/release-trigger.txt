@@ -1,19 +1,15 @@
-# User-approved v1.38: issue-list simplification and Sankaku organizer-link discovery.
+# User-approved v1.39 (chat 2026-11-20): category-icon fallback thumbnails for events without photos (UI only).
 operation=release
 production_ref=production
-production_sha=d2ee3226f64f42c56a5ed0ca61e3696769c4db21
-previous_production_sha=9aa067f0756bb900ff3f95e33f1dee7473e9c63f
-candidate_sha=02346ccdc28c0ade85ec10446097987f2edbc862
-pr=132
-target_public_version=1.38
-previous_public_release=release/2026-11-15-r2
-release_date_jst=2026-11-15
-expected_data_production_sha=e9886705d9c6ce2cc21fdd276553df2a34849fd4
-approved_scope=package.json,site/audit/pending_issues_catalog.json,site/data/discovery_sources.json,site/pending-issues.html,site/pending-issues.js,tests/fixed_source_directory.test.mjs,tests/pending_issues_release.test.mjs,tests/test_sankaku_event_listing.py,tools/holiday_after_collect.py,tools/sankaku_event_listing.py
-read_only_validation_run=43665511129
+production_sha=d4e53fe170af6c3e28fef09dc90b9b8ed680d486
+previous_production_sha=d2ee3226f64f42c56a5ed0ca61e3696769c4db21
+candidate_sha=fe9c1959adc19d50562857a78e8f7d552e5944e7
+pr=137
+target_public_version=1.39
+previous_public_release=release/2026-11-15-r3
+release_date_jst=2026-11-20
+expected_data_production_sha=b2e210da009baa911b94a90e74c53d2dca83a4ec
+approved_scope=site/copy.html,site/search.html,site/styles.css,site/thumb-fallback.js
 event_record_mutation=none
 curation_record_mutation=none
-note=Publish only user-approved issue aggregate removal and current status content, plus official Sankaku source registration/card parser and necessary tests. Preserve all603 event records/history and310 historical decisions; unrelated staging dashboards/usage/image changes excluded.
-# pages_only_refresh_20261117: Rebuild production Pages overlay from data-production ad4baa9b3b47b7d3770ebd793fe1c9c9469caf71; no application release or app changes.
-# pages-only-verified-itabashi-20261117: production_data_sha=fc6bec505975c6dabbddd404f33cd7d9f3f525e9; publish currently verified data without UI or source-status changes
-# pages-only-final-20261117: verified Itabashi event published, data_production=fc6bec505975c6dabbddd404f33cd7d9f3f525e9; pending 12-week candidates are archived in work/complete-ledger-buckets-3-4-20261117; no app changes
+note=Replace the ward-initial placeholder thumbnail with a category icon tile. No data changes.

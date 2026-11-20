@@ -5,9 +5,9 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 230,
-    "published": 214,
+    "published": 213,
     "excluded": 16,
-    "duplicate": 0
+    "duplicate": 1
   },
   "decisions": [
     {
@@ -19298,112 +19298,7 @@
       "candidate_id": "verified-20261121-nerima-nomori-ochiba-asobi",
       "name": "ねりまの森こどもフェスタ「落ち葉と森の素材あそび」（南高松の森緑地）",
       "ward": "練馬区",
-      "decision": "published",
-      "family_fit": {
-        "grade": "B",
-        "overall": "B",
-        "rubric_version": "family-fit-v2",
-        "reason": "こども向けのフェスタの1回で、落ち葉プールや森の素材のおもちゃ遊びがある。費用・申込・雨天時の扱いは記載がない。",
-        "axes": {
-          "child_target": {
-            "grade": "A",
-            "reason": "「こどもフェスタ」の企画で、落ち葉プールなど子ども向けの遊びがある"
-          },
-          "interactivity": {
-            "grade": "A",
-            "reason": "落ち葉プールや森の素材のおもちゃ遊びの参加型"
-          },
-          "age_fit": {
-            "grade": "unknown",
-            "reason": "対象年齢は公式案内に明記がない"
-          },
-          "stay_flexibility": {
-            "grade": "B",
-            "reason": "開催は2時間"
-          },
-          "burden": {
-            "grade": "B",
-            "reason": "屋外の森での開催"
-          },
-          "cost": {
-            "grade": "unknown",
-            "reason": "費用は公式案内に明記がない"
-          },
-          "reservation": {
-            "grade": "unknown",
-            "reason": "申込の要否は公式案内に明記がない"
-          },
-          "family_value": {
-            "grade": "A",
-            "reason": "森で子どもが遊べ、参加でグッズがもらえる"
-          }
-        },
-        "review": {
-          "schema_version": 1,
-          "method": "individual_evidence_review",
-          "reviewed_on": "2026-11-19",
-          "axes_checked": [
-            "child_target",
-            "interactivity",
-            "age_fit",
-            "stay_flexibility",
-            "burden",
-            "cost",
-            "reservation",
-            "family_value"
-          ],
-          "audience_basis": "child_program",
-          "child_activity_confirmed": true,
-          "strengths": [
-            "落ち葉プールなど子ども向けの森あそび",
-            "参加でオリジナルグッズ"
-          ],
-          "limitations": [
-            "開催は2時間",
-            "費用・申込・雨天時の記載がない"
-          ],
-          "grade_comparison": "総合B：子ども向けの内容だが、費用・申込・雨天時の記載がない。",
-          "unsupported_axes": [
-            "age_fit",
-            "cost",
-            "reservation"
-          ],
-          "evidence": [
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "令和8年11月21日（土曜）午後1時30分から午後3時30分まで",
-              "checked_at": "2026-11-19",
-              "sha256": "ab6340a64573526677373887e657ddb82268b48894f8ef4ae9b70e65f531f609",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "落ち葉と森の素材あそび（落ち葉プール、森の素材のおもちゃ遊び）",
-              "checked_at": "2026-11-19",
-              "sha256": "dddb67c6ff8d1e1351bff1553c586678bee656b19b20a1912e981038902f927b",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "南高松の森緑地（高松2丁目14番4号）南高松もりファンクラブ",
-              "checked_at": "2026-11-19",
-              "sha256": "7e38a52015294ec24b17941ec81972aad947d2087a01a2857390b3b0a1dfcc1a",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "イベント参加でオリジナルグッズをプレゼントします。",
-              "checked_at": "2026-11-19",
-              "sha256": "f6bf8ad61a4228b96d115edcf215af072126d0acacf54fd098a3b65b78838c66",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            }
-          ]
-        }
-      },
+      "decision": "duplicate",
       "positive_signals": [
         "official_date_confirmed",
         "child_activity_confirmed"
@@ -19418,15 +19313,17 @@
         "family_value_high"
       ],
       "reasons": [
-        "こども向けのフェスタの1回で、落ち葉プールや森の素材のおもちゃ遊びがある。費用・申込・雨天時の扱いは記載がない。"
+        "練馬区「ねりまの森こどもフェスタ」の同一イベントが既掲載のレコードと二重に掲載されていたため、後から追加した側を重複として取り下げた（日付・会場・企画が一致）。"
       ],
       "evidence": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
+          "kind": "official_event_page",
+          "checked_at": "2026-11-20"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "duplicate_of": "nerima-forest-20261121-minamitakamatsu"
     },
     {
       "candidate_id": "verified-20261121-kita-kodomo-kenri-sugoroku",

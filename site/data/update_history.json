@@ -2844,6 +2844,40 @@
       "image_only_updates": 1,
       "global_source_audit_complete": false,
       "note": "同一IDの中野「プリキュアラリー」で、11/28週は画像あり、12/5週は画像が空だった食い違いを、公開済みの同じ画像URLで揃えた。画像以外は変更なし。"
+    },
+    {
+      "run_id": "nerima-duplicate-removal-20261120",
+      "run_type": "manual_duplicate_removal",
+      "status": "duplicate_decisions_recorded",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T18:00:00+09:00",
+      "base_data_production_sha": "f7e1a6b97f97e26542c204f9dcdb119eae1f24d0",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 629,
+      "candidate_active_week_records": 624,
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "duplicate_decisions_recorded": [
+        "verified-20261121-nerima-nomori-ochiba-asobi",
+        "verified-20261129-nerima-molkky",
+        "verified-20261205-nerima-ochiba-matsuri",
+        "verified-20261205-nerima-oshigoto-minamitakamatsu",
+        "verified-20261205-nerima-oshigoto-oozekiyama"
+      ],
+      "duplicate_of": {
+        "verified-20261121-nerima-nomori-ochiba-asobi": "nerima-forest-20261121-minamitakamatsu",
+        "verified-20261129-nerima-molkky": "nerima-forest-20261129-kitappara",
+        "verified-20261205-nerima-ochiba-matsuri": "v15-20261205-nerima-mori-leaf",
+        "verified-20261205-nerima-oshigoto-minamitakamatsu": "v15-20261205-nerima-mori-takamatsu",
+        "verified-20261205-nerima-oshigoto-oozekiyama": "v15-20261205-nerima-mori-otaka"
+      },
+      "existing_event_records_physically_deleted": 0,
+      "global_source_audit_complete": false,
+      "note": "練馬区「ねりまの森こどもフェスタ」の二重掲載5件を、決定記録（duplicate・重複元ID・理由・公式URL）付きで公開リストから取り下げた。"
     }
   ]
 }

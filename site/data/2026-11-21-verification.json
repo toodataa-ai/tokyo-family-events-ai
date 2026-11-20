@@ -5154,58 +5154,6 @@
       ]
     },
     {
-      "id": "verified-20261121-nerima-nomori-ochiba-asobi",
-      "status": "verified",
-      "source": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-      "source_kind": "public_official",
-      "verified_on": "2026-11-19",
-      "fields": {
-        "name": "pass",
-        "date": "pass",
-        "venue": "pass",
-        "time": "pass",
-        "price": "unknown",
-        "reservation": "unknown",
-        "official_url": "pass"
-      },
-      "corrections": {},
-      "note": "週別全源照合は未完（ためまっぷ403等）。この1件は各区公式ページの個別確認に基づく。",
-      "evidence": [
-        {
-          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "quote": "令和8年11月21日（土曜）午後1時30分から午後3時30分まで",
-          "checked_at": "2026-11-19",
-          "sha256": "ab6340a64573526677373887e657ddb82268b48894f8ef4ae9b70e65f531f609",
-          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-        },
-        {
-          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "quote": "落ち葉と森の素材あそび（落ち葉プール、森の素材のおもちゃ遊び）",
-          "checked_at": "2026-11-19",
-          "sha256": "dddb67c6ff8d1e1351bff1553c586678bee656b19b20a1912e981038902f927b",
-          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-        },
-        {
-          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "quote": "南高松の森緑地（高松2丁目14番4号）南高松もりファンクラブ",
-          "checked_at": "2026-11-19",
-          "sha256": "7e38a52015294ec24b17941ec81972aad947d2087a01a2857390b3b0a1dfcc1a",
-          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-        },
-        {
-          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "quote": "イベント参加でオリジナルグッズをプレゼントします。",
-          "checked_at": "2026-11-19",
-          "sha256": "f6bf8ad61a4228b96d115edcf215af072126d0acacf54fd098a3b65b78838c66",
-          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-          "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-        }
-      ]
-    },
-    {
       "id": "verified-20261121-kita-kodomo-kenri-sugoroku",
       "status": "verified",
       "source": "https://www.city.kita.lg.jp/children-edu/kids/1019177/1027059.html",
@@ -7811,8 +7759,8 @@
     }
   ],
   "summary": {
-    "total": 214,
-    "verified": 214,
+    "total": 213,
+    "verified": 213,
     "announced": 0
   }
 }

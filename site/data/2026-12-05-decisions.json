@@ -5,9 +5,9 @@
   "migration_incomplete": false,
   "summary": {
     "candidate_total": 118,
-    "published": 118,
+    "published": 115,
     "excluded": 0,
-    "duplicate": 0
+    "duplicate": 3
   },
   "decisions": [
     {
@@ -10735,110 +10735,7 @@
       "candidate_id": "verified-20261205-nerima-ochiba-matsuri",
       "name": "ねりまの森こどもフェスタ「落ち葉祭り」（石庭の森緑地）",
       "ward": "練馬区",
-      "decision": "published",
-      "family_fit": {
-        "grade": "B",
-        "overall": "B",
-        "rubric_version": "family-fit-v2",
-        "reason": "落ち葉掃きと腐葉土づくりができる、ねりまの森こどもフェスタの催し。石庭の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。",
-        "axes": {
-          "child_target": {
-            "grade": "B",
-            "reason": "こどもフェスタの催しで、18歳以下にグッズのプレゼントがある"
-          },
-          "interactivity": {
-            "grade": "B",
-            "reason": "森の中での体験・遊び"
-          },
-          "age_fit": {
-            "grade": "unknown",
-            "reason": "対象年齢の目安は明記がない"
-          },
-          "stay_flexibility": {
-            "grade": "B",
-            "reason": "開催時間が限られている"
-          },
-          "burden": {
-            "grade": "B",
-            "reason": "屋外開催で雨天中止。駐車場がない"
-          },
-          "cost": {
-            "grade": "A",
-            "reason": "参加費無料（一部有料のイベントあり）"
-          },
-          "reservation": {
-            "grade": "A",
-            "reason": "事前予約不要"
-          },
-          "family_value": {
-            "grade": "B",
-            "reason": "森で家族で遊べる"
-          }
-        },
-        "review": {
-          "schema_version": 1,
-          "method": "individual_evidence_review",
-          "reviewed_on": "2026-11-19",
-          "axes_checked": [
-            "child_target",
-            "interactivity",
-            "age_fit",
-            "stay_flexibility",
-            "burden",
-            "cost",
-            "reservation",
-            "family_value"
-          ],
-          "audience_basis": "child_program",
-          "child_activity_confirmed": true,
-          "strengths": [
-            "無料・予約不要",
-            "18歳以下にグッズのプレゼント"
-          ],
-          "limitations": [
-            "屋外で雨天中止",
-            "各会場に駐車場がない"
-          ],
-          "grade_comparison": "総合B：石庭の森緑地で10:00〜12:00の間、無料・予約不要で参加できるが、屋外で雨天中止になる。",
-          "unsupported_axes": [
-            "age_fit"
-          ],
-          "evidence": [
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "令和8年12月5日（土曜）午前10時から正午まで落ち葉祭り（落ち葉掃き、腐葉土づくり）石庭の森緑地（東大泉7丁目50番48号）石庭みどり会イベント共催：宮本南町会",
-              "checked_at": "2026-11-19",
-              "sha256": "be9ad2f272f96dc288415ba4091a59997b17c1c74540ca8d87c0305e62592364",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "参加方法当日会場へお越しください。事前予約不要・参加費無料です（一部有料のイベントがあります）。",
-              "checked_at": "2026-11-19",
-              "sha256": "730bebdf9c0fa6545fccbad0f3b5ecd80d28d8c36a1cdcac7b00a05ede354c47",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）オリジナルグッズが貰えるのは18歳以下が対象です。",
-              "checked_at": "2026-11-19",
-              "sha256": "ba378f98f2ff0edd2b1faa705ce6c6f06b46a52277f7a24a4990451d98929f31",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）雨天中止となります（一部除く）。",
-              "checked_at": "2026-11-19",
-              "sha256": "0aa46117316f5656199124375c44efb20f1c07b3b3b998824717c8de33d56d17",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            }
-          ]
-        }
-      },
+      "decision": "duplicate",
       "positive_signals": [
         "official_date_confirmed",
         "child_activity_confirmed"
@@ -10853,124 +10750,23 @@
         "family_value_high"
       ],
       "reasons": [
-        "落ち葉掃きと腐葉土づくりができる、ねりまの森こどもフェスタの催し。石庭の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。"
+        "練馬区「ねりまの森こどもフェスタ」の同一イベントが既掲載のレコードと二重に掲載されていたため、後から追加した側を重複として取り下げた（日付・会場・企画が一致）。"
       ],
       "evidence": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
+          "kind": "official_event_page",
+          "checked_at": "2026-11-20"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "duplicate_of": "v15-20261205-nerima-mori-leaf"
     },
     {
       "candidate_id": "verified-20261205-nerima-oshigoto-minamitakamatsu",
       "name": "ねりまの森こどもフェスタ「森のおしごと体験」（南高松の森緑地）",
       "ward": "練馬区",
-      "decision": "published",
-      "family_fit": {
-        "grade": "B",
-        "overall": "B",
-        "rubric_version": "family-fit-v2",
-        "reason": "落ち葉掃きをする森のおしごと体験。南高松の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。",
-        "axes": {
-          "child_target": {
-            "grade": "B",
-            "reason": "こどもフェスタの催しで、18歳以下にグッズのプレゼントがある"
-          },
-          "interactivity": {
-            "grade": "B",
-            "reason": "森の中での体験・遊び"
-          },
-          "age_fit": {
-            "grade": "unknown",
-            "reason": "対象年齢の目安は明記がない"
-          },
-          "stay_flexibility": {
-            "grade": "B",
-            "reason": "開催時間が限られている"
-          },
-          "burden": {
-            "grade": "B",
-            "reason": "屋外開催で雨天中止。駐車場がない"
-          },
-          "cost": {
-            "grade": "A",
-            "reason": "参加費無料（一部有料のイベントあり）"
-          },
-          "reservation": {
-            "grade": "A",
-            "reason": "事前予約不要"
-          },
-          "family_value": {
-            "grade": "B",
-            "reason": "森で家族で遊べる"
-          }
-        },
-        "review": {
-          "schema_version": 1,
-          "method": "individual_evidence_review",
-          "reviewed_on": "2026-11-19",
-          "axes_checked": [
-            "child_target",
-            "interactivity",
-            "age_fit",
-            "stay_flexibility",
-            "burden",
-            "cost",
-            "reservation",
-            "family_value"
-          ],
-          "audience_basis": "child_program",
-          "child_activity_confirmed": true,
-          "strengths": [
-            "無料・予約不要",
-            "18歳以下にグッズのプレゼント"
-          ],
-          "limitations": [
-            "屋外で雨天中止",
-            "各会場に駐車場がない"
-          ],
-          "grade_comparison": "総合B：南高松の森緑地で13:30〜14:30の間、無料・予約不要で参加できるが、屋外で雨天中止になる。",
-          "unsupported_axes": [
-            "age_fit"
-          ],
-          "evidence": [
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "令和8年12月5日（土曜）午後1時30分から午後2時30分まで森のおしごと体験（落ち葉掃き）南高松の森緑地（高松2丁目14番4号）南高松もりファンクラブ",
-              "checked_at": "2026-11-19",
-              "sha256": "cea75bbc16e9dbcbc9265af789d28a98a8b0070f9bf15df588d7f56c72043f5a",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "参加方法当日会場へお越しください。事前予約不要・参加費無料です（一部有料のイベントがあります）。",
-              "checked_at": "2026-11-19",
-              "sha256": "730bebdf9c0fa6545fccbad0f3b5ecd80d28d8c36a1cdcac7b00a05ede354c47",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）オリジナルグッズが貰えるのは18歳以下が対象です。",
-              "checked_at": "2026-11-19",
-              "sha256": "ba378f98f2ff0edd2b1faa705ce6c6f06b46a52277f7a24a4990451d98929f31",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）雨天中止となります（一部除く）。",
-              "checked_at": "2026-11-19",
-              "sha256": "0aa46117316f5656199124375c44efb20f1c07b3b3b998824717c8de33d56d17",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            }
-          ]
-        }
-      },
+      "decision": "duplicate",
       "positive_signals": [
         "official_date_confirmed",
         "child_activity_confirmed"
@@ -10985,124 +10781,23 @@
         "family_value_high"
       ],
       "reasons": [
-        "落ち葉掃きをする森のおしごと体験。南高松の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。"
+        "練馬区「ねりまの森こどもフェスタ」の同一イベントが既掲載のレコードと二重に掲載されていたため、後から追加した側を重複として取り下げた（日付・会場・企画が一致）。"
       ],
       "evidence": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
+          "kind": "official_event_page",
+          "checked_at": "2026-11-20"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "duplicate_of": "v15-20261205-nerima-mori-takamatsu"
     },
     {
       "candidate_id": "verified-20261205-nerima-oshigoto-oozekiyama",
       "name": "ねりまの森こどもフェスタ「森のおしごと体験」（大関山の森緑地）",
       "ward": "練馬区",
-      "decision": "published",
-      "family_fit": {
-        "grade": "B",
-        "overall": "B",
-        "rubric_version": "family-fit-v2",
-        "reason": "落ち葉掃きをする森のおしごと体験。大関山の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。",
-        "axes": {
-          "child_target": {
-            "grade": "B",
-            "reason": "こどもフェスタの催しで、18歳以下にグッズのプレゼントがある"
-          },
-          "interactivity": {
-            "grade": "B",
-            "reason": "森の中での体験・遊び"
-          },
-          "age_fit": {
-            "grade": "unknown",
-            "reason": "対象年齢の目安は明記がない"
-          },
-          "stay_flexibility": {
-            "grade": "B",
-            "reason": "開催時間が限られている"
-          },
-          "burden": {
-            "grade": "B",
-            "reason": "屋外開催で雨天中止。駐車場がない"
-          },
-          "cost": {
-            "grade": "A",
-            "reason": "参加費無料（一部有料のイベントあり）"
-          },
-          "reservation": {
-            "grade": "A",
-            "reason": "事前予約不要"
-          },
-          "family_value": {
-            "grade": "B",
-            "reason": "森で家族で遊べる"
-          }
-        },
-        "review": {
-          "schema_version": 1,
-          "method": "individual_evidence_review",
-          "reviewed_on": "2026-11-19",
-          "axes_checked": [
-            "child_target",
-            "interactivity",
-            "age_fit",
-            "stay_flexibility",
-            "burden",
-            "cost",
-            "reservation",
-            "family_value"
-          ],
-          "audience_basis": "child_program",
-          "child_activity_confirmed": true,
-          "strengths": [
-            "無料・予約不要",
-            "18歳以下にグッズのプレゼント"
-          ],
-          "limitations": [
-            "屋外で雨天中止",
-            "各会場に駐車場がない"
-          ],
-          "grade_comparison": "総合B：大関山の森緑地で9:30〜11:00の間、無料・予約不要で参加できるが、屋外で雨天中止になる。",
-          "unsupported_axes": [
-            "age_fit"
-          ],
-          "evidence": [
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "令和8年12月5日（土曜）午前9時30分から午前11時まで森のおしごと体験（落ち葉掃き）大関山の森緑地（関町北4丁目33番19号）大関山森もりクラブ",
-              "checked_at": "2026-11-19",
-              "sha256": "7f360067f94bdd5c16b72c747ba23051ecd20236305dc632f5c9ff337cf3f93c",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "参加方法当日会場へお越しください。事前予約不要・参加費無料です（一部有料のイベントがあります）。",
-              "checked_at": "2026-11-19",
-              "sha256": "730bebdf9c0fa6545fccbad0f3b5ecd80d28d8c36a1cdcac7b00a05ede354c47",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）オリジナルグッズが貰えるのは18歳以下が対象です。",
-              "checked_at": "2026-11-19",
-              "sha256": "ba378f98f2ff0edd2b1faa705ce6c6f06b46a52277f7a24a4990451d98929f31",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            },
-            {
-              "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-              "quote": "（注釈）雨天中止となります（一部除く）。",
-              "checked_at": "2026-11-19",
-              "sha256": "0aa46117316f5656199124375c44efb20f1c07b3b3b998824717c8de33d56d17",
-              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
-              "description": "練馬区公式ページ（2026-11-19にHTTP200で取得、research/2026-11-19-audit/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
-            }
-          ]
-        }
-      },
+      "decision": "duplicate",
       "positive_signals": [
         "official_date_confirmed",
         "child_activity_confirmed"
@@ -11117,15 +10812,17 @@
         "family_value_high"
       ],
       "reasons": [
-        "落ち葉掃きをする森のおしごと体験。大関山の森緑地で開催。無料・予約不要で、18歳以下にはグッズのプレゼントがある。屋外で雨天中止。"
+        "練馬区「ねりまの森こどもフェスタ」の同一イベントが既掲載のレコードと二重に掲載されていたため、後から追加した側を重複として取り下げた（日付・会場・企画が一致）。"
       ],
       "evidence": [
         {
           "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
-          "basis": "2026-11-19 official individual event page (HTTP200); 23 ward completeness not asserted"
+          "kind": "official_event_page",
+          "checked_at": "2026-11-20"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "duplicate_of": "v15-20261205-nerima-mori-otaka"
     },
     {
       "candidate_id": "verified-20261205-setagaya-todoroki-candle",

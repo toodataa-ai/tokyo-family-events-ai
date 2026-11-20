@@ -3417,11 +3417,131 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261212-sumida-aquarium-penguin-calendar",
+      "status": "verified",
+      "source": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "開催期間2026年12月11日（金）～",
+          "checked_at": "2026-11-20",
+          "sha256": "e24221d216c029ecb5976d645428d6e28739c311ca9d1f28c557977d5819a469",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "土日祝日と特定日：午前10時～午後5時（最終受付：午後4時30分）",
+          "checked_at": "2026-11-20",
+          "sha256": "2e4115265a9165da48f48c073466a61907097e53f9ab7e777e6ca44a39a00dec",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "参加費無料入場料は別途必要となります。",
+          "checked_at": "2026-11-20",
+          "sha256": "fec76af179454f2dca5195d0f75b47fae1a229a4e802049f2cd28cae24d3656b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "参加方法当日受付ワークショッ",
+          "checked_at": "2026-11-20",
+          "sha256": "050aba7f58ce9ee3548684c5f5ae442ad20e93762974cf0f81b4a20621303787",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "カレンダー台紙のそれぞれの月にペンギンたちの写真カードを貼ってカレンダーを完成させましょう！",
+          "checked_at": "2026-11-20",
+          "sha256": "4462f4f3ebd9a80d93c7225761df639e1186cc2199562bf997e302d22995a590",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261213-sumida-aquarium-penguin-calendar",
+      "status": "verified",
+      "source": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "開催期間2026年12月11日（金）～",
+          "checked_at": "2026-11-20",
+          "sha256": "e24221d216c029ecb5976d645428d6e28739c311ca9d1f28c557977d5819a469",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "土日祝日と特定日：午前10時～午後5時（最終受付：午後4時30分）",
+          "checked_at": "2026-11-20",
+          "sha256": "2e4115265a9165da48f48c073466a61907097e53f9ab7e777e6ca44a39a00dec",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "参加費無料入場料は別途必要となります。",
+          "checked_at": "2026-11-20",
+          "sha256": "fec76af179454f2dca5195d0f75b47fae1a229a4e802049f2cd28cae24d3656b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "参加方法当日受付ワークショッ",
+          "checked_at": "2026-11-20",
+          "sha256": "050aba7f58ce9ee3548684c5f5ae442ad20e93762974cf0f81b4a20621303787",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/",
+          "quote": "カレンダー台紙のそれぞれの月にペンギンたちの写真カードを貼ってカレンダーを完成させましょう！",
+          "checked_at": "2026-11-20",
+          "sha256": "4462f4f3ebd9a80d93c7225761df639e1186cc2199562bf997e302d22995a590",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 95,
-    "verified": 92,
+    "total": 97,
+    "verified": 94,
     "announced": 3,
     "corrected": 0
   }

@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 129,
-    "verified": 125,
+    "published": 131,
+    "verified": 127,
     "announced": 4,
-    "candidates": 74,
+    "candidates": 76,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3945,6 +3945,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "3c2ac519ca2ceb86531448814220b828a64ca01b",
+    "global_source_audit_complete": false
+  },
+  "lead28_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-sumida-aquarium-kingyo",
+      "verified-20261206-sumida-aquarium-kingyo"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "22e4a457ceadb6a313cd631a270f1c950f5f39ba",
     "global_source_audit_complete": false
   }
 }

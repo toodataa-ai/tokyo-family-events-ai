@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 43,
-    "published": 95,
+    "candidates": 45,
+    "published": 97,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 92,
+    "verified": 94,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2399,6 +2399,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "3c2ac519ca2ceb86531448814220b828a64ca01b",
+    "global_source_audit_complete": false
+  },
+  "lead28_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-sumida-aquarium-penguin-calendar",
+      "verified-20261213-sumida-aquarium-penguin-calendar"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "22e4a457ceadb6a313cd631a270f1c950f5f39ba",
     "global_source_audit_complete": false
   }
 }

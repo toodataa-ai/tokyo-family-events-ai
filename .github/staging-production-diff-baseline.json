@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 481,
+  "expected_total_differences_after_governance": 493,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5175,6 +5175,102 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20のAI捜索（都立公園・施設の公式ページ取得、第10回、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead20_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead20_addition_20261120.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/canoe_kpark.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/dendai_tdu_1219.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/honjo_santa_1220.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/seaside_inline_dec.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/seaside_inline_nov.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/seaside_nagisa_1206.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/ttm_dec_menu_1113.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/ttm_harikko_1205.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/ttm_sugoroku_1129.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/umi_hikoki_1121.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-20の東京都公園・おもちゃ美術館・防災館・大学など主催者公式ページ由来の追加（lead20）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

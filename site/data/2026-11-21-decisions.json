@@ -18617,8 +18617,9 @@
       "override_reason": "",
       "discovery_sources": [
         {
-          "channel": "ai_cross",
-          "kind": "ai_cross_search",
+          "channel": "explicit",
+          "kind": "registered_source",
+          "source_id": "shinjuku_sankaku_hiroba",
           "url": "https://www.sumitomo-sankakuhiroba.jp/event/"
         }
       ]
@@ -19351,8 +19352,9 @@
       "override_reason": "",
       "discovery_sources": [
         {
-          "channel": "ai_cross",
-          "kind": "ai_cross_search",
+          "channel": "explicit",
+          "kind": "registered_source",
+          "source_id": "nerimakanko",
           "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003013"
         }
       ]

@@ -3482,6 +3482,29 @@
       "image_only_updates": 0,
       "global_source_audit_complete": false,
       "note": "2026-11-18以降に追加した記録の判断記録に、取得経路（AI横断探索で見つけ、公式ページで確認）を追記。イベント本体・他の項目は変更なし。過去分は推測で付けず不明のまま。"
+    },
+    {
+      "run_id": "provenance-fix-20261120",
+      "run_type": "manual_provenance_fix",
+      "status": "metadata_only_update",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T23:40:00+09:00",
+      "base_data_production_sha": "9124a74fc7c312838f4a3618d3824230e30a573f",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 704,
+      "candidate_active_week_records": 704,
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "provenance_updated_count": 6,
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "global_source_audit_complete": false,
+      "note": "三角広場・練馬観光協会など登録済みの固定サイトに載っている公式ページの記録は、取得元を「固定サイト」に訂正。イベント本体は変更なし。"
     }
   ]
 }

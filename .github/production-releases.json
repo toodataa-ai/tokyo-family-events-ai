@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-15-r3",
+  "current_public_release": "release/2026-11-20-r1",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -356,7 +356,16 @@
       "workflow_run_id": 43665676887,
       "public_version": "1.38",
       "note": "残課題ページの上部集計を削除。三角広場を固定収集先に追加し、催事名・開催期間・主催者リンクを関連付けて取得するよう改善。対応状況を更新し、公開済み603イベント・履歴・掲載判断原本を保持。"
+    },
+    {
+      "release_id": "release/2026-11-20-r1",
+      "branch": "release/2026-11-20-r1",
+      "commit_sha": "d4e53fe170af6c3e28fef09dc90b9b8ed680d486",
+      "deployed_at": "2026-11-20T13:42:20.858418+00:00",
+      "workflow_run_id": 44746179721,
+      "public_version": "1.39",
+      "note": "写真がない行事のサムネイルを、区の頭文字から種類別アイコンのタイルに変更。データ変更なし。"
     }
   ],
-  "current_public_version": "1.34"
+  "current_public_version": "1.39"
 }

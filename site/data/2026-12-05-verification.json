@@ -4784,11 +4784,131 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-mizunokagaku-kamishibai_koguma",
+      "status": "verified",
+      "source": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+          "quote": "開催日：2026年12月5日(土)",
+          "checked_at": "2026-11-20",
+          "sha256": "42150c44b8dd13e6bdcc68f79ca4f8db444d491e50e81edb1a5113ea41565c96",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+          "quote": "対象：小学生以下のお子様",
+          "checked_at": "2026-11-20",
+          "sha256": "87f61fb7b1a0546ddb46d7d8c18b3cc89d0493ebc56666f4ea2037fccbf471c3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+          "quote": "会場：1Fオリエンテーションルーム",
+          "checked_at": "2026-11-20",
+          "sha256": "b9f58814738e6ec0f28977f4450e52e8e2bc246f400dd82c2162dfaf1742090e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+          "quote": "各回1時間前から1Fインフォメーションにて整理券を配布いたします。",
+          "checked_at": "2026-11-20",
+          "sha256": "b85b5776b46925dd914ba1d839e6df4851566ea984e82473cbfc875d4e837911",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261205_kamishibai_koguma/",
+          "quote": "開催時間：①11:00～②13:30～",
+          "checked_at": "2026-11-20",
+          "sha256": "4b9f7501cc20d65474695da37c8a2d41af5eaa56f5a1f728ab8d6ca74f84b623",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261206-mizunokagaku-kids_scienseshow",
+      "status": "verified",
+      "source": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+          "quote": "開催日：2026年12月6日(日)",
+          "checked_at": "2026-11-20",
+          "sha256": "368201351f03356b337e3f62eed721b34fae32355bc4e6567122f446fc9b0bd3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+          "quote": "対象：小学生以下のお子様",
+          "checked_at": "2026-11-20",
+          "sha256": "87f61fb7b1a0546ddb46d7d8c18b3cc89d0493ebc56666f4ea2037fccbf471c3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+          "quote": "会場：1Fオリエンテーションルーム",
+          "checked_at": "2026-11-20",
+          "sha256": "b9f58814738e6ec0f28977f4450e52e8e2bc246f400dd82c2162dfaf1742090e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+          "quote": "各回1時間前から1Fインフォメーションにて整理券を配布いたします。",
+          "checked_at": "2026-11-20",
+          "sha256": "b85b5776b46925dd914ba1d839e6df4851566ea984e82473cbfc875d4e837911",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mizunokagaku.jp/event/261206_kids_scienseshow/",
+          "quote": "開催時間：①11:00～②13:30～",
+          "checked_at": "2026-11-20",
+          "sha256": "4b9f7501cc20d65474695da37c8a2d41af5eaa56f5a1f728ab8d6ca74f84b623",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 127,
-    "verified": 123,
+    "total": 129,
+    "verified": 125,
     "announced": 4
   }
 }

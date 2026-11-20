@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 42,
-    "published": 94,
+    "candidates": 43,
+    "published": 95,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 91,
+    "verified": 92,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2389,6 +2389,16 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "afedbc20dd622d85fb58529ed05e22a262a6b6d6",
+    "global_source_audit_complete": false
+  },
+  "lead26_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-mizunokagaku-original_garland"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "3c2ac519ca2ceb86531448814220b828a64ca01b",
     "global_source_audit_complete": false
   }
 }

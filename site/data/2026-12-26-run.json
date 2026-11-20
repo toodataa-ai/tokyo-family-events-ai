@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 7,
-    "published": 7,
+    "candidates": 8,
+    "published": 8,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 4,
+    "verified": 5,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -1901,6 +1901,16 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
+    "global_source_audit_complete": false
+  },
+  "lead26_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261227-mizunokagaku-clown_rio"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "3c2ac519ca2ceb86531448814220b828a64ca01b",
     "global_source_audit_complete": false
   }
 }

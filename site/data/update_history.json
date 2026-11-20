@@ -3127,6 +3127,45 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "東京都の公園管理者・板橋区の公式ページで日付・時間・会場・条件を確認できた9件のみ追加。"
+    },
+    {
+      "run_id": "lead26-addition-20261120",
+      "run_type": "manual_verified_lead26_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "3c2ac519ca2ceb86531448814220b828a64ca01b",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 673,
+      "candidate_active_week_records": 684,
+      "added_weekly_records": 11,
+      "new_event_ids": [
+        "verified-20261121-mizunokagaku-suitekikun_dance",
+        "verified-20261122-mizunokagaku-nankyoku_blizzard",
+        "verified-20261123-mizunokagaku-kendamashow",
+        "verified-20261128-mizunokagaku-mori_ikimonotankentai",
+        "verified-20261129-mizunokagaku-kids_sciense_challenge",
+        "verified-20261205-mizunokagaku-kamishibai_koguma",
+        "verified-20261206-mizunokagaku-kids_scienseshow",
+        "verified-20261212-mizunokagaku-original_garland",
+        "verified-20261219-mizunokagaku-kamishibai_drop",
+        "verified-20261220-mizunokagaku-tubc_free_throw",
+        "verified-20261227-mizunokagaku-clown_rio"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都の公園管理者・東京都水の科学館の公式ページで日付・時間・会場・条件を確認できた11件のみ追加。"
     }
   ]
 }

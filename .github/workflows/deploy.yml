@@ -627,37 +627,37 @@ jobs:
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-audit-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits the pinned 2026-11-19 audit addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead5-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead5 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead5 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead6-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead6 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead6 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead7 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead7 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "sumida-image-alignment-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-20 sumida image alignment proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned sumida image alignment proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead17-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-20 lead17 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead17 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead16-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-20 lead16 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead16 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead15-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-20 lead15 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead15 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead14-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead14 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead14 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead13-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead13 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead13 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead12-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead12 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead12 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead11-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead11 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead11 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead10-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead10 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead10 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead9 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead9 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead8 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead8 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead4-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead4 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead4 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead3-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 lead3 addition proof from the successful validate_data job for exact stage SHA"
+              echo "Preview inherits pinned lead3 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-sankaku-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview inherits the pinned 2026-11-19 Sankaku Plaza Christmas addition proof from the successful validate_data job for exact stage SHA"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then

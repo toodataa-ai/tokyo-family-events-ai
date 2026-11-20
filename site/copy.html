@@ -60,6 +60,7 @@
   <div class="grid" id="grid"></div>
 </main>
 <footer>コピペ契約 v1：タイトル → 場所 → 日時 → 料金 → 説明 → 公式サイト → 情報元サイト → 画像URL（画像がある場合のみ）</footer>
+<script src="thumb-fallback.js"></script>
 <script src="self-usage.js?v=20261028-1" defer></script>
 <script src="usage-metrics.js?v=20261028-today" defer></script>
 <script type="module">
@@ -162,7 +163,7 @@ function render(){
        <span>料金：${escapeHtml(child.price||'料金要確認')}</span>
        ${child.description?`<span>内容：${escapeHtml(child.description)}</span>`:''}
        <span>申込：${escapeHtml(child.reservation?.note||'要確認')}</span></li>`).join('')}</ol></section>`:'';
-    const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'thumb ph event-list-thumb',textContent:'${escapeHtml(ev.ward.slice(0,1))}'}))">`:`<div class="thumb ph event-list-thumb">${escapeHtml(ev.ward.slice(0,1))}</div>`;
+    const thumb=img?`<img class="thumb event-list-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.outerHTML=ThumbFallback.html(JSON.parse(this.dataset.ev))" data-ev='${escapeHtml(JSON.stringify({name:ev.name,ward:ev.ward,description:ev.description,venue:ev.venue}))}'>`:ThumbFallback.html(ev);
     const title=href?`<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(ev.name||ev.url)}</a>`:escapeHtml(ev.name||ev.url);
     const verifyBadge=`<span class="badge ${state.className}">${escapeHtml(state.label)}</span>`;
     const verifyText=`<div class="source"><b>${verificationSourceHeading(ev.verification)}:</b> ${ev.verification?.verified_on?escapeHtml(ev.verification.verified_on)+' ／ ':''}${verifyUrl?`<a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener">検証ソース</a>`:'検証ソース要確認'}${ev.verification?.note?`<br>${escapeHtml(ev.verification.note)}`:''}</div>`;

@@ -2751,6 +2751,53 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "足立区立足立区公式サイトのイベントページで日付・時間・会場・対象・料金・申込を確認できた12件の週別レコードのみ追加。"
+    },
+    {
+      "run_id": "lead17-addition-20261120",
+      "run_type": "manual_verified_lead17_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T12:00:00+09:00",
+      "base_data_production_sha": "3c1e048d3a1b8f934471578094efcf2cd49c252f",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 609,
+      "candidate_active_week_records": 629,
+      "added_weekly_records": 20,
+      "new_event_ids": [
+        "verified-20261128-katsushika-kawajin-fair",
+        "verified-20261129-katsushika-kawajin-fair",
+        "verified-20261128-katsushika-kawajin-karesansui",
+        "verified-20261129-katsushika-kawajin-karesansui",
+        "verified-20261128-katsushika-kawajin-dango",
+        "verified-20261129-katsushika-kawajin-pickles",
+        "verified-20261128-katsushika-kawajin-owara",
+        "verified-20261129-katsushika-kawajin-awa",
+        "verified-20261129-katsushika-kawajin-taiko",
+        "verified-20261129-katsushika-kawajin-bathbomb",
+        "verified-20261128-katsushika-kawajin-papercup",
+        "verified-20261129-katsushika-kawajin-papercup",
+        "verified-20261128-katsushika-kawajin-brooch",
+        "verified-20261129-katsushika-kawajin-brooch",
+        "verified-20261128-katsushika-kawajin-pouch",
+        "verified-20261129-katsushika-kawajin-pouch",
+        "verified-20261128-katsushika-kawajin-leather",
+        "verified-20261129-katsushika-kawajin-leather",
+        "verified-20261219-katsushika-kawajin-shogatsu",
+        "verified-20261220-katsushika-kawajin-shogatsu"
+      ],
+      "held_not_published": [
+        "kawajin-kodomo-marche",
+        "kawajin-not-child-or-closed"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "柴又川甚まちなみ館公式サイトの案内ページで日付・時間・会場・対象・料金・申込を確認できた20件の週別レコードのみ追加。"
     }
   ]
 }

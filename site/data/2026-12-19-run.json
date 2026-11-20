@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 37,
-    "published": 37,
+    "candidates": 39,
+    "published": 39,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 36,
+    "verified": 38,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2020,6 +2020,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "42a4df85628e29e526f063cc8fe4fbff0b4d163a",
+    "global_source_audit_complete": false
+  },
+  "lead17_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-katsushika-kawajin-shogatsu",
+      "verified-20261220-katsushika-kawajin-shogatsu"
+    ],
+    "held_not_published": [
+      "kawajin-kodomo-marche",
+      "kawajin-not-child-or-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "3c1e048d3a1b8f934471578094efcf2cd49c252f",
     "global_source_audit_complete": false
   }
 }

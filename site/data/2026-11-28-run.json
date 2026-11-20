@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 147,
-    "verified": 147,
+    "published": 165,
+    "verified": 165,
     "announced": 0,
-    "candidates": 83,
+    "candidates": 101,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4244,6 +4244,36 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "42a4df85628e29e526f063cc8fe4fbff0b4d163a",
+    "global_source_audit_complete": false
+  },
+  "lead17_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-katsushika-kawajin-fair",
+      "verified-20261129-katsushika-kawajin-fair",
+      "verified-20261128-katsushika-kawajin-karesansui",
+      "verified-20261129-katsushika-kawajin-karesansui",
+      "verified-20261128-katsushika-kawajin-dango",
+      "verified-20261129-katsushika-kawajin-pickles",
+      "verified-20261128-katsushika-kawajin-owara",
+      "verified-20261129-katsushika-kawajin-awa",
+      "verified-20261129-katsushika-kawajin-taiko",
+      "verified-20261129-katsushika-kawajin-bathbomb",
+      "verified-20261128-katsushika-kawajin-papercup",
+      "verified-20261129-katsushika-kawajin-papercup",
+      "verified-20261128-katsushika-kawajin-brooch",
+      "verified-20261129-katsushika-kawajin-brooch",
+      "verified-20261128-katsushika-kawajin-pouch",
+      "verified-20261129-katsushika-kawajin-pouch",
+      "verified-20261128-katsushika-kawajin-leather",
+      "verified-20261129-katsushika-kawajin-leather"
+    ],
+    "held_not_published": [
+      "kawajin-kodomo-marche",
+      "kawajin-not-child-or-closed"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "3c1e048d3a1b8f934471578094efcf2cd49c252f",
     "global_source_audit_complete": false
   }
 }

@@ -676,18 +676,8 @@ jobs:
               echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead18-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead18 proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead19-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead19 proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead20-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead20 proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead21-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead21 proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead22-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead22 proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead23-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "pinned lead23 proof"
+            elif ( [ "${{ needs.gate.outputs.operation }}" = "verified-lead18-addition-20261120" ] || [ "${{ needs.gate.outputs.operation }}" = "verified-lead19-addition-20261120" ] || [ "${{ needs.gate.outputs.operation }}" = "verified-lead20-addition-20261120" ] || [ "${{ needs.gate.outputs.operation }}" = "verified-lead21-addition-20261120" ] || [ "${{ needs.gate.outputs.operation }}" = "verified-lead22-addition-20261120" ] || [ "${{ needs.gate.outputs.operation }}" = "verified-lead23-addition-20261120" ] ) && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nakano-image-alignment-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then

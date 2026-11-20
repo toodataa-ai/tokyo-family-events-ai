@@ -637,61 +637,61 @@ jobs:
               node ../staging-src/tools/validate_history_metadata_provenance.mjs \
                 --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits source evidence plus immutable roll proof from the successful validate_data job for exact stage SHA"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-audit-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 audit addition proof from the successful validate_data job for exact stage SHA"
+              echo "pinned audit proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead5-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead5 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead6-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead6 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead7 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead18-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned lead18 proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nakano-image-alignment-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned nakano proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "sumida-image-alignment-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned sumida image alignment proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead17-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead17 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead16-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead16 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead15-addition-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead15 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead14-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead14 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead13-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead13 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead12-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead12 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead11-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead11 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead10-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead10 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead9 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead8 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead4-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead4 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead3-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits pinned lead3 proof"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-sankaku-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-19 Sankaku Plaza Christmas addition proof from the successful validate_data job for exact stage SHA"
+              echo "pinned Sankaku proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned lead-triage official-page addition proof from the successful validate_data job for exact stage SHA"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-addition-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned Suginami official-page addition proof from the successful validate_data job for exact stage SHA"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits the pinned 2026-11-18 receipt-backed rollover proof from the successful validate_data job for exact stage SHA"
+              echo "pinned receipt-backed proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits immutable verified-subset proof and scoped source audit from validate_data on candidate SHA"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits strict three-week Nerima official schedule additive audit from validate_data job"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "manual-official-gap-recovery-20261108" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
-              echo "Preview inherits exact-baseline scoped source audit from passed validate_data job; no historical source debt waived"
+              echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "thumbnail-correction" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "Preview source audit inherits the exact one-field thumbnail guard from validate_data; unchanged historical source checks remain recorded as-is"
             else

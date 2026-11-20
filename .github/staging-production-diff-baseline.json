@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 584,
+  "expected_total_differences_after_governance": 588,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5999,6 +5999,38 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20 サムネイル補完（画像のみ）の追加ツール",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/copy.html",
+      "kind": "staging_only",
+      "category": "ui_thumb_fallback_20261120",
+      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/search.html",
+      "kind": "staging_only",
+      "category": "ui_thumb_fallback_20261120",
+      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/styles.css",
+      "kind": "staging_only",
+      "category": "ui_thumb_fallback_20261120",
+      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/thumb-fallback.js",
+      "kind": "staging_only",
+      "category": "ui_thumb_fallback_20261120",
+      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

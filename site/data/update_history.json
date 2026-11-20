@@ -2902,6 +2902,30 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "練馬区公式の「ねりまの森こどもフェスタ」案内ページで日付・時間・会場・料金・申込を確認できた12/26週の1件のみ追加。"
+    },
+    {
+      "run_id": "lead19-addition-20261120",
+      "run_type": "manual_verified_lead19_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "2f1a3e2e8801442490dda45a493fe969eb35f12a",
+      "target_weekends": [
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 625,
+      "candidate_active_week_records": 626,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261206-bunkyo-bosai-festa"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "文京区公式の防災フェスタ案内ページで日付・時間・会場・体験内容を確認できた12/5週の1件のみ追加。"
     }
   ]
 }

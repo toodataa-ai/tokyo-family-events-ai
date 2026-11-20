@@ -3166,6 +3166,34 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "東京都の公園管理者・東京都水の科学館の公式ページで日付・時間・会場・条件を確認できた11件のみ追加。"
+    },
+    {
+      "run_id": "lead27-addition-20261120",
+      "run_type": "manual_verified_lead27_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "5e2b515a44a3333ecccfbac3551d89d921955838",
+      "target_weekends": [
+        "2026-11-21"
+      ],
+      "prior_active_week_records": 684,
+      "candidate_active_week_records": 689,
+      "added_weekly_records": 5,
+      "new_event_ids": [
+        "verified-20261122-tohaku-nurie",
+        "verified-20261122-tohaku-canbadge",
+        "verified-20261122-tohaku-papercraft",
+        "verified-20261122-tohaku-tanken",
+        "verified-20261122-tohaku-kimono"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都の公園管理者・東京国立博物館の公式ページで日付・時間・会場・条件を確認できた5件のみ追加。"
     }
   ]
 }

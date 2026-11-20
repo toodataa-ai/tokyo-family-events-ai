@@ -8388,11 +8388,295 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261122-tohaku-nurie",
+      "status": "verified",
+      "source": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+          "quote": "トーハクプチキッズデー（毎月第4日曜日、12月20日）",
+          "checked_at": "2026-11-20",
+          "sha256": "dae5321aa754251b89ed78f7882539ceafe6f74edfe9d67eb216bbc29a185e73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+          "quote": "日程2026年11月22日（日）",
+          "checked_at": "2026-11-20",
+          "sha256": "fea9165f5ecb6f8f67806322fab3a9e9eb0bf1b4f5d2648b77e09b9a5d98a945",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+          "quote": "参加費無料〒110-8712",
+          "checked_at": "2026-11-20",
+          "sha256": "141343af5d8009616fba2c7ad0b7a3c1a8dfad2902fe78ec38078420a5bccb81",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+          "quote": "会場平成館-ファミリースペース",
+          "checked_at": "2026-11-20",
+          "sha256": "584d185452878c663c49221a2bbdaeaefb3bdc31b9e91b0281b66164f195c3d7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11808",
+          "quote": "ファミリースペースで休憩しながら、東博オリジナルのぬりえを楽しんでみませんか。",
+          "checked_at": "2026-11-20",
+          "sha256": "c97fe809949633b097e1fd4a28617269e12f8aa4cda8f2e6011ad990a18e575a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-tohaku-canbadge",
+      "status": "verified",
+      "source": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11833",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11833",
+          "quote": "トーハクプチキッズデー（毎月第4日曜日、12月20日）",
+          "checked_at": "2026-11-20",
+          "sha256": "dae5321aa754251b89ed78f7882539ceafe6f74edfe9d67eb216bbc29a185e73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11833",
+          "quote": "日程2026年11月22日（日）",
+          "checked_at": "2026-11-20",
+          "sha256": "fea9165f5ecb6f8f67806322fab3a9e9eb0bf1b4f5d2648b77e09b9a5d98a945",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11833",
+          "quote": "会場平成館-ファミリースペース",
+          "checked_at": "2026-11-20",
+          "sha256": "584d185452878c663c49221a2bbdaeaefb3bdc31b9e91b0281b66164f195c3d7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11833",
+          "quote": "東京国立博物館の作品やイラスト、千代紙などから1枚選んで、オリジナルの缶バッジを作れます。",
+          "checked_at": "2026-11-20",
+          "sha256": "6449ebcd7536eaaab673cbda93bff4c2f8444f9d796884d09b5ef30ede9f6fb1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-tohaku-papercraft",
+      "status": "verified",
+      "source": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11834",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11834",
+          "quote": "トーハクプチキッズデー（毎月第4日曜日、12月20日）",
+          "checked_at": "2026-11-20",
+          "sha256": "dae5321aa754251b89ed78f7882539ceafe6f74edfe9d67eb216bbc29a185e73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11834",
+          "quote": "日程2026年11月22日（日）",
+          "checked_at": "2026-11-20",
+          "sha256": "fea9165f5ecb6f8f67806322fab3a9e9eb0bf1b4f5d2648b77e09b9a5d98a945",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11834",
+          "quote": "会場平成館-ファミリースペース",
+          "checked_at": "2026-11-20",
+          "sha256": "584d185452878c663c49221a2bbdaeaefb3bdc31b9e91b0281b66164f195c3d7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11834",
+          "quote": "ぬりえと工作をして、おひめさまを作ってみましょう。",
+          "checked_at": "2026-11-20",
+          "sha256": "448c5a6e6bd2439ce39c9e2c3c2291ea7c77bb034c99423e0a35cd89d5d4c516",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-tohaku-tanken",
+      "status": "verified",
+      "source": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+          "quote": "トーハクプチキッズデー（毎月第4日曜日、12月20日）",
+          "checked_at": "2026-11-20",
+          "sha256": "dae5321aa754251b89ed78f7882539ceafe6f74edfe9d67eb216bbc29a185e73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+          "quote": "日程2026年11月22日（日）",
+          "checked_at": "2026-11-20",
+          "sha256": "fea9165f5ecb6f8f67806322fab3a9e9eb0bf1b4f5d2648b77e09b9a5d98a945",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+          "quote": "参加費無料〒110-8712",
+          "checked_at": "2026-11-20",
+          "sha256": "141343af5d8009616fba2c7ad0b7a3c1a8dfad2902fe78ec38078420a5bccb81",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+          "quote": "配布場所本館9室参加費無料〒",
+          "checked_at": "2026-11-20",
+          "sha256": "2d803216331f6b026841ac55255c789b03788fff494e4bc0ce6fcf640d671cd8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11840",
+          "quote": "「トーハク本館たんけんブック」をもって、たてもののデザインに注目しながら、家族やお友だちと本館をたんけんしよう！",
+          "checked_at": "2026-11-20",
+          "sha256": "6b6fd6d78c2f29d51c76543d3f7f76c85d9999206dacbadb0912d11c650b29a4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261122-tohaku-kimono",
+      "status": "verified",
+      "source": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+          "quote": "トーハクプチキッズデー（毎月第4日曜日、12月20日）",
+          "checked_at": "2026-11-20",
+          "sha256": "dae5321aa754251b89ed78f7882539ceafe6f74edfe9d67eb216bbc29a185e73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+          "quote": "日程2026年11月22日（日）",
+          "checked_at": "2026-11-20",
+          "sha256": "fea9165f5ecb6f8f67806322fab3a9e9eb0bf1b4f5d2648b77e09b9a5d98a945",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+          "quote": "参加費無料対象小学3年生以上",
+          "checked_at": "2026-11-20",
+          "sha256": "b642b2e42e9ff79ce1907a2b036f183c7279f693012ffc1c40b8743512987b56",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+          "quote": "会場本館-C室参加費無料対象",
+          "checked_at": "2026-11-20",
+          "sha256": "5d0ee618c7a7590aef6396b066a16ba4e9f23d5938db7c9aebfbf2917c81d937",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tnm.jp/modules/r_event/index.php?controller=dtl&cid=15&id=11844",
+          "quote": "展示室でもようを見つけて、自分だけのきものデザインをつくろう！",
+          "checked_at": "2026-11-20",
+          "sha256": "776ffe68d594c45f62f8698ce78952b1d58fb1de9f9746d7aae8895d9e80f11f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 223,
-    "verified": 223,
+    "total": 228,
+    "verified": 228,
     "announced": 0
   }
 }

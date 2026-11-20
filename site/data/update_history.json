@@ -2878,6 +2878,30 @@
       "existing_event_records_physically_deleted": 0,
       "global_source_audit_complete": false,
       "note": "練馬区「ねりまの森こどもフェスタ」の二重掲載5件を、決定記録（duplicate・重複元ID・理由・公式URL）付きで公開リストから取り下げた。"
+    },
+    {
+      "run_id": "lead18-addition-20261120",
+      "run_type": "manual_verified_lead18_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "8fc09442381d87b85046659b46cfdaec315655a0",
+      "target_weekends": [
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 624,
+      "candidate_active_week_records": 625,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261226-nerima-oshigoto-nishihonmura"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "練馬区公式の「ねりまの森こどもフェスタ」案内ページで日付・時間・会場・料金・申込を確認できた12/26週の1件のみ追加。"
     }
   ]
 }

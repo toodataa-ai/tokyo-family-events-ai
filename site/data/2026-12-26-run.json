@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 4,
-    "published": 4,
+    "candidates": 5,
+    "published": 5,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 1,
+    "verified": 2,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -1881,5 +1881,15 @@
     ],
     "unverified_candidate_links": 821,
     "full_23_ward_25_source_audit_complete": false
+  },
+  "lead18_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261226-nerima-oshigoto-nishihonmura"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "8fc09442381d87b85046659b46cfdaec315655a0",
+    "global_source_audit_complete": false
   }
 }

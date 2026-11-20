@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 4,
+    "candidate_count": 5,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 4,
+    "published_count": 5,
     "wards": [
       {
         "ward": "千代田区",
@@ -191,9 +191,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 ただし月別の旧公式カレンダー2URLはHTTP404（失敗のまま記録）。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 ただし月別の旧公式カレンダー2URLはHTTP404（失敗のまま記録）。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "足立区",
@@ -225,7 +225,8 @@
     ]
   },
   "event_files": [
-    "2026-12-26-events-non-ng-verified-only-20261117.json"
+    "2026-12-26-events-non-ng-verified-only-20261117.json",
+    "2026-12-26-events-lead18-20261120.json"
   ],
   "events": []
 }

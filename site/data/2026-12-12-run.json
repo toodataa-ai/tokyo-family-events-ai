@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 39,
-    "published": 91,
+    "candidates": 40,
+    "published": 92,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 88,
+    "verified": 89,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2368,6 +2368,16 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "a58d6c51a15757198e02b458962fc1337d9ec28a",
+    "global_source_audit_complete": false
+  },
+  "lead24_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-ariake-quest-3"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "29e7e555c772ba2bc59ee42bd30a6f1de6d63c51",
     "global_source_audit_complete": false
   }
 }

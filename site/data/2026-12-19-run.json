@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 51,
-    "published": 51,
+    "candidates": 52,
+    "published": 52,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 50,
+    "verified": 51,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2082,6 +2082,16 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "a279cf9b7b9b576122f51257b705ad9633b3d040",
+    "global_source_audit_complete": false
+  },
+  "lead24_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261220-jonanjima-skateboard-class"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "29e7e555c772ba2bc59ee42bd30a6f1de6d63c51",
     "global_source_audit_complete": false
   }
 }

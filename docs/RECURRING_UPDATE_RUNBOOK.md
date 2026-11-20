@@ -1,6 +1,6 @@
 # 定期更新手順書（休日明けの更新・追加公開）
 
-最終更新: 2026-11-18（Claude）。**利用者のフィードバックは、受けたその場でこの手順書の「フィードバック台帳」と該当手順に反映する。** 反映していない指摘は未対応とみなす。
+最終更新: 2026-11-20（Claude）。**利用者のフィードバックは、受けたその場でこの手順書の「フィードバック台帳」と該当手順に反映する。** 反映していない指摘は未対応とみなす。
 
 ## 1. 定期実行の流れ（毎回）
 1. `AGENTS.md`・本書・直近の `docs/CLAUDE_HANDOVER_*.md` を読み、`data-production` / `data-staging` の先頭SHAが一致していることを確認する。
@@ -90,6 +90,18 @@
 - ユーザー判断A: 記録のない過去分は推測で付けず「不明」のまま表示する。新しい区分は作らない。
 - 今後の追加分は、取得経路が分かる場合に `discovery_sources` を必ず付ける（区カレンダー・公式PDF・区報などの固定サイト由来は channel=explicit、AI横断探索由来は channel=ai_cross、url と kind を併記）。
 - 既存レコードの変更は禁止のため、過去分への後付けはしない。
+
+## 3.58 毎週の拡張手順：全23区の探索→lead登録→サムネイル補完→データのみ本番（2026-11-20 確立、ユーザー判断）
+
+ユーザーは「次回も同じ手順で自動実行」を指示した。毎回、次を自走で行い、報告は件数つき（「何件完了、何件未完了、未完了の理由は〇〇」）で日本語。
+
+1. **探索**: 全23区について公式ページをWebSearchで探し、取得できないページは読み取り専用の取得ワークフロー（`.github/workflows/fetch-thin-wardsN-YYYYMMDD.yml` を直近のものからコピー、URLは `research/<日付>-thin-wards/urlsN.txt`）で本文を取得する。取得結果は孤立ブランチ `research/thin-wardsN-YYYYMMDD` から `git archive` で取り出す。
+2. **登録**: 直近の `tools/leadNN_addition_*.py` と `validate_leadNN_*.py` をコピーして新しいleadを作る（BASE＝現在の `data-production` のSHA）。住民限定・申込締切・抽選締切は載せない。公式本文の逐語引用で確認できたものだけ。参加費など本文にない項目は「不明」。child_target 'A' は根拠が child_program のときだけ。
+3. **検証ゲート**: lead の validate、`validate_family_fit_quality.py`、`validate_data.py --strict --min-image-coverage 0`、`validate_decisions.py --strict`、`validate_non_regression.py`、`validate_protected_events.py`、`validate_rereview.py --strict`、`audit_event_image_identity.py --strict`（衝突0）、`audit_environment_diff.py --ref HEAD --strict`（unclassified=0, wrong_kind=0）。新しいツール/ページ/ワークフローは `.github/staging-production-diff-baseline.json` に追記（新規は staging_only、変更は different）。
+4. **サムネイル補完**: 追加した記録で画像が空のものは、公式ページから行事固有の画像を探して入れる（og:image → 本文の添付画像）。サイト共通ロゴ・共通バナー・別の行事と使い回された画像は入れない。画像だけ変える専用ツール（`tools/image_fillN_*.py` ＋ validate、直近のものをコピー）を使い、画像以外は変えない。画像がない行事は種類別アイコンのタイル（v1.39）が自動表示される。
+5. **本番（データのみ）**: 現在の `data-production` のSHAの上に候補を作り、`git push -f origin <候補>:refs/heads/data-staging`。続けて `.github/data-deploy-trigger.txt` **だけ**を変えるコミットを main に push（operation / candidate_sha / base_data_production_sha）。他のファイルと同じコミットにすると staging モードで動き失敗する。deploy.yml に新しい operation 名を足すときは、validate_data・preview(pinned proof)・promote の3か所（またはその正規表現）を更新する。run: の文字数上限は約2.1万文字。成功後に `git ls-remote origin data-production` が候補SHAであることを確認。
+6. **コード/UI/スキーマの変更は本番に出さない**（ステージングまで。本番はチャットで「本番OK」をもらってから）。
+7. **報告**: 公開件数、追加N件、画像設定N件／未設定M件（理由：写真が無い／共通画像のみ／別行事と共有）、止まっている点、決めてほしい点。
 
 ## 4. 既知の未完（毎回再確認）
 - 取得失敗6件の扱いは `research/2026-11-19-audit/FAILURE_DISPOSITIONS.md`。三角広場のクリスマス(11/20〜12/13)は、利用者の許可により「時間は公式Instagram参照」として4週末レコードで掲載（`verified-sankaku-addition-20261119`）。12月分のInstagramカレンダーが出たら、11/28以降の実施日表示を見直す。

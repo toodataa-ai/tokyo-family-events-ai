@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 551,
+  "expected_total_differences_after_governance": 553,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -5735,6 +5735,22 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-20の江東区の主催者公式ページ由来の追加（lead26）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards20-20261120.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の品川区児童センター月間お知らせページの読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls20.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-19の品川区児童センター月間お知らせページの読み取り専用取得。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

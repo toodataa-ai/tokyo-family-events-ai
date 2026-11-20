@@ -30,9 +30,10 @@
       <div class="summary-card" style="grid-column:1/-1"><b id="totalPublished">-</b><span>掲載イベント</span><small id="publishedCountScope">6週間・同一フェスの企画を統合後</small></div>
     </div>
     <div class="home-changes-summary" id="homeChangesSummary" aria-live="polite">今週の掲載変更を集計中です。</div>
+    <p class="source-coverage-entry"><a href="source-audit.html">固定サイト26件の取得状況・掲載照合の進捗を見る</a></p>
     <details class="update-history-details" id="updateHistoryDetails">
-      <summary><span>休日明けの更新履歴</span><small id="updateHistorySummary">更新実績なし</small></summary>
-      <div class="update-history-list" id="updateHistoryList"><p>休日明けの6週間データ更新はまだ完了していません。アプリの公開Version更新とは別の履歴です。</p></div>
+      <summary><span>更新履歴</span><small id="updateHistorySummary">更新実績なし</small></summary>
+      <div class="update-history-list" id="updateHistoryList"><p>6週間データの更新はまだ完了していません。アプリの公開Version更新とは別の履歴です。</p></div>
     </details>
   </section>
 
@@ -75,11 +76,11 @@
 
     <div class="logic-subhead">
       <div class="eyebrow">WEEKLY UPDATE</div>
-      <h3>休日明けに、6週間を差分更新します</h3>
-      <p>毎朝8時ごろに実行条件だけ確認し、土日＋祝日の連続休日が終わった最初の平日にだけ本更新します。通常週は月曜、月曜祝日の3連休なら火曜です。</p>
+      <h3>毎日、6週間を差分更新します</h3>
+      <p>毎朝、土日祝も含めて毎日実行します。新しく見つかった公式情報があればその日のうちに追加し、見つからない日は何も変更しません。更新履歴は週ごとにまとめて表示します。</p>
     </div>
     <div class="logic-flow logic-update-flow">
-      <div class="logic-step"><span>1</span><b>休日明けを判定</b><small>日本の祝日・休日を確認し、直前の休日ブロック終了後の最初の平日だけ更新。該当しない日は何も変更しません。</small></div>
+      <div class="logic-step"><span>1</span><b>毎日実行</b><small>毎朝10時台に、土日祝を含めて毎日実行。新しく追加できる情報がない日は何も変更しません。</small></div>
       <div class="logic-step"><span>2</span><b>直近1〜2週を再探索</b><small>23区を再探索し、既存掲載も公式再監査。直前追加、中止・延期、時間・料金・申込などの変更を反映します。</small></div>
       <div class="logic-step"><span>3</span><b>3〜5週先は差分探索</b><small>既存イベントの変更監査をしながら、新着候補を差分で探索。毎回ゼロから全件取り直す負荷を避けます。</small></div>
       <div class="logic-step"><span>4</span><b>新しい6週目をフル探索</b><small>新たにローリング対象へ入った期間は、東京23区を1区ずつフル探索して新しい母集団を作ります。</small></div>

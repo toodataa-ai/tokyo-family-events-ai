@@ -840,3 +840,7 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .festival-program span{overflow-wrap:anywhere}
 @media(max-width:680px){.festival-parent-tag{font-size:9px;margin-left:4px;padding:2px 5px}
   .festival-programs{padding:9px}.festival-program{padding:8px;font-size:10.5px}}
+.thumb.ph-cat{position:relative;font-size:0}
+.thumb.ph-cat .ph-disc{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.7)}
+.thumb.ph-cat .ph-ward{position:absolute;left:8px;bottom:6px;font-size:11px;font-weight:700;line-height:1;color:currentColor;opacity:.85;letter-spacing:.02em}
+@media(max-width:640px){.thumb.ph-cat .ph-disc{width:46px;height:46px}.thumb.ph-cat svg{width:28px;height:28px}}

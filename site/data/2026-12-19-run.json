@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 58,
-    "published": 58,
+    "candidates": 60,
+    "published": 60,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 57,
+    "verified": 59,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2125,6 +2125,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "22e4a457ceadb6a313cd631a270f1c950f5f39ba",
+    "global_source_audit_complete": false
+  },
+  "lead29_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261220-tohaku-canbadge",
+      "verified-20261220-tohaku-papercraft"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "f30356a47d4e86a0d2a4586d472ccdbbe5cb804d",
     "global_source_audit_complete": false
   }
 }

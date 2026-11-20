@@ -3235,6 +3235,31 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "東京都の公園管理者・すみだ水族館の公式ページで日付・時間・会場・条件を確認できた13件のみ追加。"
+    },
+    {
+      "run_id": "lead29-addition-20261120",
+      "run_type": "manual_verified_lead29_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "f30356a47d4e86a0d2a4586d472ccdbbe5cb804d",
+      "target_weekends": [
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 702,
+      "candidate_active_week_records": 704,
+      "added_weekly_records": 2,
+      "new_event_ids": [
+        "verified-20261220-tohaku-canbadge",
+        "verified-20261220-tohaku-papercraft"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都の公園管理者・東京国立博物館の公式ページで日付・時間・会場・条件を確認できた2件のみ追加。"
     }
   ]
 }

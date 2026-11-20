@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 232,
+    "candidate_count": 234,
     "duplicate_removed": 1,
     "excluded_count": 16,
-    "published_count": 215,
+    "published_count": 217,
     "wards": [
       {
         "ward": "千代田区",
@@ -56,18 +56,18 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "台東区",
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 7,
-        "published_count": 7,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 8,
+        "published_count": 8,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "墨田区",
@@ -262,7 +262,8 @@
     "2026-11-21-events-lead14-20261119.json",
     "2026-11-21-events-lead15-20261120.json",
     "2026-11-21-events-lead16-20261120.json",
-    "2026-11-21-events-lead20-20261120.json"
+    "2026-11-21-events-lead20-20261120.json",
+    "2026-11-21-events-lead21-20261120.json"
   ],
   "events": []
 }

@@ -4332,11 +4332,131 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-nakano-nogata-edit",
+      "status": "verified",
+      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+          "quote": "2026年12月5日（土曜日）10:00～12:00受付は9:45から",
+          "checked_at": "2026-11-20",
+          "sha256": "e91b64b9732f4ec2989760afac888677b51a526e33149f4666053a7f806032d9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+          "quote": "対象小学生定員30名（事前予約）",
+          "checked_at": "2026-11-20",
+          "sha256": "448531f4560fff1abf920b3eeacd0ad4337250b5e2034098e491887e2c72d06e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+          "quote": "中野区立野方図書館東京都中野",
+          "checked_at": "2026-11-20",
+          "sha256": "2bc7e5a6788a36f07e67514e0c4e541996c631a77c62594b057ba8d33781628c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+          "quote": "参加費無料●定員30名（事前予約）",
+          "checked_at": "2026-11-20",
+          "sha256": "a153e9567be21551b6f8a6714586647a2d9157b99e590cc1789cd8a709ac3f73",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4269",
+          "quote": "定員に満たない場合は当日受付も行います",
+          "checked_at": "2026-11-20",
+          "sha256": "68725e5fa07d99954fae8815f11bf57cff794a22bbf6d19e68bfa89cde7c1208",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-ota-kawasaki-robot-operate",
+      "status": "verified",
+      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+          "quote": "【操作編】12/5(土）～6(日）11：00～12：00、14：00～15：00",
+          "checked_at": "2026-11-20",
+          "sha256": "34663e0a83e1242a5521c758598980f86bca7495c899ec371b8ef8e64f2e8374",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+          "quote": "プログラミング編：小学3年生～中学生操作編：小学3年生～6年生",
+          "checked_at": "2026-11-20",
+          "sha256": "e545b43c4ff27588d9e49a66f82983ec5f9093b58e01c5781d3bff19a89662c9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+          "quote": "操作編：500円プログラミン",
+          "checked_at": "2026-11-20",
+          "sha256": "b35a3ef2145916b6034bad84dcef7a3ab8c9ba35434830898e59fc7ff77b4c8e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+          "quote": "事前予約制お申し込みの詳細は",
+          "checked_at": "2026-11-20",
+          "sha256": "8791d1fd78ed5f8bf1e8175afe990b0b4c584cd325144fc3e39e7a2d6a4c76c7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4261",
+          "quote": "お子様のみでの参加はできません。",
+          "checked_at": "2026-11-20",
+          "sha256": "d6e2d1b5ab56bc98860825e41e836cfdbe4ef29e5d4cb9bced5eda998b1b5cc4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 120,
-    "verified": 116,
+    "total": 122,
+    "verified": 118,
     "announced": 4
   }
 }

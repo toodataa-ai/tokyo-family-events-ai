@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 215,
-    "verified": 215,
+    "published": 217,
+    "verified": 217,
     "announced": 0,
-    "candidates": 62
+    "candidates": 64
   },
   "carryover_organizer_rechecks": [
     {
@@ -5498,6 +5498,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
+    "global_source_audit_complete": false
+  },
+  "lead21_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-edo-wonder-lab-bunkyo",
+      "verified-20261122-edo-wonder-lab-taito"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "027c6d6e57187ef39849e4917fbcab3fab0a43e1",
     "global_source_audit_complete": false
   }
 }

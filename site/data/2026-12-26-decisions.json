@@ -583,7 +583,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html"
+        }
+      ]
     },
     {
       "candidate_id": "verified-20261227-shinagawa-inline-dec27",
@@ -725,7 +732,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": "公式の無料体験イベントで子どもも体験できる内容だが、対象年齢と事前予約の記載がないため、条件つきの総合Cとして掲載する。"
+      "override_reason": "公式の無料体験イベントで子どもも体験できる内容だが、対象年齢と事前予約の記載がないため、条件つきの総合Cとして掲載する。",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://tokyo-south-seaside-parks.com/event/%e3%82%a4%e3%83%b3%e3%83%a9%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%b1%e3%83%bc%e3%83%88%e4%bd%93%e9%a8%93%e4%bc%9a-12%e6%9c%88"
+        }
+      ]
     },
     {
       "candidate_id": "verified-20261226-edogawa-kanusura-park",
@@ -879,7 +893,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://canoe-slalom.tokyo/activity/k-park/"
+        }
+      ]
     },
     {
       "candidate_id": "verified-20261227-mizunokagaku-clown_rio",
@@ -1019,7 +1040,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": ""
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.mizunokagaku.jp/event/261227_clown_rio/"
+        }
+      ]
     },
     {
       "candidate_id": "verified-20261226-sumida-aquarium-penguin-calendar",
@@ -1160,7 +1188,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": "水族館の無料の工作ワークショップで子どもも参加できる見込みだが、公式ページに対象年齢の記載がなく、入場料も別に必要なため、条件つきの総合Cとして掲載する。"
+      "override_reason": "水族館の無料の工作ワークショップで子どもも参加できる見込みだが、公式ページに対象年齢の記載がなく、入場料も別に必要なため、条件つきの総合Cとして掲載する。",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/"
+        }
+      ]
     },
     {
       "candidate_id": "verified-20261227-sumida-aquarium-penguin-calendar",
@@ -1301,7 +1336,14 @@
           "basis": "2026-11-20 official individual event page (HTTP200); 23 ward completeness not asserted"
         }
       ],
-      "override_reason": "水族館の無料の工作ワークショップで子どもも参加できる見込みだが、公式ページに対象年齢の記載がなく、入場料も別に必要なため、条件つきの総合Cとして掲載する。"
+      "override_reason": "水族館の無料の工作ワークショップで子どもも参加できる見込みだが、公式ページに対象年齢の記載がなく、入場料も別に必要なため、条件つきの総合Cとして掲載する。",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.sumida-aquarium.com/event/7x2a4asvu/"
+        }
+      ]
     }
   ]
 }

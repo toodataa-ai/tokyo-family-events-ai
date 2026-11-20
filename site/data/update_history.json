@@ -3457,6 +3457,31 @@
       "image_only_updates": 2,
       "global_source_audit_complete": false,
       "note": "今週追加した公式ページ由来の記録のうち、公式ページに掲載された行事固有の画像があるものだけサムネイルを設定。サイト共通ロゴ・共有画像は対象外。画像以外は変更なし。"
+    },
+    {
+      "run_id": "provenance-fill-20261120",
+      "run_type": "manual_provenance_fill",
+      "status": "metadata_only_update",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T23:30:00+09:00",
+      "base_data_production_sha": "b2e210da009baa911b94a90e74c53d2dca83a4ec",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 704,
+      "candidate_active_week_records": 704,
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "provenance_updated_count": 274,
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "global_source_audit_complete": false,
+      "note": "2026-11-18以降に追加した記録の判断記録に、取得経路（AI横断探索で見つけ、公式ページで確認）を追記。イベント本体・他の項目は変更なし。過去分は推測で付けず不明のまま。"
     }
   ]
 }

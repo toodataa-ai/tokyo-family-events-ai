@@ -1,15 +1,15 @@
-# User-approved v1.39 (chat 2026-11-20): category-icon fallback thumbnails for events without photos (UI only).
+# User-approved v1.40 (chat 2026-11-20): home page wording for daily updates (wording only, site/index.html).
 operation=release
 production_ref=production
-production_sha=d4e53fe170af6c3e28fef09dc90b9b8ed680d486
-previous_production_sha=d2ee3226f64f42c56a5ed0ca61e3696769c4db21
-candidate_sha=fe9c1959adc19d50562857a78e8f7d552e5944e7
-pr=137
-target_public_version=1.39
-previous_public_release=release/2026-11-15-r3
+production_sha=ede99e6844bb77eaa9a533153b99f2385f73158f
+previous_production_sha=d4e53fe170af6c3e28fef09dc90b9b8ed680d486
+candidate_sha=34332917b1f06d5c98b7f249006f91ea34d3dc0b
+pr=139
+target_public_version=1.40
+previous_public_release=release/2026-11-20-r1
 release_date_jst=2026-11-20
-expected_data_production_sha=b2e210da009baa911b94a90e74c53d2dca83a4ec
-approved_scope=site/copy.html,site/search.html,site/styles.css,site/thumb-fallback.js
+expected_data_production_sha=cf93083b984aacd9b8f5258d4bd8b623a9a65e5f
+approved_scope=site/index.html
 event_record_mutation=none
 curation_record_mutation=none
-note=Replace the ward-initial placeholder thumbnail with a category icon tile. No data changes.
+note=Home page wording changed from holiday-after weekly update to daily update. No data changes.

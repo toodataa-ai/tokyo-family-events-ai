@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 125,
-    "verified": 121,
+    "published": 127,
+    "verified": 123,
     "announced": 4,
-    "candidates": 70,
+    "candidates": 72,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3923,6 +3923,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "a279cf9b7b9b576122f51257b705ad9633b3d040",
+    "global_source_audit_complete": false
+  },
+  "lead25_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-itabashi-nettaikan-barbapapa",
+      "verified-20261206-itabashi-nettaikan-barbapapa"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "afedbc20dd622d85fb58529ed05e22a262a6b6d6",
     "global_source_audit_complete": false
   }
 }

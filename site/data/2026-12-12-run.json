@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 40,
-    "published": 92,
+    "candidates": 42,
+    "published": 94,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 89,
+    "verified": 91,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2378,6 +2378,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "29e7e555c772ba2bc59ee42bd30a6f1de6d63c51",
+    "global_source_audit_complete": false
+  },
+  "lead25_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-itabashi-nettaikan-barbapapa",
+      "verified-20261213-itabashi-nettaikan-barbapapa"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "afedbc20dd622d85fb58529ed05e22a262a6b6d6",
     "global_source_audit_complete": false
   }
 }

@@ -10,10 +10,10 @@
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 94,
+    "candidate_count": 96,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 92,
+    "published_count": 94,
     "wards": [
       {
         "ward": "千代田区",
@@ -182,9 +182,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-20 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "練馬区",
@@ -246,7 +246,8 @@
     "2026-12-12-events-lead16-20261120.json",
     "2026-12-12-events-lead20-20261120.json",
     "2026-12-12-events-lead22-20261120.json",
-    "2026-12-12-events-lead24-20261120.json"
+    "2026-12-12-events-lead24-20261120.json",
+    "2026-12-12-events-lead25-20261120.json"
   ],
   "events": []
 }

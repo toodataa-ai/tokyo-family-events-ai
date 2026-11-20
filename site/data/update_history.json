@@ -3092,6 +3092,41 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "東京都の公園管理者・東京港埠頭・海上公園南部みらいパートナーズの公式ページで日付・時間・会場・条件を確認できた2件のみ追加。"
+    },
+    {
+      "run_id": "lead25-addition-20261120",
+      "run_type": "manual_verified_lead25_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-20",
+      "executed_at": "2026-11-20T19:00:00+09:00",
+      "base_data_production_sha": "afedbc20dd622d85fb58529ed05e22a262a6b6d6",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 664,
+      "candidate_active_week_records": 673,
+      "added_weekly_records": 9,
+      "new_event_ids": [
+        "verified-20261128-itabashi-nettaikan-barbapapa",
+        "verified-20261129-itabashi-nettaikan-barbapapa",
+        "verified-20261205-itabashi-nettaikan-barbapapa",
+        "verified-20261206-itabashi-nettaikan-barbapapa",
+        "verified-20261212-itabashi-nettaikan-barbapapa",
+        "verified-20261213-itabashi-nettaikan-barbapapa",
+        "verified-20261219-itabashi-nettaikan-barbapapa",
+        "verified-20261220-itabashi-nettaikan-barbapapa",
+        "verified-20261129-itabashi-nettaikan-malaybear-ehon"
+      ],
+      "held_not_published": [],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都の公園管理者・板橋区の公式ページで日付・時間・会場・条件を確認できた9件のみ追加。"
     }
   ]
 }

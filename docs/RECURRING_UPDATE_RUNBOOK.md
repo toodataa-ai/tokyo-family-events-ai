@@ -110,6 +110,7 @@
 - **完了の言い方**: 全件の網羅は保証できない。「見た範囲」と「見ていない範囲」を分けて書き、「全部取得済み」とは書かない。
 - **取得元フラグ（固定サイト／AI探索）の付与（2026-11-20）**: 判断記録（`*-decisions.json` の各行）の `discovery_sources` が空だと画面にバッジが出ない。lead登録の後、必ず `tools/provenance_fill_20261120.py`（と validate）を直近のものをコピーして実行し、追加分の判断記録に `{channel:'ai_cross', kind:'ai_cross_search', url:<公式ページ>}` を付ける（固定サイトの一覧から見つけたものは `channel:'explicit'`）。BASE と RUN_ID と `as_of_jst` 以降の日付を更新する。deploy.yml の validate / pinned proof / promote の3か所に operation 名を足す。過去分は推測で付けず「不明」のまま。
 - **空欄の扱い**: 参加費・予約・屋内外が本文に無いときは、空欄のままにせず「参加費の記載なし」「要確認」と明示する（画面は空欄も「不明」として扱うが、検索条件の見落としを避けるため）。
+- **取得元の判定ルール（確定、2026-11-20）**: 公式ページのホストが、固定サイト一覧（`site/data/discovery_sources.json` の explicit_sources）のうち**専用ホストのサイト**（三角広場 sumitomo-sankakuhiroba.jp、練馬観光協会 nerimakanko.jp、nakano-kanko.com、itabashi-kanko.jp、itabashi-times.com、pc.tamemap.net、iterrace.jp、各イベントポータル等）なら `channel:'explicit', kind:'registered_source', source_id:<id>`。区役所の広いサイト（city.suginami / city.nerima / city.itabashi）は取得経路が不明なので、固定サイトの該当ページ（登録された検索URL・カレンダー）から拾ったと確認できる場合だけ explicit にし、それ以外は ai_cross。両方で見つけたものは両方のエントリを付ける（画面は「両方」）。付与は、`provenance_fill_20261120.py`（ai_cross で付与）の後に `provenance_fix_20261120.py`（HOSTS の表に専用ホストを足す）を同じ週に実行する。登録した直後に付けること。
 
 ## 4. 既知の未完（毎回再確認）
 - 取得失敗6件の扱いは `research/2026-11-19-audit/FAILURE_DISPOSITIONS.md`。三角広場のクリスマス(11/20〜12/13)は、利用者の許可により「時間は公式Instagram参照」として4週末レコードで掲載（`verified-sankaku-addition-20261119`）。12月分のInstagramカレンダーが出たら、11/28以降の実施日表示を見直す。

@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 122,
-    "verified": 118,
+    "published": 124,
+    "verified": 120,
     "announced": 4,
-    "candidates": 67,
+    "candidates": 69,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3902,6 +3902,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "027c6d6e57187ef39849e4917fbcab3fab0a43e1",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-nerima-chihiro-warabeuta",
+      "verified-20261205-bunkyo-noma-ornament"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "a58d6c51a15757198e02b458962fc1337d9ec28a",
     "global_source_audit_complete": false
   }
 }

@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 217,
-    "verified": 217,
+    "published": 220,
+    "verified": 220,
     "announced": 0,
-    "candidates": 64
+    "candidates": 67
   },
   "carryover_organizer_rechecks": [
     {
@@ -5509,6 +5509,18 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "027c6d6e57187ef39849e4917fbcab3fab0a43e1",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-ota-kawasaki-robot-1121",
+      "verified-20261121-meguro-shinobu-waiwai",
+      "verified-20261123-shibuya-cocolon-xmas"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "a58d6c51a15757198e02b458962fc1337d9ec28a",
     "global_source_audit_complete": false
   }
 }

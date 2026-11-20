@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 46,
-    "published": 46,
+    "candidates": 48,
+    "published": 48,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 45,
+    "verified": 47,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2059,6 +2059,17 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "027c6d6e57187ef39849e4917fbcab3fab0a43e1",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-shibuya-funsportnexus",
+      "verified-20261220-shibuya-funsportnexus"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "a58d6c51a15757198e02b458962fc1337d9ec28a",
     "global_source_audit_complete": false
   }
 }

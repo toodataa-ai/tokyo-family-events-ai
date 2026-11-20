@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 38,
-    "published": 90,
+    "candidates": 39,
+    "published": 91,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 87,
+    "verified": 88,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2358,6 +2358,16 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "8e0f42dfb811cbdef5f3d23e2e8ff14f9d49ad28",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261120": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261213-adachi-shikahama-ohanashi"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "a58d6c51a15757198e02b458962fc1337d9ec28a",
     "global_source_audit_complete": false
   }
 }

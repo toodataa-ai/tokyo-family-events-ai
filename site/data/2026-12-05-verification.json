@@ -4452,11 +4452,139 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-nerima-chihiro-warabeuta",
+      "status": "verified",
+      "source": "https://chihiro.jp/tokyo/events/94213/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "2026年12月5日(土)11:00-11:40",
+          "checked_at": "2026-11-20",
+          "sha256": "8684daf79cf3c058d6fe8ac5d987fe0ccdfb6e3b0290c9d9e736d966be067755",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "0～2歳児と保護者【定員】1",
+          "checked_at": "2026-11-20",
+          "sha256": "05ced3981352ad852f0754734e1d92d7ecabebdbc8a1c933f8a725c5d1366bf5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "10組20名【参加費】1組5",
+          "checked_at": "2026-11-20",
+          "sha256": "b08f26c6564753f0e99f1c4986ecbccca55d008489b6b872778d821fe73d7794",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "1組500円（入館料別／子ども無料、保護者割引あり）",
+          "checked_at": "2026-11-20",
+          "sha256": "12d1d1ac98503bef36230b24258d55877ecabf07151385c8392fd596bde9777c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "要事前予約（11/5（木）10時より、公式サイト、TEL.03-3995-0612にて）",
+          "checked_at": "2026-11-20",
+          "sha256": "534fa0355a86f01e4edd6b021b40d133cbedea0823601ff72c1e2dc0986bc78c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://chihiro.jp/tokyo/events/94213/",
+          "quote": "リズムにあわせて体を動かしたり、声を出して歌ったり。",
+          "checked_at": "2026-11-20",
+          "sha256": "396711d05bd01d0b43bfce294e2486efe03de9468877174603169ceadae1b30a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-bunkyo-noma-ornament",
+      "status": "verified",
+      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+          "quote": "2026年12月5日10：30～11：30",
+          "checked_at": "2026-11-20",
+          "sha256": "22f095a6ef801ba4c82d28cd9aa8e7ab7fb45319285dcac8903c003643701bb0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+          "quote": "対象：幼児～小学生の親子参加費：1組1,000円",
+          "checked_at": "2026-11-20",
+          "sha256": "18e308c6686589e19ecc2c14f24128337695f26b5a39f78475c0deac7214a409",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+          "quote": "幼児または小学生の親子開催エ",
+          "checked_at": "2026-11-20",
+          "sha256": "abf36aab0507f90583b68c7dfee5a4b79585cd6351786af1185806a226f4b15f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+          "quote": "communityspace＆cafenoma",
+          "checked_at": "2026-11-20",
+          "sha256": "5de86beec746014a20d0101e06f68cd1081af601adcd0a630e931a1a2b23889e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4258",
+          "quote": "先着５組様お申し込みの詳細は",
+          "checked_at": "2026-11-20",
+          "sha256": "1187ffa75e93997a22b6710bb0b79e4b7c3d235c1ee90069556f2bc940d8fe59",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 122,
-    "verified": 118,
+    "total": 124,
+    "verified": 120,
     "announced": 4
   }
 }

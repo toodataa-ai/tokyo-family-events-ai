@@ -8020,11 +8020,199 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-ota-kawasaki-robot-1121",
+      "status": "verified",
+      "source": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+          "quote": "【操作編】11/21(土）～22(日）11：00～12：00、14：00～15：00",
+          "checked_at": "2026-11-20",
+          "sha256": "7afffb874f5c6d83862529a95c503e80f85a4dbff1b4da91f8023449e4add34e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+          "quote": "操作編：500円参加方法事前",
+          "checked_at": "2026-11-20",
+          "sha256": "130b452be9c4ff1828daf2a0dc71074edfb85f35f1f8e2478e0b599bb222f9c7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+          "quote": "事前予約制お申し込みの詳細は",
+          "checked_at": "2026-11-20",
+          "sha256": "8791d1fd78ed5f8bf1e8175afe990b0b4c584cd325144fc3e39e7a2d6a4c76c7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+          "quote": "お子様のみでの参加はできません。",
+          "checked_at": "2026-11-20",
+          "sha256": "d6e2d1b5ab56bc98860825e41e836cfdbe4ef29e5d4cb9bced5eda998b1b5cc4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4206",
+          "quote": "操作編：小学3年生～6年生",
+          "checked_at": "2026-11-20",
+          "sha256": "e237571e1e6572eeaf8467057015883aa27fe9c6d1b10b51d17196194a307690",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-meguro-shinobu-waiwai",
+      "status": "verified",
+      "source": "https://shinobu-kg.com/1121-2/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://shinobu-kg.com/1121-2/",
+          "quote": "○実施日：2026年11月21日(土)",
+          "checked_at": "2026-11-20",
+          "sha256": "51e54eb9f6952b9b467ac9c6e87dea940256cf7ee86b1733ef337b79d8c80282",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shinobu-kg.com/1121-2/",
+          "quote": "○開催時間：9時30分〜11時30分",
+          "checked_at": "2026-11-20",
+          "sha256": "adc5fdb86be62c526e86222fd0cf4912ab1d317a70ed0d55d64c4efd117e70f6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shinobu-kg.com/1121-2/",
+          "quote": "○場所：志のぶ幼稚園第1園庭＆第2園庭(志のぶセンス・オブ・ワンダーランド)",
+          "checked_at": "2026-11-20",
+          "sha256": "0362ebd65a1eddc3320a45ea97292f444ee50e89e6ba870ba2563661c00e431f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shinobu-kg.com/1121-2/",
+          "quote": "○入場料：無料(予約は必要ありません)",
+          "checked_at": "2026-11-20",
+          "sha256": "47db905b893260d200df58878402ce3c8aa22fc3f26e39c3446d5efb57f7b053",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shinobu-kg.com/1121-2/",
+          "quote": "小学生以下来場者特典：Won",
+          "checked_at": "2026-11-20",
+          "sha256": "b25f67dc846360e48113709fbdb9656622eaa31cee38da52fcbb999ff1836716",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261123-shibuya-cocolon-xmas",
+      "status": "verified",
+      "source": "https://co-co-lon.com/event/xmas_concert26/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-20",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この追加分は主催者公式の案内ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "日時：2026年11月23日(月・祝)",
+          "checked_at": "2026-11-20",
+          "sha256": "633e27c8980f12df87715b31723a8a1a9e78d2d86850901e166608594cfdd3e6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "1部：12:15開場/13:00開演",
+          "checked_at": "2026-11-20",
+          "sha256": "f6cc7c4ae930a98e253ea04930b9358a225a07440628631f784fbc93b36e6f4a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "場所：東京ウィメンズプラザ",
+          "checked_at": "2026-11-20",
+          "sha256": "35fe3d4c343fb91e5e5226f949f4219e2de8c4b76056670011ac2f27b9657602",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "定員：各回30組120名",
+          "checked_at": "2026-11-20",
+          "sha256": "1e6a1ec5b8eeab738e1ab8740f1b94894fe4ba90da3c3c90e13224306a4ba75d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "障がいがあってもなくても、きょうだいも、パパママも楽しめるコンサート！",
+          "checked_at": "2026-11-20",
+          "sha256": "094bde510410196fe9d9a39bcdf07ecfd4bdf2c6e2814442a14d4211d124b2cd",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://co-co-lon.com/event/xmas_concert26/",
+          "quote": "こども：1000円【COCO",
+          "checked_at": "2026-11-20",
+          "sha256": "f816d465792b9e5412287511c75bf2fcc7388c7052a82b74c245662e0143bbfc",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 217,
-    "verified": 217,
+    "total": 220,
+    "verified": 220,
     "announced": 0
   }
 }

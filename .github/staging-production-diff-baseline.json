@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 657,
+  "expected_total_differences_after_governance": 659,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6583,6 +6583,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-21の多摩各市のイベントデータファイル（カレンダーの元データ）の取得（読み取り専用、第5段階）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards43-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩（武蔵野・東久留米・多摩・清瀬）の個別イベントページの取得（読み取り専用、第6段階）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls43.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩（武蔵野・東久留米・多摩・清瀬）の個別イベントページの取得（読み取り専用、第6段階）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

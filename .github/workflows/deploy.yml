@@ -406,6 +406,12 @@ jobs:
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead25-addition-20261121" ]; then
+            python3 staging-policy-src/tools/validate_lead25_addition_20261121.py \
+              --data-dir site/data \
+              --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
           elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead23-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead23_addition_20261121.py \
               --data-dir site/data \
@@ -692,7 +698,7 @@ jobs:
                 --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-audit-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned audit proof"
-            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(verified\-horizon\-subset|verified\\\-lead5\\\-addition\\\-20261119|verified\\\-lead6\\\-addition\\\-20261119|verified\\\-lead7\\\-addition\\\-20261119|nakano\\\-image\\\-alignment\\\-20261120|sumida\\\-image\\\-alignment\\\-20261120|verified\\\-lead17\\\-addition\\\-20261120|verified\\\-lead16\\\-addition\\\-20261120|verified\\\-lead15\\\-addition\\\-20261120|verified\\\-lead14\\\-addition\\\-20261119|verified\\\-lead13\\\-addition\\\-20261119|verified\\\-lead12\\\-addition\\\-20261119|verified\\\-lead11\\\-addition\\\-20261119|verified\\\-lead10\\\-addition\\\-20261119|verified\\\-lead9\\\-addition\\\-20261119|verified\\\-lead8\\\-addition\\\-20261119|verified\\\-lead4\\\-addition\\\-20261119|verified\\\-lead3\\\-addition\\\-20261119|verified\\\-leads\\\-addition\\\-20261118|verified\\\-suginami\\\-addition\\\-20261118|verified\\\-subset\\\-addition|verified\\\-forest\\\-table\\\-addition|manual\\\-official\\\-gap\\\-recovery\\\-20261108|verified-lead(1[89]|2[0-9])-addition-20261120|verified-lead(20|21|22|23|24)-addition-20261121|image-fill-20261120|image-fill2-20261120|image-fill3-20261120|provenance-fill-20261120|provenance-fix-20261120|provenance-fix2-20261120)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(verified\-horizon\-subset|verified\\\-lead5\\\-addition\\\-20261119|verified\\\-lead6\\\-addition\\\-20261119|verified\\\-lead7\\\-addition\\\-20261119|nakano\\\-image\\\-alignment\\\-20261120|sumida\\\-image\\\-alignment\\\-20261120|verified\\\-lead17\\\-addition\\\-20261120|verified\\\-lead16\\\-addition\\\-20261120|verified\\\-lead15\\\-addition\\\-20261120|verified\\\-lead14\\\-addition\\\-20261119|verified\\\-lead13\\\-addition\\\-20261119|verified\\\-lead12\\\-addition\\\-20261119|verified\\\-lead11\\\-addition\\\-20261119|verified\\\-lead10\\\-addition\\\-20261119|verified\\\-lead9\\\-addition\\\-20261119|verified\\\-lead8\\\-addition\\\-20261119|verified\\\-lead4\\\-addition\\\-20261119|verified\\\-lead3\\\-addition\\\-20261119|verified\\\-leads\\\-addition\\\-20261118|verified\\\-suginami\\\-addition\\\-20261118|verified\\\-subset\\\-addition|verified\\\-forest\\\-table\\\-addition|manual\\\-official\\\-gap\\\-recovery\\\-20261108|verified-lead(1[89]|2[0-9])-addition-20261120|verified-lead(20|21|22|23|24|25)-addition-20261121|image-fill-20261120|image-fill2-20261120|image-fill3-20261120|provenance-fill-20261120|provenance-fix-20261120|provenance-fix2-20261120)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
@@ -791,6 +797,8 @@ jobs:
                 echo "sumida image alignment audited before promotion"
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead24-addition-20261121" ]; then
                 echo "2026-11-21 lead24 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead25-addition-20261121" ]; then
+                echo "2026-11-21 lead25 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead23-addition-20261121" ]; then
                 echo "2026-11-21 lead23 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead22-addition-20261121" ]; then

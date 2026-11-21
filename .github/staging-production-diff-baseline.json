@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 648,
+  "expected_total_differences_after_governance": 653,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6511,6 +6511,46 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-21の多摩各市の個別イベントページの取得（読み取り専用、第3段階）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead25_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の最初の追加（lead25、府中市・稲城市の3件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead25_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の最初の追加（lead25、府中市・稲城市の3件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/fuchu_kodomo_kagaku_20261129.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の最初の追加（lead25、府中市・稲城市の3件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/fuchu_nobinobi_soccer_20261205.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の最初の追加（lead25、府中市・稲城市の3件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/komae_giants_hometown_fes_20261205.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の最初の追加（lead25、府中市・稲城市の3件）の生成ツール・検証・保存した公式ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 719,
+  "expected_total_differences_after_governance": 721,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7079,6 +7079,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-22の多摩拡張の第6弾（lead30、立川市の1件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards55-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の小平・西東京・日野・狛江・町田・国立の催しページの取得（読み取り専用、第55回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls55.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第55回取得のURL一覧（読み取り専用）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

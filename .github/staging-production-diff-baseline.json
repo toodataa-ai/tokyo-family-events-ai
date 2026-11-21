@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 610,
+  "expected_total_differences_after_governance": 616,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6207,6 +6207,54 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-21の東京都・東京観光財団主催イベント（TOKYO周穫祭2026）の公式ページ取得（読み取り専用）と追加（lead21）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards29-20261121.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls29.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards30-20261121.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls30.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards31-20261121.yml",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls31.txt",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の東京都主催・都内全域特設サイト・イベント一覧（kodomo-smile）の公式ページ取得（読み取り専用）と追加（lead22）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

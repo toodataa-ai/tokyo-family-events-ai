@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 60,
-    "published": 60,
+    "candidates": 61,
+    "published": 61,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 59,
+    "verified": 60,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2136,6 +2136,29 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "f30356a47d4e86a0d2a4586d472ccdbbe5cb804d",
+    "global_source_audit_complete": false
+  },
+  "lead20_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261220-arakawa-gassyotai-teiki164"
+    ],
+    "held_not_published": [
+      "arakawa-araboccia-1206",
+      "arakawa-fureaikan-1121-1128-1129",
+      "arakawa-hananoki-shokudo-1121",
+      "arakawa-kirakira-parade-1128-1220",
+      "arakawa-recycle-center-1128-1205-1212",
+      "arakawa-tougei-1129",
+      "bunkyo-flyingdisc-1129",
+      "bunkyo-furoshiki-1213",
+      "bunkyo-futsal-1128-1219",
+      "chuo-bunkazai-meguri-1128",
+      "chuo-dads-swag-1205",
+      "chuo-hinohara-tour-1212"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "cf93083b984aacd9b8f5258d4bd8b623a9a65e5f",
     "global_source_audit_complete": false
   }
 }

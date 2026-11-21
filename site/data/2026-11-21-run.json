@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 231,
-    "verified": 231,
+    "published": 234,
+    "verified": 234,
     "announced": 0,
-    "candidates": 78
+    "candidates": 81
   },
   "carryover_organizer_rechecks": [
     {
@@ -5559,6 +5559,31 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "22e4a457ceadb6a313cd631a270f1c950f5f39ba",
+    "global_source_audit_complete": false
+  },
+  "lead20_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-arakawa-nippori-holiday-park",
+      "verified-20261122-arakawa-nippori-holiday-park",
+      "verified-20261122-arakawa-gassyotai-workshop"
+    ],
+    "held_not_published": [
+      "arakawa-araboccia-1206",
+      "arakawa-fureaikan-1121-1128-1129",
+      "arakawa-hananoki-shokudo-1121",
+      "arakawa-kirakira-parade-1128-1220",
+      "arakawa-recycle-center-1128-1205-1212",
+      "arakawa-tougei-1129",
+      "bunkyo-flyingdisc-1129",
+      "bunkyo-furoshiki-1213",
+      "bunkyo-futsal-1128-1219",
+      "chuo-bunkazai-meguri-1128",
+      "chuo-dads-swag-1205",
+      "chuo-hinohara-tour-1212"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "cf93083b984aacd9b8f5258d4bd8b623a9a65e5f",
     "global_source_audit_complete": false
   }
 }

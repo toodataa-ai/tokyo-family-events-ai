@@ -59,3 +59,15 @@ assert.match(html,/id="aiSourceList"/);
 assert.match(html,/AI探索先サイト（候補探しの入口）一覧/);
 assert.match(html,/renderAiSources\(registry\)/);
 assert.ok(!sourceConfig.explicit_sources.some(x=>String(x.id).startsWith('ai_')),'AI sites must not be mixed into fixed sources');
+
+// Visit status (2026-11-22): every listed site shows how its last fetch went.
+{
+  assert.match(html,/function visitBadge\(/);
+  assert.match(html,/visit_status/);
+  const vs=sourceConfig.visit_status;
+  assert.ok(vs&&vs.checked_on&&vs.sites&&typeof vs.sites==='object','visit_status.sites must exist');
+  const ids=[...sourceConfig.explicit_sources.map(s=>s.id),...sourceConfig.ai_exploration_sites.sites.map(s=>s.id)];
+  const missing=ids.filter(id=>!vs.sites[id]);
+  assert.deepEqual(missing,[],'every listed site needs a visit state (use read/no_body/failed)');
+  assert.ok(Object.values(vs.sites).every(v=>['read','no_body','failed'].includes(v.state)));
+}

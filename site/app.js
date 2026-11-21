@@ -7,13 +7,16 @@ export const WARDS = [
 // ward or city name. Keep this list in sync with tools/validate_data.py.
 export const TAMA_CITIES = [
   '武蔵野市','三鷹市','調布市','府中市','小金井市','小平市','国分寺市','国立市','立川市','昭島市',
-  '日野市','西東京市','東久留米市','清瀬市','東村山市','狛江市','多摩市','稲城市','町田市','八王子市'
+  '日野市','西東京市','東久留米市','清瀬市','東村山市','狛江市','多摩市','稲城市','町田市','八王子市','浦安市'
 ];
 export const AREAS = [...WARDS, ...TAMA_CITIES];
 export const AREA_GROUPS = {
   ward:{label:'23区',unit:'区',areas:WARDS},
   tama:{label:'市部',unit:'市',areas:TAMA_CITIES}
 };
+// Display names for areas outside Tokyo (button text only; the stored `ward` stays '浦安市').
+export const AREA_DISPLAY_NAMES = {'浦安市':'千葉県浦安市'};
+export function areaDisplayName(name){ return AREA_DISPLAY_NAMES[name] || name; }
 export function areaGroupOf(name){ return TAMA_CITIES.includes(name) ? 'tama' : 'ward'; }
 
 export const PUBLICATION_TIERS = {

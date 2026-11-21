@@ -12,7 +12,7 @@ export const TAMA_CITIES = [
 export const AREAS = [...WARDS, ...TAMA_CITIES];
 export const AREA_GROUPS = {
   ward:{label:'23区',unit:'区',areas:WARDS},
-  tama:{label:'多摩',unit:'市',areas:TAMA_CITIES}
+  tama:{label:'市部',unit:'市',areas:TAMA_CITIES}
 };
 export function areaGroupOf(name){ return TAMA_CITIES.includes(name) ? 'tama' : 'ward'; }
 

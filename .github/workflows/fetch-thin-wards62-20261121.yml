@@ -1,8 +1,8 @@
-name: Read-only fetch of Koganei and Nishitokyo event detail pages (round 62)
+name: Read-only fetch of Tokyo metropolitan park list (round 62)
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/fetch-thin-wards62-20262121.yml']
+    paths: ['.github/workflows/fetch-thin-wards62-20261121.yml']
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -29,9 +29,9 @@ jobs:
           cd repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan research/thin-wards62-20262121
+          git checkout --orphan research/thin-wards62-20261121
           git rm -rf . >/dev/null 2>&1 || true
           cp -r ../out/. .
           git add -A
-          git commit -m "research: raw read-only fetches of Koganei and Nishitokyo event detail pages (round 62)"
-          git push --force origin research/thin-wards62-20262121
+          git commit -m "research: raw read-only fetches of Tokyo metropolitan park list (round 62)"
+          git push --force origin research/thin-wards62-20261121

@@ -9160,11 +9160,147 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
         }
       ]
+    },
+    {
+      "id": "verified-20261123-itabashi-hase-nazotoki",
+      "status": "verified",
+      "source": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は各公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "2026年11月23日（月・祝）13:30-16:00",
+          "checked_at": "2026-11-21",
+          "sha256": "8ffb35e8c7f9e0e8898144a182601db1c1f0244bcfca94e458271c2fa7ffd110",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "板橋区立教育科学館 研修室",
+          "checked_at": "2026-11-21",
+          "sha256": "4b97f68f0a4776197099e203620fdd230efb1cac8df70dc5838d2b4a1a5199b8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "（定員40名，小学4年生～中学生対象，受講料無料/別途，教材費が必要，事前申込制）",
+          "checked_at": "2026-11-21",
+          "sha256": "4acd553bf6f427798eb1a02a17b19bf98d38a16801871206cf306a6759aecbad",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "教材費：500円（当日会場にて徴収）",
+          "checked_at": "2026-11-21",
+          "sha256": "bfcdd1c342f2ef130a745522ad09b7bc75df46c0b7d60c36d51c6ebc7aa156a2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "※保護者の付添い・見学可 ★タイムスケジュール★",
+          "checked_at": "2026-11-21",
+          "sha256": "e3992245bd6a1b282ee9bc6a57ce580e28f06fd3f187bf377c1af8be27231710",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.mech.kanagawa-u.ac.jp/lab/hase_lab/HaseLab-Nazotoki-Itabashi2026.html",
+          "quote": "参加申込み受付中！ 参加申込みフォームURL",
+          "checked_at": "2026-11-21",
+          "sha256": "0a15a6392c891fb88ad70b90ec4c2b39ca173d6e4ccb8a47d44c0dbc4ba17367",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261123-edogawa-kasai-ramsar-pr",
+      "status": "verified",
+      "source": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は各公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "令和８年11月23日（月･祝）10:00～15:00",
+          "checked_at": "2026-11-21",
+          "sha256": "b39a2803512c3c99bf603c23d83ae0f58180713f7aaab80767abbaefa9288b89",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "場所 葛西海浜公園 西なぎさ",
+          "checked_at": "2026-11-21",
+          "sha256": "aaf9040e184bd4e88724456fca054dff8c11ff8b66e975c4f4ad8e174d0f659a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "親子でたのしめるプログラム（申込不要、無料）",
+          "checked_at": "2026-11-21",
+          "sha256": "c69d96cdd4d9cd0d3ea572fbdf3d2727fa0ff7a2a2908498875bfceff8ee5921",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "スタンプラリー、クラフト体験 など",
+          "checked_at": "2026-11-21",
+          "sha256": "d8d104e2693b4a31b88b0b1dd0509be73c0900fb03bfb5d022f396a94d341110",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "自然観察会（事前申込制、無料）",
+          "checked_at": "2026-11-21",
+          "sha256": "00ebff2f4556253f88910732f637fbdec1ee77421342c5574cf9a9c036b43c6e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.kouwan.metro.tokyo.lg.jp/kanko/park/kasaikaihin",
+          "quote": "募集人数 各回20名（先着順） 対象 小学３年生以上（小学生以下は保護者同伴）",
+          "checked_at": "2026-11-21",
+          "sha256": "c389f7fa9d5f7f6100ab5d5c37a14f15110035f7dc5a9761c81d8bec83ae3c11",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 236,
-    "verified": 236,
+    "total": 238,
+    "verified": 238,
     "announced": 0
   }
 }

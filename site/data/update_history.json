@@ -3597,6 +3597,39 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "TOKYO周穫祭2026（東京都・東京観光財団主催、千代田区の東京国際フォーラム）を、公式特設サイトと東京都の報道発表で確認し、11/21週の2件（11/21・11/22）を追加。"
+    },
+    {
+      "run_id": "lead22-addition-20261121",
+      "run_type": "manual_verified_lead22_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T16:00:00+09:00",
+      "base_data_production_sha": "ff8091da2d87d9a0ec7c4d5990c297c24c199693",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 713,
+      "candidate_active_week_records": 718,
+      "added_weekly_records": 5,
+      "new_event_ids": [
+        "verified-20261123-itabashi-hase-nazotoki",
+        "verified-20261123-edogawa-kasai-ramsar-pr",
+        "verified-20261205-minato-ogimama-book-christmas",
+        "verified-20261205-chiyoda-human-rights-festa",
+        "verified-20261206-chiyoda-human-rights-festa"
+      ],
+      "held_not_published": [
+        "kaiyo-tsuri-girl-20261128",
+        "kurilabo-game-3d-20261213",
+        "toyonetsu-balloon-20261206"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "板橋区の謎解き体験学習（11/23）、江戸川区の葛西海浜公園ラムサール条約湿地PRイベント（11/23）、港区の尾木ママ親子ワークショップ（12/5）、ヒューマンライツ・フェスタ東京2026（千代田区、12/5・12/6）を各公式ページで確認し、5件を追加。"
     }
   ]
 }

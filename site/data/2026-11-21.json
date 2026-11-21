@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 253,
+    "candidate_count": 255,
     "duplicate_removed": 1,
     "excluded_count": 16,
-    "published_count": 236,
+    "published_count": 238,
     "wards": [
       {
         "ward": "千代田区",
@@ -182,9 +182,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 11,
-        "published_count": 11,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17に主催者公式確認済みの子ども職業体験1件を追加。過去の検索回数は変更せず。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 12,
+        "published_count": 12,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17に主催者公式確認済みの子ども職業体験1件を追加。過去の検索回数は変更せず。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "練馬区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 4,
         "sources_checked": 1,
-        "candidate_count": 17,
-        "published_count": 17,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 18,
+        "published_count": 18,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
       }
     ]
   },
@@ -269,7 +269,8 @@
     "2026-11-21-events-lead27-20261120.json",
     "2026-11-21-events-lead28-20261120.json",
     "2026-11-21-events-lead20-20261121.json",
-    "2026-11-21-events-lead21-20261121.json"
+    "2026-11-21-events-lead21-20261121.json",
+    "2026-11-21-events-lead22-20261121.json"
   ],
   "events": []
 }

@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 133,
-    "verified": 129,
+    "published": 136,
+    "verified": 132,
     "announced": 4,
-    "candidates": 78,
+    "candidates": 81,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3980,6 +3980,22 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cf93083b984aacd9b8f5258d4bd8b623a9a65e5f",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-minato-ogimama-book-christmas",
+      "verified-20261205-chiyoda-human-rights-festa",
+      "verified-20261206-chiyoda-human-rights-festa"
+    ],
+    "held_not_published": [
+      "kaiyo-tsuri-girl-20261128",
+      "kurilabo-game-3d-20261213",
+      "toyonetsu-balloon-20261206"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "ff8091da2d87d9a0ec7c4d5990c297c24c199693",
     "global_source_audit_complete": false
   }
 }

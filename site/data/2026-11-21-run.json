@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 236,
-    "verified": 236,
+    "published": 238,
+    "verified": 238,
     "announced": 0,
-    "candidates": 83
+    "candidates": 85
   },
   "carryover_organizer_rechecks": [
     {
@@ -5595,6 +5595,21 @@
     "held_not_published": [],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "723c1ddcd26620a1f8b7297a5d1148a8af4bfb47",
+    "global_source_audit_complete": false
+  },
+  "lead22_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261123-itabashi-hase-nazotoki",
+      "verified-20261123-edogawa-kasai-ramsar-pr"
+    ],
+    "held_not_published": [
+      "kaiyo-tsuri-girl-20261128",
+      "kurilabo-game-3d-20261213",
+      "toyonetsu-balloon-20261206"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "ff8091da2d87d9a0ec7c4d5990c297c24c199693",
     "global_source_audit_complete": false
   }
 }

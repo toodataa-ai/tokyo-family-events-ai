@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 46,
-    "published": 98,
+    "candidates": 48,
+    "published": 100,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 95,
+    "verified": 97,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2433,6 +2433,26 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cf93083b984aacd9b8f5258d4bd8b623a9a65e5f",
+    "global_source_audit_complete": false
+  },
+  "lead24_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-setagaya-soshigaya-xmas-tree",
+      "verified-20261213-edogawa-shinozaki-fureai-festival"
+    ],
+    "held_not_published": [
+      "hibiya-park-terrace-20261219",
+      "hikarigaoka-fureai-festa-20261128",
+      "kasai-rinkai-tours-monthly",
+      "kiba-bousai-festa-20261205",
+      "kiba-winter-decor-20261123",
+      "takaido-wreath-20261205",
+      "ukima-tulip-bulb-20261205",
+      "yoyogi-donguri-20261206"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "2097dd4aea8c6aa17cf22901caab147f6df17dab",
     "global_source_audit_complete": false
   }
 }

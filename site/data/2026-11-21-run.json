@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 239,
-    "verified": 239,
+    "published": 241,
+    "verified": 241,
     "announced": 0,
-    "candidates": 86
+    "candidates": 88
   },
   "carryover_organizer_rechecks": [
     {
@@ -5624,6 +5624,26 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "04a0c93d19b732504d32cce21a6dcf8dd0f9216b",
+    "global_source_audit_complete": false
+  },
+  "lead24_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-nerima-shakujii-book-kaidan",
+      "verified-20261121-minato-siba-stargazing"
+    ],
+    "held_not_published": [
+      "hibiya-park-terrace-20261219",
+      "hikarigaoka-fureai-festa-20261128",
+      "kasai-rinkai-tours-monthly",
+      "kiba-bousai-festa-20261205",
+      "kiba-winter-decor-20261123",
+      "takaido-wreath-20261205",
+      "ukima-tulip-bulb-20261205",
+      "yoyogi-donguri-20261206"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "2097dd4aea8c6aa17cf22901caab147f6df17dab",
     "global_source_audit_complete": false
   }
 }

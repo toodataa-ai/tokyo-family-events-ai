@@ -3660,6 +3660,46 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "葛西海浜公園（江戸川区）のマイクロ大作戦（11/21）とビーチクリーン＆ラグビー体験・選手交流会（12/5）を公式ページで確認し、2件を追加。"
+    },
+    {
+      "run_id": "lead24-addition-20261121",
+      "run_type": "manual_verified_lead24_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "2097dd4aea8c6aa17cf22901caab147f6df17dab",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-12"
+      ],
+      "prior_active_week_records": 720,
+      "candidate_active_week_records": 726,
+      "added_weekly_records": 6,
+      "new_event_ids": [
+        "verified-20261121-nerima-shakujii-book-kaidan",
+        "verified-20261121-minato-siba-stargazing",
+        "verified-20261128-setagaya-komazawa-fantasia",
+        "verified-20261129-setagaya-komazawa-fantasia",
+        "verified-20261212-setagaya-soshigaya-xmas-tree",
+        "verified-20261213-edogawa-shinozaki-fureai-festival"
+      ],
+      "held_not_published": [
+        "hibiya-park-terrace-20261219",
+        "hikarigaoka-fureai-festa-20261128",
+        "kasai-rinkai-tours-monthly",
+        "kiba-bousai-festa-20261205",
+        "kiba-winter-decor-20261123",
+        "takaido-wreath-20261205",
+        "ukima-tulip-bulb-20261205",
+        "yoyogi-donguri-20261206"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "東京都公園協会の都立公園の公式ページで、石神井公園（11/21）、芝公園（11/21）、駒沢オリンピック公園（11/28・29）、祖師谷公園（12/12）、篠崎公園（12/13）のイベントを確認し、6件を追加。"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 667,
+  "expected_total_differences_after_governance": 669,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6663,6 +6663,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-21の多摩拡張の第2弾（lead26、多摩市・東久留米市・武蔵野市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards44-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩（立川・小金井・小平・西東京・東村山・狛江・八王子・調布）の個別イベントページの取得（読み取り専用、第44回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls44.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第44回取得のURL一覧（読み取り専用）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

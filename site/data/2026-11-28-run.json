@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 182,
-    "verified": 182,
+    "published": 183,
+    "verified": 183,
     "announced": 0,
-    "candidates": 119,
+    "candidates": 120,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4429,6 +4429,32 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cdfa4b5ae52314182f3de0d13c51c07c337145dc",
+    "global_source_audit_complete": false
+  },
+  "lead28_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-tachikawa-takamatsu-neo-akimatsuri"
+    ],
+    "held_not_published": [
+      "akishima-oyako-sports-day-20261205",
+      "akishima-pre-kominkan-matsuri-20261206",
+      "akishima-seishonen-festival-20261129",
+      "hachioji-hatchikko-kitchen-festa-20261128",
+      "higashimurayama-kotsu-anzen-fesuta-20261205",
+      "inagi-kirakira-festa-20261128",
+      "inagi-kyodo-geino-festival-20261206",
+      "koganei-jidofes-20261129",
+      "komae-ohanashi-20261129",
+      "machida-event-pages",
+      "remaining-cities",
+      "tachikawa-dodgeball-20261123",
+      "tachikawa-dream-gakuen-yumematsuri-20261206",
+      "tachikawa-jinken-message-20261128",
+      "tachikawa-jump-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "c6cb6fe929bf0a3e80c0c18366a297631b261b4a",
     "global_source_audit_complete": false
   }
 }

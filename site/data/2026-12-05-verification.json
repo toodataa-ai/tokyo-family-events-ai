@@ -5776,11 +5776,71 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261206-tachikawa-pre-nishiki-matsuri",
+      "status": "verified",
+      "source": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この6件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+          "quote": "開催日 2026年12月6日（日曜日） 開催時間 午前10時 から 午後3時 まで 開催場所 錦学習館",
+          "checked_at": "2026-11-21",
+          "sha256": "cabc8b63d5b9341cbb10f07f3e16ddebfb80975b2005632557f956a7db7514ea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+          "quote": "対象 どなたでも 一部の催しは対象年齢の設定がございます。 ハッシュタグ #無料",
+          "checked_at": "2026-11-21",
+          "sha256": "7692876fa547b790051ce8dfe3cbf0f6dfcec6b12740484bba0c148d4aec9c23",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+          "quote": "東京学芸大学の学生と、クイズやゲームなどを通して楽しく地域について学びます。",
+          "checked_at": "2026-11-21",
+          "sha256": "9d2e1777be75b09092099e4075bdb6e512231ecc5bd9b59b03c8de3d08a57f99",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+          "quote": "【ものれーるつくれーる（要事前申込）】 対象：小学2年生まで",
+          "checked_at": "2026-11-21",
+          "sha256": "03ce929898ada73f4f215fd1cb4106c0915dbe639ea3bec2215940177e3899f7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kouza/1028609.html",
+          "quote": "申込み 一部必要 事前申し込みが必要な催しは、11月10日（火曜日）午前9時から下記のフォームから電子申請でお申し込みください。",
+          "checked_at": "2026-11-21",
+          "sha256": "a11ee479c5547269b870c2d7a583ffa6d3155d1244e05c256bfccced54861818",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 143,
-    "verified": 139,
+    "total": 144,
+    "verified": 140,
     "announced": 4
   }
 }

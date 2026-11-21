@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 143,
-    "verified": 139,
+    "published": 144,
+    "verified": 140,
     "announced": 4,
-    "candidates": 88,
+    "candidates": 89,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4090,6 +4090,32 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cdfa4b5ae52314182f3de0d13c51c07c337145dc",
+    "global_source_audit_complete": false
+  },
+  "lead28_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261206-tachikawa-pre-nishiki-matsuri"
+    ],
+    "held_not_published": [
+      "akishima-oyako-sports-day-20261205",
+      "akishima-pre-kominkan-matsuri-20261206",
+      "akishima-seishonen-festival-20261129",
+      "hachioji-hatchikko-kitchen-festa-20261128",
+      "higashimurayama-kotsu-anzen-fesuta-20261205",
+      "inagi-kirakira-festa-20261128",
+      "inagi-kyodo-geino-festival-20261206",
+      "koganei-jidofes-20261129",
+      "komae-ohanashi-20261129",
+      "machida-event-pages",
+      "remaining-cities",
+      "tachikawa-dodgeball-20261123",
+      "tachikawa-dream-gakuen-yumematsuri-20261206",
+      "tachikawa-jinken-message-20261128",
+      "tachikawa-jump-20261129"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "c6cb6fe929bf0a3e80c0c18366a297631b261b4a",
     "global_source_audit_complete": false
   }
 }

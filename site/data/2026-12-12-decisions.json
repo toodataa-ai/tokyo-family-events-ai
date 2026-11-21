@@ -4,8 +4,8 @@
   "generated": "2026-11-08T16:10:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 103,
-    "published": 101,
+    "candidate_total": 105,
+    "published": 103,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -12317,6 +12317,287 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-tachikawa-kunitachi-ongaku-special-concert",
+      "name": "未来の大人たちへのスペシャルコンサート（国立音楽大学ブラスオルケスター・立川ステージガーデン）",
+      "ward": "立川市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "高校生以下は500円で、くるみ割り人形やクリスマス音楽など、子どもにも親しみやすい曲の演奏会。全席指定・有料・チケット購入が必要で、鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子どもたちの育成を目的にしたコンサートで、対象はどなたでも"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "演奏の鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "3歳以上は有料。2歳以下は膝上鑑賞が無料"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "全席指定で、開演から終演まで座って鑑賞する"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "有料のチケット購入が必要"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "一般1,500円、高校生以下500円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "チケット購入が必要（全席指定）"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "くるみ割り人形やクリスマス音楽を家族で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "高校生以下は500円で、くるみ割り人形などの親しみやすい曲がある",
+            "2歳以下は膝上鑑賞が無料"
+          ],
+          "limitations": [
+            "全席指定の有料公演で、チケット購入が必要",
+            "鑑賞が中心で、小さな子には長く感じる場合がある"
+          ],
+          "grade_comparison": "総合B：子どもの育成を目的にした演奏会だが、鑑賞中心の有料公演で、小さな子連れには向きにくい。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+              "quote": "開催日 2026年12月12日（土曜日） 開催時間 午後4時00分開演（午後3時00分開場） 開催場所 TACHIKAWA STAGE GARDEN（立川ステージガーデン）",
+              "checked_at": "2026-11-21",
+              "sha256": "7bfdc97749e2d3b6a888465e4dc6793b189fa4be979a82ead95004194fbf02f9",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+              "quote": "対象 どなたでも 内容 ベートーヴェン /保科 洋 編曲：交響曲第9番 ニ短調 作品125「合唱付き」より 第4楽章",
+              "checked_at": "2026-11-21",
+              "sha256": "cabc7e53d489ae3bb72fc53fd022da41b6011517ea8dd3a698c56e715bd18856",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+              "quote": "芸術文化の振興と次世代を担う子どもたちの育成を目的に実施するもので",
+              "checked_at": "2026-11-21",
+              "sha256": "743078d17a6c40992d3f9b2f3daa40f314ad79bb016d4a8b78a7fd7ef36cf452",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+              "quote": "チャイコフスキー / 足立 正 編曲：バレエ《くるみ割り人形》より",
+              "checked_at": "2026-11-21",
+              "sha256": "75f7486c4cd37ae83972690cc0a84d43066d558a5647e195fed79ac24c6573c8",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+              "quote": "申込み 必要 チケットの購入が必要です。（全席指定） 料金/税込 一般：1,500円 高校生以下：500円 ※3歳以上有料。2歳以下のお子様は保護者1名につきお子様1名まで、膝上鑑賞の場合無料。",
+              "checked_at": "2026-11-21",
+              "sha256": "e59f3c2f9dd67a7a34599e685ab125637492a7e3dca786b6852b4554203e71f9",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "高校生以下は500円で、くるみ割り人形やクリスマス音楽など、子どもにも親しみやすい曲の演奏会。全席指定・有料・チケット購入が必要で、鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.tachikawa.lg.jp/event/e-bunka/1028372.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261213-akishima-oyako-money-course",
+      "name": "親子向け消費生活講座「おやこで学ぶ！お金の役割と大切さ」（市役所市民ホール）",
+      "ward": "昭島市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生と保護者が対象の、クイズや貯金箱づくりでお金を学ぶ無料の講座。低学年にもわかりやすい内容。定員20組で、11/27までの申込が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "対象は小学生と保護者の親子向け講座"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "クイズや貯金箱づくりの参加型"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "低学年にもわかりやすい内容と明記"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "10:00〜11:30の1回のみ"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "事前申込が必要で、定員20組"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込必要（11/27まで、申込順）"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子でお金について楽しく学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料で、クイズや貯金箱づくりを親子で体験できる",
+            "低学年にもわかりやすい内容"
+          ],
+          "limitations": [
+            "定員20組で、事前申込が必要（11/27まで）",
+            "開催は1回のみ"
+          ],
+          "grade_comparison": "総合A：親子向けの無料の体験講座。申込（11/27まで）と20組の定員が制約。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html",
+              "quote": "開催日 2026年12月13日（日曜日） 開催時間 午前10時 から 午前11時30分 まで 開催場所 市役所1階市民ホール",
+              "checked_at": "2026-11-21",
+              "sha256": "abc5596106dc3284a61c670c07d41d28edb1f1eb8aa283e61fd34f543dab9fbb",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html",
+              "quote": "対象 小学生と保護者 内容 低学年にもわかりやすい内容となっています！",
+              "checked_at": "2026-11-21",
+              "sha256": "025936f8237eb3390101c4b7bef39a648a69957916e56ea747ec826dedc83e4d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html",
+              "quote": "クイズや貯金箱づくりをとおして、お金の使いかたなどを親子で楽しく学びましょう！",
+              "checked_at": "2026-11-21",
+              "sha256": "f8cbbc7ac73a45347424531c81733c9e332c75a2cd93eaf44e9bc6d8b89031dd",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html",
+              "quote": "定員 20組（申込順） 参加費 無料 申込み 必要 11月2日（月曜日）から11月27日（金曜日）まで下記サイトにて申し込みが可能です。",
+              "checked_at": "2026-11-21",
+              "sha256": "bb788cab97ba4cade23dbc59d8d4e353d786bedc27903bebe3a2fdc372885e01",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "小学生と保護者が対象の、クイズや貯金箱づくりでお金を学ぶ無料の講座。低学年にもわかりやすい内容。定員20組で、11/27までの申込が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.akishima.lg.jp/kurashi/sumai/1001875/1001929/1013015.html"
         }
       ]
     }

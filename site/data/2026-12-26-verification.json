@@ -497,11 +497,115 @@
           "description": "主催者公式ページ（2026-11-20にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261226-akishima-shiki-family-musical-hajimari-no-ki",
+      "status": "verified",
+      "source": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1002972/1012429.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この6件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1002972/1012429.html",
+          "quote": "開催日 2026年12月26日（土曜日） 開催時間 午後4時 から 午後6時 まで 開場は午後3時15分からとなります。上演時間は休憩含め、約2時間となります。",
+          "checked_at": "2026-11-21",
+          "sha256": "2b14f7bae008bdb940660b04e25556fe56fffc035de11c7d499c465572b5db36",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1002972/1012429.html",
+          "quote": "開催場所 FOSTERホール（昭島市民会館） 対象 どなたでも",
+          "checked_at": "2026-11-21",
+          "sha256": "5f7a0f1bf976822e40eb2f1ff4eb3073c695f95f2560da369d2f0250a13794d6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1002972/1012429.html",
+          "quote": "3歳未満のお子様が保護者1名につき、1名まで膝上で観劇する場合には無料となります。",
+          "checked_at": "2026-11-21",
+          "sha256": "8cacf75649a619fabde58c50a8e61fc866931c602e9b085137f85b8084196be5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1002972/1012429.html",
+          "quote": "参加費 チケット代金は大人7,000円、小学生以下4,500円（全て税込価格）となります。",
+          "checked_at": "2026-11-21",
+          "sha256": "f38f7c9823ba908070c873edac52ddc0ea311c631a8b7d4a143bfb6fae19780d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261226-tachikawa-nishiki-xmas-eigakai",
+      "status": "verified",
+      "source": "https://www.city.tachikawa.lg.jp/event/e-other/1028669.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この6件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-other/1028669.html",
+          "quote": "開催日 2026年12月26日（土曜日） 開催時間 午前10時30分 から 午前11時30分 まで 開催場所 錦学習館",
+          "checked_at": "2026-11-21",
+          "sha256": "9751571bade6999f20a5fa5788a570e756aeaf6bd0e8b8a03133213fe66d9ed8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-other/1028669.html",
+          "quote": "対象 どなたでも ハッシュタグ #無料",
+          "checked_at": "2026-11-21",
+          "sha256": "d9444b5703b88fb76d93e9cc146ac628ff3dc9afaf221f1682ff3e169bb96dc6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-other/1028669.html",
+          "quote": "「赤毛のアン クリスマスのコンサート」 「ペリーヌ物語 忘れられないクリスマス」 アニメーション2作品を上映します。",
+          "checked_at": "2026-11-21",
+          "sha256": "e62adec606d430e85ec23ce37331d080debb41ccc8651f36fb021f1759d92f82",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-other/1028669.html",
+          "quote": "申込み 不要 当日は直接会場へお越しください。 定員30人 費用 無料",
+          "checked_at": "2026-11-21",
+          "sha256": "1a8247175f962a46582188b660b64da0cbd9ebed69fa939ae899caf56a93bd2e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 10,
-    "verified": 7,
+    "total": 12,
+    "verified": 9,
     "announced": 3
   }
 }

@@ -1,15 +1,15 @@
-# User-approved v1.43 (chat 2026-11-22): separate display of fixed sites and AI exploration sites. No data changes.
+# User-approved v1.44 (chat 2026-11-22): add Urayasu (Tokyo Disney Resort) to the city group and show fetch status on every listed source. No data changes.
 operation=release
 production_ref=production
-production_sha=53df1dc631b22e05caae27e9a5aeca2a392f3c61
-previous_production_sha=bb57e0f630e6c772befdfe6f9ad63e2c5d20eb99
-candidate_sha=94ee9dff9cecf3091a4996f74f415ff83398da7b
-pr=143
-target_public_version=1.43
-previous_public_release=release/2026-11-21-r923
+production_sha=f7188412486efe7629c7e819e5fe0980567c3bd3
+previous_production_sha=53df1dc631b22e05caae27e9a5aeca2a392f3c61
+candidate_sha=1da6343a93b43b315d0c437630aa1ace007b59d3
+pr=144
+target_public_version=1.44
+previous_public_release=release/2026-11-22-r960
 release_date_jst=2026-11-22
-expected_data_production_sha=fb4999cedea142e5bac21c0a3670cfef3f3c1573
-approved_scope=site/index.html,site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
+expected_data_production_sha=73951929654233560abe8d64fc175cfb323af829
+approved_scope=site/app.js,site/multi-filter-ui.js,site/index.html,site/styles.css,site/data/discovery_sources.json,tests/app_filter.test.mjs,tests/fixed_source_directory.test.mjs,tools/validate_data.py
 event_record_mutation=none
 curation_record_mutation=none
-note=Fixed sites and AI exploration sites (105) are shown in separate blocks with six clean groups. Display and registry only; no event data changes.
+note=Urayasu city (Tokyo Disney Resort) added to the city group with the button label 千葉県浦安市; fetch status badges on fixed and AI exploration sources. Display and registry only; no event data changes.

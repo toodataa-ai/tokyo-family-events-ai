@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-21-r923",
+  "current_public_release": "release/2026-11-22-r960",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -392,7 +392,16 @@
       "workflow_run_id": 44934090660,
       "public_version": "1.42",
       "note": "ユーザー承認の本番アプリv1.42。サイト題名を「東京子連れイベントAI収集」、区・市の切り替え名を「23区 / 市部」に変更（表示文言のみ、PR #142で9ファイル）。イベントデータは変更なし。data-production 15b18aa7e38622c8ffe1917b3ae5f147964495de。"
+    },
+    {
+      "release_id": "release/2026-11-22-r960",
+      "branch": "release/2026-11-22-r960",
+      "commit_sha": "53df1dc631b22e05caae27e9a5aeca2a392f3c61",
+      "deployed_at": "2026-11-21T22:54:39+00:00",
+      "workflow_run_id": 44959033924,
+      "public_version": "1.43",
+      "note": "ユーザー承認の本番アプリv1.43。固定サイト（27件）とAI探索先サイト（105件・6分類）を別ブロックで表示（PR #143で3ファイル）。イベントデータは変更なし。data-production fb4999cedea142e5bac21c0a3670cfef3f3c1573。"
     }
   ],
-  "current_public_version": "1.42"
+  "current_public_version": "1.43"
 }

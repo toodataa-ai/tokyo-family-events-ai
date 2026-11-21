@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-21-r889",
+  "current_public_release": "release/2026-11-21-r923",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -383,7 +383,16 @@
       "workflow_run_id": 44887707052,
       "public_version": "1.41",
       "note": "ユーザー承認の本番アプリv1.41。絞り込みに「23区/多摩」の切り替えを追加し、検証ツールが多摩の市名を受け付けるよう変更。PR #140で5ファイルのみ反映（app.js・multi-filter-ui.js・styles.css・validate_data.py・テスト）。イベントデータは変更なし、多摩のイベントは未掲載。data-production f6695d542ca58cc1a43451bf5be9571e864c9ae6。"
+    },
+    {
+      "release_id": "release/2026-11-21-r923",
+      "branch": "release/2026-11-21-r923",
+      "commit_sha": "bb57e0f630e6c772befdfe6f9ad63e2c5d20eb99",
+      "deployed_at": "2026-11-21T18:11:48+00:00",
+      "workflow_run_id": 44934090660,
+      "public_version": "1.42",
+      "note": "ユーザー承認の本番アプリv1.42。サイト題名を「東京子連れイベントAI収集」、区・市の切り替え名を「23区 / 市部」に変更（表示文言のみ、PR #142で9ファイル）。イベントデータは変更なし。data-production 15b18aa7e38622c8ffe1917b3ae5f147964495de。"
     }
   ],
-  "current_public_version": "1.41"
+  "current_public_version": "1.42"
 }

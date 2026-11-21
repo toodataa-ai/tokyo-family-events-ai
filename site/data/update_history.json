@@ -4051,6 +4051,39 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "多摩拡張の第9弾として、立川市の国営昭和記念公園（クラフト教室2件・GREEN×EXPO・しっぽフェスタ）を公式サイトの個別ページで確認して追加。"
+    },
+    {
+      "run_id": "lead34-addition-20261121",
+      "run_type": "manual_verified_lead34_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "0f84cff8a5ec34592502d0b130e1a5bf301834eb",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 760,
+      "candidate_active_week_records": 764,
+      "added_weekly_records": 4,
+      "new_event_ids": [
+        "verified-20261121-tama-puroland-illumination-xmas-2026",
+        "verified-20261121-bunkyo-dome-cinema-christmas-20261219",
+        "verified-20261121-bunkyo-asobono-ahiru-taicho-20261110",
+        "verified-20261121-hino-tamazoo-africa-fair-20261122"
+      ],
+      "held_not_published": [
+        "bunkyo-dome-winter-illumination-2026",
+        "nerima-wb-studio-tour",
+        "tokyo-legoland-discovery-center",
+        "tokyo-sunshine-solamachi-hanayashiki-joypolis"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "テーマパーク・大型施設の第1弾として、サンリオピューロランド、東京ドームシティ（シネマクリスマス・アソボ～ノ！）、多摩動物公園（アフリカフェア）を公式サイトの個別ページと料金ページで確認して追加。"
     }
   ]
 }

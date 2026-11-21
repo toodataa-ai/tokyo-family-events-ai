@@ -9972,11 +9972,191 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-tama-puroland-illumination-xmas-2026",
+      "status": "verified",
+      "source": "https://www.puroland.jp/event-campaign/2026_christmas/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.puroland.jp/event-campaign/2026_christmas/",
+          "quote": "開催期間2026/11/06～2026/12/25",
+          "checked_at": "2026-11-21",
+          "sha256": "3aebfb068fe1fe02a9992067389e7c2fbddc505194024eba0f0858fd740730f4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.puroland.jp/event-campaign/2026_christmas/",
+          "quote": "ピューロランドのみんなが、サンタさんのおてつだいをしているみたい…！",
+          "checked_at": "2026-11-21",
+          "sha256": "d28f59628f5e2639668235a8c9632a09f774ef22ce48c967f4e91e6b2b257472",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.puroland.jp/event-campaign/2026_christmas/",
+          "quote": "スタンプを押して、クリスマスツリーをかざりつけるおてつだいをしよう★",
+          "checked_at": "2026-11-21",
+          "sha256": "26572e31e9415a65307dc5a6b84ebc772f0e5928bf1409f5f8e9d031a5b04124",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.puroland.jp/passport/list/",
+          "quote": "パスポートチケット料金は、ご来場日により異なります",
+          "checked_at": "2026-11-21",
+          "sha256": "5f1e91897f26de59f7853609725f14e46ad5aaa1d58f9a786a363c157ea96e57",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.puroland.jp/passport/list/",
+          "quote": "デイパスポート(開館〜閉館)アフタヌーンパスポート14時からの入場大人3,900円〜2,800円〜小人・シニア2,800円〜2,500円〜",
+          "checked_at": "2026-11-21",
+          "sha256": "c750eeb66a684013de1376457c1d5810fa69143c0ef1339def81fa84b8bd262c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-bunkyo-asobono-ahiru-taicho-20261110",
+      "status": "verified",
+      "source": "https://www.tokyo-dome.co.jp/asobono/event/7854",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tokyo-dome.co.jp/asobono/event/7854",
+          "quote": "2026年11月10日(火)～2026年12月18日(金)",
+          "checked_at": "2026-11-21",
+          "sha256": "ea30294acc9bc2c16b2da1b1ffdb7fe00cc33e17652182d3cce9234ffff39cd7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/asobono/event/7854",
+          "quote": "①11月15日(日)②11月23日(月・祝)③11月26日(木)",
+          "checked_at": "2026-11-21",
+          "sha256": "799e1e5ab1667708d74f6c4cfb737d0ca228f0fd803a54b29342c854bca051b6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/asobono/event/7854",
+          "quote": "館内５カ所にアヒル隊長が隠れているよ！",
+          "checked_at": "2026-11-21",
+          "sha256": "d0782b94561f48eed3086ac5b960c6ef970906b1edac4ff4058b0334609ba4ac",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/asobono/schedule-price",
+          "quote": "種別ABCDこども60分950円1,100円1,200円1,300円",
+          "checked_at": "2026-11-21",
+          "sha256": "061559733e56d2a54ccd00fca9eafbc092e78e270221c0719630d9c84086d5da",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/asobono/schedule-price",
+          "quote": "おとな入館料950円1,100円1,200円1,300円",
+          "checked_at": "2026-11-21",
+          "sha256": "4a91a341fb81286dea39f5f61c04b401932ec6fbd7386cd2cdcb0ec64debb6f5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-hino-tamazoo-africa-fair-20261122",
+      "status": "verified",
+      "source": "https://www.tokyo-zoo.net/tama/news/12878/index.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tokyo-zoo.net/tama/news/12878/index.html",
+          "quote": "2026年11月22日（日）、23日（月・祝）",
+          "checked_at": "2026-11-21",
+          "sha256": "67bc590abf55e302182c636300fe0ed5104fec92bf0dfc79bf515a5dbda1df42",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-zoo.net/tama/news/12878/index.html",
+          "quote": "アフリカ各国紹介ブース「アフリカン・ディスカバリー」",
+          "checked_at": "2026-11-21",
+          "sha256": "02de20b80824ae293e8445db243e53b1234edd1a5a013a4b6aa0c9a9dde0d975",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-zoo.net/tama/news/12878/index.html",
+          "quote": "小さなお子様から大人まで、手拍子やダンスでいっしょに盛り上がれる参加型のステージです。",
+          "checked_at": "2026-11-21",
+          "sha256": "0c2ba7e543d2b1e04f00d1855fe211a989ca5a6e2088158f8b0e8e4eb75847be",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-zoo.net/tama/visitor-info/tickets/index.html",
+          "quote": "通常入園料は600円（65歳以上300円、中学生200円）。",
+          "checked_at": "2026-11-21",
+          "sha256": "49b1f1091098cd88a9add4edb58c88e2cd86db2c89a8a022df0faf33121dd041",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.tokyo-zoo.net/tama/visitor-info/tickets/index.html",
+          "quote": "小学生以下および「都内在住・在学の中学生」は無料。",
+          "checked_at": "2026-11-21",
+          "sha256": "d8b581104bffdd7f03caa52923667d916951998d73a71fe652fb268c07e83ffd",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 249,
-    "verified": 249,
+    "total": 252,
+    "verified": 252,
     "announced": 0
   }
 }

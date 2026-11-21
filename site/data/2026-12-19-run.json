@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 64,
-    "published": 64,
+    "candidates": 65,
+    "published": 65,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 63,
+    "verified": 64,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2226,6 +2226,21 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "da7c29fd173c9fe3e1ab9718daec13b33121d2f3",
+    "global_source_audit_complete": false
+  },
+  "lead34_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-bunkyo-dome-cinema-christmas-20261219"
+    ],
+    "held_not_published": [
+      "bunkyo-dome-winter-illumination-2026",
+      "nerima-wb-studio-tour",
+      "tokyo-legoland-discovery-center",
+      "tokyo-sunshine-solamachi-hanayashiki-joypolis"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "0f84cff8a5ec34592502d0b130e1a5bf301834eb",
     "global_source_audit_complete": false
   }
 }

@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 242,
-    "verified": 242,
+    "published": 244,
+    "verified": 244,
     "announced": 0,
-    "candidates": 89
+    "candidates": 91
   },
   "carryover_organizer_rechecks": [
     {
@@ -5672,6 +5672,26 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cdfa4b5ae52314182f3de0d13c51c07c337145dc",
+    "global_source_audit_complete": false
+  },
+  "lead29_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261123-tama-news-sports-taiken",
+      "verified-20261121-tama-center-illumination-2026"
+    ],
+    "held_not_published": [
+      "higashikurume-xmas-concert-20261220",
+      "kiyose-kominka-20261121",
+      "musashino-inokashira-rekishi-tour-20261212",
+      "remaining-cities",
+      "tama-camp-ryori-20261129",
+      "tama-genki-festival-20261205",
+      "tama-monomatsuri-20261121",
+      "tama-nogyosai-20261128"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "2d008f1f168583e82bf5e1a7d9eab60a48e2bdc3",
     "global_source_audit_complete": false
   }
 }

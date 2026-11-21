@@ -7325,11 +7325,79 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261128-kiyose-tamaroku-news-sports-festa",
+      "status": "verified",
+      "source": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "たまろくとニュースポーツフェスタ",
+          "checked_at": "2026-11-21",
+          "sha256": "576d5e78ac5e7eda7d0b1413cb3cda70d62c293bef6588a1d5e851083e355a6f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "開催日 2026年11月28日（土曜日） 開催時間 午前9時30分 から 正午 まで 開催場所 下宿地域市民センター 対象 どなたでも",
+          "checked_at": "2026-11-21",
+          "sha256": "f9ef041768ca1232e37ef5dc1632bd17c259dd91b4f5486966a8f69d178c4382",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "モルックやラダーゲッタ、ベースボール5など様々なニュースポーツを楽しめるイベントです。",
+          "checked_at": "2026-11-21",
+          "sha256": "61ce5e99a342d0a4395afa1174037aaa19a34058efd8c1d26b631415c81f9fd0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "体験に応じたスタンプを集めると、イベント限定オリジナルぷっくりシールがもらえます。",
+          "checked_at": "2026-11-21",
+          "sha256": "eb9b437d9070d058a6ec3922001fe49ac6801cb901da1d13b2877dd400480e90",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "会場では多摩六都の物品販売、キャラクターたちのグリーティングも予定しています。",
+          "checked_at": "2026-11-21",
+          "sha256": "a940b127ba0b0fddcbe979067e834b364211ecfc059fa90dab906d54a3a4d968",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/sports/sportsevent/1016896.html",
+          "quote": "申込み 不要 直接会場へお越しください。 費用 不要",
+          "checked_at": "2026-11-21",
+          "sha256": "2b2f3c4f081d0eec01c37172cb817d4807823ee3d21761d918b1a2b9e8466357",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 183,
-    "verified": 183,
+    "total": 184,
+    "verified": 184,
     "announced": 0
   }
 }

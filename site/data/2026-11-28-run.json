@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 183,
-    "verified": 183,
+    "published": 184,
+    "verified": 184,
     "announced": 0,
-    "candidates": 120,
+    "candidates": 121,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4455,6 +4455,25 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "c6cb6fe929bf0a3e80c0c18366a297631b261b4a",
+    "global_source_audit_complete": false
+  },
+  "lead29_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-kiyose-tamaroku-news-sports-festa"
+    ],
+    "held_not_published": [
+      "higashikurume-xmas-concert-20261220",
+      "kiyose-kominka-20261121",
+      "musashino-inokashira-rekishi-tour-20261212",
+      "remaining-cities",
+      "tama-camp-ryori-20261129",
+      "tama-genki-festival-20261205",
+      "tama-monomatsuri-20261121",
+      "tama-nogyosai-20261128"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "2d008f1f168583e82bf5e1a7d9eab60a48e2bdc3",
     "global_source_audit_complete": false
   }
 }

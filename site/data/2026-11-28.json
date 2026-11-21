@@ -10,10 +10,10 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 200,
+    "candidate_count": 201,
     "duplicate_removed": 1,
     "excluded_count": 16,
-    "published_count": 183,
+    "published_count": 184,
     "wards": [
       {
         "ward": "千代田区",
@@ -253,6 +253,12 @@
         "candidate_count": 1,
         "published_count": 1,
         "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
+      },
+      {
+        "ward": "清瀬市",
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
       }
     ]
   },
@@ -295,7 +301,8 @@
     "2026-11-28-events-lead25-20261121.json",
     "2026-11-28-events-lead26-20261121.json",
     "2026-11-28-events-lead27-20261121.json",
-    "2026-11-28-events-lead28-20261121.json"
+    "2026-11-28-events-lead28-20261121.json",
+    "2026-11-28-events-lead29-20261121.json"
   ],
   "events": []
 }

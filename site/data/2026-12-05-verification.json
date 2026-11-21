@@ -5836,11 +5836,71 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261206-kiyose-museum-theater6-sumikko",
+      "status": "verified",
+      "source": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+          "quote": "令和8年度 ミュージアム・シアター6",
+          "checked_at": "2026-11-21",
+          "sha256": "0a2b6d52142871666bb3f9da6422168072234494dc54b7a6014277eabf92d133",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+          "quote": "開催日 2026年12月6日（日曜日） 開催時間 午前10時30分～ 開催場所 郷土博物館 映像展示室 ※直接会場へ 対象 どなたでも",
+          "checked_at": "2026-11-21",
+          "sha256": "d5975466b839df37cf111fedd2e117c5c90bed3d99ff24ca21bd12c5ee2a0bfe",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+          "quote": "『映画 すみっコぐらし ツギハギ工場のふしぎなコ 』70分",
+          "checked_at": "2026-11-21",
+          "sha256": "ab3fc46a630f63e60428f78400ae42a2911c223527e25fc2cd289cea08125774",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+          "quote": "映画鑑賞が初めてのお子さまも、ぜひお気軽にご参加ください。",
+          "checked_at": "2026-11-21",
+          "sha256": "a5aeae1c5c24aff92921331c9534fe1de8bd9054903b1af4cc8070dd87b3e31e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.kiyose.lg.jp/bunkasportskankou/bunka/kyoudo/1002770/1016841.html",
+          "quote": "費用 不要 入場無料 定員 40席程度",
+          "checked_at": "2026-11-21",
+          "sha256": "64f16155bb0e8f10a40d4e988242c91d61ed14b02e9b7d854468f031b092a7a3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 144,
-    "verified": 140,
+    "total": 145,
+    "verified": 141,
     "announced": 4
   }
 }

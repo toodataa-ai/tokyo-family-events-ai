@@ -4114,6 +4114,39 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "テーマパーク・大型施設の第2弾として、東京スカイツリータウンのクリスマスマーケットと東京ジョイポリスのイルミネーションを公式サイトの個別ページと料金ページで確認して追加。"
+    },
+    {
+      "run_id": "lead36-addition-20261121",
+      "run_type": "manual_verified_lead36_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "fb4999cedea142e5bac21c0a3670cfef3f3c1573",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 766,
+      "candidate_active_week_records": 768,
+      "added_weekly_records": 2,
+      "new_event_ids": [
+        "verified-20261121-toshima-sunshine60-candle-workshop-2026",
+        "verified-20261205-koganei-park-bousai-festa-2026"
+      ],
+      "held_not_published": [
+        "chofu-jindai-stamp-rally",
+        "taito-hanayashiki-events",
+        "tokyo-zoo-association-events",
+        "toshima-sunshine-aquarium-abydos",
+        "toshima-sunshine-pawfes",
+        "urayasu-tokyo-disney-resort"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "サンシャインシティのキャンドルワークショップ（豊島区）と小金井公園の防災フェスタ（小金井市）を公式ページで個別に確認して追加。東京ディズニーリゾートは公式サイトが取得できず保留。"
     }
   ]
 }

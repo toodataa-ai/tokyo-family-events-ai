@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 254,
-    "verified": 254,
+    "published": 255,
+    "verified": 255,
     "announced": 0,
-    "candidates": 101
+    "candidates": 102
   },
   "carryover_organizer_rechecks": [
     {
@@ -5758,6 +5758,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "3e19e5e5c4998264bdbc26e1d2e3eac77d2ab4b1",
+    "global_source_audit_complete": false
+  },
+  "lead36_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-toshima-sunshine60-candle-workshop-2026"
+    ],
+    "held_not_published": [
+      "chofu-jindai-stamp-rally",
+      "taito-hanayashiki-events",
+      "tokyo-zoo-association-events",
+      "toshima-sunshine-aquarium-abydos",
+      "toshima-sunshine-pawfes",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "fb4999cedea142e5bac21c0a3670cfef3f3c1573",
     "global_source_audit_complete": false
   }
 }

@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 148,
-    "verified": 144,
+    "published": 149,
+    "verified": 145,
     "announced": 4,
-    "candidates": 93,
+    "candidates": 94,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4183,6 +4183,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "da7c29fd173c9fe3e1ab9718daec13b33121d2f3",
+    "global_source_audit_complete": false
+  },
+  "lead36_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-koganei-park-bousai-festa-2026"
+    ],
+    "held_not_published": [
+      "chofu-jindai-stamp-rally",
+      "taito-hanayashiki-events",
+      "tokyo-zoo-association-events",
+      "toshima-sunshine-aquarium-abydos",
+      "toshima-sunshine-pawfes",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "fb4999cedea142e5bac21c0a3670cfef3f3c1573",
     "global_source_audit_complete": false
   }
 }

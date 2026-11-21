@@ -1,4 +1,4 @@
-import {WARDS,AREAS,AREA_GROUPS,areaGroupOf,saturdayOf,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
+import {WARDS,AREAS,AREA_GROUPS,areaGroupOf,areaDisplayName,saturdayOf,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
 
 // Shared multi-select UI for event search and copy list.
 // Empty selections mean "all". Within a group use OR; across groups use AND.
@@ -110,7 +110,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     $('chips').innerHTML=tabs+`<button type="button" class="chip ${all?'active':''}" data-ward="__all__" aria-pressed="${all}">すべて <span>${base.length}</span></button>`+
       group.areas.map(ward=>{
         const checked=state.wards.has(ward);
-        return `<label class="chip ${checked?'active':''} ${counts[ward]===0?'zero':''}"><input type="checkbox" data-ward="${escapeHtml(ward)}" ${checked?'checked':''}><span>${escapeHtml(ward)} ${counts[ward]}</span></label>`;
+        return `<label class="chip ${checked?'active':''} ${counts[ward]===0?'zero':''}"><input type="checkbox" data-ward="${escapeHtml(ward)}" ${checked?'checked':''}><span>${escapeHtml(areaDisplayName(ward))} ${counts[ward]}</span></label>`;
       }).join('');
   }
   function renderGroups(){

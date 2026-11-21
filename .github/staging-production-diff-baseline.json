@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 639,
+  "expected_total_differences_after_governance": 646,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6439,6 +6439,62 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-21の都立公園（東京都公園協会）各園のイベント詳細ページの取得（読み取り専用）と追加（lead24）の保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead24_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead24_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tokyopark_shakujii_book_20261121.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tokyopark_siba_stargazing_20261121.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tokyopark_komazawa_fantasia_2026.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tokyopark_shinozaki_fureai_20261213.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tokyopark_soshigaya_tree_20261212.html",
+      "kind": "staging_only",
+      "category": "leads_triage_20261118",
+      "reason": "2026-11-21の都立公園（東京都公園協会）の公式ページ取得（読み取り専用）と追加（lead24）の生成ツール・検証・保存ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

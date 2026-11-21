@@ -1,4 +1,4 @@
-# retry 2026-11-21: Pages deploy step failed instantly on the first run (data gates passed, pointer rolled back)
+# retry 2 2026-11-21: deploy-pages could not find the uploaded artifact (GitHub-side); data gates passed
 operation=verified-lead21-addition-20261121
 candidate_sha=ff8091da2d87d9a0ec7c4d5990c297c24c199693
 base_data_production_sha=723c1ddcd26620a1f8b7297a5d1148a8af4bfb47

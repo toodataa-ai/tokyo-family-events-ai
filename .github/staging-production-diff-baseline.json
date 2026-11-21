@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 767,
+  "expected_total_differences_after_governance": 771,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7463,6 +7463,38 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第62回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls63.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第63回取得のURL一覧（東京ディズニーリゾート・テーマパーク・動物園・都立公園、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards63-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第63回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/app_filter.test.mjs",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-22の利用者指定（市部に千葉県浦安市＝東京ディズニーリゾートを追加）の単体テスト。ステージング確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_data.py",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-22の利用者指定（市部に千葉県浦安市を追加）。データ検証の市の一覧にも浦安市を加える。アプリ改修と同時に承認を得てから本番へ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

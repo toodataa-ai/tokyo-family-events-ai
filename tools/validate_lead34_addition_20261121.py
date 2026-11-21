@@ -90,7 +90,7 @@ def main():
                     if ww.get(ward, {}).get(key) != bw.get(ward, {}).get(key, 0) + k:
                         err(f'{week}: 23-ward coverage {key} for {ward} not +{k}')
                 for w_ in bw:
-                    if w_ != ward and bw[w_] != ww[w_]:
+                    if w_ not in {i[0]['ward'] for i in items} and bw[w_] != ww[w_]:
                         err(f'{week}: other 23-ward rows must be unchanged: {w_}')
             elif munis.get(ward, {}).get('published_count') != base_munis.get(ward, {}).get('published_count', 0) + k:
                 err(f'{week}: municipality coverage for {ward} not +{k}')

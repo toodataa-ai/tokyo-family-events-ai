@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 705,
+  "expected_total_differences_after_governance": 710,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6967,6 +6967,46 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第51回取得のURL一覧（読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/app.js",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の利用者指定（題名を「東京子連れイベントAI収集」へ、区・市の切り替え名を「23区 / 市部」へ）。ステージングで表示確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/canva.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の利用者指定（題名を「東京子連れイベントAI収集」へ、区・市の切り替え名を「23区 / 市部」へ）。ステージングで表示確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/copy.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の利用者指定（題名を「東京子連れイベントAI収集」へ、区・市の切り替え名を「23区 / 市部」へ）。ステージングで表示確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/multi-filter-ui.js",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の利用者指定（題名を「東京子連れイベントAI収集」へ、区・市の切り替え名を「23区 / 市部」へ）。ステージングで表示確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/search.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の利用者指定（題名を「東京子連れイベントAI収集」へ、区・市の切り替え名を「23区 / 市部」へ）。ステージングで表示確認後、承認を得てから本番へ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

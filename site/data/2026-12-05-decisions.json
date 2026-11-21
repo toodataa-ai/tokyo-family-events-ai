@@ -4,8 +4,8 @@
   "generated": "2026-10-27T01:11:37+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 144,
-    "published": 141,
+    "candidate_total": 146,
+    "published": 143,
     "excluded": 0,
     "duplicate": 3
   },
@@ -17378,6 +17378,296 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.musashino.or.jp/bunka/1002092/1009902.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261205-tachikawa-takamatsu-xmas-eigakai",
+      "name": "クリスマスたかまつり（クリスマス映画会「パンダコパンダ」・高松学習館）",
+      "ward": "立川市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向けの映画会で、1回約35分と短く、無料。申込が必要で各回30人と少人数。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "「パンダコパンダ」を上映する子ども向けの映画会（対象はどなたでも）"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "映画の鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "1回約35分と短く、小さな子も見やすい"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "各回約35分で、2回から選べる"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "申込が必要で、各回30人"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込必要（電子申請または電話）。状況は記載なし"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "クリスマスの時期に、親子で短い映画を無料で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料で、1回約35分と短い",
+            "2回から時間を選べる"
+          ],
+          "limitations": [
+            "申込が必要で各回30人と少ない",
+            "申込の受付状況は公式ページに記載がない"
+          ],
+          "grade_comparison": "総合A：短くて無料の子ども向け映画会。申込と少人数が制約。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+              "quote": "開催日 2026年12月5日（土曜日） 開催時間 上映時間（2回上映） 第1回目 午前11時から11時35分 第2回目 午後1時30分から2時5分",
+              "checked_at": "2026-11-21",
+              "sha256": "d95987d411966ad51b3c08f20d068b60b2d2c3a169eaecc8b1a87ae5081f9f4a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+              "quote": "開催場所 高松学習館 所在地 立川市高松町3-22-5",
+              "checked_at": "2026-11-21",
+              "sha256": "36685aa30cbd98459e715ce21d1e1089886fb429e55369d752aac0d4bea7e73f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+              "quote": "対象 どなたでも ハッシュタグ #人気、#無料",
+              "checked_at": "2026-11-21",
+              "sha256": "71d603d09c304215c60e29d75d43f7e15d158544153daf72821bdf1510791b5f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+              "quote": "「クリスマス映画会」を12月5日（土曜日）午前11時から11時35分と午後1時30分から2時5分に開催します。 上映作品は「パンダコパンダ」です。",
+              "checked_at": "2026-11-21",
+              "sha256": "1d624fafa179b55cc5bf582fe56014387ca6c77d841f354d114e5ca12537f766",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+              "quote": "費用 なし 定員 各回30人",
+              "checked_at": "2026-11-21",
+              "sha256": "27d0b2fe6edd2b07fdc6870a9d6283cc53b84179d94eaaf5fea2613667ed148b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども向けの映画会で、1回約35分と短く、無料。申込が必要で各回30人と少人数。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.tachikawa.lg.jp/event/e-kodomo/1028344.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261206-higashimurayama-kodomo-festa-oyako-kangeki",
+      "name": "児童館子どもフェスタ 親子観劇会 人形劇「霧のむこうのふしぎな町」（中央公民館ホール）",
+      "ward": "東村山市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "3歳以上の子どもと保護者が対象の人形劇の観劇会で、3歳未満は膝上で見られる。有料（1人800円）・座席指定・事前申込で、鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3歳以上18歳未満と保護者が対象の、児童館の子ども向け観劇会"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "人形劇の鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "3歳以上が対象で、3歳未満は膝上鑑賞が可能"
+          },
+          "stay_flexibility": {
+            "grade": "B",
+            "reason": "各部約80分（休憩10分を含む）で、午前・午後から選べる"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "事前申込が必要で、座席は指定"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1人800円"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込必要（12/4正午まで、チケットが無くなり次第終了）"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で人形劇を楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "午前・午後の2回から選べる",
+            "3歳未満は膝上で鑑賞できる"
+          ],
+          "limitations": [
+            "1人800円で、事前申込・座席指定",
+            "鑑賞が中心で、キャンセル・変更ができない"
+          ],
+          "grade_comparison": "総合B：子ども向けの人形劇だが、有料・事前申込・鑑賞中心の条件がある。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+              "quote": "日時 令和8年12月6日(日曜） 午前の部：午前10時30分から11時50分まで 午後の部：午後2時から3時20分まで",
+              "checked_at": "2026-11-21",
+              "sha256": "85c784b839f318b4c6c004f6c3458e8d9ede07da3a40f1847f5263dd54740c8c",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+              "quote": "会場 東村山市立中央公民館ホール（東村山市本町2丁目33番地2）",
+              "checked_at": "2026-11-21",
+              "sha256": "ac7127a4cca404f5941402cdb5632210718fb90998c4428300687f632da7b875",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+              "quote": "対象 3歳以上18歳未満のかたと保護者。妊娠中のかたとご家族。 （注記）3歳未満のお子さんは膝上鑑賞が可能です。",
+              "checked_at": "2026-11-21",
+              "sha256": "e5260a47e2bd79b1a99cc3e3558dad71599e04620be869bde030332eae0a73ba",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+              "quote": "定員 午前の部 400名 午後の部 400名 費用 1人 800円",
+              "checked_at": "2026-11-21",
+              "sha256": "d42566cc8d42ab0a3f064a774d2ade04dd86817c95a11a4f4b1b0fc2de227ebd",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+              "quote": "申込み LoGoフォームからの申込み 10月19日（月曜）午前9時30分から12月4日（金曜）正午まで",
+              "checked_at": "2026-11-21",
+              "sha256": "08b3e4d426681ee3a10e885c72add8281464f29560a298c67916c45470b4bb5a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "3歳以上の子どもと保護者が対象の人形劇の観劇会で、3歳未満は膝上で見られる。有料（1人800円）・座席指定・事前申込で、鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.higashimurayama.tokyo.jp/kosodate/jidokan/jidoukan_info/yatteru/kodomofesta/oshirase/mousikomi2019.html"
         }
       ]
     }

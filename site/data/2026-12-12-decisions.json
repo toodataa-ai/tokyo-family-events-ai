@@ -4,8 +4,8 @@
   "generated": "2026-11-08T16:10:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 102,
-    "published": 100,
+    "candidate_total": 103,
+    "published": 101,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -12172,6 +12172,151 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.tokyo-park.or.jp/park/shinozaki/news/2026/8_12_13.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-hachioji-keihachi-xmas-market-beeswax-wrap",
+      "name": "ケイハチクリスマスマーケット2026 みつろうラップづくりワークショップ（東京たま未来メッセ）",
+      "ward": "八王子市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生以上（小学生は保護者同伴）が無料でみつろうラップを作れるワークショップ。当日参加もできる。アイロンを使うため未就学児は参加できない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "小学生以上が対象のワークショップ（子ども専用ではない）"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "布にみつろうを使ってラップを作る工作体験"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生以上。未就学児は参加できない"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "10:00〜16:00の間に参加できる"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "当日参加もでき、材料は会場で用意される"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込または当日参加（申込多数の場合は抽選）"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "エコ体験を親子で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料で、材料はすべて会場で用意される",
+            "当日参加ができる"
+          ],
+          "limitations": [
+            "未就学児は参加できない",
+            "事前申込は申込多数の場合に抽選"
+          ],
+          "grade_comparison": "総合B：小学生以上の親子向けの無料の工作体験。未就学児は不可。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+              "quote": "日時 令和8年（2026年）12月12日（土） 10：00～16：00",
+              "checked_at": "2026-11-21",
+              "sha256": "0e7b7d084635fbb44729637db86953f3f6b91db1e62c77880098044c2c1b2b5f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+              "quote": "会場 東京たま未来メッセ（八王子市明神町3丁目19-2）（京王八王子駅から徒歩2分） 第2会議室",
+              "checked_at": "2026-11-21",
+              "sha256": "2fb571f9797b8cbceb930b8d5cdd336fcd9761f9a772af01c1490dcc7c0419f0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+              "quote": "対象 小学生以上 ※小学生は保護者同伴でご参加ください。 ※アイロンを使用するため、未就学児の参加はご遠慮ください。",
+              "checked_at": "2026-11-21",
+              "sha256": "1204736f37bb5bd6791151ec8528d4a8acd09f06306f8c2b75e5af98a49f4bcf",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+              "quote": "参加費 無料 持ち物 不要（材料はすべて会場で用意します。）",
+              "checked_at": "2026-11-21",
+              "sha256": "c1fb4cac44e35f20b716e17c314834f4eadac5bc88b076c803552125893d4636",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+              "quote": "参加方法 事前申込みもしくは当日参加にてご参加いただけます。",
+              "checked_at": "2026-11-21",
+              "sha256": "bbb58d5801550dce3a0c87ffd8a552ea980fc7e4b1f0ee1c2f0ee77ffddbc97f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "小学生以上（小学生は保護者同伴）が無料でみつろうラップを作れるワークショップ。当日参加もできる。アイロンを使うため未就学児は参加できない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.hachioji.tokyo.jp/kurashi/life/005/001/007/p038184.html"
         }
       ]
     }

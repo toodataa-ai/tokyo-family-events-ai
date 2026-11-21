@@ -10,10 +10,10 @@
   "run_file": "2026-11-21-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 258,
+    "candidate_count": 259,
     "duplicate_removed": 1,
     "excluded_count": 16,
-    "published_count": 241,
+    "published_count": 242,
     "wards": [
       {
         "ward": "千代田区",
@@ -222,6 +222,14 @@
         "published_count": 19,
         "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-23独立祝日の個別公式確認済み新規3件を別資料で加算。旧run探索カウンタは変更なし。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み3件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
       }
+    ],
+    "municipalities": [
+      {
+        "ward": "調布市",
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
+      }
     ]
   },
   "event_files": [
@@ -272,7 +280,8 @@
     "2026-11-21-events-lead21-20261121.json",
     "2026-11-21-events-lead22-20261121.json",
     "2026-11-21-events-lead23-20261121.json",
-    "2026-11-21-events-lead24-20261121.json"
+    "2026-11-21-events-lead24-20261121.json",
+    "2026-11-21-events-lead27-20261121.json"
   ],
   "events": []
 }

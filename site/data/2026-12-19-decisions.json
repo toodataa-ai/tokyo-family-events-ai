@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 62,
-    "published": 62,
+    "candidate_total": 63,
+    "published": 63,
     "excluded": 0,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -8790,6 +8790,151 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.musashino.or.jp/sports/1001545/1001549/1010161.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-chofu-family-concert-0sai-classic",
+      "name": "ファミリーコンサート「0歳児からのクラシック音楽会 - もうすぐクリスマス」（東部公民館）",
+      "ward": "調布市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "0歳から参加できる30分の親子向けコンサートで、踊ったり歌ったりも楽しめる無料の企画。申込が必要で、多数の場合は抽選（市民優先）。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "「0歳児からのクラシック音楽会」と題した親子向けのコンサート"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "リズムに合わせて踊ったり歌ったりできる"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "0歳から参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "各回30分で、A・Bの2公演から選べる"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "申込が必要で、多数の場合は抽選（市民優先）"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込必要（11/21〜11/29、抽選）"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "クリスマス曲を0歳から親子で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "0歳から参加でき、無料",
+            "各回30分と短く、踊ったり歌ったりできる"
+          ],
+          "limitations": [
+            "多数の場合は抽選（市民優先）で、参加できない可能性がある",
+            "各回40人と少人数"
+          ],
+          "grade_comparison": "総合A：0歳から参加できる無料の親子コンサート。抽選（市民優先）が制約。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+              "quote": "イベント開催日時 2026年12月19日（土曜日） 日程・時間 (A公演)午前10時15分から10時45分まで(開場:午前10時) (B公演)午前11時30分から正午まで(開場:午前11時15分)",
+              "checked_at": "2026-11-21",
+              "sha256": "69d8b566e02eb1b4b86581da8387668fcf6aa6c364b6ccd69e45d0c984c36a6d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+              "quote": "会場名称 東部公民館 学習室 会場住所 調布市若葉町1-29-21 2階",
+              "checked_at": "2026-11-21",
+              "sha256": "d0875bf4aed4abec3e5bf6f053b3ea4e355724cc03c58415af8280ad354fb9f9",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+              "quote": "0歳から参加できるので、リズムに合わせて踊ったり、歌ったりも楽しめます。",
+              "checked_at": "2026-11-21",
+              "sha256": "d56f23ade3a87351b9c7cf0caaa831b90f6c9888efa979198f4561d0ab56ae35",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+              "quote": "「そりすべり」 「みんなで鳴らそう ジングルベル」 「おもちゃのチャチャチャ」 ほか",
+              "checked_at": "2026-11-21",
+              "sha256": "990aa4d5f6c0c7b53ae94b06043f2e827e14d255a5af93cceb2865414995475d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+              "quote": "費用 無料 定員 各回40人(多数抽選。市民優先) 申込 11月21日(土曜日)午前9時から29日(日曜日)午後9時に、申込フォーム(外部リンク)で受付",
+              "checked_at": "2026-11-21",
+              "sha256": "87aa65ab5ee8250eb9aa83fe1e952c46c345048720065bc822a542cb1f58329d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "0歳から参加できる30分の親子向けコンサートで、踊ったり歌ったりも楽しめる無料の企画。申込が必要で、多数の場合は抽選（市民優先）。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.chofu.lg.jp/100060/p059321.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.chofu.lg.jp/100060/p059321.html"
         }
       ]
     }

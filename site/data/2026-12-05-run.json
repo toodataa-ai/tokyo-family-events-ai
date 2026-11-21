@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 136,
-    "verified": 132,
+    "published": 137,
+    "verified": 133,
     "announced": 4,
-    "candidates": 81,
+    "candidates": 82,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -3996,6 +3996,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "ff8091da2d87d9a0ec7c4d5990c297c24c199693",
+    "global_source_audit_complete": false
+  },
+  "lead23_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-edogawa-kasai-beachclean-rugby"
+    ],
+    "held_not_published": [
+      "ariake-nordic-walking-20261206",
+      "odaiba-fishing-bbq-20261129",
+      "tokyo-park-event-search-dynamic"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "04a0c93d19b732504d32cce21a6dcf8dd0f9216b",
     "global_source_audit_complete": false
   }
 }

@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 252,
-    "verified": 252,
+    "published": 254,
+    "verified": 254,
     "announced": 0,
-    "candidates": 99
+    "candidates": 101
   },
   "carryover_organizer_rechecks": [
     {
@@ -5742,6 +5742,22 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "0f84cff8a5ec34592502d0b130e1a5bf301834eb",
+    "global_source_audit_complete": false
+  },
+  "lead35_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-sumida-solamachi-xmasmarket-2026",
+      "verified-20261121-minato-joypolis-digitareal-illumination-2026"
+    ],
+    "held_not_published": [
+      "minato-joypolis-collab-events",
+      "sumida-skytree-dream-christmas-2026",
+      "taito-hanayashiki-events",
+      "toshima-sunshine-city"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "3e19e5e5c4998264bdbc26e1d2e3eac77d2ab4b1",
     "global_source_audit_complete": false
   }
 }

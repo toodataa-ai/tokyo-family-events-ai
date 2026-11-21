@@ -1,15 +1,15 @@
-# User-approved v1.42 (chat 2026-11-22): site title wording and area group label (wording only). No data changes.
+# User-approved v1.43 (chat 2026-11-22): separate display of fixed sites and AI exploration sites. No data changes.
 operation=release
 production_ref=production
-production_sha=bb57e0f630e6c772befdfe6f9ad63e2c5d20eb99
-previous_production_sha=1000ed4c30b30642471a10e025b2100d9a9901df
-candidate_sha=b02d6cab8962a1147495d7a06cd75b3204e34c28
-pr=142
-target_public_version=1.42
-previous_public_release=release/2026-11-21-r889
+production_sha=53df1dc631b22e05caae27e9a5aeca2a392f3c61
+previous_production_sha=bb57e0f630e6c772befdfe6f9ad63e2c5d20eb99
+candidate_sha=94ee9dff9cecf3091a4996f74f415ff83398da7b
+pr=143
+target_public_version=1.43
+previous_public_release=release/2026-11-21-r923
 release_date_jst=2026-11-22
-expected_data_production_sha=15b18aa7e38622c8ffe1917b3ae5f147964495de
-approved_scope=site/app.js,site/multi-filter-ui.js,site/index.html,site/search.html,site/copy.html,site/canva.html,site/omitted.html,site/pending-issues.html,site/usage-history.html
+expected_data_production_sha=fb4999cedea142e5bac21c0a3670cfef3f3c1573
+approved_scope=site/index.html,site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Site title is now 東京子連れイベントAI収集 and the area switch label is 23区/市部. Wording only; no data changes.
+note=Fixed sites and AI exploration sites (105) are shown in separate blocks with six clean groups. Display and registry only; no event data changes.

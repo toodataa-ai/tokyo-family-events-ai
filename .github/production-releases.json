@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-22-r960",
+  "current_public_release": "release/2026-11-22-r970",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -401,7 +401,16 @@
       "workflow_run_id": 44959033924,
       "public_version": "1.43",
       "note": "ユーザー承認の本番アプリv1.43。固定サイト（27件）とAI探索先サイト（105件・6分類）を別ブロックで表示（PR #143で3ファイル）。イベントデータは変更なし。data-production fb4999cedea142e5bac21c0a3670cfef3f3c1573。"
+    },
+    {
+      "release_id": "release/2026-11-22-r970",
+      "branch": "release/2026-11-22-r970",
+      "commit_sha": "f7188412486efe7629c7e819e5fe0980567c3bd3",
+      "deployed_at": "2026-11-21T23:49:08+00:00",
+      "workflow_run_id": 44963537661,
+      "public_version": "1.44",
+      "note": "ユーザー承認の本番アプリv1.44。市部に千葉県浦安市（東京ディズニーリゾート）を追加（ボタン表示は「千葉県浦安市」）、固定サイト27件とAI探索先118件の各サイトに取得状況（取得できた／本文なし／取得できなかった／未確認）を表示（PR #144で8ファイル）。イベントデータは変更なし。data-production 73951929654233560abe8d64fc175cfb323af829。初回の公開はPagesデプロイが一時失敗し、再実行で成功。"
     }
   ],
-  "current_public_version": "1.43"
+  "current_public_version": "1.44"
 }

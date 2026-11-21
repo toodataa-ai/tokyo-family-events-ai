@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 647,
+  "expected_total_differences_after_governance": 650,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6503,6 +6503,30 @@
       "kind": "staging_only",
       "category": "leads_triage_20261118",
       "reason": "2026-11-21の利用者指定（多摩の主要市への対象拡大）の計画書。改修はステージング経由で、承認前に本番へ出さない。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/app.js",
+      "kind": "different",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/multi-filter-ui.js",
+      "kind": "different",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/app_filter.test.mjs",
+      "kind": "different",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

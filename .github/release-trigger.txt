@@ -1,15 +1,15 @@
-# User-approved v1.40 (chat 2026-11-20): home page wording for daily updates (wording only, site/index.html).
+# User-approved v1.41 (chat 2026-11-21): 23区/多摩 area group switch (app + validator accept Tama city names). No event data changes.
 operation=release
 production_ref=production
-production_sha=ede99e6844bb77eaa9a533153b99f2385f73158f
-previous_production_sha=d4e53fe170af6c3e28fef09dc90b9b8ed680d486
-candidate_sha=34332917b1f06d5c98b7f249006f91ea34d3dc0b
-pr=139
-target_public_version=1.40
-previous_public_release=release/2026-11-20-r1
-release_date_jst=2026-11-20
-expected_data_production_sha=cf93083b984aacd9b8f5258d4bd8b623a9a65e5f
-approved_scope=site/index.html
+production_sha=a0001583804f4c168e72785ae36bcc61d918fa8d
+previous_production_sha=ede99e6844bb77eaa9a533153b99f2385f73158f
+candidate_sha=ba65db7246941af9972b0a3540370041eb35953a
+pr=140
+target_public_version=1.41
+previous_public_release=release/2026-11-20-r2
+release_date_jst=2026-11-21
+expected_data_production_sha=f6695d542ca58cc1a43451bf5be9571e864c9ae6
+approved_scope=site/app.js,site/multi-filter-ui.js,site/styles.css,tools/validate_data.py,tests/app_filter.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Home page wording changed from holiday-after weekly update to daily update. No data changes.
+note=Added 23区/多摩 switch to area filter; validator accepts Tama city names. No data changes; no Tama events published.

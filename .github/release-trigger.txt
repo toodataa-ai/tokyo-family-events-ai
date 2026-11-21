@@ -1,15 +1,15 @@
-# User-approved v1.41 (chat 2026-11-21): 23区/多摩 area group switch (app + validator accept Tama city names). No event data changes.
+# User-approved v1.42 (chat 2026-11-22): site title wording and area group label (wording only). No data changes.
 operation=release
 production_ref=production
-production_sha=a0001583804f4c168e72785ae36bcc61d918fa8d
-previous_production_sha=ede99e6844bb77eaa9a533153b99f2385f73158f
-candidate_sha=ba65db7246941af9972b0a3540370041eb35953a
-pr=140
-target_public_version=1.41
-previous_public_release=release/2026-11-20-r2
-release_date_jst=2026-11-21
-expected_data_production_sha=f6695d542ca58cc1a43451bf5be9571e864c9ae6
-approved_scope=site/app.js,site/multi-filter-ui.js,site/styles.css,tools/validate_data.py,tests/app_filter.test.mjs
+production_sha=bb57e0f630e6c772befdfe6f9ad63e2c5d20eb99
+previous_production_sha=1000ed4c30b30642471a10e025b2100d9a9901df
+candidate_sha=b02d6cab8962a1147495d7a06cd75b3204e34c28
+pr=142
+target_public_version=1.42
+previous_public_release=release/2026-11-21-r889
+release_date_jst=2026-11-22
+expected_data_production_sha=15b18aa7e38622c8ffe1917b3ae5f147964495de
+approved_scope=site/app.js,site/multi-filter-ui.js,site/index.html,site/search.html,site/copy.html,site/canva.html,site/omitted.html,site/pending-issues.html,site/usage-history.html
 event_record_mutation=none
 curation_record_mutation=none
-note=Added 23区/多摩 switch to area filter; validator accepts Tama city names. No data changes; no Tama events published.
+note=Site title is now 東京子連れイベントAI収集 and the area switch label is 23区/市部. Wording only; no data changes.

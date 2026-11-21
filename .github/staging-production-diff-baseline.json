@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 944,
+  "expected_total_differences_after_governance": 946,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7575,6 +7575,22 @@
       "kind": "staging_only",
       "category": "source_checklist_20261122",
       "reason": "取得元の訪問状況（取得できた／本文なし／取得不可）を台帳に書き込むツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/styles.css",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-22の利用者指定（各取得元の取得状況バッジ）。ステージング確認後、承認を得てから本番へ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/fixed_source_directory.test.mjs",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "取得状況の表示と全サイトの状態を確認するテスト。承認後に本番へ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

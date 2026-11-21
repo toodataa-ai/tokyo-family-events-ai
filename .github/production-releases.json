@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-20-r2",
+  "current_public_release": "release/2026-11-21-r889",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -374,7 +374,16 @@
       "workflow_run_id": 44757226113,
       "public_version": "1.40",
       "note": "トップページの説明を、休日明けの週次更新から毎日更新の表記に変更。データ変更なし。"
+    },
+    {
+      "release_id": "release/2026-11-21-r889",
+      "branch": "release/2026-11-21-r889",
+      "commit_sha": "a0001583804f4c168e72785ae36bcc61d918fa8d",
+      "deployed_at": "2026-11-21T09:04:05+00:00",
+      "workflow_run_id": 44887707052,
+      "public_version": "1.41",
+      "note": "ユーザー承認の本番アプリv1.41。絞り込みに「23区/多摩」の切り替えを追加し、検証ツールが多摩の市名を受け付けるよう変更。PR #140で5ファイルのみ反映（app.js・multi-filter-ui.js・styles.css・validate_data.py・テスト）。イベントデータは変更なし、多摩のイベントは未掲載。data-production f6695d542ca58cc1a43451bf5be9571e864c9ae6。"
     }
   ],
-  "current_public_version": "1.40"
+  "current_public_version": "1.41"
 }

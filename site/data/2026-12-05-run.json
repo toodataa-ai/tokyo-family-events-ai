@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 145,
-    "verified": 141,
+    "published": 146,
+    "verified": 142,
     "announced": 4,
-    "candidates": 90,
+    "candidates": 91,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4135,6 +4135,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "2d008f1f168583e82bf5e1a7d9eab60a48e2bdc3",
+    "global_source_audit_complete": false
+  },
+  "lead30_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-tachikawa-xmas-takamatsuri-eigakai"
+    ],
+    "held_not_published": [
+      "remaining-cities",
+      "tachikawa-barbarian-20261212",
+      "tachikawa-kamui-no-uta-20261212",
+      "tachikawa-kurashi-festa-pre-20261212",
+      "tachikawa-moruku-20261128",
+      "tachikawa-tamagawa-cleanup-20261128"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "15b18aa7e38622c8ffe1917b3ae5f147964495de",
     "global_source_audit_complete": false
   }
 }

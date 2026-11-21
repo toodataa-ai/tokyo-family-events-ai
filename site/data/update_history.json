@@ -3924,6 +3924,37 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "多摩拡張の第5弾として、多摩市（ニュースポーツ体験教室・多摩センターイルミネーション）、清瀬市（ミュージアム・シアター・たまろくとニュースポーツフェスタ）を公式の個別ページで確認して追加。"
+    },
+    {
+      "run_id": "lead30-addition-20261121",
+      "run_type": "manual_verified_lead30_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "15b18aa7e38622c8ffe1917b3ae5f147964495de",
+      "target_weekends": [
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 751,
+      "candidate_active_week_records": 752,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261205-tachikawa-xmas-takamatsuri-eigakai"
+      ],
+      "held_not_published": [
+        "remaining-cities",
+        "tachikawa-barbarian-20261212",
+        "tachikawa-kamui-no-uta-20261212",
+        "tachikawa-kurashi-festa-pre-20261212",
+        "tachikawa-moruku-20261128",
+        "tachikawa-tamagawa-cleanup-20261128"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "多摩拡張の第6弾として、立川市（クリスマスたかまつり・クリスマス映画会）を公式の個別ページで確認して追加。"
     }
   ]
 }

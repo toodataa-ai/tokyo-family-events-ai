@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 940,
+  "expected_total_differences_after_governance": 943,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7543,6 +7543,30 @@
       "kind": "different",
       "category": "pending_staging_app",
       "reason": "AI探索先サイトの追加（浦安市・東京ディズニーシー・動物園・都立公園の個別ページ等、118件）。表示のみで、本番アプリ反映は承認後。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls65.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第65回取得のURL一覧（サイトに載る全取得元の訪問状況確認、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/ids65.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第65回URLに対応する取得元id。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards65-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第65回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

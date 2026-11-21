@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 758,
+  "expected_total_differences_after_governance": 760,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7391,6 +7391,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-22のテーマパーク・大型施設の第1弾（lead34：ピューロランド・東京ドームシティ・多摩動物公園の4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls61.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第61回取得のURL一覧（読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards61-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第61回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -3700,6 +3700,47 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "東京都公園協会の都立公園の公式ページで、石神井公園（11/21）、芝公園（11/21）、駒沢オリンピック公園（11/28・29）、祖師谷公園（12/12）、篠崎公園（12/13）のイベントを確認し、6件を追加。"
+    },
+    {
+      "run_id": "lead25-addition-20261121",
+      "run_type": "manual_verified_lead25_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "f6695d542ca58cc1a43451bf5be9571e864c9ae6",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 726,
+      "candidate_active_week_records": 729,
+      "added_weekly_records": 3,
+      "new_event_ids": [
+        "verified-20261129-fuchu-oshitate-kodomo-kagaku",
+        "verified-20261205-fuchu-nobinobi-soccer",
+        "verified-20261205-inagi-giants-hometown-fes"
+      ],
+      "held_not_published": [
+        "fuchu-daikon-harvest-20261212",
+        "fuchu-harbarium-momijigaoka-20261209",
+        "fuchu-kazaripan-musashidai",
+        "fuchu-kodomo-cooking-20261219",
+        "fuchu-kodomo-togei-20261220",
+        "giants-fes-morning-20261205",
+        "inagi-kirafes-20261128",
+        "kodaira-kunitachi-etc-lists",
+        "komae-ohanashi-20261125",
+        "komae-ohanashi-20261129",
+        "komae-sports-festa-20270124",
+        "tachikawa-undou-20261213",
+        "tachikawa-xmas-movie-20261205"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "多摩拡張の最初の調査として、府中市（子ども科学体験11/29・のびのびサッカーひろば12/5）と稲城市（ジャイアンツホームタウンフェス12/5・午後の部）の公式ページを確認し、3件を追加。市民限定や費用未記載のものは保留。"
     }
   ]
 }

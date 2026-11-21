@@ -5392,11 +5392,155 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-fuchu-nobinobi-soccer",
+      "status": "verified",
+      "source": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この3件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "小学生から高校生の部（インクルーシブ編） 日時 12月5日（土曜日）",
+          "checked_at": "2026-11-21",
+          "sha256": "c25480b35d68cffa04b6faa4d2e20ba125b50be5486b5662cf69161de35f3ffa",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "（1） 午後1時から2時",
+          "checked_at": "2026-11-21",
+          "sha256": "91ffe2d7764fbb877082f6baaf17d8d8c77c4f355b0b01a5db91bab0da3c72b8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "FC東京パーク府中（ミッテン府中屋上、京王線「府中駅」南口より徒歩約1分）",
+          "checked_at": "2026-11-21",
+          "sha256": "9a598c6dadacaf29f792e7aee9e542184c2a2deb478411843ca195de1d30490c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "知的・発達の障害特性のあるお子さま向けのサッカーイベント",
+          "checked_at": "2026-11-21",
+          "sha256": "b960f0afd7b53858537c7372218da940bfae6d12a607085370e3c267959080e7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "各ひろば 約20名（申込多数の場合は抽選）",
+          "checked_at": "2026-11-21",
+          "sha256": "fd76192b7bab50a09ca05ae68996080b0b83c901b18133fd42eb1042593ed60e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.fuchu.tokyo.jp/kenko/shogai/hoyou/soccer1205.html",
+          "quote": "12月2日（水曜日）までにオンラインフォーム（外部サイト）よりお申込ください。",
+          "checked_at": "2026-11-21",
+          "sha256": "2903d1e13d730d9356189abe42e4eb661b6e215ec8cfe569b7f639d99e873ff2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-inagi-giants-hometown-fes",
+      "status": "verified",
+      "source": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この3件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "令和８年12月５日(土曜日)",
+          "checked_at": "2026-11-21",
+          "sha256": "fb60863a83ab4726499d15f77afe12c72e153a33aa0b6aac6ff8072b069f811d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "午後の部：午後１時から午後４時",
+          "checked_at": "2026-11-21",
+          "sha256": "6f2fc927d66f5308be52639112ead21da44ea34c03019565971d73552748f21c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "ジャイアンツタウンスタジアム（稲城市矢野口）（稲城市矢野口3228番地南山95街区１号）",
+          "checked_at": "2026-11-21",
+          "sha256": "042f480538ca2cb3e34a98141895f94ee47acf943c1e7f23e762f39e07f88a96",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "料金 無料 内容 〇選手なりきり体験",
+          "checked_at": "2026-11-21",
+          "sha256": "62d2fdd83663e7c62da0a99cb7945dcf4f6a27523dfbec3abd8993a174f7dd1b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "ゲーム形式で野球の動きが楽しめるコンテンツです。",
+          "checked_at": "2026-11-21",
+          "sha256": "e56020b32d3bca6041d7f9ca2bdc7a4973ca3247a01f5310b3b924fb38eee6e5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "②の回/③の回＝小学１年生～３年生",
+          "checked_at": "2026-11-21",
+          "sha256": "e78c31f5d14a81e1293bfe173cba93dabe33d43adc5c4f5adaa4424b7983d0ba",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146380.html",
+          "quote": "＜参加方法＞イベント当日、参加受付を行います。定員を越える応募があった場合は、抽選となります。",
+          "checked_at": "2026-11-21",
+          "sha256": "22f9074ed697bc879721a7caabfbb8760257739f522449741941c882eebf1578",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 137,
-    "verified": 133,
+    "total": 139,
+    "verified": 135,
     "announced": 4
   }
 }

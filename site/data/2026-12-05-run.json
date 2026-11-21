@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 137,
-    "verified": 133,
+    "published": 139,
+    "verified": 135,
     "announced": 4,
-    "candidates": 82,
+    "candidates": 84,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4010,6 +4010,31 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "04a0c93d19b732504d32cce21a6dcf8dd0f9216b",
+    "global_source_audit_complete": false
+  },
+  "lead25_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-fuchu-nobinobi-soccer",
+      "verified-20261205-inagi-giants-hometown-fes"
+    ],
+    "held_not_published": [
+      "fuchu-daikon-harvest-20261212",
+      "fuchu-harbarium-momijigaoka-20261209",
+      "fuchu-kazaripan-musashidai",
+      "fuchu-kodomo-cooking-20261219",
+      "fuchu-kodomo-togei-20261220",
+      "giants-fes-morning-20261205",
+      "inagi-kirafes-20261128",
+      "kodaira-kunitachi-etc-lists",
+      "komae-ohanashi-20261125",
+      "komae-ohanashi-20261129",
+      "komae-sports-festa-20270124",
+      "tachikawa-undou-20261213",
+      "tachikawa-xmas-movie-20261205"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "f6695d542ca58cc1a43451bf5be9571e864c9ae6",
     "global_source_audit_complete": false
   }
 }

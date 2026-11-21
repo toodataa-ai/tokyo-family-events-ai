@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 177,
-    "verified": 177,
+    "published": 178,
+    "verified": 178,
     "announced": 0,
-    "candidates": 114,
+    "candidates": 115,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4350,6 +4350,30 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "2097dd4aea8c6aa17cf22901caab147f6df17dab",
+    "global_source_audit_complete": false
+  },
+  "lead25_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-fuchu-oshitate-kodomo-kagaku"
+    ],
+    "held_not_published": [
+      "fuchu-daikon-harvest-20261212",
+      "fuchu-harbarium-momijigaoka-20261209",
+      "fuchu-kazaripan-musashidai",
+      "fuchu-kodomo-cooking-20261219",
+      "fuchu-kodomo-togei-20261220",
+      "giants-fes-morning-20261205",
+      "inagi-kirafes-20261128",
+      "kodaira-kunitachi-etc-lists",
+      "komae-ohanashi-20261125",
+      "komae-ohanashi-20261129",
+      "komae-sports-festa-20270124",
+      "tachikawa-undou-20261213",
+      "tachikawa-xmas-movie-20261205"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "f6695d542ca58cc1a43451bf5be9571e864c9ae6",
     "global_source_audit_complete": false
   }
 }

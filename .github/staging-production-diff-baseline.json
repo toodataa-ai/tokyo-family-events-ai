@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 739,
+  "expected_total_differences_after_governance": 745,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7239,6 +7239,54 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-22の多摩拡張の第8弾（lead32、稲城市よみうりランド3件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead33_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead33_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/showakinen_craft_leaf_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/showakinen_craft_oshogatsu_20261219.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/showakinen_greenexpo_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/showakinen_sippofesta_20261205.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

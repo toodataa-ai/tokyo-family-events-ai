@@ -260,313 +260,316 @@ jobs:
       - name: Validate candidate official schedule discovery evidence
         if: ${{ needs.gate.outputs.operation != 'thumbnail-correction' }}
         shell: bash
+        env:
+          OP: ${{ needs.gate.outputs.operation }}
+          BASE: ${{ needs.gate.outputs.base_data_production_sha }}
         run: |
-          if [ "${{ needs.gate.outputs.operation }}" = "verified-nine-followup-20261115" ]; then
-            python3 staging-policy-src/tools/validate_nine_followup_addition_20261115.py               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-all-remaining-evidence-20261115" ]; then
-            python3 staging-policy-src/tools/validate_all_remaining_evidence_20261115.py               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-remaining-evidence-20261115" ]; then
-            python3 staging-policy-src/tools/validate_remaining_evidence_addition_20261115.py               --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-pending-data-20261115" ]; then
+          if [ "$OP" = "verified-nine-followup-20261115" ]; then
+            python3 staging-policy-src/tools/validate_nine_followup_addition_20261115.py               --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-all-remaining-evidence-20261115" ]; then
+            python3 staging-policy-src/tools/validate_all_remaining_evidence_20261115.py               --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-remaining-evidence-20261115" ]; then
+            python3 staging-policy-src/tools/validate_remaining_evidence_addition_20261115.py               --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-pending-data-20261115" ]; then
             python3 staging-policy-src/tools/validate_pending_data_release_20261115.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-all-non-tamemap-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-all-non-tamemap-20261114" ]; then
             python3 staging-policy-src/tools/validate_all_non_tamemap_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-last-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-non-tamemap-last-20261114" ]; then
             python3 staging-policy-src/tools/validate_non_tamemap_last_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-next-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-non-tamemap-next-20261114" ]; then
             python3 staging-policy-src/tools/validate_non_tamemap_next_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "older-family-fit-correction-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "older-family-fit-correction-20261114" ]; then
             python3 staging-policy-src/tools/validate_older_family_fit_correction.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-non-tamemap-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-non-tamemap-20261114" ]; then
             python3 staging-policy-src/tools/validate_non_tamemap_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "weekly-family-fit-correction-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "weekly-family-fit-correction-20261114" ]; then
             python3 staging-policy-src/tools/validate_weekly_family_fit_correction.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "rail-family-fit-correction-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "rail-family-fit-correction-20261114" ]; then
             python3 staging-policy-src/tools/validate_rail_family_fit_correction.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-additional-primary-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-additional-primary-20261114" ]; then
             python3 staging-policy-src/tools/validate_additional_primary_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-final-backlog-20261114" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-final-backlog-20261114" ]; then
             python3 staging-policy-src/tools/validate_final_backlog_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-community-review-20261113" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-community-review-20261113" ]; then
             python3 staging-policy-src/tools/validate_community_review_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-hiromachi-review-20261113" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-hiromachi-review-20261113" ]; then
             python3 staging-policy-src/tools/validate_hiromachi_review_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-nakano-review-20261113" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-nakano-review-20261113" ]; then
             python3 staging-policy-src/tools/validate_nakano_review_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-somei-20261109" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "verified-somei-20261109" ]; then
             python3 staging-policy-src/tools/validate_somei_add_20261109.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+              --base-ref "$BASE" --data-dir site/data
             echo 'Individual ward official verified, old crawl failures remain recorded.'
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-zoo-20261108" ]; then
+          elif [ "$OP" = "verified-zoo-20261108" ]; then
             python3 staging-policy-src/tools/validate_zoo_add_20261108.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+              --base-ref "$BASE" --data-dir site/data
             echo 'Zero old event records changed; original audit debt left open.'
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-two-official-omissions-20261108" ]; then
+          elif [ "$OP" = "verified-two-official-omissions-20261108" ]; then
             python3 staging-policy-src/tools/validate_two_official_omissions_20261108.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+              --base-ref "$BASE" --data-dir site/data
             echo 'No old source failure was changed, and the 859 remaining candidate links are not marked audited.'
-          elif [ "${{ needs.gate.outputs.operation }}" = "manual-official-verified-subset-20261117" ]; then
+          elif [ "$OP" = "manual-official-verified-subset-20261117" ]; then
             python3 staging-policy-src/tools/validate_manual_20261117_verified_subset.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
-          elif [ "${{ needs.gate.outputs.operation }}" = "history-provenance-only-20261108" ]; then
+              --base-ref "$BASE" --data-dir site/data
+          elif [ "$OP" = "history-provenance-only-20261108" ]; then
             node staging-policy-src/tools/validate_history_metadata_provenance.mjs \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}" --data-dir site/data
+              --base-ref "$BASE" --data-dir site/data
             echo 'Historical source audit debt unchanged; no candidate-level verification claimed.'
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-forest-table-addition" ]; then
+          elif [ "$OP" = "verified-forest-table-addition" ]; then
             python3 staging-policy-src/tools/validate_nerima_forest_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-horizon-subset" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-horizon-subset" ]; then
             python3 staging-policy-src/tools/validate_verified_horizon_rollover.py \
               --data-dir site/data \
               --main-dir staging-policy-src \
               --evidence-dir original-audit-evidence/holiday-after-source-evidence \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-audit-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-audit-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_audit_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead5-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead5-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead5_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead6-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead6-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead6_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead7-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead7-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead7_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [[ "${{ needs.gate.outputs.operation }}" =~ ^verified-(lead(1[89]|2[0-9]))-addition-20261120$ ]]; then
+              --base-ref "$BASE"
+          elif [[ "$OP" =~ ^verified-(lead(1[89]|2[0-9]))-addition-20261120$ ]]; then
             python3 "staging-policy-src/tools/validate_${BASH_REMATCH[1]}_addition_20261120.py" \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "nerima-duplicate-removal-20261120" ]; then
             python3 staging-policy-src/tools/validate_nerima_duplicate_removal_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "provenance-fix2-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "provenance-fix2-20261120" ]; then
             python3 staging-policy-src/tools/validate_provenance_fix2_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "provenance-fix-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "provenance-fix-20261120" ]; then
             python3 staging-policy-src/tools/validate_provenance_fix_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "provenance-fill-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "provenance-fill-20261120" ]; then
             python3 staging-policy-src/tools/validate_provenance_fill_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "image-fill3-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "image-fill3-20261120" ]; then
             python3 staging-policy-src/tools/validate_image_fill3_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "image-fill2-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "image-fill2-20261120" ]; then
             python3 staging-policy-src/tools/validate_image_fill2_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "image-fill-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "image-fill-20261120" ]; then
             python3 staging-policy-src/tools/validate_image_fill_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "nakano-image-alignment-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "nakano-image-alignment-20261120" ]; then
             python3 staging-policy-src/tools/validate_nakano_image_alignment_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "sumida-image-alignment-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "sumida-image-alignment-20261120" ]; then
             python3 staging-policy-src/tools/validate_sumida_image_alignment_20261120.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead24-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead24-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead24_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead25-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead25-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead25_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead26-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead26-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead26_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead23-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead23-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead23_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead22-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead22-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead22_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead21-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead21-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead21_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead20-addition-20261121" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead20-addition-20261121" ]; then
             python3 staging-policy-src/tools/validate_lead20_addition_20261121.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead17-addition-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead17-addition-20261120" ]; then
             python3 staging-policy-src/tools/validate_lead17_addition_20261120.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead16-addition-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead16-addition-20261120" ]; then
             python3 staging-policy-src/tools/validate_lead16_addition_20261120.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead15-addition-20261120" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead15-addition-20261120" ]; then
             python3 staging-policy-src/tools/validate_lead15_addition_20261120.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead14-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead14-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead14_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead13-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead13-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead13_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead12-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead12-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead12_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead11-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead11-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead11_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead10-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead10-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead10_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead9-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead9-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead9_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead8-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead8-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead8_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead4-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead4-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead4_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead3-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead3-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_lead3_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-sankaku-addition-20261119" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-sankaku-addition-20261119" ]; then
             python3 staging-policy-src/tools/validate_sankaku_addition_20261119.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-19-audit/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-leads-addition-20261118" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-leads-addition-20261118" ]; then
             python3 staging-policy-src/tools/validate_leads_addition_20261118.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-18-leads-triage/pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-addition-20261118" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-suginami-addition-20261118" ]; then
             python3 staging-policy-src/tools/validate_suginami_addition_20261118.py \
               --data-dir site/data \
               --pages-dir staging-policy-src/research/2026-11-18-suginami-pages \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover-20261118" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-current-rollover-20261118" ]; then
             python3 staging-policy-src/tools/validate_current_rollover_20261118.py \
               --data-dir site/data \
               --evidence-dir staging-policy-src/research/2026-11-18-source-evidence \
               --tools-dir staging-policy-src/tools \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-current-rollover" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-current-rollover" ]; then
             python3 staging-policy-src/tools/validate_current_rollover_20261108.py \
               --data-dir site/data \
               --evidence-dir current-rollover-evidence/manual-latest-20261108-evidence \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-subset-addition" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-subset-addition" ]; then
             subset_kind="$(python3 -c 'import json; print(json.load(open("site/data/update_history.json"))["history"][-1]["run_type"])')"
             if [ "$subset_kind" = "manual_verified_week_holiday_addition" ]; then
               python staging-policy-src/tools/validate_this_week_verified_addition.py \
-                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+                --base-ref "$BASE"
             elif [ "$subset_kind" = "manual_verified_weekend_subset_addition" ]; then
               python staging-policy-src/tools/validate_verified_weekend_subset.py \
-                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+                --base-ref "$BASE"
             elif [ "$subset_kind" = "manual_verified_subset_addition" ]; then
               python staging-policy-src/tools/validate_verified_subset.py \
-                --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
+                --base-ref "$BASE"
             else
               echo "Unknown subset operation: $subset_kind" >&2; exit 1
             fi
-          elif [ "${{ needs.gate.outputs.operation }}" = "manual-official-gap-recovery-20261108" ]; then
+          elif [ "$OP" = "manual-official-gap-recovery-20261108" ]; then
             python3 staging-policy-src/tools/validate_official_gap_recovery_20261108.py \
               --data-dir site/data \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "verified-suginami-phase1" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "verified-suginami-phase1" ]; then
             python3 staging-policy-src/tools/validate_suginami_phase1_addition.py \
-              --base-ref "${{ needs.gate.outputs.base_data_production_sha }}"
-          elif [ "${{ needs.gate.outputs.operation }}" = "manual-independent-holiday-addition" ]; then
+              --base-ref "$BASE"
+          elif [ "$OP" = "manual-independent-holiday-addition" ]; then
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data \
-              --allow-unchanged-historical-gaps-base "${{ needs.gate.outputs.base_data_production_sha }}"
+              --allow-unchanged-historical-gaps-base "$BASE"
           else
             python staging-policy-src/tools/validate_official_schedule_audit.py site/data
           fi

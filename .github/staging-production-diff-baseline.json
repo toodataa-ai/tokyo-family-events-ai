@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 931,
+  "expected_total_differences_after_governance": 940,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7471,6 +7471,78 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第64回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead36_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead36（サンシャインシティ・小金井公園防災フェスタ2件）の生成ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead36_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead36の検証ゲート。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/sunshine_candle_workshop_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（サンシャインシティ キャンドルWS）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/koganei_bousai_festa_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（小金井公園 防災フェスタ）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/koganei_park_top_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（小金井公園 入園料）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/gen_source_checklist.py",
+      "kind": "staging_only",
+      "category": "source_checklist_20261122",
+      "reason": "取得元チェックリストの生成ツール（利用者指定、2026-11-22）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "docs/SOURCE_REGISTRY_CHECKLIST.md",
+      "kind": "staging_only",
+      "category": "source_checklist_20261122",
+      "reason": "サイトに載る全取得元の正本チェックリスト（自動生成）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/source_checklist_sync.test.mjs",
+      "kind": "staging_only",
+      "category": "source_checklist_20261122",
+      "reason": "チェックリストとサイト登録の整合テスト。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/data/discovery_sources.json",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "AI探索先サイトの追加（浦安市・東京ディズニーシー・動物園・都立公園の個別ページ等、118件）。表示のみで、本番アプリ反映は承認後。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

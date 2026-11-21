@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 650,
+  "expected_total_differences_after_governance": 644,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -1931,14 +1931,6 @@
       "kind": "staging_only",
       "category": "main_operational_inventory",
       "reason": "2026-11-08の既存保持付き6週ロール更新候補を、固定ベースと実証跡で限定検証するmainゲート。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tools/validate_data.py",
-      "kind": "different",
-      "category": "main_operational_inventory",
-      "reason": "main側の実行モードとローカル変数初期化位置がproduction版と異なる。独立祝日検証の意味は同じで、未承認の本番検証器置換はしない。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
@@ -6003,38 +5995,6 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/copy.html",
-      "kind": "different",
-      "category": "ui_thumb_fallback_20261120",
-      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/search.html",
-      "kind": "different",
-      "category": "ui_thumb_fallback_20261120",
-      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/styles.css",
-      "kind": "different",
-      "category": "ui_thumb_fallback_20261120",
-      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/thumb-fallback.js",
-      "kind": "staging_only",
-      "category": "ui_thumb_fallback_20261120",
-      "reason": "2026-11-20 写真なし行事のサムネイルを区の頭文字から種類別アイコンへ変更（ステージングのみ・本番リリースはユーザー承認が必要）",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
       "path": "tools/provenance_fill_20261120.py",
       "kind": "staging_only",
       "category": "leads_triage_20261118",
@@ -6507,26 +6467,18 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/app.js",
-      "kind": "different",
+      "path": ".github/workflows/fetch-thin-wards38-20261121.yml",
+      "kind": "staging_only",
       "category": "tama_expansion_20261121",
-      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
+      "reason": "2026-11-21の多摩20市の公式サイト（トップ・イベント一覧）の取得（読み取り専用）。多摩拡張の調査用。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/multi-filter-ui.js",
-      "kind": "different",
+      "path": "research/2026-11-20-thin-wards/urls38.txt",
+      "kind": "staging_only",
       "category": "tama_expansion_20261121",
-      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tests/app_filter.test.mjs",
-      "kind": "different",
-      "category": "tama_expansion_20261121",
-      "reason": "2026-11-21 利用者指定の多摩（主要20市）への対象拡大。画面に「23区/多摩」の切り替えを追加（ステージングのみ・本番リリースはユーザー承認が必要）。計画書 docs/TAMA_EXPANSION_PLAN.md",
+      "reason": "2026-11-21の多摩20市の公式サイト（トップ・イベント一覧）の取得（読み取り専用）。多摩拡張の調査用。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

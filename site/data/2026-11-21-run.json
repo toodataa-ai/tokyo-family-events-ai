@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 234,
-    "verified": 234,
+    "published": 236,
+    "verified": 236,
     "announced": 0,
-    "candidates": 81
+    "candidates": 83
   },
   "carryover_organizer_rechecks": [
     {
@@ -5584,6 +5584,17 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cf93083b984aacd9b8f5258d4bd8b623a9a65e5f",
+    "global_source_audit_complete": false
+  },
+  "lead21_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-chiyoda-tokyo-shukakusai",
+      "verified-20261122-chiyoda-tokyo-shukakusai"
+    ],
+    "held_not_published": [],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "723c1ddcd26620a1f8b7297a5d1148a8af4bfb47",
     "global_source_audit_complete": false
   }
 }

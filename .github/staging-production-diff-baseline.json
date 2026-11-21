@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 726,
+  "expected_total_differences_after_governance": 728,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7135,6 +7135,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-22の多摩拡張の第7弾（lead31、稲城市の1件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards57-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-22のテーマパーク（よみうりランド・ピューロランド・昭和記念公園・多摩動物公園ほか）と残りの市の催しページの取得（読み取り専用、第57回）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls57.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第57回取得のURL一覧（読み取り専用）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

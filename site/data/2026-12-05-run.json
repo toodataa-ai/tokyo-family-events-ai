@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 146,
-    "verified": 142,
+    "published": 147,
+    "verified": 143,
     "announced": 4,
-    "candidates": 91,
+    "candidates": 92,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4152,6 +4152,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "15b18aa7e38622c8ffe1917b3ae5f147964495de",
+    "global_source_audit_complete": false
+  },
+  "lead31_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-inagi-giants-hometown-fes-2026"
+    ],
+    "held_not_published": [
+      "kodaira-nihongo-happyokai-20261219",
+      "kodaira-onuma-minibunkasai-20261121",
+      "komae-sports-festa-20270124",
+      "nishitokyo-hokutto-matsuri-20261123",
+      "nishitokyo-tomato-20261123",
+      "remaining-cities"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "b5afacabf0ea007f89653ad7e08e132067e48ca5",
     "global_source_audit_complete": false
   }
 }

@@ -3955,6 +3955,37 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "多摩拡張の第6弾として、立川市（クリスマスたかまつり・クリスマス映画会）を公式の個別ページで確認して追加。"
+    },
+    {
+      "run_id": "lead31-addition-20261121",
+      "run_type": "manual_verified_lead31_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "b5afacabf0ea007f89653ad7e08e132067e48ca5",
+      "target_weekends": [
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 752,
+      "candidate_active_week_records": 753,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261205-inagi-giants-hometown-fes-2026"
+      ],
+      "held_not_published": [
+        "kodaira-nihongo-happyokai-20261219",
+        "kodaira-onuma-minibunkasai-20261121",
+        "komae-sports-festa-20270124",
+        "nishitokyo-hokutto-matsuri-20261123",
+        "nishitokyo-tomato-20261123",
+        "remaining-cities"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "多摩拡張の第7弾として、稲城市のジャイアンツタウンスタジアムで開催されるGIANTS HOMETOWN fes 2026を、日野市・狛江市の公式ページで確認して追加。"
     }
   ]
 }

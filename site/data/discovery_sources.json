@@ -501,175 +501,127 @@
     "shinjuku_sankaku_hiroba"
   ],
   "ai_exploration_sites": {
-    "note": "AIが探索の入口にしているサイト。固定サイト（explicit_sources）とは別に、毎回の探索で候補探しに使う。掲載の根拠は各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
+    "note": "【固定サイト（explicit_sources）との違い】固定サイトは「毎回必ず確認する登録済みの参照元」。このリストは、AIがイベント候補を探すときの「入口にするサイト」（毎回の確認は必須でない）。どちらにも載るサイトは作らない。掲載の根拠は、各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
     "sites": [
       {
         "id": "ai_city_musashino",
         "label": "武蔵野市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.musashino.lg.jp/"
       },
       {
         "id": "ai_city_mitaka",
         "label": "三鷹市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.mitaka.lg.jp/"
       },
       {
         "id": "ai_city_chofu",
         "label": "調布市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.chofu.lg.jp/"
       },
       {
         "id": "ai_city_fuchu",
         "label": "府中市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.fuchu.tokyo.jp/"
       },
       {
         "id": "ai_city_koganei",
         "label": "小金井市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.koganei.lg.jp/"
       },
       {
         "id": "ai_city_kodaira",
         "label": "小平市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.kodaira.tokyo.jp/"
       },
       {
         "id": "ai_city_kokubunji",
         "label": "国分寺市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.kokubunji.tokyo.jp/"
       },
       {
         "id": "ai_city_kunitachi",
         "label": "国立市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.kunitachi.tokyo.jp/"
       },
       {
         "id": "ai_city_tachikawa",
         "label": "立川市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.tachikawa.lg.jp/"
       },
       {
         "id": "ai_city_akishima",
         "label": "昭島市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.akishima.lg.jp/"
       },
       {
         "id": "ai_city_hino",
         "label": "日野市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.hino.lg.jp/"
       },
       {
         "id": "ai_city_nishitokyo",
         "label": "西東京市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.nishitokyo.lg.jp/"
       },
       {
         "id": "ai_city_higashikurume",
         "label": "東久留米市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.higashikurume.lg.jp/"
       },
       {
         "id": "ai_city_kiyose",
         "label": "清瀬市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.kiyose.lg.jp/"
       },
       {
         "id": "ai_city_higashimurayama",
         "label": "東村山市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.higashimurayama.tokyo.jp/"
       },
       {
         "id": "ai_city_komae",
         "label": "狛江市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.komae.tokyo.jp/"
       },
       {
         "id": "ai_city_tama",
         "label": "多摩市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.tama.lg.jp/"
       },
       {
         "id": "ai_city_inagi",
         "label": "稲城市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.inagi.tokyo.jp/"
       },
       {
         "id": "ai_city_machida",
         "label": "町田市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.machida.tokyo.jp/"
       },
       {
         "id": "ai_city_hachioji",
         "label": "八王子市公式サイト（イベント・子育て・広報）",
-        "group": "市部の自治体公式サイト",
+        "group": "市部（多摩）の自治体公式サイト",
         "url": "https://www.city.hachioji.tokyo.jp/"
-      },
-      {
-        "id": "ai_showakinen",
-        "label": "国営昭和記念公園 イベント",
-        "group": "公園・動物園・博物館",
-        "url": "https://www.showakinen-koen.jp/event/"
-      },
-      {
-        "id": "ai_tokyo_park",
-        "label": "東京都公園協会 公園イベント",
-        "group": "公園・動物園・博物館",
-        "url": "https://www.tokyo-park.or.jp/event/"
-      },
-      {
-        "id": "ai_tokyo_zoo",
-        "label": "東京動物園協会（多摩動物公園・井の頭自然文化園ほか）",
-        "group": "公園・動物園・博物館",
-        "url": "https://www.tokyo-zoo.net/"
-      },
-      {
-        "id": "ai_yomiuriland",
-        "label": "よみうりランド（稲城市）",
-        "group": "テーマパーク・大型レジャー施設",
-        "url": "https://www.yomiuriland.com/event/"
-      },
-      {
-        "id": "ai_puroland",
-        "label": "サンリオピューロランド（多摩市）",
-        "group": "テーマパーク・大型レジャー施設",
-        "url": "https://www.puroland.jp/"
-      },
-      {
-        "id": "ai_tokyo_dome_city",
-        "label": "東京ドームシティ（文京区）",
-        "group": "テーマパーク・大型レジャー施設",
-        "url": "https://www.tokyo-dome.co.jp/event/"
-      },
-      {
-        "id": "ai_wb_studio_tour",
-        "label": "ワーナー ブラザース スタジオツアー東京（練馬区）",
-        "group": "テーマパーク・大型レジャー施設",
-        "url": "https://www.wbstudiotour.jp/"
-      },
-      {
-        "id": "ai_tcvb",
-        "label": "東京観光財団（都内地域のイベント）",
-        "group": "都・観光財団",
-        "url": "https://www.tcvb.or.jp/"
       },
       {
         "id": "ai_ward_chiyoda",
@@ -798,305 +750,361 @@
         "url": "https://www.city.edogawa.tokyo.jp/"
       },
       {
+        "id": "ai_showakinen",
+        "label": "国営昭和記念公園 イベント",
+        "group": "都立公園・国営公園・海上公園",
+        "url": "https://www.showakinen-koen.jp/event/"
+      },
+      {
+        "id": "ai_tokyo_park",
+        "label": "東京都公園協会 公園イベント",
+        "group": "都立公園・国営公園・海上公園",
+        "url": "https://www.tokyo-park.or.jp/event/"
+      },
+      {
         "id": "ai_tpark_yoyogi",
         "label": "代々木公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/yoyogi/"
       },
       {
         "id": "ai_tpark_hibiya",
         "label": "日比谷公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/hibiya/"
       },
       {
         "id": "ai_tpark_hikarigaoka",
         "label": "光が丘公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/hikarigaoka/"
       },
       {
         "id": "ai_tpark_kasairinkai",
         "label": "葛西臨海公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/kasairinkai/"
       },
       {
         "id": "ai_tpark_shakujii",
         "label": "石神井公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/shakujii/"
       },
       {
         "id": "ai_tpark_kiba",
         "label": "木場公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/kiba/"
       },
       {
         "id": "ai_tpark_akatsuka",
         "label": "赤塚公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/akatsuka/"
       },
       {
         "id": "ai_tpark_wadabori",
         "label": "和田堀公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/wadabori/"
       },
       {
         "id": "ai_tpark_ukima",
         "label": "浮間公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/ukima/"
       },
       {
         "id": "ai_tpark_toneri",
         "label": "舎人公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/toneri/"
       },
       {
         "id": "ai_tpark_siba",
         "label": "芝公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/siba/"
       },
       {
         "id": "ai_tpark_shinozaki",
         "label": "篠崎公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/shinozaki/"
       },
       {
         "id": "ai_tpark_mizumoto",
         "label": "水元公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/mizumoto/"
       },
       {
         "id": "ai_tpark_soshigaya",
         "label": "祖師谷公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/soshigaya/"
       },
       {
         "id": "ai_tpark_toyama",
         "label": "戸山公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/toyama/"
       },
       {
         "id": "ai_tpark_takaido",
         "label": "高井戸公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/takaido/"
       },
       {
         "id": "ai_tpark_zenpukuji",
         "label": "善福寺公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/zenpukuji/"
       },
       {
         "id": "ai_tpark_shioiri",
         "label": "汐入公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/shioiri/"
       },
       {
         "id": "ai_tpark_rinshinomori",
         "label": "林試の森公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/rinshinomori/"
       },
       {
         "id": "ai_tpark_nerimajoshi",
         "label": "練馬城址公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/nerimajoshi/"
       },
       {
         "id": "ai_tpark_komazawa",
         "label": "駒沢オリンピック公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/komazawa/"
       },
       {
         "id": "ai_tpark_kinuta",
         "label": "砧公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/kinuta/"
       },
       {
         "id": "ai_tpark_johoku_chuo",
         "label": "城北中央公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/johoku_chuo/"
       },
       {
         "id": "ai_tpark_higashishirahige",
         "label": "東白鬚公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/higashishirahige/"
       },
       {
         "id": "ai_tpark_aoyama",
         "label": "青山公園（東京都公園協会の公園ページ）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tokyo-park.or.jp/park/aoyama/"
       },
       {
         "id": "ai_park_kasai_official",
         "label": "葛西臨海公園（公式）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://kasaikaihinpark.com/"
       },
       {
         "id": "ai_park_seaside_south",
         "label": "東京港 南部海上公園（お台場・城南島など）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://tokyo-south-seaside-parks.com/"
       },
       {
         "id": "ai_park_uminomori",
         "label": "海の森公園",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://uminomoripark.com/"
-      },
-      {
-        "id": "ai_park_yumenoshima",
-        "label": "夢の島熱帯植物館",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
-        "url": "https://www.yumenoshima-nettai.com/"
       },
       {
         "id": "ai_park_tptc",
         "label": "東京港埠頭（海上公園のイベント）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.tptc.co.jp/"
       },
       {
         "id": "ai_park_showakinen_top",
         "label": "国営昭和記念公園（公式）",
-        "group": "都立公園・国営公園・海上公園の個別サイト",
+        "group": "都立公園・国営公園・海上公園",
         "url": "https://www.showakinen-koen.jp/"
       },
       {
-        "id": "ai_fac_skytree",
-        "label": "東京スカイツリー",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://www.tokyo-skytree.jp/"
+        "id": "ai_tokyo_zoo",
+        "label": "東京動物園協会（多摩動物公園・井の頭自然文化園ほか）",
+        "group": "動物園・水族館・博物館・美術館・科学館",
+        "url": "https://www.tokyo-zoo.net/"
       },
       {
-        "id": "ai_fac_solamachi",
-        "label": "東京ソラマチ（イベント）",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://www.tokyo-solamachi.jp/event/"
-      },
-      {
-        "id": "ai_fac_hanayashiki",
-        "label": "浅草花やしき",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://www.hanayashiki.net/"
-      },
-      {
-        "id": "ai_fac_joypolis",
-        "label": "東京ジョイポリス",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://tokyo-joypolis.com/"
-      },
-      {
-        "id": "ai_fac_sunshine",
-        "label": "サンシャインシティ",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://www.sunshinecity.co.jp/"
-      },
-      {
-        "id": "ai_fac_legoland",
-        "label": "レゴランド・ディスカバリー・センター東京",
-        "group": "商業施設・テーマパーク・文化施設",
-        "url": "https://www.legoland.jp/"
+        "id": "ai_park_yumenoshima",
+        "label": "夢の島熱帯植物館",
+        "group": "動物園・水族館・博物館・美術館・科学館",
+        "url": "https://www.yumenoshima-nettai.com/"
       },
       {
         "id": "ai_fac_galaxcity",
         "label": "ギャラクシティ（足立区）",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.galaxcity.jp/"
       },
       {
         "id": "ai_fac_sumida_aquarium",
         "label": "すみだ水族館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.sumida-aquarium.com/"
       },
       {
         "id": "ai_fac_mizunokagaku",
         "label": "水の科学館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.mizunokagaku.jp/"
       },
       {
         "id": "ai_fac_tnm",
         "label": "東京国立博物館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.tnm.jp/"
       },
       {
         "id": "ai_fac_miraikan",
         "label": "日本科学未来館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.miraikan.jst.go.jp/"
       },
       {
         "id": "ai_fac_mot",
         "label": "東京都現代美術館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.mot-art-museum.jp/"
       },
       {
         "id": "ai_fac_tobikan",
         "label": "東京都美術館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.tobikan.jp/"
       },
       {
         "id": "ai_fac_edo_tokyo",
         "label": "江戸東京博物館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.edo-tokyo-museum.or.jp/"
       },
       {
         "id": "ai_fac_teien",
         "label": "東京都庭園美術館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.teien-art-museum.ne.jp/"
       },
       {
         "id": "ai_fac_fire_museum",
         "label": "新宿消防博物館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://www.shinjuku-fire-museum.jp/"
       },
       {
         "id": "ai_fac_chihiro",
         "label": "ちひろ美術館",
-        "group": "商業施設・テーマパーク・文化施設",
+        "group": "動物園・水族館・博物館・美術館・科学館",
         "url": "https://chihiro.jp/"
+      },
+      {
+        "id": "ai_yomiuriland",
+        "label": "よみうりランド（稲城市）",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.yomiuriland.com/event/"
+      },
+      {
+        "id": "ai_puroland",
+        "label": "サンリオピューロランド（多摩市）",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.puroland.jp/"
+      },
+      {
+        "id": "ai_tokyo_dome_city",
+        "label": "東京ドームシティ（文京区）",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.tokyo-dome.co.jp/event/"
+      },
+      {
+        "id": "ai_wb_studio_tour",
+        "label": "ワーナー ブラザース スタジオツアー東京（練馬区）",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.wbstudiotour.jp/"
+      },
+      {
+        "id": "ai_fac_skytree",
+        "label": "東京スカイツリー",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.tokyo-skytree.jp/"
+      },
+      {
+        "id": "ai_fac_solamachi",
+        "label": "東京ソラマチ（イベント）",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.tokyo-solamachi.jp/event/"
+      },
+      {
+        "id": "ai_fac_hanayashiki",
+        "label": "浅草花やしき",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.hanayashiki.net/"
+      },
+      {
+        "id": "ai_fac_joypolis",
+        "label": "東京ジョイポリス",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://tokyo-joypolis.com/"
+      },
+      {
+        "id": "ai_fac_sunshine",
+        "label": "サンシャインシティ",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.sunshinecity.co.jp/"
+      },
+      {
+        "id": "ai_fac_legoland",
+        "label": "レゴランド・ディスカバリー・センター東京",
+        "group": "テーマパーク・遊園地・大型商業施設",
+        "url": "https://www.legoland.jp/"
+      },
+      {
+        "id": "ai_tcvb",
+        "label": "東京観光財団（都内地域のイベント）",
+        "group": "東京都・観光財団",
+        "url": "https://www.tcvb.or.jp/"
       },
       {
         "id": "ai_metro_kodomo_smile",
         "label": "東京都こどもスマイルムーブメント",
-        "group": "都・観光財団",
+        "group": "東京都・観光財団",
         "url": "https://kodomo-smile.metro.tokyo.lg.jp/"
       },
       {
         "id": "ai_metro_metro",
         "label": "東京都（報道発表・イベント）",
-        "group": "都・観光財団",
+        "group": "東京都・観光財団",
         "url": "https://www.metro.tokyo.lg.jp/"
       }
+    ],
+    "group_order": [
+      "市部（多摩）の自治体公式サイト",
+      "23区の自治体公式サイト",
+      "都立公園・国営公園・海上公園",
+      "動物園・水族館・博物館・美術館・科学館",
+      "テーマパーク・遊園地・大型商業施設",
+      "東京都・観光財団"
     ]
   }
 }

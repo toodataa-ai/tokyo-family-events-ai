@@ -46,10 +46,16 @@ console.log('Fixed-source directory visibility / dynamic source / mobile safegua
 
 // AI exploration entry sites are listed separately from fixed sources (explicit_sources stays untouched).
 const aiSites=sourceConfig.ai_exploration_sites?.sites||[];
-assert.ok(aiSites.length>=28,'AI exploration sites must include 20 Tama cities, parks and theme parks');
+assert.ok(aiSites.length>=90,'AI exploration sites must include wards, Tama cities, parks and facilities');
+const aiGroups=new Set(aiSites.map(x=>x.group));
+assert.equal(aiGroups.size,6,'AI sites use exactly six clean groups');
+assert.deepEqual(sourceConfig.ai_exploration_sites.group_order.slice().sort(),[...aiGroups].sort(),'group_order matches groups');
 assert.equal(new Set(aiSites.map(x=>x.id)).size,aiSites.length,'AI exploration site ids unique');
 assert.ok(aiSites.every(x=>x.label&&x.group&&/^https:\/\//.test(x.url)),'AI exploration sites need label, group and https url');
 assert.ok(aiSites.some(x=>x.id==='ai_yomiuriland')&&aiSites.some(x=>x.id==='ai_puroland'));
 assert.match(html,/ai_exploration_sites/);
-assert.match(html,/AIが探索の入口にしているサイト/);
+assert.match(html,/id="aiSourceDetails"/);
+assert.match(html,/id="aiSourceList"/);
+assert.match(html,/AI探索先サイト（候補探しの入口）一覧/);
+assert.match(html,/renderAiSources\(registry\)/);
 assert.ok(!sourceConfig.explicit_sources.some(x=>String(x.id).startsWith('ai_')),'AI sites must not be mixed into fixed sources');

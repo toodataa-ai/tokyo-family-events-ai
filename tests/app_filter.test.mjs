@@ -580,9 +580,13 @@ console.log('actual verification venue correction chain A-B-C: OK');
 // --- 23区 / 多摩 area group (staging, 2026-11-21) ---
 {
   const {AREAS,TAMA_CITIES,areaGroupOf,readFiltersFromUrl}=await import('../site/app.js');
-  assert.equal(TAMA_CITIES.length,20);
-  assert.equal(AREAS.length,43);
+  assert.equal(TAMA_CITIES.length,21);
+  assert.equal(AREAS.length,44);
   assert.equal(areaGroupOf('立川市'),'tama');
+  assert.equal(areaGroupOf('浦安市'),'tama');
+  const {areaDisplayName}=await import('../site/app.js');
+  assert.equal(areaDisplayName('浦安市'),'千葉県浦安市');
+  assert.equal(areaDisplayName('立川市'),'立川市');
   assert.equal(areaGroupOf('杉並区'),'ward');
   const mixed=[
     {id:'w1',ward:'杉並区',name:'区のイベント',period:'11/21'},

@@ -11,7 +11,7 @@ WARDS = [
 # Keep in sync with TAMA_CITIES in site/app.js. Weekly coverage.wards stays 23 wards only.
 TAMA_CITIES = [
     '武蔵野市','三鷹市','調布市','府中市','小金井市','小平市','国分寺市','国立市','立川市','昭島市',
-    '日野市','西東京市','東久留米市','清瀬市','東村山市','狛江市','多摩市','稲城市','町田市','八王子市'
+    '日野市','西東京市','東久留米市','清瀬市','東村山市','狛江市','多摩市','稲城市','町田市','八王子市','浦安市'
 ]
 AREAS = WARDS + TAMA_CITIES
 HTTP_RE = re.compile(r'^https?://', re.I)

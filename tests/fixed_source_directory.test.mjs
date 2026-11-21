@@ -43,3 +43,13 @@ for(const id of ['nakano_official_tourism','itabashi_official_festival','itabash
 assert.ok(sources.some(x=>x.id==='nakano'),'legacy Nakano source retained');
 assert.ok(sources.some(x=>x.id==='nerima_district_festivals_2026'),'official Nerima table retained');
 console.log('Fixed-source directory visibility / dynamic source / mobile safeguards: OK ('+sources.length+' sources)');
+
+// AI exploration entry sites are listed separately from fixed sources (explicit_sources stays untouched).
+const aiSites=sourceConfig.ai_exploration_sites?.sites||[];
+assert.ok(aiSites.length>=28,'AI exploration sites must include 20 Tama cities, parks and theme parks');
+assert.equal(new Set(aiSites.map(x=>x.id)).size,aiSites.length,'AI exploration site ids unique');
+assert.ok(aiSites.every(x=>x.label&&x.group&&/^https:\/\//.test(x.url)),'AI exploration sites need label, group and https url');
+assert.ok(aiSites.some(x=>x.id==='ai_yomiuriland')&&aiSites.some(x=>x.id==='ai_puroland'));
+assert.match(html,/ai_exploration_sites/);
+assert.match(html,/AIが探索の入口にしているサイト/);
+assert.ok(!sourceConfig.explicit_sources.some(x=>String(x.id).startsWith('ai_')),'AI sites must not be mixed into fixed sources');

@@ -499,5 +499,178 @@
     "suginami_calendar_all",
     "nerima_forest_festa_2026",
     "shinjuku_sankaku_hiroba"
-  ]
+  ],
+  "ai_exploration_sites": {
+    "note": "AIが探索の入口にしているサイト。固定サイト（explicit_sources）とは別に、毎回の探索で候補探しに使う。掲載の根拠は各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
+    "sites": [
+      {
+        "id": "ai_city_musashino",
+        "label": "武蔵野市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.musashino.lg.jp/"
+      },
+      {
+        "id": "ai_city_mitaka",
+        "label": "三鷹市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.mitaka.lg.jp/"
+      },
+      {
+        "id": "ai_city_chofu",
+        "label": "調布市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.chofu.lg.jp/"
+      },
+      {
+        "id": "ai_city_fuchu",
+        "label": "府中市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.fuchu.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_koganei",
+        "label": "小金井市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.koganei.lg.jp/"
+      },
+      {
+        "id": "ai_city_kodaira",
+        "label": "小平市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.kodaira.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_kokubunji",
+        "label": "国分寺市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.kokubunji.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_kunitachi",
+        "label": "国立市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.kunitachi.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_tachikawa",
+        "label": "立川市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.tachikawa.lg.jp/"
+      },
+      {
+        "id": "ai_city_akishima",
+        "label": "昭島市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.akishima.lg.jp/"
+      },
+      {
+        "id": "ai_city_hino",
+        "label": "日野市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.hino.lg.jp/"
+      },
+      {
+        "id": "ai_city_nishitokyo",
+        "label": "西東京市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.nishitokyo.lg.jp/"
+      },
+      {
+        "id": "ai_city_higashikurume",
+        "label": "東久留米市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.higashikurume.lg.jp/"
+      },
+      {
+        "id": "ai_city_kiyose",
+        "label": "清瀬市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.kiyose.lg.jp/"
+      },
+      {
+        "id": "ai_city_higashimurayama",
+        "label": "東村山市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.higashimurayama.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_komae",
+        "label": "狛江市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.komae.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_tama",
+        "label": "多摩市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.tama.lg.jp/"
+      },
+      {
+        "id": "ai_city_inagi",
+        "label": "稲城市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.inagi.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_machida",
+        "label": "町田市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.machida.tokyo.jp/"
+      },
+      {
+        "id": "ai_city_hachioji",
+        "label": "八王子市公式サイト（イベント・子育て・広報）",
+        "group": "市部の自治体公式サイト",
+        "url": "https://www.city.hachioji.tokyo.jp/"
+      },
+      {
+        "id": "ai_showakinen",
+        "label": "国営昭和記念公園 イベント",
+        "group": "公園・動物園・博物館",
+        "url": "https://www.showakinen-koen.jp/event/"
+      },
+      {
+        "id": "ai_tokyo_park",
+        "label": "東京都公園協会 公園イベント",
+        "group": "公園・動物園・博物館",
+        "url": "https://www.tokyo-park.or.jp/event/"
+      },
+      {
+        "id": "ai_tokyo_zoo",
+        "label": "東京動物園協会（多摩動物公園・井の頭自然文化園ほか）",
+        "group": "公園・動物園・博物館",
+        "url": "https://www.tokyo-zoo.net/"
+      },
+      {
+        "id": "ai_yomiuriland",
+        "label": "よみうりランド（稲城市）",
+        "group": "テーマパーク・大型レジャー施設",
+        "url": "https://www.yomiuriland.com/event/"
+      },
+      {
+        "id": "ai_puroland",
+        "label": "サンリオピューロランド（多摩市）",
+        "group": "テーマパーク・大型レジャー施設",
+        "url": "https://www.puroland.jp/"
+      },
+      {
+        "id": "ai_tokyo_dome_city",
+        "label": "東京ドームシティ（文京区）",
+        "group": "テーマパーク・大型レジャー施設",
+        "url": "https://www.tokyo-dome.co.jp/event/"
+      },
+      {
+        "id": "ai_wb_studio_tour",
+        "label": "ワーナー ブラザース スタジオツアー東京（練馬区）",
+        "group": "テーマパーク・大型レジャー施設",
+        "url": "https://www.wbstudiotour.jp/"
+      },
+      {
+        "id": "ai_tcvb",
+        "label": "東京観光財団（都内地域のイベント）",
+        "group": "都・観光財団",
+        "url": "https://www.tcvb.or.jp/"
+      }
+    ]
+  }
 }

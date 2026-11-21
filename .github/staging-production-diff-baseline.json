@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 745,
+  "expected_total_differences_after_governance": 747,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7287,6 +7287,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "2026-11-22の多摩拡張の第9弾（lead33、立川市の昭和記念公園4件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/data/discovery_sources.json",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-22 利用者指定：固定サイト一覧に「AIが探索の入口にしているサイト」（市部20市・公園・テーマパークなど）を追加（ステージング確認待ち。本番反映は承認後）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/fixed_source_directory.test.mjs",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-22 利用者指定：固定サイト一覧に「AIが探索の入口にしているサイト」（市部20市・公園・テーマパークなど）を追加（ステージング確認待ち。本番反映は承認後）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

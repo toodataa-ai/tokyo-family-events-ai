@@ -844,3 +844,6 @@ body[data-season="winter"] .site-hero{background-position:center 47%}
 .thumb.ph-cat .ph-disc{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.7)}
 .thumb.ph-cat .ph-ward{position:absolute;left:8px;bottom:6px;font-size:11px;font-weight:700;line-height:1;color:currentColor;opacity:.85;letter-spacing:.02em}
 @media(max-width:640px){.thumb.ph-cat .ph-disc{width:46px;height:46px}.thumb.ph-cat svg{width:28px;height:28px}}
+
+/* 23区 / 多摩 group switch inside the ward chip row */
+.area-group-tabs{display:inline-flex;gap:4px;flex:0 0 auto;margin-right:6px;padding-right:8px;border-right:1px solid #d0d5dd}.area-group-chip{background:#eef2f6}.compact-ward-chips .area-group-chip{padding:3px 8px;font-size:10px}

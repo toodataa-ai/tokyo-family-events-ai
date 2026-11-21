@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 685,
+  "expected_total_differences_after_governance": 693,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -6807,6 +6807,70 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第48回取得のURL一覧（読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead28_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead28_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tachikawa_takamatsu_neo_akimatsuri_20261129.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tachikawa_pre_nishiki_matsuri_20261206.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tachikawa_special_concert_20261212.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/akishima_oyako_money_course_20261213.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/akishima_shiki_family_musical_20261226.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/tachikawa_nishiki_xmas_eigakai_20261226.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "2026-11-21の多摩拡張の第4弾（lead28、立川市・昭島市の6件）の生成ツール・検証・保存した公式ページ。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

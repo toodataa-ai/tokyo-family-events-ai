@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 244,
-    "verified": 244,
+    "published": 247,
+    "verified": 247,
     "announced": 0,
-    "candidates": 91
+    "candidates": 94
   },
   "carryover_organizer_rechecks": [
     {
@@ -5692,6 +5692,24 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "2d008f1f168583e82bf5e1a7d9eab60a48e2bdc3",
+    "global_source_audit_complete": false
+  },
+  "lead32_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-inagi-yomiuriland-xmas-2026",
+      "verified-20261121-inagi-yomiuriland-kamenrider-ten",
+      "verified-20261121-inagi-yomiuriland-jewellumination-2026"
+    ],
+    "held_not_published": [
+      "inagi-giants-day-special-20261206",
+      "inagi-yomiuriland-jujutsu-20261213",
+      "inagi-yomiuriland-okome-fes-20261121",
+      "remaining-cities",
+      "tama-puroland-christmas-2026"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "d06b8da2c5546c177d0007a607e4eda643c73c4d",
     "global_source_audit_complete": false
   }
 }

@@ -9656,11 +9656,207 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261121-inagi-yomiuriland-xmas-2026",
+      "status": "verified",
+      "source": "https://www.yomiuriland.com/event/christmas2026/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この3件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.yomiuriland.com/event/christmas2026/",
+          "quote": "よみランXmas！2026 ～ブライトフル メモリーズ～ ダンスショーやアトラクションラリー、クリスマスフードなどが盛りだくさん！",
+          "checked_at": "2026-11-21",
+          "sha256": "290e8239933c397c6c0234c8b7ff806b5cdd3ffe2c8081c87e6a2943d7c34c17",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/christmas2026/",
+          "quote": "グッド＆ラッキー、ダンサーが光り輝くステージからお届けするクリスマス限定のダンスショーです！ 期間 11/21(土)～12/20(日)の土日祝日及び12/24(木)、25(金) 時間 15:30、18:30",
+          "checked_at": "2026-11-21",
+          "sha256": "fb5cd03b48ecf71c627b120e2be6fb41f8d53db672dbc5ef33cbd6e1540cb04f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/christmas2026/",
+          "quote": "ダンスパフォーマンスと小学生以下のお子さまへキャンディーをプレゼントするグリーティングです。",
+          "checked_at": "2026-11-21",
+          "sha256": "dd4206f7890176270c85369662fa70f50f858f28f73293300fca12b8dd9cfaa5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/christmas2026/",
+          "quote": "場所 太陽の広場 料金 無料※別途、入園料が必要です。",
+          "checked_at": "2026-11-21",
+          "sha256": "84f076851f79e0ed8fdd52588bce90b9f87fb52772f1379d78072f32dddac7d8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/christmas2026/",
+          "quote": "噴水ショー「ラ・フォンテーヌ」クリスマス特別バージョン 大迫力の噴水ショーを、クリスマスの特別な演出でお楽しみいただけます。 期間 11/21(土)～12/25(金)",
+          "checked_at": "2026-11-21",
+          "sha256": "5e55deac29445f995f24fbd7639c3e0bb2f0e366939c877e24c9b5bdb5a68da2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "ワンデーパス 入園＋アトラクション乗り放題＋HANA・BIYORI入園",
+          "checked_at": "2026-11-21",
+          "sha256": "e4ff6409d355a73136c7c5c9389acb67b07a688d47443f207c2f2725aa5bc623",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "おとな（18歳～64歳） 中高生 小学生/ シニア（65歳以上） 未就学児 （3歳以上～小学生未満） 通常価格 5,900円 4,700円 4,100円 2,500円",
+          "checked_at": "2026-11-21",
+          "sha256": "51cac3c1de3fc01ed43d2ab4a600e9270a8acf943fee49e93aca160527875a87",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-inagi-yomiuriland-kamenrider-ten",
+      "status": "verified",
+      "source": "https://www.yomiuriland.com/event/55letsgo_kamen-rider/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この3件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.yomiuriland.com/event/55letsgo_kamen-rider/",
+          "quote": "1971年4月3日の放送開始から今年で55周年を迎えた「仮面ライダー」の歴史を辿れる展示イベント",
+          "checked_at": "2026-11-21",
+          "sha256": "42c02fa77581791fd90a4a967bb80ea4677833e99fa0a313fa7b0ada3a18eeda",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/55letsgo_kamen-rider/",
+          "quote": "日程 2026年11月21日(土)～2027年1月11日(月祝) 時間 遊園地営業時間に準ずる(イベント会場最終入場20:00)",
+          "checked_at": "2026-11-21",
+          "sha256": "3fecb317da7ed67388b4d52a1efeb2c4aa1df339c3b2796aaae61c61260603d7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/55letsgo_kamen-rider/",
+          "quote": "初代の仮面ライダー1号から、現在テレビシリーズが放送中の仮面ライダーマイスに至る歴代の仮面ライダー総勢37人",
+          "checked_at": "2026-11-21",
+          "sha256": "d72b9e66b34caf3b22ecbdf1eb580007f50c5d0a6070891ab6cc932739525eda",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/55letsgo_kamen-rider/",
+          "quote": "◆別途遊園地入園料が必要です。 ◆展示会場入口の券売機でご購入ください。 入場券 中学生以上 1,200円 3歳～小学生 800円",
+          "checked_at": "2026-11-21",
+          "sha256": "fbc66d6be0ee3dda95a679ab0448458ed9d3ccc57d273b00c44f4c556a77e11f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "ワンデーパス 入園＋アトラクション乗り放題＋HANA・BIYORI入園",
+          "checked_at": "2026-11-21",
+          "sha256": "e4ff6409d355a73136c7c5c9389acb67b07a688d47443f207c2f2725aa5bc623",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "おとな（18歳～64歳） 中高生 小学生/ シニア（65歳以上） 未就学児 （3歳以上～小学生未満） 通常価格 5,900円 4,700円 4,100円 2,500円",
+          "checked_at": "2026-11-21",
+          "sha256": "51cac3c1de3fc01ed43d2ab4a600e9270a8acf943fee49e93aca160527875a87",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261121-inagi-yomiuriland-jewellumination-2026",
+      "status": "verified",
+      "source": "https://www.yomiuriland.com/jewellumination/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この3件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.yomiuriland.com/jewellumination/",
+          "quote": "2026-2027 Season 開催中",
+          "checked_at": "2026-11-21",
+          "sha256": "a9108b109975cea1c544a8c6af7764e3dc23a7a0aaf7e099d1b6ecbc68eb789f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/event/",
+          "quote": "10月 29日 ~ 4月 4日 今シーズンは新色登場！世界的照明デザイナー石井幹子プロデュース「ジュエルミネーション」開催中",
+          "checked_at": "2026-11-21",
+          "sha256": "ad673b86e15e3834f780d69eb974bccf4d88c2c7f05693ec3eecb35dac0978c5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "アフターパス ジュエルミネーション開催日の15:00～の入園＋アトラクション乗り放題 観覧車「Sky-Go-LAND」ほか一部アトラクション除く",
+          "checked_at": "2026-11-21",
+          "sha256": "c16337552e467e98c1ef47053ba35ad407d815d56c9ebaf1922f14295275f59c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.yomiuriland.com/charge/",
+          "quote": "おとな（18歳～64歳） 中高生 小学生/ シニア（65歳以上） 未就学児 （3歳以上～小学生未満） 通常価格 3,100円 2,500円 2,200円 1,500円",
+          "checked_at": "2026-11-21",
+          "sha256": "3dd3a96e2da18fd355d255bccd8c344d6951d2e299ec7f2bf895a51fbaf9473d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 244,
-    "verified": 244,
+    "total": 247,
+    "verified": 247,
     "announced": 0
   }
 }

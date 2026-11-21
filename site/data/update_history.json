@@ -3741,6 +3741,52 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "多摩拡張の最初の調査として、府中市（子ども科学体験11/29・のびのびサッカーひろば12/5）と稲城市（ジャイアンツホームタウンフェス12/5・午後の部）の公式ページを確認し、3件を追加。市民限定や費用未記載のものは保留。"
+    },
+    {
+      "run_id": "lead26-addition-20261121",
+      "run_type": "manual_verified_lead26_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "4670dda5202bc21529e0744163f87a444bf062d1",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 729,
+      "candidate_active_week_records": 735,
+      "added_weekly_records": 6,
+      "new_event_ids": [
+        "verified-20261128-tama-karakida-tatsukids-wreath",
+        "verified-20261128-tama-suwa-zarigani-outdoor",
+        "verified-20261129-higashikurume-snow-white-musical",
+        "verified-20261205-tama-ichinomiya-asobitai",
+        "verified-20261205-musashino-family-xmas-concert",
+        "verified-20261219-musashino-santa-oyako-undokai"
+      ],
+      "held_not_published": [
+        "higashikurume-xmas-ohanashi-1212-1219-1220-1221",
+        "kiyose-takeoka-demae-jidokan",
+        "musashino-asobi-mini-school-20261128",
+        "musashino-hakkentai-20261206",
+        "musashino-harp-20261206",
+        "musashino-noasobi-1122-1123",
+        "musashino-nogyo-kyoshitsu-20261129",
+        "remaining-cities",
+        "tama-aoi-ritmic-20261125",
+        "tama-atago-nature-20261128",
+        "tama-fitness-hijiri-20261201",
+        "tama-renkoji-science-20261212",
+        "tama-soratomo-20261214",
+        "tama-yakiimo-20261202"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "多摩拡張の第2弾として、多摩市の児童館イベント（唐木田・諏訪・一ノ宮）、東久留米市のミュージカル、武蔵野市の親子運動会とクリスマスコンサートの公式ページを確認し、6件を追加。市内在住限定・費用未記載・平日開催のものは保留。"
     }
   ]
 }

@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 178,
-    "verified": 178,
+    "published": 181,
+    "verified": 181,
     "announced": 0,
-    "candidates": 115,
+    "candidates": 118,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4374,6 +4374,33 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "f6695d542ca58cc1a43451bf5be9571e864c9ae6",
+    "global_source_audit_complete": false
+  },
+  "lead26_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-tama-karakida-tatsukids-wreath",
+      "verified-20261128-tama-suwa-zarigani-outdoor",
+      "verified-20261129-higashikurume-snow-white-musical"
+    ],
+    "held_not_published": [
+      "higashikurume-xmas-ohanashi-1212-1219-1220-1221",
+      "kiyose-takeoka-demae-jidokan",
+      "musashino-asobi-mini-school-20261128",
+      "musashino-hakkentai-20261206",
+      "musashino-harp-20261206",
+      "musashino-noasobi-1122-1123",
+      "musashino-nogyo-kyoshitsu-20261129",
+      "remaining-cities",
+      "tama-aoi-ritmic-20261125",
+      "tama-atago-nature-20261128",
+      "tama-fitness-hijiri-20261201",
+      "tama-renkoji-science-20261212",
+      "tama-soratomo-20261214",
+      "tama-yakiimo-20261202"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "4670dda5202bc21529e0744163f87a444bf062d1",
     "global_source_audit_complete": false
   }
 }

@@ -124,7 +124,7 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     const parts=[];
     if(customRange)parts.push(customRange.start+'〜'+customRange.end);
     else if(state.dates.size)parts.push('期間指定');
-    if(areaGroup==='tama')parts.push('多摩');
+    if(areaGroup==='tama')parts.push('市部');
     if(state.wards.size)parts.push(AREA_GROUPS[areaGroup].unit+state.wards.size);
     for(const group of GROUPS){if(state[group.key].size)parts.push(group.title+state[group.key].size);}
     $('filterSummary').textContent=parts.length?`（${parts.join('・')}）`:'（条件なし）';

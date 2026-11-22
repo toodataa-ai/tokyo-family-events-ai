@@ -4365,6 +4365,49 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "GREEN SPRINGS（立川）の公式ページから、冬のイルミネーション（〜2027/2/14）を個別に確認して追加。点灯時間と観覧料は公式ページに記載がない。陶器市・yaonなどは子ども・家族向けの記載がなく保留。"
+    },
+    {
+      "run_id": "lead42-addition-20261122",
+      "run_type": "manual_verified_lead42_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-22",
+      "executed_at": "2026-11-22T15:00:00+09:00",
+      "base_data_production_sha": "eb1facf6035092f7991cb81cf90cc3e10b382eb1",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 784,
+      "candidate_active_week_records": 792,
+      "added_weekly_records": 8,
+      "new_event_ids": [
+        "verified-20261205-setagaya-futakotamagawa-rise-skate-garden-2026",
+        "verified-20261219-setagaya-futakotamagawa-rise-skate-class",
+        "verified-20261205-setagaya-futakotamagawa-rise-skate-opening",
+        "verified-20261121-setagaya-futakotamagawa-rise-winter-illumination-2026",
+        "verified-20261121-setagaya-futakotamagawa-rise-christmas-tree-2026",
+        "verified-20261121-setagaya-futakotamagawa-rise-clear-sky-science-live",
+        "verified-20261128-setagaya-futakotamagawa-rise-green-sky-festa-2026",
+        "verified-20261205-setagaya-futakotamagawa-rise-black-rams-send-off"
+      ],
+      "held_not_published": [
+        "rise-busking-20261126",
+        "rise-czech-festival-20261204",
+        "rise-futakoza-street-market-20261130",
+        "rise-hoikushi-fair-20261129",
+        "rise-hotel-chef-cooking-20261206",
+        "rise-kimchi-boroc-mission-20261122",
+        "rise-kimono-festa-20261120",
+        "rise-mens-fudge-20261127"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "二子玉川ライズの公式イベント一覧から、家族向けの記載がある8件を個別ページで確認して追加。チェコフェスティバル・きもの市・抽選申込の終了した料理体験・平日開催のものは掲載しない。"
     }
   ]
 }

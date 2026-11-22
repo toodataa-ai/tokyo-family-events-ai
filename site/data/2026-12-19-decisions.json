@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 68,
-    "published": 68,
+    "candidate_total": 69,
+    "published": 69,
     "excluded": 0,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -9658,6 +9658,134 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.city.edogawa.tokyo.jp/event/2612shimenawa.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-setagaya-futakotamagawa-rise-skate-class",
+      "name": "二子玉川ライズ スケートガーデン スケート教室",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "スケート未経験の3歳以上向けの教室と、大人1名＋子ども1名で参加する親子教室がある。12/2から予約サイトで順次受付。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "子ども・家族向けの内容"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体験や参加ができる"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児から参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "C",
+            "reason": "決まった日・回に合わせる必要がある"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外のため、寒さと混雑に注意"
+          },
+          "cost": {
+            "grade": "C",
+            "reason": "有料で、費用がかかる"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前予約が必要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "子どもが楽しめる体験がある"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-22",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "3歳以上の未経験から参加できる",
+            "親子で参加できる教室がある"
+          ],
+          "limitations": [
+            "事前予約が必要で定員が小さい",
+            "1回3,000円〜と費用がかかる"
+          ],
+          "grade_comparison": "総合B：未経験の幼児から参加できる子ども向けの教室。事前予約と1回3,000円〜の費用が条件。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.rise.sc/eventnews/detail/?cd=001539",
+              "quote": "二子玉川ライズ スケートガーデン スケート教室",
+              "checked_at": "2026-11-22",
+              "sha256": "cde26efe69ec65672ffa84d70ad8533a24424fa96828b5152366b8edf06c5e30",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.rise.sc/eventnews/detail/?cd=001539",
+              "quote": "■お父さんお母さんとお子さんが一緒に楽しめる教室",
+              "checked_at": "2026-11-22",
+              "sha256": "2b1ca178e874829d53f617ee287391248202e749f674d3f7d76d53c13ff7785d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.rise.sc/eventnews/detail/?cd=001539",
+              "quote": "・参加資格：3歳以上のスケート未経験、初心者の方",
+              "checked_at": "2026-11-22",
+              "sha256": "086e24ec211312e0bb46179fbebbb5e088dfae0cfaed73d7944332d8989adb30",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "スケート未経験の3歳以上向けの教室と、大人1名＋子ども1名で参加する親子教室がある。12/2から予約サイトで順次受付。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.rise.sc/eventnews/detail/?cd=001539",
+          "basis": "2026-11-22 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.rise.sc/eventnews/detail/?cd=001539"
         }
       ]
     }

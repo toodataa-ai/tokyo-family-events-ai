@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 259,
-    "verified": 259,
+    "published": 262,
+    "verified": 262,
     "announced": 0,
-    "candidates": 106
+    "candidates": 109
   },
   "carryover_organizer_rechecks": [
     {
@@ -5836,6 +5836,27 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "a2be701d53d8072eacc22daaa299f2c499bfb2be",
+    "global_source_audit_complete": false
+  },
+  "lead42_addition_20261122": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-setagaya-futakotamagawa-rise-winter-illumination-2026",
+      "verified-20261121-setagaya-futakotamagawa-rise-christmas-tree-2026",
+      "verified-20261121-setagaya-futakotamagawa-rise-clear-sky-science-live"
+    ],
+    "held_not_published": [
+      "rise-busking-20261126",
+      "rise-czech-festival-20261204",
+      "rise-futakoza-street-market-20261130",
+      "rise-hoikushi-fair-20261129",
+      "rise-hotel-chef-cooking-20261206",
+      "rise-kimchi-boroc-mission-20261122",
+      "rise-kimono-festa-20261120",
+      "rise-mens-fudge-20261127"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "eb1facf6035092f7991cb81cf90cc3e10b382eb1",
     "global_source_audit_complete": false
   }
 }

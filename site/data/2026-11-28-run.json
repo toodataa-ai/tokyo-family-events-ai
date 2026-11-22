@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 186,
-    "verified": 186,
+    "published": 187,
+    "verified": 187,
     "announced": 0,
-    "candidates": 123,
+    "candidates": 124,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4502,6 +4502,25 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "cac356b40ea8d6229a1305859b3a1507151360c1",
+    "global_source_audit_complete": false
+  },
+  "lead42_addition_20261122": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-setagaya-futakotamagawa-rise-green-sky-festa-2026"
+    ],
+    "held_not_published": [
+      "rise-busking-20261126",
+      "rise-czech-festival-20261204",
+      "rise-futakoza-street-market-20261130",
+      "rise-hoikushi-fair-20261129",
+      "rise-hotel-chef-cooking-20261206",
+      "rise-kimchi-boroc-mission-20261122",
+      "rise-kimono-festa-20261120",
+      "rise-mens-fudge-20261127"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "eb1facf6035092f7991cb81cf90cc3e10b382eb1",
     "global_source_audit_complete": false
   }
 }

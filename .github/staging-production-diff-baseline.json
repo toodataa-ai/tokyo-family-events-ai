@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 994,
+  "expected_total_differences_after_governance": 996,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7967,6 +7967,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "本番の取得元27件に対応する監査表の控え（ステージングが28件になったため、本番表示用のフォールバック）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls76.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第76回取得のURL一覧（二子玉川ライズ、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards76-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第76回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

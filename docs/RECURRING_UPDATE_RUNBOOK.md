@@ -105,10 +105,12 @@
 1. **探索**: 全23区について公式ページをWebSearchで探し、取得できないページは読み取り専用の取得ワークフロー（`.github/workflows/fetch-thin-wardsN-YYYYMMDD.yml` を直近のものからコピー、URLは `research/<日付>-thin-wards/urlsN.txt`）で本文を取得する。取得結果は孤立ブランチ `research/thin-wardsN-YYYYMMDD` から `git archive` で取り出す。
 2. **登録**: 直近の `tools/leadNN_addition_*.py` と `validate_leadNN_*.py` をコピーして新しいleadを作る（BASE＝現在の `data-production` のSHA）。住民限定・申込締切・抽選締切は載せない。公式本文の逐語引用で確認できたものだけ。参加費など本文にない項目は「不明」。child_target 'A' は根拠が child_program のときだけ。
 3. **検証ゲート**: lead の validate、`validate_family_fit_quality.py`、`validate_data.py --strict --min-image-coverage 0`、`validate_decisions.py --strict`、`validate_non_regression.py`、`validate_protected_events.py`、`validate_rereview.py --strict`、`audit_event_image_identity.py --strict`（衝突0）、`audit_environment_diff.py --ref HEAD --strict`（unclassified=0, wrong_kind=0）。新しいツール/ページ/ワークフローは `.github/staging-production-diff-baseline.json` に追記（新規は staging_only、変更は different）。
-4. **サムネイル補完**: 追加した記録で画像が空のものは、公式ページから行事固有の画像を探して入れる（og:image → 本文の添付画像）。サイト共通ロゴ・共通バナー・別の行事と使い回された画像は入れない。画像だけ変える専用ツール（`tools/image_fillN_*.py` ＋ validate、直近のものをコピー）を使い、画像以外は変えない。画像がない行事は種類別アイコンのタイル（v1.39）が自動表示される。
+4. **サムネイル補完（毎回必ず実行。飛ばして完了にしない）**: 追加した記録で画像が空のものは、公式ページから行事固有の画像を探して入れる（og:image → 本文の添付画像）。サイト共通ロゴ・共通バナー・別の行事と使い回された画像は入れない。画像だけ変える専用ツール（`tools/image_fillN_*.py` ＋ validate、直近のものをコピー）を使い、画像以外は変えない。画像がない行事は種類別アイコンのタイル（v1.39）が自動表示される。
 5. **本番（データのみ）**: 現在の `data-production` のSHAの上に候補を作り、`git push -f origin <候補>:refs/heads/data-staging`。続けて `.github/data-deploy-trigger.txt` **だけ**を変えるコミットを main に push（operation / candidate_sha / base_data_production_sha）。他のファイルと同じコミットにすると staging モードで動き失敗する。deploy.yml に新しい operation 名を足すときは、validate_data・preview(pinned proof)・promote の3か所（またはその正規表現）を更新する。run: の文字数上限は約2.1万文字。成功後に `git ls-remote origin data-production` が候補SHAであることを確認。
 6. **コード/UI/スキーマの変更は本番に出さない**（ステージングまで。本番はチャットで「本番OK」をもらってから）。
 7. **報告**: 公開件数、追加N件、画像設定N件／未設定M件（理由：写真が無い／共通画像のみ／別行事と共有）、止まっている点、決めてほしい点。
+8. **画像補完の完了確認（毎回）**: 本番反映のあと、その実行で追加した記録のうち画像が空のものを数え直し、「追加N件のうち画像あり／なし」と、なしの理由（写真が無い／共通画像のみ／別行事と共有）を件数で報告に書く。画像補完を実行していない状態で「完了」と報告しない（2026-11-21・22の自動実行で補完が飛ばされ、64件が画像なしで残った。11/22に手動で30件を補完し、34件は公式ページに行事固有の画像がなかった）。
+9. **商業施設・複合施設の公式イベント一覧も探索する**: 区・市のカレンダーに載らない施設（例: GREEN SPRINGS `greensprings.jp/event/`、東京ドームシティ、ソラマチ、サンシャインシティ、よみうりランドなど）の公式一覧を、一覧→個別ページの順で確認する。家族向けの記載（対象・内容）がなく、参加費・申込の記載もないものは保留にする（例: 陶器市、夜のDJ音楽イベント）。取得元サイトの正式登録（`discovery_sources.json` と取得元一覧の画面）はコード・画面に関わるため、承認を得てから行う。
 
 **3.58 追補（網羅性の確認、2026-11-20）**: 探索は「新しいページを見つける」だけでは網羅にならない。毎回、次も行い、結果を報告に含める。
 - **区ごとの網羅表**: 23区それぞれについて、①公式イベントカレンダー ②児童館・子育て施設のおしらせ ③広報紙 ④主要施設（博物館・水族館・公園・図書館）の定例を、今回見たか／取得失敗か／未確認かを区ごとに件数で出す。取得失敗（403等）と未確認は「未完了の理由」として必ず報告し、成功扱いにしない。

@@ -513,7 +513,8 @@
     "itabashi_times_event",
     "suginami_calendar_all",
     "nerima_forest_festa_2026",
-    "shinjuku_sankaku_hiroba"
+    "shinjuku_sankaku_hiroba",
+    "greensprings_tachikawa"
   ],
   "ai_exploration_sites": {
     "note": "【固定サイト（explicit_sources）との違い】固定サイトは「毎回必ず確認する登録済みの参照元」。このリストは、AIがイベント候補を探すときの「入口にするサイト」（毎回の確認は必須でない）。どちらにも載るサイトは作らない。掲載の根拠は、各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
@@ -1819,6 +1820,10 @@
       "ai_fac_sunshine_tenbo": {
         "state": "no_body",
         "note": "HTTP 200・本文約514文字・日付表記0件（画面表示で本文なしの可能性）"
+      },
+      "greensprings_tachikawa": {
+        "state": "read",
+        "note": "HTTP 200・イベント一覧7件（第75回取得、個別ページも取得）"
       }
     }
   }

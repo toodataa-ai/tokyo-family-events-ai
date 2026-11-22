@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 996,
+  "expected_total_differences_after_governance": 1006,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7983,6 +7983,86 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第76回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead42_addition_20261122.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead42_addition_20261122.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_blackrams_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_christmas_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_clearsky_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_greenskyfesta_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_illumination_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_skate_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_skateclass_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/futako_rise_skateopen_20261122.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "二子玉川ライズの公式イベント8件の追加ツール・検証・公式ページ原本。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

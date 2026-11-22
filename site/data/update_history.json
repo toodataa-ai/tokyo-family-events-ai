@@ -4334,6 +4334,37 @@
       "image_only_updates": 30,
       "global_source_audit_complete": false,
       "note": "今週追加した公式ページ由来の記録のうち、公式ページに掲載された行事固有の画像があるものだけサムネイルを設定。サイト共通ロゴ・共有画像は対象外。画像以外は変更なし。"
+    },
+    {
+      "run_id": "lead41-addition-20261122",
+      "run_type": "manual_verified_lead41_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-22",
+      "executed_at": "2026-11-22T15:00:00+09:00",
+      "base_data_production_sha": "a2be701d53d8072eacc22daaa299f2c499bfb2be",
+      "target_weekends": [
+        "2026-11-21"
+      ],
+      "prior_active_week_records": 783,
+      "candidate_active_week_records": 784,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261121-tachikawa-greensprings-illumination-2026"
+      ],
+      "held_not_published": [
+        "greensprings-green-grown-marche",
+        "greensprings-kawatani-shirt-popup-20261120",
+        "greensprings-photomatic",
+        "greensprings-street-piano-20261111",
+        "greensprings-tachikawa-toukiichi-20261127",
+        "greensprings-yaon-20261101"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "GREEN SPRINGS（立川）の公式ページから、冬のイルミネーション（〜2027/2/14）を個別に確認して追加。点灯時間と観覧料は公式ページに記載がない。陶器市・yaonなどは子ども・家族向けの記載がなく保留。"
     }
   ]
 }

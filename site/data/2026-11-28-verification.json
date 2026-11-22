@@ -7445,11 +7445,63 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261129-komae-iwato-ohanashikai-3sai-2026",
+      "status": "verified",
+      "source": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146670.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146670.html",
+          "quote": "2026年11月29日日曜日",
+          "checked_at": "2026-11-21",
+          "sha256": "daa0467685194fc7b8dc40ea5009f2586f384291c57d8fd31ea13655a925e7a9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146670.html",
+          "quote": "11月29日(日曜日)午前11時～正午",
+          "checked_at": "2026-11-21",
+          "sha256": "4d6a74cc3bceb2fb434afc08a387940c4021244105fab12bc27e4d98892a5a5e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146670.html",
+          "quote": "3歳～小学校低学年とその保護者",
+          "checked_at": "2026-11-21",
+          "sha256": "f42a1574c62f8fe68c8925f3ed028df6f283cb7db87d85b7f6b7cae0ca883e61",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.komae.tokyo.jp/events/index.cfm/detail.4.146670.html",
+          "quote": "定員先着20組（要予約）内容大型絵本読み聞かせや紙芝居、工作",
+          "checked_at": "2026-11-21",
+          "sha256": "98d0797ab7ddbfa62ca975de932582b39297b5edb355572f691774dd6a5719e9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 185,
-    "verified": 185,
+    "total": 186,
+    "verified": 186,
     "announced": 0
   }
 }

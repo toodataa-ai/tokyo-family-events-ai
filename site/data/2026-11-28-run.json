@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 185,
-    "verified": 185,
+    "published": 186,
+    "verified": 186,
     "announced": 0,
-    "candidates": 122,
+    "candidates": 123,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4488,6 +4488,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "13168b41aac713ca69ed6d2f6453412919ca2027",
+    "global_source_audit_complete": false
+  },
+  "lead40_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-komae-iwato-ohanashikai-3sai-2026"
+    ],
+    "held_not_published": [
+      "komae-giants-hometown-fes-20261205",
+      "komae-jikken-kyoshitsu-20261128",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "cac356b40ea8d6229a1305859b3a1507151360c1",
     "global_source_audit_complete": false
   }
 }

@@ -1,16 +1,15 @@
-# retry 1: Pages deploy step failed transiently (0 artifacts)
-# User-approved v1.44 (chat 2026-11-22): add Urayasu (Tokyo Disney Resort) to the city group and show fetch status on every listed source. No data changes.
+# User-approved v1.45 (chat 2026-11-22): fix three metropolitan park source URLs (404 slugs). Data file only.
 operation=release
 production_ref=production
-production_sha=f7188412486efe7629c7e819e5fe0980567c3bd3
-previous_production_sha=53df1dc631b22e05caae27e9a5aeca2a392f3c61
-candidate_sha=1da6343a93b43b315d0c437630aa1ace007b59d3
-pr=144
-target_public_version=1.44
-previous_public_release=release/2026-11-22-r960
+production_sha=ce462388060f5b7205f9ef6474f773ca2948e25c
+previous_production_sha=f7188412486efe7629c7e819e5fe0980567c3bd3
+candidate_sha=b7c538ce69ee7c342ccd985c5bd6ee5ee4d147f7
+pr=145
+target_public_version=1.45
+previous_public_release=release/2026-11-22-r970
 release_date_jst=2026-11-22
-expected_data_production_sha=73951929654233560abe8d64fc175cfb323af829
-approved_scope=site/app.js,site/multi-filter-ui.js,site/index.html,site/styles.css,site/data/discovery_sources.json,tests/app_filter.test.mjs,tests/fixed_source_directory.test.mjs,tools/validate_data.py
+expected_data_production_sha=19205b672d01c9c1a26cb2b9a10812035b44bf0b
+approved_scope=site/data/discovery_sources.json
 event_record_mutation=none
 curation_record_mutation=none
-note=Urayasu city (Tokyo Disney Resort) added to the city group with the button label 千葉県浦安市; fetch status badges on fixed and AI exploration sources. Display and registry only; no event data changes.
+note=Corrected the URLs of three metropolitan park pages (Komazawa Olympic, Johoku Chuo, Higashi-Shirahige) in the AI exploration source list. No event data changes.

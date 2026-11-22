@@ -419,7 +419,16 @@
       "workflow_run_id": 44966711169,
       "public_version": "1.45",
       "note": "ユーザー承認の本番v1.45。AI探索先の都立公園3件（駒沢オリンピック公園・城北中央公園・東白鬚公園）のURL綴りを訂正（PR #145、discovery_sources.jsonのみ）。イベントデータは変更なし。data-production 19205b672d01c9c1a26cb2b9a10812035b44bf0b（771件）。"
+    },
+    {
+      "release_id": "release/2026-11-22-r1003",
+      "branch": "release/2026-11-22-r1003",
+      "commit_sha": "415da1fc5c87989a7e93d6bdebd43dda83fb238e",
+      "deployed_at": "2026-11-22T05:40:45+00:00",
+      "workflow_run_id": 44990348243,
+      "public_version": "1.46",
+      "note": "ユーザー承認の本番v1.46。取得元にGREEN SPRINGS（立川）を28件目として追加（PR #146、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production eb1facf6035092f7991cb81cf90cc3e10b382eb1（784件）。"
     }
   ],
-  "current_public_version": "1.45"
+  "current_public_version": "1.46"
 }

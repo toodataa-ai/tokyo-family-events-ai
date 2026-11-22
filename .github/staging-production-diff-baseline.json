@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 973,
+  "expected_total_differences_after_governance": 977,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7799,6 +7799,38 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead39_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead39: 井の頭自然文化園（武蔵野市）2件の生成ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead39_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead39: 追加2件の公開ゲート検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/inokashira_stamp_rally_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "井の頭自然文化園スタンプラリーの公式ページ（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/inokashira_nov_events_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "井の頭自然文化園2026年11月のイベント予定の公式ページ（不変保存）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

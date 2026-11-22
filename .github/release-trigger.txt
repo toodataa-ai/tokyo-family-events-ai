@@ -1,15 +1,15 @@
-# User-approved v1.45 (chat 2026-11-22): fix three metropolitan park source URLs (404 slugs). Data file only.
+# User-approved v1.46 (chat 2026-11-22): register GREEN SPRINGS (Tachikawa) as fixed source #28. Data file and test only.
 operation=release
 production_ref=production
-production_sha=ce462388060f5b7205f9ef6474f773ca2948e25c
-previous_production_sha=f7188412486efe7629c7e819e5fe0980567c3bd3
-candidate_sha=b7c538ce69ee7c342ccd985c5bd6ee5ee4d147f7
-pr=145
-target_public_version=1.45
+production_sha=415da1fc5c87989a7e93d6bdebd43dda83fb238e
+previous_production_sha=ce462388060f5b7205f9ef6474f773ca2948e25c
+candidate_sha=0cfdac0a5bcd1ad468d912c83febf0a6efbf6773
+pr=146
+target_public_version=1.46
 previous_public_release=release/2026-11-22-r970
 release_date_jst=2026-11-22
-expected_data_production_sha=19205b672d01c9c1a26cb2b9a10812035b44bf0b
-approved_scope=site/data/discovery_sources.json
+expected_data_production_sha=eb1facf6035092f7991cb81cf90cc3e10b382eb1
+approved_scope=site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Corrected the URLs of three metropolitan park pages (Komazawa Olympic, Johoku Chuo, Higashi-Shirahige) in the AI exploration source list. No event data changes.
+note=Registered GREEN SPRINGS (Tachikawa) as the 28th fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.

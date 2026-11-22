@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 957,
+  "expected_total_differences_after_governance": 960,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7671,6 +7671,30 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第70回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls71.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第71回の取得URL（全取得元の訪問確認＋新規候補）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/ids71.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第71回の取得元IDの対応表。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards71-20261122.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第71回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

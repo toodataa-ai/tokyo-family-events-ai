@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-11-15",
+  "updated_at": "2026-11-22",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -469,6 +469,21 @@
       "candidate_extraction": "official_venue_cards_external_organizer",
       "effective_from": "2026-11-15",
       "note": "汎用的な「詳しくはこちら」のリンク文言だけで判定せず、同じarticleの催事名・開催期間と外部主催者URLを結び付けて候補化。重複表示をまとめ、主催者の開催年・年齢・料金・個別枠を別途本文確認してから掲載。過去のあいぱく別会期や未確認候補を自動掲載しない。"
+    },
+    {
+      "id": "greensprings_tachikawa",
+      "label": "GREEN SPRINGS（立川・施設公式イベント）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://greensprings.jp/event/",
+      "search_urls": [
+        "https://greensprings.jp/event/"
+      ],
+      "effective_from": "2026-11-22",
+      "note": "立川市の複合施設GREEN SPRINGSの公式イベント一覧（立川は多摩拡張の対象市）。一覧から個別ページ（/event/NNNN/）へ進み、開催日・場所・子ども家族向けの記載を本文で確認してから掲載する。毎週火曜のマルシェなど平日の定例、終了済み、期間未定の常設設置は掲載しない。参加費・申込の記載がないものは記載なしと表示し、家族向けの根拠がないもの（物販・夜の音楽イベントなど）は保留にする。"
     }
   ],
   "protected_source_ids": [

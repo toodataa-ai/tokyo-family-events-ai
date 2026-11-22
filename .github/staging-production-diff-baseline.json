@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 993,
+  "expected_total_differences_after_governance": 994,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7959,6 +7959,14 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "取得元の登録（28件目）に合わせて監査表を再生成する一回限りのワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/fixed_sources_snapshot_20261122/fixed_sources_27_production_registry.json",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "本番の取得元27件に対応する監査表の控え（ステージングが28件になったため、本番表示用のフォールバック）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

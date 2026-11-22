@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 950,
+  "expected_total_differences_after_governance": 957,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7623,6 +7623,62 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "保存した公式ページ（代々木公園 どんぐり工作）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls68.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第68回取得のURL一覧（動物園のお知らせ詳細・多摩の市の一覧、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards68-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第68回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls69.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第69回取得のURL一覧（井の頭の入園料、町田市・小平市のイベント詳細、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards69-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第69回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls70.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第70回取得のURL一覧（町田市のリンク先の公式ページ、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards70-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第70回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/data/discovery_sources.json",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "都立公園3件のURL綴りの訂正（404だったもの）。本番への反映は利用者の承認後。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

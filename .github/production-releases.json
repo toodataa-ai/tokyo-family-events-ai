@@ -428,7 +428,16 @@
       "workflow_run_id": 44990348243,
       "public_version": "1.46",
       "note": "ユーザー承認の本番v1.46。取得元にGREEN SPRINGS（立川）を28件目として追加（PR #146、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production eb1facf6035092f7991cb81cf90cc3e10b382eb1（784件）。"
+    },
+    {
+      "release_id": "release/2026-11-22-r1011",
+      "branch": "release/2026-11-22-r1011",
+      "commit_sha": "d4db9e7009209acabec90f45cb2e50d70ec0ba6f",
+      "deployed_at": "2026-11-22T13:33:20+00:00",
+      "workflow_run_id": 45027932307,
+      "public_version": "1.47",
+      "note": "ユーザー承認の本番v1.47。取得元に二子玉川ライズ（世田谷区）を29件目として追加（PR #147、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production 8bfead01d491182ec50458b3754d277b048a6552（792件）。"
     }
   ],
-  "current_public_version": "1.46"
+  "current_public_version": "1.47"
 }

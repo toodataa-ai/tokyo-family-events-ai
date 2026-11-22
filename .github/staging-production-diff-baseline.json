@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 943,
+  "expected_total_differences_after_governance": 950,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7567,6 +7567,62 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第67回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead37_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead37（神代植物公園2件・代々木公園1件）の生成ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead37_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead37の検証ゲート。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/komazawa_fantasia_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（駒沢ファンタジア2026、登録済みのため追加せず）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/jindai_konomi_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（神代植物公園 木の実・草の実展）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/jindai_winterforest_20261206.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（神代植物公園 冬の森たんけん）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/jindai_park_top_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（神代植物公園 入園料）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/yoyogi_donguri_20261206.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "保存した公式ページ（代々木公園 どんぐり工作）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

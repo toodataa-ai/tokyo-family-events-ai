@@ -2,8 +2,8 @@
   "schema_version": 1,
   "purpose": "Intentional differences between main (staging control plane) and production (released app). Unknown differences must never be described as already approved.",
   "audited_at_jst": "2026-11-15T13:28:31.213344+09:00",
-  "baseline_app_release": "release/2026-11-22-r970",
-  "baseline_production_commit": "f7188412486efe7629c7e819e5fe0980567c3bd3",
+  "baseline_app_release": "release/2026-11-22-r981",
+  "baseline_production_commit": "ce462388060f5b7205f9ef6474f773ca2948e25c",
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
@@ -7671,14 +7671,6 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第70回の読み取り専用の取得ワークフロー。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/data/discovery_sources.json",
-      "kind": "different",
-      "category": "pending_staging_app",
-      "reason": "都立公園3件のURL綴りの訂正（404だったもの）。本番への反映は利用者の承認後。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

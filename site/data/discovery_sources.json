@@ -1355,7 +1355,7 @@
       },
       "ai_city_kodaira": {
         "state": "read",
-        "note": "HTTP 200・本文約2896文字・日付表記13件"
+        "note": "HTTP 200・本文約2892文字・日付表記13件"
       },
       "ai_city_kokubunji": {
         "state": "read",
@@ -1643,7 +1643,7 @@
       },
       "ai_park_showakinen_top": {
         "state": "read",
-        "note": "HTTP 200・本文約2128文字・日付表記38件"
+        "note": "HTTP 200・本文約2130文字・日付表記38件"
       },
       "ai_tokyo_zoo": {
         "state": "read",
@@ -1674,8 +1674,8 @@
         "note": "HTTP 200・本文約1996文字・日付表記8件"
       },
       "ai_fac_mot": {
-        "state": "read",
-        "note": "HTTP 200・本文約2514文字・日付表記14件"
+        "state": "failed",
+        "note": "HTTP 403"
       },
       "ai_fac_tobikan": {
         "state": "read",

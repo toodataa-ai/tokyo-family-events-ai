@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 255,
-    "verified": 255,
+    "published": 256,
+    "verified": 256,
     "announced": 0,
-    "candidates": 102
+    "candidates": 103
   },
   "carryover_organizer_rechecks": [
     {
@@ -5775,6 +5775,22 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "fb4999cedea142e5bac21c0a3670cfef3f3c1573",
+    "global_source_audit_complete": false
+  },
+  "lead37_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-chofu-jindai-konomi-kusanomi-ten-2026"
+    ],
+    "held_not_published": [
+      "minato-hibiya-sanso-cycling",
+      "minato-shiba-zojoji-walk",
+      "tokyo-parks-eight-park-stamp-rally",
+      "tokyo-zoo-association-events",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "73951929654233560abe8d64fc175cfb323af829",
     "global_source_audit_complete": false
   }
 }

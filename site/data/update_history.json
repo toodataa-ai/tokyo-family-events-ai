@@ -4147,6 +4147,39 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "サンシャインシティのキャンドルワークショップ（豊島区）と小金井公園の防災フェスタ（小金井市）を公式ページで個別に確認して追加。東京ディズニーリゾートは公式サイトが取得できず保留。"
+    },
+    {
+      "run_id": "lead37-addition-20261121",
+      "run_type": "manual_verified_lead37_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "73951929654233560abe8d64fc175cfb323af829",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 768,
+      "candidate_active_week_records": 771,
+      "added_weekly_records": 3,
+      "new_event_ids": [
+        "verified-20261121-chofu-jindai-konomi-kusanomi-ten-2026",
+        "verified-20261205-chofu-jindai-winter-forest-tanken-2026",
+        "verified-20261205-shibuya-yoyogi-donguri-kosaku-20261206"
+      ],
+      "held_not_published": [
+        "minato-hibiya-sanso-cycling",
+        "minato-shiba-zojoji-walk",
+        "tokyo-parks-eight-park-stamp-rally",
+        "tokyo-zoo-association-events",
+        "urayasu-tokyo-disney-resort"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "都立公園の個別ページ（お知らせ）から、神代植物公園の木の実・草の実展と冬の森たんけん（調布市）、代々木公園のどんぐり工作（渋谷区）を（駒沢ファンタジアは登録済みのため追加せず）公式ページで個別に確認して追加。"
     }
   ]
 }

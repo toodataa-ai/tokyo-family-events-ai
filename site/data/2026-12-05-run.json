@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 149,
-    "verified": 145,
+    "published": 151,
+    "verified": 147,
     "announced": 4,
-    "candidates": 94,
+    "candidates": 96,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4200,6 +4200,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "fb4999cedea142e5bac21c0a3670cfef3f3c1573",
+    "global_source_audit_complete": false
+  },
+  "lead37_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-chofu-jindai-winter-forest-tanken-2026",
+      "verified-20261205-shibuya-yoyogi-donguri-kosaku-20261206"
+    ],
+    "held_not_published": [
+      "minato-hibiya-sanso-cycling",
+      "minato-shiba-zojoji-walk",
+      "tokyo-parks-eight-park-stamp-rally",
+      "tokyo-zoo-association-events",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "73951929654233560abe8d64fc175cfb323af829",
     "global_source_audit_complete": false
   }
 }

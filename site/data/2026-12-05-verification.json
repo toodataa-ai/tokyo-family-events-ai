@@ -6152,11 +6152,163 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-chofu-jindai-winter-forest-tanken-2026",
+      "status": "verified",
+      "source": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "【実施日】2026年12月6日（日）",
+          "checked_at": "2026-11-21",
+          "sha256": "fba026dfb8724ba7a75ba36c49fcbe39e824f54964e52718b79cbfb90ce83752",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "【集合場所】神代植物公園植物会館前",
+          "checked_at": "2026-11-21",
+          "sha256": "66f00effd1bb1bbe4d936ae67f87be962b2f208f039dbfa57b337583bacdeb5c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "【対象】5歳以上～小学校4年生（保護者同伴）",
+          "checked_at": "2026-11-21",
+          "sha256": "11e5339f29cfd422f67d03c4b5a786c16a962ca56e88606de2483f53065921d2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "【参加費】50円(レクリエーション保険料)/ひとり",
+          "checked_at": "2026-11-21",
+          "sha256": "e461560ec1c2098d08e6720f3a3dd967c123266ad331a6dd234caf07cd1f7832",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "※保護者は入園料が別途必要です。",
+          "checked_at": "2026-11-21",
+          "sha256": "5bd81b50628bb735e5700b12a16f4c0cbe292be671cac9c043493ba2d4ad945a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "【定員】各回親子5組10人程度（事前申込制・先着順）",
+          "checked_at": "2026-11-21",
+          "sha256": "2b2cdd379feed1491339a575417333e248ed7216e71505f26741a412b8631e1c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "①午前の部10時30分～11時40分（70分）",
+          "checked_at": "2026-11-21",
+          "sha256": "6fb48937260d53b57ea673d23e60ad2394367409a385c8d3fed569702d5ce7e3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/12_6.html",
+          "quote": "②午後の部13時30分～14時40分（70分）",
+          "checked_at": "2026-11-21",
+          "sha256": "e8d75f82a13eb19250862d61a9ff969b34fa6219af61e1d23bd1bbcb1df6b517",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-shibuya-yoyogi-donguri-kosaku-20261206",
+      "status": "verified",
+      "source": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-21",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この4件は多摩各市の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "【日時】2026年12月6日（日）13：30～15：30",
+          "checked_at": "2026-11-21",
+          "sha256": "62f3d97a2e506db0cbb424a910f29c51c669af3d015ac2dd4c4394ee3f8889df",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "【場所】代々木公園内「フラワーランド」",
+          "checked_at": "2026-11-21",
+          "sha256": "666daa1ae23a7f470dab855684e5b542b5f8edfa4cf5727ce8ae164d9d348229",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "②日曜日自然教室「どんぐり工作」",
+          "checked_at": "2026-11-21",
+          "sha256": "48c42710f4355233b9f8c500581e69ad1aebf4c4e6dbe6b6b6026061b9f1c761",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "【参加費】無料【定員】先着20名、席に空きがあれば順次ご案内、在庫なくなり次第終了",
+          "checked_at": "2026-11-21",
+          "sha256": "1072cb8623113894945ed0ba0b96fe71bdbc9bd31edfc9486f3122b395a6e284",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "【申込み】不要、当日自由参加",
+          "checked_at": "2026-11-21",
+          "sha256": "c1cf5ece69f5e9828eaa620dc2d5c368ca0f6f299a3ae0d3193323fef870cbfe",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/park/yoyogi/news/2026/12_6_pm.html",
+          "quote": "代々木公園にある色々な種類のどんぐりや松ぼっくりを使って工作。",
+          "checked_at": "2026-11-21",
+          "sha256": "d9466c0e39e439a3decc88885d6a13cc0138cc98988db590bf50b9d52985f811",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 149,
-    "verified": 145,
+    "total": 151,
+    "verified": 147,
     "announced": 4
   }
 }

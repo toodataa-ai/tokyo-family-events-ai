@@ -1,15 +1,15 @@
-# User-approved v1.46 (chat 2026-11-22): register GREEN SPRINGS (Tachikawa) as fixed source #28. Data file and test only.
+# User-approved v1.47 (chat 2026-11-22): register Futako-Tamagawa Rise (Setagaya) as fixed source #29. Registry data file and test only.
 operation=release
 production_ref=production
-production_sha=415da1fc5c87989a7e93d6bdebd43dda83fb238e
-previous_production_sha=ce462388060f5b7205f9ef6474f773ca2948e25c
-candidate_sha=0cfdac0a5bcd1ad468d912c83febf0a6efbf6773
-pr=146
-target_public_version=1.46
+production_sha=d4db9e7009209acabec90f45cb2e50d70ec0ba6f
+previous_production_sha=415da1fc5c87989a7e93d6bdebd43dda83fb238e
+candidate_sha=f40068774168e0320bcca8dd0f28233077f000c3
+pr=147
+target_public_version=1.47
 previous_public_release=release/2026-11-22-r970
 release_date_jst=2026-11-22
-expected_data_production_sha=eb1facf6035092f7991cb81cf90cc3e10b382eb1
+expected_data_production_sha=8bfead01d491182ec50458b3754d277b048a6552
 approved_scope=site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Registered GREEN SPRINGS (Tachikawa) as the 28th fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.
+note=Registered Futako-Tamagawa Rise as the 29th fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.

@@ -484,6 +484,21 @@
       ],
       "effective_from": "2026-11-22",
       "note": "立川市の複合施設GREEN SPRINGSの公式イベント一覧（立川は多摩拡張の対象市）。一覧から個別ページ（/event/NNNN/）へ進み、開催日・場所・子ども家族向けの記載を本文で確認してから掲載する。毎週火曜のマルシェなど平日の定例、終了済み、期間未定の常設設置は掲載しない。参加費・申込の記載がないものは記載なしと表示し、家族向けの根拠がないもの（物販・夜の音楽イベントなど）は保留にする。"
+    },
+    {
+      "id": "futako_tamagawa_rise",
+      "label": "二子玉川ライズ（世田谷区・施設公式イベント）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.rise.sc/eventnews/",
+      "search_urls": [
+        "https://www.rise.sc/eventnews/"
+      ],
+      "effective_from": "2026-11-22",
+      "note": "世田谷区の複合施設・二子玉川ライズの公式イベント＆ニュース一覧。一覧から個別ページ（?cd=番号）へ進み、開催日・場所・子ども家族向けの記載を本文で確認してから掲載する。ポイントなどのキャンペーン、平日開催のバスキング、大人向けの催し、申込が終了した抽選イベントは掲載しない。参加費の記載がないものは記載なしと表示する。"
     }
   ],
   "protected_source_ids": [
@@ -514,7 +529,8 @@
     "suginami_calendar_all",
     "nerima_forest_festa_2026",
     "shinjuku_sankaku_hiroba",
-    "greensprings_tachikawa"
+    "greensprings_tachikawa",
+    "futako_tamagawa_rise"
   ],
   "ai_exploration_sites": {
     "note": "【固定サイト（explicit_sources）との違い】固定サイトは「毎回必ず確認する登録済みの参照元」。このリストは、AIがイベント候補を探すときの「入口にするサイト」（毎回の確認は必須でない）。どちらにも載るサイトは作らない。掲載の根拠は、各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
@@ -1824,6 +1840,10 @@
       "greensprings_tachikawa": {
         "state": "read",
         "note": "HTTP 200・イベント一覧7件（第75回取得、個別ページも取得）"
+      },
+      "futako_tamagawa_rise": {
+        "state": "read",
+        "note": "HTTP 200・イベント37件（第76回取得、個別ページ15件も取得）"
       }
     }
   }

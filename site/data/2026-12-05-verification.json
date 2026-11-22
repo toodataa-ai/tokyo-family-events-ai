@@ -6304,11 +6304,139 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-meguro-ishibumi-tudoi-papa-fureai",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-22",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この8件は目黒区・江戸川区の公式個別ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "乳幼児のつどい「パパといっしょにふれあいあそび」",
+          "checked_at": "2026-11-22",
+          "sha256": "098d0e65d32a49bf036d86e71e8b75502a982d2d9df326f05e9a7a059ae4f28d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "令和8年12月5日（土曜日）午前10時30分から午前11時30分まで",
+          "checked_at": "2026-11-22",
+          "sha256": "2a58d93c7cd1989ac0772bc505d2054fd14e3bfff5178d8265a9b41273718df8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "碑住区センター児童館（目黒区碑文谷二丁目16番6号）",
+          "checked_at": "2026-11-22",
+          "sha256": "53d8764805f6a33a4549a97070caddd133319dd0dc21a4099f510d2398750381",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "令和8年4月2日以降生まれの乳児から1歳児までとその保護者",
+          "checked_at": "2026-11-22",
+          "sha256": "70e68e0a613c89a677bb08476a982912d42ac5edf5a55a9d1611f1afe87a3fce",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "定員10組（先着順）参加方法",
+          "checked_at": "2026-11-22",
+          "sha256": "8dd24aafd82c5362a0bb8fcd55e77d8474123458ad10a841d054cabfd5e8b35e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/houkago/event/ishibumi-tudoi1205.html",
+          "quote": "体を使ったあそびや絵本の読み語りなど、パパならではの子どもとのふれあいあそびと、パパ同士の座談会。",
+          "checked_at": "2026-11-22",
+          "sha256": "588c0cc2a8800b108f49793a95440e05c589cf013f18cf18ded36decb4e3b7a2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-edogawa-mirai-xmas-tree-denshi",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-22",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この8件は目黒区・江戸川区の公式個別ページの確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+          "quote": "クリスマスツリーをつくろう",
+          "checked_at": "2026-11-22",
+          "sha256": "80a53d99f0497eb649472bdfbdb75215ef818bfcad3696f5823141013f64dc1b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+          "quote": "2026年12月5日（土曜日）14時00分から16時00分",
+          "checked_at": "2026-11-22",
+          "sha256": "093ff3620560a6b3c838a0fec2a7829cfbe819b21595b9c5fff080f27218b628",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+          "quote": "実際に電子部品をはんだごてで組み立て、電子クリスマスツリーを作ってみましょう。",
+          "checked_at": "2026-11-22",
+          "sha256": "f78bdaa6090bd0ccc2f585f285f4a1599ed29177e9a4ca4f92f1425f267c19f4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+          "quote": "小学校4年生から6年生まで定員9人（抽選）費用無料",
+          "checked_at": "2026-11-22",
+          "sha256": "d588d0ae5223bdcd4627c786c67f04657fa9596db6b26b719991f78f97a5e8e4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2612christmas.html",
+          "quote": "2026年11月13日（金曜日）から2026年11月24日（火曜日）",
+          "checked_at": "2026-11-22",
+          "sha256": "997cb8cdb25ebfeb02ff3072028dcf70bbb336fa461751f7e027b089998d9cff",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-22にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 151,
-    "verified": 147,
+    "total": 153,
+    "verified": 149,
     "announced": 4
   }
 }

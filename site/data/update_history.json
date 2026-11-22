@@ -4180,6 +4180,49 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "都立公園の個別ページ（お知らせ）から、神代植物公園の木の実・草の実展と冬の森たんけん（調布市）、代々木公園のどんぐり工作（渋谷区）を（駒沢ファンタジアは登録済みのため追加せず）公式ページで個別に確認して追加。"
+    },
+    {
+      "run_id": "lead38-addition-20261121",
+      "run_type": "manual_verified_lead38_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-22",
+      "executed_at": "2026-11-22T20:00:00+09:00",
+      "base_data_production_sha": "19205b672d01c9c1a26cb2b9a10812035b44bf0b",
+      "target_weekends": [
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 771,
+      "candidate_active_week_records": 779,
+      "added_weekly_records": 8,
+      "new_event_ids": [
+        "verified-20261212-meguro-karasumori-tudoi-xmas-kazari",
+        "verified-20261213-meguro-mukaihara-tudoi-kisetsu-kosaku",
+        "verified-20261212-meguro-komaba-tudoi-athletic-kosaku",
+        "verified-20261205-meguro-ishibumi-tudoi-papa-fureai",
+        "verified-20261219-meguro-gohongi-tudoi-santa",
+        "verified-20261219-meguro-kamimeguro-tudoi-rhythmic",
+        "verified-20261205-edogawa-mirai-xmas-tree-denshi",
+        "verified-20261219-edogawa-mirai-shimenawa-oyako"
+      ],
+      "held_not_published": [
+        "edogawa-kosodate-festival-20261114",
+        "koto-midori-kosodate-toyosu",
+        "meguro-other-jidokan-weekday",
+        "meguro-teens-festa-20261206-20261220",
+        "minato-roppongi-nijimi-card-20261206",
+        "ota-kodomo-calendar-202612",
+        "setagaya-ochiai-chibikko-hiroba",
+        "setagaya-yamano-puppet-20261209",
+        "urayasu-tokyo-disney-resort"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "目黒区の児童館の乳幼児のつどい6件と、江戸川区子ども未来館の講座2件を、公式の個別ページで確認して追加（第71〜72回の取得）。"
     }
   ]
 }

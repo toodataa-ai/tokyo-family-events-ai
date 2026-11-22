@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 51,
-    "published": 103,
+    "candidates": 54,
+    "published": 106,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 100,
+    "verified": 103,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2508,6 +2508,28 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "c6cb6fe929bf0a3e80c0c18366a297631b261b4a",
+    "global_source_audit_complete": false
+  },
+  "lead38_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-meguro-karasumori-tudoi-xmas-kazari",
+      "verified-20261213-meguro-mukaihara-tudoi-kisetsu-kosaku",
+      "verified-20261212-meguro-komaba-tudoi-athletic-kosaku"
+    ],
+    "held_not_published": [
+      "edogawa-kosodate-festival-20261114",
+      "koto-midori-kosodate-toyosu",
+      "meguro-other-jidokan-weekday",
+      "meguro-teens-festa-20261206-20261220",
+      "minato-roppongi-nijimi-card-20261206",
+      "ota-kodomo-calendar-202612",
+      "setagaya-ochiai-chibikko-hiroba",
+      "setagaya-yamano-puppet-20261209",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "19205b672d01c9c1a26cb2b9a10812035b44bf0b",
     "global_source_audit_complete": false
   }
 }

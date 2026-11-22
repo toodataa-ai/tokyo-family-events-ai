@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 963,
+  "expected_total_differences_after_governance": 973,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7719,6 +7719,86 @@
       "kind": "different",
       "category": "tama_expansion_20261121",
       "reason": "第71回の取得元の訪問状況（visit_status）の更新。本番への反映は次回の承認済みリリース時。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead38_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38（目黒区児童館6件・江戸川区子ども未来館2件）の生成ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead38_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の検証ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/edogawa_mirai_shimenawa_20261219.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/edogawa_mirai_xmastree_20261205.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_gohongi_tudoi_20261219.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_kamimeguro_tudoi_20261219.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_karasumori_tudoi_20261212.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_komaba_tudoi_20261212.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_mukaihara_tudoi_20261213.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/meguro_ishibumi_tudoi_20261205.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead38の公式ページ原本（不変保存）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

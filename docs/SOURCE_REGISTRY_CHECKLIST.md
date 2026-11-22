@@ -120,10 +120,10 @@
 | `ai_tpark_shioiri` | 汐入公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/shioiri/ |
 | `ai_tpark_rinshinomori` | 林試の森公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/rinshinomori/ |
 | `ai_tpark_nerimajoshi` | 練馬城址公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/nerimajoshi/ |
-| `ai_tpark_komazawa` | 駒沢オリンピック公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/komazawa/ |
+| `ai_tpark_komazawa` | 駒沢オリンピック公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/komazawa-olympic/ |
 | `ai_tpark_kinuta` | 砧公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/kinuta/ |
-| `ai_tpark_johoku_chuo` | 城北中央公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/johoku_chuo/ |
-| `ai_tpark_higashishirahige` | 東白鬚公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/higashishirahige/ |
+| `ai_tpark_johoku_chuo` | 城北中央公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/johoku-chuo/ |
+| `ai_tpark_higashishirahige` | 東白鬚公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/higashi-shirahige/ |
 | `ai_tpark_aoyama` | 青山公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/aoyama/ |
 | `ai_park_kasai_official` | 葛西臨海公園（公式） | https://kasaikaihinpark.com/ |
 | `ai_park_seaside_south` | 東京港 南部海上公園（お台場・城南島など） | https://tokyo-south-seaside-parks.com/ |

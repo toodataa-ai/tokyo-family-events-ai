@@ -856,7 +856,7 @@ jobs:
           # Source connectivity is independent read-only evidence, not app or event data.
           python3 staging-src/tools/compose_source_audit.py \
             --snapshot staging-src/site/audit/fixed_sources.json \
-            --fallback-snapshot staging-src/research/fixed_sources_snapshot_20261122/fixed_sources_27_production_registry.json \
+            --fallback-snapshot staging-src/research/fixed_sources_snapshot_20261122/fixed_sources_28_production_registry.json \
             --registry production-src/site/data/discovery_sources.json \
             --pages-dir pages
 

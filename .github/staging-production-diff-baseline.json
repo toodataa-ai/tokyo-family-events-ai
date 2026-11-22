@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 981,
+  "expected_total_differences_after_governance": 985,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7863,6 +7863,38 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第74回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead40_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead40: 狛江市2件の生成ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead40_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead40: 追加2件の公開ゲート検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/komae_iwato_ohanashi_20261129.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "狛江市 岩戸地域センター親子おはなし会の公式ページ（不変保存）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/komae_mirai_terrace_fes_2026.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "こまえみらいテラスフェスティバルの公式ページ（不変保存）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

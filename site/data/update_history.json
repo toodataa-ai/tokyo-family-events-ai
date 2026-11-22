@@ -4223,6 +4223,36 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "目黒区の児童館の乳幼児のつどい6件と、江戸川区子ども未来館の講座2件を、公式の個別ページで確認して追加（第71〜72回の取得）。"
+    },
+    {
+      "run_id": "lead39-addition-20261121",
+      "run_type": "manual_verified_lead39_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-21",
+      "executed_at": "2026-11-21T20:00:00+09:00",
+      "base_data_production_sha": "13168b41aac713ca69ed6d2f6453412919ca2027",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-11-28"
+      ],
+      "prior_active_week_records": 779,
+      "candidate_active_week_records": 781,
+      "added_weekly_records": 2,
+      "new_event_ids": [
+        "verified-20261121-musashino-inokashira-zoo-stamp-rally-shinka-2026",
+        "verified-20261128-musashino-inokashira-zoo-ochiba-oekaki-2026"
+      ],
+      "held_not_published": [
+        "inokashira-zoo-volunteer-programs",
+        "ueno-kasai-zoo-events",
+        "urayasu-tokyo-disney-resort"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "井の頭自然文化園（武蔵野市）の秋のスタンプラリーと落ち葉でお絵描きを、東京ズーネットの公式ページで個別に確認して追加。料金は公式ページに金額の記載がないため「料金要確認」で掲載。"
     }
   ]
 }

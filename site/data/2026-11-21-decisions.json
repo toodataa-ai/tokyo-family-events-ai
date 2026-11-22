@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 273,
-    "published": 256,
+    "candidate_total": 274,
+    "published": 257,
     "excluded": 16,
     "duplicate": 1
   },
@@ -32521,6 +32521,144 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.tokyo-park.or.jp/park/jindai/news/2026/11_19_12_6.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261121-musashino-inokashira-zoo-stamp-rally-shinka-2026",
+      "name": "秋のスタンプラリー「続・しんかのふしぎ」（井の頭自然文化園）",
+      "ward": "武蔵野市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "クイズを解きながら園内の生きものをめぐるスタンプラリー。年齢の限定はなく、子どもが楽しみやすい。台紙は各日先着で、料金は公式ページに金額の記載がない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "年齢の限定はなく、子どもも参加しやすいクイズ形式"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "クイズを解きながらスタンプを集めて園内をめぐる"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の限定はない"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "約2か月と長く、開園時間内で好きな時間に回れる"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "本園と分園の間は徒歩約5分で、屋外を歩く"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "公式ページに金額の記載がない"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込の記載なし（台紙は先着配布）"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "動物を見ながら進化や生きもののことを学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-21",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "約2か月と長く、好きな日に回れる",
+            "クイズで生きものについて学べる"
+          ],
+          "limitations": [
+            "台紙は各日先着で、なくなり次第終了",
+            "料金は公式ページに記載がなく、来園前の確認が必要"
+          ],
+          "grade_comparison": "総合B：動物園で楽しみながら学べるスタンプラリー。台紙は先着で、料金は要確認。",
+          "unsupported_axes": [
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html",
+              "quote": "2026年10月10日（土）～12月6日（日）",
+              "checked_at": "2026-11-21",
+              "sha256": "e2977b751d4a422b0e3222e16409bbf37bdb95b89c8891296fbd74fcbb06ca71",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html",
+              "quote": "井の頭自然文化園・動物園（本園）正門先広場",
+              "checked_at": "2026-11-21",
+              "sha256": "8b3ff90e6ec87045ebc062e1f50d382879b80177287a382b7eaf1e2728b1e3a8",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html",
+              "quote": "クイズを解きながら園内の生きものや植物をめぐり、進化の系統樹を完成させましょう。",
+              "checked_at": "2026-11-21",
+              "sha256": "f20081f868acfa152ccaa259ec0b1365d53771055c45b4e1e9985ca172951983",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html",
+              "quote": "各日先着150部（平日）/800部（土日祝）",
+              "checked_at": "2026-11-21",
+              "sha256": "64a2b73979c665a3ace508c9f4ac0c0440821b03b581389c66e3cc53a20a3abd",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "クイズを解きながら園内の生きものをめぐるスタンプラリー。年齢の限定はなく、子どもが楽しみやすい。台紙は各日先着で、料金は公式ページに金額の記載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html",
+          "basis": "2026-11-21 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.tokyo-zoo.net/inokashira/news/13386/index.html"
         }
       ]
     }

@@ -1992,10 +1992,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 256,
-    "verified": 256,
+    "published": 257,
+    "verified": 257,
     "announced": 0,
-    "candidates": 103
+    "candidates": 104
   },
   "carryover_organizer_rechecks": [
     {
@@ -5791,6 +5791,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "73951929654233560abe8d64fc175cfb323af829",
+    "global_source_audit_complete": false
+  },
+  "lead39_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261121-musashino-inokashira-zoo-stamp-rally-shinka-2026"
+    ],
+    "held_not_published": [
+      "inokashira-zoo-volunteer-programs",
+      "ueno-kasai-zoo-events",
+      "urayasu-tokyo-disney-resort"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "13168b41aac713ca69ed6d2f6453412919ca2027",
     "global_source_audit_complete": false
   }
 }

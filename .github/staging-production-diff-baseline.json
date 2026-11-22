@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 987,
+  "expected_total_differences_after_governance": 989,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7911,6 +7911,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第75回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/image_fill4_20261122.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "画像のみ補完（第4回、11/21-22追加分、画像のみ更新）のツールと検証。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_image_fill4_20261122.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "画像のみ補完（第4回、11/21-22追加分、画像のみ更新）のツールと検証。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

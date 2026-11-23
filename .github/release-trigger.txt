@@ -1,15 +1,15 @@
-# User-approved v1.49 (chat 2026-11-23): register Hachilabo (Shibuya) as fixed source #31. Registry data file and test only.
+# User-approved v1.50 (chat 2026-11-23): unify count display (home total, ward chips, change chips) with the search result unit and window. Front-end files only.
 operation=release
 production_ref=production
-production_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
-previous_production_sha=c3d918a464462b0013172f27a941c12c0aaa72b8
-candidate_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
-pr=149
-target_public_version=1.49
-previous_public_release=release/2026-11-23-r1021
+production_sha=2b779c95b724c095071c1eaa45355aed18c78907
+previous_production_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
+candidate_sha=775a9e9a6c5e9795fe216477793ad6fa17b3036d
+pr=150
+target_public_version=1.50
+previous_public_release=release/2026-11-23-r1030
 release_date_jst=2026-11-23
 expected_data_production_sha=100bab3eea5a5011deea32fc6bb11840e500ccb8
-approved_scope=site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
+approved_scope=site/index.html,site/search.html,site/copy.html,site/multi-filter-ui.js
 event_record_mutation=none
 curation_record_mutation=none
-note=Registered Hachilabo (Shibuya) as the 31st fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.
+note=Home total, ward chip counts and weekly-change chip counts now use the same unit (festival programmes grouped) and window (this weekend onward) as the search result count. No event data changes.

@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1009,
+  "expected_total_differences_after_governance": 1011,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8087,6 +8087,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第77回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls78.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第78回取得のURL一覧（中央線RR個別ページ、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards78-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第78回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

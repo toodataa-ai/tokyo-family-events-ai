@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1020,
+  "expected_total_differences_after_governance": 1027,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8175,6 +8175,62 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第80回の読み取り専用の取得ワークフロー。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead44_addition_20261123.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead44（ハチラボ9件）追加ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead44_addition_20261123.py",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "lead44の検証ツール。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/hachilabo_top_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "ハチラボ公式ページの原本保存。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/hachilabo_tenji_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "ハチラボ公式ページの原本保存。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/hachilabo_nov_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "ハチラボ公式ページの原本保存。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/hachilabo_dec_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "ハチラボ公式ページの原本保存。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/hachilabo_lecture_20261123.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "ハチラボ公式ページの原本保存。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

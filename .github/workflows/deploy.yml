@@ -425,6 +425,12 @@ jobs:
               --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
               --tools-dir staging-policy-src/tools \
               --base-ref "$BASE"
+          elif [ "$OP" = "verified-lead44-addition-20261123" ]; then
+            python3 staging-policy-src/tools/validate_lead44_addition_20261123.py \
+              --data-dir site/data \
+              --pages-dir staging-policy-src/research/2026-11-20-thin-wards/pages \
+              --tools-dir staging-policy-src/tools \
+              --base-ref "$BASE"
           elif [[ "$OP" =~ ^verified-lead(2[0-9]|[3-9][0-9])-addition-20261121$ ]]; then
             python3 "staging-policy-src/tools/validate_lead${BASH_REMATCH[1]}_addition_20261121.py" \
               --data-dir site/data \
@@ -693,7 +699,7 @@ jobs:
                 --base-ref "$base" --data-dir site/data
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-audit-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned audit proof"
-            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(verified\-horizon\-subset|verified\\\-lead[5-7]\\\-addition\\\-20261119|nakano\\\-image\\\-alignment\\\-20261120|sumida\\\-image\\\-alignment\\\-20261120|verified\\\-lead17\\\-addition\\\-20261120|verified\\\-lead16\\\-addition\\\-20261120|verified\\\-lead15\\\-addition\\\-20261120|verified\\\-lead([89]|1[0-4])\\\-addition\\\-20261119|verified\\\-lead4\\\-addition\\\-20261119|verified\\\-lead3\\\-addition\\\-20261119|verified\\\-leads\\\-addition\\\-20261118|verified\\\-suginami\\\-addition\\\-20261118|verified\\\-subset\\\-addition|verified\\\-forest\\\-table\\\-addition|manual\\\-official\\\-gap\\\-recovery\\\-20261108|verified-lead(1[89]|2[0-9])-addition-20261120|verified-lead(2[2-9]|[3-9][0-9])-addition-20261121|image-fill-20261120|image-fill2-20261120|image-fill3-20261120|image-fill4-20261122|verified-lead41-addition-20261122|verified-lead42-addition-20261122|verified-lead43-addition-20261123|provenance-fill-20261120|provenance-fix-20261120|provenance-fix2-20261120)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(verified\-horizon\-subset|verified\\\-lead[5-7]\\\-addition\\\-20261119|nakano\\\-image\\\-alignment\\\-20261120|sumida\\\-image\\\-alignment\\\-20261120|verified\\\-lead17\\\-addition\\\-20261120|verified\\\-lead16\\\-addition\\\-20261120|verified\\\-lead15\\\-addition\\\-20261120|verified\\\-lead([89]|1[0-4])\\\-addition\\\-20261119|verified\\\-lead4\\\-addition\\\-20261119|verified\\\-lead3\\\-addition\\\-20261119|verified\\\-leads\\\-addition\\\-20261118|verified\\\-suginami\\\-addition\\\-20261118|verified\\\-subset\\\-addition|verified\\\-forest\\\-table\\\-addition|manual\\\-official\\\-gap\\\-recovery\\\-20261108|verified-lead(1[89]|2[0-9])-addition-20261120|verified-lead(2[2-9]|[3-9][0-9])-addition-20261121|image-fill-20261120|image-fill2-20261120|image-fill3-20261120|image-fill4-20261122|verified-lead41-addition-20261122|verified-lead42-addition-20261122|verified-lead43-addition-20261123|verified-lead44-addition-20261123|provenance-fill-20261120|provenance-fix-20261120|provenance-fix2-20261120)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
@@ -798,6 +804,8 @@ jobs:
                 echo "2026-11-22 lead42 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead43-addition-20261123" ]; then
                 echo "2026-11-23 lead43 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
+              elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead44-addition-20261123" ]; then
+                echo "2026-11-23 lead44 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [[ "${{ needs.gate.outputs.operation }}" =~ ^verified-lead(2[0-9]|[3-9][0-9])-addition-20261121$ ]]; then
                 echo "2026-11-21 lead addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [ "${{ needs.gate.outputs.operation }}" = "verified-lead17-addition-20261120" ]; then

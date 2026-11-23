@@ -4434,6 +4434,48 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "杉並区公式ページの阿佐谷イルミネーション（2027/1/31まで）を追加。中央線あるあるPROJECTの一覧にあるトロールの森は11/23が最終日で情報が不足するため保留。"
+    },
+    {
+      "run_id": "lead44-addition-20261123",
+      "run_type": "manual_verified_lead44_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-23",
+      "executed_at": "2026-11-23T10:30:00+09:00",
+      "base_data_production_sha": "92c676a01ccda8fa2bc27cde65f130be55a445ac",
+      "target_weekends": [
+        "2026-11-21",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 793,
+      "candidate_active_week_records": 802,
+      "added_weekly_records": 9,
+      "new_event_ids": [
+        "verified-20261121-shibuya-hachilabo-space-exhibition-2026",
+        "verified-20261121-shibuya-hachilabo-space-mobile-2026",
+        "verified-20261205-shibuya-hachilabo-string-phone-2026",
+        "verified-20261219-shibuya-hachilabo-snowman-lamp-2026",
+        "verified-20261212-shibuya-hachilabo-luminescence-chem-2026",
+        "verified-20261219-shibuya-hachilabo-artemis-moon-2026",
+        "verified-20261220-shibuya-hachilabo-semiconductor-xmas-2026",
+        "verified-20261226-shibuya-hachilabo-light-planet-2026",
+        "verified-20261227-shibuya-hachilabo-coin-bank-2026"
+      ],
+      "held_not_published": [
+        "hachilabo-color-play-20261205",
+        "hachilabo-cosmic-college-20261128",
+        "hachilabo-flying-seed-20261123",
+        "hachilabo-lecture-20261206-20261213",
+        "hachilabo-space-slime-20261121"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "渋谷区文化総合センター大和田「こども科学センター・ハチラボ」の公式ページから、受付中・申込不要の9件を追加。杉並区の保留分は別途。"
     }
   ]
 }

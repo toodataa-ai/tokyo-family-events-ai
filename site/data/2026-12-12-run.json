@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 54,
-    "published": 106,
+    "candidates": 55,
+    "published": 107,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 103,
+    "verified": 104,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2530,6 +2530,22 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "19205b672d01c9c1a26cb2b9a10812035b44bf0b",
+    "global_source_audit_complete": false
+  },
+  "lead44_addition_20261123": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-shibuya-hachilabo-luminescence-chem-2026"
+    ],
+    "held_not_published": [
+      "hachilabo-color-play-20261205",
+      "hachilabo-cosmic-college-20261128",
+      "hachilabo-flying-seed-20261123",
+      "hachilabo-lecture-20261206-20261213",
+      "hachilabo-space-slime-20261121"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "92c676a01ccda8fa2bc27cde65f130be55a445ac",
     "global_source_audit_complete": false
   }
 }

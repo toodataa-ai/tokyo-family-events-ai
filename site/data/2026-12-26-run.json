@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 12,
-    "published": 12,
+    "candidates": 14,
+    "published": 14,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 9,
+    "verified": 11,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -1949,6 +1949,23 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "c6cb6fe929bf0a3e80c0c18366a297631b261b4a",
+    "global_source_audit_complete": false
+  },
+  "lead44_addition_20261123": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261226-shibuya-hachilabo-light-planet-2026",
+      "verified-20261227-shibuya-hachilabo-coin-bank-2026"
+    ],
+    "held_not_published": [
+      "hachilabo-color-play-20261205",
+      "hachilabo-cosmic-college-20261128",
+      "hachilabo-flying-seed-20261123",
+      "hachilabo-lecture-20261206-20261213",
+      "hachilabo-space-slime-20261121"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "92c676a01ccda8fa2bc27cde65f130be55a445ac",
     "global_source_audit_complete": false
   }
 }

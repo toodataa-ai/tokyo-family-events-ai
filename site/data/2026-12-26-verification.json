@@ -601,11 +601,99 @@
           "description": "公式ページ（2026-11-21にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261226-shibuya-hachilabo-light-planet-2026",
+      "status": "verified",
+      "source": "https://shibu-cul.jp/event/53568#planet",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-23",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この9件は渋谷区の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://shibu-cul.jp/event/53568#planet",
+          "quote": "●開催日：12月26日（土）",
+          "checked_at": "2026-11-23",
+          "sha256": "b3044c55e4fbe2c768f9029f15fae47e85f519b4b973ed3c673aa4916c79a2f6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shibu-cul.jp/event/53568#planet",
+          "quote": "●推奨年齢：小3～小6（小3は保護者同伴）",
+          "checked_at": "2026-11-23",
+          "sha256": "a62983c246716e6d3447f8479977ae1fa290f7821e428f6f688b49ef7357bf85",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shibu-cul.jp/event/53568#planet",
+          "quote": "●募集期間：12月2日（水）0:00～12月9日（水）23:59＜抽選＞",
+          "checked_at": "2026-11-23",
+          "sha256": "f742431600b1c9f24667ae2b111672d9693fb34f7b99a10a48d286ce0f0efc68",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261227-shibuya-hachilabo-coin-bank-2026",
+      "status": "verified",
+      "source": "https://shibu-cul.jp/event/53568#coin-bank",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-23",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この9件は渋谷区の公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://shibu-cul.jp/event/53568#coin-bank",
+          "quote": "●開催日：12月27日（日）、28日（月）",
+          "checked_at": "2026-11-23",
+          "sha256": "44502eddb2596d463e8bd136aad00351d35dfbb36c79f8c6f6da5e2680772781",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shibu-cul.jp/event/53568#coin-bank",
+          "quote": "●推奨年齢：小1～小6（小3以下は保護者同伴）",
+          "checked_at": "2026-11-23",
+          "sha256": "15b6abdde2f50768e302ecfc4d9a5145a6763d4e07bc0e099764790fa02a7c5a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shibu-cul.jp/event/53568#coin-bank",
+          "quote": "●募集期間：12月2日（水）0:00～12月9日（水）23:59＜抽選＞",
+          "checked_at": "2026-11-23",
+          "sha256": "f742431600b1c9f24667ae2b111672d9693fb34f7b99a10a48d286ce0f0efc68",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 12,
-    "verified": 9,
+    "total": 14,
+    "verified": 11,
     "announced": 3
   }
 }

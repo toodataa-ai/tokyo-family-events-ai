@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1028,
+  "expected_total_differences_after_governance": 1030,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8239,6 +8239,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "本番の取得元31件（v1.49）に合わせた比較用スナップショット。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/search.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "「今週の掲載変更」のすべて・追加・情報更新の件数を、現在の期間・区などの絞り込み条件に連動させる修正（ユーザー依頼、ステージングのみ）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/copy.html",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "「今週の掲載変更」のすべて・追加・情報更新の件数を、現在の期間・区などの絞り込み条件に連動させる修正（ユーザー依頼、ステージングのみ）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

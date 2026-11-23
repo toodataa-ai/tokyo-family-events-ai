@@ -122,18 +122,19 @@ function copyProvenanceBadge(prov){
 }
 function fieldHtml(field,id){const url=field.isLink?safeHttpUrl(field.value):'';const inner=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(field.value)}</a>`:escapeHtml(field.value);return `<div class="copy-field"><div class="field-label">${escapeHtml(field.label)}</div><div class="field-value" id="${id}">${inner}</div><button class="copy-btn" onclick="copyOne('${id}',this)">コピー</button></div>`;}
 
-function renderChangeControls(){
+function renderChangeControls(scopeEvents){
   const bar=$('changeFilterBar');if(!bar||!currentData)return;
-  const counts=groupedEventChangeCounts(currentData.events,changes);
+  const base=scopeEvents||currentData.events;
+  const counts=groupedEventChangeCounts(base,changes);
   bar.innerHTML='<span class="change-filter-label">今週の掲載変更</span>'+
-    [['','すべて',groupFestivalDisplayEvents(currentData.events).length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
+    [['','すべて',groupFestivalDisplayEvents(base).length],['added','追加',counts.added],['updated','情報更新',counts.updated]]
     .map(([key,label,count])=>'<button type="button" class="change-filter-btn'+(changeFilter===key?' active':'')+
       '" data-change-filter="'+key+'" aria-pressed="'+String(changeFilter===key)+'">'+label+' '+count+'件</button>').join('');
 }
 function render(){
   if(!currentData)return;renderWeekTabs();renderChips(currentData);
-  renderChangeControls();
   let visible=filterEvents(currentData.events,{...filters(),registry,decisionAudit:currentData.decision_audit});
+  renderChangeControls(visible);
   if(changeFilter)visible=visible.filter(ev=>changeKind(ev,changes)===changeFilter);
   const displayed=groupFestivalDisplayEvents(visible);
   window.__visibleEvents=displayed;

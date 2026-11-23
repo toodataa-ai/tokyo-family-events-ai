@@ -514,6 +514,22 @@
       ],
       "effective_from": "2026-11-23",
       "note": "杉並区の商工会議所・商店会などによる地域サイト。高円寺・阿佐ヶ谷・荻窪・西荻窪の主要イベントを、日付つきで一覧にしている。一覧から個別ページ（/event/名前/）へ進み、開催日・場所・子ども家族向けの記載を確認する。主催者の個別サイトや杉並区の公式ページに詳細がある場合は、そちらで確認してから掲載する。終了済みと翌年以降のもの、大人向けのもの（飲み屋まつり等）は掲載しない。"
+    },
+    {
+      "id": "hachilabo_shibuya",
+      "label": "こども科学センター・ハチラボ（渋谷区文化総合センター大和田）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://shibu-cul.jp/hachilabo",
+      "search_urls": [
+        "https://shibu-cul.jp/hachilabo",
+        "https://shibu-cul.jp/hachilabo/tenji"
+      ],
+      "effective_from": "2026-11-23",
+      "note": "渋谷区の体験型科学館（入館無料）。トップの月別イベントカレンダー（11月・12月）と特別展ページを確認する。各ワークショップの日付・対象年齢・申込方法は月別の個別ページ（/event/…）にある。受付が終了した抽選、渋谷区在住・在学限定の講座、終了日のものは掲載しない。常設展・特別展は1件として掲載する。"
     }
   ],
   "protected_source_ids": [
@@ -546,7 +562,8 @@
     "shinjuku_sankaku_hiroba",
     "greensprings_tachikawa",
     "futako_tamagawa_rise",
-    "chuosen_rr_suginami"
+    "chuosen_rr_suginami",
+    "hachilabo_shibuya"
   ],
   "ai_exploration_sites": {
     "note": "【固定サイト（explicit_sources）との違い】固定サイトは「毎回必ず確認する登録済みの参照元」。このリストは、AIがイベント候補を探すときの「入口にするサイト」（毎回の確認は必須でない）。どちらにも載るサイトは作らない。掲載の根拠は、各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
@@ -1864,6 +1881,10 @@
       "chuosen_rr_suginami": {
         "state": "read",
         "note": "HTTP 200・イベント一覧15件（第77回取得、個別ページも取得）"
+      },
+      "hachilabo_shibuya": {
+        "state": "read",
+        "note": "HTTP 200・月別イベント一覧と特別展ページ（第80回取得、個別ページも取得）"
       }
     }
   }

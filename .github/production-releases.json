@@ -446,7 +446,16 @@
       "workflow_run_id": 45105687164,
       "public_version": "1.48",
       "note": "ユーザー承認の本番v1.48。取得元に中央線あるあるPROJECT（杉並区）を30件目として追加（PR #148、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production 92c676a01ccda8fa2bc27cde65f130be55a445ac（793件）。"
+    },
+    {
+      "release_id": "release/2026-11-23-r1030",
+      "branch": "release/2026-11-23-r1030",
+      "commit_sha": "05175c11806466d94881f3f4a8853ee2b2cb4dcf",
+      "deployed_at": "2026-11-23T04:49:34+00:00",
+      "workflow_run_id": 45114010021,
+      "public_version": "1.49",
+      "note": "ユーザー承認の本番v1.49。取得元にこども科学センター・ハチラボ（渋谷区）を31件目として追加（PR #149、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production 100bab3eea5a5011deea32fc6bb11840e500ccb8（802件）。"
     }
   ],
-  "current_public_version": "1.48"
+  "current_public_version": "1.49"
 }

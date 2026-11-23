@@ -1,3 +1,4 @@
+import {groupFestivalDisplayEvents} from './festival-display-grouping.js?v=20261027-fest-parent';
 import {WARDS,AREAS,AREA_GROUPS,areaGroupOf,areaDisplayName,saturdayOf,holidayPeriodSlots,holidayTabMeta,filterEvents,countsByWard,escapeHtml,serializeEventFilters} from './app.js';
 
 // Shared multi-select UI for event search and copy list.
@@ -104,10 +105,12 @@ export function createMultiFilterUI({manifest,registry,onChange,getData}){
     if(!data)return;
     const group=AREA_GROUPS[areaGroup];
     const base=filterEvents(data.events,{...filters(),wards:[],registry,decisionAudit:data.decision_audit});
-    const counts=countsByWard(base),all=!state.wards.size;
+    // Count in display units (festival programmes folded into one card) so the chips match the result count.
+    const shown=groupFestivalDisplayEvents(base);
+    const counts=countsByWard(shown),all=!state.wards.size;
     const tabs=`<span class="area-group-tabs" role="group" aria-label="地域">`+Object.entries(AREA_GROUPS).map(([key,g])=>
       `<button type="button" class="chip area-group-chip ${key===areaGroup?'active':''}" data-area-group="${key}" aria-pressed="${key===areaGroup}">${escapeHtml(g.label)}</button>`).join('')+`</span>`;
-    $('chips').innerHTML=tabs+`<button type="button" class="chip ${all?'active':''}" data-ward="__all__" aria-pressed="${all}">すべて <span>${base.length}</span></button>`+
+    $('chips').innerHTML=tabs+`<button type="button" class="chip ${all?'active':''}" data-ward="__all__" aria-pressed="${all}">すべて <span>${shown.length}</span></button>`+
       group.areas.map(ward=>{
         const checked=state.wards.has(ward);
         return `<label class="chip ${checked?'active':''} ${counts[ward]===0?'zero':''}"><input type="checkbox" data-ward="${escapeHtml(ward)}" ${checked?'checked':''}><span>${escapeHtml(areaDisplayName(ward))} ${counts[ward]}</span></label>`;

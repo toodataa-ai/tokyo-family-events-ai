@@ -24,7 +24,7 @@ assert.match(html,/source\.origin==='legacy'/,'legacy section must include only 
 assert.doesNotMatch(html,/source\.origin!=='official'&&source\.origin!=='official_added'/,'non-official must not be mislabeled legacy');
 assert.match(html,/その他の固定サイト（要分類）/,'new origins must remain visible instead of being mislabeled');
 const originCounts = Object.groupBy(sources, source=>source.origin);
-assert.equal((originCounts.official||[]).length+(originCounts.official_added||[]).length,10,'keep previous official sources and add Shinjuku Sankaku venue, GREEN SPRINGS (Tachikawa), Futako-Tamagawa Rise and Chuo-sen RR (Suginami)' );
+assert.equal((originCounts.official||[]).length+(originCounts.official_added||[]).length,11,'keep previous official sources and add Shinjuku Sankaku venue, GREEN SPRINGS (Tachikawa), Futako-Tamagawa Rise and Chuo-sen RR (Suginami) and Hachilabo (Shibuya)' );
 assert.equal((originCounts.legacy||[]).length,18,'only 18 previous fixed sources');
 assert.equal((originCounts.manual||[]).length,2,'two newly added community sites');
 assert.ok((originCounts.manual||[]).some(source=>source.id==='tamemap_nakano'));
@@ -37,7 +37,7 @@ assert.match(html,/target="_blank" rel="noopener noreferrer"/);
 assert.match(html,/catch\(error\)[\s\S]*固定サイト一覧を取得できませんでした/);
 assert.match(css,/\.logic-fixed-sources-group ul/);
 assert.match(css,/@media\(max-width:520px\)[^{]*\{\.logic-fixed-sources/);
-for(const id of ['nakano_official_tourism','itabashi_official_festival','itabashi_tourism_festival','tamemap_nakano','itabashi_times_event','shinjuku_sankaku_hiroba','greensprings_tachikawa','futako_tamagawa_rise','chuosen_rr_suginami']){
+for(const id of ['nakano_official_tourism','itabashi_official_festival','itabashi_tourism_festival','tamemap_nakano','itabashi_times_event','shinjuku_sankaku_hiroba','greensprings_tachikawa','futako_tamagawa_rise','chuosen_rr_suginami','hachilabo_shibuya']){
   assert.ok(sources.some(x=>x.id===id),'new official source included: '+id);
 }
 assert.ok(sources.some(x=>x.id==='nakano'),'legacy Nakano source retained');

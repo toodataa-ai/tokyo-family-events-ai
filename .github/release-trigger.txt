@@ -1,15 +1,15 @@
-# User-approved v1.48 (chat 2026-11-23): register Chuo-sen RR (Suginami) as fixed source #30. Registry data file and test only.
+# User-approved v1.49 (chat 2026-11-23): register Hachilabo (Shibuya) as fixed source #31. Registry data file and test only.
 operation=release
 production_ref=production
-production_sha=c3d918a464462b0013172f27a941c12c0aaa72b8
-previous_production_sha=d4db9e7009209acabec90f45cb2e50d70ec0ba6f
-candidate_sha=c3d918a464462b0013172f27a941c12c0aaa72b8
-pr=148
-target_public_version=1.48
-previous_public_release=release/2026-11-22-r1011
+production_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
+previous_production_sha=c3d918a464462b0013172f27a941c12c0aaa72b8
+candidate_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
+pr=149
+target_public_version=1.49
+previous_public_release=release/2026-11-23-r1021
 release_date_jst=2026-11-23
-expected_data_production_sha=92c676a01ccda8fa2bc27cde65f130be55a445ac
+expected_data_production_sha=100bab3eea5a5011deea32fc6bb11840e500ccb8
 approved_scope=site/data/discovery_sources.json,tests/fixed_source_directory.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Registered Chuo-sen RR (Suginami) as the 30th fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.
+note=Registered Hachilabo (Shibuya) as the 31st fixed source (registry entry, protected id, visit status) and updated the fixed-source directory test. No event data changes.

@@ -81,7 +81,7 @@ class SourceAuditCompositionTests(unittest.TestCase):
 
     def test_new_staging_registry_uses_only_validated_previous_production_report(self):
         old_registry=copy.deepcopy(self.registry)
-        old_registry['explicit_sources']=[r for r in old_registry['explicit_sources']if r['id'] not in ('shinjuku_sankaku_hiroba','greensprings_tachikawa','futako_tamagawa_rise','chuosen_rr_suginami')]
+        old_registry['explicit_sources']=[r for r in old_registry['explicit_sources']if r['id'] not in ('shinjuku_sankaku_hiroba','greensprings_tachikawa','futako_tamagawa_rise','chuosen_rr_suginami','hachilabo_shibuya')]
         raw=(ROOT/'research/aipaku_review_20261115/fixed_sources_before_addition.json').read_bytes()
         with tempfile.TemporaryDirectory()as tmp:
             root=Path(tmp);pages=root/'pages';self.seed_pages(pages)

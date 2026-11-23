@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1018,
+  "expected_total_differences_after_governance": 1020,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8159,6 +8159,22 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "本番の取得元30件（v1.48）に合わせた比較用スナップショット。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls80.txt",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第80回取得のURL一覧（ハチラボ、読み取り専用）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards80-20261121.yml",
+      "kind": "staging_only",
+      "category": "tama_expansion_20261121",
+      "reason": "第80回の読み取り専用の取得ワークフロー。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

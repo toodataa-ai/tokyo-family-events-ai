@@ -127,7 +127,8 @@
 <script src="self-usage.js?v=20261028-1" defer></script>
 <script src="usage-metrics.js?v=20261028-today" defer></script>
 <script type="module">
-import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl} from './app.js?v=20261021-arts-venue-chain';
+import {loadManifest,loadWeekend,loadUpdateHistory,loadDiscoverySources,mergeEventsAcrossWeeks,heroSeasonForDate,heroSeasonMeta,escapeHtml,safeHttpUrl,holidayPeriodSlots,filterEvents,areaGroupOf} from './app.js?v=20261021-arts-venue-chain';
+import {currentAndFutureWindow} from './multi-filter-ui.js';
 import {summarizeUpdateHistory,formatJapaneseUpdateDate} from './update-history-display.js?v=20261108-weekly-identity';
 import {loadChangeData,currentChangeCounts} from './recent-event-changes.js?v=20261108-weekly-identity';
 import {groupFestivalDisplayEvents,groupedEventChangeCounts} from './festival-display-grouping.js?v=20261027-fest-parent';
@@ -273,12 +274,12 @@ loadFixedSourcesSection();
     const rows=await Promise.all((manifest.weekends||[]).map(w=>loadWeekend(manifest,w.sat)));
     const dataRows=rows.map(x=>x.data).filter(Boolean);
     const allEvents=mergeEventsAcrossWeeks(dataRows);
-    const published=groupFestivalDisplayEvents(allEvents).length;
+    // Same unit and same window as the search page's default ("全期間 今週末から"): ended events are not counted.
+    const upcoming=groupFestivalDisplayEvents(filterEvents(allEvents,{periods:[currentAndFutureWindow(holidayPeriodSlots(manifest,manifest.default))]}));
+    const published=upcoming.length;
+    const wardCount=upcoming.filter(ev=>areaGroupOf(ev.ward)==='ward').length;
     $('totalPublished').textContent=published.toLocaleString('ja-JP');
-    const underlying=allEvents.length;
-    $('publishedCountScope').textContent=underlying===published
-      ? '6週間・重複統合後'
-      : `6週間・フェス内の企画をまとめて表示（原本${underlying}企画）`;
+    $('publishedCountScope').textContent=`今週末以降の掲載（23区 ${wardCount.toLocaleString('ja-JP')}件・市部 ${(published-wardCount).toLocaleString('ja-JP')}件）。検索の「全期間」と同じ数え方`;
     const changeBox=$('homeChangesSummary');
     try{
       const changes=await loadChangeData({manifest,history:updateHistory});

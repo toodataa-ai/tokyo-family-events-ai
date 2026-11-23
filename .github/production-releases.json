@@ -437,7 +437,16 @@
       "workflow_run_id": 45027932307,
       "public_version": "1.47",
       "note": "ユーザー承認の本番v1.47。取得元に二子玉川ライズ（世田谷区）を29件目として追加（PR #147、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production 8bfead01d491182ec50458b3754d277b048a6552（792件）。"
+    },
+    {
+      "release_id": "release/2026-11-23-r1021",
+      "branch": "release/2026-11-23-r1021",
+      "commit_sha": "c3d918a464462b0013172f27a941c12c0aaa72b8",
+      "deployed_at": "2026-11-23T03:24:40+00:00",
+      "workflow_run_id": 45105687164,
+      "public_version": "1.48",
+      "note": "ユーザー承認の本番v1.48。取得元に中央線あるあるPROJECT（杉並区）を30件目として追加（PR #148、discovery_sources.jsonと固定サイト一覧テストのみ）。イベントデータは変更なし。data-production 92c676a01ccda8fa2bc27cde65f130be55a445ac（793件）。"
     }
   ],
-  "current_public_version": "1.47"
+  "current_public_version": "1.48"
 }

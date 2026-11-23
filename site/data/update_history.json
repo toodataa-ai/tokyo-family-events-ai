@@ -4408,6 +4408,32 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "二子玉川ライズの公式イベント一覧から、家族向けの記載がある8件を個別ページで確認して追加。チェコフェスティバル・きもの市・抽選申込の終了した料理体験・平日開催のものは掲載しない。"
+    },
+    {
+      "run_id": "lead43-addition-20261123",
+      "run_type": "manual_verified_lead43_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-23",
+      "executed_at": "2026-11-23T10:30:00+09:00",
+      "base_data_production_sha": "8bfead01d491182ec50458b3754d277b048a6552",
+      "target_weekends": [
+        "2026-12-05"
+      ],
+      "prior_active_week_records": 792,
+      "candidate_active_week_records": 793,
+      "added_weekly_records": 1,
+      "new_event_ids": [
+        "verified-20261205-suginami-asagaya-illumination-2026"
+      ],
+      "held_not_published": [
+        "chuosen-rr-trolls-in-the-park-20261123"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "杉並区公式ページの阿佐谷イルミネーション（2027/1/31まで）を追加。中央線あるあるPROJECTの一覧にあるトロールの森は11/23が最終日で情報が不足するため保留。"
     }
   ]
 }

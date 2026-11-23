@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 156,
-    "verified": 152,
+    "published": 157,
+    "verified": 153,
     "announced": 4,
-    "candidates": 101,
+    "candidates": 102,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4259,6 +4259,18 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "eb1facf6035092f7991cb81cf90cc3e10b382eb1",
+    "global_source_audit_complete": false
+  },
+  "lead43_addition_20261123": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-suginami-asagaya-illumination-2026"
+    ],
+    "held_not_published": [
+      "chuosen-rr-trolls-in-the-park-20261123"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "8bfead01d491182ec50458b3754d277b048a6552",
     "global_source_audit_complete": false
   }
 }

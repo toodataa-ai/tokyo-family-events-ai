@@ -4,8 +4,8 @@
   "generated": "2026-10-27T01:11:37+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 159,
-    "published": 156,
+    "candidate_total": 160,
+    "published": 157,
     "excluded": 0,
     "duplicate": 3
   },
@@ -19557,6 +19557,134 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.rise.sc/eventnews/detail/?cd=001512"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261205-suginami-asagaya-illumination-2026",
+      "name": "阿佐谷イルミネーション 2026（JR阿佐ケ谷駅南口噴水広場ほか）",
+      "ward": "杉並区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "阿佐谷駅周辺の商店街で2027年1月31日まで続く無料のイルミネーション。駅前の噴水広場から商店街を歩いて楽しめる。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象の限定はなく、家族で楽しめる"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "見て楽しむ内容が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の限定はない"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "期間が長く、好きな時間に行ける"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋外のため、寒さと混雑に注意"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込・予約の記載なし。当日行ける"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "家族で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-23",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "無料で、好きな時間に立ち寄れる",
+            "12/1の点灯式でペンライトがもらえる"
+          ],
+          "limitations": [
+            "点灯時間は日没後としか書かれていない",
+            "屋外で夜間のため、防寒と帰りの時間に注意"
+          ],
+          "grade_comparison": "総合B：無料で長く続くイルミネーション。体験型ではなく、点灯時間は日没後。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html",
+              "quote": "2026年12月1日（火曜日）から2027年1月31日（日曜日）",
+              "checked_at": "2026-11-23",
+              "sha256": "e281a8bc0bc6d1b7d774e5e812ae43c5d5e7998809bfd69d01df83ad45e37cbf",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html",
+              "quote": "点灯式では、先着700名にペンライトを無料配布（午後5時予定）します。",
+              "checked_at": "2026-11-23",
+              "sha256": "24facaf5c222dce314df52aae0b11c23835f50912dade2d209d3929a9d9e0bff",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html",
+              "quote": "JR阿佐ケ谷駅南口噴水広場",
+              "checked_at": "2026-11-23",
+              "sha256": "a291afe7ea3b53e803ae6104ccd5fb59b683c4ef4682f2c26e543f1199a81a5d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-23にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "阿佐谷駅周辺の商店街で2027年1月31日まで続く無料のイルミネーション。駅前の噴水広場から商店街を歩いて楽しめる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html",
+          "basis": "2026-11-23 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.suginami.tokyo.jp/s033/event/29004.html"
         }
       ]
     }

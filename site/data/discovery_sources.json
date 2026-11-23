@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-11-22",
+  "updated_at": "2026-11-23",
   "principle": "候補発見はAI横断探索と明示参照元探索を両方実行する。媒体は候補発見用、公式・主催者情報は掲載確定用。",
   "discovery_strategy": {
     "ai_cross_search": {
@@ -499,6 +499,21 @@
       ],
       "effective_from": "2026-11-22",
       "note": "世田谷区の複合施設・二子玉川ライズの公式イベント＆ニュース一覧。一覧から個別ページ（?cd=番号）へ進み、開催日・場所・子ども家族向けの記載を本文で確認してから掲載する。ポイントなどのキャンペーン、平日開催のバスキング、大人向けの催し、申込が終了した抽選イベントは掲載しない。参加費の記載がないものは記載なしと表示する。"
+    },
+    {
+      "id": "chuosen_rr_suginami",
+      "label": "なみじゃない、杉並！中央線あるあるPROJECT（杉並のイベント）",
+      "origin": "official",
+      "enabled": true,
+      "required": false,
+      "purpose": "candidate_discovery",
+      "scope": "tokyo_23_candidate",
+      "base_url": "https://www.chuosen-rr.com/event/",
+      "search_urls": [
+        "https://www.chuosen-rr.com/event/"
+      ],
+      "effective_from": "2026-11-23",
+      "note": "杉並区の商工会議所・商店会などによる地域サイト。高円寺・阿佐ヶ谷・荻窪・西荻窪の主要イベントを、日付つきで一覧にしている。一覧から個別ページ（/event/名前/）へ進み、開催日・場所・子ども家族向けの記載を確認する。主催者の個別サイトや杉並区の公式ページに詳細がある場合は、そちらで確認してから掲載する。終了済みと翌年以降のもの、大人向けのもの（飲み屋まつり等）は掲載しない。"
     }
   ],
   "protected_source_ids": [
@@ -530,7 +545,8 @@
     "nerima_forest_festa_2026",
     "shinjuku_sankaku_hiroba",
     "greensprings_tachikawa",
-    "futako_tamagawa_rise"
+    "futako_tamagawa_rise",
+    "chuosen_rr_suginami"
   ],
   "ai_exploration_sites": {
     "note": "【固定サイト（explicit_sources）との違い】固定サイトは「毎回必ず確認する登録済みの参照元」。このリストは、AIがイベント候補を探すときの「入口にするサイト」（毎回の確認は必須でない）。どちらにも載るサイトは作らない。掲載の根拠は、各イベントの公式ページで確認する。サイトの追加は本リストに追記する（既存idは変更・削除しない）。",
@@ -1844,6 +1860,10 @@
       "futako_tamagawa_rise": {
         "state": "read",
         "note": "HTTP 200・イベント37件（第76回取得、個別ページ15件も取得）"
+      },
+      "chuosen_rr_suginami": {
+        "state": "read",
+        "note": "HTTP 200・イベント一覧15件（第77回取得、個別ページも取得）"
       }
     }
   }

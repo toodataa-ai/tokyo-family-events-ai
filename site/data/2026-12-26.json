@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 14,
+    "candidate_count": 23,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 14,
+    "published_count": 23,
     "wards": [
       {
         "ward": "千代田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 7,
+        "published_count": 7,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み7件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
@@ -200,9 +200,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "葛飾区",
@@ -218,9 +218,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-25 公式個別ページ確認済み1件を非破壊追加。"
       }
     ],
     "municipalities": [
@@ -245,7 +245,8 @@
     "2026-12-26-events-lead26-20261120.json",
     "2026-12-26-events-lead28-20261120.json",
     "2026-12-26-events-lead28-20261121.json",
-    "2026-12-26-events-lead44-20261123.json"
+    "2026-12-26-events-lead44-20261123.json",
+    "2026-12-26-events-lead45-20261125.json"
   ],
   "events": []
 }

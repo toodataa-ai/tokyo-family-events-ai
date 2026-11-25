@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 187,
-    "verified": 187,
+    "published": 189,
+    "verified": 189,
     "announced": 0,
-    "candidates": 124,
+    "candidates": 126,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4521,6 +4521,35 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "eb1facf6035092f7991cb81cf90cc3e10b382eb1",
+    "global_source_audit_complete": false
+  },
+  "lead45_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261128-ekoda-umaimon-2026",
+      "verified-20261128-omori-wakuwaku-2026"
+    ],
+    "held_not_published": [
+      "edogawa-biseibutsu-20261227",
+      "edogawa-petbosai-20261212",
+      "kokubunji-goshin-20261205",
+      "kokubunji-violin-20261220",
+      "komae-concerts-lecture",
+      "mitaka-saigai-forum-20261212",
+      "nerima-kiko-20261206",
+      "setagaya-kamiyouga-sleep-20261219",
+      "setagaya-kinuta-teens-festa-20261220",
+      "setagaya-soshigaya-yururi-20261219",
+      "setagaya-todoroki-zoorasia-20261219",
+      "setagaya-tsurumaki-billiard-20261226",
+      "showakinen-decoupage-20261206",
+      "showakinen-nordic-20261213",
+      "sunshine-aquarium-winter-20261218",
+      "tachikawa-udon-20261212",
+      "toyosu-marche-20261128"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "100bab3eea5a5011deea32fc6bb11840e500ccb8",
     "global_source_audit_complete": false
   }
 }

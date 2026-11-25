@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 72,
-    "published": 72,
+    "candidates": 87,
+    "published": 87,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 71,
+    "verified": 86,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2300,6 +2300,48 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "92c676a01ccda8fa2bc27cde65f130be55a445ac",
+    "global_source_audit_complete": false
+  },
+  "lead45_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-wakabayashi-candle-2026",
+      "verified-20261219-matsuzawa-xmas-cake-2026",
+      "verified-20261219-tsurumaki-teens-party-2026",
+      "verified-20261219-fukasawa-xmas-2026",
+      "verified-20261219-wakabayashi-minimesse-2026",
+      "verified-20261219-kamiyouga-stage-2026",
+      "verified-20261219-soshigaya-twins-wreath-2026",
+      "verified-20261219-daitaminami-nonbiri-2026",
+      "verified-20261219-matsuzawa-family-concert-2026",
+      "verified-20261219-sakura-hanamido-some-2026",
+      "verified-20261219-bunkyo-upcycle-2026",
+      "verified-20261219-toshino-shougatsu-2026",
+      "verified-20261220-kamiyouga-nichiyou-2026",
+      "verified-20261220-arakawa-pop-2026",
+      "verified-20261220-mitaka-happiness-concert-2026"
+    ],
+    "held_not_published": [
+      "edogawa-biseibutsu-20261227",
+      "edogawa-petbosai-20261212",
+      "kokubunji-goshin-20261205",
+      "kokubunji-violin-20261220",
+      "komae-concerts-lecture",
+      "mitaka-saigai-forum-20261212",
+      "nerima-kiko-20261206",
+      "setagaya-kamiyouga-sleep-20261219",
+      "setagaya-kinuta-teens-festa-20261220",
+      "setagaya-soshigaya-yururi-20261219",
+      "setagaya-todoroki-zoorasia-20261219",
+      "setagaya-tsurumaki-billiard-20261226",
+      "showakinen-decoupage-20261206",
+      "showakinen-nordic-20261213",
+      "sunshine-aquarium-winter-20261218",
+      "tachikawa-udon-20261212",
+      "toyosu-marche-20261128"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "100bab3eea5a5011deea32fc6bb11840e500ccb8",
     "global_source_audit_complete": false
   }
 }

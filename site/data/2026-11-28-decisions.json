@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 204,
-    "published": 187,
+    "candidate_total": 206,
+    "published": 189,
     "excluded": 16,
     "duplicate": 1
   },
@@ -23936,6 +23936,265 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.rise.sc/eventnews/detail/?cd=001533"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-ekoda-umaimon-2026",
+      "name": "江古田ゆうゆうロード ナイトバザール「江古田うまいもん市」",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。屋台の食べ歩きに加えビンゴやヒーローショーを楽しめる。飲食は有料で、混み合う可能性がある。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象は「対象の記載なし」"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "内容：屋台が並ぶ商店街で、ビンゴ大会やヒーローショーもある夕方の催し。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の指定は公式ページにない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "夕方開催で飲食は購入が必要"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "入場料の記載がなく飲食は各自購入"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "申込の要否が公式ページにない"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "ヒーローショーなど子どもも見られる企画がある"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-25",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "ヒーローショーなど子どもも見られる企画がある"
+          ],
+          "limitations": [
+            "夕方開催で飲食は購入が必要"
+          ],
+          "grade_comparison": "総合B（11/28(土)・江古田ゆうゆうロード ナイト）：ヒーローショーなど子どもも見られる企画がある。注意点は「夕方開催で飲食は購入が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003037",
+              "quote": "江古田ゆうゆうロードにおいしいお店がいっぱい並ぶ「江古田うまいもん市」を開催します！",
+              "checked_at": "2026-11-25",
+              "sha256": "e7acd7ac66ae972b7c57e5ae5d6a04ac36d1d435ca7cc439ff530f680db838fc",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003037",
+              "quote": "エコダイザーヒーローショー",
+              "checked_at": "2026-11-25",
+              "sha256": "72e700a06901d4d049bb163fe7f24136a0af28cecf75d26be0e6d79ae6fe7e33",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003037",
+              "quote": "2026年11月28日（土）",
+              "checked_at": "2026-11-25",
+              "sha256": "b0ab65b9629ef6ab3b3b1255348e86c279be8487a186043d6dc48cbf1ce55d6b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。屋台の食べ歩きに加えビンゴやヒーローショーを楽しめる。飲食は有料で、混み合う可能性がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/event/detail.php?event_id=e000003037",
+          "basis": "2026-11-25 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "kind": "registered_source",
+          "source_id": "nerimakanko",
+          "url": "https://www.nerimakanko.jp/event/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-omori-wakuwaku-2026",
+      "name": "大森わくわくフェア",
+      "ward": "大田区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。入場無料でこどもワークショップに立ち寄れる。内容の中心は物販で、混雑の程度は記載がない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象は「こどもから大人まで」"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "内容：地域と友好都市の物販やこどもワークショップがある駅前の2日間の催し。"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の目安はこどもから大人まで"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "物販中心でワークショップの詳細は少ない"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "入場無料と公式ページに記載"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と確認できる"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "こどもワークショップがあり入場無料"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-25",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "こどもワークショップがあり入場無料"
+          ],
+          "limitations": [
+            "物販中心でワークショップの詳細は少ない"
+          ],
+          "grade_comparison": "総合B（11/28(土)・大森わくわくフェア）：こどもワークショップがあり入場無料。注意点は「物販中心でワークショップの詳細は少ない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html",
+              "quote": "こどもから大人まで楽しめる2日間のイベントを開催します。",
+              "checked_at": "2026-11-25",
+              "sha256": "b91a9de81688ec4b6ba68bb72cf55a27eae98d72c333b0d3fcdd657baf7c7903",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html",
+              "quote": "令和8年11月28日（土曜日）、29日（日曜日）",
+              "checked_at": "2026-11-25",
+              "sha256": "fdb26a4774e1c6734d93ab2684919226586be6850ff41ebd3bae660d58496526",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html",
+              "quote": "（注釈1）入場無料です（注釈1）こどもワークショップ",
+              "checked_at": "2026-11-25",
+              "sha256": "6eb9015a1c654d0d7a5b4d1e01bb84b9671b409f4c7456079395f1b001568165",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。入場無料でこどもワークショップに立ち寄れる。内容の中心は物販で、混雑の程度は記載がない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html",
+          "basis": "2026-11-25 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html"
         }
       ]
     }

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>アンケート回答 - こどものメッセージボックス</title>
+    <meta name="keywords" content="" />
+    <meta name="google" content="notranslate">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="robots" content="noindex" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/base.css?v=20261118">
+    	<link type="text/css" rel="stylesheet" href="https://smilesurvey.co/assets/public/pc/css/base.css?1785981453" />
+    <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/base-e.css?v=20261118">
+    <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/base-custom.css?v=20261118">
+            <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/app.css?v=20261118">
+        <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/ui-lightness/jquery-ui-1.10.2.custom.min.css" />
+    <script type="text/javascript" src="/assets/public/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/jquery/jquery.tile.min.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/jquery/jquery.center.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/jquery/jquery-upload-1.0.2.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/json2/json2.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.9.4/libphonenumber-js.min.js"></script>
+    <script type="text/javascript">
+	function fuel_csrf_token()
+	{
+		if (document.cookie.length > 0)
+		{
+			var c_name = "fuel_csrf_token";
+			c_start = document.cookie.indexOf(c_name + "=");
+			if (c_start != -1)
+			{
+				c_start = c_start + c_name.length + 1;
+				c_end = document.cookie.indexOf(";" , c_start);
+				if (c_end == -1)
+				{
+					c_end=document.cookie.length;
+				}
+				return unescape(document.cookie.substring(c_start, c_end));
+			}
+		}
+		return "";
+	}
+</script>
+    <script type="text/javascript">IMAGE_PATH = "assets/img/survey/";</script>
+    <script type="text/javascript">IMAGE_STATIC_SUBPATH = "app/";</script>
+    <script> window.smile_lang = 'ja';</script>
+            <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-nu.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-card.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-slider.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-drum.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-picture.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-animation.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-scale.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-saslide.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-slide-matrix.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-ranking.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-long-matrix.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-nuslide-matrix.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-tel.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-address.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-birthday.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-email.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-selectbox.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-excel.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-pdf.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-fa-matrix.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-nps.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-bank-branch.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-file.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-date.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-multiple-pictures.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-fa-name-contact.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-corporate-name.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-piping.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-matrix-other.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-guide.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-trace.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/lib/survey/preload.js"></script>
+        <script type="text/javascript" src="/assets/public/lib/ss/smilesurvey.js?v=20261118"></script>
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+    <!-- mobiscroll -->
+    <script type="text/javascript" src="/assets/public/lib/mobiscroll/js/mobiscroll.core.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/mobiscroll/js/mobiscroll.datetime.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/mobiscroll/js/mobiscroll.select.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/mobiscroll/js/mobiscroll.ios.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/mobiscroll/css/mobiscroll.core.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/mobiscroll/css/mobiscroll.ios.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/mobiscroll/css/mobiscroll.animation.css" />
+    <!-- mobiscroll end -->
+    <!-- flatpickr -->
+    <script type="text/javascript" src="/assets/public/lib/flatpickr/flatpickr.min.js"></script>
+    <script type="text/javascript" src="/assets/public/lib/flatpickr/flatpickr-l10n.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/flatpickr/flatpickr-ss.css" />
+    <!-- flatpickr end -->
+    <link rel="stylesheet" type="text/css" href="/assets/public/lib/taketori/taketori.css">
+    <script type="text/javascript" src="/assets/public/lib/taketori/taketori.js"></script>
+
+    <!-- メモ機能 -->
+    <script type="text/javascript" src="/assets/public/lib/survey/backbone-survey-memo.js?v=20261118"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/memo.css">
+
+            <script> OEM_T = ""; </script>
+                <script type="text/javascript" src="/assets/public/pc/js/backbone-survey-view.js?v=20261118"></script>
+        <script type="text/javascript" src="/assets/public/pc/js/common.js"></script>
+        <script type="text/javascript" src="/assets/public/pc/js/main.js"></script>
+        <script src="/assets/js/app.js"></script>
+                        <link rel="stylesheet" type="text/css" href="/assets/public/pc/css/app.css?v=20261118">
+                    </head>
+<body>
+<input type="hidden" name="fuel_csrf_token" value="89bf4728835941a5120de4880cb74d5b2c00eeb63887355e72f8d73f25c79161740f565c007fa095022cf120f8efd34d3365f576bba9958dbf2d09e888775cff" />
+<input type="hidden" name="survey_lang" id="survey_lang" value="ja">
+<input type="hidden" name="survey_lang_setting" id="survey_lang_setting" value="0">
+<header class="app_header">
+	<div class="app_header_inner">
+                <p class="app_header_logo"><a href="#" target="_blank"><img src="/assets/public/pc/images/app/common/logo.png"></a></p>
+        </div>
+</header>
+
+
+<!-- メモ機能 -->
+
+<div id="wrapper">
+
+	<div id="survey-app">
+				
+        <div id="percent">
+							<div class="arrow_box_cont" style="position:absolute;">
+					<p class="arrow_box"></p>
+				</div>
+				<div id="percent_gauge">
+					<div id="percent_gauge_comp"></div>
+				</div>
+					</div>
+
+  		<h2 style="display: none;width: 838px;margin-left: auto;margin-right: auto;">回答確認</h2>
+    	<div id="survey-sections"></div><!-- アンケート設問(必須) -->
+
+		
+        <div id="service_name" value="app"></div>
+		
+					<div id="nextbtn" style="display:none;">
+			<input type="button" value="前へ" class="survey-prev prev_btn" />
+			<input id="survey_next_btn" type="button" value="保存して中断する" class="survey-next next_btn" />
+		</div>
+		
+    		<div id="savebtn" style="display:none;">
+			<p><a href="#" class="survey-save" id="save_btn">保存して中断する</a></p>
+		</div>
+    	<!-- /#survey-app --></div>
+
+<!-- /#wrapper --></div>
+
+<div id="survey-dialog" style="display:none;">
+	<div class="background"></div>
+	<div class="survey-dialog-body">
+		<p>テキストを入力してください。</p>
+		<input id="other-textfield" type="text" /><br />
+		<p><button class="ok-btn" />OK</button></p>
+	</div>
+</div>
+
+<div id="error-dialog" style="display:none;">
+	<div class="background"></div>
+	<div id="error-message">
+		<p class="text"></p>
+		<p><button class="ok-btn" />OK</button></p>
+	</div>
+</div>
+
+<div id="loader" style="display:none;">
+	<div class="background"></div>
+	<div id="loader-image">
+		<p><img src="/assets/public/pc/images/loader.gif"></p>
+		<p class="text"></p>
+	</div>
+</div>
+
+<!-- recaptcha v2用 -->
+
+<!-- invisible recaptcha用 -->
+
+<!-- メモモーダル 開始 -->
+<div id="modal-content">
+    <div class="canvas-wrapper">
+        <div class="canvas-nav">
+            <span class="button-left">
+                <input id="color-picker" type="color" list="color-list">
+                <datalist id="color-list">
+                    <option value="#000000"></option>
+                    <option value="#FF0000"></option>
+                    <option value="#0000FF"></option>
+                    <option value="#FFFF00"></option>
+                    <option value="#00FF00"></option>
+                </datalist>
+                <button id="pen" class="using"><img src="/assets/public/pc/images/btn_pencil.png"></button>
+                <button id="eraser"><img src="/assets/public/pc/images/btn_eraser.png"></button>
+            </span>
+            <span class="button-center">
+                <button id="memo1" class="memo-num current-edit">1</button>
+                <button id="memo2" class="memo-num">2</button>
+            </span>
+            <span class="button-right">
+                <button id="garbage"><img src="/assets/public/pc/images/btn_garbage.png"></button>
+                <button id="undo"><img src="/assets/public/pc/images/btn_undo.png"></button>
+                <button id="redo"><img src="/assets/public/pc/images/btn_redo.png"></button>
+                <span class="btns">
+                    <button class="btn-close cancel-btn">閉じる</button>
+                </span>
+            </span>
+        </div>
+        <div class="canvas">
+            <canvas id="memo-canvas"></canvas>
+        </div>
+    </div>
+</div>
+<!-- メモモーダル 終了 -->
+
+<style>
+  #nextbtn > div {
+    display: inline !important;
+  }
+</style>
+
+<script>
+    //メモ機能読み込み
+    BackboneSurveyMemo.init(10142663, 0, 0, "e634431f7e0e40baf04b6f7bdf3af64452f41897");
+</script>
+</body>
+<style>
+    </style>
+</html>

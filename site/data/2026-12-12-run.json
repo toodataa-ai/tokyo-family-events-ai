@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 63,
-    "published": 115,
+    "candidates": 70,
+    "published": 122,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 112,
+    "verified": 119,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2581,6 +2581,45 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "100bab3eea5a5011deea32fc6bb11840e500ccb8",
+    "global_source_audit_complete": false
+  },
+  "lead46_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-matsuzawa-hiyoko-2026",
+      "verified-20261212-showakinen-project-wild-dec-2026",
+      "verified-20261212-tsurumaki-tsurugon-2026",
+      "verified-20261212-wakabayashi-matsubokkuri-tree-2026",
+      "verified-20261213-galaxcity-tenmon-magic-1213-2026",
+      "verified-20261213-kitasenju-street-piano-2026",
+      "verified-20261213-meguro-hikaru-bunbun-2026"
+    ],
+    "held_not_published": [
+      "adachi-andmamaco-festa-20261204",
+      "adachi-chibikko-xmasfes-20261219",
+      "adachi-tdu-recycle-20261219",
+      "arakawa-takumi-and-out-of-range",
+      "chofu-higashikurume-higashimurayama-weekday",
+      "inagi-bike-adult",
+      "itabashi-times-third-party",
+      "kita-kokokita-festa-20261213",
+      "kodaira-nishitokyo-closed-or-adult",
+      "meguro-hiramachi-20261219",
+      "meguro-resident-or-closed",
+      "meguro-sonaeru-20261212",
+      "meguro-teens-festa-202612",
+      "meguro-wreath-20261129",
+      "metro-game-dev-20261213",
+      "nerima-jinken-closed",
+      "not-events-or-out-of-range",
+      "setagaya-seijo-agechiru-20261220",
+      "shinagawa-inline-skate-nagisa-ota",
+      "showakinen-adult-programs",
+      "sumida-solamachi-mandarin",
+      "unfetched-details"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "11862e512c87aaddec2b091b2b6735c1bacc702c",
     "global_source_audit_complete": false
   }
 }

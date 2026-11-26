@@ -10,10 +10,10 @@
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 117,
+    "candidate_count": 124,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 115,
+    "published_count": 122,
     "wards": [
       {
         "ward": "千代田区",
@@ -101,9 +101,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 6,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-22 公式個別ページ確認済み3件を非破壊追加。"
+        "candidate_count": 7,
+        "published_count": 7,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-22 公式個別ページ確認済み3件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "大田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 9,
-        "published_count": 9,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み2件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-25 公式個別ページ確認済み5件を非破壊追加。"
+        "candidate_count": 12,
+        "published_count": 12,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み2件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-25 公式個別ページ確認済み5件を非破壊追加。 2026-11-26 公式個別ページ確認済み3件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
@@ -200,9 +200,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 9,
-        "published_count": 9,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み3件を非破壊追加。 2026-11-20 公式個別ページ確認済み2件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 11,
+        "published_count": 11,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み3件を非破壊追加。 2026-11-20 公式個別ページ確認済み2件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-26 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "葛飾区",
@@ -238,9 +238,9 @@
       },
       {
         "ward": "立川市",
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-25 公式個別ページ確認済み2件を非破壊追加。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-25 公式個別ページ確認済み2件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "清瀬市",
@@ -282,7 +282,8 @@
     "2026-12-12-events-lead28-20261121.json",
     "2026-12-12-events-lead38-20261121.json",
     "2026-12-12-events-lead44-20261123.json",
-    "2026-12-12-events-lead45-20261125.json"
+    "2026-12-12-events-lead45-20261125.json",
+    "2026-12-12-events-lead46-20261126.json"
   ],
   "events": []
 }

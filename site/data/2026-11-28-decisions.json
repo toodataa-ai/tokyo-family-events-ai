@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 206,
-    "published": 189,
+    "candidate_total": 212,
+    "published": 195,
     "excluded": 16,
     "duplicate": 1
   },
@@ -24195,6 +24195,810 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.city.ota.tokyo.jp/kuseijoho/shiraberu/unique_ota/event/omoriwakuwaku2026.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-jaf-shinagawa-aquarium-2026",
+      "name": "JAF交通安全イベント in しながわ水族館",
+      "ward": "品川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。子ども安全免許証づくりなどを無料で体験できる。ステージ観覧には水族館の入館料がかかる。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども向けの体験がある"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "クイズや体験に参加する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "雨天時は内容が縮小される"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "体験コーナーは無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "申込の要否が公式ページにない"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "交通安全を楽しく学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子ども安全免許証などを無料で体験できる"
+          ],
+          "limitations": [
+            "ステージは入館料が必要"
+          ],
+          "grade_comparison": "総合B（11/28(土)・JAF交通安全イベント in しながわ水族館）：子ども安全免許証などを無料で体験できる。注意点は「ステージは入館料が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://jaf.link/3V7boQ6",
+              "quote": "2026年11月28日(土)10:00～16:00",
+              "checked_at": "2026-11-26",
+              "sha256": "9971808829db212af87d130950740636e9d640aeeb16776e64de90efc5a10b67",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://jaf.link/3V7boQ6",
+              "quote": "交通安全クイズに答えて子ども安全免許証を発行しよう！",
+              "checked_at": "2026-11-26",
+              "sha256": "ce08c3ae98a86641d080e2d9110a1b9b807da2890a30663323b88425f7a6de6e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://jaf.link/3V7boQ6",
+              "quote": "無料（※ステージのみ別途入館料が必要です）",
+              "checked_at": "2026-11-26",
+              "sha256": "be6669357de8f1980458dc199d92645b3a29051ed57bea58bca0f46dccfb5ae5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。子ども安全免許証づくりなどを無料で体験できる。ステージ観覧には水族館の入館料がかかる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://jaf.link/3V7boQ6",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://jaf.link/3V7boQ6"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-meguro-tobu-fureai-fes-2026",
+      "name": "第6回東部地区ふれあいフェスティバル",
+      "ward": "目黒区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。無料で出入り自由の地区の催しで、子育て相談や体験に立ち寄れる。子ども向け企画の中身は書かれていない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象の記載なし"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "体験と相談の催し"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "出入り自由と公式ページに記載"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "子ども向けの具体的な内容がない"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式ページで参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と確認できる"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子育て相談を兼ねて立ち寄れる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "無料・出入り自由で子育て相談もできる"
+          ],
+          "limitations": [
+            "子ども向け企画の具体的な内容が書かれていない"
+          ],
+          "grade_comparison": "総合B（11/28(土)・第6回東部地区ふれあいフェスティバル）：無料・出入り自由で子育て相談もできる。注意点は「子ども向け企画の具体的な内容が書かれていない」こと。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+              "quote": "介護や子育て、健康などに関する専門的な相談ができる",
+              "checked_at": "2026-11-26",
+              "sha256": "a2a879f916be1c450b97e37810782ebf87d4b15e5cc8b3b014b8c7f0bb694467",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+              "quote": "楽しみながらできる体験をとおして",
+              "checked_at": "2026-11-26",
+              "sha256": "ba4c4e7211701af01e044265210b926e96d7b13ebb9a0e1b08ae05f23dd34cd0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+              "quote": "日時（出入り自由・申し込み不要）",
+              "checked_at": "2026-11-26",
+              "sha256": "a543ccc806006e1a96613f0b793472d3237ef7c7e4cfcb9e6d65003e4d800d90",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+              "quote": "令和8年11月28日（土曜日）",
+              "checked_at": "2026-11-26",
+              "sha256": "f9bbcf3a72ef222e30735e44a7561c2dc343acac1b7a1ca211a683715be017e3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+              "quote": "参加費用無料チラシ東部地",
+              "checked_at": "2026-11-26",
+              "sha256": "3135515aefb08b8ae951df85d3785afb7803209004a6fbefc67580242e4968a6",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。無料で出入り自由の地区の催しで、子育て相談や体験に立ち寄れる。子ども向け企画の中身は書かれていない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.meguro.tokyo.jp/kenkoufukushi/event/r8_touhurefes.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-minamiosawa-smart-service-2026",
+      "name": "南大沢スマートシティ スマートサービス体験イベント",
+      "ward": "八王子市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)・29(日)開催。無料・予約不要で乗り物展示とデジタルお絵描きを楽しめる。試乗の年齢条件は別紙の確認が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "家族向けの案内で子ども向け体験もある"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "お絵描きや試乗を体験できる"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子ども向けのお絵描き体験がある"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "試乗の条件は別紙の確認が必要"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式ページで参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と確認できる"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "無料で乗り物とデジタル体験ができる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料・予約不要で体験できる"
+          ],
+          "limitations": [
+            "試乗の年齢条件が本文にない"
+          ],
+          "grade_comparison": "総合A（11/28(土)〜11/29(日)・南大沢スマートシティ スマートサービス体験イベント）：無料・予約不要で体験できる。注意点は「試乗の年齢条件が本文にない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.metro.tokyo.lg.jp/information/press/2026/11/2026111803",
+              "quote": "描いた絵が画面の中で動くお子様向けのデジタルお絵描き体験を予定しています。",
+              "checked_at": "2026-11-26",
+              "sha256": "1fb042d8d5d39fab616192c1d107f2b679359aebe8d3adacd19cfda24c88b7c7",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.metro.tokyo.lg.jp/information/press/2026/11/2026111803",
+              "quote": "令和8年11月28日（土曜日）、29日（日曜日）",
+              "checked_at": "2026-11-26",
+              "sha256": "fdb26a4774e1c6734d93ab2684919226586be6850ff41ebd3bae660d58496526",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.metro.tokyo.lg.jp/information/press/2026/11/2026111803",
+              "quote": "（参加無料・事前予約不要）",
+              "checked_at": "2026-11-26",
+              "sha256": "1b8b7664e0bc4b43c3d26b2b97404891efd9e27422c407a749816f3e0e671fb9",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)・29(日)開催。無料・予約不要で乗り物展示とデジタルお絵描きを楽しめる。試乗の年齢条件は別紙の確認が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.metro.tokyo.lg.jp/information/press/2026/11/2026111803",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.metro.tokyo.lg.jp/information/press/2026/11/2026111803"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-showakinen-50th-rally-2026",
+      "name": "国営公園50周年記念ラリー（花みどり文化センター）",
+      "ward": "立川市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)・29(日)開催。無料の当日参加で館内を回るキーワード集めができる。短時間の企画で対象年齢の記載はない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象の記載なし"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "歩いて集めて参加する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "短時間で終わる企画"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式ページに無料の表示"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と確認できる"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "散歩のついでに参加できる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料の当日参加で記念品がもらえる"
+          ],
+          "limitations": [
+            "対象年齢の記載がない短い企画"
+          ],
+          "grade_comparison": "総合B（11/28(土)〜11/29(日)・国営公園50周年記念ラリー（花みどり文化センター））：無料の当日参加で記念品がもらえる。注意点は「対象年齢の記載がない短い企画」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.showakinen-koen.jp/event/77328/",
+              "quote": "キーワードを集めて記念品と交換いたします。",
+              "checked_at": "2026-11-26",
+              "sha256": "571ee381ef90676cf92ef2c839777a90481750e081d527a91275713f7e9c0f59",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.showakinen-koen.jp/event/77328/",
+              "quote": "11月21日（土）、22日（日）、23日（月祝）、28日（土）、29日（日）の5日間",
+              "checked_at": "2026-11-26",
+              "sha256": "5edfc6244cdbc82de9eb6bc06a7b0e7476d49f9f54cb85292157a39163896675",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.showakinen-koen.jp/event/77328/",
+              "quote": "当日参加型一覧へ戻るご利",
+              "checked_at": "2026-11-26",
+              "sha256": "6ddcd71d94a37cb586c68bbf583ef356f9aa183476a451e20f5e64d70c2cfc34",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)・29(日)開催。無料の当日参加で館内を回るキーワード集めができる。短時間の企画で対象年齢の記載はない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.showakinen-koen.jp/event/77328/",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.showakinen-koen.jp/event/77328/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-showakinen-kids-karate-yoga-2026",
+      "name": "キッズ空手ヨガ講座（国営昭和記念公園 花みどり文化センター・11/28の回）",
+      "ward": "立川市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)の回。子どもが少人数で空手とヨガを体験できる。2,200円で前日までの予約が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "キッズ向けの講座"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体を動かして学ぶ"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の数字は本文にない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "前日までの予約が必要"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "2,200円かかる"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "事前の申込やチケットが必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "少人数で運動を体験できる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "少人数で空手とヨガを体験できる"
+          ],
+          "limitations": [
+            "2,200円で前日までの予約が必要"
+          ],
+          "grade_comparison": "総合B（11/28(土)・キッズ空手ヨガ講座（国営昭和記念公園 花みどり文化センター・11/28の回））：少人数で空手とヨガを体験できる。注意点は「2,200円で前日までの予約が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.showakinen-koen.jp/event/69820/",
+              "quote": "キッズ空手ヨガ講座常時・",
+              "checked_at": "2026-11-26",
+              "sha256": "a518038cd654402b13a9fade8adf08968560ed999ba583ca22b988cd1b940c3a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.showakinen-koen.jp/event/69820/",
+              "quote": "11月28日（土）令和9",
+              "checked_at": "2026-11-26",
+              "sha256": "3a138dd38a7d8d64ff17d179ee6e7a454097065c38a30e09378a7aa0883a82a3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.showakinen-koen.jp/event/69820/",
+              "quote": "参加費：2，200円/人",
+              "checked_at": "2026-11-26",
+              "sha256": "72c69e8fd21580de6bee65c565fdc20e037a36313c9a8d20e202d47a43e228fe",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.showakinen-koen.jp/event/69820/",
+              "quote": "事前予約（開催日の前日までに各実施者に連絡）",
+              "checked_at": "2026-11-26",
+              "sha256": "2a796a92f22d8ef6504f51127f7adaef6b0bfb9d03b07cb165905b0aadbd207f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)の回。子どもが少人数で空手とヨガを体験できる。2,200円で前日までの予約が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.showakinen-koen.jp/event/69820/",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.showakinen-koen.jp/event/69820/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-kokofes-indonesia-nerima-2026",
+      "name": "国際ココフェス 日本＆インドネシア 美・食フェス in練馬",
+      "ward": "練馬区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29(日)開催。入場無料・申込不要でステージやスタンプラリーを楽しめる。食や工芸品は購入が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象は「子供から大人まで」"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ステージ鑑賞とスタンプラリーが中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "飲食と物販は有料"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "公式ページで参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "事前申込は不要と確認できる"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "申込なしで異文化のステージに触れられる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-26",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "無料で異文化の舞台とスタンプラリーを楽しめる"
+          ],
+          "limitations": [
+            "飲食や工芸品は購入が必要"
+          ],
+          "grade_comparison": "総合B（11/29(日)・国際ココフェス 日本＆インドネシア 美・食フェス in練馬）：無料で異文化の舞台とスタンプラリーを楽しめる。注意点は「飲食や工芸品は購入が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000367",
+              "quote": "子供から大人までみんなで楽しめるイベントにぜひお越しください！",
+              "checked_at": "2026-11-26",
+              "sha256": "195b3e525bb5d112e0df207d597ddeaf0ae7f407b7df1319cb962dbabd3191cb",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000367",
+              "quote": "2026年11月29日（日）午前10時30分～16時00分",
+              "checked_at": "2026-11-26",
+              "sha256": "75369ef75d70364d63c65c448cf2b7b6c132639ce85e8996176e43e245350990",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000367",
+              "quote": "【費用】入場無料【申込】",
+              "checked_at": "2026-11-26",
+              "sha256": "d0bd79fd208798e5a6079a4a903f1c13f1cf933177ea71b5c0ec8c59ef145ea0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000367",
+              "quote": "【申込】不要Tweet最",
+              "checked_at": "2026-11-26",
+              "sha256": "0f04b0e495c9540024c7cfed7c2155f6be8bdfaffc3efbe5545f78cb89498b64",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29(日)開催。入場無料・申込不要でステージやスタンプラリーを楽しめる。食や工芸品は購入が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000367",
+          "basis": "2026-11-26 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "explicit",
+          "kind": "registered_source",
+          "source_id": "nerimakanko",
+          "url": "https://www.nerimakanko.jp/event/"
         }
       ]
     }

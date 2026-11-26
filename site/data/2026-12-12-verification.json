@@ -4497,11 +4497,399 @@
           "description": "公式ページ（2026-11-25にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261212-matsuzawa-hiyoko-2026",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03068/24600.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03068/24600.html",
+          "quote": "就学前の多胎児親子及びマタニティの方",
+          "checked_at": "2026-11-26",
+          "sha256": "c9be34d56b1873362af44dc07de29987ac1b35b38a590304d3a010cd1eda7adb",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03068/24600.html",
+          "quote": "2026年12月12日（土曜日）",
+          "checked_at": "2026-11-26",
+          "sha256": "9c0e44ea4b059090b71190f1c9d9cfde35b93b7ea940812730e4403d28f9474e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03068/24600.html",
+          "quote": "クリスマス＆お正月フォトを撮ろう",
+          "checked_at": "2026-11-26",
+          "sha256": "e9d6e43b7845e82e6bd7c6b7d27b6084d424eb452a815418b75e3349b9036db1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03068/24600.html",
+          "quote": "児童館窓口・電話申込み、",
+          "checked_at": "2026-11-26",
+          "sha256": "4fc3948d9384f82a8bf68d0ff73f36131863ce9b155e53754993259b1bf9028f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261212-showakinen-project-wild-dec-2026",
+      "status": "verified",
+      "source": "https://www.showakinen-koen.jp/event/69778/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.showakinen-koen.jp/event/69778/",
+          "quote": "楽しく野生生物や環境を学ぶ",
+          "checked_at": "2026-11-26",
+          "sha256": "121db28c00db51fa122c365b247385c4a0f1bb0f02a2952d52ea61cc7f814bda",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.showakinen-koen.jp/event/69778/",
+          "quote": "12月12日(土)「昆虫の冬越し」",
+          "checked_at": "2026-11-26",
+          "sha256": "3f383a7bc1b4e479e50290d0f65069ec307356a51d4df3d9f9fdf92062247c3c",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.showakinen-koen.jp/event/69778/",
+          "quote": "500円/名定員12名対",
+          "checked_at": "2026-11-26",
+          "sha256": "76655069d22519b72ca677da8f0efaea29b33973cba504f2d4e64ece13a9e6c3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.showakinen-koen.jp/event/69778/",
+          "quote": "対象4才程度～小学生協力",
+          "checked_at": "2026-11-26",
+          "sha256": "c1e55ebf2ab2628d07811d33cf8c19ea20778e58f894d3fd3659eb231f5bf454",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.showakinen-koen.jp/event/69778/",
+          "quote": "事前申込制プロジェクトワ",
+          "checked_at": "2026-11-26",
+          "sha256": "8ec342fd5edb5b187e640b1f2238650ab226eea292e700fbfcae07206ebd1a09",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261212-tsurumaki-tsurugon-2026",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03063/31490.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03063/31490.html",
+          "quote": "多胎児とその保護者、多胎のマタニティの方",
+          "checked_at": "2026-11-26",
+          "sha256": "1f4b2b0d471949afe67c4005d3ba8327969e94a2b7f6ca42e6410b26406e3b10",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03063/31490.html",
+          "quote": "2026年12月12日（土曜日）",
+          "checked_at": "2026-11-26",
+          "sha256": "9c0e44ea4b059090b71190f1c9d9cfde35b93b7ea940812730e4403d28f9474e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03063/31490.html",
+          "quote": "弦巻児童館にサンタがやってくる",
+          "checked_at": "2026-11-26",
+          "sha256": "34002e366026729b8ba70df10357a836325bc11a5b1410d05995693ed42ca65d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03063/31490.html",
+          "quote": "費用・料金無料申し込み方",
+          "checked_at": "2026-11-26",
+          "sha256": "d7da6404067fcb6ef6bbadac6f1e5a1a6eb8252826c5ca0083fb07473e3f8dc9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03063/31490.html",
+          "quote": "児童館へ来館あるいは電話でお申し込みください。",
+          "checked_at": "2026-11-26",
+          "sha256": "6fa20694b4b2cf4fc01345dc90b77cea5871f265e6d5b934c3a1df443d426196",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261212-wakabayashi-matsubokkuri-tree-2026",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03062/36368.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03062/36368.html",
+          "quote": "未就学児のお子さんと保護者",
+          "checked_at": "2026-11-26",
+          "sha256": "936864ca4b08cd14a52f5a6cca419152d985d54886459de3ec45258e889f2ad0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03062/36368.html",
+          "quote": "2026年12月11日（金曜日）から2026年12月12日（土曜日）",
+          "checked_at": "2026-11-26",
+          "sha256": "607c73dfddf5a2dfaa6f1ab21523f7a8ba5bee3a37c2633d6349ee54dd3b4dc4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03062/36368.html",
+          "quote": "作ろう！まつぼっくりツリー",
+          "checked_at": "2026-11-26",
+          "sha256": "fac8adfd89cbb96130e75c77f82ecaa72fee04d5586f1deabb104b07bcd26b9b",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03062/36368.html",
+          "quote": "自然のものを使って、まつぼっくりをアレンジしてかわいい小物を作ろう",
+          "checked_at": "2026-11-26",
+          "sha256": "7fcdae6a3df37081e68a249cb1813ca18b2e1baced9a233fbaa2d1515e01ace4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261213-galaxcity-tenmon-magic-1213-2026",
+      "status": "verified",
+      "source": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261213tenmonmagicxmas.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261213tenmonmagicxmas.html",
+          "quote": "皆さん一緒に掛け声や拍手で参加して盛り上がりましょう！",
+          "checked_at": "2026-11-26",
+          "sha256": "7449f538bb6e7c41723d5316b58c7aa609c5b2bb85ad7862741b89aeebaca0a1",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261213tenmonmagicxmas.html",
+          "quote": "2026年12月13日（日曜日）",
+          "checked_at": "2026-11-26",
+          "sha256": "1f24465946a0c81c1e443859615c2e3d9975073d5593f3e672bc107b50500c1e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261213tenmonmagicxmas.html",
+          "quote": "当日9時00分より1階総合受付でチケットを販売（先着順）",
+          "checked_at": "2026-11-26",
+          "sha256": "5a6f9390d6d6eed58f76e36c35c17b5c43841bd55aa918612165d5a6f2c9f3d6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261213tenmonmagicxmas.html",
+          "quote": "小中高生100円大人50",
+          "checked_at": "2026-11-26",
+          "sha256": "ffcb9b2f50d87e056fb4b1e516bfbde32e43a517569cb9618f45c52d1676b1f2",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261213-kitasenju-street-piano-2026",
+      "status": "verified",
+      "source": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261213index.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261213index.html",
+          "quote": "開催日時2026年12月13日（日曜日）",
+          "checked_at": "2026-11-26",
+          "sha256": "5e2560d4cce6efdd00803fef83ab80ce667fd2c005af38c3d92d8706858aa063",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261213index.html",
+          "quote": "本格的なオペラアリアとピアノ演奏、ペーパークラフトの工作教室もございます。",
+          "checked_at": "2026-11-26",
+          "sha256": "814a7876dec19593fc093b6500b08ca4f763558ce2d4b123e51d9bfb2087c669",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261213index.html",
+          "quote": "※小学生以下のお子さまは保護者同伴でお願いいたします。",
+          "checked_at": "2026-11-26",
+          "sha256": "20b1bc9aecaa9dc9862c63902dc4c92150202026e8b4e0e59547fac72e972c5e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261213index.html",
+          "quote": "当日、直接会場へお越しください。",
+          "checked_at": "2026-11-26",
+          "sha256": "fc9214bbf8c0e42cff91925c882eabd355f73854facd847219b825bb6e1e1735",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261213-meguro-hikaru-bunbun-2026",
+      "status": "verified",
+      "source": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-26",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この43件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+          "quote": "回すと光るぶんぶんごまを作ります。",
+          "checked_at": "2026-11-26",
+          "sha256": "12f49da61c5e6db15cc5dbf0c83eb3d9c7103111aca9096c0ce1619027d72947",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+          "quote": "12月13日（日曜日）14時から16時まで",
+          "checked_at": "2026-11-26",
+          "sha256": "0f93c714b68319115832c5e690dd364b416a9c6de06358815956f7b049225199",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+          "quote": "対象小学3年生から6年生までの小学生",
+          "checked_at": "2026-11-26",
+          "sha256": "889104b296a6446b0ea00b41cb5096ac9ab77918f36e08c9cf0bb841b1c5d8ac",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+          "quote": "25人（先着順）定員にな",
+          "checked_at": "2026-11-26",
+          "sha256": "6094e61bfe145313ed586c3a1dda6140fc9898759c4106f925f365daeea5ee1f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.meguro.tokyo.jp/shougaigakushuu/event/08bunnbunn.html",
+          "quote": "500円（教材費）申し込",
+          "checked_at": "2026-11-26",
+          "sha256": "a4999c716a0fb499cc507bcbd2c0e54539147ca73eb42a3923533300e4692f5e",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-26にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 115,
-    "verified": 112,
+    "total": 122,
+    "verified": 119,
     "announced": 3,
     "corrected": 0
   }

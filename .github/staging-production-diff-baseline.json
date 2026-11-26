@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1097,
+  "expected_total_differences_after_governance": 1141,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8788,6 +8788,358 @@
     },
     {
       "path": ".github/workflows/fetch-thin-wards91-20261126.yml",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead46_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead46_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p22_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p24_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p32_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p3_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p48_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p4_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r86_p57_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p108_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p124_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p322_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p32_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p366_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p411_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p412_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p414_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p421_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p427_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p428_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p429_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p431_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p432_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p434_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p446_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p447_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p448_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p449_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p450_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p451_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p452_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p453_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p454_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p455_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p470_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p504_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p518_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p545_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p572_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r88_p573_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r89_p12_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r89_p28_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r89_p5_20261126.html",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l46_r89_p8_20261126.html",
       "kind": "staging_only",
       "category": "daily_update_20261126",
       "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",

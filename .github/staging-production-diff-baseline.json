@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1091,
+  "expected_total_differences_after_governance": 1093,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8740,6 +8740,22 @@
     },
     {
       "path": "research/2026-11-20-thin-wards/urls88.txt",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards89-20261126.yml",
+      "kind": "staging_only",
+      "category": "daily_update_20261126",
+      "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls89.txt",
       "kind": "staging_only",
       "category": "daily_update_20261126",
       "reason": "2026-11-26の毎日更新（読み取り専用取得・追加専用ツール・保存ページ。本番アプリ変更なし）。",

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-22-r970",
+  "current_public_release": "release/2026-11-27-r1068",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -464,7 +464,16 @@
       "workflow_run_id": 45116868239,
       "public_version": "1.50",
       "note": "ユーザー承認の本番v1.50。トップの掲載件数・区ボタンの件数・今週の掲載変更の件数を、検索結果と同じ数え方（フェスの企画をまとめた表示単位、今週末以降）にそろえた（PR #150、index.html・search.html・copy.html・multi-filter-ui.js）。イベントデータは変更なし。data-production 100bab3eea5a5011deea32fc6bb11840e500ccb8（802件）。"
+    },
+    {
+      "release_id": "release/2026-11-27-r1068",
+      "branch": "release/2026-11-27-r1068",
+      "commit_sha": "52cc9bab2586e50b7dc9cd560b5d71f71d89d41c",
+      "deployed_at": "2026-11-27T12:37:36+00:00",
+      "workflow_run_id": 46000052889,
+      "public_version": "1.51",
+      "note": "ユーザー承認の本番v1.51。残課題ページを2026-11-27の状況に更新（PR #151、pending-issues.html/js/css・model・catalog と対応テスト）。本番未公開の情報源の確認状況ページへのリンクは入れていない。イベントデータは変更なし。data-production 1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3（944件）。"
     }
   ],
-  "current_public_version": "1.50"
+  "current_public_version": "1.51"
 }

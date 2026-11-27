@@ -371,6 +371,10 @@ jobs:
             python3 staging-policy-src/tools/validate_nerima_duplicate_removal_20261120.py \
               --data-dir site/data \
               --base-ref "$BASE"
+          elif [ "$OP" = "galaxy-duplicate-removal-20261127" ]; then
+            python3 staging-policy-src/tools/validate_galaxy_duplicate_removal_20261127.py \
+              --data-dir site/data \
+              --base-ref "$BASE"
           elif [ "$OP" = "provenance-fix2-20261120" ]; then
             python3 staging-policy-src/tools/validate_provenance_fix2_20261120.py \
               --data-dir site/data \
@@ -701,7 +705,7 @@ jobs:
               echo "pinned audit proof"
             elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(verified\-horizon\-subset|verified\\\-lead[5-7]\\\-addition\\\-20261119|nakano\\\-image\\\-alignment\\\-20261120|sumida\\\-image\\\-alignment\\\-20261120|verified\\\-lead17\\\-addition\\\-20261120|verified\\\-lead16\\\-addition\\\-20261120|verified\\\-lead15\\\-addition\\\-20261120|verified\\\-lead([89]|1[0-4])\\\-addition\\\-20261119|verified\\\-lead4\\\-addition\\\-20261119|verified\\\-lead3\\\-addition\\\-20261119|verified\\\-leads\\\-addition\\\-20261118|verified\\\-suginami\\\-addition\\\-20261118|verified\\\-subset\\\-addition|verified\\\-forest\\\-table\\\-addition|manual\\\-official\\\-gap\\\-recovery\\\-20261108|verified-lead(1[89]|2[0-9])-addition-20261120|verified-lead(2[2-9]|[3-9][0-9])-addition-20261121|image-fill-20261120|image-fill2-20261120|image-fill3-20261120|image-fill4-20261122|verified-lead41-addition-20261122|verified-lead42-addition-20261122|verified-lead43-addition-20261123|verified-lead44-addition-20261123|provenance-fill-20261120|provenance-fix-20261120|provenance-fix2-20261120)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned proof"
-            elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
+            elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(nerima-duplicate-removal-20261120|galaxy-duplicate-removal-20261127)$ ]] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned nerima dup proof"
             elif [ "${{ needs.gate.outputs.operation }}" = "verified-sankaku-addition-20261119" ] && [ "${{ needs.gate.outputs.mode }}" = "data" ]; then
               echo "pinned Sankaku proof"
@@ -778,7 +782,7 @@ jobs:
                 echo "2026-11-19 lead7 addition already audited by validate_data on the candidate before promotion; data-staging unchanged."
               elif [[ "${{ needs.gate.outputs.operation }}" =~ ^verified-lead(1[89]|2[0-9])-addition-20261120$ ]]; then
                 echo "lead audited"
-              elif [ "${{ needs.gate.outputs.operation }}" = "nerima-duplicate-removal-20261120" ]; then
+              elif [[ "${{ needs.gate.outputs.operation }}" =~ ^(nerima-duplicate-removal-20261120|galaxy-duplicate-removal-20261127)$ ]]; then
                 echo "nerima dup audited"
               elif [ "${{ needs.gate.outputs.operation }}" = "provenance-fix2-20261120" ]; then
                 echo "provenance fix2 audited before promotion"

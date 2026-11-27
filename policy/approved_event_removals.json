@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "principle": "No event that was previously publicly listed may be removed or hidden without a specific user approval, recorded on the released app policy branch. Authorizing a removal requires event ID, week, proof and approval reference. Current approvals: 5 (Nerima forest festival duplicate listings, 2026-11-20).",
+  "principle": "No event that was previously publicly listed may be removed or hidden without a specific user approval, recorded on the released app policy branch. Authorizing a removal requires event ID, week, proof and approval reference. Current approvals: 6 (Nerima forest festival duplicate listings, 2026-11-20; Galaxcity Christmas concert duplicate, 2026-11-27).",
   "approvals": [
     {
       "week_start": "2026-11-21",
@@ -46,6 +46,15 @@
       "official_evidence_url": "https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html",
       "duplicate_of": "v15-20261205-nerima-mori-otaka",
       "recorded_on": "2026-11-20"
+    },
+    {
+      "week_start": "2026-12-19",
+      "event_id": "verified-20261219-adachi-galaxy-xmas-concert-2026",
+      "status": "approved",
+      "approval_reference": "ユーザー承認（チャット、2026-11-27）: 「今回追加した方（区公式ページ版）を削除してよいか」に「どちらもOKです」と回答",
+      "official_evidence_url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html",
+      "duplicate_of": "verified-20261219-galaxcity-xmas-concert-2026",
+      "recorded_on": "2026-11-27"
     }
   ]
 }

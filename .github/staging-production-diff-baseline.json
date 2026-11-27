@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1223,
+  "expected_total_differences_after_governance": 1219,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -1616,15 +1616,6 @@
       "release_state": "pending_release"
     },
     {
-      "path": "site/pending-issues.js",
-      "kind": "different",
-      "category": "pending_staging_app",
-      "reason": "v1.38の上部集計削除・折り畳みは公開済み。残差分は未承認の取得状況ダッシュボード導線（HTML）と監査データ参照先の変更（JS）のみ。今回リリースに混ぜず、main側で保留。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
       "path": "site/source-audit.css",
       "kind": "staging_only",
       "category": "pending_staging_app",
@@ -2543,15 +2534,6 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/audit/pending_issues_catalog.json",
-      "kind": "different",
-      "category": "remaining_evidence_status_preview",
-      "reason": "残22単位の再照合結果と残20単位の説明をステージングだけに反映する。利用者確認後の限定リリースまで本番v1.38の説明は保持。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
       "path": "research/remaining_evidence_review_20261115/publication.json",
       "kind": "staging_only",
       "category": "remaining_evidence_publication_proof",
@@ -2622,24 +2604,6 @@
       "reason": "残20項目の調査・判定と4評価の再確認を記録。全604個票の開催事実/履歴/取得失敗保持と、検索保存をHTTP成功へ誤変換しないことを検証するmain専用証跡。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/pending-issues-model.mjs",
-      "kind": "different",
-      "category": "all_remaining_evidence_review",
-      "reason": "利用者指定により全20項目の個別判定・根拠不足による見送り理由を折りたたみ一覧でステージングに提示する。本番の画面は確認後に限定反映。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
-    },
-    {
-      "path": "site/pending-issues.css",
-      "kind": "different",
-      "category": "all_remaining_evidence_review",
-      "reason": "利用者指定により全20項目の個別判定・根拠不足による見送り理由を折りたたみ一覧でステージングに提示する。本番の画面は確認後に限定反映。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true,
-      "release_state": "pending_release"
     },
     {
       "path": "site/omitted.html",

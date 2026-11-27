@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 39,
+    "candidate_count": 41,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 39,
+    "published_count": 41,
     "wards": [
       {
         "ward": "千代田区",
@@ -38,9 +38,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。"
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "新宿区",
@@ -128,9 +128,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 2,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-22 公式個別ページ確認済み2件を非破壊追加。"
+        "candidate_count": 3,
+        "published_count": 3,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-22 公式個別ページ確認済み2件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "中野区",
@@ -255,7 +255,8 @@
     "2026-12-26-events-lead45-20261125.json",
     "2026-12-26-events-lead46-20261126.json",
     "2026-12-26-events-lead47-20261127.json",
-    "2026-12-26-events-lead48-20261127.json"
+    "2026-12-26-events-lead48-20261127.json",
+    "2026-12-26-events-lead49-20261128.json"
   ],
   "events": []
 }

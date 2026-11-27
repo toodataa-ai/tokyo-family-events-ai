@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 115,
-    "published": 114,
+    "candidates": 117,
+    "published": 116,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 113,
+    "verified": 115,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2440,6 +2440,19 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
+    "global_source_audit_complete": false
+  },
+  "lead49_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-odaiba-rainbow-hanabi",
+      "verified-20261219-dcm-diyplace-ebisu"
+    ],
+    "held_not_published": [
+      "gyutto-winter-fes-20261217"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "52c370b574f54d3b7a6888adf405701538496d0c",
     "global_source_audit_complete": false
   }
 }

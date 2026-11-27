@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 236,
-    "published": 219,
+    "candidate_total": 239,
+    "published": 222,
     "excluded": 16,
     "duplicate": 1
   },
@@ -28033,6 +28033,368 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://100th.toray/exhibition/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-mercari-uchinojikka",
+      "name": "ウチの実家〜みんなのただいまをもう一度〜（メルカリ体験イベント）",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28・11/29分。無料の屋内展示で、親の世代に懐かしい品を親子で見ながら話せる。子ども向けプログラムの記載はない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象年齢の記載はない"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "展示を探索し出品を体験する"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "子ども向けの内容は示されていない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内だが混雑時は列がある"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "入場は無料"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "申込の記載がない"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子の会話のきっかけになる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "無料の屋内会場で懐かしいおもちゃや文房具を親子で見られる"
+          ],
+          "limitations": [
+            "子ども向けの催しではなく混雑で締め切る場合がある"
+          ],
+          "grade_comparison": "総合B（11/28・11/29・ウチの実家〜みんなのただいまをもう一度〜（メルカリ体験イベント））：無料の屋内会場で懐かしいおもちゃや文房具を親子で見られる。注意点は「子ども向けの催しではなく混雑で締め切る場合がある」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://jp-news.mercari.com/info/56172",
+              "quote": "開催期間：2026年11月26日（木）〜11月29日（日）",
+              "checked_at": "2026-11-28",
+              "sha256": "a051f5b8eae4378917206a4759f7ebce8d91c610a03905f9910f645044f2f76d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://jp-news.mercari.com/info/56172",
+              "quote": "GATE（旧UNKNOWNHARAJUKU）（東京都渋谷区神宮前6-5-10）",
+              "checked_at": "2026-11-28",
+              "sha256": "2f73054961eed7bea3ca78fb519d789ff535a84fd30e227fc5adc79422323e1d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28・11/29分。無料の屋内展示で、親の世代に懐かしい品を親子で見ながら話せる。子ども向けプログラムの記載はない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://jp-news.mercari.com/info/56172",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://jp-news.mercari.com/info/56172"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-asurepark-mejiro",
+      "name": "室内運動遊び「アスレパーク」（目白）",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29分。2〜6歳向けの室内運動遊びで、保護者が専門家に相談できる。定員20家族の申込制。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "2〜6歳の子どもが対象"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "遊具とボールで体を動かす"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "年齢に合わせて挑戦を選べる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "駅近の室内だが朝の開催"
+          },
+          "cost": {
+            "grade": "C",
+            "reason": "1家族3,000円から"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "申込が必要で定員がある"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子育ての相談もできる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "2〜6歳が室内で体を動かして遊べる"
+          ],
+          "limitations": [
+            "定員20家族の申込制で参加費がかかる"
+          ],
+          "grade_comparison": "総合B（11/29・室内運動遊び「アスレパーク」（目白））：2〜6歳が室内で体を動かして遊べる。注意点は「定員20家族の申込制で参加費がかかる」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000002.000154414.html",
+              "quote": "2026年11月29日（日）10:00〜11:30（開場9:45）",
+              "checked_at": "2026-11-28",
+              "sha256": "5d9d2ed738d455a5c55a2ce822f1636c920e844c76a4c5a295f92f1054ba1eba",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000002.000154414.html",
+              "quote": "対象・定員：2〜6歳の子どもと保護者／20家族",
+              "checked_at": "2026-11-28",
+              "sha256": "2b59158643da06126c310e7eb6eccdc319a7f459d0f803bb8387d85441246e34",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29分。2〜6歳向けの室内運動遊びで、保護者が専門家に相談できる。定員20家族の申込制。"
+      ],
+      "evidence": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000002.000154414.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://prtimes.jp/main/html/rd/p/000000002.000154414.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-fukkou-furusatoichi",
+      "name": "令和8年度 第2回 復興応援ふるさと市（上野）",
+      "ward": "台東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28・11/29分。駅前広場で郷土芸能やくまモンのステージを入場無料で見られる。地酒の販売もある。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象年齢の記載はない"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "見る・食べるが中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "屋外で立ち寄りやすい"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "駅前だが屋外"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "入場は無料で飲食は有料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要の入場自由"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "各地の文化に触れられる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "駅前でくまモンや郷土芸能のステージを無料で見られる"
+          ],
+          "limitations": [
+            "子ども向けの体験は示されず地酒販売もある"
+          ],
+          "grade_comparison": "総合B（11/28・11/29・令和8年度 第2回 復興応援ふるさと市（上野））：駅前でくまモンや郷土芸能のステージを無料で見られる。注意点は「子ども向けの体験は示されず地酒販売もある」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000007123.000052467.html",
+              "quote": "2026年11月28日（土）11:00～19:00",
+              "checked_at": "2026-11-28",
+              "sha256": "a0f9fe41b046346401433f7d47cb3279c26bfdf8638842c3b45d353e418790aa",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000007123.000052467.html",
+              "quote": "御徒町南口駅前広場（通称：おかちまちパンダ広場）",
+              "checked_at": "2026-11-28",
+              "sha256": "2152b0e50bcff72e289b8d3d475642ec70878c23bb4f3917fac8a0a19359f031",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28・11/29分。駅前広場で郷土芸能やくまモンのステージを入場無料で見られる。地酒の販売もある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000007123.000052467.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://prtimes.jp/main/html/rd/p/000007123.000052467.html"
         }
       ]
     }

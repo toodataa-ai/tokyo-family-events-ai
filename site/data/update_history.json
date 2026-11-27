@@ -4835,6 +4835,51 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "利用者が公式リンクを提示した11行事を公式ページ本文で確認して追加（23週末レコード）。"
+    },
+    {
+      "run_id": "lead49-addition-20261128",
+      "run_type": "manual_verified_lead49_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-28",
+      "executed_at": "2026-11-28T23:59:00+09:00",
+      "base_data_production_sha": "52c370b574f54d3b7a6888adf405701538496d0c",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 967,
+      "candidate_active_week_records": 983,
+      "added_weekly_records": 16,
+      "new_event_ids": [
+        "verified-20261128-mercari-uchinojikka",
+        "verified-20261129-asurepark-mejiro",
+        "verified-20261128-fukkou-furusatoichi",
+        "verified-20261205-kibaco-christmaspark",
+        "verified-20261205-kodomoworld-nippan",
+        "verified-20261205-odaiba-rainbow-hanabi",
+        "verified-20261212-odaiba-rainbow-hanabi",
+        "verified-20261219-odaiba-rainbow-hanabi",
+        "verified-20261226-odaiba-rainbow-hanabi",
+        "verified-20261206-dcm-diyplace-ebisu",
+        "verified-20261219-dcm-diyplace-ebisu",
+        "verified-20261226-dcm-diyplace-ebisu",
+        "verified-20261212-heikurashi-caravan",
+        "verified-20261212-hulic-shimurasakaue-ws",
+        "verified-20261212-littlemama-gotanda",
+        "verified-20261213-plenus-shimekazari"
+      ],
+      "held_not_published": [
+        "gyutto-winter-fes-20261217"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "利用者指定のメルカリとPR TIMESから、主催者の発表・公式ページ本文を確認して11行事を追加（16週末レコード）。"
     }
   ]
 }

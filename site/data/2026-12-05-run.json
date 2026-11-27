@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 190,
-    "verified": 186,
+    "published": 194,
+    "verified": 190,
     "announced": 4,
-    "candidates": 135,
+    "candidates": 139,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4416,6 +4416,21 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
+    "global_source_audit_complete": false
+  },
+  "lead49_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-kibaco-christmaspark",
+      "verified-20261205-kodomoworld-nippan",
+      "verified-20261205-odaiba-rainbow-hanabi",
+      "verified-20261206-dcm-diyplace-ebisu"
+    ],
+    "held_not_published": [
+      "gyutto-winter-fes-20261217"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "52c370b574f54d3b7a6888adf405701538496d0c",
     "global_source_audit_complete": false
   }
 }

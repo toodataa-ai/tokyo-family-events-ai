@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 115,
-    "published": 114,
+    "candidate_total": 117,
+    "published": 116,
     "excluded": 0,
     "duplicate": 1,
     "hard_excluded": 0,
@@ -15767,6 +15767,247 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.dot-st.com/cp/sttokyo2026_xmas"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-odaiba-rainbow-hanabi",
+      "name": "お台場レインボー花火2026",
+      "ward": "港区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19分。冬の夜の花火を屋外で約5分見られる。ミュージック花火寒さ対策が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "対象年齢の記載はない"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "見るのが中心"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "夜の屋外"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "冬の夜で混雑が考えられる"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "観覧は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の思い出になる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "無料で冬の花火を家族で見られる"
+          ],
+          "limitations": [
+            "夜の屋外で打ち上げは約5分"
+          ],
+          "grade_comparison": "総合B（12/19・お台場レインボー花火2026）：無料で冬の花火を家族で見られる。注意点は「夜の屋外で打ち上げは約5分」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.tokyo-odaiba.net/rainbow2026/",
+              "quote": "2026年12月5日(土)、12日(土)、19日(土)、26日(土)",
+              "checked_at": "2026-11-28",
+              "sha256": "71d690bc075740d62996a86e049da05b268e6a9e7492c78535cdf0405cec518b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.tokyo-odaiba.net/rainbow2026/",
+              "quote": "開催時間19:00より約5分間",
+              "checked_at": "2026-11-28",
+              "sha256": "a0838d175aeeb4ebedeae555696ce187a4797516e824ecb75d3e818cdd3bad53",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19分。冬の夜の花火を屋外で約5分見られる。ミュージック花火寒さ対策が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tokyo-odaiba.net/rainbow2026/",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.tokyo-odaiba.net/rainbow2026/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-dcm-diyplace-ebisu",
+      "name": "DCM DIY place ワークショップ「ステンドグラス風クリスマスオーナメント」",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19分。透明な板に色を塗ってオーナメントを作る屋内の工作教室。各回4名と少ない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "親子の思い出づくりとして案内されている"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "自分で作る"
+          },
+          "age_fit": {
+            "grade": "unknown",
+            "reason": "対象年齢の記載がない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内で約1時間"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "1人1,000円"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "予約が必要で少人数"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "作品を持ち帰る体験"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "ステンドグラス風クリスマスオーナメントを屋内で作れる"
+          ],
+          "limitations": [
+            "各回4名の予約制で対象年齢の記載がない"
+          ],
+          "grade_comparison": "総合B（12/19・DCM DIY place ワークショップ「ステンドグラス風クリスマスオーナメント」）：ステンドグラス風クリスマスオーナメントを屋内で作れる。注意点は「各回4名の予約制で対象年齢の記載がない」こと。",
+          "unsupported_axes": [
+            "age_fit",
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000447.000022024.html",
+              "quote": "ステンドグラス風クリスマスオーナメント（日程：12月6日・19日）",
+              "checked_at": "2026-11-28",
+              "sha256": "54d98a0ab423ba8a0f58b27fa1fc7aaa835eaceee05422ee85eb1efb8208cb66",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000447.000022024.html",
+              "quote": "定員：各回4名料金：1,000円(税込)/人",
+              "checked_at": "2026-11-28",
+              "sha256": "69786a62a89ba7bad79f34e71382e7214607c6d9c7ea584363ce1afce5fb8168",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19分。透明な板に色を塗ってオーナメントを作る屋内の工作教室。各回4名と少ない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000447.000022024.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://prtimes.jp/main/html/rd/p/000000447.000022024.html"
         }
       ]
     }

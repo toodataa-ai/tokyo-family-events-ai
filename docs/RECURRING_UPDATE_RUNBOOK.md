@@ -228,6 +228,7 @@
 - 公開サイト（GitHub Pages）の画面側の直接読み込みは、読み込み許可が時間切れで未確認。確認できたのは、デプロイ全ジョブの成功と、data-production・data-stagingのSHA一致、件数・ID・履歴・スナップショット。
 - 保留理由の一覧は `tools/lead47_addition_20261121.py` の HELD。締切前の抽選行事（江戸川の子ども未来館講座、調布のしめ飾り）は条件を明記して掲載した。今回分は利用者がOK（2026-11-27）。
 - 利用者の承認を受けて重複1件を取り下げた（`galaxy-duplicate-removal-20261127`、公開は944件）。
+- この公開では、Pages配信が `No artifacts named "github-pages" were found`（GitHub側のartifact取得エラー）で2回失敗し、data-productionは自動で元に戻った。約10分あけたトリガーのみの再実行で成功（run 45934002132）。同じエラーは、間隔をあけて再実行する。
 
 ## 4. 既知の未完（毎回再確認）
 - 取得失敗6件の扱いは `research/2026-11-19-audit/FAILURE_DISPOSITIONS.md`。三角広場のクリスマス(11/20〜12/13)は、利用者の許可により「時間は公式Instagram参照」として4週末レコードで掲載（`verified-sankaku-addition-20261119`）。12月分のInstagramカレンダーが出たら、11/28以降の実施日表示を見直す。

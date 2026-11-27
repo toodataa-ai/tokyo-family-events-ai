@@ -1,15 +1,15 @@
-# User-approved v1.50 (chat 2026-11-23): unify count display (home total, ward chips, change chips) with the search result unit and window. Front-end files only.
+# User-approved v1.51 (chat 2026-11-27 "本番OK"): refresh the remaining-issues page to the 2026-11-27 status. Front-end page files only.
 operation=release
 production_ref=production
-production_sha=2b779c95b724c095071c1eaa45355aed18c78907
-previous_production_sha=05175c11806466d94881f3f4a8853ee2b2cb4dcf
-candidate_sha=775a9e9a6c5e9795fe216477793ad6fa17b3036d
-pr=150
-target_public_version=1.50
-previous_public_release=release/2026-11-23-r1030
-release_date_jst=2026-11-23
-expected_data_production_sha=100bab3eea5a5011deea32fc6bb11840e500ccb8
-approved_scope=site/index.html,site/search.html,site/copy.html,site/multi-filter-ui.js
+production_sha=52cc9bab2586e50b7dc9cd560b5d71f71d89d41c
+previous_production_sha=2b779c95b724c095071c1eaa45355aed18c78907
+candidate_sha=ea747c346f2c9be79fefe422ed63453f16aa7041
+pr=151
+target_public_version=1.51
+previous_public_release=release/2026-11-23-r1036
+release_date_jst=2026-11-27
+expected_data_production_sha=1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3
+approved_scope=site/pending-issues.html,site/pending-issues.js,site/pending-issues-model.mjs,site/pending-issues.css,site/audit/pending_issues_catalog.json,tests/pending_issues_release.test.mjs
 event_record_mutation=none
 curation_record_mutation=none
-note=Home total, ward chip counts and weekly-change chip counts now use the same unit (festival programmes grouped) and window (this weekend onward) as the search result count. No event data changes.
+note=Remaining-issues page refreshed. The unreleased source-audit page is not linked in production. No event data changes.

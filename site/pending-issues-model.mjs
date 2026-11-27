@@ -92,7 +92,7 @@ export function issueStatus(entry) {
   if (entry.work_status === "completed" && entry.completion_kind === "adjudication") return {label:"全件判定済み（一部見送り）",detail:entry.completed_scope};
   if (entry.work_status === "completed") return {label:"対応完了",detail:entry.completed_scope};
   if (entry.work_status === "deferred") return {label:"保留（指定により対象外）",detail:entry.next};
-  return {label:"公式根拠の確認待ち",detail:entry.next};
+  return {label:entry.status_label||"公式根拠の確認待ち",detail:entry.next};
 }
 
 export function prepareIssues(catalog, audit) {

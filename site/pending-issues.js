@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-remaining-clarity-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261127-status-refresh-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -20,7 +20,7 @@ function renderReviewRow(row){
   if(row.pending_detail){
     summary.appendChild(textNode("span",row.pending_detail.publication_status+" ／ "+row.pending_detail.blocker,"pending-review-state"));
   }else{
-    summary.appendChild(textNode("span",row.status==="assessment_reconfirmed"?"既存評価を再確認":"終了・期間対象外で見送り","pending-review-state"));
+    summary.appendChild(textNode("span",row.state_label||(row.status==="assessment_reconfirmed"?"既存評価を再確認":"終了・期間対象外で見送り"),"pending-review-state"));
   }
   item.appendChild(summary);
   if(row.pending_detail){
@@ -76,7 +76,7 @@ function renderCard(entry){
     if(reviewed.length){
       const history=textNode("details","","pending-reviewed-history");
       history.appendChild(textNode("summary","確認済みの記録（"+reviewed.length+"件）"));
-      history.appendChild(textNode("p","終了・期間対象外を確認した候補と、根拠を再確認した既存評価です。未解決の9件には含めません。"));
+      history.appendChild(textNode("p","終了・期間対象外を確認した候補と、根拠を再確認した既存評価です。未解決の"+unresolved.length+"件には含めません。"));
       for(const row of reviewed)history.appendChild(renderReviewRow(row));
       content.appendChild(history);
     }

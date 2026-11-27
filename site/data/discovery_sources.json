@@ -1287,24 +1287,24 @@
     ]
   },
   "visit_status": {
-    "checked_on": "2026-11-22",
+    "checked_on": "2026-11-27",
     "method": "GitHub Actionsからの読み取り専用取得（第65回）。1ページ目のみ。",
     "sites": {
       "sumida": {
         "state": "read",
-        "note": "HTTP 200・本文約2271文字・日付表記15件"
+        "note": "HTTP 200・本文約2222文字・日付表記13件"
       },
       "asakusa": {
         "state": "read",
-        "note": "HTTP 200・本文約2229文字・日付表記13件"
+        "note": "HTTP 200・本文約2145文字・日付表記9件"
       },
       "ueno": {
         "state": "read",
-        "note": "HTTP 200・本文約4935文字・日付表記93件"
+        "note": "HTTP 200・本文約5330文字・日付表記112件"
       },
       "akihabara": {
         "state": "read",
-        "note": "HTTP 200・本文約2009文字・日付表記12件"
+        "note": "HTTP 200・本文約1955文字・日付表記10件"
       },
       "hibiya": {
         "state": "read",
@@ -1312,7 +1312,7 @@
       },
       "ikebukuro": {
         "state": "read",
-        "note": "HTTP 200・本文約3388文字・日付表記66件"
+        "note": "HTTP 200・本文約3297文字・日付表記60件"
       },
       "shinjuku": {
         "state": "read",
@@ -1324,27 +1324,27 @@
       },
       "yoyogi": {
         "state": "read",
-        "note": "HTTP 200・本文約3188文字・日付表記41件"
+        "note": "HTTP 200・本文約3260文字・日付表記44件"
       },
       "shibuya": {
         "state": "read",
-        "note": "HTTP 200・本文約2506文字・日付表記25件"
+        "note": "HTTP 200・本文約2656文字・日付表記31件"
       },
       "roppongi": {
         "state": "read",
-        "note": "HTTP 200・本文約3400文字・日付表記57件"
+        "note": "HTTP 200・本文約3326文字・日付表記55件"
       },
       "toyosu": {
         "state": "read",
-        "note": "HTTP 200・本文約2301文字・日付表記17件"
+        "note": "HTTP 200・本文約2515文字・日付表記31件"
       },
       "odaiba": {
         "state": "read",
-        "note": "HTTP 200・本文約2703文字・日付表記28件"
+        "note": "HTTP 200・本文約2725文字・日付表記28件"
       },
       "shinagawa": {
         "state": "read",
-        "note": "HTTP 200・本文約2821文字・日付表記42件"
+        "note": "HTTP 200・本文約2786文字・日付表記40件"
       },
       "tachikawa": {
         "state": "read",
@@ -1352,11 +1352,11 @@
       },
       "iterrace": {
         "state": "read",
-        "note": "HTTP 200・本文約2100文字・日付表記15件"
+        "note": "HTTP 200・本文約2066文字・日付表記14件"
       },
       "nerimakanko": {
         "state": "read",
-        "note": "HTTP 200・本文約2252文字・日付表記23件"
+        "note": "HTTP 200・本文約2289文字・日付表記24件"
       },
       "suginami_festival": {
         "state": "no_body",
@@ -1364,7 +1364,7 @@
       },
       "nerima_district_festivals_2026": {
         "state": "read",
-        "note": "HTTP 200・本文約3122文字・日付表記32件"
+        "note": "HTTP 200・本文約3140文字・日付表記32件"
       },
       "nakano_official_tourism": {
         "state": "read",
@@ -1372,7 +1372,7 @@
       },
       "itabashi_official_festival": {
         "state": "no_body",
-        "note": "HTTP 200・本文約1063文字・日付表記0件（画面表示で本文なしの可能性）"
+        "note": "HTTP 200・本文約1059文字・日付表記0件（画面表示で本文なしの可能性）"
       },
       "itabashi_tourism_festival": {
         "state": "read",
@@ -1384,7 +1384,7 @@
       },
       "itabashi_times_event": {
         "state": "read",
-        "note": "HTTP 200・本文約2752文字・日付表記82件"
+        "note": "HTTP 200・本文約2781文字・日付表記80件"
       },
       "suginami_calendar_all": {
         "state": "no_body",
@@ -1392,47 +1392,63 @@
       },
       "nerima_forest_festa_2026": {
         "state": "read",
-        "note": "HTTP 200・本文約5051文字・日付表記42件"
+        "note": "HTTP 200・本文約4877文字・日付表記39件"
       },
       "shinjuku_sankaku_hiroba": {
         "state": "read",
-        "note": "HTTP 200・本文約2279文字・日付表記22件"
+        "note": "HTTP 200・本文約2041文字・日付表記20件"
+      },
+      "greensprings_tachikawa": {
+        "state": "no_body",
+        "note": "HTTP 200・本文約943文字・日付表記10件（画面表示で本文なしの可能性）"
+      },
+      "futako_tamagawa_rise": {
+        "state": "read",
+        "note": "HTTP 200・本文約3412文字・日付表記62件"
+      },
+      "chuosen_rr_suginami": {
+        "state": "read",
+        "note": "HTTP 200・本文約1607文字・日付表記19件"
+      },
+      "hachilabo_shibuya": {
+        "state": "read",
+        "note": "HTTP 200・本文約2378文字・日付表記12件"
       },
       "ai_city_musashino": {
         "state": "read",
-        "note": "HTTP 200・本文約3926文字・日付表記35件"
+        "note": "HTTP 200・本文約3976文字・日付表記36件"
       },
       "ai_city_mitaka": {
         "state": "read",
-        "note": "HTTP 200・本文約1917文字・日付表記28件"
+        "note": "HTTP 200・本文約1876文字・日付表記24件"
       },
       "ai_city_chofu": {
         "state": "read",
-        "note": "HTTP 200・本文約1353文字・日付表記6件"
+        "note": "HTTP 200・本文約1426文字・日付表記5件"
       },
       "ai_city_fuchu": {
         "state": "read",
-        "note": "HTTP 200・本文約2047文字・日付表記23件"
+        "note": "HTTP 200・本文約2112文字・日付表記26件"
       },
       "ai_city_koganei": {
         "state": "read",
-        "note": "HTTP 200・本文約1700文字・日付表記9件"
+        "note": "HTTP 200・本文約1715文字・日付表記10件"
       },
       "ai_city_kodaira": {
         "state": "read",
-        "note": "HTTP 200・本文約2892文字・日付表記13件"
+        "note": "HTTP 200・本文約2707文字・日付表記10件"
       },
       "ai_city_kokubunji": {
         "state": "read",
-        "note": "HTTP 200・本文約2531文字・日付表記25件"
+        "note": "HTTP 200・本文約2579文字・日付表記24件"
       },
       "ai_city_kunitachi": {
         "state": "read",
-        "note": "HTTP 200・本文約1560文字・日付表記11件"
+        "note": "HTTP 200・本文約1399文字・日付表記8件"
       },
       "ai_city_tachikawa": {
         "state": "read",
-        "note": "HTTP 200・本文約4192文字・日付表記16件"
+        "note": "HTTP 200・本文約4234文字・日付表記17件"
       },
       "ai_city_akishima": {
         "state": "no_body",
@@ -1444,83 +1460,83 @@
       },
       "ai_city_nishitokyo": {
         "state": "read",
-        "note": "HTTP 200・本文約2478文字・日付表記15件"
+        "note": "HTTP 200・本文約2416文字・日付表記15件"
       },
       "ai_city_higashikurume": {
         "state": "read",
-        "note": "HTTP 200・本文約2699文字・日付表記10件"
+        "note": "HTTP 200・本文約2641文字・日付表記8件"
       },
       "ai_city_kiyose": {
         "state": "read",
-        "note": "HTTP 200・本文約2506文字・日付表記7件"
+        "note": "HTTP 200・本文約2562文字・日付表記9件"
       },
       "ai_city_higashimurayama": {
         "state": "read",
-        "note": "HTTP 200・本文約2958文字・日付表記18件"
+        "note": "HTTP 200・本文約2863文字・日付表記18件"
       },
       "ai_city_komae": {
         "state": "read",
-        "note": "HTTP 200・本文約1594文字・日付表記23件"
+        "note": "HTTP 200・本文約1662文字・日付表記23件"
       },
       "ai_city_tama": {
         "state": "read",
-        "note": "HTTP 200・本文約2665文字・日付表記17件"
+        "note": "HTTP 200・本文約2483文字・日付表記15件"
       },
       "ai_city_inagi": {
         "state": "read",
-        "note": "HTTP 200・本文約2456文字・日付表記13件"
+        "note": "HTTP 200・本文約2429文字・日付表記13件"
       },
       "ai_city_machida": {
         "state": "read",
-        "note": "HTTP 200・本文約2893文字・日付表記8件"
+        "note": "HTTP 200・本文約2891文字・日付表記9件"
       },
       "ai_city_hachioji": {
         "state": "no_body",
-        "note": "HTTP 200・本文約2134文字・日付表記2件（画面表示で本文なしの可能性）"
+        "note": "HTTP 200・本文約2106文字・日付表記1件（画面表示で本文なしの可能性）"
       },
       "ai_ward_chiyoda": {
         "state": "read",
-        "note": "HTTP 200・本文約2262文字・日付表記30件"
+        "note": "HTTP 200・本文約2296文字・日付表記29件"
       },
       "ai_ward_chuo": {
         "state": "read",
-        "note": "HTTP 200・本文約1235文字・日付表記6件"
+        "note": "HTTP 200・本文約1220文字・日付表記6件"
       },
       "ai_ward_minato": {
         "state": "read",
-        "note": "HTTP 200・本文約1536文字・日付表記15件"
+        "note": "HTTP 200・本文約1468文字・日付表記15件"
       },
       "ai_ward_shinjuku": {
         "state": "read",
-        "note": "HTTP 200・本文約2161文字・日付表記12件"
+        "note": "HTTP 200・本文約2166文字・日付表記11件"
       },
       "ai_ward_bunkyo": {
         "state": "no_body",
-        "note": "HTTP 200・本文約1761文字・日付表記1件（画面表示で本文なしの可能性）"
+        "note": "HTTP 200・本文約1722文字・日付表記0件（画面表示で本文なしの可能性）"
       },
       "ai_ward_taito": {
         "state": "read",
-        "note": "HTTP 200・本文約2555文字・日付表記31件"
+        "note": "HTTP 200・本文約2534文字・日付表記30件"
       },
       "ai_ward_sumida": {
         "state": "read",
-        "note": "HTTP 200・本文約3282文字・日付表記12件"
+        "note": "HTTP 200・本文約3235文字・日付表記14件"
       },
       "ai_ward_koto": {
         "state": "read",
-        "note": "HTTP 200・本文約1151文字・日付表記7件"
+        "note": "HTTP 200・本文約1129文字・日付表記9件"
       },
       "ai_ward_shinagawa": {
         "state": "read",
-        "note": "HTTP 200・本文約3449文字・日付表記8件"
+        "note": "HTTP 200・本文約3460文字・日付表記10件"
       },
       "ai_ward_meguro": {
         "state": "read",
-        "note": "HTTP 200・本文約4584文字・日付表記76件"
+        "note": "HTTP 200・本文約4710文字・日付表記80件"
       },
       "ai_ward_ota": {
         "state": "read",
-        "note": "HTTP 200・本文約1911文字・日付表記12件"
+        "note": "HTTP 200・本文約1754文字・日付表記14件"
       },
       "ai_ward_setagaya": {
         "state": "read",
@@ -1528,47 +1544,47 @@
       },
       "ai_ward_suginami": {
         "state": "read",
-        "note": "HTTP 200・本文約1410文字・日付表記12件"
+        "note": "HTTP 200・本文約1417文字・日付表記11件"
       },
       "ai_ward_toshima": {
         "state": "read",
-        "note": "HTTP 200・本文約1668文字・日付表記24件"
+        "note": "HTTP 200・本文約1623文字・日付表記19件"
       },
       "ai_ward_kita": {
         "state": "read",
-        "note": "HTTP 200・本文約3710文字・日付表記12件"
+        "note": "HTTP 200・本文約3644文字・日付表記13件"
       },
       "ai_ward_arakawa": {
         "state": "read",
-        "note": "HTTP 200・本文約1393文字・日付表記10件"
+        "note": "HTTP 200・本文約1338文字・日付表記9件"
       },
       "ai_ward_itabashi": {
         "state": "read",
-        "note": "HTTP 200・本文約2720文字・日付表記6件"
+        "note": "HTTP 200・本文約2715文字・日付表記7件"
       },
       "ai_ward_nerima": {
         "state": "read",
-        "note": "HTTP 200・本文約1754文字・日付表記29件"
+        "note": "HTTP 200・本文約1730文字・日付表記27件"
       },
       "ai_ward_adachi": {
         "state": "read",
-        "note": "HTTP 200・本文約2683文字・日付表記19件"
+        "note": "HTTP 200・本文約2674文字・日付表記22件"
       },
       "ai_ward_katsushika": {
         "state": "read",
-        "note": "HTTP 200・本文約2730文字・日付表記8件"
+        "note": "HTTP 200・本文約2702文字・日付表記7件"
       },
       "ai_ward_edogawa": {
         "state": "read",
-        "note": "HTTP 200・本文約1113文字・日付表記7件"
+        "note": "HTTP 200・本文約1116文字・日付表記9件"
       },
       "ai_ward_shibuya": {
         "state": "read",
-        "note": "HTTP 200・本文約2318文字・日付表記17件"
+        "note": "HTTP 200・本文約2316文字・日付表記16件"
       },
       "ai_ward_nakano": {
         "state": "read",
-        "note": "HTTP 200・本文約1281文字・日付表記9件"
+        "note": "HTTP 200・本文約1319文字・日付表記6件"
       },
       "ai_ward_nakano_kanko": {
         "state": "read",
@@ -1584,7 +1600,7 @@
       },
       "ai_showakinen": {
         "state": "read",
-        "note": "HTTP 200・本文約2106文字・日付表記36件"
+        "note": "HTTP 200・本文約2114文字・日付表記36件"
       },
       "ai_tokyo_park": {
         "state": "failed",
@@ -1692,27 +1708,27 @@
       },
       "ai_park_kasai_official": {
         "state": "read",
-        "note": "HTTP 200・本文約2042文字・日付表記15件"
+        "note": "HTTP 200・本文約1959文字・日付表記15件"
       },
       "ai_park_seaside_south": {
         "state": "read",
-        "note": "HTTP 200・本文約2858文字・日付表記18件"
+        "note": "HTTP 200・本文約2784文字・日付表記19件"
       },
       "ai_park_uminomori": {
         "state": "read",
-        "note": "HTTP 200・本文約1220文字・日付表記11件"
+        "note": "HTTP 200・本文約1141文字・日付表記11件"
       },
       "ai_park_tptc": {
         "state": "read",
-        "note": "HTTP 200・本文約2004文字・日付表記10件"
+        "note": "HTTP 200・本文約2020文字・日付表記10件"
       },
       "ai_park_showakinen_top": {
         "state": "read",
-        "note": "HTTP 200・本文約2130文字・日付表記38件"
+        "note": "HTTP 200・本文約2162文字・日付表記39件"
       },
       "ai_tokyo_zoo": {
         "state": "read",
-        "note": "HTTP 200・本文約18759文字・日付表記483件"
+        "note": "HTTP 200・本文約18988文字・日付表記491件"
       },
       "ai_park_yumenoshima": {
         "state": "failed",
@@ -1724,7 +1740,7 @@
       },
       "ai_fac_sumida_aquarium": {
         "state": "read",
-        "note": "HTTP 200・本文約59118文字・日付表記37件"
+        "note": "HTTP 200・本文約59176文字・日付表記38件"
       },
       "ai_fac_mizunokagaku": {
         "state": "no_body",
@@ -1732,11 +1748,11 @@
       },
       "ai_fac_tnm": {
         "state": "read",
-        "note": "HTTP 200・本文約5383文字・日付表記36件"
+        "note": "HTTP 200・本文約5413文字・日付表記38件"
       },
       "ai_fac_miraikan": {
         "state": "read",
-        "note": "HTTP 200・本文約1996文字・日付表記8件"
+        "note": "HTTP 200・本文約1983文字・日付表記7件"
       },
       "ai_fac_mot": {
         "state": "failed",
@@ -1748,11 +1764,11 @@
       },
       "ai_fac_edo_tokyo": {
         "state": "read",
-        "note": "HTTP 200・本文約2682文字・日付表記24件"
+        "note": "HTTP 200・本文約3511文字・日付表記38件"
       },
       "ai_fac_teien": {
         "state": "read",
-        "note": "HTTP 200・本文約1815文字・日付表記12件"
+        "note": "HTTP 200・本文約1907文字・日付表記15件"
       },
       "ai_fac_fire_museum": {
         "state": "failed",
@@ -1760,19 +1776,19 @@
       },
       "ai_fac_chihiro": {
         "state": "read",
-        "note": "HTTP 200・本文約3021文字・日付表記26件"
+        "note": "HTTP 200・本文約2996文字・日付表記27件"
       },
       "ai_yomiuriland": {
         "state": "read",
-        "note": "HTTP 200・本文約1611文字・日付表記22件"
+        "note": "HTTP 200・本文約1521文字・日付表記18件"
       },
       "ai_puroland": {
         "state": "read",
-        "note": "HTTP 200・本文約1311文字・日付表記4件"
+        "note": "HTTP 200・本文約1282文字・日付表記4件"
       },
       "ai_tokyo_dome_city": {
         "state": "read",
-        "note": "HTTP 200・本文約2650文字・日付表記47件"
+        "note": "HTTP 200・本文約2159文字・日付表記35件"
       },
       "ai_wb_studio_tour": {
         "state": "read",
@@ -1780,11 +1796,11 @@
       },
       "ai_fac_skytree": {
         "state": "read",
-        "note": "HTTP 200・本文約5924文字・日付表記45件"
+        "note": "HTTP 200・本文約5799文字・日付表記39件"
       },
       "ai_fac_solamachi": {
         "state": "read",
-        "note": "HTTP 200・本文約2062文字・日付表記47件"
+        "note": "HTTP 200・本文約2114文字・日付表記49件"
       },
       "ai_fac_hanayashiki": {
         "state": "read",
@@ -1792,11 +1808,11 @@
       },
       "ai_fac_joypolis": {
         "state": "read",
-        "note": "HTTP 200・本文約2431文字・日付表記33件"
+        "note": "HTTP 200・本文約2445文字・日付表記34件"
       },
       "ai_fac_sunshine": {
         "state": "read",
-        "note": "HTTP 200・本文約4153文字・日付表記45件"
+        "note": "HTTP 200・本文約4449文字・日付表記53件"
       },
       "ai_fac_legoland": {
         "state": "read",
@@ -1812,11 +1828,11 @@
       },
       "ai_metro_kodomo_smile": {
         "state": "read",
-        "note": "HTTP 200・本文約4124文字・日付表記26件"
+        "note": "HTTP 200・本文約4168文字・日付表記25件"
       },
       "ai_metro_metro": {
         "state": "read",
-        "note": "HTTP 200・本文約12108文字・日付表記75件"
+        "note": "HTTP 200・本文約12312文字・日付表記85件"
       },
       "ai_city_urayasu": {
         "state": "no_body",
@@ -1840,7 +1856,7 @@
       },
       "ai_tpark_event_search": {
         "state": "read",
-        "note": "HTTP 200・本文約2725文字・日付表記32件"
+        "note": "HTTP 200・本文約2573文字・日付表記27件"
       },
       "ai_zoo_ueno": {
         "state": "no_body",
@@ -1869,22 +1885,6 @@
       "ai_fac_sunshine_tenbo": {
         "state": "no_body",
         "note": "HTTP 200・本文約514文字・日付表記0件（画面表示で本文なしの可能性）"
-      },
-      "greensprings_tachikawa": {
-        "state": "read",
-        "note": "HTTP 200・イベント一覧7件（第75回取得、個別ページも取得）"
-      },
-      "futako_tamagawa_rise": {
-        "state": "read",
-        "note": "HTTP 200・イベント37件（第76回取得、個別ページ15件も取得）"
-      },
-      "chuosen_rr_suginami": {
-        "state": "read",
-        "note": "HTTP 200・イベント一覧15件（第77回取得、個別ページも取得）"
-      },
-      "hachilabo_shibuya": {
-        "state": "read",
-        "note": "HTTP 200・月別イベント一覧と特別展ページ（第80回取得、個別ページも取得）"
       }
     }
   }

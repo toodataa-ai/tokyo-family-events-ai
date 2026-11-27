@@ -3,7 +3,7 @@
 `site/data/discovery_sources.json` の全サイトを一覧にしたもの。サイトに載っている取得元はすべて、毎回の更新で「訪問した／取得できなかった（理由）」を記録する。
 再生成: `python3 tools/gen_source_checklist.py`（`tests/source_checklist_sync.test.mjs` が一覧との一致を検査する）。
 
-## A. 固定サイト（27件・登録済みの検索URLから機械的に取得）
+## A. 固定サイト（31件・登録済みの検索URLから機械的に取得）
 
 | id | 名称 | 取得URL |
 |---|---|---|
@@ -34,6 +34,10 @@
 | `suginami_calendar_all` | 杉並区公式イベントカレンダー（全ジャンル・日別巡回） | https://www.city.suginami.tokyo.jp/cgi-bin/event_cal_multi/calendar.cgi?type=2&year={YYYY}&month={MM} |
 | `nerima_forest_festa_2026` | 練馬区公式 ねりまの森こどもフェスタ（日別行） | https://www.city.nerima.tokyo.jp/kurashi/shigoto/midori/shokai/nerimanomori.html |
 | `shinjuku_sankaku_hiroba` | 新宿住友ビル三角広場（会場公式） | https://www.sumitomo-sankakuhiroba.jp/event/ |
+| `greensprings_tachikawa` | GREEN SPRINGS（立川・施設公式イベント） | https://greensprings.jp/event/ |
+| `futako_tamagawa_rise` | 二子玉川ライズ（世田谷区・施設公式イベント） | https://www.rise.sc/eventnews/ |
+| `chuosen_rr_suginami` | なみじゃない、杉並！中央線あるあるPROJECT（杉並のイベント） | https://www.chuosen-rr.com/event/ |
+| `hachilabo_shibuya` | こども科学センター・ハチラボ（渋谷区文化総合センター大和田） | https://shibu-cul.jp/hachilabo https://shibu-cul.jp/hachilabo/tenji |
 
 ## B. AI探索先サイト（118件・AIが候補探しの入口にする）
 

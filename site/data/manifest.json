@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-11-27T14:00:00+09:00",
+  "generated": "2026-11-27T23:59:00+09:00",
   "default": "2026-11-21",
   "rolling_horizon_weeks": 6,
   "publication_tiers": {
@@ -23,7 +23,7 @@
       "sun": "2026-11-29",
       "label": "11/28(土)〜11/29(日)",
       "file": "2026-11-28.json",
-      "count": 208,
+      "count": 219,
       "horizon_index": 2,
       "publication_tier": "full"
     },
@@ -32,7 +32,7 @@
       "sun": "2026-12-06",
       "label": "12/5(土)〜12/6(日)",
       "file": "2026-12-05.json",
-      "count": 185,
+      "count": 190,
       "horizon_index": 3,
       "publication_tier": "preview"
     },
@@ -41,7 +41,7 @@
       "sun": "2026-12-13",
       "label": "12/12(土)〜12/13(日)",
       "file": "2026-12-12.json",
-      "count": 138,
+      "count": 141,
       "horizon_index": 4,
       "publication_tier": "preview"
     },
@@ -50,7 +50,7 @@
       "sun": "2026-12-20",
       "label": "12/19(土)〜12/20(日)",
       "file": "2026-12-19.json",
-      "count": 111,
+      "count": 114,
       "horizon_index": 5,
       "publication_tier": "announcement"
     },
@@ -59,7 +59,7 @@
       "sun": "2026-12-27",
       "label": "12/26(土)〜12/27(日)",
       "file": "2026-12-26.json",
-      "count": 38,
+      "count": 39,
       "horizon_index": 6,
       "publication_tier": "announcement"
     }

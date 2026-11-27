@@ -10,10 +10,10 @@
   "run_file": "2026-12-12-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 140,
+    "candidate_count": 143,
     "duplicate_removed": 0,
     "excluded_count": 2,
-    "published_count": 138,
+    "published_count": 141,
     "wards": [
       {
         "ward": "千代田区",
@@ -29,9 +29,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished."
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "港区",
@@ -83,9 +83,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 5,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 7,
+        "published_count": 6,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "品川区",
@@ -128,9 +128,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
-        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-22 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 6,
+        "published_count": 6,
+        "note": "2026-11-08 read-only evidence run: AI cross 3 queries + ward official source check. Only individually reviewed verified/announced subset is published; unverified leads remain unpublished. 2026-11-22 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "中野区",
@@ -302,7 +302,8 @@
     "2026-12-12-events-lead44-20261123.json",
     "2026-12-12-events-lead45-20261125.json",
     "2026-12-12-events-lead46-20261126.json",
-    "2026-12-12-events-lead47-20261127.json"
+    "2026-12-12-events-lead47-20261127.json",
+    "2026-12-12-events-lead48-20261127.json"
   ],
   "events": []
 }

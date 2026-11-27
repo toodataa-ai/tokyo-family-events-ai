@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 86,
-    "published": 138,
+    "candidates": 89,
+    "published": 141,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 135,
+    "verified": 138,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2663,6 +2663,20 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
+    "global_source_audit_complete": false
+  },
+  "lead48_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-teamlab-hamarikyu",
+      "verified-20261212-timburton-labyrinth",
+      "verified-20261212-andst-holidaymarket"
+    ],
+    "held_not_published": [
+      "none"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
     "global_source_audit_complete": false
   }
 }

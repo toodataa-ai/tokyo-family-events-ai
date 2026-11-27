@@ -7912,11 +7912,207 @@
           "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261205-shibuya-bosai-sasazuka",
+      "status": "verified",
+      "source": "https://shibuya-bosai-caravan.tokyo/event/17/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-27",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この23件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://shibuya-bosai-caravan.tokyo/event/17/",
+          "quote": "日時：2026年12月5日（土）9:00〜12:00",
+          "checked_at": "2026-11-27",
+          "sha256": "b0ce0ad7e90a71e514c451bb94fc3fc400b8391409c100dea4aea0733bfd59a8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://shibuya-bosai-caravan.tokyo/event/17/",
+          "quote": "東急不動産参加無料・雨天決行",
+          "checked_at": "2026-11-27",
+          "sha256": "76b617a93cd35389516ce0bfefa0bf3872213b37034e6a569a840123dba445bd",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-teamlab-hamarikyu",
+      "status": "verified",
+      "source": "https://www.teamlab.art/jp/e/hamarikyu/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-27",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この23件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.teamlab.art/jp/e/hamarikyu/",
+          "quote": "*事前日時指定予約制です。",
+          "checked_at": "2026-11-27",
+          "sha256": "7d472525e48a1afebae949fd2580c1285e6dd853aa05e999fecf935ef14ac0e0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.teamlab.art/jp/e/hamarikyu/",
+          "quote": "時間18:00 - 21:15",
+          "checked_at": "2026-11-27",
+          "sha256": "85781ff6d2315d9773ae13932eb6b49f60ebb1b18faa92a2bf86fca3f386eaee",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.my.metro.tokyo.lg.jp/w/116-20261026-274206117",
+          "quote": "11月25日（水曜日）～12月24日（木曜日）",
+          "checked_at": "2026-11-27",
+          "sha256": "7ed5f1b627b9b5e98b4c0458bd47e85f3832b359264305c0e0351d17002f5cea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        },
+        {
+          "url": "https://www.my.metro.tokyo.lg.jp/w/116-20261026-274206117",
+          "quote": "大人2,500円、中高生1,500円、小学生900円、未就学児無料",
+          "checked_at": "2026-11-27",
+          "sha256": "99ab6e88d1ea050730f10a19e2de073c0170e2075a9c9602464c43774aad13ea",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-rikugien-night",
+      "status": "verified",
+      "source": "https://www.tokyo-park.or.jp/special/rikugien_lighting/index.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-27",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この23件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.tokyo-park.or.jp/special/rikugien_lighting/index.html",
+          "quote": "令和8年11月25日(水)～12月6日（日）",
+          "checked_at": "2026-11-27",
+          "sha256": "ece2b84d983bae000de5d4370484c2aac35bc88aba1fdea7aa754a043fce6125",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.tokyo-park.or.jp/special/rikugien_lighting/index.html",
+          "quote": "小学生以下は無料で入園できますが",
+          "checked_at": "2026-11-27",
+          "sha256": "224989bd87b3233bf60fe8ee23d5848c71078c3f52fdf88b9c2c3d8ae0224cb6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-timburton-labyrinth",
+      "status": "verified",
+      "source": "https://tokyo.timburtonexhibition.com/",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-27",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "unknown",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この23件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://tokyo.timburtonexhibition.com/",
+          "quote": "東京都江東区豊洲6-4-25",
+          "checked_at": "2026-11-27",
+          "sha256": "f181ead94a120817aad2b608822847793a942d0ebac20f6cc37fd7afdd2780da",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://tokyo.timburtonexhibition.com/",
+          "quote": "2026年11月25日(水)—2027年3月21日(日)",
+          "checked_at": "2026-11-27",
+          "sha256": "7e42cc2be745ab8b521330538978c8997e69a0bb307aa3cb1f678d8a7c804de8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261205-andst-holidaymarket",
+      "status": "verified",
+      "source": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-27",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この23件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+          "quote": "12.5(sat)・12.6(sun)",
+          "checked_at": "2026-11-27",
+          "sha256": "c1b04844a2ecb1ebff22be5aafbfaa4c4f6282fd79829da202852b6318ae9c47",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+          "quote": "シングル：1,200円(税込)",
+          "checked_at": "2026-11-27",
+          "sha256": "a8d93f49e288d6ba8cfb9dcca3ba4203ab5a35a93a1cf1050661531208004748",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 185,
-    "verified": 181,
+    "total": 190,
+    "verified": 186,
     "announced": 4
   }
 }

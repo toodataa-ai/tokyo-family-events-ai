@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 185,
-    "verified": 181,
+    "published": 190,
+    "verified": 186,
     "announced": 4,
-    "candidates": 130,
+    "candidates": 135,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4400,6 +4400,22 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
+    "global_source_audit_complete": false
+  },
+  "lead48_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261205-shibuya-bosai-sasazuka",
+      "verified-20261205-teamlab-hamarikyu",
+      "verified-20261205-rikugien-night",
+      "verified-20261205-timburton-labyrinth",
+      "verified-20261205-andst-holidaymarket"
+    ],
+    "held_not_published": [
+      "none"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
     "global_source_audit_complete": false
   }
 }

@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 38,
-    "published": 38,
+    "candidates": 39,
+    "published": 39,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 35,
+    "verified": 36,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -2076,6 +2076,18 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
+    "global_source_audit_complete": false
+  },
+  "lead48_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261226-timburton-labyrinth"
+    ],
+    "held_not_published": [
+      "none"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
     "global_source_audit_complete": false
   }
 }

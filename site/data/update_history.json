@@ -4783,6 +4783,58 @@
       "existing_event_records_physically_deleted": 0,
       "global_source_audit_complete": false,
       "note": "二重掲載のギャラクシティ クリスマスコンサート1件（区公式ページ版）を、利用者の承認により決定記録（duplicate・重複元ID・理由・公式URL）付きで公開リストから取り下げた。"
+    },
+    {
+      "run_id": "lead48-addition-20261127",
+      "run_type": "manual_verified_lead48_addition",
+      "status": "verified_subset_publication",
+      "as_of_jst": "2026-11-27",
+      "executed_at": "2026-11-27T23:59:00+09:00",
+      "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
+      "target_weekends": [
+        "2026-11-28",
+        "2026-12-05",
+        "2026-12-12",
+        "2026-12-19",
+        "2026-12-26"
+      ],
+      "prior_active_week_records": 944,
+      "candidate_active_week_records": 967,
+      "added_weekly_records": 23,
+      "new_event_ids": [
+        "verified-20261129-shibuya-bosai-sendagaya",
+        "verified-20261205-shibuya-bosai-sasazuka",
+        "verified-20261128-teamlab-hamarikyu",
+        "verified-20261205-teamlab-hamarikyu",
+        "verified-20261212-teamlab-hamarikyu",
+        "verified-20261219-teamlab-hamarikyu",
+        "verified-20261129-kanda-hatarakukuruma",
+        "verified-20261128-rikugien-night",
+        "verified-20261205-rikugien-night",
+        "verified-20261128-timburton-labyrinth",
+        "verified-20261205-timburton-labyrinth",
+        "verified-20261212-timburton-labyrinth",
+        "verified-20261219-timburton-labyrinth",
+        "verified-20261226-timburton-labyrinth",
+        "verified-20261128-sancha-ennichi",
+        "verified-20261128-shinjuku-candlenight",
+        "verified-20261128-andst-holidaymarket",
+        "verified-20261205-andst-holidaymarket",
+        "verified-20261212-andst-holidaymarket",
+        "verified-20261219-andst-holidaymarket",
+        "verified-20261128-jtb-europefes",
+        "verified-20261128-mamarial-fes",
+        "verified-20261128-toray-wonder-exhibition"
+      ],
+      "held_not_published": [
+        "none"
+      ],
+      "existing_event_records_physically_deleted": 0,
+      "image_only_updates": 0,
+      "source_failures_remain_unverified": true,
+      "global_source_audit_complete": false,
+      "full_23_ward_25_source_audit_complete": false,
+      "note": "利用者が公式リンクを提示した11行事を公式ページ本文で確認して追加（23週末レコード）。"
     }
   ]
 }

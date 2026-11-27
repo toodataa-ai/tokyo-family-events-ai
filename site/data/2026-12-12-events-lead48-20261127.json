@@ -1,0 +1,366 @@
+[
+  {
+    "id": "verified-20261212-teamlab-hamarikyu",
+    "ward": "中央区",
+    "name": "チームラボ 浜離宮",
+    "url": "https://www.teamlab.art/jp/e/hamarikyu/",
+    "official_url": "https://www.teamlab.art/jp/e/hamarikyu/",
+    "source": "https://www.teamlab.art/jp/e/hamarikyu/",
+    "image": "https://teamlab-site.imagewave.pictures/b5EBo9Uo-OK6SM09ZTkEZQ/7bef7205-2ef8-4157-76a3-e668b6f66000/width=1200,format=jpeg",
+    "period": "11/25〜12/24",
+    "date_start": "2026-12-12",
+    "date_end": "2026-12-13",
+    "time": "18:00〜21:15（最終入場20:30）",
+    "venue": "浜離宮恩賜庭園（中央区浜離宮庭園1-1）",
+    "price": "大人2,500円、中高生1,500円、小学生900円、未就学児無料（東京都発表）",
+    "description": "夜の庭園を舞台にした屋外のアート展。荒天時は中止・中断の場合あり。",
+    "categories": [
+      "アート",
+      "公園・自然"
+    ],
+    "indoor_outdoor": "屋外",
+    "reservation": {
+      "required": true,
+      "note": "事前の日時指定予約制。完売していなければ当日も公式チケットサイトで購入可。"
+    },
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "12/12・12/13分。夜の庭園の光のアートを親子で鑑賞できる。夜間の屋外で寒さ対策と予約が必要。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "年齢を問わず鑑賞できる"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "庭園を歩いて作品を体感する"
+        },
+        "age_fit": {
+          "grade": "C",
+          "reason": "夜の開催で小さな子には遅い時間"
+        },
+        "stay_flexibility": {
+          "grade": "unknown",
+          "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+        },
+        "burden": {
+          "grade": "C",
+          "reason": "冬の夜の屋外を歩く"
+        },
+        "cost": {
+          "grade": "C",
+          "reason": "小学生900円、大人2,500円"
+        },
+        "reservation": {
+          "grade": "C",
+          "reason": "日時指定の予約が必要"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "季節の夜の体験になる"
+        }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_evidence_review",
+        "reviewed_on": "2026-11-27",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "all_ages",
+        "child_activity_confirmed": false,
+        "strengths": [
+          "未就学児は無料で夜の庭園アートを見られる"
+        ],
+        "limitations": [
+          "夜18時以降の屋外開催"
+        ],
+        "grade_comparison": "総合B（12/12・12/13・チームラボ 浜離宮）：未就学児は無料で夜の庭園アートを見られる。注意点は「夜18時以降の屋外開催」こと。",
+        "unsupported_axes": [
+          "stay_flexibility"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.teamlab.art/jp/e/hamarikyu/",
+            "quote": "*事前日時指定予約制です。",
+            "checked_at": "2026-11-27",
+            "sha256": "7d472525e48a1afebae949fd2580c1285e6dd853aa05e999fecf935ef14ac0e0",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.teamlab.art/jp/e/hamarikyu/",
+            "quote": "時間18:00 - 21:15",
+            "checked_at": "2026-11-27",
+            "sha256": "85781ff6d2315d9773ae13932eb6b49f60ebb1b18faa92a2bf86fca3f386eaee",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.my.metro.tokyo.lg.jp/w/116-20261026-274206117",
+            "quote": "11月25日（水曜日）～12月24日（木曜日）",
+            "checked_at": "2026-11-27",
+            "sha256": "7ed5f1b627b9b5e98b4c0458bd47e85f3832b359264305c0e0351d17002f5cea",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+          },
+          {
+            "url": "https://www.my.metro.tokyo.lg.jp/w/116-20261026-274206117",
+            "quote": "大人2,500円、中高生1,500円、小学生900円、未就学児無料",
+            "checked_at": "2026-11-27",
+            "sha256": "99ab6e88d1ea050730f10a19e2de073c0170e2075a9c9602464c43774aad13ea",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+          }
+        ]
+      }
+    },
+    "audit": {
+      "checked_on": "2026-11-27",
+      "calendar_index_url": null,
+      "source_claim": "verified",
+      "global_23_ward_source_audit_complete": false
+    }
+  },
+  {
+    "id": "verified-20261212-timburton-labyrinth",
+    "ward": "江東区",
+    "name": "ティム・バートンのラビリンス 東京",
+    "url": "https://tokyo.timburtonexhibition.com/",
+    "official_url": "https://tokyo.timburtonexhibition.com/",
+    "source": "https://tokyo.timburtonexhibition.com/",
+    "image": "https://tokyo.timburtonexhibition.com/_astro/hero-poster_desktop_gemlbf_Z2jOuVK.webp",
+    "period": "2026/11/25〜2027/3/21",
+    "date_start": "2026-12-12",
+    "date_end": "2026-12-13",
+    "time": "開館時間は公式サイトで確認（所要約45分）",
+    "venue": "CREVIA BASE Tokyo（江東区豊洲6-4-25）",
+    "price": "有料（金額は公式チケットサイトで確認）。3歳以下は無料チケットの追加が必要",
+    "description": "ティム・バートンの世界を歩いて巡る没入型の展覧会。12歳未満は保護者同伴。",
+    "categories": [
+      "アート"
+    ],
+    "indoor_outdoor": "屋内",
+    "reservation": {
+      "required": false,
+      "note": "チケットは公式（Fever）または現地で購入。当日券は売り切れの場合あり。12歳未満は保護者同伴。"
+    },
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "12/12・12/13分。年齢制限のない屋内展示を約45分で巡れる。料金は公式サイトで確認が必要。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "年齢制限なく入場できる"
+        },
+        "interactivity": {
+          "grade": "B",
+          "reason": "道を選びながら巡る"
+        },
+        "age_fit": {
+          "grade": "C",
+          "reason": "幼児向けの内容かはページに記載がない"
+        },
+        "stay_flexibility": {
+          "grade": "unknown",
+          "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "屋内で約45分"
+        },
+        "cost": {
+          "grade": "unknown",
+          "reason": "料金の金額がページ本文にない"
+        },
+        "reservation": {
+          "grade": "B",
+          "reason": "当日券もある"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "映画の世界を家族で楽しめる"
+        }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_evidence_review",
+        "reviewed_on": "2026-11-27",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "all_ages",
+        "child_activity_confirmed": false,
+        "strengths": [
+          "屋内で年齢制限なく没入型展示を巡れる"
+        ],
+        "limitations": [
+          "料金は公式チケットサイトで確認が必要"
+        ],
+        "grade_comparison": "総合B（12/12・12/13・ティム・バートンのラビリンス 東京）：屋内で年齢制限なく没入型展示を巡れる。注意点は「料金は公式チケットサイトで確認が必要」こと。",
+        "unsupported_axes": [
+          "stay_flexibility",
+          "cost"
+        ],
+        "evidence": [
+          {
+            "url": "https://tokyo.timburtonexhibition.com/",
+            "quote": "東京都江東区豊洲6-4-25",
+            "checked_at": "2026-11-27",
+            "sha256": "f181ead94a120817aad2b608822847793a942d0ebac20f6cc37fd7afdd2780da",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://tokyo.timburtonexhibition.com/",
+            "quote": "2026年11月25日(水)—2027年3月21日(日)",
+            "checked_at": "2026-11-27",
+            "sha256": "7e42cc2be745ab8b521330538978c8997e69a0bb307aa3cb1f678d8a7c804de8",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          }
+        ]
+      }
+    },
+    "audit": {
+      "checked_on": "2026-11-27",
+      "calendar_index_url": null,
+      "source_claim": "verified",
+      "global_23_ward_source_audit_complete": false
+    }
+  },
+  {
+    "id": "verified-20261212-andst-holidaymarket",
+    "ward": "渋谷区",
+    "name": "HOLIDAY MARKET 2026 @and ST TOKYO（お花のカード・キャンバス作り）",
+    "url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+    "official_url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+    "source": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+    "image": "https://www.dot-st.com/static/docs/c/pages/261119_st_tokyo_xmas/images/3_flower.jpg",
+    "period": "11/27〜12/25",
+    "date_start": "2026-12-12",
+    "date_end": "2026-12-13",
+    "time": "土日祝10:00〜21:00（企画の時間は公式ページで確認）",
+    "venue": "and ST TOKYO（渋谷区神宮前1丁目14-30 WITH HARAJUKU 1F）",
+    "price": "カードフラワー1,500円、ノエルキャンバス4,500円（税込）",
+    "description": "お花とグリーンでカードやキャンバスを作る週末ワークショップ。",
+    "categories": [
+      "体験・ワークショップ",
+      "クリスマス"
+    ],
+    "indoor_outdoor": "屋内",
+    "reservation": {
+      "required": true,
+      "note": "予約ページはスマートフォンから。事前にand STアプリと会員登録が必要。"
+    },
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "12/12・12/13分。原宿の店舗で「お花のカード・キャンバス作り」を楽しめる。店舗内の企画のため混雑時は待つ場合がある。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "子どもも参加できる企画"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "体験に参加できる"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "保護者と一緒なら楽しめる"
+        },
+        "stay_flexibility": {
+          "grade": "unknown",
+          "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "駅近くの屋内店舗"
+        },
+        "cost": {
+          "grade": "C",
+          "reason": "体験は有料"
+        },
+        "reservation": {
+          "grade": "C",
+          "reason": "事前予約が必要な体験がある"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "季節の雰囲気を楽しめる"
+        }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_evidence_review",
+        "reviewed_on": "2026-11-27",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "all_ages",
+        "child_activity_confirmed": true,
+        "strengths": [
+          "駅近の屋内でお花のカード・キャンバス作りを楽しめる"
+        ],
+        "limitations": [
+          "会員登録やアプリが必要な企画がある"
+        ],
+        "grade_comparison": "総合B（12/12・12/13・HOLIDAY MARKET 2026 @and ST TOKYO（お花のカード・キャンバス作り））：駅近の屋内でお花のカード・キャンバス作りを楽しめる。注意点は「会員登録やアプリが必要な企画がある」こと。",
+        "unsupported_axes": [
+          "stay_flexibility"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+            "quote": "12.12(sat)・12.13(sun)",
+            "checked_at": "2026-11-27",
+            "sha256": "4074a5a236ea859c0d167f5452d7f6269e2ef5d5dc50933840a75531823afbff",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.dot-st.com/cp/sttokyo2026_xmas",
+            "quote": "カードフラワー作り1,500円(税込)",
+            "checked_at": "2026-11-27",
+            "sha256": "4fc88bea33a47caba40e3f61e27f555bca6e5b9a89e91b166a7953eb45c28b6d",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          }
+        ]
+      }
+    },
+    "audit": {
+      "checked_on": "2026-11-27",
+      "calendar_index_url": null,
+      "source_claim": "verified",
+      "global_23_ward_source_audit_complete": false
+    }
+  }
+]

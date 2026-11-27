@@ -10,55 +10,55 @@
   "run_file": "2026-11-28-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 225,
+    "candidate_count": 236,
     "duplicate_removed": 1,
     "excluded_count": 16,
-    "published_count": 208,
+    "published_count": 219,
     "wards": [
       {
         "ward": "千代田区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 5,
+        "published_count": 5,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-27 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "中央区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "港区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 6,
-        "published_count": 6,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17主催者公式で新規1件を独立確認して追加。既存の実測検索カウントは不変。"
+        "candidate_count": 8,
+        "published_count": 8,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-17主催者公式で新規1件を独立確認して追加。既存の実測検索カウントは不変。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "新宿区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 6,
+        "published_count": 6,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-08 個別公式確認の非破壊追加1件（従来の検索計測は不変）。 2026-11-19 公式イベントページ確認済み1件を非破壊追加（時間は公式Instagram参照）。 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "文京区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 0,
-        "published_count": 0,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 1,
+        "published_count": 1,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "台東区",
@@ -83,9 +83,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 5,
-        "published_count": 5,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み2件を非破壊追加。"
+        "candidate_count": 6,
+        "published_count": 6,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-19 公式個別ページ確認済み1件を非破壊追加。 2026-11-20 公式個別ページ確認済み2件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "品川区",
@@ -119,18 +119,18 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 14,
-        "published_count": 14,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規2件を追加。従前の検索回数と取得成功数は不変。 2026-11-19 公式個別ページ確認済み6件を非破壊追加。 2026-11-19 公式個別ページ確認済み2件を非破壊追加。 2026-11-21 公式個別ページ確認済み2件を非破壊追加。 2026-11-22 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 15,
+        "published_count": 15,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026/11/29独立公式確認済み新規2件を追加。従前の検索回数と取得成功数は不変。 2026-11-19 公式個別ページ確認済み6件を非破壊追加。 2026-11-19 公式個別ページ確認済み2件を非破壊追加。 2026-11-21 公式個別ページ確認済み2件を非破壊追加。 2026-11-22 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 2,
-        "published_count": 2,
-        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs."
+        "candidate_count": 4,
+        "published_count": 4,
+        "note": "Exact measured October19 holiday-after HTTP queries and official ward source logs. 2026-11-27 公式個別ページ確認済み2件を非破壊追加。"
       },
       {
         "ward": "中野区",
@@ -326,7 +326,8 @@
     "2026-11-28-events-lead42-20261122.json",
     "2026-11-28-events-lead45-20261125.json",
     "2026-11-28-events-lead46-20261126.json",
-    "2026-11-28-events-lead47-20261127.json"
+    "2026-11-28-events-lead47-20261127.json",
+    "2026-11-28-events-lead48-20261127.json"
   ],
   "events": []
 }

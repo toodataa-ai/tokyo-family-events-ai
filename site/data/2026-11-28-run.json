@@ -1810,10 +1810,10 @@
   ],
   "stages": [],
   "summary": {
-    "published": 208,
-    "verified": 208,
+    "published": 219,
+    "verified": 219,
     "announced": 0,
-    "candidates": 145,
+    "candidates": 156,
     "excluded": 16,
     "note": " Source-list candidates were individually screened: date-specific Nakano city examination excluded from family outing inventory."
   },
@@ -4628,6 +4628,28 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
+    "global_source_audit_complete": false
+  },
+  "lead48_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261129-shibuya-bosai-sendagaya",
+      "verified-20261128-teamlab-hamarikyu",
+      "verified-20261129-kanda-hatarakukuruma",
+      "verified-20261128-rikugien-night",
+      "verified-20261128-timburton-labyrinth",
+      "verified-20261128-sancha-ennichi",
+      "verified-20261128-shinjuku-candlenight",
+      "verified-20261128-andst-holidaymarket",
+      "verified-20261128-jtb-europefes",
+      "verified-20261128-mamarial-fes",
+      "verified-20261128-toray-wonder-exhibition"
+    ],
+    "held_not_published": [
+      "none"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3",
     "global_source_audit_complete": false
   }
 }

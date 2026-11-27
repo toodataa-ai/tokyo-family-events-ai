@@ -8208,17 +8208,17 @@
     },
     {
       "path": "site/search.html",
-      "kind": "staging_only",
-      "category": "tama_expansion_20261121",
-      "reason": "「今週の掲載変更」のすべて・追加・情報更新の件数を、現在の期間・区などの絞り込み条件に連動させる修正（ユーザー依頼、ステージングのみ）。",
+      "kind": "different",
+      "category": "lottery_label_20261127",
+      "reason": "抽選表示の改修（app.jsの版番号更新）。本番は「本番OK」待ち。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },
     {
       "path": "site/copy.html",
-      "kind": "staging_only",
-      "category": "tama_expansion_20261121",
-      "reason": "「今週の掲載変更」のすべて・追加・情報更新の件数を、現在の期間・区などの絞り込み条件に連動させる修正（ユーザー依頼、ステージングのみ）。",
+      "kind": "different",
+      "category": "lottery_label_20261127",
+      "reason": "抽選表示の改修（app.jsの版番号更新）。本番は「本番OK」待ち。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

@@ -264,8 +264,21 @@ export function reservationCategory(ev){
   return 'unknown';
 }
 
+// 申し込んでも抽選で参加者が決まる行事（定員超過時の抽選を含む）。景品の抽選や一部企画だけの抽選は含めない。
+export function isLotteryReservation(ev){
+  if(reservationCategory(ev)!=='required') return false;
+  const note=normalizeText(ev.reservation?.note||'')
+    .replace(/(景品|賞品|プレゼント)[^。、]{0,8}抽選|一部[^。]{0,12}抽選|抽選(会|券|なし|はありません|ではありません|ではなく|不要)/g,'');
+  if(note.includes('抽選')) return true;
+  if(/(多数|超え|超過)[^。]{0,10}抽選/.test(normalizeText(ev.description||''))) return true;
+  // 公式ページの定員欄の引用（例「定員 12名 抽選」「定員：各回100名（抽選）」）
+  return [ev.family_fit?.review?.evidence].flat().some(item=>
+    /定員\s*:?\s*(各回)?\s*\d+\s*(名|人|組)\s*\(?\s*抽選/.test(String(item?.quote||'').normalize('NFKC')));
+}
+
 export function reservationLabel(ev){
   const c=reservationCategory(ev);
+  if(isLotteryReservation(ev)) return '抽選';
   return c==='required'?'要事前申込':c==='none'?'申込不要':c==='partial'?'一部要申込':'申込要確認';
 }
 

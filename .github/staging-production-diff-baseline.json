@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1219,
+  "expected_total_differences_after_governance": 1221,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -9763,6 +9763,22 @@
       "kind": "staging_only",
       "category": "daily_update_20261127",
       "reason": "2026-11-27の残課題再確認（読み取り専用取得。本番アプリ変更なし）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/app.js",
+      "kind": "different",
+      "category": "lottery_label_20261127",
+      "reason": "抽選の行事を「抽選」と表示する改修（2026-11-27）。本番は利用者の「本番OK」待ち。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tests/lottery_label.test.mjs",
+      "kind": "staging_only",
+      "category": "lottery_label_20261127",
+      "reason": "抽選の行事を「抽選」と表示する改修（2026-11-27）。本番は利用者の「本番OK」待ち。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

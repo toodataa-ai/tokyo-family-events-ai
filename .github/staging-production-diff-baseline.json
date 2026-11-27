@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1245,
+  "expected_total_differences_after_governance": 1244,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -7675,14 +7675,6 @@
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
       "reason": "第72回の読み取り専用の取得ワークフロー。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/data/discovery_sources.json",
-      "kind": "different",
-      "category": "tama_expansion_20261121",
-      "reason": "第71回の取得元の訪問状況（visit_status）の更新。本番への反映は次回の承認済みリリース時。 取得元にGREEN SPRINGS（立川）を追加（28件目、2026-11-22、本番には未反映）。 取得元に中央線あるあるPROJECT（杉並）を追加（30件目、2026-11-23、本番には未反映）。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     },

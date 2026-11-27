@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-27-r1068",
+  "current_public_release": "release/2026-11-28-r1078",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -473,7 +473,16 @@
       "workflow_run_id": 46000052889,
       "public_version": "1.51",
       "note": "ユーザー承認の本番v1.51。残課題ページを2026-11-27の状況に更新（PR #151、pending-issues.html/js/css・model・catalog と対応テスト）。本番未公開の情報源の確認状況ページへのリンクは入れていない。イベントデータは変更なし。data-production 1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3（944件）。"
+    },
+    {
+      "release_id": "release/2026-11-28-r1078",
+      "branch": "release/2026-11-28-r1078",
+      "commit_sha": "70a923eb6d6ba4d42ab3f3e9bdd8eb2346935ff8",
+      "deployed_at": "2026-11-27T15:15:33+00:00",
+      "workflow_run_id": 46023116929,
+      "public_version": "1.52",
+      "note": "ユーザー承認の本番v1.52。取得元一覧（AI探索先サイト12件追加と訪問状況）を反映（PR #152、site/data/discovery_sources.json のみ）。抽選表示などの未承認の改修は含まない。イベントデータは変更なし。data-production 52c370b574f54d3b7a6888adf405701538496d0c（967件）。初回の配備はPagesの一時エラーで失敗し再実行で成功。"
     }
   ],
-  "current_public_version": "1.51"
+  "current_public_version": "1.52"
 }

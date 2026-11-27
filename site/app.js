@@ -264,21 +264,27 @@ export function reservationCategory(ev){
   return 'unknown';
 }
 
-// 申し込んでも抽選で参加者が決まる行事（定員超過時の抽選を含む）。景品の抽選や一部企画だけの抽選は含めない。
-export function isLotteryReservation(ev){
-  if(reservationCategory(ev)!=='required') return false;
+// 抽選の行事の表示。'抽選'=申込者から抽選／'超過時抽選'=定員を超えた場合だけ抽選／''=抽選ではない。
+// 景品の抽選や一部企画だけの抽選は含めない。
+const OVERFLOW_LOTTERY=/(超過|超え|超える|多数|多い|上回)[^。]{0,25}?抽選/g;
+export function lotteryKind(ev){
+  if(reservationCategory(ev)!=='required') return '';
   const note=normalizeText(ev.reservation?.note||'')
     .replace(/(景品|賞品|プレゼント)[^。、]{0,8}抽選|一部[^。]{0,12}抽選|抽選(会|券|なし|はありません|ではありません|ではなく|不要)/g,'');
-  if(note.includes('抽選')) return true;
-  if(/(多数|超え|超過)[^。]{0,10}抽選/.test(normalizeText(ev.description||''))) return true;
-  // 公式ページの定員欄の引用（例「定員 12名 抽選」「定員：各回100名（抽選）」）
-  return [ev.family_fit?.review?.evidence].flat().some(item=>
-    /定員\s*:?\s*(各回)?\s*\d+\s*(名|人|組)\s*\(?\s*抽選/.test(String(item?.quote||'').normalize('NFKC')));
+  if(note.includes('抽選')){
+    const rest=note.replace(OVERFLOW_LOTTERY,'').replace(/抽選(の)?(結果|発表)/g,'');
+    return rest!==note.replace(/抽選(の)?(結果|発表)/g,'') && !rest.includes('抽選') ? '超過時抽選' : '抽選';
+  }
+  if(normalizeText(ev.description||'').match(OVERFLOW_LOTTERY)) return '超過時抽選';
+  // 公式ページの引用（例「申し込み多数の場合は、抽選」「定員 12名 抽選」「定員：各回100名（抽選）」）
+  const quotes=[ev.family_fit?.review?.evidence].flat().map(item=>String(item?.quote||'').normalize('NFKC'));
+  if(quotes.some(text=>text.match(OVERFLOW_LOTTERY))) return '超過時抽選';
+  return quotes.some(text=>/定員\s*:?\s*(各回)?\s*\d+\s*(名|人|組)\s*\(?\s*抽選/.test(text)) ? '抽選' : '';
 }
 
 export function reservationLabel(ev){
-  const c=reservationCategory(ev);
-  if(isLotteryReservation(ev)) return '抽選';
+  const c=reservationCategory(ev),lottery=lotteryKind(ev);
+  if(lottery) return lottery;
   return c==='required'?'要事前申込':c==='none'?'申込不要':c==='partial'?'一部要申込':'申込要確認';
 }
 

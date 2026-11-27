@@ -83,7 +83,11 @@ test('compact fluid sorter retains source order and supports all 36 drop positio
   assert.ok(style.includes('canva-sort-focus'),'fullscreen sorting style is available');
   assert.ok(style.includes('.canva-item-title'),'title-only compact layout exists');
   assert.doesNotMatch(canvaPage,/<small>\$\{escapeHtml\(ev\.ward\)\}/);
-  assert.match(canvaPage,/span class="canva-item-title"/);
+  assert.match(canvaPage,/<button type="button" class="canva-item-title" data-pick="1"/);
+  for(const marker of ['data-move="-1"','data-move="1"','canvaMoveBar','data-move-to="top"','data-move-to="bottom"','canvaUndo']){
+    assert.ok(canvaPage.includes(marker),'phone reordering offers '+marker);
+  }
+  assert.match(style,/\.canva-step-buttons button\{width:42px;height:44px/,'step buttons are 44px tall touch targets');
   assert.match(canvaPage,/createFluidCanvaSorter/);
 });
 test('selected events preserve chosen order, without altering source data',()=>{

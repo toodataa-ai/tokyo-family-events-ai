@@ -36,15 +36,18 @@ export function createFluidCanvaSorter({list,scrollArea,onCommit,onCancel}){
   }
   function scrollFrame(){
     if(!active)return;
-    const b=scrollArea.getBoundingClientRect();
+    // The list normally grows with the page; scroll the page then, the list only in full screen.
+    const pageScroll=scrollArea.scrollHeight<=scrollArea.clientHeight&&document.scrollingElement;
+    const area=pageScroll||scrollArea;
+    const b=pageScroll?{top:0,bottom:window.innerHeight,height:window.innerHeight}:scrollArea.getBoundingClientRect();
     const edge=Math.min(74,b.height*.22);
     let velocity=0;
     if(active.y<b.top+edge)velocity=-Math.min(18,((b.top+edge-active.y)/edge)*18);
     else if(active.y>b.bottom-edge)velocity=Math.min(18,((active.y-(b.bottom-edge))/edge)*18);
     if(velocity){
-      const old=scrollArea.scrollTop;
-      scrollArea.scrollTop+=velocity;
-      if(scrollArea.scrollTop!==old)placeAtPointer(active.y);
+      const old=area.scrollTop;
+      area.scrollTop+=velocity;
+      if(area.scrollTop!==old)placeAtPointer(active.y);
     }
     active.frame=requestAnimationFrame(scrollFrame);
   }
@@ -65,6 +68,8 @@ export function createFluidCanvaSorter({list,scrollArea,onCommit,onCancel}){
       onCommit(after,{from:d.before.indexOf(d.id)+1,to:after.indexOf(d.id)+1});
     }
   }
+  // Reinserting the dragged row drops pointer capture, so follow the finger on the whole window.
+  const pointerTarget=globalThis.window?.addEventListener?globalThis.window:list;
   list.addEventListener('pointerdown',e=>{
     const handle=e.target.closest('.canva-drag-handle');
     if(!handle || active || (e.pointerType==='mouse'&&e.button!==0))return;
@@ -89,17 +94,17 @@ export function createFluidCanvaSorter({list,scrollArea,onCommit,onCancel}){
     try{handle.setPointerCapture(e.pointerId);}catch{}
     active.frame=requestAnimationFrame(scrollFrame);
   });
-  list.addEventListener('pointermove',e=>{
+  pointerTarget.addEventListener('pointermove',e=>{
     if(!active||e.pointerId!==active.pointerId)return;
     e.preventDefault();
     active.y=e.clientY;
     active.ghost.style.transform='translate3d(0,'+(e.clientY-active.startY)+'px,0)';
     placeAtPointer(e.clientY);
   });
-  list.addEventListener('pointerup',e=>{
+  pointerTarget.addEventListener('pointerup',e=>{
     if(active&&e.pointerId===active.pointerId){e.preventDefault();finish(true);}
   });
-  list.addEventListener('pointercancel',e=>{
+  pointerTarget.addEventListener('pointercancel',e=>{
     if(active&&e.pointerId===active.pointerId)finish(false);
   });
   // Keyboard and assistive-technology fallback: keep the handle focusable.

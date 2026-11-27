@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 100,
-    "published": 100,
+    "candidates": 112,
+    "published": 112,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 99,
+    "verified": 111,
     "announced": 1,
     "thumbnail_count": 9,
     "source_audit_complete": false,
@@ -2387,6 +2387,45 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "11862e512c87aaddec2b091b2b6735c1bacc702c",
+    "global_source_audit_complete": false
+  },
+  "lead47_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261219-adachi-galaxy-xmas-concert-2026",
+      "verified-20261220-adachi-rubberband-fishing-2026",
+      "verified-20261220-adachi-cruyff-recreation-2026",
+      "verified-20261219-adachi-yayoi-lib-english-story-2026",
+      "verified-20261220-adachi-ud-play-lecture-2026",
+      "verified-20261219-setagaya-kyoiku-center-messe-2026",
+      "verified-20261219-setagaya-karasuyama-yearend-2026",
+      "verified-20261220-shinjuku-tsunohazu-xmas-movie-2026",
+      "verified-20261220-kunitachi-kodomo-daigaku-2026",
+      "verified-20261219-kokubunji-excavation-tour-2026",
+      "verified-20261220-mitaka-ehonnoie-mochi-2026",
+      "verified-20261219-mitaka-ehonnoie-ohanashi-2026"
+    ],
+    "held_not_published": [
+      "adachi-adult-programs",
+      "adachi-awgp-video-1213",
+      "adachi-futagoza-1205",
+      "adachi-xmasmarket-youth-1212",
+      "arakawa-teens",
+      "chiyoda-resident-or-closed",
+      "chofu-closed-lottery",
+      "edogawa-closed-lottery",
+      "kodomo-smile-playpark",
+      "koto-closed-or-weekday",
+      "minato-resident-or-thin",
+      "ota-resident",
+      "out-of-range",
+      "published-already",
+      "setagaya-weekday-or-thin",
+      "tama-resident",
+      "zoo-exhibit-1217"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
     "global_source_audit_complete": false
   }
 }

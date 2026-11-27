@@ -4,8 +4,8 @@
   "generated": "2026-11-08T08:44:28.608Z",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 212,
-    "published": 195,
+    "candidate_total": 225,
+    "published": 208,
     "excluded": 16,
     "duplicate": 1
   },
@@ -24999,6 +24999,1682 @@
           "kind": "registered_source",
           "source_id": "nerimakanko",
           "url": "https://www.nerimakanko.jp/event/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-adachi-street-piano-kitaayase-2026",
+      "name": "ストリートピアノのアウトリーチ（ららテラス北綾瀬・読み聞かせあり）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。ピアノに触れつつ読み聞かせも楽しめる駅直結の無料の催し。演奏は1組5分まで。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子育てサロンの企画があり子どもも楽しめる"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ピアノを弾ける"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "乳幼児から参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "当日自由に立ち寄れる"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "気軽に音楽に触れられる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "申込不要で無料で音楽と読み聞かせを楽しめる"
+          ],
+          "limitations": [
+            "演奏は1組5分以内"
+          ],
+          "grade_comparison": "総合B（11/28・ストリートピアノのアウトリーチ（ららテラス北綾瀬・読み聞かせあり））：申込不要で無料で音楽と読み聞かせを楽しめる。注意点は「演奏は1組5分以内」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261128index.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261128index.html",
+              "quote": "読み聞かせやエプロンシアター",
+              "checked_at": "2026-11-27",
+              "sha256": "5c982f030a30be5084d403f4d879d01a9f55530ded9e46d3b7bc674f9b900f98",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261128index.html",
+              "quote": "当日、直接会場へお越しください",
+              "checked_at": "2026-11-27",
+              "sha256": "82d66f5738ec83bcef50f874b46767600b3fb3de7f4770d692788f7dc4781220",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。ピアノに触れつつ読み聞かせも楽しめる駅直結の無料の催し。演奏は1組5分まで。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261128index.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/bunka/stpiano20261128index.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-adachi-pompom-cat-strap-2026",
+      "name": "リサイクル糸で作る 猫のポンポンストラップ（舎人地域学習センター）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。小学生と保護者が猫のストラップ作りを無料で体験できる。定員10組で空きの確認が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生と保護者が対象の工作"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "自分の手で作る"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で座って作る"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前の申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "作品が残り環境も学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "親子で持ち帰れる工作が無料でできる"
+          ],
+          "limitations": [
+            "定員10組で空き確認が必要"
+          ],
+          "grade_comparison": "総合B（11/28・リサイクル糸で作る 猫のポンポンストラップ（舎人地域学習センター））：親子で持ち帰れる工作が無料でできる。注意点は「定員10組で空き確認が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1128.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1128.html",
+              "quote": "小学生と保護者募集人数10組費用",
+              "checked_at": "2026-11-27",
+              "sha256": "7f58c4518d6d3a4059b42cd0a3732182b33cdaed78d722c30132bb366b01c2ee",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1128.html",
+              "quote": "リサイクル糸を使って、猫の形のポンポンストラップを作ります",
+              "checked_at": "2026-11-27",
+              "sha256": "89e43b0ded8aa3af057af963d89c1bc756638b4afb17d0ca6f17a3cbb2bf3e37",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。小学生と保護者が猫のストラップ作りを無料で体験できる。定員10組で空きの確認が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1128.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1128.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-adachi-guruguruhaku-ayase-2026",
+      "name": "ぐるぐる博 in アヤセ 2026（東綾瀬公園ハト広場）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29(日)開催。子どもがお手伝いと買い物の社会体験をできる地域の催し。費用の記載がなく混雑も考えられる。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども向け体験企画がある"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "手伝いや買い物を体験する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "子どもが参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "出店が多く混雑が考えられる"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "参加費の記載がない"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "こどもバイトは当日参加"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の人と交流できる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "子どもがお店の手伝いを当日体験できる"
+          ],
+          "limitations": [
+            "費用の記載がない"
+          ],
+          "grade_comparison": "総合B（11/29・ぐるぐる博 in アヤセ 2026（東綾瀬公園ハト広場））：子どもがお店の手伝いを当日体験できる。注意点は「費用の記載がない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kyoso/2026gaiyou_guruguru_ayase.html",
+              "quote": "2026年11月29日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "3ac97cab76d7d2d34de98df970a542e99ec2e410376e5b806881d885afb8b4e6",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kyoso/2026gaiyou_guruguru_ayase.html",
+              "quote": "ぐるぐるこどもバイト（当日参加）",
+              "checked_at": "2026-11-27",
+              "sha256": "4f772f182a98bead26aaa3f58caffe1892cf901ad9ba411405a96c420bb27b58",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kyoso/2026gaiyou_guruguru_ayase.html",
+              "quote": "東綾瀬公園（ハト広場）で開催します",
+              "checked_at": "2026-11-27",
+              "sha256": "f5c4b8ad70cea838984fd4c6da290ec8fc32b763d090f4771485535ccebb7520",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29(日)開催。子どもがお手伝いと買い物の社会体験をできる地域の催し。費用の記載がなく混雑も考えられる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/kyoso/2026gaiyou_guruguru_ayase.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/kyoso/2026gaiyou_guruguru_ayase.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-adachi-yayoi-lib-quiz-rally-2026",
+      "name": "やよい図書館 にゃよいクエスト2（クイズラリー・11/29まで）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)・29(日)が最後の週末。子どもがクイズラリーに申込なしで無料挑戦できる。11/29で終了する。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "幼児から小学生向け"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "館内を回ってクイズに挑戦"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幼児は手助けがあると安心"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で自由なペース"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "図書館を楽しむきっかけになる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "好きな時に無料でクイズに挑戦できる"
+          ],
+          "limitations": [
+            "11/29で終了する"
+          ],
+          "grade_comparison": "総合B（11/1・やよい図書館 にゃよいクエスト2（クイズラリー・11/29まで））：好きな時に無料でクイズに挑戦できる。注意点は「11/29で終了する」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/110129yayoi.html",
+              "quote": "にゃよいたちと一緒にクイズラリーに挑戦してみよう",
+              "checked_at": "2026-11-27",
+              "sha256": "8502b2fd1a8b67cad296a4936f688f032f8a55d1b1a337f92859d2b90945fb6f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/110129yayoi.html",
+              "quote": "幼児から小学生費用無料申込方法当",
+              "checked_at": "2026-11-27",
+              "sha256": "477dc4fe7d2b9c501bb39cfc11c4ea6dae0e08daa54a87d526f192de7d04a872",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/110129yayoi.html",
+              "quote": "ら小学生費用無料申込方法当日受付",
+              "checked_at": "2026-11-27",
+              "sha256": "bfa8a8748a37b56578cfdd3d3baa1fa6dac994ae6087a3c97da56cef68e06a4e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)・29(日)が最後の週末。子どもがクイズラリーに申込なしで無料挑戦できる。11/29で終了する。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/110129yayoi.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/110129yayoi.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-adachi-yayoi-lib-movie-2026",
+      "name": "やよい図書館 秋のスペシャルえいが会",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。幼児から見られる子ども向け上映が無料で途中入退場もできる。定員30人。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "幼児から楽しめる作品"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "映像を見る"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幼児から"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "途中入退場ができると公式ページに記載"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "途中入退場ができ屋内"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "当日受付で先着"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "気軽に映画を楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "途中で出入りできる無料の子ども上映会"
+          ],
+          "limitations": [
+            "定員30人の当日受付"
+          ],
+          "grade_comparison": "総合B（11/28・やよい図書館 秋のスペシャルえいが会）：途中で出入りできる無料の子ども上映会。注意点は「定員30人の当日受付」こと。",
+          "unsupported_axes": [],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1128yayoi.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1128yayoi.html",
+              "quote": "途中入退場可能です開催日時202",
+              "checked_at": "2026-11-27",
+              "sha256": "89f22460cfe6da6b2ef7dfe13395fc7b09a7afbda626eff2c7dce30747c1c0ba",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1128yayoi.html",
+              "quote": "数30人費用無料申込方法当日受付",
+              "checked_at": "2026-11-27",
+              "sha256": "447384a0e76eb6e7d274a78246e40e5e04cffc13bcd561a74876744b2cd69912",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。幼児から見られる子ども向け上映が無料で途中入退場もできる。定員30人。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1128yayoi.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1128yayoi.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-adachi-okimoto-lib-movie-2026",
+      "name": "興本図書館 子ども映画会",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29(日)開催。幼児も見やすい30分の映画会が申込不要・無料。内容は上映作品1本。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "幼児から小学生向け"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "映像を見る"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "短くて幼児も見やすい"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内で30分"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "短時間で楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "30分で見やすく申込不要"
+          ],
+          "limitations": [
+            "上映は短い1本のみ"
+          ],
+          "grade_comparison": "総合B（11/29・興本図書館 子ども映画会）：30分で見やすく申込不要。注意点は「上映は短い1本のみ」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129okimoto.html",
+              "quote": "2026年11月29日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "3ac97cab76d7d2d34de98df970a542e99ec2e410376e5b806881d885afb8b4e6",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129okimoto.html",
+              "quote": "ちきゅうはおおきなどうぶつえん",
+              "checked_at": "2026-11-27",
+              "sha256": "aeb9a6a3c37dcf4108c3ac29e5f5b44b6eb5ac6af5b1f3984cd365984ab587de",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129okimoto.html",
+              "quote": "幼児から小学生費用無料申込方法不",
+              "checked_at": "2026-11-27",
+              "sha256": "4d81ac7f1bcb3c6a2e37cc731d143be226dcea05ccd485dd47557245035d9cd5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29(日)開催。幼児も見やすい30分の映画会が申込不要・無料。内容は上映作品1本。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129okimoto.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129okimoto.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-adachi-sano-lib-trampoline-2026",
+      "name": "佐野図書館 パパと一緒に親子でミニトランポリン体験",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29(日)開催。乳幼児親子が休日に屋内でトランポリン体験を無料でできる。定員6組と少ない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "乳幼児と保護者向け"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "トランポリンで体を動かす"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "乳幼児向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で45分"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "直接来場で先着"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "親子で体を動かせる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "乳幼児が屋内で体を動かせる無料体験"
+          ],
+          "limitations": [
+            "定員6組と少ない"
+          ],
+          "grade_comparison": "総合B（11/29・佐野図書館 パパと一緒に親子でミニトランポリン体験）：乳幼児が屋内で体を動かせる無料体験。注意点は「定員6組と少ない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129snao.html",
+              "quote": "乳幼児と保護者募集人数6組費用無",
+              "checked_at": "2026-11-27",
+              "sha256": "afafae13c3ce70228a8a14e776e6999ec7fcb427d82c447ef4c7473305289f3a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129snao.html",
+              "quote": "ロビーでトランポリン体験をしてみませんか",
+              "checked_at": "2026-11-27",
+              "sha256": "4b53dde1724da0296e24e5afcaa07fbacd9fb1908bcb336bb667b6db47002c08",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129snao.html",
+              "quote": "直接、会場にお越しください",
+              "checked_at": "2026-11-27",
+              "sha256": "72b65fbe9c6d8910c7ad3107c800abbb8b0bd19d9050e397cd99ca389042a0d7",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29(日)開催。乳幼児親子が休日に屋内でトランポリン体験を無料でできる。定員6組と少ない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129snao.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1129snao.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-adachi-shinden-lib-mission-2026",
+      "name": "新田コミュニティ図書館 ミッションチャレンジスペシャル（11/29まで）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)・29(日)が最後の週末。小学生がミッションに挑戦して景品をもらえる。景品は先着で11/29終了。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "小学生以上が参加できる"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "ミッションに挑戦する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生以上"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で自由なペース"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日受付で参加できる"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "図書館で楽しく過ごせる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "申込なしで景品つきの挑戦ができる"
+          ],
+          "limitations": [
+            "景品はなくなり次第終了"
+          ],
+          "grade_comparison": "総合B（10/31・新田コミュニティ図書館 ミッションチャレンジスペシャル（11/29まで））：申込なしで景品つきの挑戦ができる。注意点は「景品はなくなり次第終了」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/20261027shinden.html",
+              "quote": "指令書に書かれたミッションをクリアして景品をGETしよう",
+              "checked_at": "2026-11-27",
+              "sha256": "cfe0edc819c38dd4088ef9f5d4d4ebb1de4acf892ebe5cba5ad1752bbb0331d3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/20261027shinden.html",
+              "quote": "小学生以上費用無料申込方法当日受",
+              "checked_at": "2026-11-27",
+              "sha256": "457de3573636543a32ad709a6718de518df49d36d8a6d1468f03d9d60ec2eee5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/20261027shinden.html",
+              "quote": "2026年11月29日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "3ac97cab76d7d2d34de98df970a542e99ec2e410376e5b806881d885afb8b4e6",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)・29(日)が最後の週末。小学生がミッションに挑戦して景品をもらえる。景品は先着で11/29終了。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/20261027shinden.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/20261027shinden.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261129-edogawa-batontouch-babyfam-2026",
+      "name": "子ども服☆ばとんたっち＆BABY FAM PARK（タワーホール船堀）",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/29(日)開催。子ども服を無料で譲り受けられ子育て向け催しもある。子ども向けの体験内容は詳しく書かれていない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子育て世帯が対象"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "服を選ぶのが中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "乳幼児の家庭にも向く"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で出入りしやすい"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "子育ての家計に役立つ"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "子ども服を申込不要で無料で譲り受けられる"
+          ],
+          "limitations": [
+            "催しの詳しい内容は記載がない"
+          ],
+          "grade_comparison": "総合B（11/29・子ども服☆ばとんたっち＆BABY FAM PARK（タワーホール船堀））：子ども服を申込不要で無料で譲り受けられる。注意点は「催しの詳しい内容は記載がない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/08baton.html",
+              "quote": "2026年11月29日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "3ac97cab76d7d2d34de98df970a542e99ec2e410376e5b806881d885afb8b4e6",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/08baton.html",
+              "quote": "譲り受けのみのご参加も可能です",
+              "checked_at": "2026-11-27",
+              "sha256": "83ee8bbe86620410e7efa1da6606ec03f6424a8ff008a493470c9db207396d6b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/08baton.html",
+              "quote": "子育て世帯向けBABY FAM PARKも同時開催",
+              "checked_at": "2026-11-27",
+              "sha256": "4558bc443e7edbf8aaa2c45f04414a6a93c84402097cf2ffdde4cff146b61201",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/29(日)開催。子ども服を無料で譲り受けられ子育て向け催しもある。子ども向けの体験内容は詳しく書かれていない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/08baton.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.edogawa.tokyo.jp/event/08baton.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-edogawa-enzotei-storytime-2026",
+      "name": "子どもむけおはなし会（ひらい圓藏亭）",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。3歳以上向けの読み聞かせと手遊びが予約不要・無料。時間は30分。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "3歳から小学生向け"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "手遊びに参加できる"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "3歳以上"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で30分"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "予約は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "身近な施設で本に親しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "予約なしで気軽に読み聞かせに参加できる"
+          ],
+          "limitations": [
+            "30分の短い会"
+          ],
+          "grade_comparison": "総合B（11/28・子どもむけおはなし会（ひらい圓藏亭））：予約なしで気軽に読み聞かせに参加できる。注意点は「30分の短い会」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/2611kodomomuke.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/2611kodomomuke.html",
+              "quote": "3歳から小学生までが対象です",
+              "checked_at": "2026-11-27",
+              "sha256": "5add8796ee4db6177ab32c6217fd0197f14ff5713752e8bf31fae1feb892329a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/2611kodomomuke.html",
+              "quote": "予約不要ですのでお気軽にご参加ください",
+              "checked_at": "2026-11-27",
+              "sha256": "fb322ab0b13eae0e11a46d27d50d7de2a4802c7c518ff3863523322c73fddde0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。3歳以上向けの読み聞かせと手遊びが予約不要・無料。時間は30分。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/2611kodomomuke.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.edogawa.tokyo.jp/event/2611kodomomuke.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-edogawa-hoshiimo-2026",
+      "name": "一之江抹香亭 親子で干し芋づくり講座",
+      "ward": "江戸川区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。小学生以上が親子で干し芋作りを無料で学べる。電話申込で定員が少ない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "小学生以上が親子で参加"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "自分で作る"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生以上"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "荒天は翌日に延期"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "電話の申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の食を学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "親子で食の手作りを無料体験できる"
+          ],
+          "limitations": [
+            "定員15人程度の電話申込"
+          ],
+          "grade_comparison": "総合B（11/28・一之江抹香亭 親子で干し芋づくり講座）：親子で食の手作りを無料体験できる。注意点は「定員15人程度の電話申込」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/makko1128.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/makko1128.html",
+              "quote": "干し芋の作り方を学びます",
+              "checked_at": "2026-11-27",
+              "sha256": "e3ea287ad9cb4dd2cd69967ff70cbc01e43caed2868bc74704856e72118cd79f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.edogawa.tokyo.jp/event/makko1128.html",
+              "quote": "保護者同伴、1組4人まで",
+              "checked_at": "2026-11-27",
+              "sha256": "48f14d5e6a687050db34758dd3f1c605dd1ff064ad730f942dd82cdc33253819",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。小学生以上が親子で干し芋作りを無料で学べる。電話申込で定員が少ない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/makko1128.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.edogawa.tokyo.jp/event/makko1128.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-setagaya-kitazawa-tabuji-2026",
+      "name": "北沢地域 合同多胎児支援事業「ふたご！！みつご！！！だいしゅうGO！！！！」",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。ふたご・みつごの家庭が交流や衣類交換をできる。多胎児の家庭向けで申込が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "多胎児の親子向け"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "交流や撮影に参加する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "乳幼児の家庭向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で2時間"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "参加費の記載がない"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前の申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "同じ立場の家庭とつながれる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "多胎児の家庭どうしで交流できる"
+          ],
+          "limitations": [
+            "多胎児の家庭が対象で申込が必要"
+          ],
+          "grade_comparison": "総合B（11/28・北沢地域 合同多胎児支援事業「ふたご！！みつご！！！だいしゅうGO！！！！」）：多胎児の家庭どうしで交流できる。注意点は「多胎児の家庭が対象で申込が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/03069/36588.html",
+              "quote": "2026年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "fdd8abc10f6d46824b54346a8b79b6176fde1f8b5ddffb3ded1d5ac8a73a0d56",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03069/36588.html",
+              "quote": "多胎児のお子さんとその保護者",
+              "checked_at": "2026-11-27",
+              "sha256": "b80bd5b92ec8fb7c8db97439adf19256673fae3bd0806d9fffbc6e992d77aa72",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03069/36588.html",
+              "quote": "衣類交換会ねぞうフォトコーナー、",
+              "checked_at": "2026-11-27",
+              "sha256": "4c0273ee611c4252636df39d9c8738ae497fd8faf6a54a1b3d4c7dbe95aa688d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。ふたご・みつごの家庭が交流や衣類交換をできる。多胎児の家庭向けで申込が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03069/36588.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/03069/36588.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261128-toshima-animal-fes-2026",
+      "name": "としま動物愛護フェスティバル2026",
+      "ward": "豊島区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "11/28(土)開催。動物との暮らしを知る催しに申込なし・無料で参加できる。子ども専用の企画は明記されていない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "誰でも参加できる"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "ゲームや相談に参加できる"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幅広い年齢で参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "屋外で雨天は順延"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "命を考えるきっかけになる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "動物を身近に学べる催しに無料参加できる"
+          ],
+          "limitations": [
+            "子ども向け企画の明記がない"
+          ],
+          "grade_comparison": "総合B（11/28・としま動物愛護フェスティバル2026）：動物を身近に学べる催しに無料参加できる。注意点は「子ども向け企画の明記がない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.toshima.lg.jp/212/kurashi/ese/kyose/documents/documents/2609141542.html",
+              "quote": "令和8年11月28日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "f9bbcf3a72ef222e30735e44a7561c2dc343acac1b7a1ca211a683715be017e3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.toshima.lg.jp/212/kurashi/ese/kyose/documents/documents/2609141542.html",
+              "quote": "愛犬と一緒に参加できるゲーム",
+              "checked_at": "2026-11-27",
+              "sha256": "21f37e928c241b9459118a26a4142cb777c23e20c6350f212116bfb016a8114a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.toshima.lg.jp/212/kurashi/ese/kyose/documents/documents/2609141542.html",
+              "quote": "どなたでも参加できます。",
+              "checked_at": "2026-11-27",
+              "sha256": "773e891c0594bc5b124d818006e19d7ce77ea2e59c89b5875aa6572355b36045",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "11/28(土)開催。動物との暮らしを知る催しに申込なし・無料で参加できる。子ども専用の企画は明記されていない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.toshima.lg.jp/212/kurashi/ese/kyose/documents/documents/2609141542.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.toshima.lg.jp/212/kurashi/ese/kyose/documents/documents/2609141542.html"
         }
       ]
     }

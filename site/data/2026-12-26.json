@@ -10,10 +10,10 @@
   "run_file": "2026-12-26-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 34,
+    "candidate_count": 38,
     "duplicate_removed": 0,
     "excluded_count": 0,
-    "published_count": 34,
+    "published_count": 38,
     "wards": [
       {
         "ward": "千代田区",
@@ -119,9 +119,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 17,
-        "published_count": 17,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み7件を非破壊追加。 2026-11-26 公式個別ページ確認済み10件を非破壊追加。"
+        "candidate_count": 18,
+        "published_count": 18,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み7件を非破壊追加。 2026-11-26 公式個別ページ確認済み10件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
@@ -200,9 +200,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "2026-11-18実測: 週別検索3件と区公式トップの取得に成功。個別の掲載はイベント単位の公式確認済みのみ。 2026-11-25 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "葛飾区",
@@ -235,6 +235,12 @@
         "candidate_count": 1,
         "published_count": 1,
         "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
+      },
+      {
+        "ward": "調布市",
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "多摩拡張（v1.41）の初回。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。"
       }
     ]
   },
@@ -247,7 +253,8 @@
     "2026-12-26-events-lead28-20261121.json",
     "2026-12-26-events-lead44-20261123.json",
     "2026-12-26-events-lead45-20261125.json",
-    "2026-12-26-events-lead46-20261126.json"
+    "2026-12-26-events-lead46-20261126.json",
+    "2026-12-26-events-lead47-20261127.json"
   ],
   "events": []
 }

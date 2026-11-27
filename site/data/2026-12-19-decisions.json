@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 100,
-    "published": 100,
+    "candidate_total": 112,
+    "published": 112,
     "excluded": 0,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -13933,6 +13933,1553 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://www.city.setagaya.lg.jp/03071/32601.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-adachi-galaxy-xmas-concert-2026",
+      "name": "ギャラクシティ クリスマスコンサート2026",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。クリスマス曲と映画音楽を子ども500円で聴ける。有料のチケット制で空席は確認が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "年齢を問わない公演"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "客席で鑑賞する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "未就学児も入れるが着席の鑑賞"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "ホールで座って過ごす必要がある"
+          },
+          "cost": {
+            "grade": "B",
+            "reason": "子ども500円、一般2,000円"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前にチケットの用意が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "季節の曲を家族で聴ける"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "子ども料金500円でホールの演奏を聴ける"
+          ],
+          "limitations": [
+            "チケットの空席確認が必要"
+          ],
+          "grade_comparison": "総合B（12/19・ギャラクシティ クリスマスコンサート2026）：子ども料金500円でホールの演奏を聴ける。注意点は「チケットの空席確認が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html",
+              "quote": "2026年12月19日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html",
+              "quote": "どなたでも（小学生以下は保護者同伴）",
+              "checked_at": "2026-11-27",
+              "sha256": "2ca391a3c7fbeeee3c6e533e75bba41ac629040c4b007001dfc734c8587a37d9",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html",
+              "quote": "3歳から小学生：500円",
+              "checked_at": "2026-11-27",
+              "sha256": "618eec3edc9a4f4a8619492ed66da7e963fbd5e6f26e4b5caaf3bd40eff3ebff",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。クリスマス曲と映画音楽を子ども500円で聴ける。有料のチケット制で空席は確認が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/bunka/galaxy/20261219christmas.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-adachi-rubberband-fishing-2026",
+      "name": "ペットボトルで輪ゴム釣りゲームを作ろう（学びピアの縁側）",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。小学生親子が遊べる工作を当日受付・無料で作れる。定員8組なので早めの来場が安心。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生と保護者向け"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "作って遊ぶ"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で参加できる"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "当日受付で先着"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "遊びと環境学習を兼ねる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "作って遊べる工作に無料で参加できる"
+          ],
+          "limitations": [
+            "定員8組の当日受付"
+          ],
+          "grade_comparison": "総合B（12/20・ペットボトルで輪ゴム釣りゲームを作ろう（学びピアの縁側））：作って遊べる工作に無料で参加できる。注意点は「定員8組の当日受付」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1220.html",
+              "quote": "2026年12月20日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "16e628107ce60bad668e705681b842a9f938fcdbf9e039667da18c929076d470",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1220.html",
+              "quote": "小学生と保護者募集人数8組費用無",
+              "checked_at": "2026-11-27",
+              "sha256": "b225bb1672dfcd316ab72167742125db5d0602b545336efcb1521d6c363579e3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1220.html",
+              "quote": "ペットボトルを使って、輪ゴム釣りゲームを作ります",
+              "checked_at": "2026-11-27",
+              "sha256": "8c307ffb12068c783c115385a04239294efe9a0af199b6c7a691f932a1dd5b1d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。小学生親子が遊べる工作を当日受付・無料で作れる。定員8組なので早めの来場が安心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1220.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/kankyo/kurashi/kankyo/08kouza1220.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-adachi-cruyff-recreation-2026",
+      "name": "クライフコート パラスポーツ×レクリエーション体験会",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。いろいろな軽スポーツを誰でも無料で試せる。屋外で雨天中止、事前の申込が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "年齢を問わず参加できる"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "体を動かして体験する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "親子で参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "冬の屋外コート"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "先着の事前申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "多様な人と遊べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "軽スポーツを誰でも無料で体験できる"
+          ],
+          "limitations": [
+            "雨天中止で事前申込が必要"
+          ],
+          "grade_comparison": "総合B（12/20・クライフコート パラスポーツ×レクリエーション体験会）：軽スポーツを誰でも無料で体験できる。注意点は「雨天中止で事前申込が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/sports/special_cruyffcoat_event20230423.html",
+              "quote": "2026年12月20日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "16e628107ce60bad668e705681b842a9f938fcdbf9e039667da18c929076d470",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/sports/special_cruyffcoat_event20230423.html",
+              "quote": "ドッチビー、ラダーゲッターなど各種レクリエーションを楽しむことができます",
+              "checked_at": "2026-11-27",
+              "sha256": "7be4530700f81d576993725fccb8b5d46340aeae71c6b5c27c38067126ef4c34",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/sports/special_cruyffcoat_event20230423.html",
+              "quote": "を含め、どなたでも参加できます。",
+              "checked_at": "2026-11-27",
+              "sha256": "5e032d3614877785207acb9befcc02d3f369a6cc549acf646d292b2a19941c4b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。いろいろな軽スポーツを誰でも無料で試せる。屋外で雨天中止、事前の申込が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/sports/special_cruyffcoat_event20230423.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/sports/special_cruyffcoat_event20230423.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-adachi-yayoi-lib-english-story-2026",
+      "name": "やよい図書館 クリスマス英語おはなし会",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。体を動かして英語に触れる親子向けのお話会が無料。定員15名の当日受付。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "幼児から小学生と保護者向け"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "体を動かして参加する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "幼児から小学生"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で1時間"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "当日受付で先着"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "英語に楽しく触れられる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "英語遊びを親子で無料体験できる"
+          ],
+          "limitations": [
+            "定員15名の当日受付"
+          ],
+          "grade_comparison": "総合B（12/19・やよい図書館 クリスマス英語おはなし会）：英語遊びを親子で無料体験できる。注意点は「定員15名の当日受付」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1219yayooi.html",
+              "quote": "2026年12月19日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1219yayooi.html",
+              "quote": "お話に合わせて体を動かしながら英語を楽しめる会",
+              "checked_at": "2026-11-27",
+              "sha256": "ccd7341825db2c0561144582fc06941269ec26524c4b87c2ce2082d0accdd5be",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1219yayooi.html",
+              "quote": "幼児から小学生とその保護者",
+              "checked_at": "2026-11-27",
+              "sha256": "db052e09698765c5a536f5e915c1a246eb280242a6eec1e3c53e96bcaeb4be77",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。体を動かして英語に触れる親子向けのお話会が無料。定員15名の当日受付。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1219yayooi.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1219yayooi.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-adachi-ud-play-lecture-2026",
+      "name": "ユニバーサルデザイン講演・体験「きこえるってあたりまえ？」",
+      "ward": "足立区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。遊びを通じて聞こえ方の違いを無料で学べる。講演を含み2時間半と長め。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "誰でも参加できる"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "実際に遊ぶ"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "遊びが分かる年齢なら参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "2時間半の長い催し"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前の申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "思いやりを考えるきっかけになる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "遊びながら多様性を学べる"
+          ],
+          "limitations": [
+            "講演を含み時間が長め"
+          ],
+          "grade_comparison": "総合B（12/20・ユニバーサルデザイン講演・体験「きこえるってあたりまえ？」）：遊びながら多様性を学べる。注意点は「講演を含み時間が長め」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshi/machi/machizukuri/ud-kouenkai-r8event.html",
+              "quote": "2026年12月20日（日曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "16e628107ce60bad668e705681b842a9f938fcdbf9e039667da18c929076d470",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshi/machi/machizukuri/ud-kouenkai-r8event.html",
+              "quote": "一緒に遊ぶ方法（オリジナルルール）を考え、実際に遊びながら",
+              "checked_at": "2026-11-27",
+              "sha256": "ff5292f634eb67b3fd42849f8545b8294208ff4106c14785aef0e27b3f22f4a5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.adachi.tokyo.jp/toshi/machi/machizukuri/ud-kouenkai-r8event.html",
+              "quote": "どなたでも無料でご参加いただけます",
+              "checked_at": "2026-11-27",
+              "sha256": "c711f2618797c6694571b1fcdc9cfd0ceb268d8e3d68be6cd17fbdae3271a70b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。遊びを通じて聞こえ方の違いを無料で学べる。講演を含み2時間半と長め。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshi/machi/machizukuri/ud-kouenkai-r8event.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.adachi.tokyo.jp/toshi/machi/machizukuri/ud-kouenkai-r8event.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-setagaya-kyoiku-center-messe-2026",
+      "name": "教育総合センターメッセ",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。運動遊びから科学実験まで多くの体験を無料で選べる。一部の企画は申込や先着がある。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "幼稚園児から中学生が対象"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "多くの体験コーナーがある"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児から中学生まで対象"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で出入りしやすい"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "多くは申込不要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "一日じっくり学んで遊べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "幅広い体験を無料で選んで楽しめる"
+          ],
+          "limitations": [
+            "一部の企画は申込や先着がある"
+          ],
+          "grade_comparison": "総合A（12/19・教育総合センターメッセ）：幅広い体験を無料で選んで楽しめる。注意点は「一部の企画は申込や先着がある」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/02428/17521.html",
+              "quote": "2026年12月19日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/02428/17521.html",
+              "quote": "子どもも大人もわくわくする学びの体験がたくさんあります",
+              "checked_at": "2026-11-27",
+              "sha256": "08f69c56eb1cb25ea62008d360d98cb9d955e61590021ea95d56c2ecb68c040f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/02428/17521.html",
+              "quote": "不要（一部を除く）(注意)・プロ",
+              "checked_at": "2026-11-27",
+              "sha256": "63ec83d05e4af6746a78989af3c88f3793da6ddb408de110461f4ff00901f152",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。運動遊びから科学実験まで多くの体験を無料で選べる。一部の企画は申込や先着がある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/02428/17521.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/02428/17521.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-setagaya-karasuyama-yearend-2026",
+      "name": "烏山児童館 年末お楽しみ会",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。乳幼児親子も歓迎の音楽と出し物の会が申込不要・無料。先着20組程度。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "児童館の子ども向け行事"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "乳幼児親子も歓迎"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で1時間半"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込不要だが先着"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "年末の雰囲気を楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "乳幼児連れも歓迎の無料の会"
+          ],
+          "limitations": [
+            "先着20組程度"
+          ],
+          "grade_comparison": "総合B（12/19・烏山児童館 年末お楽しみ会）：乳幼児連れも歓迎の無料の会。注意点は「先着20組程度」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/03082/37172.html",
+              "quote": "2026年12月19日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "d828c248662dc09d66963f4c800d60eea4a41ac121393cb51ee6247d9f71e40b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03082/37172.html",
+              "quote": "小学生の出し物を一緒に楽しみませんか",
+              "checked_at": "2026-11-27",
+              "sha256": "04ee99fae73958b5fd36c19b654558226e28508fa15800e90f3e64aa082e9111",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03082/37172.html",
+              "quote": "どなたでもどうぞ。乳幼児親子も大",
+              "checked_at": "2026-11-27",
+              "sha256": "2ec9bd729d2f9389e10cf5a6b75d6344f3a472b029874b9bbfdcdcf9a182b1db",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。乳幼児親子も歓迎の音楽と出し物の会が申込不要・無料。先着20組程度。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03082/37172.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/03082/37172.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-shinjuku-tsunohazu-xmas-movie-2026",
+      "name": "角筈図書館 クリスマス映画会",
+      "ward": "新宿区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。小学生以下と保護者がクリスマス映画を無料で見られる。先着40名の受付が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生以下の子ども向け"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "映画を見る"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "約65分の作品"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で座って見る"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前の受付が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "クリスマスの思い出になる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "季節の映画を親子で無料で見られる"
+          ],
+          "limitations": [
+            "先着40名の受付が必要"
+          ],
+          "grade_comparison": "総合B（12/20・角筈図書館 クリスマス映画会）：季節の映画を親子で無料で見られる。注意点は「先着40名の受付が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4290",
+              "quote": "2026年12月20日(日)14：00～15：15",
+              "checked_at": "2026-11-27",
+              "sha256": "ca4d6b4e76262071ca4164d95f5a077201f717c267cf26011088d645e9acd619",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4290",
+              "quote": "小学生以下のこどもとその保護者",
+              "checked_at": "2026-11-27",
+              "sha256": "1f2e918de4df768513a39c7bb6a5f6fd771cadb9af1573849555019998a703ef",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4290",
+              "quote": "書館カウンターにて受付先着40名",
+              "checked_at": "2026-11-27",
+              "sha256": "f782a72bc53e4bd784b5da689e6393ae192d98d40dd19b6611c72abf2fad9adc",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。小学生以下と保護者がクリスマス映画を無料で見られる。先着40名の受付が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4290",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4290"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-kunitachi-kodomo-daigaku-2026",
+      "name": "子ども大学くにたち 第3回特別授業「夢のかなえ方」",
+      "ward": "国立市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。小中学生が仕事と夢の話を無料で聞ける。お話が中心で申込が必要。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小中学生向けの授業"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "話を聞くのが中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学生以上向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "屋内で1時間半"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加費は無料"
+          },
+          "reservation": {
+            "grade": "C",
+            "reason": "事前の申込が必要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "夢を考えるきっかけになる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "将来を考える授業を無料で受けられる"
+          ],
+          "limitations": [
+            "お話が中心で申込が必要"
+          ],
+          "grade_comparison": "総合B（12/20・子ども大学くにたち 第3回特別授業「夢のかなえ方」）：将来を考える授業を無料で受けられる。注意点は「お話が中心で申込が必要」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4288",
+              "quote": "2026年12月20日（日）13：30",
+              "checked_at": "2026-11-27",
+              "sha256": "c1dc0518b2728ae192292e89749432e7fd5e3b4b2d6dd1428e0d656038f2844b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4288",
+              "quote": "国立市の小学生、中学生とその保護者",
+              "checked_at": "2026-11-27",
+              "sha256": "5e9532101625e2e8af19c0322f770e272b07283c835f9eb8b71d8fc8ec1a2857",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4288",
+              "quote": "国立市近隣・多摩エリアにお住まいの方も参加いただけます",
+              "checked_at": "2026-11-27",
+              "sha256": "402ea5bc4daa87183b0b554785339775432ab221f3247b39be254f3988aef9ba",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。小中学生が仕事と夢の話を無料で聞ける。お話が中心で申込が必要。"
+      ],
+      "evidence": [
+        {
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4288",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4288"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-kokubunji-excavation-tour-2026",
+      "name": "新もとまちプラザ建設に伴う発掘調査現場見学会",
+      "ward": "国分寺市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。本物の発掘現場を解説つきで無料見学できる。屋外を歩き駐車場はない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子どもも保護者と参加できる"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "現場を歩いて見る"
+          },
+          "age_fit": {
+            "grade": "C",
+            "reason": "小さな子には解説が難しい"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "冬の屋外を歩く"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "費用はかからない"
+          },
+          "reservation": {
+            "grade": "unknown",
+            "reason": "申込の要否の記載がない"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "地域の歴史を実感できる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "all_ages",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "本物の遺跡調査を無料で見られる"
+          ],
+          "limitations": [
+            "屋外を歩き駐車場がない"
+          ],
+          "grade_comparison": "総合B（12/19・新もとまちプラザ建設に伴う発掘調査現場見学会）：本物の遺跡調査を無料で見られる。注意点は「屋外を歩き駐車場がない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "reservation"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.kokubunji.tokyo.jp/event/event_culture-art-history/1038671.html",
+              "quote": "令和8年12月19日（土曜日）",
+              "checked_at": "2026-11-27",
+              "sha256": "b77ca7169a5ed1ce046beb75c36a196258cf91247527f979457b731a384432bc",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.kokubunji.tokyo.jp/event/event_culture-art-history/1038671.html",
+              "quote": "尼寺跡と発掘調査現場を解説付きでご案内する見学会",
+              "checked_at": "2026-11-27",
+              "sha256": "a0b76a4c6c1364bf35633f5d1299addc046d58aa672d6da0ceb2938fc9988ff8",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.kokubunji.tokyo.jp/event/event_culture-art-history/1038671.html",
+              "quote": "小学生以下のお子さんは保護者同伴でお願いします",
+              "checked_at": "2026-11-27",
+              "sha256": "f48d77c016b1e47d2238fb4a2735c1b830b43a405c603a4dd615d17075e076a0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。本物の発掘現場を解説つきで無料見学できる。屋外を歩き駐車場はない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kokubunji.tokyo.jp/event/event_culture-art-history/1038671.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.kokubunji.tokyo.jp/event/event_culture-art-history/1038671.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261220-mitaka-ehonnoie-mochi-2026",
+      "name": "星と森と絵本の家「お餅つき」",
+      "ward": "三鷹市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/20(日)開催。臼と杵の餅つきを申込不要・無料で体験できる。食べるふるまいはなく雨天中止もある。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "親子で参加できる行事"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "自分で餅をつく"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "C",
+            "reason": "天候で中止になる場合がある"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "絵本の家で季節を楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "臼と杵の餅つきを無料で体験できる"
+          ],
+          "limitations": [
+            "雨天は中止の可能性がある"
+          ],
+          "grade_comparison": "総合B（12/20・星と森と絵本の家「お餅つき」）：臼と杵の餅つきを無料で体験できる。注意点は「雨天は中止の可能性がある」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/121/121954.html",
+              "quote": "2026年12月20日（",
+              "checked_at": "2026-11-27",
+              "sha256": "cd0643eaf91e97ba1052227906d7bb03be6479ebd973acd439d81e4a23707273",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/121/121954.html",
+              "quote": "お餅のふるまいはありません",
+              "checked_at": "2026-11-27",
+              "sha256": "12763d283a50501b186e91f334f2a970d08d92044678b61d8bc148ab3dfa643d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/121/121954.html",
+              "quote": "星と森と絵本の家「お餅つき」",
+              "checked_at": "2026-11-27",
+              "sha256": "67a1cb8dff6ee0bab41ea393239f0fa696615d8ce55832ed8826474082388b3b",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/20(日)開催。臼と杵の餅つきを申込不要・無料で体験できる。食べるふるまいはなく雨天中止もある。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.mitaka.lg.jp/c_event/121/121954.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.mitaka.lg.jp/c_event/121/121954.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261219-mitaka-ehonnoie-ohanashi-2026",
+      "name": "星と森と絵本の家 みこえぷおはなし会（12月）",
+      "ward": "三鷹市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "12/19(土)開催。絵本の家のおはなし会に申込不要・無料で参加できる。対象年齢は書かれていない。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "子ども向けのおはなし会"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "お話を聞く"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の指定はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "短時間で参加できる"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "参加は無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込は不要"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "絵本の家で季節を楽しめる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-27",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "unspecified",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "地域のおはなし会に無料で参加できる"
+          ],
+          "limitations": [
+            "対象年齢の記載がない"
+          ],
+          "grade_comparison": "総合B（12/19・星と森と絵本の家 みこえぷおはなし会（12月））：地域のおはなし会に無料で参加できる。注意点は「対象年齢の記載がない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/122/122017.html",
+              "quote": "2026年12月19日（",
+              "checked_at": "2026-11-27",
+              "sha256": "1545ccf339d1fd02ae7562f55056c8a12cefa10c28f888586bf01ceb43be9051",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/122/122017.html",
+              "quote": "の家みこえぷおはなし会（12月）",
+              "checked_at": "2026-11-27",
+              "sha256": "718f68c0769f8b8e4540e87f97ada6f79290d5ee6622a8086aa7886dd6effe72",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.mitaka.lg.jp/c_event/122/122017.html",
+              "quote": "星と森と絵本の家みこえぷおはなし",
+              "checked_at": "2026-11-27",
+              "sha256": "62e98a7d3f524e62bde72aeaab9b3b653353a09273cb9093816d14f07b8edc2e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-27にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "12/19(土)開催。絵本の家のおはなし会に申込不要・無料で参加できる。対象年齢は書かれていない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.mitaka.lg.jp/c_event/122/122017.html",
+          "basis": "2026-11-27 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.mitaka.lg.jp/c_event/122/122017.html"
         }
       ]
     }

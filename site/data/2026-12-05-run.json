@@ -1621,10 +1621,10 @@
     "source_failure_count": 5
   },
   "summary": {
-    "published": 173,
-    "verified": 169,
+    "published": 185,
+    "verified": 181,
     "announced": 4,
-    "candidates": 118,
+    "candidates": 130,
     "excluded": 0,
     "wards_checked": 23,
     "note": "Exactly 14 existing carryovers plus 14 new official programs. Unverified links outside subset remain pending."
@@ -4361,6 +4361,45 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "11862e512c87aaddec2b091b2b6735c1bacc702c",
+    "global_source_audit_complete": false
+  },
+  "lead47_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261206-adachi-kuwabukuro-asobiyatai-2026",
+      "verified-20261206-adachi-toshinou-winter-life-2026",
+      "verified-20261205-adachi-ecocap-factory-tour-2026",
+      "verified-20261206-adachi-toneri-lib-xmas-storytime-2026",
+      "verified-20261206-adachi-towa-lib-xmas-storytime-2026",
+      "verified-20261206-adachi-yayoi-lib-ritmique-2026",
+      "verified-20261205-edogawa-fureai-festa-ario-2026",
+      "verified-20261206-edogawa-shinkawa-gochiso-market-2026",
+      "verified-20261205-setagaya-ikejiri-outdoor-play-2026",
+      "verified-20261205-setagaya-karasuyama-nobinobi-story-2026",
+      "verified-20261205-nerima-ima-mymap-2026",
+      "verified-20261205-kodaira-music-festa-2026"
+    ],
+    "held_not_published": [
+      "adachi-adult-programs",
+      "adachi-awgp-video-1213",
+      "adachi-futagoza-1205",
+      "adachi-xmasmarket-youth-1212",
+      "arakawa-teens",
+      "chiyoda-resident-or-closed",
+      "chofu-closed-lottery",
+      "edogawa-closed-lottery",
+      "kodomo-smile-playpark",
+      "koto-closed-or-weekday",
+      "minato-resident-or-thin",
+      "ota-resident",
+      "out-of-range",
+      "published-already",
+      "setagaya-weekday-or-thin",
+      "tama-resident",
+      "zoo-exhibit-1217"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "dbd841540a8b527aa7db6abe1d277a4560564132",
     "global_source_audit_complete": false
   }
 }

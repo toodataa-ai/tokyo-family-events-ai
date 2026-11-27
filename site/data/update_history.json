@@ -4759,6 +4759,30 @@
       "global_source_audit_complete": false,
       "full_23_ward_25_source_audit_complete": false,
       "note": "足立・江戸川の区と図書館の行事、世田谷の児童館行事、三鷹・調布などの催しを公式ページで確認して追加。締切前の抽選は条件を明記して掲載。限定・締切・掲載済み・子ども向け情報が乏しいものは保留57件。"
+    },
+    {
+      "run_id": "galaxy-duplicate-removal-20261127",
+      "run_type": "manual_duplicate_removal",
+      "status": "duplicate_decisions_recorded",
+      "as_of_jst": "2026-11-27",
+      "executed_at": "2026-11-27T14:00:00+09:00",
+      "base_data_production_sha": "dd1a847b9a91112303919227e18dff14353f3751",
+      "target_weekends": [
+        "2026-12-19"
+      ],
+      "prior_active_week_records": 945,
+      "candidate_active_week_records": 944,
+      "added_weekly_records": 0,
+      "new_event_ids": [],
+      "duplicate_decisions_recorded": [
+        "verified-20261219-adachi-galaxy-xmas-concert-2026"
+      ],
+      "duplicate_of": {
+        "verified-20261219-adachi-galaxy-xmas-concert-2026": "verified-20261219-galaxcity-xmas-concert-2026"
+      },
+      "existing_event_records_physically_deleted": 0,
+      "global_source_audit_complete": false,
+      "note": "二重掲載のギャラクシティ クリスマスコンサート1件（区公式ページ版）を、利用者の承認により決定記録（duplicate・重複元ID・理由・公式URL）付きで公開リストから取り下げた。"
     }
   ]
 }

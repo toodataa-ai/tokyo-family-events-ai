@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1246,
+  "expected_total_differences_after_governance": 1263,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -9979,6 +9979,142 @@
       "kind": "staging_only",
       "category": "user_links_20261128",
       "reason": "2026-11-28の利用者指定（PR TIMES）の追加確認の読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/data/discovery_sources.json",
+      "kind": "different",
+      "category": "user_links_20261128",
+      "reason": "取得元にPR TIMESとメルカリお知らせを追加（2026-11-28、本番には未反映）。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/lead49_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "tools/validate_lead49_addition_20261121.py",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_asle.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_dcm.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_dcmbook.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_furusato.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_hanabi.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_heikura.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_hulic.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_kibaco.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_kodomo.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_mama.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_mercari.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/pages/l49_shime.html",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls108.txt",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards108-20261127.yml",
+      "kind": "staging_only",
+      "category": "verified_lead49_20261128",
+      "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

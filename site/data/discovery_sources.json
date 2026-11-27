@@ -1347,6 +1347,18 @@
         "label": "東レ100周年企画展（千代田区・東京国際フォーラム）",
         "group": "テーマパーク・遊園地・大型商業施設",
         "url": "https://100th.toray/exhibition/"
+      },
+      {
+        "id": "ai_ev_prtimes",
+        "label": "PR TIMES（企業・団体・自治体の発表。公開ニュースサイトマップ）",
+        "group": "23区の自治体公式サイト",
+        "url": "https://prtimes.jp/sitemap-news.xml"
+      },
+      {
+        "id": "ai_ev_mercari",
+        "label": "メルカリ お知らせ（企業の体験イベント）",
+        "group": "23区の自治体公式サイト",
+        "url": "https://jp-news.mercari.com/"
       }
     ],
     "group_order": [
@@ -2005,6 +2017,14 @@
       "ai_fac_toray_exhibition": {
         "state": "read",
         "note": "2026-11-27に取得（利用者提示の公式リンク）"
+      },
+      "ai_ev_prtimes": {
+        "state": "read",
+        "note": "2026-11-28に公開ニュースサイトマップと個別の発表を取得（利用者指定）。サイトマップは直近の発表のみ。"
+      },
+      "ai_ev_mercari": {
+        "state": "read",
+        "note": "2026-11-28に個別記事を取得（利用者指定）。一覧ページは未取得。"
       }
     }
   }

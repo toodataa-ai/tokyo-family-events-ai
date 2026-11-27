@@ -1,4 +1,4 @@
-import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261115-no-stats-1";
+import {prepareIssues,formatJst} from "./pending-issues-model.mjs?v=20261127-status-refresh-1";
 const byId=id=>document.getElementById(id);
 function textNode(tag,text,className){
   const node=document.createElement(tag);
@@ -12,9 +12,37 @@ function statusLine(title,value){
   elem.appendChild(textNode("p",value));
   return elem;
 }
+function renderReviewRow(row){
+  const item=textNode("details","","pending-review-item");
+  item.dataset.reviewStatus=row.status;
+  const summary=textNode("summary","","pending-review-summary");
+  summary.appendChild(textNode("span",row.name,"pending-review-name"));
+  if(row.pending_detail){
+    summary.appendChild(textNode("span",row.pending_detail.publication_status+" ／ "+row.pending_detail.blocker,"pending-review-state"));
+  }else{
+    summary.appendChild(textNode("span",row.state_label||(row.status==="assessment_reconfirmed"?"既存評価を再確認":"終了・期間対象外で見送り"),"pending-review-state"));
+  }
+  item.appendChild(summary);
+  if(row.pending_detail){
+    const d=row.pending_detail;
+    for(const [title,value]of [["確認できたこと",d.confirmed],["残っている確認",d.missing],["掲載への影響",d.publication_impact],["確認に必要な資料",d.needed_evidence]]){
+      item.appendChild(statusLine(title,value));
+    }
+  }else{
+    item.appendChild(textNode("p",row.reason));
+  }
+  const links=textNode("p","");
+  row.sources.forEach((url,i)=>{
+    const a=textNode("a","参照資料"+(i+1));a.href=url;a.target="_blank";a.rel="noopener noreferrer";
+    links.appendChild(a);links.appendChild(document.createTextNode("　"));
+  });
+  item.appendChild(links);
+  return item;
+}
 function renderCard(entry){
   const article=textNode("details","","pending-issue-card");
   article.dataset.workStatus=entry.work_status;
+  article.id=entry.id;
   const summary=textNode("summary","","pending-issue-summary");
   const head=textNode("div","","pending-issue-card-top");
   head.appendChild(textNode("span",entry.category==="connection"?"サイトの取得に関する問題":"イベント情報の確認作業","pending-issue-kind"));
@@ -28,6 +56,8 @@ function renderCard(entry){
     body.appendChild(statusLine("完了した対応",entry.now));
     body.appendChild(statusLine("完了とした範囲",entry.completed_scope));
     body.appendChild(statusLine("確認日",entry.completed_at));
+  }else if(entry.review_results){
+    body.appendChild(statusLine("残っている確認",entry.now));
   }else{
     body.appendChild(statusLine("どんな影響がある？",entry.impact));
     body.appendChild(statusLine("現在残っていること",entry.now));
@@ -35,6 +65,22 @@ function renderCard(entry){
     body.appendChild(statusLine("今後の対応",entry.next));
   }
   content.appendChild(body);
+  if(entry.review_results){
+    const unresolved=entry.review_results.filter(row=>row.status==="withheld_insufficient_evidence");
+    const reviewed=entry.review_results.filter(row=>row.status!=="withheld_insufficient_evidence");
+    const remaining=textNode("section","","pending-unresolved-results");
+    remaining.appendChild(textNode("h4","未解決の"+unresolved.length+"件"));
+    if(entry.followup_policy)remaining.appendChild(textNode("p",entry.followup_policy,"pending-followup-policy"));
+    for(const row of unresolved)remaining.appendChild(renderReviewRow(row));
+    content.appendChild(remaining);
+    if(reviewed.length){
+      const history=textNode("details","","pending-reviewed-history");
+      history.appendChild(textNode("summary","確認済みの記録（"+reviewed.length+"件）"));
+      history.appendChild(textNode("p","終了・期間対象外を確認した候補と、根拠を再確認した既存評価です。未解決の"+unresolved.length+"件には含めません。"));
+      for(const row of reviewed)history.appendChild(renderReviewRow(row));
+      content.appendChild(history);
+    }
+  }
   if(entry.retrieval_status){
     content.appendChild(statusLine("サイトへの接続（作業状況とは別）",
       entry.retrieval_status.label+"。"+entry.retrieval_status.detail));
@@ -70,7 +116,7 @@ async function init(){
   try {
     const catalog=await getJson("audit/pending_issues_catalog.json");
     let audit=null;
-    try{audit=await getJson("staging/audit/fixed_sources.json");}
+    try{audit=await getJson("audit/fixed_sources.json");}
     catch(e){console.warn("サイト取得状況の最新監査は未取得です",e);}
     model=prepareIssues(catalog,audit);
   } catch(err){

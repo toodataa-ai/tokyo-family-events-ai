@@ -1,15 +1,15 @@
-# User-approved v1.51 (chat 2026-11-27 "本番OK"): refresh the remaining-issues page to the 2026-11-27 status. Front-end page files only.
+# User-approved v1.52 (chat 2026-11-28 "本番OK"): publish the source list update (AI exploration sites +12, visit status). Source list file only.
 operation=release
 production_ref=production
-production_sha=52cc9bab2586e50b7dc9cd560b5d71f71d89d41c
-previous_production_sha=2b779c95b724c095071c1eaa45355aed18c78907
-candidate_sha=ea747c346f2c9be79fefe422ed63453f16aa7041
-pr=151
-target_public_version=1.51
-previous_public_release=release/2026-11-23-r1036
-release_date_jst=2026-11-27
-expected_data_production_sha=1e9b60809aa1a9be46086f2bb2cecfc5d2113ac3
-approved_scope=site/pending-issues.html,site/pending-issues.js,site/pending-issues-model.mjs,site/pending-issues.css,site/audit/pending_issues_catalog.json,tests/pending_issues_release.test.mjs
+production_sha=70a923eb6d6ba4d42ab3f3e9bdd8eb2346935ff8
+previous_production_sha=52cc9bab2586e50b7dc9cd560b5d71f71d89d41c
+candidate_sha=54c87766dd4000dd6ce6750125b20515cd05d80c
+pr=152
+target_public_version=1.52
+previous_public_release=release/2026-11-27-r1068
+release_date_jst=2026-11-28
+expected_data_production_sha=52c370b574f54d3b7a6888adf405701538496d0c
+approved_scope=site/data/discovery_sources.json
 event_record_mutation=none
 curation_record_mutation=none
-note=Remaining-issues page refreshed. The unreleased source-audit page is not linked in production. No event data changes.
+note=Source list only. Unreleased lottery labels, source-audit and usage-history pages are not included. No event data changes.

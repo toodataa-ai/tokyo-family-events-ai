@@ -7,7 +7,7 @@
   "baseline_staging_commit_before_governance": "624fc0dc6528bdc8d746efe989528d24ff17064f",
   "baseline_data_production_commit": "1f1d9cc5d7716c3b6e5cbe8dd7c9c9d9ac47d35f",
   "baseline_existing_differences": 26,
-  "expected_total_differences_after_governance": 1267,
+  "expected_total_differences_after_governance": 1259,
   "allowed_differences": [
     {
       "path": ".github/data-deploy-trigger.txt",
@@ -8199,22 +8199,6 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/search.html",
-      "kind": "different",
-      "category": "lottery_label_20261127",
-      "reason": "抽選表示の改修（app.jsの版番号更新）。本番は「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/copy.html",
-      "kind": "different",
-      "category": "lottery_label_20261127",
-      "reason": "抽選表示の改修（app.jsの版番号更新）。本番は「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
       "path": "site/multi-filter-ui.js",
       "kind": "staging_only",
       "category": "tama_expansion_20261121",
@@ -9759,22 +9743,6 @@
       "requires_user_approval_to_release": true
     },
     {
-      "path": "site/app.js",
-      "kind": "different",
-      "category": "lottery_label_20261127",
-      "reason": "抽選の行事を「抽選」と表示する改修（2026-11-27）。本番は利用者の「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tests/lottery_label.test.mjs",
-      "kind": "staging_only",
-      "category": "lottery_label_20261127",
-      "reason": "抽選の行事を「抽選」と表示する改修（2026-11-27）。本番は利用者の「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
       "path": ".github/workflows/fetch-thin-wards103-20261127.yml",
       "kind": "staging_only",
       "category": "user_links_20261127",
@@ -10115,38 +10083,6 @@
       "kind": "staging_only",
       "category": "verified_lead49_20261128",
       "reason": "メルカリ・PR TIMES指定分（2026-11-28）の追加ツール・公式ページ・画像確認。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/canva.html",
-      "kind": "different",
-      "category": "canva_reorder_20261128",
-      "reason": "並び替え操作の改善（2026-11-28）。本番は利用者の「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/canva-draft.css",
-      "kind": "different",
-      "category": "canva_reorder_20261128",
-      "reason": "並び替え操作の改善（2026-11-28）。本番は利用者の「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "site/canva-fluid-sort.js",
-      "kind": "different",
-      "category": "canva_reorder_20261128",
-      "reason": "並び替え操作の改善（2026-11-28）。本番は利用者の「本番OK」待ち。",
-      "disposition": "intentional_staging_only",
-      "requires_user_approval_to_release": true
-    },
-    {
-      "path": "tests/canva_draft_contract.test.mjs",
-      "kind": "different",
-      "category": "canva_reorder_20261128",
-      "reason": "並び替え操作の改善（2026-11-28）。本番は利用者の「本番OK」待ち。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
     }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_public_release": "release/2026-11-28-r1078",
+  "current_public_release": "release/2026-11-28-r1085",
   "policy": {
     "snapshot_scope": "successfully_deployed_production_only",
     "rollback_scope": "entries_in_this_registry_only",
@@ -482,7 +482,16 @@
       "workflow_run_id": 46023116929,
       "public_version": "1.52",
       "note": "ユーザー承認の本番v1.52。取得元一覧（AI探索先サイト12件追加と訪問状況）を反映（PR #152、site/data/discovery_sources.json のみ）。抽選表示などの未承認の改修は含まない。イベントデータは変更なし。data-production 52c370b574f54d3b7a6888adf405701538496d0c（967件）。初回の配備はPagesの一時エラーで失敗し再実行で成功。"
+    },
+    {
+      "release_id": "release/2026-11-28-r1085",
+      "branch": "release/2026-11-28-r1085",
+      "commit_sha": "1bd4dec9c9d0819483d4f7805c8094ec46962a41",
+      "deployed_at": "2026-11-28T00:17:00+00:00",
+      "workflow_run_id": 46086933817,
+      "public_version": "1.53",
+      "note": "ユーザー承認の本番v1.53（PR #153）。Canva投稿ドラフトの並び替え改善と抽選／超過時抽選の表示。イベントデータは変更なし。data-production e2a1b2ed54bfee63647227a72222ffd2b9c80f55（983件）。"
     }
   ],
-  "current_public_version": "1.52"
+  "current_public_version": "1.53"
 }

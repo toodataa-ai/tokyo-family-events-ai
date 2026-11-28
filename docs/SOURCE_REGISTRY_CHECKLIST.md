@@ -39,7 +39,7 @@
 | `chuosen_rr_suginami` | なみじゃない、杉並！中央線あるあるPROJECT（杉並のイベント） | https://www.chuosen-rr.com/event/ |
 | `hachilabo_shibuya` | こども科学センター・ハチラボ（渋谷区文化総合センター大和田） | https://shibu-cul.jp/hachilabo https://shibu-cul.jp/hachilabo/tenji |
 
-## B. AI探索先サイト（118件・AIが候補探しの入口にする）
+## B. AI探索先サイト（132件・AIが候補探しの入口にする）
 
 ### 市部の自治体公式サイト（多摩20市＋浦安市）（21件）
 
@@ -67,7 +67,7 @@
 | `ai_city_hachioji` | 八王子市公式サイト（イベント・子育て・広報） | https://www.city.hachioji.tokyo.jp/ |
 | `ai_city_urayasu` | 浦安市（千葉県）公式サイト・イベントカレンダー | https://www.city.urayasu.lg.jp/event_calendar.html |
 
-### 23区の自治体公式サイト（26件）
+### 23区の自治体公式サイト（30件）
 
 | id | 名称 | URL |
 |---|---|---|
@@ -97,8 +97,12 @@
 | `ai_ward_nakano_kanko` | 中野区観光協会（イベント） | https://www.nakano-kanko.com/event/ |
 | `ai_ward_nakano_event` | 中野のイベント情報（nakanoevent） | https://www.nakanoevent.com/ |
 | `ai_ward_shibuya_pgc` | 渋谷区 プレイグラウンドシティ渋谷（子育て・遊び） | https://playgroundcity-shibuya.jp/ |
+| `ai_ev_shibuya_bosai` | 渋谷防災キャラバン 公式サイト（渋谷区） | https://shibuya-bosai-caravan.tokyo/ |
+| `ai_ev_sancha_ennichi` | 三茶縁日 公式サイト（世田谷区） | https://sanchaennichi.jp/ |
+| `ai_ev_prtimes` | PR TIMES（企業・団体・自治体の発表。公開ニュースサイトマップ） | https://prtimes.jp/sitemap-news.xml |
+| `ai_ev_mercari` | メルカリ お知らせ（企業の体験イベント） | https://jp-news.mercari.com/ |
 
-### 都立公園・国営公園・海上公園（37件）
+### 都立公園・国営公園・海上公園（39件）
 
 | id | 名称 | URL |
 |---|---|---|
@@ -139,6 +143,8 @@
 | `ai_tpark_jindai` | 神代植物公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/jindai/ |
 | `ai_tpark_koganei` | 小金井公園（東京都公園協会の公園ページ） | https://www.tokyo-park.or.jp/park/koganei/ |
 | `ai_tpark_event_search` | 東京都公園協会 イベント検索（全公園） | https://www.tokyo-park.or.jp/event_search/index.html |
+| `ai_park_shinjuku_chuo` | 新宿中央公園 公式サイト（新宿区） | https://shinjukuchuo-park.jp/ |
+| `ai_park_rikugien_night` | 六義園 夜間特別観賞（文京区） | https://www.tokyo-park.or.jp/special/rikugien_lighting/index.html |
 
 ### 動物園・水族館・博物館・美術館・科学館（16件）
 
@@ -161,7 +167,7 @@
 | `ai_zoo_inokashira` | 井の頭自然文化園（イベント） | https://www.tokyo-zoo.net/inokashira/events/index.html |
 | `ai_zoo_kasai` | 葛西臨海水族園（イベント） | https://www.tokyo-zoo.net/kasai/events/index.html |
 
-### テーマパーク・遊園地・大型商業施設（15件）
+### テーマパーク・遊園地・大型商業施設（21件）
 
 | id | 名称 | URL |
 |---|---|---|
@@ -180,11 +186,19 @@
 | `ai_fac_tdr_christmas` | 東京ディズニーリゾート ディズニー・クリスマス（千葉県浦安市） | https://www.tokyodisneyresort.jp/treasure/christmas2026/tdl/ |
 | `ai_fac_hanayashiki_event` | 浅草花やしき イベント・ステージ（台東区） | https://www.hanayashiki.net/event_this/ |
 | `ai_fac_sunshine_tenbo` | サンシャイン60展望台 てんぼうパーク イベント（豊島区） | https://sunshinecity.jp/observatory/event/ |
+| `ai_fac_teamlab_hamarikyu` | チームラボ 浜離宮（中央区） | https://www.teamlab.art/jp/e/hamarikyu/ |
+| `ai_fac_timburton` | ティム・バートンのラビリンス 東京（江東区） | https://tokyo.timburtonexhibition.com/ |
+| `ai_fac_andst_tokyo` | and ST TOKYO 特設ページ（渋谷区） | https://www.dot-st.com/cp/sttokyo2026_xmas |
+| `ai_fac_jtb_europefes` | JTB ヨーロッパフェス（港区） | https://www.jtb.co.jp/kaigai/europe-fes/ |
+| `ai_fac_mamarial` | MAMARIAL fes. 公式サイト（港区） | https://mamarial.com/ |
+| `ai_fac_toray_exhibition` | 東レ100周年企画展（千代田区・東京国際フォーラム） | https://100th.toray/exhibition/ |
 
-### 東京都・観光財団（3件）
+### 東京都・観光財団（5件）
 
 | id | 名称 | URL |
 |---|---|---|
 | `ai_tcvb` | 東京観光財団（都内地域のイベント） | https://www.tcvb.or.jp/ |
 | `ai_metro_kodomo_smile` | 東京都こどもスマイルムーブメント | https://kodomo-smile.metro.tokyo.lg.jp/ |
 | `ai_metro_metro` | 東京都（報道発表・イベント） | https://www.metro.tokyo.lg.jp/ |
+| `ai_tokyo_keishicho_kanda` | 警視庁 神田警察署（千代田区） | https://www.keishicho.metro.tokyo.lg.jp/about_mpd/shokai/ichiran/kankatsu/kanda/about_ps/kuruma.html |
+| `ai_tokyo_metro_press` | 東京都の発表（My TOKYO） | https://www.my.metro.tokyo.lg.jp/w/116-20261026-274206117 |

@@ -10365,6 +10365,15 @@
       "reason": "毎日更新（2026-11-28）の追加ツール・公式ページ・取得記録。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "site/audit/pending_issues_catalog.json",
+      "kind": "different",
+      "category": "pending_staging_app",
+      "reason": "2026-11-28の毎日更新で残課題ページの内容を更新。本番反映は利用者の「本番OK」待ち。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true,
+      "release_state": "pending_release"
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

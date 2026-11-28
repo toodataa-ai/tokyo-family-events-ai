@@ -15,13 +15,13 @@ currentAudit.registered_source_count=27;currentAudit.sources[26].source_id=curre
 assert.equal(validateAudit(currentAudit),false,'duplicate source IDs must fail closed');
 const model=prepareIssues(catalog,audit);
 assert.equal(model.entries.length,8);
-assert.deepEqual(model.counts,{total:5,pending:4,deferred:1,completed:3,connection:1,verification:4});
-assert.deepEqual(model.remaining.map(e=>e.id),['article-leads','mizunokagaku-1213','source-retrieval','full-coverage','tamemap-nakano']);
-assert.deepEqual(model.completed.map(e=>e.id),['itabashi-tourism','suginami-candidates','weekly-update']);
+assert.deepEqual(model.counts,{total:4,pending:3,deferred:1,completed:4,connection:1,verification:3});
+assert.deepEqual(model.remaining.map(e=>e.id),['article-leads','source-retrieval','full-coverage','tamemap-nakano']);
+assert.deepEqual(model.completed.map(e=>e.id),['mizunokagaku-1213','itabashi-tourism','suginami-candidates','weekly-update']);
 assert.ok(model.remaining.every(e=>e.work_status!=='completed'));
 assert.ok(model.completed.every(e=>e.completed_at && e.completed_scope && ['対応完了','全件判定済み（一部見送り）'].includes(e.status.label)));
-assert.match(model.remaining[4].status.label,/保留/);
-assert.equal(model.remaining[4].retrieval_status.label,'自動取得できません');
+assert.match(model.remaining[3].status.label,/保留/);
+assert.equal(model.remaining[3].retrieval_status.label,'自動取得できません');
 const reviewed=model.remaining.find(e=>e.id==='article-leads');
 assert.equal(reviewed.status.label,'公式根拠の確認待ち');
 assert.equal(reviewed.review_results.length,20);
@@ -44,14 +44,14 @@ for(const mutation of [c=>c.issues[0].review_results[0].sources=['javascript:ale
 const healed=structuredClone(audit);healed.sources[0].retrieval_status='checked';
 const next=prepareIssues(catalog,healed);
 assert.deepEqual(next.counts,model.counts);
-assert.equal(next.remaining[4].work_status,'deferred');
-assert.equal(next.remaining[4].retrieval_status.label,'登録ページの接続を確認');
-assert.doesNotMatch(next.remaining[4].retrieval_status.label,/照合待ち/);
+assert.equal(next.remaining[3].work_status,'deferred');
+assert.equal(next.remaining[3].retrieval_status.label,'登録ページの接続を確認');
+assert.doesNotMatch(next.remaining[3].retrieval_status.label,/照合待ち/);
 // Failure to load the audit never erases the manually reviewed completion/holds.
 const unavailable=prepareIssues(catalog,null);
 assert.deepEqual(unavailable.counts,model.counts);
 assert.equal(unavailable.is_audit_current,false);
-assert.equal(unavailable.remaining[4].retrieval_status.label,'取得状況を確認できません');
+assert.equal(unavailable.remaining[3].retrieval_status.label,'取得状況を確認できません');
 const allDone=structuredClone(catalog);
 for(const e of allDone.issues){Object.assign(e,{work_status:'completed',completed_at:'2026-11-14',completed_scope:'Fixture scope only'});delete e.review_results;}
 assert.equal(prepareIssues(allDone,null).counts.total,0);

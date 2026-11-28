@@ -10149,6 +10149,22 @@
       "reason": "毎日更新（2026-11-28）の読み取り専用取得。",
       "disposition": "intentional_staging_only",
       "requires_user_approval_to_release": true
+    },
+    {
+      "path": "research/2026-11-20-thin-wards/urls113.txt",
+      "kind": "staging_only",
+      "category": "daily_update_20261128",
+      "reason": "毎日更新（2026-11-28）の読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
+    },
+    {
+      "path": ".github/workflows/fetch-thin-wards113-20261128.yml",
+      "kind": "staging_only",
+      "category": "daily_update_20261128",
+      "reason": "毎日更新（2026-11-28）の読み取り専用取得。",
+      "disposition": "intentional_staging_only",
+      "requires_user_approval_to_release": true
     }
   ],
   "latest_verified_staging_baseline_commit": "3fe5f316dfde618ad02a187f64657b93bb5c5f4f",

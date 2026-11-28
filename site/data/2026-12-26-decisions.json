@@ -4,8 +4,8 @@
   "generated": "2026-11-16",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 41,
-    "published": 41,
+    "candidate_total": 43,
+    "published": 43,
     "excluded": 0,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -5459,6 +5459,271 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://prtimes.jp/main/html/rd/p/000000447.000022024.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261226-setagaya-shinmachi-rail",
+      "name": "新町児童館 鉄道レールタイム",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "電車のおもちゃでたっぷり遊べる無料・申込不要の児童館企画。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "児童館の子ども向けの遊び企画"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "レールをつなぎ電車で遊ぶ"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "幼児から保護者同伴で参加できる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内で当日参加"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "乗り物好きの子が親子で遊べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "電車のおもちゃで2時間たっぷり遊べる無料の会"
+          ],
+          "limitations": [
+            "電車を持っている人は名前を書いて持参する"
+          ],
+          "grade_comparison": "総合A（12/26・新町児童館 鉄道レールタイム）：電車のおもちゃで2時間たっぷり遊べる無料の会。注意点は「電車を持っている人は名前を書いて持参する」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+              "quote": "2026年の鉄道おさめ。2時間たっぷりあそぼう。",
+              "checked_at": "2026-11-28",
+              "sha256": "f1afc79c3427a1435e4b2bfc0f0796229551f2763091991abbf2e9a16e540e48",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+              "quote": "2026年12月26日（土曜日）",
+              "checked_at": "2026-11-28",
+              "sha256": "2c5c9c053e3363149abb480ba624fa87648eaea6b65a447ca79d457e6dfc87a8",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+              "quote": "どなたでもどうぞ(幼児は保護者と一緒に)",
+              "checked_at": "2026-11-28",
+              "sha256": "8312be253f5c29c9c95174b36fd9f1ec002404bd4eb9e3e57bfa3f099e9fe886",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+              "quote": "事前の申し込みはありません。直接児童館に来てください。",
+              "checked_at": "2026-11-28",
+              "sha256": "54fee9b301acdb29e4b46b1069e7786ee8aaf0bf3484a2e3b96a6731f9d46e4d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "電車のおもちゃでたっぷり遊べる無料・申込不要の児童館企画。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261226-itabashi-lib-film-hikawa",
+      "name": "氷川図書館 子ども映画会「にじいろのさかな～ゆうじょう編～」",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向け作品「にじいろのさかな～ゆうじょう編～」を図書館で無料鑑賞できる。鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区が子ども向けと案内する映画会"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の細かな記載はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "上映約30分の屋内鑑賞"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込不要だが先着順"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "図書館の帰りに本も借りられる身近な催し"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "絵本で人気の物語を30分の短い上映で楽しめる"
+          ],
+          "limitations": [
+            "年末の土曜1回だけの上映な"
+          ],
+          "grade_comparison": "総合B（12/26・氷川図書館 子ども映画会「にじいろのさかな～ゆうじょう編～」）：絵本で人気の物語を30分の短い上映で楽しめる。注意点は「年末の土曜1回だけの上映な」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "にじいろのさかな～ゆうじょう編～（ア・30分）…26日（土曜日）午後2時",
+              "checked_at": "2026-11-28",
+              "sha256": "88fd939d6464ee6cadb1b39378d074594fb584eb221e0ac246b4a08c82e703a5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "原則、先着順。当日、直接会場へ。",
+              "checked_at": "2026-11-28",
+              "sha256": "24e215595c4b62316b4df06e951e18feade12da47c1d40a9577639ce8fe25ec5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+              "quote": "注：費用の明示がないものは無料",
+              "checked_at": "2026-11-28",
+              "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども向け作品「にじいろのさかな～ゆうじょう編～」を図書館で無料鑑賞できる。鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html"
         }
       ]
     }

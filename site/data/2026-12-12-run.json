@@ -146,11 +146,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 94,
-    "published": 146,
+    "candidates": 102,
+    "published": 154,
     "excluded": 2,
     "duplicate_removed": 0,
-    "verified": 143,
+    "verified": 151,
     "announced": 3,
     "corrected": 0,
     "thumbnail_count": 12,
@@ -2693,6 +2693,36 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "52c370b574f54d3b7a6888adf405701538496d0c",
+    "global_source_audit_complete": false
+  },
+  "lead50_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261212-setagaya-funabashi-handbell",
+      "verified-20261212-setagaya-funabashi-odekake",
+      "verified-20261212-koganei-kankyo-forum",
+      "verified-20261213-mizu-kodomo-library",
+      "verified-20261213-shibuya-boys-girls-choir",
+      "verified-20261213-haba-oyako-skin-lesson",
+      "verified-20261212-itabashi-lib-film-hasune",
+      "verified-20261212-itabashi-lib-film-nishidai"
+    ],
+    "held_not_published": [
+      "edogawa-kimekomi-1220",
+      "edogawa-lobby-concert-1220",
+      "inagi-bunkasai-stage-1128",
+      "itabashi-takashimadaira-marche-akatsuka-jimopa",
+      "kokubunji-jinken-1206",
+      "kokubunji-kida-baseball-1219",
+      "metro-ogimama-1205",
+      "mitaka-kodomo-talk-1220",
+      "shibuya-brassband-1220",
+      "showakinen-newsports-1220",
+      "tdc-happyclimax",
+      "tokyo-xmasmarket-shintoyosu"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "e2a1b2ed54bfee63647227a72222ffd2b9c80f55",
     "global_source_audit_complete": false
   }
 }

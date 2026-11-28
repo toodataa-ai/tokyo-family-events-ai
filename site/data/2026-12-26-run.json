@@ -79,11 +79,11 @@
   ],
   "summary": {
     "wards_checked": 23,
-    "candidates": 41,
-    "published": 41,
+    "candidates": 43,
+    "published": 43,
     "excluded": 0,
     "duplicate_removed": 0,
-    "verified": 38,
+    "verified": 40,
     "announced": 3,
     "thumbnail_count": 5,
     "source_audit_complete": false,
@@ -2101,6 +2101,30 @@
     ],
     "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
     "base_data_production_sha": "52c370b574f54d3b7a6888adf405701538496d0c",
+    "global_source_audit_complete": false
+  },
+  "lead50_addition_20261121": {
+    "kind": "individually_verified_official_events_from_lead_triage",
+    "added_ids": [
+      "verified-20261226-setagaya-shinmachi-rail",
+      "verified-20261226-itabashi-lib-film-hikawa"
+    ],
+    "held_not_published": [
+      "edogawa-kimekomi-1220",
+      "edogawa-lobby-concert-1220",
+      "inagi-bunkasai-stage-1128",
+      "itabashi-takashimadaira-marche-akatsuka-jimopa",
+      "kokubunji-jinken-1206",
+      "kokubunji-kida-baseball-1219",
+      "metro-ogimama-1205",
+      "mitaka-kodomo-talk-1220",
+      "shibuya-brassband-1220",
+      "showakinen-newsports-1220",
+      "tdc-happyclimax",
+      "tokyo-xmasmarket-shintoyosu"
+    ],
+    "pages_committed_at": "research/2026-11-20-thin-wards/pages/",
+    "base_data_production_sha": "e2a1b2ed54bfee63647227a72222ffd2b9c80f55",
     "global_source_audit_complete": false
   }
 }

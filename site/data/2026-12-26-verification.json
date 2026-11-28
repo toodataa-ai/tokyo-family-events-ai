@@ -1981,11 +1981,107 @@
           "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261226-setagaya-shinmachi-rail",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03075/37292.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+          "quote": "2026年の鉄道おさめ。2時間たっぷりあそぼう。",
+          "checked_at": "2026-11-28",
+          "sha256": "f1afc79c3427a1435e4b2bfc0f0796229551f2763091991abbf2e9a16e540e48",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+          "quote": "2026年12月26日（土曜日）",
+          "checked_at": "2026-11-28",
+          "sha256": "2c5c9c053e3363149abb480ba624fa87648eaea6b65a447ca79d457e6dfc87a8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+          "quote": "どなたでもどうぞ(幼児は保護者と一緒に)",
+          "checked_at": "2026-11-28",
+          "sha256": "8312be253f5c29c9c95174b36fd9f1ec002404bd4eb9e3e57bfa3f099e9fe886",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37292.html",
+          "quote": "事前の申し込みはありません。直接児童館に来てください。",
+          "checked_at": "2026-11-28",
+          "sha256": "54fee9b301acdb29e4b46b1069e7786ee8aaf0bf3484a2e3b96a6731f9d46e4d",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261226-itabashi-lib-film-hikawa",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "quote": "にじいろのさかな～ゆうじょう編～（ア・30分）…26日（土曜日）午後2時",
+          "checked_at": "2026-11-28",
+          "sha256": "88fd939d6464ee6cadb1b39378d074594fb584eb221e0ac246b4a08c82e703a5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "quote": "原則、先着順。当日、直接会場へ。",
+          "checked_at": "2026-11-28",
+          "sha256": "24e215595c4b62316b4df06e951e18feade12da47c1d40a9577639ce8fe25ec5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "注：費用の明示がないものは無料",
+          "checked_at": "2026-11-28",
+          "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 41,
-    "verified": 38,
+    "total": 43,
+    "verified": 40,
     "announced": 3
   }
 }

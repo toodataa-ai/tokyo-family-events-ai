@@ -10,10 +10,10 @@
   "run_file": "2026-12-05-run.json",
   "coverage": {
     "sources_checked": 23,
-    "candidate_count": 197,
+    "candidate_count": 205,
     "duplicate_removed": 3,
     "excluded_count": 0,
-    "published_count": 194,
+    "published_count": 202,
     "wards": [
       {
         "ward": "千代田区",
@@ -119,18 +119,18 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 20,
-        "published_count": 20,
-        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-19 公式個別ページ確認済み8件を非破壊追加。 2026-11-22 公式個別ページ確認済み3件を非破壊追加。 2026-11-25 公式個別ページ確認済み6件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。"
+        "candidate_count": 21,
+        "published_count": 21,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-19 公式個別ページ確認済み8件を非破壊追加。 2026-11-22 公式個別ページ確認済み3件を非破壊追加。 2026-11-25 公式個別ページ確認済み6件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "渋谷区",
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 8,
-        "published_count": 8,
-        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-22 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 9,
+        "published_count": 9,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-22 公式個別ページ確認済み1件を非破壊追加。 2026-11-27 公式個別ページ確認済み2件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "中野区",
@@ -182,9 +182,9 @@
         "status": "checked",
         "queries": 3,
         "sources_checked": 1,
-        "candidate_count": 3,
-        "published_count": 3,
-        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-20 公式個別ページ確認済み2件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 8,
+        "published_count": 8,
+        "note": "Exact 2026-10-26 per-ward source/AI query HTTP log; event selection is independent verified-subset only, not complete source coverage. 2026-11-20 公式個別ページ確認済み2件を非破壊追加。 2026-11-26 公式個別ページ確認済み1件を非破壊追加。 2026-11-28 公式個別ページ確認済み5件を非破壊追加。"
       },
       {
         "ward": "練馬区",
@@ -238,9 +238,9 @@
       },
       {
         "ward": "多摩市",
-        "candidate_count": 1,
-        "published_count": 1,
-        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。"
+        "candidate_count": 2,
+        "published_count": 2,
+        "note": "多摩拡張（v1.41）の初回。 2026-11-21 公式個別ページ確認済み1件を非破壊追加。 2026-11-28 公式個別ページ確認済み1件を非破壊追加。"
       },
       {
         "ward": "武蔵野市",
@@ -343,7 +343,8 @@
     "2026-12-05-events-lead46-20261126.json",
     "2026-12-05-events-lead47-20261127.json",
     "2026-12-05-events-lead48-20261127.json",
-    "2026-12-05-events-lead49-20261128.json"
+    "2026-12-05-events-lead49-20261128.json",
+    "2026-12-05-events-lead50-20261128.json"
   ],
   "events": []
 }

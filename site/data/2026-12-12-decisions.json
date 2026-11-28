@@ -4,8 +4,8 @@
   "generated": "2026-11-08T16:10:00+09:00",
   "migration_incomplete": false,
   "summary": {
-    "candidate_total": 148,
-    "published": 146,
+    "candidate_total": 156,
+    "published": 154,
     "excluded": 2,
     "duplicate": 0,
     "hard_excluded": 0,
@@ -18267,6 +18267,1116 @@
           "channel": "ai_cross",
           "kind": "ai_cross_search",
           "url": "https://shimekazari-ws261213.hp.peraichi.com"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-setagaya-funabashi-handbell",
+      "name": "船橋児童館「ハンドベルを楽しもう」（12月）",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生以上の子どもが自分で音を鳴らして合奏する無料の児童館プログラム。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生から中高生が対象の児童館企画"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "ハンドベルを演奏する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学1年生以上が対象で未就学児は対象外"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "1時間の屋内活動"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "合奏の体験ができる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "クリスマスの曲をハンドベルで合奏でき無料"
+          ],
+          "limitations": [
+            "未就学児は参加の対象外な"
+          ],
+          "grade_comparison": "総合A（12/12・船橋児童館「ハンドベルを楽しもう」（12月））：クリスマスの曲をハンドベルで合奏でき無料。注意点は「未就学児は参加の対象外な」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34952.html",
+              "quote": "2026年12月12日（土曜日）",
+              "checked_at": "2026-11-28",
+              "sha256": "9c0e44ea4b059090b71190f1c9d9cfde35b93b7ea940812730e4403d28f9474e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34952.html",
+              "quote": "すてきな音をひびかせて、たのしく演奏してみよう！",
+              "checked_at": "2026-11-28",
+              "sha256": "cbf6c9640f94d4c5d532be0582b6cb275a4bc6fee2ef43532e5d89ae72b69f97",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34952.html",
+              "quote": "小学校1年生から中高生世代",
+              "checked_at": "2026-11-28",
+              "sha256": "8adb4bbb9553df516e71571414a2069ac695408132e253d4466e0e128147df6f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34952.html",
+              "quote": "参加したい人は当日、ごご4じまでに来てください。",
+              "checked_at": "2026-11-28",
+              "sha256": "02cc76e71b8ccd4eab350a098a26c97e917f16bbe97bbdad315601b83c9af47f",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "小学生以上の子どもが自分で音を鳴らして合奏する無料の児童館プログラム。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/34952.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/03076/34952.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-setagaya-funabashi-odekake",
+      "name": "船橋児童館 土曜おでかけひろば（12月）",
+      "ward": "世田谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "未就学児と保護者のための遊び場で、広い体育室で無料・申込不要で遊べる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "未就学児と保護者が対象"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "おもちゃを使って自由に遊ぶ"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "未就学児向け"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内の午前の短時間"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "申込不要"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で広い場所で遊べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "未就学児が広い体育室で鉄道おもちゃなどを使って遊べる"
+          ],
+          "limitations": [
+            "小学生以上は対象に含まれない"
+          ],
+          "grade_comparison": "総合A（12/12・船橋児童館 土曜おでかけひろば（12月））：未就学児が広い体育室で鉄道おもちゃなどを使って遊べる。注意点は「小学生以上は対象に含まれない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34980.html",
+              "quote": "午前10時30分から11時45分",
+              "checked_at": "2026-11-28",
+              "sha256": "1b95ee41e28dc84b933c692b7dd6ceffa3b8843f76f68d73c4f6827806628a11",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34980.html",
+              "quote": "電車のおもちゃやドールハウスなど、人気のおもちゃがいっぱい！！",
+              "checked_at": "2026-11-28",
+              "sha256": "469fb5f366c7af4098fefb994c3bcc76647ba3a57a94fe949b7177b72b02eca4",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34980.html",
+              "quote": "対象未就学児と保護者費用・料金無料",
+              "checked_at": "2026-11-28",
+              "sha256": "54c30d2bea3b677cde0f14d4b8edc81bb2f597790ed1e8404c0a7a2b3b0517b7",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.setagaya.lg.jp/03076/34980.html",
+              "quote": "当日直接お越しください。",
+              "checked_at": "2026-11-28",
+              "sha256": "cb7d21feb68016212819ff1ea13d2fa8303abc93b388f6245e35791534d42141",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "未就学児と保護者のための遊び場で、広い体育室で無料・申込不要で遊べる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/34980.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.setagaya.lg.jp/03076/34980.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-koganei-kankyo-forum",
+      "name": "こがねい環境フォーラム2026",
+      "ward": "小金井市",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "積み木や工作の体験があり、市内外を問わず無料で参加できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生の発表や子どもの体験コーナーがある"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "積み木や発電の体験ができる"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小さな子から大人まで楽しめる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "駅前の屋内ホール"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "入場無料"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "主な体験は当日参加"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "家族で環境を学びながら遊べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "無料で積み木や工作など親子の体験が多い"
+          ],
+          "limitations": [
+            "一部の体験は当日先着で数に限りがある"
+          ],
+          "grade_comparison": "総合A（12/11〜12/13（週末は12/12・13）・こがねい環境フォーラム2026）：無料で積み木や工作など親子の体験が多い。注意点は「一部の体験は当日先着で数に限りがある」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html",
+              "quote": "令和8年12月12日（土曜）午前9時から午後7時まで（展示は午後5時まで）",
+              "checked_at": "2026-11-28",
+              "sha256": "c6e6c8805bd6c041611a7fd597eeb13534c07bad862b237c2aa0af55fb2ee5c0",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html",
+              "quote": "令和8年12月13日（日曜）午前9時から午後4時まで",
+              "checked_at": "2026-11-28",
+              "sha256": "adace18a60c16a925470f5d6ad7f6eb86606725a27eea3167e096603463e8b5e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html",
+              "quote": "小金井宮地楽器ホール（小金井市本町6丁目14番45号）",
+              "checked_at": "2026-11-28",
+              "sha256": "3c9ef8a33fe2da0a355b0710e73f38dba709e2b6c414c3666673e2bc133ce8b1",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html",
+              "quote": "間伐材で作られたつみきを使って、木の温もりを感じながら",
+              "checked_at": "2026-11-28",
+              "sha256": "97d761ad574ce268923dc9103235044b48f2b78f9fe4bfde71842370a167116a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4283",
+              "quote": "費用：入場無料（映画上映も無料）",
+              "checked_at": "2026-11-28",
+              "sha256": "d9988c527faa677562af378f7c6a26006e4cc025069bf4ae021669aae5888011",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+            },
+            {
+              "url": "https://kodomo-smile.metro.tokyo.lg.jp/events/4283",
+              "quote": "小金井市内外を問わず、どなたでも参加いただけます。",
+              "checked_at": "2026-11-28",
+              "sha256": "2e12834573ad072f7f012fa9a0e55ebca2b217cecdd45cb387c08a6468a3bcf8",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "積み木や工作の体験があり、市内外を問わず無料で参加できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.koganei.lg.jp/kurashi/473/kankyokyouikugakusyu/kankyoforumR7.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261213-mizu-kodomo-library",
+      "name": "水道歴史館出張ライブラリー「こどもとしょしつ」（東京都水の科学館）",
+      "ward": "江東区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学生以下向けの出入り自由の図書室で、整理券なしで参加できる。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生以下が対象"
+          },
+          "interactivity": {
+            "grade": "B",
+            "reason": "本を読んで学ぶ"
+          },
+          "age_fit": {
+            "grade": "A",
+            "reason": "小学生以下向けで保護者同伴"
+          },
+          "stay_flexibility": {
+            "grade": "A",
+            "reason": "出入り自由"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "屋内で当日参加"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "参加費の記載がない"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "整理券なしの自由参加"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "水の歴史を親子で学べる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "出入り自由で小さな子も参加しやすい"
+          ],
+          "limitations": [
+            "参加費の記載がなく事前確認が必要な"
+          ],
+          "grade_comparison": "総合A（12/13・水道歴史館出張ライブラリー「こどもとしょしつ」（東京都水の科学館））：出入り自由で小さな子も参加しやすい。注意点は「参加費の記載がなく事前確認が必要な」こと。",
+          "unsupported_axes": [
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/",
+              "quote": "開催日：2026年12月13日(日)",
+              "checked_at": "2026-11-28",
+              "sha256": "8e17b2ebe109d5a8f77f934d5c4ef69997f82079db6afccdcfc83abbf12b418c",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/",
+              "quote": "出入り自由の図書室で水道の歴史を学びましょう！",
+              "checked_at": "2026-11-28",
+              "sha256": "8b234a5bff6beddd444abcdaa06e962ec550849938f2b1f96715614f54a69545",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/",
+              "quote": "対象：小学生以下のお子様",
+              "checked_at": "2026-11-28",
+              "sha256": "87f61fb7b1a0546ddb46d7d8c18b3cc89d0493ebc56666f4ea2037fccbf471c3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/",
+              "quote": "※自由参加のため、整理券の配布はありません。",
+              "checked_at": "2026-11-28",
+              "sha256": "4dc7b4d717af67deb3866c01fe96d398ed6ed85ca40646d546c7c172170b212c",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "小学生以下向けの出入り自由の図書室で、整理券なしで参加できる。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.mizunokagaku.jp/event/261213_rekishi_library/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261213-shibuya-boys-girls-choir",
+      "name": "渋谷区少年少女合唱団 第12回定期演奏会",
+      "ward": "渋谷区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子どもの合唱団の演奏を5歳から鑑賞できる。体験は鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "B",
+            "reason": "5歳以上が対象で子どもが出演"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "5歳以上"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "B",
+            "reason": "約2時間の鑑賞"
+          },
+          "cost": {
+            "grade": "unknown",
+            "reason": "料金の記載がない"
+          },
+          "reservation": {
+            "grade": "A",
+            "reason": "当日会場で参加"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "同世代の合唱を親子で聴ける"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "age_eligible",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "同世代の子どもの合唱を当日会場で聴ける"
+          ],
+          "limitations": [
+            "5歳未満は対象外で鑑賞が中心な"
+          ],
+          "grade_comparison": "総合B（12/13・渋谷区少年少女合唱団 第12回定期演奏会）：同世代の子どもの合唱を当日会場で聴ける。注意点は「5歳未満は対象外で鑑賞が中心な」こと。",
+          "unsupported_axes": [
+            "stay_flexibility",
+            "cost"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html",
+              "quote": "渋谷区少年少女合唱団第12回定期演奏会",
+              "checked_at": "2026-11-28",
+              "sha256": "865ec16239499a283b15dbc144a459c2052b6e68860026bc78cf9abadef89f16",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html",
+              "quote": "季節の歌や映画の名曲を披露します。",
+              "checked_at": "2026-11-28",
+              "sha256": "4e29199291a460b61cc858865f24c21bc7b0145ef3221e358b204d5cc7006b5e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html",
+              "quote": "12月13日（日曜日）14時～16時（13時開場）",
+              "checked_at": "2026-11-28",
+              "sha256": "a5d56ef3c15cd8c5e0e3fc40c4b495d86470278a11dae0e7cdf48c4e860dfe89",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html",
+              "quote": "対象5歳以上の人定員650人（先着）",
+              "checked_at": "2026-11-28",
+              "sha256": "5654513d4097a35fce62afe70b1b2097b7f73de7596ebd122d9f02c50174bfd2",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子どもの合唱団の演奏を5歳から鑑賞できる。体験は鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.shibuya.tokyo.jp/contents/koho-news/1624/20261201_bunka.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261213-haba-oyako-skin-lesson",
+      "name": "親子で学ぶ、冬の肌レッスン（ハーバー研究所）",
+      "ward": "千代田区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "A",
+        "overall": "A",
+        "rubric_version": "family-fit-v2",
+        "reason": "小学3〜6年生と保護者が一緒に体験して学ぶ無料講座。企業主催で定員が少ない。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "小学生親子限定"
+          },
+          "interactivity": {
+            "grade": "A",
+            "reason": "クイズと実習に参加する"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "小学3〜6年生に限られる"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "60分の屋内講座"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "各回8組の事前予約"
+          },
+          "family_value": {
+            "grade": "A",
+            "reason": "親子で一緒に実習できる"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": true,
+          "strengths": [
+            "親子限定の体験講座を教材込み無料で受けられる"
+          ],
+          "limitations": [
+            "小学3〜6年生の親子に限られ定員が少ない"
+          ],
+          "grade_comparison": "総合A（12/13・親子で学ぶ、冬の肌レッスン（ハーバー研究所））：親子限定の体験講座を教材込み無料で受けられる。注意点は「小学3〜6年生の親子に限られ定員が少ない」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+              "quote": "親子で学ぶ、冬の肌レッスン",
+              "checked_at": "2026-11-28",
+              "sha256": "db481fe9d0ea083dff0eecccb1009b038348e15dd3d6e4501cd18062b6cde8c3",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+              "quote": "小学3年生～6年生のお子様と親御様",
+              "checked_at": "2026-11-28",
+              "sha256": "382c2d5257e2e755f345df7efffb9147111312c79fcfda97e3c069c4b248991e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+              "quote": "【1】12月13日(日)10:30～11:30",
+              "checked_at": "2026-11-28",
+              "sha256": "9196eeaa6ffc20e815a5238d1427d2ee3200c2c6a3975ed28d45aef787cf941e",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+              "quote": "【受講料・教材費】無料参加者プレゼント",
+              "checked_at": "2026-11-28",
+              "sha256": "89e4bee0bf4c82bece7631502557cdd23cd157cadfdf8526709b95342d29fa6a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+              "quote": "【お申し込み受付】12月10日(木)12:00まで",
+              "checked_at": "2026-11-28",
+              "sha256": "ad042507426611a6f84ea88e5dd20db3429377cf66e862b3781cdf1000460426",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed",
+        "child_activity_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "小学3〜6年生と保護者が一緒に体験して学ぶ無料講座。企業主催で定員が少ない。"
+      ],
+      "evidence": [
+        {
+          "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://note.haba.co.jp/article/staff-notes/news/detail/857"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-itabashi-lib-film-hasune",
+      "name": "蓮根図書館 子ども映画会「NHK こどもにんぎょう劇場3 日本編」",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向け作品「NHK こどもにんぎょう劇場3 日本編」を図書館で無料鑑賞できる。鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区が子ども向けと案内する映画会"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の細かな記載はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "上映約45分の屋内鑑賞"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込不要だが先着順"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "図書館の帰りに本も借りられる身近な催し"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "日本のお話の人形劇映像を無料で楽しめる"
+          ],
+          "limitations": [
+            "会場が図書館となりの集会所な"
+          ],
+          "grade_comparison": "総合B（12/12・蓮根図書館 子ども映画会「NHK こどもにんぎょう劇場3 日本編」）：日本のお話の人形劇映像を無料で楽しめる。注意点は「会場が図書館となりの集会所な」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "こどもにんぎょう劇場3日本編（45分）…12日（土曜日）午後2時",
+              "checked_at": "2026-11-28",
+              "sha256": "e215fda99214d3cfab7b1577a5a121a08d7b415770d9ecb9e1eae21cd646a31d",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "原則、先着順。当日、直接会場へ。",
+              "checked_at": "2026-11-28",
+              "sha256": "24e215595c4b62316b4df06e951e18feade12da47c1d40a9577639ce8fe25ec5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "注意：会場は蓮根図書館となりの蓮根集会所",
+              "checked_at": "2026-11-28",
+              "sha256": "b7fa138f761eacb080301d437a6e3c462c767de79542c9087425c4e4770e3949",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+              "quote": "注：費用の明示がないものは無料",
+              "checked_at": "2026-11-28",
+              "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども向け作品「NHK こどもにんぎょう劇場3 日本編」を図書館で無料鑑賞できる。鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "verified-20261212-itabashi-lib-film-nishidai",
+      "name": "西台図書館 子ども映画会「トムとジェリー7」",
+      "ward": "板橋区",
+      "decision": "published",
+      "family_fit": {
+        "grade": "B",
+        "overall": "B",
+        "rubric_version": "family-fit-v2",
+        "reason": "子ども向け作品「トムとジェリー7」を図書館で無料鑑賞できる。鑑賞が中心。",
+        "axes": {
+          "child_target": {
+            "grade": "A",
+            "reason": "区が子ども向けと案内する映画会"
+          },
+          "interactivity": {
+            "grade": "C",
+            "reason": "鑑賞が中心"
+          },
+          "age_fit": {
+            "grade": "B",
+            "reason": "対象年齢の細かな記載はない"
+          },
+          "stay_flexibility": {
+            "grade": "unknown",
+            "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+          },
+          "burden": {
+            "grade": "A",
+            "reason": "上映約51分の屋内鑑賞"
+          },
+          "cost": {
+            "grade": "A",
+            "reason": "無料"
+          },
+          "reservation": {
+            "grade": "B",
+            "reason": "申込不要だが先着順"
+          },
+          "family_value": {
+            "grade": "B",
+            "reason": "図書館の帰りに本も借りられる身近な催し"
+          }
+        },
+        "review": {
+          "schema_version": 1,
+          "method": "individual_evidence_review",
+          "reviewed_on": "2026-11-28",
+          "axes_checked": [
+            "child_target",
+            "interactivity",
+            "age_fit",
+            "stay_flexibility",
+            "burden",
+            "cost",
+            "reservation",
+            "family_value"
+          ],
+          "audience_basis": "child_program",
+          "child_activity_confirmed": false,
+          "strengths": [
+            "言葉が少なくても楽しいアニメを無料で観られる"
+          ],
+          "limitations": [
+            "上映は1回だけな"
+          ],
+          "grade_comparison": "総合B（12/12・西台図書館 子ども映画会「トムとジェリー7」）：言葉が少なくても楽しいアニメを無料で観られる。注意点は「上映は1回だけな」こと。",
+          "unsupported_axes": [
+            "stay_flexibility"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "トムとジェリー7（ア・51分）…12日（土曜日）午後2時",
+              "checked_at": "2026-11-28",
+              "sha256": "2ce992e70da771d0dcb40568fbc7b92dec66feef68921c98c8f649b655b9013a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+              "quote": "原則、先着順。当日、直接会場へ。",
+              "checked_at": "2026-11-28",
+              "sha256": "24e215595c4b62316b4df06e951e18feade12da47c1d40a9577639ce8fe25ec5",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+            },
+            {
+              "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+              "quote": "注：費用の明示がないものは無料",
+              "checked_at": "2026-11-28",
+              "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+              "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+              "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+            }
+          ]
+        }
+      },
+      "positive_signals": [
+        "official_date_confirmed"
+      ],
+      "negative_signals": [
+        "global_source_audit_pending"
+      ],
+      "hard_exclusion": null,
+      "exclusion_type": null,
+      "primary_reason_code": "family_value_high",
+      "reason_codes": [
+        "family_value_high"
+      ],
+      "reasons": [
+        "子ども向け作品「トムとジェリー7」を図書館で無料鑑賞できる。鑑賞が中心。"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "basis": "2026-11-28 official individual event page (HTTP200); 23 ward completeness not asserted"
+        }
+      ],
+      "override_reason": "",
+      "discovery_sources": [
+        {
+          "channel": "ai_cross",
+          "kind": "ai_cross_search",
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html"
         }
       ]
     }

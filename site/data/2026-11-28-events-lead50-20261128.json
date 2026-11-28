@@ -1,0 +1,135 @@
+[
+  {
+    "id": "verified-20261128-tokyodome-laqua-jumpzone",
+    "ward": "文京区",
+    "name": "ジャンプゾーン！（東京ドームシティ ラクーア）",
+    "url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+    "official_url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+    "source": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+    "image": "https://www.tokyo-dome.co.jp/files/event/laqua/jumpzone.jpg",
+    "period": "11/28・11/29",
+    "date_start": "2026-11-28",
+    "date_end": "2026-11-29",
+    "time": "11:00〜19:00（雨天中止）",
+    "venue": "東京ドームシティ ラクーア 1F噴水広場（文京区）",
+    "price": "1,200円（税込）",
+    "description": "最大7mのジャンプを体験できるトランポリン遊具。3歳以上で体重12〜55kgが対象。",
+    "categories": [
+      "体験・ワークショップ",
+      "親子・地域体験"
+    ],
+    "indoor_outdoor": "屋外",
+    "reservation": {
+      "required": null,
+      "note": "事前申込の記載なし。雨天中止で営業時間は変更の場合あり。"
+    },
+    "family_fit": {
+      "grade": "B",
+      "overall": "B",
+      "rubric_version": "family-fit-v2",
+      "reason": "3歳から体験できる屋外の遊具。有料で体重の条件があり雨天中止。",
+      "axes": {
+        "child_target": {
+          "grade": "B",
+          "reason": "3歳以上で体重制限がある"
+        },
+        "interactivity": {
+          "grade": "A",
+          "reason": "自分で跳んで遊ぶ"
+        },
+        "age_fit": {
+          "grade": "B",
+          "reason": "3歳以上・体重12〜55kg"
+        },
+        "stay_flexibility": {
+          "grade": "unknown",
+          "reason": "途中の出入りや滞在時間の自由度は公式案内に明記がない"
+        },
+        "burden": {
+          "grade": "B",
+          "reason": "屋外で雨天中止"
+        },
+        "cost": {
+          "grade": "B",
+          "reason": "1回の料金1,200円"
+        },
+        "reservation": {
+          "grade": "unknown",
+          "reason": "予約の記載がない"
+        },
+        "family_value": {
+          "grade": "B",
+          "reason": "子どもが体を動かせる"
+        }
+      },
+      "review": {
+        "schema_version": 1,
+        "method": "individual_evidence_review",
+        "reviewed_on": "2026-11-28",
+        "axes_checked": [
+          "child_target",
+          "interactivity",
+          "age_fit",
+          "stay_flexibility",
+          "burden",
+          "cost",
+          "reservation",
+          "family_value"
+        ],
+        "audience_basis": "age_eligible",
+        "child_activity_confirmed": true,
+        "strengths": [
+          "3歳から大きなジャンプを体験できる"
+        ],
+        "limitations": [
+          "体重制限があり雨天は中止になる"
+        ],
+        "grade_comparison": "総合B（11/28・11/29・ジャンプゾーン！（東京ドームシティ ラクーア））：3歳から大きなジャンプを体験できる。注意点は「体重制限があり雨天は中止になる」こと。",
+        "unsupported_axes": [
+          "stay_flexibility",
+          "reservation"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+            "quote": "2026年11月1日(日)～2026年11月29日(日)",
+            "checked_at": "2026-11-28",
+            "sha256": "85c4b8940a8e064b049a125ad6c044d5f391ca2a63b88c9ad566047c27c83dd3",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+            "quote": "最大7mの大ジャンプを体験していただけます！",
+            "checked_at": "2026-11-28",
+            "sha256": "b421c09069cc9a1d533bc1a2f5882bbbbe46375acf1c674e6bef98bf1186d39b",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+            "quote": "3歳以上、体重12㎏～55㎏",
+            "checked_at": "2026-11-28",
+            "sha256": "8925e0068d1b9138c6fe00adc9a26da08e5544ca7abeb2fcd47b7bd88ba27eba",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          },
+          {
+            "url": "https://www.tokyo-dome.co.jp/laqua/event/7934",
+            "quote": "ご利用料金1,200円(税込)",
+            "checked_at": "2026-11-28",
+            "sha256": "94c9ad6309b00a1bf1145fd04b4c3863711057dbb002a0b86f8f05168e01b429",
+            "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+            "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+          }
+        ]
+      }
+    },
+    "audit": {
+      "checked_on": "2026-11-28",
+      "calendar_index_url": null,
+      "source_claim": "verified",
+      "global_23_ward_source_audit_complete": false
+    }
+  }
+]

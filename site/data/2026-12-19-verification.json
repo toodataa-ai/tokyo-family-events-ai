@@ -6097,11 +6097,427 @@
           "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
         }
       ]
+    },
+    {
+      "id": "verified-20261219-setagaya-funabashi-candle",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03076/29525.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/29525.html",
+          "quote": "オリジナルキャンドルづくりを楽しもう！",
+          "checked_at": "2026-11-28",
+          "sha256": "a44b7619781e9683e273e26649d2a7e42d3072f902ddeb9c9bd5b5a87e3d071f",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/29525.html",
+          "quote": "12月19日(土曜日)(4)午前10時から(5)午後2時から",
+          "checked_at": "2026-11-28",
+          "sha256": "620c90c240dd7a73ed8c1085aaaf54fae293ad436f4bbcbfd0f33afe32ef2003",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/29525.html",
+          "quote": "小学1年生から中高生世代各回先着6名",
+          "checked_at": "2026-11-28",
+          "sha256": "e5af0f76d01c6cb02041e3e7e488a4189f275bac2c22f00eae29ec9dd69c270a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03076/29525.html",
+          "quote": "受付開始の時点で定員を超えていた場合は、その場で抽選になります。",
+          "checked_at": "2026-11-28",
+          "sha256": "cf1f356664161f7e0019b9945d50ae68161060febe0954a0010fa221dde5ec28",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261219-setagaya-shinmachi-nenmatsu",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03075/37284.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37284.html",
+          "quote": "今月は年末おたのしみ会です。",
+          "checked_at": "2026-11-28",
+          "sha256": "a46351a0ef9a56c8e5fbcc5f9ffa5e44c39ea67fd389329577a21ce0eacb2486",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37284.html",
+          "quote": "午前10時30分から11時30分",
+          "checked_at": "2026-11-28",
+          "sha256": "d208ee32dd129e9461141030a00b6e1c598590dba7938d36c4b1a234c5c305c3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37284.html",
+          "quote": "0歳から就学前の乳幼児と保護者",
+          "checked_at": "2026-11-28",
+          "sha256": "f3ad978b559b8bdf2a721c2fd0c35e544784107b6b0e227ad52d3e3098408278",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03075/37284.html",
+          "quote": "季節のカンタン工作など、みんなで楽しみましょう。",
+          "checked_at": "2026-11-28",
+          "sha256": "ca8ac41f9d4d96dab9a899b38be7f817362736f235d5ed8adf0d303a4f2ab3f9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261220-setagaya-ikejiri-mochitsuki",
+      "status": "verified",
+      "source": "https://www.city.setagaya.lg.jp/03061/37010.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "unknown",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/37010.html",
+          "quote": "子どものもちつき体験コーナーもあるよ。",
+          "checked_at": "2026-11-28",
+          "sha256": "e625cf95be65185211e92f6322ef642dee0a64be46de94c17aaddefdbad1b41a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/37010.html",
+          "quote": "午前11時から午後2時おもちがなくなり次第終了です。",
+          "checked_at": "2026-11-28",
+          "sha256": "a34604511aa924a512a40d8a49efd8622b3fa8c6cdfe82f4ca4e9b5e71c2c9d8",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/37010.html",
+          "quote": "池尻2丁目アパートひろば",
+          "checked_at": "2026-11-28",
+          "sha256": "5ebd7c28be333ef7e36dc37b4d493b719404531bc37eebafcd3d679c1135f5bb",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.setagaya.lg.jp/03061/37010.html",
+          "quote": "子どもは一人一つ無料です。",
+          "checked_at": "2026-11-28",
+          "sha256": "5294c27f3e57b9d787c9d5af4722d43b455b78845d58af3beebffb46aa3cd4b3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261219-edogawa-hatsudenki",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/hosei1219.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/hosei1219.html",
+          "quote": "発電実験や工作キットを使った発電機づくりに挑戦！",
+          "checked_at": "2026-11-28",
+          "sha256": "d60ac3afefc462396a341182b3293d19769b87f951e0dffeed0badf70e4620b9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/hosei1219.html",
+          "quote": "2026年12月19日（土曜日）10時00分から11時30分",
+          "checked_at": "2026-11-28",
+          "sha256": "cc8cd51614e3066492c3227812ae9efbfcb503091e870028dcfe187659ff4404",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/hosei1219.html",
+          "quote": "小学生以上（小学3年生以下は保護者同伴）",
+          "checked_at": "2026-11-28",
+          "sha256": "0cb6d7e231f120e7ef098f3cff77840d6650085d289393b6ae24740342c7e657",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/hosei1219.html",
+          "quote": "300円(体験料として。作ったキットはお持ち帰りいただけます。)",
+          "checked_at": "2026-11-28",
+          "sha256": "ebf3dfa17a0f383e3bb31713875853b092f839d8635031e4feafaa160e8a869a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261220-edogawa-greenpalace-music-lecture",
+      "status": "verified",
+      "source": "https://www.city.edogawa.tokyo.jp/event/26musiclessons.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26musiclessons.html",
+          "quote": "2026年12月20日（日曜日）13時30分から14時30分",
+          "checked_at": "2026-11-28",
+          "sha256": "d67dc8fd09f474d1d777be6d62c13928d18b05f2850bad4f0cfb230aedb8dc68",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26musiclessons.html",
+          "quote": "生演奏とともに演奏曲の魅力を深堀りします！",
+          "checked_at": "2026-11-28",
+          "sha256": "5bfca173880462167989f7960dac387747c9cc5968892b3cf9d31e04beed9e01",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26musiclessons.html",
+          "quote": "先着順に受け付けいたします。",
+          "checked_at": "2026-11-28",
+          "sha256": "6b35f579f5c5aeb6eee1f2ff3372e3a227c307488066820ced8eea81bf5055a4",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.edogawa.tokyo.jp/event/26musiclessons.html",
+          "quote": "対象小学生以上定員40名",
+          "checked_at": "2026-11-28",
+          "sha256": "55cf7f3ef6676d8bc3714216485ad837c1a0843ed360c2d37930208a71487675",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261220-adachi-ikou-xmas-ohanashi",
+      "status": "verified",
+      "source": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1220ikou.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1220ikou.html",
+          "quote": "普段のおはなし会では見られないパネルシアター、大型絵本もあります！",
+          "checked_at": "2026-11-28",
+          "sha256": "a3618ef54045223f6ff869c2e7b90cc0060b0c9f97f4601566639ebded496735",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1220ikou.html",
+          "quote": "午前10時30分から午前11時15分まで",
+          "checked_at": "2026-11-28",
+          "sha256": "2e01ebbbd0367d6d726093429268c86852ee030da15b5ba25e190c587827ee91",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1220ikou.html",
+          "quote": "対象幼児から小学生募集人数50名",
+          "checked_at": "2026-11-28",
+          "sha256": "e277285cbc346d0e8082d8a7080b11cf5db489edde185b29643a5763c01f86c6",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.adachi.tokyo.jp/toshokan/chiikibunka/toshokan/1220ikou.html",
+          "quote": "当日、直接会場へお越しください",
+          "checked_at": "2026-11-28",
+          "sha256": "82d66f5738ec83bcef50f874b46767600b3fb3de7f4770d692788f7dc4781220",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261219-itabashi-science-stargazing",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "内容星空解説（プラネタリウム）・観望会（板橋区平和公園、晴天時のみ）",
+          "checked_at": "2026-11-28",
+          "sha256": "70495322becfa7b4c66ff2124c757e7d53f6bcc4e604f1aa8c4271a4b75f89f9",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "対象小学生以上（小学生は保護者同伴）",
+          "checked_at": "2026-11-28",
+          "sha256": "7c07b9cce4d84d120e8813ebe9fa966d42e5917a7610e2431f28e8de42837371",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "定員80人（抽選）申し込み12月11日（必着）",
+          "checked_at": "2026-11-28",
+          "sha256": "5e16dd76a88ef6e7f6e61a3d1f436264c749a1d2c90aeefe6363f4b4c09db9c0",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "申し込み12月11日（必着）まで",
+          "checked_at": "2026-11-28",
+          "sha256": "2f331595dcbff62741027baed93c0bf50515bfbe5f4d7bbab33d826dab0d48b7",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "注：費用の明示がないものは無料",
+          "checked_at": "2026-11-28",
+          "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
+    },
+    {
+      "id": "verified-20261220-itabashi-lib-film-akatsuka",
+      "status": "verified",
+      "source": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+      "source_kind": "public_official",
+      "verified_on": "2026-11-28",
+      "fields": {
+        "name": "pass",
+        "date": "pass",
+        "venue": "pass",
+        "time": "pass",
+        "price": "pass",
+        "reservation": "pass",
+        "official_url": "pass"
+      },
+      "corrections": {},
+      "note": "週別全源照合は未完（ためまっぷ403等）。この27件は公式ページの個別確認に基づく。",
+      "evidence": [
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "quote": "フランダースの犬（ア・90分）…20日（日曜日）午後2時",
+          "checked_at": "2026-11-28",
+          "sha256": "04bc2bf32acd9a01b17545bcc7488ba9bf6a67118ab24fc61629ab7af304adf3",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/kosodate/1000930/eigakai/1066899/index.html",
+          "quote": "原則、先着順。当日、直接会場へ。",
+          "checked_at": "2026-11-28",
+          "sha256": "24e215595c4b62316b4df06e951e18feade12da47c1d40a9577639ce8fe25ec5",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。引用文字列だけのUTF-8 SHA-256。"
+        },
+        {
+          "url": "https://www.city.itabashi.tokyo.jp/koho/1062992/1067107/1067111.html",
+          "quote": "注：費用の明示がないものは無料",
+          "checked_at": "2026-11-28",
+          "sha256": "6e418c3cfa96438e151e4364f966b05b85024330f81bc0ec111ec624fd44b65a",
+          "hash_scope": "quoted_text_only_not_HTTP_response_hash",
+          "description": "公式ページ（2026-11-28にHTTP200で取得、research/2026-11-20-thin-wards/pages/に不変保存）の本文引用。"
+        }
+      ]
     }
   ],
   "summary": {
-    "total": 116,
-    "verified": 115,
+    "total": 124,
+    "verified": 123,
     "announced": 1
   }
 }
